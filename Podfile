@@ -7,7 +7,11 @@ target 'HealthCard' do
   pod 'TPKeyboardAvoiding', '~> 1.2'
   pod 'Alamofire', '~> 5.3'
   pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
-
+  pod 'MBProgressHUD'
+  pod 'SDWebImage'
+  pod 'youtube-ios-player-helper'
+  pod 'SideMenu', '~> 6.0'
+  pod 'DropDown'
   # Pods for HealthCard
 
 end

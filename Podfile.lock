@@ -1,19 +1,36 @@
 PODS:
   - Alamofire (5.5.0)
+  - DropDown (2.3.13)
+  - MBProgressHUD (1.2.0)
+  - SDWebImage (5.12.1):
+    - SDWebImage/Core (= 5.12.1)
+  - SDWebImage/Core (5.12.1)
+  - SideMenu (6.5.0)
   - SVProgressHUD (2.2.6):
     - SVProgressHUD/Core (= 2.2.6)
   - SVProgressHUD/Core (2.2.6)
   - TPKeyboardAvoiding (1.3.5)
+  - youtube-ios-player-helper (1.0.4)
 
 DEPENDENCIES:
   - Alamofire (~> 5.3)
+  - DropDown
+  - MBProgressHUD
+  - SDWebImage
+  - SideMenu (~> 6.0)
   - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
   - TPKeyboardAvoiding (~> 1.2)
+  - youtube-ios-player-helper
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - DropDown
+    - MBProgressHUD
+    - SDWebImage
+    - SideMenu
     - TPKeyboardAvoiding
+    - youtube-ios-player-helper
 
 EXTERNAL SOURCES:
   SVProgressHUD:
@@ -26,9 +43,14 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
+  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SVProgressHUD: de812b4f0e1d65358f0064416473174ae619843f
   TPKeyboardAvoiding: d55b3ea7b362540af8fcf36aa3ed2e87bf210cc6
+  youtube-ios-player-helper: e9b97535e816db3152179d84d999bc1807ecd689
 
-PODFILE CHECKSUM: 22a814a5d2908f82baf46a2a951a83d21c22db01
+PODFILE CHECKSUM: 9d7aaffbd353cd3b8230e6bb298c18270cae853e
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.10.2

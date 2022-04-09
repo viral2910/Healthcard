@@ -27,7 +27,7 @@ class SingInVC: UIViewController ,UITextFieldDelegate{
         }
         
         let mainStoryBoard = UIStoryboard(name: "Home", bundle: nil)
-        let redViewController = mainStoryBoard.instantiateViewController(withIdentifier: "MainTabbarVC") as! MainTabbarVC
+        let redViewController = mainStoryBoard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
         UIApplication.shared.keyWindow?.rootViewController = redViewController
         
     }

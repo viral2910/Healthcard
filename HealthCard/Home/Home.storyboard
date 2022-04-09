@@ -17,21 +17,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="M93-TP-IfQ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Zs-At-o98">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="M93-TP-IfQ" secondAttribute="bottom" id="6wY-OV-Jxf"/>
-                            <constraint firstAttribute="trailing" secondItem="M93-TP-IfQ" secondAttribute="trailing" id="KrU-V4-KfT"/>
-                            <constraint firstItem="M93-TP-IfQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Tza-Bf-Qr7"/>
-                            <constraint firstItem="M93-TP-IfQ" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="wmI-s7-2p8"/>
+                            <constraint firstItem="6Zs-At-o98" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Mnn-Ao-8Zm"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="6Zs-At-o98" secondAttribute="bottom" id="jXD-b9-dvs"/>
+                            <constraint firstItem="6Zs-At-o98" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="oRZ-pO-ifd"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="6Zs-At-o98" secondAttribute="trailing" id="pZv-9p-scQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="igV-VX-2OT"/>
+                    <connections>
+                        <outlet property="containerView" destination="6Zs-At-o98" id="mrY-jU-MSf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -66,9 +69,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" systemColor="systemRedColor"/>
                     </tabBar>
-                    <connections>
-                        <segue destination="x3Y-lD-vDh" kind="relationship" relationship="viewControllers" id="CyO-Cc-eZw"/>
-                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5dn-bs-16b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

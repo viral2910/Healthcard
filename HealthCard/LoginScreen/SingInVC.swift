@@ -39,6 +39,7 @@ class SingInVC: UIViewController ,UITextFieldDelegate{
         
         let forgotpasswordvc =  UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "ForgotPasswordVC") as! ForgotPasswordVC
         forgotpasswordvc.mobilenumber = mobile
+        
         self.navigationController?.pushViewController(forgotpasswordvc, animated: true)
     }
     @IBAction func loginOTPAction(_ sender: Any) {

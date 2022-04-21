@@ -131,7 +131,7 @@ extension DashboardCollectionViewManager: UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: (collectionView.frame.size.width - 10)/totalItemToShow, height: 160)
+        CGSize(width: (collectionView.frame.size.width - 10)/totalItemToShow, height: 90)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

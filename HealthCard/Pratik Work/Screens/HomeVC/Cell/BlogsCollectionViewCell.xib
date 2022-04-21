@@ -19,10 +19,10 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yEc-lw-ACU">
-                        <rect key="frame" x="10" y="10" width="227" height="142"/>
+                        <rect key="frame" x="0.0" y="0.0" width="247" height="162"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GettyImages-482186651-450229ae311e422db9bf1bdd0169a163" translatesAutoresizingMaskIntoConstraints="NO" id="UGz-Ar-2yL">
-                                <rect key="frame" x="0.0" y="0.0" width="227" height="142"/>
+                                <rect key="frame" x="0.0" y="0.0" width="247" height="162"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -36,12 +36,11 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="yEc-lw-ACU" secondAttribute="bottom" constant="10" id="FBN-fy-8Jn"/>
-                <constraint firstItem="yEc-lw-ACU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="H84-l6-chz"/>
-                <constraint firstAttribute="trailing" secondItem="yEc-lw-ACU" secondAttribute="trailing" constant="10" id="YjJ-3e-w05"/>
-                <constraint firstItem="yEc-lw-ACU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="wyO-JA-JOL"/>
+                <constraint firstAttribute="bottom" secondItem="yEc-lw-ACU" secondAttribute="bottom" id="FBN-fy-8Jn"/>
+                <constraint firstItem="yEc-lw-ACU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="H84-l6-chz"/>
+                <constraint firstAttribute="trailing" secondItem="yEc-lw-ACU" secondAttribute="trailing" id="YjJ-3e-w05"/>
+                <constraint firstItem="yEc-lw-ACU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="wyO-JA-JOL"/>
             </constraints>
             <size key="customSize" width="247" height="162"/>
             <connections>

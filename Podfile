@@ -12,6 +12,7 @@ target 'HealthCard' do
   pod 'youtube-ios-player-helper'
   pod 'SideMenu', '~> 6.0'
   pod 'DropDown'
+  pod 'XMLParsing'
   # Pods for HealthCard
 
 end

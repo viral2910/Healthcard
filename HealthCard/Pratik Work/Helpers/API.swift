@@ -12,7 +12,7 @@ protocol API {
     var path: String { get }
     var fullURL: URL { get }
     var method: String { get }
-    var params: [String : Any] { get }
+    var params: String { get }
     var headers: [String : String]? { get }
 }
 extension API {

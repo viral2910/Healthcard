@@ -26,9 +26,18 @@ class SingInVC: UIViewController ,UITextFieldDelegate{
             return;
         }
         
-        let mainStoryBoard = UIStoryboard(name: "Home", bundle: nil)
-        let redViewController = mainStoryBoard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
-        UIApplication.shared.keyWindow?.rootViewController = redViewController
+        
+        loginApiCall()
+//        let mainStoryBoard = UIStoryboard(name: "Home", bundle: nil)
+//        let redViewController = ConsultationMainViewController.instantiate()//mainStoryBoard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+//        let navigationController = UINavigationController(rootViewController: redViewController)
+
+        UIApplication.shared.keyWindow?.rootViewController = navigationController
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let homeVC = ConsultationMainViewController.instantiate()        //Below's navigationController is useful if u want NavigationController
+        let navigationController = UINavigationController(rootViewController: homeVC)
+        appDelegate.window!.rootViewController = navigationController
+
         
     }
     @IBAction func forgotpassswordAction(_ sender: Any) {
@@ -39,7 +48,6 @@ class SingInVC: UIViewController ,UITextFieldDelegate{
         
         let forgotpasswordvc =  UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "ForgotPasswordVC") as! ForgotPasswordVC
         forgotpasswordvc.mobilenumber = mobile
-        
         self.navigationController?.pushViewController(forgotpasswordvc, animated: true)
     }
     @IBAction func loginOTPAction(_ sender: Any) {
@@ -63,4 +71,77 @@ class SingInVC: UIViewController ,UITextFieldDelegate{
         textField.resignFirstResponder()
         return true
     }
+    
+    func loginApiCall(){
+        struct demo : Codable{
+            
+        }
+        NetWorker.shared.callAPIService(type: APIV2.PatientLogin(mobileNo: "8369939171", password: "123", firebaseToken: "cR98J4yMTt6b2f8sd2n-35:APA91bGLVv-1o4hiowbK3cHnCS_Z48x4bt6_pekB0VpVvB1syGRjX95bHzqIpUe6MNiENw93x3gFNntrFrKvOcXLXQgR_7PJu-P0sAgaKE0F127IAZT87FGNawU2Xt4ZMpwIqDXAR-fA")) { [weak self] (data:Welcome?, error) in
+            print(data?.soapEnvelope.soapBody.patientLoginResponse)
+        }
+        
+    }
+    
 }
+// MARK: - Welcome
+struct Welcome: Codable {
+    let soapEnvelope: SoapEnvelopeval
+
+    enum CodingKeys: String, CodingKey {
+        case soapEnvelope = "soap:Envelope"
+    }
+}
+
+// MARK: - SoapEnvelope
+struct SoapEnvelopeval: Codable {
+    let xmlnsXSD, xmlnsXsi, xmlnsSoap: String
+    let soapBody: SoapBodyval
+
+    enum CodingKeys: String, CodingKey {
+        case xmlnsXSD = "_xmlns:xsd"
+        case xmlnsXsi = "_xmlns:xsi"
+        case xmlnsSoap = "_xmlns:soap"
+        case soapBody = "soap:Body"
+    }
+}
+
+// MARK: - SoapBody
+struct SoapBodyval: Codable {
+    let patientLoginResponse: PatientLoginResponse
+
+    enum CodingKeys: String, CodingKey {
+        case patientLoginResponse = "PatientLoginResponse"
+    }
+}
+
+// MARK: - PatientLoginResponse
+struct PatientLoginResponse: Codable {
+    let xmlns: String
+    let patientLoginResult: PatientLoginResult
+
+    enum CodingKeys: String, CodingKey {
+        case xmlns = "_xmlns"
+        case patientLoginResult = "PatientLoginResult"
+    }
+}
+
+// MARK: - PatientLoginResult
+struct PatientLoginResult: Codable {
+    let user: User
+
+    enum CodingKeys: String, CodingKey {
+        case user = "User"
+    }
+}
+
+// MARK: - User
+struct User: Codable {
+    let message, status, patientID: String
+
+    enum CodingKeys: String, CodingKey {
+        case message = "Message"
+        case status = "Status"
+        case patientID = "PatientId"
+    }
+}
+

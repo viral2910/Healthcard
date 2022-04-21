@@ -17,19 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="M93-TP-IfQ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2H-26-5bo">
+                                <rect key="frame" x="155" y="433" width="67" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="btnaction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="9Do-GG-yNu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="M93-TP-IfQ" secondAttribute="bottom" id="6wY-OV-Jxf"/>
-                            <constraint firstAttribute="trailing" secondItem="M93-TP-IfQ" secondAttribute="trailing" id="KrU-V4-KfT"/>
-                            <constraint firstItem="M93-TP-IfQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Tza-Bf-Qr7"/>
-                            <constraint firstItem="M93-TP-IfQ" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="wmI-s7-2p8"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="igV-VX-2OT"/>
                 </viewController>

@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		8EF153EFD6A1C00A3A16EA47 /* Pods_HealthCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EA0D1C2620A6272EBF75FF2 /* Pods_HealthCard.framework */; };
+		E018C6CF2806038300479145 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E018C6CD2806038300479145 /* EditProfileVC.swift */; };
+		E018C6D02806038300479145 /* EditProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E018C6CE2806038300479145 /* EditProfileVC.xib */; };
+		E018C6D32806053900479145 /* BasicHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E018C6D12806053900479145 /* BasicHistoryVC.swift */; };
+		E018C6D42806053900479145 /* BasicHistoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E018C6D22806053900479145 /* BasicHistoryVC.xib */; };
+		E018C6D7280606BA00479145 /* FinanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E018C6D5280606BA00479145 /* FinanceVC.swift */; };
+		E018C6D8280606BA00479145 /* FinanceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E018C6D6280606BA00479145 /* FinanceVC.xib */; };
+		E018C6DB280606D800479145 /* FinanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E018C6D9280606D800479145 /* FinanceCell.swift */; };
+		E018C6DC280606D800479145 /* FinanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E018C6DA280606D800479145 /* FinanceCell.xib */; };
 		E03DD67027F9787600BFB975 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03DD66F27F9787600BFB975 /* HomeVC.swift */; };
 		E03DD67227F994E100BFB975 /* MainTabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03DD67127F994E100BFB975 /* MainTabbarVC.swift */; };
 		E066993327F47ADA009EE3F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E066993227F47ADA009EE3F0 /* AppDelegate.swift */; };
@@ -19,14 +27,45 @@
 		E072953227F84BDE0083357A /* OtpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072953127F84BDE0083357A /* OtpVC.swift */; };
 		E072953427F850570083357A /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072953327F850570083357A /* ForgotPasswordVC.swift */; };
 		E072953627F853610083357A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E072953527F853610083357A /* Home.storyboard */; };
+		E09AAB1D2804A68B006E20B6 /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09AAB162804A68A006E20B6 /* CAPSPageMenu+UIGestureRecognizerDelegate.swift */; };
+		E09AAB1E2804A68B006E20B6 /* CAPSPageMenu+Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09AAB172804A68A006E20B6 /* CAPSPageMenu+Options.swift */; };
+		E09AAB1F2804A68B006E20B6 /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09AAB182804A68A006E20B6 /* MenuItemView.swift */; };
+		E09AAB202804A68B006E20B6 /* CAPSPageMenu+UIScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09AAB192804A68A006E20B6 /* CAPSPageMenu+UIScrollViewDelegate.swift */; };
+		E09AAB212804A68B006E20B6 /* CAPSPageMenu+UIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09AAB1A2804A68A006E20B6 /* CAPSPageMenu+UIConfiguration.swift */; };
+		E09AAB222804A68B006E20B6 /* CAPSPageMenuConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09AAB1B2804A68A006E20B6 /* CAPSPageMenuConfiguration.swift */; };
+		E09AAB232804A68B006E20B6 /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09AAB1C2804A68A006E20B6 /* CAPSPageMenu.swift */; };
 		E0C447F027F494E300BE6E2D /* SingInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C447EF27F494E300BE6E2D /* SingInVC.swift */; };
 		E0C447F227F4959E00BE6E2D /* SingUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C447F127F4959E00BE6E2D /* SingUpVC.swift */; };
+		E0EF5176280496A400FC526C /* CustomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EF5174280496A400FC526C /* CustomVC.swift */; };
+		E0EF5177280496A400FC526C /* CustomVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EF5175280496A400FC526C /* CustomVC.xib */; };
+		E0EF517B280498CA00FC526C /* PersonalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EF5179280498CA00FC526C /* PersonalVC.swift */; };
+		E0EF517C280498CA00FC526C /* PersonalVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EF517A280498CA00FC526C /* PersonalVC.xib */; };
+		E0EF517F280498E900FC526C /* InsuranceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EF517D280498E900FC526C /* InsuranceVC.swift */; };
+		E0EF5180280498E900FC526C /* InsuranceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EF517E280498E900FC526C /* InsuranceVC.xib */; };
+		E0EF5183280498FC00FC526C /* DocumentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EF5181280498FC00FC526C /* DocumentsVC.swift */; };
+		E0EF5184280498FC00FC526C /* DocumentsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EF5182280498FC00FC526C /* DocumentsVC.xib */; };
+		E0EF51882804991800FC526C /* RelationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EF51862804991800FC526C /* RelationVC.swift */; };
+		E0EF51892804991800FC526C /* RelationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EF51872804991800FC526C /* RelationVC.xib */; };
+		E0EF518C2804993300FC526C /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EF518A2804993300FC526C /* ProfileVC.swift */; };
+		E0EF518D2804993300FC526C /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EF518B2804993300FC526C /* ProfileVC.xib */; };
+		E0EF519028049A9500FC526C /* RelationshipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EF518E28049A9500FC526C /* RelationshipTableViewCell.swift */; };
+		E0EF519128049A9500FC526C /* RelationshipTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EF518F28049A9500FC526C /* RelationshipTableViewCell.xib */; };
+		E0EF519428049AF300FC526C /* ProfileTableviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EF519228049AF300FC526C /* ProfileTableviewCell.swift */; };
+		E0EF519528049AF300FC526C /* ProfileTableviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EF519328049AF300FC526C /* ProfileTableviewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0AB5BBCD0C22B3341BD4A481 /* Pods-HealthCard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthCard.debug.xcconfig"; path = "Target Support Files/Pods-HealthCard/Pods-HealthCard.debug.xcconfig"; sourceTree = "<group>"; };
 		97393149C65C312A721ABEE4 /* Pods-HealthCard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthCard.release.xcconfig"; path = "Target Support Files/Pods-HealthCard/Pods-HealthCard.release.xcconfig"; sourceTree = "<group>"; };
 		9EA0D1C2620A6272EBF75FF2 /* Pods_HealthCard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthCard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E018C6CD2806038300479145 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
+		E018C6CE2806038300479145 /* EditProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileVC.xib; sourceTree = "<group>"; };
+		E018C6D12806053900479145 /* BasicHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicHistoryVC.swift; sourceTree = "<group>"; };
+		E018C6D22806053900479145 /* BasicHistoryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicHistoryVC.xib; sourceTree = "<group>"; };
+		E018C6D5280606BA00479145 /* FinanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceVC.swift; sourceTree = "<group>"; };
+		E018C6D6280606BA00479145 /* FinanceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinanceVC.xib; sourceTree = "<group>"; };
+		E018C6D9280606D800479145 /* FinanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceCell.swift; sourceTree = "<group>"; };
+		E018C6DA280606D800479145 /* FinanceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinanceCell.xib; sourceTree = "<group>"; };
 		E03DD66F27F9787600BFB975 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		E03DD67127F994E100BFB975 /* MainTabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarVC.swift; sourceTree = "<group>"; };
 		E066992F27F47ADA009EE3F0 /* HealthCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,8 +79,31 @@
 		E072953127F84BDE0083357A /* OtpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpVC.swift; sourceTree = "<group>"; };
 		E072953327F850570083357A /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		E072953527F853610083357A /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		E09AAB162804A68A006E20B6 /* CAPSPageMenu+UIGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAPSPageMenu+UIGestureRecognizerDelegate.swift"; sourceTree = "<group>"; };
+		E09AAB172804A68A006E20B6 /* CAPSPageMenu+Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAPSPageMenu+Options.swift"; sourceTree = "<group>"; };
+		E09AAB182804A68A006E20B6 /* MenuItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
+		E09AAB192804A68A006E20B6 /* CAPSPageMenu+UIScrollViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAPSPageMenu+UIScrollViewDelegate.swift"; sourceTree = "<group>"; };
+		E09AAB1A2804A68A006E20B6 /* CAPSPageMenu+UIConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAPSPageMenu+UIConfiguration.swift"; sourceTree = "<group>"; };
+		E09AAB1B2804A68A006E20B6 /* CAPSPageMenuConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenuConfiguration.swift; sourceTree = "<group>"; };
+		E09AAB1C2804A68A006E20B6 /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
 		E0C447EF27F494E300BE6E2D /* SingInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInVC.swift; sourceTree = "<group>"; };
 		E0C447F127F4959E00BE6E2D /* SingUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpVC.swift; sourceTree = "<group>"; };
+		E0EF5174280496A400FC526C /* CustomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVC.swift; sourceTree = "<group>"; };
+		E0EF5175280496A400FC526C /* CustomVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomVC.xib; sourceTree = "<group>"; };
+		E0EF5179280498CA00FC526C /* PersonalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalVC.swift; sourceTree = "<group>"; };
+		E0EF517A280498CA00FC526C /* PersonalVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalVC.xib; sourceTree = "<group>"; };
+		E0EF517D280498E900FC526C /* InsuranceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceVC.swift; sourceTree = "<group>"; };
+		E0EF517E280498E900FC526C /* InsuranceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsuranceVC.xib; sourceTree = "<group>"; };
+		E0EF5181280498FC00FC526C /* DocumentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsVC.swift; sourceTree = "<group>"; };
+		E0EF5182280498FC00FC526C /* DocumentsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocumentsVC.xib; sourceTree = "<group>"; };
+		E0EF51862804991800FC526C /* RelationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelationVC.swift; sourceTree = "<group>"; };
+		E0EF51872804991800FC526C /* RelationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RelationVC.xib; sourceTree = "<group>"; };
+		E0EF518A2804993300FC526C /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		E0EF518B2804993300FC526C /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
+		E0EF518E28049A9500FC526C /* RelationshipTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelationshipTableViewCell.swift; sourceTree = "<group>"; };
+		E0EF518F28049A9500FC526C /* RelationshipTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RelationshipTableViewCell.xib; sourceTree = "<group>"; };
+		E0EF519228049AF300FC526C /* ProfileTableviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableviewCell.swift; sourceTree = "<group>"; };
+		E0EF519328049AF300FC526C /* ProfileTableviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableviewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +133,19 @@
 				9EA0D1C2620A6272EBF75FF2 /* Pods_HealthCard.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E018C6CC280602A000479145 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				E018C6D12806053900479145 /* BasicHistoryVC.swift */,
+				E018C6D22806053900479145 /* BasicHistoryVC.xib */,
+				E018C6D5280606BA00479145 /* FinanceVC.swift */,
+				E018C6D6280606BA00479145 /* FinanceVC.xib */,
+				E018C6D9280606D800479145 /* FinanceCell.swift */,
+				E018C6DA280606D800479145 /* FinanceCell.xib */,
+			);
+			path = SideMenu;
 			sourceTree = "<group>";
 		};
 		E03DD66E27F9783900BFB975 /* LoginScreen */ = {
@@ -107,6 +182,9 @@
 		E066993127F47ADA009EE3F0 /* HealthCard */ = {
 			isa = PBXGroup;
 			children = (
+				E018C6CC280602A000479145 /* SideMenu */,
+				E09AAB122804A635006E20B6 /* Library */,
+				E0EF51782804989200FC526C /* Profile */,
 				E03DD66E27F9783900BFB975 /* LoginScreen */,
 				E072953727F8542F0083357A /* Home */,
 				E066993227F47ADA009EE3F0 /* AppDelegate.swift */,
@@ -114,6 +192,8 @@
 				E066993B27F47ADC009EE3F0 /* Assets.xcassets */,
 				E066993D27F47ADC009EE3F0 /* LaunchScreen.storyboard */,
 				E066994027F47ADC009EE3F0 /* Info.plist */,
+				E0EF5174280496A400FC526C /* CustomVC.swift */,
+				E0EF5175280496A400FC526C /* CustomVC.xib */,
 			);
 			path = HealthCard;
 			sourceTree = "<group>";
@@ -126,6 +206,51 @@
 				E03DD67127F994E100BFB975 /* MainTabbarVC.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		E09AAB122804A635006E20B6 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				E09AAB152804A68A006E20B6 /* CAPSMenuPAge */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		E09AAB152804A68A006E20B6 /* CAPSMenuPAge */ = {
+			isa = PBXGroup;
+			children = (
+				E09AAB162804A68A006E20B6 /* CAPSPageMenu+UIGestureRecognizerDelegate.swift */,
+				E09AAB172804A68A006E20B6 /* CAPSPageMenu+Options.swift */,
+				E09AAB182804A68A006E20B6 /* MenuItemView.swift */,
+				E09AAB192804A68A006E20B6 /* CAPSPageMenu+UIScrollViewDelegate.swift */,
+				E09AAB1A2804A68A006E20B6 /* CAPSPageMenu+UIConfiguration.swift */,
+				E09AAB1B2804A68A006E20B6 /* CAPSPageMenuConfiguration.swift */,
+				E09AAB1C2804A68A006E20B6 /* CAPSPageMenu.swift */,
+			);
+			path = CAPSMenuPAge;
+			sourceTree = "<group>";
+		};
+		E0EF51782804989200FC526C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E0EF5179280498CA00FC526C /* PersonalVC.swift */,
+				E0EF517A280498CA00FC526C /* PersonalVC.xib */,
+				E0EF517D280498E900FC526C /* InsuranceVC.swift */,
+				E0EF517E280498E900FC526C /* InsuranceVC.xib */,
+				E0EF5181280498FC00FC526C /* DocumentsVC.swift */,
+				E0EF5182280498FC00FC526C /* DocumentsVC.xib */,
+				E0EF51862804991800FC526C /* RelationVC.swift */,
+				E0EF51872804991800FC526C /* RelationVC.xib */,
+				E0EF518A2804993300FC526C /* ProfileVC.swift */,
+				E0EF518B2804993300FC526C /* ProfileVC.xib */,
+				E0EF518E28049A9500FC526C /* RelationshipTableViewCell.swift */,
+				E0EF518F28049A9500FC526C /* RelationshipTableViewCell.xib */,
+				E0EF519228049AF300FC526C /* ProfileTableviewCell.swift */,
+				E0EF519328049AF300FC526C /* ProfileTableviewCell.xib */,
+				E018C6CD2806038300479145 /* EditProfileVC.swift */,
+				E018C6CE2806038300479145 /* EditProfileVC.xib */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,8 +313,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0EF517C280498CA00FC526C /* PersonalVC.xib in Resources */,
+				E0EF51892804991800FC526C /* RelationVC.xib in Resources */,
+				E018C6D42806053900479145 /* BasicHistoryVC.xib in Resources */,
 				E066994727F47CC6009EE3F0 /* Login.storyboard in Resources */,
+				E018C6DC280606D800479145 /* FinanceCell.xib in Resources */,
+				E0EF519128049A9500FC526C /* RelationshipTableViewCell.xib in Resources */,
 				E066993F27F47ADC009EE3F0 /* LaunchScreen.storyboard in Resources */,
+				E018C6D02806038300479145 /* EditProfileVC.xib in Resources */,
+				E0EF519528049AF300FC526C /* ProfileTableviewCell.xib in Resources */,
+				E0EF518D2804993300FC526C /* ProfileVC.xib in Resources */,
+				E0EF5184280498FC00FC526C /* DocumentsVC.xib in Resources */,
+				E018C6D8280606BA00479145 /* FinanceVC.xib in Resources */,
+				E0EF5180280498E900FC526C /* InsuranceVC.xib in Resources */,
+				E0EF5177280496A400FC526C /* CustomVC.xib in Resources */,
 				E066993C27F47ADC009EE3F0 /* Assets.xcassets in Resources */,
 				E072953627F853610083357A /* Home.storyboard in Resources */,
 			);
@@ -244,15 +381,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0EF518C2804993300FC526C /* ProfileVC.swift in Sources */,
 				E066993727F47ADA009EE3F0 /* ViewController.swift in Sources */,
+				E0EF517F280498E900FC526C /* InsuranceVC.swift in Sources */,
+				E0EF5176280496A400FC526C /* CustomVC.swift in Sources */,
+				E09AAB1F2804A68B006E20B6 /* MenuItemView.swift in Sources */,
+				E09AAB212804A68B006E20B6 /* CAPSPageMenu+UIConfiguration.swift in Sources */,
+				E09AAB222804A68B006E20B6 /* CAPSPageMenuConfiguration.swift in Sources */,
 				E072953227F84BDE0083357A /* OtpVC.swift in Sources */,
+				E09AAB1D2804A68B006E20B6 /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */,
+				E0EF51882804991800FC526C /* RelationVC.swift in Sources */,
+				E0EF5183280498FC00FC526C /* DocumentsVC.swift in Sources */,
 				E066993327F47ADA009EE3F0 /* AppDelegate.swift in Sources */,
 				E03DD67227F994E100BFB975 /* MainTabbarVC.swift in Sources */,
+				E018C6D7280606BA00479145 /* FinanceVC.swift in Sources */,
+				E0EF517B280498CA00FC526C /* PersonalVC.swift in Sources */,
+				E09AAB232804A68B006E20B6 /* CAPSPageMenu.swift in Sources */,
+				E018C6DB280606D800479145 /* FinanceCell.swift in Sources */,
+				E0EF519428049AF300FC526C /* ProfileTableviewCell.swift in Sources */,
 				E03DD67027F9787600BFB975 /* HomeVC.swift in Sources */,
 				E0C447F227F4959E00BE6E2D /* SingUpVC.swift in Sources */,
 				E0C447F027F494E300BE6E2D /* SingInVC.swift in Sources */,
+				E09AAB202804A68B006E20B6 /* CAPSPageMenu+UIScrollViewDelegate.swift in Sources */,
+				E018C6CF2806038300479145 /* EditProfileVC.swift in Sources */,
 				E072953027F820DC0083357A /* AppManager.swift in Sources */,
+				E018C6D32806053900479145 /* BasicHistoryVC.swift in Sources */,
 				E072953427F850570083357A /* ForgotPasswordVC.swift in Sources */,
+				E0EF519028049A9500FC526C /* RelationshipTableViewCell.swift in Sources */,
+				E09AAB1E2804A68B006E20B6 /* CAPSPageMenu+Options.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,8 +548,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HealthCard/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -410,6 +567,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = viral.HealthCard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -422,8 +580,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HealthCard/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -440,6 +599,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = viral.HealthCard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

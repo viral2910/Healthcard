@@ -24,7 +24,8 @@ class HomeViewController: UIViewController , XIBed, PushViewControllerDelegate {
     @IBOutlet weak var medicinesAndEssentialsOuterViewRef: UIView!
     @IBOutlet weak var medicinesAndEssentialsLblRef: UILabel!
     @IBOutlet weak var medicinesAndEssentialsImgViewRef: UIImageView!
-
+    
+    weak var pushDelegate: PushViewControllerDelegate?
     ///Looking for test
     @IBOutlet weak var lookingForTestHeaderLblRef: UILabel!
     @IBOutlet weak var lookingForTestCvRef: UICollectionView!

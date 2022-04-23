@@ -34,7 +34,7 @@ class SingInVC: UIViewController ,UITextFieldDelegate{
 
         UIApplication.shared.keyWindow?.rootViewController = navigationController
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let homeVC = ConsultationMainViewController.instantiate()        //Below's navigationController is useful if u want NavigationController
+        let homeVC = CustomTabBarViewController.instantiate()        //Below's navigationController is useful if u want NavigationController
         let navigationController = UINavigationController(rootViewController: homeVC)
         appDelegate.window!.rootViewController = navigationController
 

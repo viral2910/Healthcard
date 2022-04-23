@@ -19,7 +19,6 @@
 		E072953227F84BDE0083357A /* OtpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072953127F84BDE0083357A /* OtpVC.swift */; };
 		E072953427F850570083357A /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072953327F850570083357A /* ForgotPasswordVC.swift */; };
 		E072953627F853610083357A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E072953527F853610083357A /* Home.storyboard */; };
-		E0B9BF902811BD23001A58E8 /* Helpers.zip in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BEFF2811BD22001A58E8 /* Helpers.zip */; };
 		E0B9BF912811BD23001A58E8 /* XIBed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF012811BD22001A58E8 /* XIBed.swift */; };
 		E0B9BF922811BD23001A58E8 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF032811BD22001A58E8 /* Environment.swift */; };
 		E0B9BF932811BD23001A58E8 /* raleway_extralightitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF062811BD22001A58E8 /* raleway_extralightitalic.ttf */; };
@@ -146,6 +145,33 @@
 		E0B9C00C2811BD23001A58E8 /* CustomAlertPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF8F2811BD23001A58E8 /* CustomAlertPopupVC.swift */; };
 		E0C447F027F494E300BE6E2D /* SingInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C447EF27F494E300BE6E2D /* SingInVC.swift */; };
 		E0C447F227F4959E00BE6E2D /* SingUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C447F127F4959E00BE6E2D /* SingUpVC.swift */; };
+		E0CC64652813DF350011A165 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC64632813DF350011A165 /* CustomTabBarViewController.swift */; };
+		E0CC64662813DF350011A165 /* CustomTabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CC64642813DF350011A165 /* CustomTabBarViewController.xib */; };
+		E0CC6478281438380011A165 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC6468281438380011A165 /* ProfileVC.swift */; };
+		E0CC6479281438380011A165 /* PersonalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC6469281438380011A165 /* PersonalVC.swift */; };
+		E0CC647A281438380011A165 /* RelationshipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC646A281438380011A165 /* RelationshipTableViewCell.swift */; };
+		E0CC647B281438380011A165 /* DocumentsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CC646B281438380011A165 /* DocumentsVC.xib */; };
+		E0CC647C281438380011A165 /* ProfileTableviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC646C281438380011A165 /* ProfileTableviewCell.swift */; };
+		E0CC647D281438380011A165 /* PersonalVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CC646D281438380011A165 /* PersonalVC.xib */; };
+		E0CC647E281438380011A165 /* DocumentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC646E281438380011A165 /* DocumentsVC.swift */; };
+		E0CC647F281438380011A165 /* RelationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC646F281438380011A165 /* RelationVC.swift */; };
+		E0CC6480281438380011A165 /* EditProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CC6470281438380011A165 /* EditProfileVC.xib */; };
+		E0CC6481281438380011A165 /* RelationshipTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CC6471281438380011A165 /* RelationshipTableViewCell.xib */; };
+		E0CC6482281438380011A165 /* ProfileTableviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CC6472281438380011A165 /* ProfileTableviewCell.xib */; };
+		E0CC6483281438380011A165 /* InsuranceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC6473281438380011A165 /* InsuranceVC.swift */; };
+		E0CC6484281438380011A165 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC6474281438380011A165 /* EditProfileVC.swift */; };
+		E0CC6485281438380011A165 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CC6475281438380011A165 /* ProfileVC.xib */; };
+		E0CC6486281438380011A165 /* InsuranceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CC6476281438380011A165 /* InsuranceVC.xib */; };
+		E0CC6487281438380011A165 /* RelationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CC6477281438380011A165 /* RelationVC.xib */; };
+		E0CC6491281439070011A165 /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC648A281439070011A165 /* CAPSPageMenu+UIGestureRecognizerDelegate.swift */; };
+		E0CC6492281439070011A165 /* CAPSPageMenu+Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC648B281439070011A165 /* CAPSPageMenu+Options.swift */; };
+		E0CC6493281439070011A165 /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC648C281439070011A165 /* MenuItemView.swift */; };
+		E0CC6494281439070011A165 /* CAPSPageMenu+UIScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC648D281439070011A165 /* CAPSPageMenu+UIScrollViewDelegate.swift */; };
+		E0CC6495281439070011A165 /* CAPSPageMenu+UIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC648E281439070011A165 /* CAPSPageMenu+UIConfiguration.swift */; };
+		E0CC6496281439070011A165 /* CAPSPageMenuConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC648F281439070011A165 /* CAPSPageMenuConfiguration.swift */; };
+		E0CC6497281439070011A165 /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC6490281439070011A165 /* CAPSPageMenu.swift */; };
+		E0CC649A281442110011A165 /* OrderTrackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC6498281442110011A165 /* OrderTrackVC.swift */; };
+		E0CC649B281442110011A165 /* OrderTrackVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CC6499281442110011A165 /* OrderTrackVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -165,7 +191,6 @@
 		E072953127F84BDE0083357A /* OtpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpVC.swift; sourceTree = "<group>"; };
 		E072953327F850570083357A /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		E072953527F853610083357A /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		E0B9BEFF2811BD22001A58E8 /* Helpers.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Helpers.zip; sourceTree = "<group>"; };
 		E0B9BF012811BD22001A58E8 /* XIBed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XIBed.swift; sourceTree = "<group>"; };
 		E0B9BF032811BD22001A58E8 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		E0B9BF062811BD22001A58E8 /* raleway_extralightitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_extralightitalic.ttf; sourceTree = "<group>"; };
@@ -292,6 +317,33 @@
 		E0B9BF8F2811BD23001A58E8 /* CustomAlertPopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlertPopupVC.swift; sourceTree = "<group>"; };
 		E0C447EF27F494E300BE6E2D /* SingInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInVC.swift; sourceTree = "<group>"; };
 		E0C447F127F4959E00BE6E2D /* SingUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpVC.swift; sourceTree = "<group>"; };
+		E0CC64632813DF350011A165 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
+		E0CC64642813DF350011A165 /* CustomTabBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTabBarViewController.xib; sourceTree = "<group>"; };
+		E0CC6468281438380011A165 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		E0CC6469281438380011A165 /* PersonalVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalVC.swift; sourceTree = "<group>"; };
+		E0CC646A281438380011A165 /* RelationshipTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationshipTableViewCell.swift; sourceTree = "<group>"; };
+		E0CC646B281438380011A165 /* DocumentsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocumentsVC.xib; sourceTree = "<group>"; };
+		E0CC646C281438380011A165 /* ProfileTableviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableviewCell.swift; sourceTree = "<group>"; };
+		E0CC646D281438380011A165 /* PersonalVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalVC.xib; sourceTree = "<group>"; };
+		E0CC646E281438380011A165 /* DocumentsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentsVC.swift; sourceTree = "<group>"; };
+		E0CC646F281438380011A165 /* RelationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationVC.swift; sourceTree = "<group>"; };
+		E0CC6470281438380011A165 /* EditProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileVC.xib; sourceTree = "<group>"; };
+		E0CC6471281438380011A165 /* RelationshipTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RelationshipTableViewCell.xib; sourceTree = "<group>"; };
+		E0CC6472281438380011A165 /* ProfileTableviewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileTableviewCell.xib; sourceTree = "<group>"; };
+		E0CC6473281438380011A165 /* InsuranceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceVC.swift; sourceTree = "<group>"; };
+		E0CC6474281438380011A165 /* EditProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
+		E0CC6475281438380011A165 /* ProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
+		E0CC6476281438380011A165 /* InsuranceVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsuranceVC.xib; sourceTree = "<group>"; };
+		E0CC6477281438380011A165 /* RelationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RelationVC.xib; sourceTree = "<group>"; };
+		E0CC648A281439070011A165 /* CAPSPageMenu+UIGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAPSPageMenu+UIGestureRecognizerDelegate.swift"; sourceTree = "<group>"; };
+		E0CC648B281439070011A165 /* CAPSPageMenu+Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAPSPageMenu+Options.swift"; sourceTree = "<group>"; };
+		E0CC648C281439070011A165 /* MenuItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
+		E0CC648D281439070011A165 /* CAPSPageMenu+UIScrollViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAPSPageMenu+UIScrollViewDelegate.swift"; sourceTree = "<group>"; };
+		E0CC648E281439070011A165 /* CAPSPageMenu+UIConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAPSPageMenu+UIConfiguration.swift"; sourceTree = "<group>"; };
+		E0CC648F281439070011A165 /* CAPSPageMenuConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenuConfiguration.swift; sourceTree = "<group>"; };
+		E0CC6490281439070011A165 /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
+		E0CC6498281442110011A165 /* OrderTrackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTrackVC.swift; sourceTree = "<group>"; };
+		E0CC6499281442110011A165 /* OrderTrackVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTrackVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -357,14 +409,23 @@
 		E066993127F47ADA009EE3F0 /* HealthCard */ = {
 			isa = PBXGroup;
 			children = (
-				E0B9BEFE2811BD22001A58E8 /* Pratik Work */,
+				E0CC6467281438380011A165 /* Profile */,
+				E0CC64622813DF350011A165 /* CustomTabBar */,
+				E0B9BF002811BD22001A58E8 /* Supportings */,
+				E0B9BF462811BD22001A58E8 /* Extensions */,
+				E0B9BF512811BD22001A58E8 /* Screens */,
+				E0B9BF812811BD23001A58E8 /* Assets */,
+				E0B9BF832811BD23001A58E8 /* Helpers */,
 				E03DD66E27F9783900BFB975 /* LoginScreen */,
+				E0CC6488281439070011A165 /* Library */,
 				E072953727F8542F0083357A /* Home */,
 				E066993227F47ADA009EE3F0 /* AppDelegate.swift */,
 				E066993627F47ADA009EE3F0 /* ViewController.swift */,
 				E066993B27F47ADC009EE3F0 /* Assets.xcassets */,
 				E066993D27F47ADC009EE3F0 /* LaunchScreen.storyboard */,
 				E066994027F47ADC009EE3F0 /* Info.plist */,
+				E0CC6498281442110011A165 /* OrderTrackVC.swift */,
+				E0CC6499281442110011A165 /* OrderTrackVC.xib */,
 			);
 			path = HealthCard;
 			sourceTree = "<group>";
@@ -377,19 +438,6 @@
 				E03DD67127F994E100BFB975 /* MainTabbarVC.swift */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		E0B9BEFE2811BD22001A58E8 /* Pratik Work */ = {
-			isa = PBXGroup;
-			children = (
-				E0B9BEFF2811BD22001A58E8 /* Helpers.zip */,
-				E0B9BF002811BD22001A58E8 /* Supportings */,
-				E0B9BF462811BD22001A58E8 /* Extensions */,
-				E0B9BF512811BD22001A58E8 /* Screens */,
-				E0B9BF812811BD23001A58E8 /* Assets */,
-				E0B9BF832811BD23001A58E8 /* Helpers */,
-			);
-			path = "Pratik Work";
 			sourceTree = "<group>";
 		};
 		E0B9BF002811BD22001A58E8 /* Supportings */ = {
@@ -558,8 +606,8 @@
 			isa = PBXGroup;
 			children = (
 				E0B9BF652811BD22001A58E8 /* ConsultationMainViewController.swift */,
-				E0B9BF662811BD22001A58E8 /* Speciality */,
 				E0B9BF6D2811BD23001A58E8 /* ConsultationMainViewController.xib */,
+				E0B9BF662811BD22001A58E8 /* Speciality */,
 				E0B9BF6E2811BD23001A58E8 /* Symptoms */,
 				E0B9BF782811BD23001A58E8 /* Consultation Details */,
 			);
@@ -671,6 +719,60 @@
 			path = CustomAlertPopUp;
 			sourceTree = "<group>";
 		};
+		E0CC64622813DF350011A165 /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				E0CC64632813DF350011A165 /* CustomTabBarViewController.swift */,
+				E0CC64642813DF350011A165 /* CustomTabBarViewController.xib */,
+			);
+			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
+		E0CC6467281438380011A165 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E0CC6468281438380011A165 /* ProfileVC.swift */,
+				E0CC6469281438380011A165 /* PersonalVC.swift */,
+				E0CC646A281438380011A165 /* RelationshipTableViewCell.swift */,
+				E0CC646B281438380011A165 /* DocumentsVC.xib */,
+				E0CC646C281438380011A165 /* ProfileTableviewCell.swift */,
+				E0CC646D281438380011A165 /* PersonalVC.xib */,
+				E0CC646E281438380011A165 /* DocumentsVC.swift */,
+				E0CC646F281438380011A165 /* RelationVC.swift */,
+				E0CC6470281438380011A165 /* EditProfileVC.xib */,
+				E0CC6471281438380011A165 /* RelationshipTableViewCell.xib */,
+				E0CC6472281438380011A165 /* ProfileTableviewCell.xib */,
+				E0CC6473281438380011A165 /* InsuranceVC.swift */,
+				E0CC6474281438380011A165 /* EditProfileVC.swift */,
+				E0CC6475281438380011A165 /* ProfileVC.xib */,
+				E0CC6476281438380011A165 /* InsuranceVC.xib */,
+				E0CC6477281438380011A165 /* RelationVC.xib */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		E0CC6488281439070011A165 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				E0CC6489281439070011A165 /* CAPSMenuPAge */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		E0CC6489281439070011A165 /* CAPSMenuPAge */ = {
+			isa = PBXGroup;
+			children = (
+				E0CC648A281439070011A165 /* CAPSPageMenu+UIGestureRecognizerDelegate.swift */,
+				E0CC648B281439070011A165 /* CAPSPageMenu+Options.swift */,
+				E0CC648C281439070011A165 /* MenuItemView.swift */,
+				E0CC648D281439070011A165 /* CAPSPageMenu+UIScrollViewDelegate.swift */,
+				E0CC648E281439070011A165 /* CAPSPageMenu+UIConfiguration.swift */,
+				E0CC648F281439070011A165 /* CAPSPageMenuConfiguration.swift */,
+				E0CC6490281439070011A165 /* CAPSPageMenu.swift */,
+			);
+			path = CAPSMenuPAge;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -732,8 +834,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0B9BFCD2811BD23001A58E8 /* Poppins-Black.ttf in Resources */,
+				E0CC6486281438380011A165 /* InsuranceVC.xib in Resources */,
 				E0B9BFAC2811BD23001A58E8 /* raleway_extralight.ttf in Resources */,
 				E0B9BFFE2811BD23001A58E8 /* ConsultationDetailsViewController.xib in Resources */,
+				E0CC64662813DF350011A165 /* CustomTabBarViewController.xib in Resources */,
 				E0B9BFBB2811BD23001A58E8 /* lato_light.ttf in Resources */,
 				E0B9BF962811BD23001A58E8 /* lato_semibold_italic.ttf in Resources */,
 				E0B9BFBA2811BD23001A58E8 /* lato_medium.ttf in Resources */,
@@ -741,6 +845,7 @@
 				E0B9BFA82811BD23001A58E8 /* lato_hairline_italic.ttf in Resources */,
 				E0B9BFA12811BD23001A58E8 /* lato_heavy_italic.ttf in Resources */,
 				E0B9BFA42811BD23001A58E8 /* raleway_light.ttf in Resources */,
+				E0CC6482281438380011A165 /* ProfileTableviewCell.xib in Resources */,
 				E0B9BFC12811BD23001A58E8 /* Poppins-ExtraLightItalic.ttf in Resources */,
 				E0B9BFB42811BD23001A58E8 /* lato_hairline.ttf in Resources */,
 				E0B9BFAD2811BD23001A58E8 /* raleway_extrabolditalic.ttf in Resources */,
@@ -754,7 +859,7 @@
 				E0B9BFE72811BD23001A58E8 /* BlogsCollectionViewCell.xib in Resources */,
 				E0B9BFA32811BD23001A58E8 /* poppins_regular.ttf in Resources */,
 				E0B9BFC52811BD23001A58E8 /* Poppins-SemiBoldItalic.ttf in Resources */,
-				E0B9BF902811BD23001A58E8 /* Helpers.zip in Resources */,
+				E0CC6485281438380011A165 /* ProfileVC.xib in Resources */,
 				E0B9BFB82811BD23001A58E8 /* lato_bold.ttf in Resources */,
 				E0B9BF992811BD23001A58E8 /* raleway_semibolditalic.ttf in Resources */,
 				E0B9BF942811BD23001A58E8 /* lato_black.ttf in Resources */,
@@ -773,13 +878,17 @@
 				E0B9BFC92811BD23001A58E8 /* OFL.txt in Resources */,
 				E0B9BFA92811BD23001A58E8 /* raleway_extrabold.ttf in Resources */,
 				E066994727F47CC6009EE3F0 /* Login.storyboard in Resources */,
+				E0CC6481281438380011A165 /* RelationshipTableViewCell.xib in Resources */,
+				E0CC6487281438380011A165 /* RelationVC.xib in Resources */,
 				E0B9BFA52811BD23001A58E8 /* times_new_roman.ttf in Resources */,
 				E0B9BFAA2811BD23001A58E8 /* poppins_thin.ttf in Resources */,
 				E066993F27F47ADC009EE3F0 /* LaunchScreen.storyboard in Resources */,
+				E0CC647B281438380011A165 /* DocumentsVC.xib in Resources */,
 				E0B9BFCC2811BD23001A58E8 /* Poppins-Bold.ttf in Resources */,
 				E0B9BFE92811BD23001A58E8 /* SliderCollectionViewCell.xib in Resources */,
 				E0B9BFC22811BD23001A58E8 /* Poppins-BoldItalic.ttf in Resources */,
 				E066993C27F47ADC009EE3F0 /* Assets.xcassets in Resources */,
+				E0CC649B281442110011A165 /* OrderTrackVC.xib in Resources */,
 				E0B9BFB52811BD23001A58E8 /* lato_black_italic.ttf in Resources */,
 				E0B9BFB32811BD23001A58E8 /* raleway_bolditalic.ttf in Resources */,
 				E0B9BFD12811BD23001A58E8 /* Poppins-MediumItalic.ttf in Resources */,
@@ -787,6 +896,7 @@
 				E0B9BFC32811BD23001A58E8 /* Poppins-Light.ttf in Resources */,
 				E0B9BFF22811BD23001A58E8 /* ConsultationMainViewController.xib in Resources */,
 				E0B9BFB72811BD23001A58E8 /* lato_regular.ttf in Resources */,
+				E0CC647D281438380011A165 /* PersonalVC.xib in Resources */,
 				E0B9BF9A2811BD23001A58E8 /* raleway_blackitalic.ttf in Resources */,
 				E0B9BFA22811BD23001A58E8 /* raleway_mediumitalic.ttf in Resources */,
 				E0B9BFEE2811BD23001A58E8 /* ConsultSpecialityTableViewCell.xib in Resources */,
@@ -811,6 +921,7 @@
 				E0B9BFDF2811BD23001A58E8 /* HomeViewController.xib in Resources */,
 				E0B9BF932811BD23001A58E8 /* raleway_extralightitalic.ttf in Resources */,
 				E072953627F853610083357A /* Home.storyboard in Resources */,
+				E0CC6480281438380011A165 /* EditProfileVC.xib in Resources */,
 				E0B9BFC82811BD23001A58E8 /* Poppins-BlackItalic.ttf in Resources */,
 				E0B9BFA72811BD23001A58E8 /* poppins_semi_bold.ttf in Resources */,
 				E0B9BFB92811BD23001A58E8 /* raleway_black.ttf in Resources */,
@@ -873,6 +984,9 @@
 				E066993727F47ADA009EE3F0 /* ViewController.swift in Sources */,
 				E0B9C0042811BD23001A58E8 /* BaseViewController.swift in Sources */,
 				E072953227F84BDE0083357A /* OtpVC.swift in Sources */,
+				E0CC6492281439070011A165 /* CAPSPageMenu+Options.swift in Sources */,
+				E0CC647E281438380011A165 /* DocumentsVC.swift in Sources */,
+				E0CC649A281442110011A165 /* OrderTrackVC.swift in Sources */,
 				E0B9C0032811BD23001A58E8 /* APIV2.swift in Sources */,
 				E0B9BFF92811BD23001A58E8 /* ConsultSymptomsTableViewManager.swift in Sources */,
 				E0B9C0052811BD23001A58E8 /* NetWorker.swift in Sources */,
@@ -888,17 +1002,23 @@
 				E0B9BFD22811BD23001A58E8 /* UIView.swift in Sources */,
 				E0B9BFD92811BD23001A58E8 /* UILabel.swift in Sources */,
 				E03DD67027F9787600BFB975 /* HomeVC.swift in Sources */,
+				E0CC6478281438380011A165 /* ProfileVC.swift in Sources */,
 				E0C447F227F4959E00BE6E2D /* SingUpVC.swift in Sources */,
+				E0CC6483281438380011A165 /* InsuranceVC.swift in Sources */,
 				E0B9BFEF2811BD23001A58E8 /* ConsultSpecialityTableViewManager.swift in Sources */,
+				E0CC647C281438380011A165 /* ProfileTableviewCell.swift in Sources */,
 				E0B9BFDB2811BD23001A58E8 /* UIAlertController.swift in Sources */,
+				E0CC6479281438380011A165 /* PersonalVC.swift in Sources */,
 				E0B9C0072811BD23001A58E8 /* GenerateToken.swift in Sources */,
 				E0B9BFFD2811BD23001A58E8 /* ConsultDetailsTavleViewManager.swift in Sources */,
 				E0B9BFE42811BD23001A58E8 /* CategoryCollectionViewCell.swift in Sources */,
 				E0B9BFF42811BD23001A58E8 /* SymptomsInsideTableViewCell.swift in Sources */,
+				E0CC6491281439070011A165 /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */,
 				E0B9BFEA2811BD23001A58E8 /* DashboardCollectionViewCell.swift in Sources */,
 				E0B9BFEB2811BD23001A58E8 /* BlogsCollectionViewManager.swift in Sources */,
 				E0B9BFDE2811BD23001A58E8 /* SliderCollectionViewManager.swift in Sources */,
 				E0B9BFD42811BD23001A58E8 /* Data.swift in Sources */,
+				E0CC6495281439070011A165 /* CAPSPageMenu+UIConfiguration.swift in Sources */,
 				E0B9C0082811BD23001A58E8 /* PannableViewController.swift in Sources */,
 				E0B9BFDC2811BD23001A58E8 /* CategoryCollectionViewManager.swift in Sources */,
 				E0B9BF912811BD23001A58E8 /* XIBed.swift in Sources */,
@@ -910,17 +1030,25 @@
 				E0B9BFD32811BD23001A58E8 /* CACornerMask.swift in Sources */,
 				E0C447F027F494E300BE6E2D /* SingInVC.swift in Sources */,
 				E0B9BFF52811BD23001A58E8 /* ConsultSymptomsTableViewCell.swift in Sources */,
+				E0CC647F281438380011A165 /* RelationVC.swift in Sources */,
 				E0B9BFDD2811BD23001A58E8 /* DashboardCollectionViewManager.swift in Sources */,
 				E0B9BFE22811BD23001A58E8 /* BlogsCollectionViewCell.swift in Sources */,
 				E0B9BFFA2811BD23001A58E8 /* ConsultSymptomsViewController.swift in Sources */,
 				E0B9C0062811BD23001A58E8 /* PushDelegate.swift in Sources */,
+				E0CC6493281439070011A165 /* MenuItemView.swift in Sources */,
 				E072953027F820DC0083357A /* AppManager.swift in Sources */,
 				E0B9BFD72811BD23001A58E8 /* UITextField.swift in Sources */,
 				E072953427F850570083357A /* ForgotPasswordVC.swift in Sources */,
 				E0B9BFDA2811BD23001A58E8 /* UserDefault+Constant.swift in Sources */,
+				E0CC647A281438380011A165 /* RelationshipTableViewCell.swift in Sources */,
+				E0CC64652813DF350011A165 /* CustomTabBarViewController.swift in Sources */,
+				E0CC6497281439070011A165 /* CAPSPageMenu.swift in Sources */,
+				E0CC6494281439070011A165 /* CAPSPageMenu+UIScrollViewDelegate.swift in Sources */,
 				E0B9BFE32811BD23001A58E8 /* LookForTestCollectionViewCell.swift in Sources */,
 				E0B9BFD82811BD23001A58E8 /* UIButton.swift in Sources */,
+				E0CC6484281438380011A165 /* EditProfileVC.swift in Sources */,
 				E0B9BFFB2811BD23001A58E8 /* SelectedIssueCollectionViewCell.swift in Sources */,
+				E0CC6496281439070011A165 /* CAPSPageMenuConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

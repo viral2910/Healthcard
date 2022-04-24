@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SingInVC: UIViewController ,UITextFieldDelegate{
+class SingInVC: UIViewController ,UITextFieldDelegate{// , XIBed, PushViewControllerDelegate {
     
     @IBOutlet weak var mobileTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -21,24 +21,11 @@ class SingInVC: UIViewController ,UITextFieldDelegate{
             AppManager.shared.showAlert(title: "Error", msg: "please Enter Mobile Number", vc: self)
             return;
         }
-        guard let mobile =  passwordTextField.text,mobile != "" else {
+        guard let password =  passwordTextField.text,password != "" else {
             AppManager.shared.showAlert(title: "Error", msg: "please Enter Password", vc: self)
             return;
         }
-        
-        
-        loginApiCall()
-//        let mainStoryBoard = UIStoryboard(name: "Home", bundle: nil)
-//        let redViewController = ConsultationMainViewController.instantiate()//mainStoryBoard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
-//        let navigationController = UINavigationController(rootViewController: redViewController)
-
-        UIApplication.shared.keyWindow?.rootViewController = navigationController
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let homeVC = CustomTabBarViewController.instantiate()        //Below's navigationController is useful if u want NavigationController
-        let navigationController = UINavigationController(rootViewController: homeVC)
-        appDelegate.window!.rootViewController = navigationController
-
-        
+        loginApiCall(mobile: mobile, password: password)
     }
     @IBAction func forgotpassswordAction(_ sender: Any) {
         guard let mobile =  mobileTextField.text,mobile != "" else {
@@ -72,12 +59,26 @@ class SingInVC: UIViewController ,UITextFieldDelegate{
         return true
     }
     
-    func loginApiCall(){
+    func loginApiCall(mobile:String , password: String){
         struct demo : Codable{
             
         }
-        NetWorker.shared.callAPIService(type: APIV2.PatientLogin(mobileNo: "8369939171", password: "123", firebaseToken: "cR98J4yMTt6b2f8sd2n-35:APA91bGLVv-1o4hiowbK3cHnCS_Z48x4bt6_pekB0VpVvB1syGRjX95bHzqIpUe6MNiENw93x3gFNntrFrKvOcXLXQgR_7PJu-P0sAgaKE0F127IAZT87FGNawU2Xt4ZMpwIqDXAR-fA")) { [weak self] (data:Welcome?, error) in
-            print(data?.soapEnvelope.soapBody.patientLoginResponse)
+        NetWorker.shared.callAPIService(type: APIV2.PatientLogin(mobileNo: mobile, password: password, firebaseToken: "")) { (data:Welcome?, error) in
+            let message = data?.soapEnvelope.soapBody.patientLoginResponse.patientLoginResult.user.message ?? ""
+            if message.lowercased().contains("sucess") {
+                let patientid = data?.soapEnvelope.soapBody.patientLoginResponse.patientLoginResult.user.patientID
+                UserDefaults.standard.set(true, forKey: "isLogin")
+                UserDefaults.standard.set(patientid, forKey: "patientID")
+                UIApplication.shared.keyWindow?.rootViewController = self.navigationController
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let homeVC = CustomTabBarViewController.instantiate()
+                let navigationController = UINavigationController(rootViewController: homeVC)
+                appDelegate.window!.rootViewController = navigationController
+            } else {
+                UserDefaults.standard.set(false, forKey: "isLogin")
+                UserDefaults.standard.set(0, forKey: "patientID")
+                AppManager.shared.showAlert(title: "Error", msg: message, vc: self)
+            }
         }
         
     }

@@ -46,15 +46,15 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UfX-Kv-vY7">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="9930050086" borderStyle="roundedRect" placeholder="Mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UfX-Kv-vY7">
                                                 <rect key="frame" x="10" y="327" width="394" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c3X-hu-HPZ">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c3X-hu-HPZ">
                                                 <rect key="frame" x="10" y="386" width="394" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cp1-PR-hQS">
                                                 <rect key="frame" x="264" y="430" width="140" height="31"/>
@@ -331,6 +331,7 @@
                     <connections>
                         <outlet property="confirmpasswordTextField" destination="ZHc-aL-6z8" id="c7A-RK-ASR"/>
                         <outlet property="firstnameTextField" destination="MZ3-Hc-BGQ" id="oSe-TY-1Cy"/>
+                        <outlet property="genderSegment" destination="ONh-kS-fDh" id="lve-YJ-w9D"/>
                         <outlet property="lastnameTextField" destination="DG7-bT-zsn" id="xnG-On-c9k"/>
                         <outlet property="mobilenumberTextField" destination="768-x3-6Ji" id="VHN-OR-Vp8"/>
                         <outlet property="passwordTextField" destination="SlZ-L8-hp9" id="HFm-8B-cC2"/>

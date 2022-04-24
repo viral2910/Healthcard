@@ -21,8 +21,126 @@ class OtpVC: UIViewController {
     @IBAction func sendAction(_ sender: Any) {
     }
     @IBAction func loginAction(_ sender: Any) {
+        guard let mobile =  mobilenumberTextfield.text,mobile != "" else {
+            AppManager.shared.showAlert(title: "Error", msg: "please Enter Mobile Number", vc: self)
+            return;
+        }
+        guard let otp =  mobilenumberTextfield.text,otp != "" else {
+            AppManager.shared.showAlert(title: "Error", msg: "please Enter OTP", vc: self)
+            return;
+        }
+        OTPAuthenticationApiCall(mobile: mobile, otp: Int(otp) ?? 0000)
     }
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func OTPAuthenticationApiCall(mobile:String , otp: Int){
+        struct demo : Codable{
+            
+        }
+        NetWorker.shared.callAPIService(type: APIV2.OTPAuthentication(mobileNo: mobile, subject: "Patient Register", otpNo: otp, firebaseToken: "")) { (data:WelcomeOtp?, error) in
+            let message = data?.soapEnvelope.soapBody.otpAuthenticationResponse.otpAuthenticationResult.user.message ?? ""
+            if message.lowercased().contains("sucess") {
+                let patientid = data?.soapEnvelope.soapBody.otpAuthenticationResponse.otpAuthenticationResult.user.patientID
+                UserDefaults.standard.set(true, forKey: "isLogin")
+                UserDefaults.standard.set(patientid, forKey: "patientID")
+                UIApplication.shared.keyWindow?.rootViewController = self.navigationController
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let homeVC = CustomTabBarViewController.instantiate()
+                let navigationController = UINavigationController(rootViewController: homeVC)
+                appDelegate.window!.rootViewController = navigationController
+            } else {
+                UserDefaults.standard.set(false, forKey: "isLogin")
+                UserDefaults.standard.set(0, forKey: "patientID")
+                AppManager.shared.showAlert(title: "Error", msg: message, vc: self)
+            }
+        }
+        
+    }
+}
+
+struct WelcomeOtp: Codable {
+    let soapEnvelope: SoapEnvelopeOtp
+
+    enum CodingKeys: String, CodingKey {
+        case soapEnvelope = "soap:Envelope"
+    }
+}
+
+// MARK: - SoapEnvelope
+struct SoapEnvelopeOtp: Codable {
+    let xmlnsSoap, xmlnsXsi, xmlnsXSD: String
+    let soapBody: SoapBodyOtp
+
+    enum CodingKeys: String, CodingKey {
+        case xmlnsSoap = "-xmlns:soap"
+        case xmlnsXsi = "-xmlns:xsi"
+        case xmlnsXSD = "-xmlns:xsd"
+        case soapBody = "soap:Body"
+    }
+}
+
+// MARK: - SoapBody
+struct SoapBodyOtp: Codable {
+    let otpAuthenticationResponse: OTPAuthenticationResponse
+
+    enum CodingKeys: String, CodingKey {
+        case otpAuthenticationResponse = "OTPAuthenticationResponse"
+    }
+}
+
+// MARK: - OTPAuthenticationResponse
+struct OTPAuthenticationResponse: Codable {
+    let xmlns: String
+    let otpAuthenticationResult: OTPAuthenticationResult
+
+    enum CodingKeys: String, CodingKey {
+        case xmlns = "-xmlns"
+        case otpAuthenticationResult = "OTPAuthenticationResult"
+    }
+}
+
+// MARK: - OTPAuthenticationResult
+struct OTPAuthenticationResult: Codable {
+    let user: UserOtp
+
+    enum CodingKeys: String, CodingKey {
+        case user = "User"
+    }
+}
+
+// MARK: - User
+struct UserOtp: Codable {
+    let message, status, patientID, gender: String
+    let firstName: String
+    let middleName: DeliveryBoy
+    let lastName: String
+    let deliveryBoyID, deliveryBoy, labMasterID, labConcernPerson: DeliveryBoy
+    let pharmacyID, pharmacyCoordinator: DeliveryBoy
+
+    enum CodingKeys: String, CodingKey {
+        case message = "Message"
+        case status = "Status"
+        case patientID = "PatientId"
+        case gender = "Gender"
+        case firstName = "FirstName"
+        case middleName = "MiddleName"
+        case lastName = "LastName"
+        case deliveryBoyID = "DeliveryBoyId"
+        case deliveryBoy = "DeliveryBoy"
+        case labMasterID = "LabMasterId"
+        case labConcernPerson = "LabConcernPerson"
+        case pharmacyID = "PharmacyId"
+        case pharmacyCoordinator = "PharmacyCoordinator"
+    }
+}
+
+// MARK: - DeliveryBoy
+struct DeliveryBoy: Codable {
+    let selfClosing: String
+
+    enum CodingKeys: String, CodingKey {
+        case selfClosing = "-self-closing"
     }
 }

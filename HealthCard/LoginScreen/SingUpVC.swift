@@ -16,9 +16,9 @@ class SingUpVC: UIViewController, UITextFieldDelegate,UIPickerViewDataSource, UI
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmpasswordTextField: UITextField!
     @IBOutlet weak var pincodeTextField: UITextField!
+    @IBOutlet weak var genderSegment: UISegmentedControl!
     
-    
-    var titlelist = ["1", "2", "3"]
+    var titlelist = [CommonSC]()
     var selectedtitle = ""
     
     var titlePicker: UIPickerView?
@@ -34,6 +34,9 @@ class SingUpVC: UIViewController, UITextFieldDelegate,UIPickerViewDataSource, UI
         confirmpasswordTextField.delegate = self
         pincodeTextField.delegate = self
     }
+    override func viewWillAppear(_ animated: Bool) {
+        GettitleApiCall()
+    }
     @IBAction func registerAction(_ sender: Any) {
         guard let fname =  firstnameTextField.text,fname != "" else {
             AppManager.shared.showAlert(title: "Error", msg: "Please Enter First Name", vc: self)
@@ -47,7 +50,7 @@ class SingUpVC: UIViewController, UITextFieldDelegate,UIPickerViewDataSource, UI
             AppManager.shared.showAlert(title: "Error", msg: "Please Enter Mobile Number", vc: self)
             return;
         }
-        guard let password =  confirmpasswordTextField.text,password != "" else {
+        guard let password =  passwordTextField.text,password != "" else {
             AppManager.shared.showAlert(title: "Error", msg: "Please Enter password", vc: self)
             return;
         }
@@ -59,6 +62,9 @@ class SingUpVC: UIViewController, UITextFieldDelegate,UIPickerViewDataSource, UI
             AppManager.shared.showAlert(title: "Error", msg: "Please Enter Pincode", vc: self)
             return;
         }
+        let index = titlelist.filter{ $0.value == selectedtitle }
+        let valueindex = index.first?.id ?? ""
+        signUpApiCall(titleId: Int(valueindex) ?? 0 , firstName: fname, lastName: lname, mobileNo: mobile, password: password, gender: genderSegment.titleForSegment(at: genderSegment.selectedSegmentIndex) ?? "Male", pincode: pincode)
     }
     @IBAction func signinAction(_ sender: Any) {
         let singin = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "SingInVC") as! SingInVC
@@ -94,10 +100,34 @@ class SingUpVC: UIViewController, UITextFieldDelegate,UIPickerViewDataSource, UI
     @objc func DoneBtn(){
         self.view.endEditing(true)
         if selectedtitle == "" {
-            titleTextField.text = titlelist[0]
+            titleTextField.text = titlelist[0].value
         } else {
         titleTextField.text = selectedtitle
         }
+    }
+    
+    func signUpApiCall(titleId:Int,firstName:String , lastName: String,mobileNo:String , password: String,gender:String , pincode: String){
+        struct demo : Codable{
+            
+        }
+        NetWorker.shared.callAPIService(type: APIV2.patientRegistration(titleId: titleId, firstName: firstName, lastName: lastName, mobileNo: mobileNo, password: password, gender: gender, pincode: pincode)) { (data:Welcomevalue?, error) in
+            let message = data?.soapEnvelope.soapBody.savePatientResponse.savePatientResult.patientRegSC.message ?? ""
+            if message.lowercased().contains("sucess") {
+                let patientid = data?.soapEnvelope.soapBody.savePatientResponse.savePatientResult.patientRegSC.patientID
+                UserDefaults.standard.set(true, forKey: "isLogin")
+                UserDefaults.standard.set(patientid, forKey: "patientID")
+                UIApplication.shared.keyWindow?.rootViewController = self.navigationController
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let homeVC = CustomTabBarViewController.instantiate()
+                let navigationController = UINavigationController(rootViewController: homeVC)
+                appDelegate.window!.rootViewController = navigationController
+            } else {
+                UserDefaults.standard.set(false, forKey: "isLogin")
+                UserDefaults.standard.set(0, forKey: "patientID")
+                AppManager.shared.showAlert(title: "Error", msg: message, vc: self)
+            }
+        }
+        
     }
     
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{
@@ -109,11 +139,11 @@ class SingUpVC: UIViewController, UITextFieldDelegate,UIPickerViewDataSource, UI
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return titlelist[row]
+        return titlelist[row].value
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedtitle = titlelist[row]
+        selectedtitle = titlelist[row].value
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -121,4 +151,140 @@ class SingUpVC: UIViewController, UITextFieldDelegate,UIPickerViewDataSource, UI
         textField.resignFirstResponder()
         return true
     }
+    
+    func GettitleApiCall(){
+        struct demo : Codable{
+            
+        }
+        NetWorker.shared.callAPIService(type: APIV2.TitleGetByTitleType(titleType: "Title")) { (data:WelcomeTitle?, error) in
+            let CommonSCList = data?.soapEnvelope.soapBody.titleGetByTitleTypeResponse.titleGetByTitleTypeResult.commonSC
+            self.titlelist.removeAll()
+            for item in CommonSCList! {
+                self.titlelist.append(CommonSC(id: item.id, value: item.value))
+            }
+            self.titlePicker?.reloadAllComponents()
+        }
+        
+    }
 }
+struct Welcomevalue: Codable {
+    let soapEnvelope: SoapEnvelopevalue
+
+    enum CodingKeys: String, CodingKey {
+        case soapEnvelope = "soap:Envelope"
+    }
+}
+
+// MARK: - SoapEnvelope
+struct SoapEnvelopevalue: Codable {
+    let xmlnsXsi, xmlnsXSD, xmlnsSoap: String
+    let soapBody: SoapBodyvalue
+
+    enum CodingKeys: String, CodingKey {
+        case xmlnsXsi = "_xmlns:xsi"
+        case xmlnsXSD = "_xmlns:xsd"
+        case xmlnsSoap = "_xmlns:soap"
+        case soapBody = "soap:Body"
+    }
+}
+
+// MARK: - SoapBody
+struct SoapBodyvalue: Codable {
+    let savePatientResponse: SavePatientResponse
+
+    enum CodingKeys: String, CodingKey {
+        case savePatientResponse = "SavePatientResponse"
+    }
+}
+
+// MARK: - SavePatientResponse
+struct SavePatientResponse: Codable {
+    let xmlns: String
+    let savePatientResult: SavePatientResult
+
+    enum CodingKeys: String, CodingKey {
+        case xmlns = "_xmlns"
+        case savePatientResult = "SavePatientResult"
+    }
+}
+
+// MARK: - SavePatientResult
+struct SavePatientResult: Codable {
+    let patientRegSC: PatientRegSC
+
+    enum CodingKeys: String, CodingKey {
+        case patientRegSC = "PatientRegSC"
+    }
+}
+
+
+// MARK: - PatientRegSC
+struct PatientRegSC: Codable {
+    let patientID, status, message: String
+
+    enum CodingKeys: String, CodingKey {
+        case patientID = "PatientId"
+        case status = "Status"
+        case message = "Message"
+    }
+}
+struct WelcomeTitle: Codable {
+    let soapEnvelope: SoapEnvelopeTitle
+
+    enum CodingKeys: String, CodingKey {
+        case soapEnvelope = "soap:Envelope"
+    }
+}
+
+// MARK: - SoapEnvelope
+struct SoapEnvelopeTitle: Codable {
+    let xmlnsXSD, xmlnsXsi, xmlnsSoap: String
+    let soapBody: SoapBodyTitle
+
+    enum CodingKeys: String, CodingKey {
+        case xmlnsXSD = "_xmlns:xsd"
+        case xmlnsXsi = "_xmlns:xsi"
+        case xmlnsSoap = "_xmlns:soap"
+        case soapBody = "soap:Body"
+    }
+}
+
+// MARK: - SoapBody
+struct SoapBodyTitle: Codable {
+    let titleGetByTitleTypeResponse: TitleGetByTitleTypeResponse
+
+    enum CodingKeys: String, CodingKey {
+        case titleGetByTitleTypeResponse = "TitleGetByTitleTypeResponse"
+    }
+}
+
+// MARK: - TitleGetByTitleTypeResponse
+struct TitleGetByTitleTypeResponse: Codable {
+    let xmlns: String
+    let titleGetByTitleTypeResult: TitleGetByTitleTypeResult
+
+    enum CodingKeys: String, CodingKey {
+        case xmlns = "_xmlns"
+        case titleGetByTitleTypeResult = "TitleGetByTitleTypeResult"
+    }
+}
+
+// MARK: - TitleGetByTitleTypeResult
+struct TitleGetByTitleTypeResult: Codable {
+    let commonSC: [CommonSC]
+
+    enum CodingKeys: String, CodingKey {
+        case commonSC = "CommonSC"
+    }
+}
+
+// MARK: - CommonSC
+struct CommonSC: Codable {
+    let id, value: String
+
+    enum CodingKeys: String, CodingKey {
+        case id = "Id"
+        case value = "Value"
+    }
+}
+

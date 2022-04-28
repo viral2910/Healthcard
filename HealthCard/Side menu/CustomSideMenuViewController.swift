@@ -17,6 +17,9 @@ class CustomSideMenuViewController: UIViewController, XIBed , PushViewController
 
     private lazy var sideMenuTableViewManager = { SideMenuTableViewManager(tableVIew: tvRef, tableViewheight: tvHeightRef) }()
     
+    
+    
+    
     var titleArray = ["My Profile","Basic History","My Prescription","Finance","My Orders","My Addresses","My Consultations","My Cart"]
     var imageArray = ["Icon yellowInfo","Icon yellowHigh-five","Icon yellowLoupe","Icon yellowCalendar","Icon yellowCalendar","Icon yellowLoupe","",""]
 

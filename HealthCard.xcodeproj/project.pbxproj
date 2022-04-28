@@ -19,6 +19,12 @@
 		E072953227F84BDE0083357A /* OtpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072953127F84BDE0083357A /* OtpVC.swift */; };
 		E072953427F850570083357A /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072953327F850570083357A /* ForgotPasswordVC.swift */; };
 		E072953627F853610083357A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E072953527F853610083357A /* Home.storyboard */; };
+		E07745C32817FB5B00C9738B /* BookLabTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07745C12817FB5B00C9738B /* BookLabTest.swift */; };
+		E07745C42817FB5B00C9738B /* BookLabTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = E07745C22817FB5B00C9738B /* BookLabTest.xib */; };
+		E07745C72817FC0100C9738B /* BookLabTestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07745C52817FC0100C9738B /* BookLabTestCell.swift */; };
+		E07745C82817FC0100C9738B /* BookLabTestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E07745C62817FC0100C9738B /* BookLabTestCell.xib */; };
+		E07745CB2817FE2000C9738B /* LabTestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07745C92817FE2000C9738B /* LabTestCell.swift */; };
+		E07745CC2817FE2000C9738B /* LabTestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E07745CA2817FE2000C9738B /* LabTestCell.xib */; };
 		E0B9BF912811BD23001A58E8 /* XIBed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF012811BD22001A58E8 /* XIBed.swift */; };
 		E0B9BF922811BD23001A58E8 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF032811BD22001A58E8 /* Environment.swift */; };
 		E0B9BF932811BD23001A58E8 /* raleway_extralightitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF062811BD22001A58E8 /* raleway_extralightitalic.ttf */; };
@@ -172,6 +178,11 @@
 		E0CC6497281439070011A165 /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC6490281439070011A165 /* CAPSPageMenu.swift */; };
 		E0CC649A281442110011A165 /* OrderTrackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC6498281442110011A165 /* OrderTrackVC.swift */; };
 		E0CC649B281442110011A165 /* OrderTrackVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CC6499281442110011A165 /* OrderTrackVC.xib */; };
+		E0CC64A328156CD60011A165 /* SideMenuTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC649D28156CD60011A165 /* SideMenuTableViewManager.swift */; };
+		E0CC64A428156CD60011A165 /* CustomSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC649E28156CD60011A165 /* CustomSideMenuViewController.swift */; };
+		E0CC64A528156CD60011A165 /* CustomSideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC64A028156CD60011A165 /* CustomSideMenuTableViewCell.swift */; };
+		E0CC64A628156CD60011A165 /* CustomSideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CC64A128156CD60011A165 /* CustomSideMenuTableViewCell.xib */; };
+		E0CC64A728156CD60011A165 /* CustomSideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CC64A228156CD60011A165 /* CustomSideMenuViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -191,6 +202,12 @@
 		E072953127F84BDE0083357A /* OtpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpVC.swift; sourceTree = "<group>"; };
 		E072953327F850570083357A /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		E072953527F853610083357A /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		E07745C12817FB5B00C9738B /* BookLabTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookLabTest.swift; sourceTree = "<group>"; };
+		E07745C22817FB5B00C9738B /* BookLabTest.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookLabTest.xib; sourceTree = "<group>"; };
+		E07745C52817FC0100C9738B /* BookLabTestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookLabTestCell.swift; sourceTree = "<group>"; };
+		E07745C62817FC0100C9738B /* BookLabTestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookLabTestCell.xib; sourceTree = "<group>"; };
+		E07745C92817FE2000C9738B /* LabTestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabTestCell.swift; sourceTree = "<group>"; };
+		E07745CA2817FE2000C9738B /* LabTestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabTestCell.xib; sourceTree = "<group>"; };
 		E0B9BF012811BD22001A58E8 /* XIBed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XIBed.swift; sourceTree = "<group>"; };
 		E0B9BF032811BD22001A58E8 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		E0B9BF062811BD22001A58E8 /* raleway_extralightitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_extralightitalic.ttf; sourceTree = "<group>"; };
@@ -344,6 +361,11 @@
 		E0CC6490281439070011A165 /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
 		E0CC6498281442110011A165 /* OrderTrackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTrackVC.swift; sourceTree = "<group>"; };
 		E0CC6499281442110011A165 /* OrderTrackVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTrackVC.xib; sourceTree = "<group>"; };
+		E0CC649D28156CD60011A165 /* SideMenuTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewManager.swift; sourceTree = "<group>"; };
+		E0CC649E28156CD60011A165 /* CustomSideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSideMenuViewController.swift; sourceTree = "<group>"; };
+		E0CC64A028156CD60011A165 /* CustomSideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		E0CC64A128156CD60011A165 /* CustomSideMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomSideMenuTableViewCell.xib; sourceTree = "<group>"; };
+		E0CC64A228156CD60011A165 /* CustomSideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomSideMenuViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -409,6 +431,7 @@
 		E066993127F47ADA009EE3F0 /* HealthCard */ = {
 			isa = PBXGroup;
 			children = (
+				E0CC649C28156CD60011A165 /* Side menu */,
 				E0CC6467281438380011A165 /* Profile */,
 				E0CC64622813DF350011A165 /* CustomTabBar */,
 				E0B9BF002811BD22001A58E8 /* Supportings */,
@@ -579,6 +602,12 @@
 				E0B9BF552811BD22001A58E8 /* SliderCollectionViewManager.swift */,
 				E0B9BF562811BD22001A58E8 /* HomeViewController.xib */,
 				E0B9BF572811BD22001A58E8 /* HomeViewController.swift */,
+				E07745C12817FB5B00C9738B /* BookLabTest.swift */,
+				E07745C22817FB5B00C9738B /* BookLabTest.xib */,
+				E07745C52817FC0100C9738B /* BookLabTestCell.swift */,
+				E07745C62817FC0100C9738B /* BookLabTestCell.xib */,
+				E07745C92817FE2000C9738B /* LabTestCell.swift */,
+				E07745CA2817FE2000C9738B /* LabTestCell.xib */,
 				E0B9BF582811BD22001A58E8 /* Cell */,
 				E0B9BF632811BD22001A58E8 /* BlogsCollectionViewManager.swift */,
 			);
@@ -773,6 +802,26 @@
 			path = CAPSMenuPAge;
 			sourceTree = "<group>";
 		};
+		E0CC649C28156CD60011A165 /* Side menu */ = {
+			isa = PBXGroup;
+			children = (
+				E0CC649D28156CD60011A165 /* SideMenuTableViewManager.swift */,
+				E0CC649E28156CD60011A165 /* CustomSideMenuViewController.swift */,
+				E0CC64A228156CD60011A165 /* CustomSideMenuViewController.xib */,
+				E0CC649F28156CD60011A165 /* cell */,
+			);
+			path = "Side menu";
+			sourceTree = "<group>";
+		};
+		E0CC649F28156CD60011A165 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				E0CC64A028156CD60011A165 /* CustomSideMenuTableViewCell.swift */,
+				E0CC64A128156CD60011A165 /* CustomSideMenuTableViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -851,15 +900,18 @@
 				E0B9BFAD2811BD23001A58E8 /* raleway_extrabolditalic.ttf in Resources */,
 				E0B9BFBF2811BD23001A58E8 /* Poppins-ExtraLight.ttf in Resources */,
 				E0B9BFD02811BD23001A58E8 /* Poppins-Italic.ttf in Resources */,
+				E07745C82817FC0100C9738B /* BookLabTestCell.xib in Resources */,
 				E0B9BF9B2811BD23001A58E8 /* lato_thin_italic.ttf in Resources */,
 				E0B9BF952811BD23001A58E8 /* lato_italic.ttf in Resources */,
 				E0B9BFBE2811BD23001A58E8 /* raleway_semibold.ttf in Resources */,
 				E0B9BFF62811BD23001A58E8 /* ConsultSymptomsTableViewCell.xib in Resources */,
 				E0B9BFAE2811BD23001A58E8 /* lato_heavy.ttf in Resources */,
+				E07745C42817FB5B00C9738B /* BookLabTest.xib in Resources */,
 				E0B9BFE72811BD23001A58E8 /* BlogsCollectionViewCell.xib in Resources */,
 				E0B9BFA32811BD23001A58E8 /* poppins_regular.ttf in Resources */,
 				E0B9BFC52811BD23001A58E8 /* Poppins-SemiBoldItalic.ttf in Resources */,
 				E0CC6485281438380011A165 /* ProfileVC.xib in Resources */,
+				E07745CC2817FE2000C9738B /* LabTestCell.xib in Resources */,
 				E0B9BFB82811BD23001A58E8 /* lato_bold.ttf in Resources */,
 				E0B9BF992811BD23001A58E8 /* raleway_semibolditalic.ttf in Resources */,
 				E0B9BF942811BD23001A58E8 /* lato_black.ttf in Resources */,
@@ -878,6 +930,7 @@
 				E0B9BFC92811BD23001A58E8 /* OFL.txt in Resources */,
 				E0B9BFA92811BD23001A58E8 /* raleway_extrabold.ttf in Resources */,
 				E066994727F47CC6009EE3F0 /* Login.storyboard in Resources */,
+				E0CC64A628156CD60011A165 /* CustomSideMenuTableViewCell.xib in Resources */,
 				E0CC6481281438380011A165 /* RelationshipTableViewCell.xib in Resources */,
 				E0CC6487281438380011A165 /* RelationVC.xib in Resources */,
 				E0B9BFA52811BD23001A58E8 /* times_new_roman.ttf in Resources */,
@@ -906,6 +959,7 @@
 				E0B9BFB02811BD23001A58E8 /* raleway_regular.ttf in Resources */,
 				E0B9BF9D2811BD23001A58E8 /* lato_light_italic.ttf in Resources */,
 				E0B9BFF72811BD23001A58E8 /* ConsultSymptomsViewController.xib in Resources */,
+				E0CC64A728156CD60011A165 /* CustomSideMenuViewController.xib in Resources */,
 				E0B9BFBD2811BD23001A58E8 /* lato_medium_italic.ttf in Resources */,
 				E0B9BFA62811BD23001A58E8 /* lato_bold_italic.ttf in Resources */,
 				E0B9BF9F2811BD23001A58E8 /* raleway_lightitalic.ttf in Resources */,
@@ -982,6 +1036,7 @@
 				E0B9BFED2811BD23001A58E8 /* ConsultSpecialityTableViewCell.swift in Sources */,
 				E0B9BFE02811BD23001A58E8 /* HomeViewController.swift in Sources */,
 				E066993727F47ADA009EE3F0 /* ViewController.swift in Sources */,
+				E07745CB2817FE2000C9738B /* LabTestCell.swift in Sources */,
 				E0B9C0042811BD23001A58E8 /* BaseViewController.swift in Sources */,
 				E072953227F84BDE0083357A /* OtpVC.swift in Sources */,
 				E0CC6492281439070011A165 /* CAPSPageMenu+Options.swift in Sources */,
@@ -989,6 +1044,7 @@
 				E0CC649A281442110011A165 /* OrderTrackVC.swift in Sources */,
 				E0B9C0032811BD23001A58E8 /* APIV2.swift in Sources */,
 				E0B9BFF92811BD23001A58E8 /* ConsultSymptomsTableViewManager.swift in Sources */,
+				E0CC64A528156CD60011A165 /* CustomSideMenuTableViewCell.swift in Sources */,
 				E0B9C0052811BD23001A58E8 /* NetWorker.swift in Sources */,
 				E0B9BFF12811BD23001A58E8 /* ConsultSpecialityViewController.swift in Sources */,
 				E0B9BFFF2811BD23001A58E8 /* ConsultationDetailsViewController.swift in Sources */,
@@ -1016,6 +1072,7 @@
 				E0CC6491281439070011A165 /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */,
 				E0B9BFEA2811BD23001A58E8 /* DashboardCollectionViewCell.swift in Sources */,
 				E0B9BFEB2811BD23001A58E8 /* BlogsCollectionViewManager.swift in Sources */,
+				E0CC64A428156CD60011A165 /* CustomSideMenuViewController.swift in Sources */,
 				E0B9BFDE2811BD23001A58E8 /* SliderCollectionViewManager.swift in Sources */,
 				E0B9BFD42811BD23001A58E8 /* Data.swift in Sources */,
 				E0CC6495281439070011A165 /* CAPSPageMenu+UIConfiguration.swift in Sources */,
@@ -1029,6 +1086,7 @@
 				E0B9BF922811BD23001A58E8 /* Environment.swift in Sources */,
 				E0B9BFD32811BD23001A58E8 /* CACornerMask.swift in Sources */,
 				E0C447F027F494E300BE6E2D /* SingInVC.swift in Sources */,
+				E07745C32817FB5B00C9738B /* BookLabTest.swift in Sources */,
 				E0B9BFF52811BD23001A58E8 /* ConsultSymptomsTableViewCell.swift in Sources */,
 				E0CC647F281438380011A165 /* RelationVC.swift in Sources */,
 				E0B9BFDD2811BD23001A58E8 /* DashboardCollectionViewManager.swift in Sources */,
@@ -1037,8 +1095,10 @@
 				E0B9C0062811BD23001A58E8 /* PushDelegate.swift in Sources */,
 				E0CC6493281439070011A165 /* MenuItemView.swift in Sources */,
 				E072953027F820DC0083357A /* AppManager.swift in Sources */,
+				E07745C72817FC0100C9738B /* BookLabTestCell.swift in Sources */,
 				E0B9BFD72811BD23001A58E8 /* UITextField.swift in Sources */,
 				E072953427F850570083357A /* ForgotPasswordVC.swift in Sources */,
+				E0CC64A328156CD60011A165 /* SideMenuTableViewManager.swift in Sources */,
 				E0B9BFDA2811BD23001A58E8 /* UserDefault+Constant.swift in Sources */,
 				E0CC647A281438380011A165 /* RelationshipTableViewCell.swift in Sources */,
 				E0CC64652813DF350011A165 /* CustomTabBarViewController.swift in Sources */,

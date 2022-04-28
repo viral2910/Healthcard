@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SideMenu
 
 class HomeViewController: UIViewController , XIBed, PushViewControllerDelegate {
 
@@ -74,6 +75,9 @@ class HomeViewController: UIViewController , XIBed, PushViewControllerDelegate {
 
             setupUI()
             setupCornerShadow()
+        
+        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.checkAction))
+        self.bookLabTestOuterViewRef.addGestureRecognizer(gesture)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -83,7 +87,11 @@ class HomeViewController: UIViewController , XIBed, PushViewControllerDelegate {
         
     }
 
-
+    @objc func checkAction(sender : UITapGestureRecognizer) {
+        
+            let otpvc = BookLabTest(nibName: "BookLabTest", bundle: nil)
+            self.navigationController?.pushViewController(otpvc, animated: true)
+    }
 }
 
 //MARK: - Setup
@@ -133,29 +141,6 @@ extension HomeViewController {
 
         
     }
-    
-//    @objc func sideMenuSwipe() {
-//
-//        let vc = SideMenuViewController.instantiate()
-//
-//        let menu = SideMenuNavigationController(rootViewController:vc)
-//        menu.leftSide = true
-//        menu.presentationStyle = .menuSlideIn
-//        present(menu, animated: true, completion: nil)
-//
-//    }
-//
-//    @IBAction func sideMenuBtnTap(_ sender: UIButton) {
-//
-//        let vc = SideMenuViewController.instantiate()
-//
-//        let menu = SideMenuNavigationController(rootViewController:vc)
-//        menu.leftSide = true
-//        menu.presentationStyle = .menuSlideIn
-//        present(menu, animated: true, completion: nil)
-//
-//    }
-
 }
 
 //MARK: - Api Call
@@ -174,11 +159,20 @@ extension HomeViewController {
 
 //MARK: - Action
 extension HomeViewController {
-    @IBAction func sideMenuBtnTap(_ sender: UIButton) {
-        
-    }
     
-    @IBAction func cartBtnTap(_ sender: UIButton) {
+    
+    @IBAction func sideMenuBtnTap(_ sender: UIButton) {
+            let vc = CustomSideMenuViewController.instantiate()
+            
+            let menu = SideMenuNavigationController(rootViewController: vc)
+            menu.leftSide = true
+            menu.presentationStyle = .menuSlideIn
+            menu.menuWidth = view.frame.width - 80
+            present(menu, animated: true, completion: nil)
+            
+        }
         
-    }
+        @IBAction func cartBtnTap(_ sender: UIButton) {
+
+        }
 }

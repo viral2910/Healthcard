@@ -13,6 +13,7 @@ target 'HealthCard' do
   pod 'SideMenu', '~> 6.0'
   pod 'DropDown'
   pod 'XMLParsing'
+  pod 'MarqueeLabel'
   # Pods for HealthCard
 
 end

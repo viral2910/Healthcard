@@ -35,23 +35,27 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Relative Patient Name/UHID/Mobile No." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5G-dN-w4p">
-                                <rect key="frame" x="10" y="36" width="236.5" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHEYAS SINGH | 0000001988 | 9930050086" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5G-dN-w4p">
+                                <rect key="frame" x="10" y="36" width="231" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Family Head" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrE-QV-jE4">
-                                <rect key="frame" x="276.5" y="36" width="74.5" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Family Head" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrE-QV-jE4">
+                                <rect key="frame" x="251" y="36" width="100" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="LJC-25-Dhe"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.67000000000000004" alpha="0.25" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="mrE-QV-jE4" secondAttribute="trailing" constant="10" id="4ZH-jK-hzo"/>
                             <constraint firstItem="HDn-o2-HdD" firstAttribute="leading" secondItem="wwP-fV-AKj" secondAttribute="leading" constant="10" id="OKp-hS-pAh"/>
+                            <constraint firstItem="mrE-QV-jE4" firstAttribute="leading" secondItem="b5G-dN-w4p" secondAttribute="trailing" constant="10" id="QcL-xr-kZ7"/>
                             <constraint firstAttribute="trailing" secondItem="YKD-8b-pk0" secondAttribute="trailing" constant="10" id="WIY-tf-Nce"/>
                             <constraint firstAttribute="bottom" secondItem="b5G-dN-w4p" secondAttribute="bottom" constant="10" id="gGW-2Y-DV4"/>
                             <constraint firstItem="HDn-o2-HdD" firstAttribute="top" secondItem="wwP-fV-AKj" secondAttribute="top" constant="10" id="i1d-xl-iZe"/>

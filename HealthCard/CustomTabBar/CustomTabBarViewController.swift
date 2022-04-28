@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SideMenu
 
 class CustomTabBarViewController: UIViewController , XIBed, PushViewControllerDelegate {
     @IBOutlet weak var tabBarOuterview: UIView!
@@ -103,7 +104,7 @@ class CustomTabBarViewController: UIViewController , XIBed, PushViewControllerDe
         
 
     }
-
+    
 }
 
 //MARK: - Setup

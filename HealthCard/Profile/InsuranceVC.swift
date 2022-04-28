@@ -25,7 +25,21 @@ extension InsuranceVC:UITableViewDelegate,UITableViewDataSource{
         if indexPath.row % 2 == 0 {
             cell.mainview.backgroundColor = .white
         } else {
-                cell.mainview.backgroundColor = .lightGray
+            if #available(iOS 13.0, *) {
+                cell.mainview.backgroundColor = .systemGray5
+            } else {
+                // Fallback on earlier versions
+            }
+            switch indexPath.row {
+            case 0:
+                cell.nameLabel.text = "Insurance Company"
+                cell.valueLabel.text = ""
+            case 1:
+                cell.nameLabel.text = "Amount Covered"
+                cell.valueLabel.text = ""
+            default:
+                break
+            }
         }
         return cell
     }

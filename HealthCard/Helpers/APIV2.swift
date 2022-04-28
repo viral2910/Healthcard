@@ -134,6 +134,31 @@ enum APIV2: API {
     case patientPasswordChange(patientId: Int, oldPassword: String, newPassword: String)
     
     case patientMobileNoValidation(mobileNo1: String)
+    
+    case Specialization
+    
+    case Symptoms
+    
+    case FrequentSpeciality
+    
+    case SymptomsSearching(searchVal: String)
+    
+    case PatientConcernSave(patientId: Int, concernId: Int, concernDesc: String)
+    
+    case PatientLabTestReports(patientId: Int)
+    
+    case PatientLabTestDetails(patientId: Int)
+    
+    case PatientProcedureReports(patientId: Int)
+    
+    case PatientLabTestAdviceDetails(patientId: Int)
+
+    case labTestSearch(searchVal: String)
+    
+    case medicineAndEssential(searchVal: String)
+
+    case PatientPharmacyAdviceDetails(patientId: Int)
+
 }
 
 
@@ -316,6 +341,42 @@ extension APIV2 {
             return URL(string: Router.deliveryBoyBaseUrl)!
             
         case .patientMobileNoValidation:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+
+        case .Specialization:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+
+        case .Symptoms:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+
+        case .FrequentSpeciality:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+
+        case .SymptomsSearching:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+
+        case .PatientConcernSave:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+
+        case .PatientLabTestReports:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+
+        case .PatientLabTestDetails:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+
+        case .PatientProcedureReports:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+
+        case .PatientLabTestAdviceDetails:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+
+        case .labTestSearch:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+
+        case .medicineAndEssential:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+
+        case .PatientPharmacyAdviceDetails:
             return URL(string: Router.deliveryBoyBaseUrl)!
 
         }
@@ -501,6 +562,42 @@ extension APIV2 {
         case .patientMobileNoValidation(mobileNo1: let mobileNo1):
             return "Patient?vMob1=\(mobileNo1)"
 
+        case .Specialization:
+            return "Common?vType=Specialization"
+            
+        case .Symptoms:
+            return "Concern"
+
+        case .FrequentSpeciality:
+            return "Common?vSpecType=Specialization"
+
+        case .SymptomsSearching(searchVal: let searchVal):
+            return "Patient?vSrchVal=\(searchVal)"
+
+        case .PatientConcernSave(patientId: let patientId, concernId: let concernId, concernDesc: let concernDesc):
+            return "Patient?vPatientId=\(patientId)&vConcernId=\(concernId)&vConcernDesc=\(concernDesc)"
+
+        case .PatientLabTestReports(patientId: let patientId):
+            return "HealthHistory?vLabTestDocPatientId=\(patientId)"
+
+        case .PatientLabTestDetails(patientId: let patientId):
+            return "HealthHistory?vLabTestDtlsPatientId=\(patientId)"
+
+        case .PatientProcedureReports(patientId: let patientId):
+            return "HealthHistory?vProcedureDocPatientId=\(patientId)"
+
+        case .PatientLabTestAdviceDetails(patientId: let patientId):
+            return "Pathology?vLabTestAdviseDtlsPatientId=\(patientId)"
+
+        case .labTestSearch(searchVal: let searchVal):
+            return "Pathology?vSrchVal=\(searchVal)"
+
+        case .medicineAndEssential(searchVal: let searchVal):
+            return "Pharmacy?vSrchVal=\(searchVal)"
+
+        case .PatientPharmacyAdviceDetails(patientId: let patientId):
+            return "Pharmacy?vPatientId=\(patientId)"
+
         }
     }
 
@@ -682,6 +779,42 @@ extension APIV2 {
             return "GET"
 
         case .patientMobileNoValidation:
+            return "GET"
+
+        case .Specialization:
+            return "GET"
+
+        case .Symptoms:
+            return "GET"
+
+        case .FrequentSpeciality:
+            return "GET"
+
+        case .SymptomsSearching:
+            return "GET"
+
+        case .PatientConcernSave:
+            return "GET"
+
+        case .PatientLabTestReports:
+            return "GET"
+
+        case .PatientLabTestDetails:
+            return "GET"
+
+        case .PatientProcedureReports:
+            return "GET"
+
+        case .PatientLabTestAdviceDetails:
+            return "GET"
+
+        case .labTestSearch:
+            return "GET"
+
+        case .medicineAndEssential:
+            return "GET"
+
+        case .PatientPharmacyAdviceDetails:
             return "GET"
 
         }
@@ -870,7 +1003,43 @@ extension APIV2 {
 
         case .patientMobileNoValidation:
             break
-
+            
+        case .Specialization:
+            break
+            
+        case .Symptoms:
+            break
+            
+        case .FrequentSpeciality:
+            break
+            
+        case .SymptomsSearching:
+            break
+            
+        case .PatientConcernSave:
+            break
+            
+        case .PatientLabTestReports:
+            break
+            
+        case .PatientLabTestDetails:
+            break
+            
+        case .PatientProcedureReports:
+            break
+            
+        case .PatientLabTestAdviceDetails:
+            break
+            
+        case .labTestSearch:
+            break
+            
+        case .medicineAndEssential:
+            break
+            
+        case .PatientPharmacyAdviceDetails:
+            break
+            
         }
         return params
 

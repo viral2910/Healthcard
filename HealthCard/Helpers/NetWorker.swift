@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 import XMLParsing
-import SVProgressHUD
 
 class NetWorker {
     static var shared = NetWorker()
@@ -65,11 +64,12 @@ class NetWorker {
     
     public func callAPIService <T: Codable> (type: API, completion: @escaping (T?, Error?) -> Void) {
         let request = requestFromAuthType(type)
-//        self.showHud()
-        SVProgressHUD.show()
+        
+        self.showHud()
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             DispatchQueue.global().async {
                 DispatchQueue.main.sync {
+                    self.hideHud()
                     print("--- Entering Response ---")
                     let responseString = String(data: data ?? Data(), encoding: .utf8) ?? ""
                     
@@ -78,23 +78,33 @@ class NetWorker {
                     if responseString.isEmpty {
                         // show error alert
                     }
-                    
+                    print("Method: \(type.method)")
+                    if type.method == "POST" {
                     do {
                         let xmlStr = responseString
                         let parser = ParseXMLData(xml: xmlStr)
                         let jsonStr = parser.parseXML()
                         print(jsonStr)
-                        
-                            SVProgressHUD.dismiss()
+
                         guard let json = jsonStr.data(using: .utf8) else {return}
                         let decodedResponse = try JSONDecoder().decode(T.self, from: json)
+
                             completion(decodedResponse, nil)
 
                     } catch {
-                        SVProgressHUD.dismiss()
                         completion(nil, error)
                         print(error.localizedDescription)
                         UIAlertController.showAlert(titleString: error.localizedDescription)
+                    }
+                    } else {
+                        do {
+                            let decodedResponse = try JSONDecoder().decode(T.self, from: data ?? Data())
+                            completion(decodedResponse, nil)
+                        } catch {
+                            completion(nil, error)
+                            print(error.localizedDescription)
+                            UIAlertController.showAlert(titleString: error.localizedDescription)
+                        }
                     }
                 }
             }

@@ -15,6 +15,8 @@ class ConsultationMainViewController: UIViewController, XIBed, PushViewControlle
     
     ///Container View
     @IBOutlet weak var containerView: UIView!
+    
+
 
     ///Page Control
     lazy var pageVC: UIPageViewController = {
@@ -34,12 +36,12 @@ class ConsultationMainViewController: UIViewController, XIBed, PushViewControlle
         return [
             {
                 let vc = ConsultSpecialityViewController.instantiate()
-                vc.pushDelegate = self
+                vc.pushDelegate = pushDelegate
                 return UINavigationController(rootViewController: vc)
             }(),
             {
                 let vc = ConsultSymptomsViewController.instantiate()
-                vc.pushDelegate = self
+                vc.pushDelegate = pushDelegate
                 //vc.user = user
                 //vc.gDrive = gDrive
                 return UINavigationController(rootViewController: vc)
@@ -128,7 +130,6 @@ extension ConsultationMainViewController {
         
         containerView.clipsToBounds = true
         containerView.backgroundColor = .clear
-        
         
         pageVC.dataSource = self
         pageVC.delegate = self

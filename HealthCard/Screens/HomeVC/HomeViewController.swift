@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SideMenu
 
 class HomeViewController: UIViewController , XIBed, PushViewControllerDelegate {
 
@@ -25,8 +24,7 @@ class HomeViewController: UIViewController , XIBed, PushViewControllerDelegate {
     @IBOutlet weak var medicinesAndEssentialsOuterViewRef: UIView!
     @IBOutlet weak var medicinesAndEssentialsLblRef: UILabel!
     @IBOutlet weak var medicinesAndEssentialsImgViewRef: UIImageView!
-    
-    weak var pushDelegate: PushViewControllerDelegate?
+
     ///Looking for test
     @IBOutlet weak var lookingForTestHeaderLblRef: UILabel!
     @IBOutlet weak var lookingForTestCvRef: UICollectionView!
@@ -64,33 +62,61 @@ class HomeViewController: UIViewController , XIBed, PushViewControllerDelegate {
     
     private lazy var collectionViewManager = { DashboardCollectionViewManager() }()
     
+    private lazy var lookingForTestInCollectionViewManager = { LookingForTestInCollectionViewManager() }()
+    
     private lazy var sliderCollectionViewManager = { SliderBannerCollectionViewManager() }()
 
+    private lazy var lookingForTestSliderCollectionViewManager = { LookingForTestSliderCollectionViewManager() }()
+
+    private lazy var patientExperienceWithUsSliderCollectionViewManager = { PatientExperienceWithUsSliderCollectionViewManager() }()
+
+    private lazy var lookingForConsultationInSlider2CollectionViewManager = { LookingForConsultationInSlider2CollectionViewManager() }()
+
+    private lazy var lookingForConsultationInSlider1CollectionViewManager = { LookingForConsultationInSlider1CollectionViewManager() }()
+
+    private lazy var medicineYouAreLookingSlider2CollectionViewManager = { MedicineYouAreLookingSlider2CollectionViewManager() }()
+
+    private lazy var medicineYouAreLookingSlider1CvManager = { MedicineYouAreLookingSlider1CvManager() }()
+
+    
     private lazy var blogsCollectionViewManager = { BlogsCollectionViewManager() }()
 
     private lazy var categoryCollectionViewManager = { CategoryCollectionViewManager() }()
+    
+    private lazy var consultationCategoryCollectionViewManager = { ConsultationCategoryCollectionViewManager() }()
+
+    weak var pushDelegate: PushViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
             setupUI()
             setupCornerShadow()
-        
-        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.checkAction))
-        self.bookLabTestOuterViewRef.addGestureRecognizer(gesture)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        GetDetailsApiCall()
         self.navigationController?.isNavigationBarHidden = true
         
     }
 
-    @objc func checkAction(sender : UITapGestureRecognizer) {
-        
-            let otpvc = BookLabTest(nibName: "BookLabTest", bundle: nil)
-            self.navigationController?.pushViewController(otpvc, animated: true)
+    
+    func GetDetailsApiCall(){
+        let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "")
+        NetWorker.shared.callAPIService(type: APIV2.PatientGetById(patientId: patientID ?? 0)) { (data:WelcomePatientDetails?, error) in
+            let patientIDval = data?.soapEnvelope.soapBody.patientGetByIDResponse.patientGetByIDResult.patientSC.patientID
+            
+                let firstname = data?.soapEnvelope.soapBody.patientGetByIDResponse.patientGetByIDResult.patientSC.firstName ?? ""
+            let lastname = data?.soapEnvelope.soapBody.patientGetByIDResponse.patientGetByIDResult.patientSC.lastName ?? ""
+            UserDefaults.standard.set("\(firstname) \(lastname)", forKey: "patientFullName")
+            if UserDefaults.standard.string(forKey: "patientID") ?? "" == patientIDval {
+                self.userNameLblRef.text = "\(firstname) \(lastname)"
+            }
+            else {
+                AppManager.shared.showAlert(title: "Error", msg: "Something went wrong!!", vc: self)
+            }
+        }
     }
 }
 
@@ -99,27 +125,33 @@ extension HomeViewController {
     func setupUI() {
         
 
-
-        
+        lookingForConsultationApi()
+        lookingForTestInApi()
+        lookingForMedicineInApi()
+        issueConsultationApi()
         collectionViewManager.delegate = self
         sliderCollectionViewManager.pushDelegate = self
         
-        sliderCollectionViewManager.start(data: ["","","",""], collectionVIew: sliderBanner1CvRef)
-        sliderCollectionViewManager.start(data: ["","","",""], collectionVIew: lookingForTestSliderBannerCvRef)
-        sliderCollectionViewManager.start(data: ["","","",""], collectionVIew: medicineYouAreLookingSliderBanner1CvRef)
-        sliderCollectionViewManager.start(data: [""], collectionVIew: medicineYouAreLookingSliderBanner2CvRef)
-        sliderCollectionViewManager.start(data: ["","","",""], collectionVIew: lookingForConsultationsInSliderBanner1CvRef)
-        sliderCollectionViewManager.start(data: [""], collectionVIew: lookingForConsultationsInSliderBanner2CvRef)
-        sliderCollectionViewManager.start(data: ["","","",""], collectionVIew: patientsExperienceSliderBanner1CvRef)
+        sliderCollectionViewManager.start(data: ["Track-Your-Order","500_hassle_free_consult","24x7-Health-Support_long"], collectionVIew: sliderBanner1CvRef)
+        lookingForTestSliderCollectionViewManager.start(data: ["lab_test_hc_banner","40_off_home_checkup",], collectionVIew: lookingForTestSliderBannerCvRef)
+        medicineYouAreLookingSlider1CvManager.start(data: ["top_doc_online"], collectionVIew: medicineYouAreLookingSliderBanner1CvRef)
+        medicineYouAreLookingSlider2CollectionViewManager.start(data: ["upto_25_off"], collectionVIew: medicineYouAreLookingSliderBanner2CvRef)
+        lookingForConsultationInSlider1CollectionViewManager.start(data: ["10_40_off", "online_consult_from_certified_doc"], collectionVIew: lookingForConsultationsInSliderBanner1CvRef)
+        lookingForConsultationInSlider2CollectionViewManager.start(data: ["online_consultation_2"], collectionVIew: lookingForConsultationsInSliderBanner2CvRef)
+        patientExperienceWithUsSliderCollectionViewManager.start(data: ["",""], collectionVIew: patientsExperienceSliderBanner1CvRef)
 
-        collectionViewManager.start(data: ["","","","","","","",""], collectionVIew: lookingForTestCvRef, totalItemToShow: 3.2)
-        collectionViewManager.start(data: ["","","","","","","",""], collectionVIew: medicineYouAreLookingCvRef, totalItemToShow: 2.5)
 
         blogsCollectionViewManager.start(data: ["","","",""], collectionVIew: blogsFromExpertCvRef, totalItemToShow: 1.8)
         
-        categoryCollectionViewManager.start(data: ["sfvfzgvd","dgbdsggd","ryhdyd","fzbddgbdgsbgbsbg","dfhdgbfdgnfsfs"], collectionVIew: consultCvRef)
-        categoryCollectionViewManager.start(data: ["sfvfzgvd","dgbdsggd","ryhdyd","fzbddgbdgsbgbsbg","dfhdgbfdgnfsfs"], collectionVIew: lookingForConsultationsInCvRef)
+        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.checkAction))
+        self.bookLabTestOuterViewRef.addGestureRecognizer(gesture)
 
+    }
+    
+    @objc func checkAction(sender : UITapGestureRecognizer) {
+        
+        let vc = BookLabTest(nibName: "BookLabTest", bundle: nil)
+        self.pushDelegate?.pushViewController(vc: vc)
     }
     
     func setupCornerShadow() {
@@ -141,38 +173,146 @@ extension HomeViewController {
 
         
     }
+    
+//    @objc func sideMenuSwipe() {
+//
+//        let vc = SideMenuViewController.instantiate()
+//
+//        let menu = SideMenuNavigationController(rootViewController:vc)
+//        menu.leftSide = true
+//        menu.presentationStyle = .menuSlideIn
+//        present(menu, animated: true, completion: nil)
+//
+//    }
+//
+//    @IBAction func sideMenuBtnTap(_ sender: UIButton) {
+//
+//        let vc = SideMenuViewController.instantiate()
+//
+//        let menu = SideMenuNavigationController(rootViewController:vc)
+//        menu.leftSide = true
+//        menu.presentationStyle = .menuSlideIn
+//        present(menu, animated: true, completion: nil)
+//
+//    }
+
 }
 
 //MARK: - Api Call
 extension HomeViewController {
     
-//    func sliderApi() {
-//
-//        NetWorker.shared.callAPIService(type: APIV2.dashboardSlider) { [weak self](data: DashboardSliderResponse?, error) in
-//            guard self == self else { return }
-//
-//            self?.sliderCollectionViewManager.start(data: data?.data ?? [], collectionVIew: self!.sliderCvRef)
-//        }
-//    }
+    func lookingForConsultationApi() {
+        struct demo: Codable { }
+        NetWorker.shared.callAPIService(type: APIV2.FrequentSpeciality) { [weak self](data: LookinForConsultationDataResponse?, error) in
+            guard self == self else { return }
+
+            self!.consultationCategoryCollectionViewManager.start(data: data ?? [], collectionVIew: self!.lookingForConsultationsInCvRef)
+
+        }
+    }
+    
+    func issueConsultationApi() {
+        struct demo: Codable { }
+        NetWorker.shared.callAPIService(type: APIV2.FrequentSpeciality) { [weak self](data: LookinForConsultationDataResponse?, error) in
+            guard self == self else { return }
+
+            self!.categoryCollectionViewManager.start(data: data ?? [], collectionVIew: self!.consultCvRef)
+
+        }
+    }
+    
+    func lookingForTestInApi() {
+        struct demo: Codable { }
+        NetWorker.shared.callAPIService(type: APIV2.FrequentLabTest) { [weak self](data: LookingForTestInDataResponse?, error) in
+            guard self == self else { return }
+
+            self!.lookingForTestInCollectionViewManager.start(data: data ?? [], collectionVIew: self!.lookingForTestCvRef, totalItemToShow: 3.2)
+
+        }
+    }
+
+    func lookingForMedicineInApi() {
+        struct demo: Codable { }
+        NetWorker.shared.callAPIService(type: APIV2.FrequentLabTest) { [weak self](data: LookingForTestInDataResponse?, error) in
+            guard self == self else { return }
+
+            self!.collectionViewManager.start(data: data ?? [], collectionVIew: self!.medicineYouAreLookingCvRef, totalItemToShow: 2.5)
+
+        }
+    }
+
     
 }
 
 //MARK: - Action
 extension HomeViewController {
-    
-    
     @IBAction func sideMenuBtnTap(_ sender: UIButton) {
-            let vc = CustomSideMenuViewController.instantiate()
-            
-            let menu = SideMenuNavigationController(rootViewController: vc)
-            menu.leftSide = true
-            menu.presentationStyle = .menuSlideIn
-            menu.menuWidth = view.frame.width - 80
-            present(menu, animated: true, completion: nil)
-            
-        }
         
-        @IBAction func cartBtnTap(_ sender: UIButton) {
-
-        }
+    }
+    
+    @IBAction func cartBtnTap(_ sender: UIButton) {
+        
+    }
 }
+
+// MARK: - LookinForConsultationDataResponseElement
+struct LookinForConsultationDataResponseElement: Codable {
+    let id: Int
+    let pValue: JSONNull?
+    let value: String
+    let type, sortOrder, parentType, isActive: JSONNull?
+    let isActiveText, isEdit, remark, createdBy: JSONNull?
+    let createdOn: JSONNull?
+
+    enum CodingKeys: String, CodingKey {
+        case id = "Id"
+        case pValue = "PValue"
+        case value = "Value"
+        case type = "Type"
+        case sortOrder = "SortOrder"
+        case parentType = "ParentType"
+        case isActive = "IsActive"
+        case isActiveText = "IsActiveText"
+        case isEdit = "IsEdit"
+        case remark = "Remark"
+        case createdBy = "CreatedBy"
+        case createdOn = "CreatedOn"
+    }
+}
+
+typealias LookinForConsultationDataResponse = [LookinForConsultationDataResponseElement]
+
+// MARK: - LookingForTestInDataResponseElement
+struct LookingForTestInDataResponseElement: Codable {
+    let docID, docType, docDate: JSONNull?
+    let id: Int
+    let testCode: String
+    let labTestID: Int
+    let labTestText: String
+    let mrp, discountPer, discountAmt, charges: Int
+    let labMasterID, labName: JSONNull?
+    let collectionIn, sampleDetails, method: String
+    let labTestImageURL: String
+
+    enum CodingKeys: String, CodingKey {
+        case docID = "DocId"
+        case docType = "DocType"
+        case docDate = "DocDate"
+        case id = "Id"
+        case testCode = "TestCode"
+        case labTestID = "LabTestId"
+        case labTestText = "LabTestText"
+        case mrp = "MRP"
+        case discountPer = "DiscountPer"
+        case discountAmt = "DiscountAmt"
+        case charges = "Charges"
+        case labMasterID = "LabMasterId"
+        case labName = "LabName"
+        case collectionIn = "CollectionIn"
+        case sampleDetails = "SampleDetails"
+        case method = "Method"
+        case labTestImageURL = "LabTestImageURL"
+    }
+}
+
+typealias LookingForTestInDataResponse = [LookingForTestInDataResponseElement]

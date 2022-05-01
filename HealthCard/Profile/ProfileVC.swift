@@ -26,22 +26,7 @@ class ProfileVC: UIViewController , XIBed, PushViewControllerDelegate {
         self.navigationController?.pushViewController(otpvc, animated: true)
     }
     override func viewWillAppear(_ animated: Bool) {
-        GetDetailsApiCall()
-    }
-    func GetDetailsApiCall(){
-        let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "")
-        NetWorker.shared.callAPIService(type: APIV2.PatientGetById(patientId: patientID ?? 0)) { (data:WelcomePatientDetails?, error) in
-            let patientIDval = data?.soapEnvelope.soapBody.patientGetByIDResponse.patientGetByIDResult.patientSC.patientID
-            
-                let firstname = data?.soapEnvelope.soapBody.patientGetByIDResponse.patientGetByIDResult.patientSC.firstName ?? ""
-            let lastname = data?.soapEnvelope.soapBody.patientGetByIDResponse.patientGetByIDResult.patientSC.lastName ?? ""
-            if UserDefaults.standard.string(forKey: "patientID") ?? "" == patientIDval {
-                self.nameLabel.text = "\(firstname) \(lastname)"
-            }
-            else {
-                AppManager.shared.showAlert(title: "Error", msg: "Something went wrong!!", vc: self)
-            }
-        }
+            self.nameLabel.text = UserDefaults.standard.string(forKey: "patientFullName") ?? ""
     }
     func setup()
     {

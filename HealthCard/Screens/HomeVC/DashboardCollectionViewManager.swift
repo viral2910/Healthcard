@@ -7,13 +7,14 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 class DashboardCollectionViewManager: NSObject {
 
     weak var collectionView: UICollectionView?
     weak var emptyView: UIView?
         
-    var storyData : [String] = []
+    var storyData : LookingForTestInDataResponse = []
     
     var totalItemToShow = CGFloat()
 //    //var moreOptionDropDown = DropDown_()
@@ -24,7 +25,7 @@ class DashboardCollectionViewManager: NSObject {
     weak var presentDelegate: presentViewControllersDelegate?
     
     
-    func start(data: [String], collectionVIew: UICollectionView, totalItemToShow: CGFloat) {
+    func start(data: LookingForTestInDataResponse, collectionVIew: UICollectionView, totalItemToShow: CGFloat) {
         self.collectionView = collectionVIew
         self.totalItemToShow = totalItemToShow
         self.storyData = data
@@ -60,8 +61,16 @@ extension DashboardCollectionViewManager: UICollectionViewDataSource {
         //cell.borderView.layer.borderColor = UIColor(hexString: borderColor).cgColor
 
         cell.viewRef.layer.cornerRadius = 10
+        cell.viewRef.clipsToBounds = false
+        
+        cell.viewRef.layer.masksToBounds = true
         cell.viewRef.dropShadow()
         
+        cell.lblRef.text = storyData[indexPath.row].sampleDetails
+        
+        let imgUrl = storyData[indexPath.row].labTestImageURL.replacingOccurrences(of: " ", with: "%20")
+        cell.imgViewRef.sd_setImage(with: URL(string: imgUrl), placeholderImage: UIImage(named: "placeholder.png"))
+
         //cell.lblRef.text = storyData[indexPath.row]
         //cell.imgViewRef.image = UIImage(named: imgData[indexPath.row])
         
@@ -131,7 +140,7 @@ extension DashboardCollectionViewManager: UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: (collectionView.frame.size.width - 10)/totalItemToShow, height: 90)
+        CGSize(width: (collectionView.frame.size.width - 10)/totalItemToShow, height: 150)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

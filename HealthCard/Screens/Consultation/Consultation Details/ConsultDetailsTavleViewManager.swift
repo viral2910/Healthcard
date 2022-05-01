@@ -18,7 +18,7 @@ class ConsultDetailsTableViewManager : NSObject {
     weak var emptyView: UIView?
     weak var tvHeight: NSLayoutConstraint!
 
-    var storyData : [String] = []
+    var storyData : [SymptomsDataResponseElement] = []
             
     var pushDelegate: PushViewControllerDelegate?
     var presentDelegate: presentViewControllersDelegate?
@@ -37,7 +37,7 @@ class ConsultDetailsTableViewManager : NSObject {
         
     }
     
-    func start(data: [String]) {
+    func start(data: [SymptomsDataResponseElement]) {
         self.storyData = data
         tableView?.reloadData()
         tableView?.layoutIfNeeded()
@@ -63,6 +63,7 @@ extension ConsultDetailsTableViewManager: UITableViewDataSource {
         cell.viewRef.dropShadow()
         cell.imgViewRef.layer.cornerRadius = cell.imgViewRef.bounds.height * 0.5
         
+        cell.lblRef.text = storyData[indexPath.row].concern
        
         return cell
     }
@@ -73,7 +74,7 @@ extension ConsultDetailsTableViewManager: UITableViewDataSource {
 extension ConsultDetailsTableViewManager: UITableViewDelegate {
         
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.selectedIssue(name: storyData[indexPath.row], index: indexPath.row)
+        delegate?.selectedIssue(name: storyData[indexPath.row].concern ?? "", index: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

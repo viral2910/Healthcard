@@ -167,9 +167,10 @@ typealias SpecilizationResponse = [SpecilizationResponseElement]
 
 // MARK: - SymptomsDataResponseElement
 struct SymptomsDataResponseElement: Codable {
-    let concernID: Int
-    let concern, concernCatagoryID, concernCatagory: String
-    let concernDetailslist: JSONNull?
+    let concernID: Int?
+    let concern, concernCatagoryID: String?
+    let concernCatagory: String
+    let concernDetailslist: [SymptomsDataResponseElement]?
 
     enum CodingKeys: String, CodingKey {
         case concernID = "ConcernId"

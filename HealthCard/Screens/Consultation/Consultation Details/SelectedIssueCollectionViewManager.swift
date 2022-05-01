@@ -24,6 +24,8 @@ class SelectedIssueCollectionViewManager: NSObject {
     
     var delegate: removeSelectedIssue?
     
+    var divideElementBy: CGFloat = 2.0
+    
     var storyData : [String] = [] {
         didSet {
             collectionView?.reloadData()
@@ -36,10 +38,12 @@ class SelectedIssueCollectionViewManager: NSObject {
     }
     
     
-    func start(collectionView: UICollectionView, storyData: [String] ) {
+    func start(collectionView: UICollectionView, storyData: [String], divideElementBy: CGFloat ) {
 
         self.collectionView = collectionView
         self.storyData = storyData
+        
+        self.divideElementBy = divideElementBy
         
         let cellNib = UINib(nibName: "SelectedIssueCollectionViewCell", bundle: nil)
         collectionView.register(cellNib, forCellWithReuseIdentifier: "SelectedIssueCollectionViewCell")
@@ -89,7 +93,7 @@ extension SelectedIssueCollectionViewManager: UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: (collectionView.frame.size.width - 15) / 2, height: 50)
+        CGSize(width: (collectionView.frame.size.width - 15) / divideElementBy, height: 50)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

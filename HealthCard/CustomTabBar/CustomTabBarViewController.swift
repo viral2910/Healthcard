@@ -13,7 +13,7 @@ class CustomTabBarViewController: UIViewController , XIBed, PushViewControllerDe
     @IBOutlet weak var homeStackViewRef: UIStackView!
     @IBOutlet weak var homeImgViewRef: UIImageView!
     @IBOutlet weak var homeLblRef: UILabel!
-
+    
     @IBOutlet weak var consultationStackViewRef: UIStackView!
     @IBOutlet weak var consultationImgViewRef: UIImageView!
     @IBOutlet weak var consultationLblRef: UILabel!
@@ -31,8 +31,12 @@ class CustomTabBarViewController: UIViewController , XIBed, PushViewControllerDe
     
     ///Nav Bar
     @IBOutlet weak var navOuterview: UIView!
-
-
+    @IBOutlet weak var sideMenuBtnRef: UIButton!
+    @IBOutlet weak var navViewRef: UIView!
+    @IBOutlet weak var navTitleLblRef: UILabel!
+    @IBOutlet weak var cartBtnRef: UIButton!
+    
+    
     ///Page Control
     lazy var pageVC: UIPageViewController = {
         let pageVC = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
@@ -45,13 +49,13 @@ class CustomTabBarViewController: UIViewController , XIBed, PushViewControllerDe
     var selectedLineColor = UIColor.init(hexString: "007AB8")
     var selectedTextColor = UIColor.black
     var unSelectedTextColor = UIColor.lightGray
-
+    
     
     lazy var VCArr: [UIViewController] = {
         return [
             {
                 let vc = HomeViewController.instantiate()
-//                vc.pushDelegate = self
+                vc.pushDelegate = self
                 return UINavigationController(rootViewController: vc)
             }(),
             {
@@ -62,8 +66,8 @@ class CustomTabBarViewController: UIViewController , XIBed, PushViewControllerDe
                 return UINavigationController(rootViewController: vc)
             }(),
             {
-                let vc = OrderTrackVC.instantiate()
-//                vc.pushDelegate = self
+                let vc = ConsultationMainViewController.instantiate()
+                vc.pushDelegate = self
                 //vc.user = user
                 //vc.gDrive = gDrive
                 return UINavigationController(rootViewController: vc)
@@ -85,24 +89,24 @@ class CustomTabBarViewController: UIViewController , XIBed, PushViewControllerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupUI()
-
+        
         setupCornerShadow()
-
+        
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.navigationController?.isNavigationBarHidden = true
-
+        
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-
+        
     }
     
 }
@@ -110,7 +114,7 @@ class CustomTabBarViewController: UIViewController , XIBed, PushViewControllerDe
 //MARK: - Setup
 extension CustomTabBarViewController {
     func setupUI() {
-        
+        self.pushDelegate = self
         self.setupPageControl()
         
         if screenType == 0 {
@@ -120,14 +124,14 @@ extension CustomTabBarViewController {
             
             consultationLblRef.textColor = UIColor.lightGray
             consultationImgViewRef.tintColor = UIColor.lightGray
-
+            
             orderTrackerLblRef.textColor = UIColor.lightGray
             orderTrackerImgViewRef.tintColor = UIColor.lightGray
             
             myProfileLblRef.textColor = UIColor.lightGray
             myProfileImgViewRef.tintColor = UIColor.lightGray
             
-//            navTitleLblRef.text = "Home"
+            navTitleLblRef.text = "Home"
             
             if let firstVC = self.VCArr.first {
                 self.pageVC.setViewControllers([firstVC], direction: .forward, animated: true)
@@ -140,14 +144,14 @@ extension CustomTabBarViewController {
             
             homeLblRef.textColor = UIColor.lightGray
             homeImgViewRef.tintColor = UIColor.lightGray
-
+            
             orderTrackerLblRef.textColor = UIColor.lightGray
             orderTrackerImgViewRef.tintColor = UIColor.lightGray
             
             myProfileLblRef.textColor = UIColor.lightGray
             myProfileImgViewRef.tintColor = UIColor.lightGray
             
-//            navTitleLblRef.text = "Consultation"
+            navTitleLblRef.text = "Consultation"
             
             let firstVC = self.VCArr[1]
             self.pageVC.setViewControllers([firstVC], direction: .forward, animated: true)
@@ -160,14 +164,14 @@ extension CustomTabBarViewController {
             
             homeLblRef.textColor = UIColor.lightGray
             homeImgViewRef.tintColor = UIColor.lightGray
-
+            
             consultationLblRef.textColor = UIColor.lightGray
             consultationImgViewRef.tintColor = UIColor.lightGray
             
             myProfileLblRef.textColor = UIColor.lightGray
             myProfileImgViewRef.tintColor = UIColor.lightGray
             
-//            navTitleLblRef.text = "Order Tracker"
+            navTitleLblRef.text = "Order Tracker"
             
             let firstVC = self.VCArr[2]
             self.pageVC.setViewControllers([firstVC], direction: .forward, animated: true)
@@ -180,14 +184,14 @@ extension CustomTabBarViewController {
             
             homeLblRef.textColor = UIColor.lightGray
             homeImgViewRef.tintColor = UIColor.lightGray
-
+            
             consultationLblRef.textColor = UIColor.lightGray
             consultationImgViewRef.tintColor = UIColor.lightGray
             
             orderTrackerLblRef.textColor = UIColor.lightGray
             orderTrackerImgViewRef.tintColor = UIColor.lightGray
             
-//            navTitleLblRef.text = "My Profile"
+            navTitleLblRef.text = "My Profile"
             
             let firstVC = self.VCArr[3]
             self.pageVC.setViewControllers([firstVC], direction: .forward, animated: true)
@@ -251,26 +255,42 @@ extension CustomTabBarViewController {
     }
     
     
-
+    
 }
 
 
 //MARK: - Action
 extension CustomTabBarViewController {
+    
+    @IBAction func sideMenuBtnTap(_ sender: UIButton) {
+        let vc = CustomSideMenuViewController.instantiate()
+        
+        let menu = SideMenuNavigationController(rootViewController:vc)
+        menu.leftSide = true
+        menu.presentationStyle = .menuSlideIn
+        menu.menuWidth = view.frame.width - 80
+        present(menu, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func cartBtnTap(_ sender: UIButton) {
+
+    }
+    
     @objc func homeBtnTap() {
         homeLblRef.textColor = UIColor.green
         homeImgViewRef.tintColor = UIColor.green
         
         consultationLblRef.textColor = UIColor.lightGray
         consultationImgViewRef.tintColor = UIColor.lightGray
-
+        
         orderTrackerLblRef.textColor = UIColor.lightGray
         orderTrackerImgViewRef.tintColor = UIColor.lightGray
         
         myProfileLblRef.textColor = UIColor.lightGray
         myProfileImgViewRef.tintColor = UIColor.lightGray
-
-//        navTitleLblRef.text = "Home"
+        
+        navTitleLblRef.text = "Home"
         
         var pageIndex = VCArr.firstIndex(of: (self.pageVC.viewControllers?[0])!)
         if pageIndex == 1{
@@ -292,10 +312,10 @@ extension CustomTabBarViewController {
             let firstVC = VCArr[pageIndex!]
             pageVC.setViewControllers([firstVC], direction: .reverse, animated: true, completion: nil)
         }
-
-
         
-
+        
+        
+        
     }
     
     @objc func consultationBtnTap() {
@@ -304,15 +324,15 @@ extension CustomTabBarViewController {
         
         homeLblRef.textColor = UIColor.lightGray
         homeImgViewRef.tintColor = UIColor.lightGray
-
+        
         orderTrackerLblRef.textColor = UIColor.lightGray
         orderTrackerImgViewRef.tintColor = UIColor.lightGray
         
         myProfileLblRef.textColor = UIColor.lightGray
         myProfileImgViewRef.tintColor = UIColor.lightGray
         
-//        navTitleLblRef.text = "Consultation"
-
+        navTitleLblRef.text = "Consultation"
+        
         var pageIndex = VCArr.firstIndex(of: (self.pageVC.viewControllers?[0])!)
         if pageIndex == 0{
             pageIndex = pageIndex! + 1
@@ -333,9 +353,9 @@ extension CustomTabBarViewController {
             let firstVC = VCArr[pageIndex!]
             pageVC.setViewControllers([firstVC], direction: .reverse, animated: true, completion: nil)
         }
-
-
-
+        
+        
+        
     }
     
     @objc func orderTrackerBtnTap() {
@@ -344,15 +364,15 @@ extension CustomTabBarViewController {
         
         homeLblRef.textColor = UIColor.lightGray
         homeImgViewRef.tintColor = UIColor.lightGray
-
+        
         consultationLblRef.textColor = UIColor.lightGray
         consultationImgViewRef.tintColor = UIColor.lightGray
         
         myProfileLblRef.textColor = UIColor.lightGray
         myProfileImgViewRef.tintColor = UIColor.lightGray
         
-//        navTitleLblRef.text = "Order Tracker"
-
+        navTitleLblRef.text = "Order Tracker"
+        
         var pageIndex = VCArr.firstIndex(of: (self.pageVC.viewControllers?[0])!)
         if pageIndex == 0{
             pageIndex = pageIndex! + 2
@@ -373,9 +393,9 @@ extension CustomTabBarViewController {
             let firstVC = VCArr[pageIndex!]
             pageVC.setViewControllers([firstVC], direction: .reverse, animated: true, completion: nil)
         }
-
-
-
+        
+        
+        
     }
     
     
@@ -385,14 +405,14 @@ extension CustomTabBarViewController {
         
         homeLblRef.textColor = UIColor.lightGray
         homeImgViewRef.tintColor = UIColor.lightGray
-
+        
         consultationLblRef.textColor = UIColor.lightGray
         consultationImgViewRef.tintColor = UIColor.lightGray
         
         orderTrackerLblRef.textColor = UIColor.lightGray
         orderTrackerImgViewRef.tintColor = UIColor.lightGray
         
-//        navTitleLblRef.text = "My Profile"
+        navTitleLblRef.text = "My Profile"
         
         var pageIndex = VCArr.firstIndex(of: (self.pageVC.viewControllers?[0])!)
         if pageIndex == 0{
@@ -414,9 +434,9 @@ extension CustomTabBarViewController {
             let firstVC = VCArr[pageIndex!]
             pageVC.setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
         }
-
-
-
+        
+        
+        
     }
     
 }
@@ -465,7 +485,7 @@ extension CustomTabBarViewController: UIPageViewControllerDelegate, UIPageViewCo
     }
     
     private func updateControlView() {
-
+        
         if pendingIndex == 0 {
             
             homeLblRef.textColor = UIColor.green
@@ -473,14 +493,14 @@ extension CustomTabBarViewController: UIPageViewControllerDelegate, UIPageViewCo
             
             consultationLblRef.textColor = UIColor.lightGray
             consultationImgViewRef.tintColor = UIColor.lightGray
-
+            
             orderTrackerLblRef.textColor = UIColor.lightGray
             orderTrackerImgViewRef.tintColor = UIColor.lightGray
             
             myProfileLblRef.textColor = UIColor.lightGray
             myProfileImgViewRef.tintColor = UIColor.lightGray
             
-//            navTitleLblRef.text = "Home"
+            navTitleLblRef.text = "Home"
             
         } else if pendingIndex == 1 {
             
@@ -489,14 +509,14 @@ extension CustomTabBarViewController: UIPageViewControllerDelegate, UIPageViewCo
             
             homeLblRef.textColor = UIColor.lightGray
             homeImgViewRef.tintColor = UIColor.lightGray
-
+            
             orderTrackerLblRef.textColor = UIColor.lightGray
             orderTrackerImgViewRef.tintColor = UIColor.lightGray
             
             myProfileLblRef.textColor = UIColor.lightGray
             myProfileImgViewRef.tintColor = UIColor.lightGray
             
-//            navTitleLblRef.text = "Consultation"
+            navTitleLblRef.text = "Consultation"
             
         } else if pendingIndex == 2 {
             
@@ -505,14 +525,14 @@ extension CustomTabBarViewController: UIPageViewControllerDelegate, UIPageViewCo
             
             homeLblRef.textColor = UIColor.lightGray
             homeImgViewRef.tintColor = UIColor.lightGray
-
+            
             consultationLblRef.textColor = UIColor.lightGray
             consultationImgViewRef.tintColor = UIColor.lightGray
             
             myProfileLblRef.textColor = UIColor.lightGray
             myProfileImgViewRef.tintColor = UIColor.lightGray
             
-//            navTitleLblRef.text = "Order Tracker"
+            navTitleLblRef.text = "Order Tracker"
             
         } else if pendingIndex == 3 {
             
@@ -521,17 +541,17 @@ extension CustomTabBarViewController: UIPageViewControllerDelegate, UIPageViewCo
             
             homeLblRef.textColor = UIColor.lightGray
             homeImgViewRef.tintColor = UIColor.lightGray
-
+            
             consultationLblRef.textColor = UIColor.lightGray
             consultationImgViewRef.tintColor = UIColor.lightGray
             
             orderTrackerLblRef.textColor = UIColor.lightGray
             orderTrackerImgViewRef.tintColor = UIColor.lightGray
             
-//            navTitleLblRef.text = "My Profile"
-
+            navTitleLblRef.text = "My Profile"
+            
         }
-
+        
         
     }
     

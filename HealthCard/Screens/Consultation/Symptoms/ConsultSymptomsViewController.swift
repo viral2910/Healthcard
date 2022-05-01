@@ -39,11 +39,11 @@ class ConsultSymptomsViewController: UIViewController, XIBed {
 extension ConsultSymptomsViewController {
     func setupUI() {
         
-        tableViewManager.start(data: ["","","","","",""])
 
         tableViewManager.presentDelegate = presentDelegate
         tableViewManager.pushDelegate = pushDelegate
         
+        apiCall()
 
     }
     
@@ -67,5 +67,18 @@ extension ConsultSymptomsViewController {
     
     @IBAction func searchBtnTap(_ sender: UIButton) {
         
+    }
+}
+
+//MARK: - API CALL
+extension ConsultSymptomsViewController {
+    func apiCall() {
+        struct demo: Codable { }
+        
+        NetWorker.shared.callAPIService(type: APIV2.Symptoms) { [weak self](data: SymptomsDataResponse?, error) in
+         
+            self!.tableViewManager.start(data: data ?? [])
+
+        }
     }
 }

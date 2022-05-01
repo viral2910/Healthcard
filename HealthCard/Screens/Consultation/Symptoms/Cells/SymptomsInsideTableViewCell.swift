@@ -12,6 +12,7 @@ class SymptomsInsideTableViewCell: UITableViewCell {
     @IBOutlet weak var lblRef: UILabel!
     @IBOutlet weak var imgViewRef: UIImageView!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

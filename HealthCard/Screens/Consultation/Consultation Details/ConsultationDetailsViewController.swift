@@ -32,6 +32,8 @@ class ConsultationDetailsViewController: UIViewController , XIBed {
     var pushDelegate: PushViewControllerDelegate?
     var presentDelegate: presentViewControllersDelegate?
     
+    var concernList: [SymptomsDataResponseElement] = []
+    
     var selectedIssueArr:[String] = []
     
     override func viewDidLoad() {
@@ -55,7 +57,7 @@ class ConsultationDetailsViewController: UIViewController , XIBed {
 extension ConsultationDetailsViewController {
     func setupUI() {
         
-        tableViewManager.start(data: ["INFERTILITY","INFERTILITY","INFERTILITY","INFERTILITY","INFERTILITY"])
+        tableViewManager.start(data: concernList)
 
         tableViewManager.presentDelegate = presentDelegate
         tableViewManager.pushDelegate = pushDelegate
@@ -91,7 +93,11 @@ extension ConsultationDetailsViewController {
     }
     
     @IBAction func proceedBtnTap(_ sender: UIButton) {
-        
+        if selectedIssueArr.count != 0 {
+        let vc = ConsultationProcessViewController.instantiate()
+        vc.selectedIssueArr = selectedIssueArr
+        self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     @IBAction func backBtnTap(_ sender: UIButton) {
@@ -99,7 +105,11 @@ extension ConsultationDetailsViewController {
     }
     
     @IBAction func homeBtnTap(_ sender: UIButton) {
-        
+        UIApplication.shared.keyWindow?.rootViewController = navigationController
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let homeVC = CustomTabBarViewController.instantiate()        //Below's navigationController is useful if u want NavigationController
+        let navigationController = UINavigationController(rootViewController: homeVC)
+        appDelegate.window!.rootViewController = navigationController
     }
 }
 
@@ -118,7 +128,7 @@ extension ConsultationDetailsViewController: selectedIssueDelegate, removeSelect
         cvHeightRef.constant = roundedValue * 60
     
         
-        collectionViewManager.start(collectionView: cvRef, storyData: selectedIssueArr)
+        collectionViewManager.start(collectionView: cvRef, storyData: selectedIssueArr, divideElementBy: 2.0)
     }
     
     func removeIssueAtIndex(index: Int) {
@@ -134,7 +144,8 @@ extension ConsultationDetailsViewController: selectedIssueDelegate, removeSelect
         cvHeightRef.constant = roundedValue * 60
     
         
-        collectionViewManager.start(collectionView: cvRef, storyData: selectedIssueArr)
+        collectionViewManager.start(collectionView: cvRef, storyData: selectedIssueArr, divideElementBy: 2.0)
     }
     
 }
+

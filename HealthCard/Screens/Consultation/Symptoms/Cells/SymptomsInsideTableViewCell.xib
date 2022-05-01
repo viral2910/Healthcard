@@ -49,6 +49,7 @@
                             <constraint firstAttribute="bottom" secondItem="dJY-uV-4J4" secondAttribute="bottom" constant="10" id="obX-zo-YOF"/>
                             <constraint firstItem="3Qy-iH-nbH" firstAttribute="centerY" secondItem="dJY-uV-4J4" secondAttribute="centerY" id="pJA-3I-Qw5"/>
                             <constraint firstItem="3Qy-iH-nbH" firstAttribute="leading" secondItem="dJY-uV-4J4" secondAttribute="trailing" constant="20" id="pb8-Hv-p7h"/>
+                            <constraint firstAttribute="height" constant="62" id="sB4-Xh-PhW"/>
                         </constraints>
                     </view>
                 </subviews>

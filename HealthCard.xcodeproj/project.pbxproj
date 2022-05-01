@@ -19,12 +19,6 @@
 		E072953227F84BDE0083357A /* OtpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072953127F84BDE0083357A /* OtpVC.swift */; };
 		E072953427F850570083357A /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072953327F850570083357A /* ForgotPasswordVC.swift */; };
 		E072953627F853610083357A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E072953527F853610083357A /* Home.storyboard */; };
-		E07745C32817FB5B00C9738B /* BookLabTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07745C12817FB5B00C9738B /* BookLabTest.swift */; };
-		E07745C42817FB5B00C9738B /* BookLabTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = E07745C22817FB5B00C9738B /* BookLabTest.xib */; };
-		E07745C72817FC0100C9738B /* BookLabTestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07745C52817FC0100C9738B /* BookLabTestCell.swift */; };
-		E07745C82817FC0100C9738B /* BookLabTestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E07745C62817FC0100C9738B /* BookLabTestCell.xib */; };
-		E07745CB2817FE2000C9738B /* LabTestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07745C92817FE2000C9738B /* LabTestCell.swift */; };
-		E07745CC2817FE2000C9738B /* LabTestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E07745CA2817FE2000C9738B /* LabTestCell.xib */; };
 		E0B9BF912811BD23001A58E8 /* XIBed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF012811BD22001A58E8 /* XIBed.swift */; };
 		E0B9BF922811BD23001A58E8 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF032811BD22001A58E8 /* Environment.swift */; };
 		E0B9BF932811BD23001A58E8 /* raleway_extralightitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF062811BD22001A58E8 /* raleway_extralightitalic.ttf */; };
@@ -100,43 +94,6 @@
 		E0B9BFD92811BD23001A58E8 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF4E2811BD22001A58E8 /* UILabel.swift */; };
 		E0B9BFDA2811BD23001A58E8 /* UserDefault+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF4F2811BD22001A58E8 /* UserDefault+Constant.swift */; };
 		E0B9BFDB2811BD23001A58E8 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF502811BD22001A58E8 /* UIAlertController.swift */; };
-		E0B9BFDC2811BD23001A58E8 /* CategoryCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF532811BD22001A58E8 /* CategoryCollectionViewManager.swift */; };
-		E0B9BFDD2811BD23001A58E8 /* DashboardCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF542811BD22001A58E8 /* DashboardCollectionViewManager.swift */; };
-		E0B9BFDE2811BD23001A58E8 /* SliderCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF552811BD22001A58E8 /* SliderCollectionViewManager.swift */; };
-		E0B9BFDF2811BD23001A58E8 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF562811BD22001A58E8 /* HomeViewController.xib */; };
-		E0B9BFE02811BD23001A58E8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF572811BD22001A58E8 /* HomeViewController.swift */; };
-		E0B9BFE12811BD23001A58E8 /* DashboardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF592811BD22001A58E8 /* DashboardCollectionViewCell.xib */; };
-		E0B9BFE22811BD23001A58E8 /* BlogsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF5A2811BD22001A58E8 /* BlogsCollectionViewCell.swift */; };
-		E0B9BFE32811BD23001A58E8 /* LookForTestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF5B2811BD22001A58E8 /* LookForTestCollectionViewCell.swift */; };
-		E0B9BFE42811BD23001A58E8 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF5C2811BD22001A58E8 /* CategoryCollectionViewCell.swift */; };
-		E0B9BFE52811BD23001A58E8 /* SliderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF5D2811BD22001A58E8 /* SliderCollectionViewCell.swift */; };
-		E0B9BFE62811BD23001A58E8 /* LookForTestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF5E2811BD22001A58E8 /* LookForTestCollectionViewCell.xib */; };
-		E0B9BFE72811BD23001A58E8 /* BlogsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF5F2811BD22001A58E8 /* BlogsCollectionViewCell.xib */; };
-		E0B9BFE82811BD23001A58E8 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF602811BD22001A58E8 /* CategoryCollectionViewCell.xib */; };
-		E0B9BFE92811BD23001A58E8 /* SliderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF612811BD22001A58E8 /* SliderCollectionViewCell.xib */; };
-		E0B9BFEA2811BD23001A58E8 /* DashboardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF622811BD22001A58E8 /* DashboardCollectionViewCell.swift */; };
-		E0B9BFEB2811BD23001A58E8 /* BlogsCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF632811BD22001A58E8 /* BlogsCollectionViewManager.swift */; };
-		E0B9BFEC2811BD23001A58E8 /* ConsultationMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF652811BD22001A58E8 /* ConsultationMainViewController.swift */; };
-		E0B9BFED2811BD23001A58E8 /* ConsultSpecialityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF682811BD23001A58E8 /* ConsultSpecialityTableViewCell.swift */; };
-		E0B9BFEE2811BD23001A58E8 /* ConsultSpecialityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF692811BD23001A58E8 /* ConsultSpecialityTableViewCell.xib */; };
-		E0B9BFEF2811BD23001A58E8 /* ConsultSpecialityTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF6A2811BD23001A58E8 /* ConsultSpecialityTableViewManager.swift */; };
-		E0B9BFF02811BD23001A58E8 /* ConsultSpecialityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF6B2811BD23001A58E8 /* ConsultSpecialityViewController.xib */; };
-		E0B9BFF12811BD23001A58E8 /* ConsultSpecialityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF6C2811BD23001A58E8 /* ConsultSpecialityViewController.swift */; };
-		E0B9BFF22811BD23001A58E8 /* ConsultationMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF6D2811BD23001A58E8 /* ConsultationMainViewController.xib */; };
-		E0B9BFF32811BD23001A58E8 /* SymptomsInsideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF702811BD23001A58E8 /* SymptomsInsideTableViewCell.xib */; };
-		E0B9BFF42811BD23001A58E8 /* SymptomsInsideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF712811BD23001A58E8 /* SymptomsInsideTableViewCell.swift */; };
-		E0B9BFF52811BD23001A58E8 /* ConsultSymptomsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF722811BD23001A58E8 /* ConsultSymptomsTableViewCell.swift */; };
-		E0B9BFF62811BD23001A58E8 /* ConsultSymptomsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF732811BD23001A58E8 /* ConsultSymptomsTableViewCell.xib */; };
-		E0B9BFF72811BD23001A58E8 /* ConsultSymptomsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF742811BD23001A58E8 /* ConsultSymptomsViewController.xib */; };
-		E0B9BFF82811BD23001A58E8 /* SymptomsInsideTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF752811BD23001A58E8 /* SymptomsInsideTableViewManager.swift */; };
-		E0B9BFF92811BD23001A58E8 /* ConsultSymptomsTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF762811BD23001A58E8 /* ConsultSymptomsTableViewManager.swift */; };
-		E0B9BFFA2811BD23001A58E8 /* ConsultSymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF772811BD23001A58E8 /* ConsultSymptomsViewController.swift */; };
-		E0B9BFFB2811BD23001A58E8 /* SelectedIssueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF7A2811BD23001A58E8 /* SelectedIssueCollectionViewCell.swift */; };
-		E0B9BFFC2811BD23001A58E8 /* SelectedIssueCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF7B2811BD23001A58E8 /* SelectedIssueCollectionViewCell.xib */; };
-		E0B9BFFD2811BD23001A58E8 /* ConsultDetailsTavleViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF7C2811BD23001A58E8 /* ConsultDetailsTavleViewManager.swift */; };
-		E0B9BFFE2811BD23001A58E8 /* ConsultationDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF7D2811BD23001A58E8 /* ConsultationDetailsViewController.xib */; };
-		E0B9BFFF2811BD23001A58E8 /* ConsultationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF7E2811BD23001A58E8 /* ConsultationDetailsViewController.swift */; };
-		E0B9C0002811BD23001A58E8 /* SelectedIssueCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF7F2811BD23001A58E8 /* SelectedIssueCollectionViewManager.swift */; };
 		E0B9C0012811BD23001A58E8 /* Consultation.zip in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF802811BD23001A58E8 /* Consultation.zip */; };
 		E0B9C0022811BD23001A58E8 /* Home.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF822811BD23001A58E8 /* Home.xcassets */; };
 		E0B9C0032811BD23001A58E8 /* APIV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF842811BD23001A58E8 /* APIV2.swift */; };
@@ -151,8 +108,6 @@
 		E0B9C00C2811BD23001A58E8 /* CustomAlertPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF8F2811BD23001A58E8 /* CustomAlertPopupVC.swift */; };
 		E0C447F027F494E300BE6E2D /* SingInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C447EF27F494E300BE6E2D /* SingInVC.swift */; };
 		E0C447F227F4959E00BE6E2D /* SingUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C447F127F4959E00BE6E2D /* SingUpVC.swift */; };
-		E0CC64652813DF350011A165 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC64632813DF350011A165 /* CustomTabBarViewController.swift */; };
-		E0CC64662813DF350011A165 /* CustomTabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CC64642813DF350011A165 /* CustomTabBarViewController.xib */; };
 		E0CC6478281438380011A165 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC6468281438380011A165 /* ProfileVC.swift */; };
 		E0CC6479281438380011A165 /* PersonalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC6469281438380011A165 /* PersonalVC.swift */; };
 		E0CC647A281438380011A165 /* RelationshipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC646A281438380011A165 /* RelationshipTableViewCell.swift */; };
@@ -183,6 +138,64 @@
 		E0CC64A528156CD60011A165 /* CustomSideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC64A028156CD60011A165 /* CustomSideMenuTableViewCell.swift */; };
 		E0CC64A628156CD60011A165 /* CustomSideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CC64A128156CD60011A165 /* CustomSideMenuTableViewCell.xib */; };
 		E0CC64A728156CD60011A165 /* CustomSideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CC64A228156CD60011A165 /* CustomSideMenuViewController.xib */; };
+		E0D7CE14281E7811001B4738 /* CategoryCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CDFB281E7811001B4738 /* CategoryCollectionViewManager.swift */; };
+		E0D7CE15281E7811001B4738 /* DashboardCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CDFC281E7811001B4738 /* DashboardCollectionViewManager.swift */; };
+		E0D7CE16281E7811001B4738 /* LookingForTestInCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CDFD281E7811001B4738 /* LookingForTestInCollectionViewManager.swift */; };
+		E0D7CE17281E7811001B4738 /* SliderCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CDFE281E7811001B4738 /* SliderCollectionViewManager.swift */; };
+		E0D7CE18281E7811001B4738 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D7CDFF281E7811001B4738 /* HomeViewController.xib */; };
+		E0D7CE19281E7811001B4738 /* ConsultationCategoryCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE00281E7811001B4738 /* ConsultationCategoryCollectionViewManager.swift */; };
+		E0D7CE1A281E7811001B4738 /* MedicineYouAreLookingSlider1CvManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE01281E7811001B4738 /* MedicineYouAreLookingSlider1CvManager.swift */; };
+		E0D7CE1B281E7811001B4738 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE02281E7811001B4738 /* HomeViewController.swift */; };
+		E0D7CE1C281E7811001B4738 /* LookingForConsultationInSlider2CollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE03281E7811001B4738 /* LookingForConsultationInSlider2CollectionViewManager.swift */; };
+		E0D7CE1D281E7811001B4738 /* DashboardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D7CE05281E7811001B4738 /* DashboardCollectionViewCell.xib */; };
+		E0D7CE1E281E7811001B4738 /* BlogsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE06281E7811001B4738 /* BlogsCollectionViewCell.swift */; };
+		E0D7CE1F281E7811001B4738 /* LookForTestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE07281E7811001B4738 /* LookForTestCollectionViewCell.swift */; };
+		E0D7CE20281E7811001B4738 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE08281E7811001B4738 /* CategoryCollectionViewCell.swift */; };
+		E0D7CE21281E7811001B4738 /* SliderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE09281E7811001B4738 /* SliderCollectionViewCell.swift */; };
+		E0D7CE22281E7811001B4738 /* LookForTestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D7CE0A281E7811001B4738 /* LookForTestCollectionViewCell.xib */; };
+		E0D7CE23281E7811001B4738 /* BlogsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D7CE0B281E7811001B4738 /* BlogsCollectionViewCell.xib */; };
+		E0D7CE24281E7811001B4738 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D7CE0C281E7811001B4738 /* CategoryCollectionViewCell.xib */; };
+		E0D7CE25281E7811001B4738 /* SliderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D7CE0D281E7811001B4738 /* SliderCollectionViewCell.xib */; };
+		E0D7CE26281E7811001B4738 /* DashboardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE0E281E7811001B4738 /* DashboardCollectionViewCell.swift */; };
+		E0D7CE27281E7811001B4738 /* LookingForTestSliderCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE0F281E7811001B4738 /* LookingForTestSliderCollectionViewManager.swift */; };
+		E0D7CE28281E7811001B4738 /* PatientExperienceWithUsSliderCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE10281E7811001B4738 /* PatientExperienceWithUsSliderCollectionViewManager.swift */; };
+		E0D7CE29281E7811001B4738 /* LookingForConsultationInSlider1CollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE11281E7811001B4738 /* LookingForConsultationInSlider1CollectionViewManager.swift */; };
+		E0D7CE2A281E7811001B4738 /* MedicineYouAreLookingSlider2CollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE12281E7811001B4738 /* MedicineYouAreLookingSlider2CollectionViewManager.swift */; };
+		E0D7CE2B281E7811001B4738 /* BlogsCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE13281E7811001B4738 /* BlogsCollectionViewManager.swift */; };
+		E0D7CE2E281E788B001B4738 /* DoctorDetailsBySpecializeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE2D281E788B001B4738 /* DoctorDetailsBySpecializeStruct.swift */; };
+		E0D7CE50281E78BA001B4738 /* ConsultationMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE30281E78BA001B4738 /* ConsultationMainViewController.swift */; };
+		E0D7CE51281E78BA001B4738 /* Symptoms.zip in Resources */ = {isa = PBXBuildFile; fileRef = E0D7CE31281E78BA001B4738 /* Symptoms.zip */; };
+		E0D7CE52281E78BA001B4738 /* ConsultSpecialityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE34281E78BA001B4738 /* ConsultSpecialityTableViewCell.swift */; };
+		E0D7CE53281E78BA001B4738 /* ConsultSpecialityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D7CE35281E78BA001B4738 /* ConsultSpecialityTableViewCell.xib */; };
+		E0D7CE54281E78BA001B4738 /* ConsultSpecialityTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE36281E78BA001B4738 /* ConsultSpecialityTableViewManager.swift */; };
+		E0D7CE55281E78BA001B4738 /* ConsultSpecialityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D7CE37281E78BA001B4738 /* ConsultSpecialityViewController.xib */; };
+		E0D7CE56281E78BA001B4738 /* ConsultSpecialityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE38281E78BA001B4738 /* ConsultSpecialityViewController.swift */; };
+		E0D7CE57281E78BA001B4738 /* Speciality.zip in Resources */ = {isa = PBXBuildFile; fileRef = E0D7CE39281E78BA001B4738 /* Speciality.zip */; };
+		E0D7CE58281E78BA001B4738 /* ConsultationMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D7CE3A281E78BA001B4738 /* ConsultationMainViewController.xib */; };
+		E0D7CE59281E78BA001B4738 /* SymptomsInsideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D7CE3D281E78BA001B4738 /* SymptomsInsideTableViewCell.xib */; };
+		E0D7CE5A281E78BA001B4738 /* SymptomsInsideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE3E281E78BA001B4738 /* SymptomsInsideTableViewCell.swift */; };
+		E0D7CE5B281E78BA001B4738 /* ConsultSymptomsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE3F281E78BA001B4738 /* ConsultSymptomsTableViewCell.swift */; };
+		E0D7CE5C281E78BA001B4738 /* ConsultSymptomsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D7CE40281E78BA001B4738 /* ConsultSymptomsTableViewCell.xib */; };
+		E0D7CE5D281E78BA001B4738 /* ConsultSymptomsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D7CE41281E78BA001B4738 /* ConsultSymptomsViewController.xib */; };
+		E0D7CE5E281E78BA001B4738 /* SymptomsInsideTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE42281E78BA001B4738 /* SymptomsInsideTableViewManager.swift */; };
+		E0D7CE5F281E78BA001B4738 /* ConsultSymptomsTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE43281E78BA001B4738 /* ConsultSymptomsTableViewManager.swift */; };
+		E0D7CE60281E78BA001B4738 /* ConsultSymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE44281E78BA001B4738 /* ConsultSymptomsViewController.swift */; };
+		E0D7CE61281E78BA001B4738 /* ConsultationProcessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE46281E78BA001B4738 /* ConsultationProcessViewController.swift */; };
+		E0D7CE62281E78BA001B4738 /* ConsultationProcessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D7CE47281E78BA001B4738 /* ConsultationProcessViewController.xib */; };
+		E0D7CE63281E78BA001B4738 /* SelectedIssueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE4A281E78BA001B4738 /* SelectedIssueCollectionViewCell.swift */; };
+		E0D7CE64281E78BA001B4738 /* SelectedIssueCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D7CE4B281E78BA001B4738 /* SelectedIssueCollectionViewCell.xib */; };
+		E0D7CE65281E78BA001B4738 /* ConsultDetailsTavleViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE4C281E78BA001B4738 /* ConsultDetailsTavleViewManager.swift */; };
+		E0D7CE66281E78BA001B4738 /* ConsultationDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D7CE4D281E78BA001B4738 /* ConsultationDetailsViewController.xib */; };
+		E0D7CE67281E78BA001B4738 /* ConsultationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE4E281E78BA001B4738 /* ConsultationDetailsViewController.swift */; };
+		E0D7CE68281E78BA001B4738 /* SelectedIssueCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE4F281E78BA001B4738 /* SelectedIssueCollectionViewManager.swift */; };
+		E0D7CE6C281E797E001B4738 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE6A281E797E001B4738 /* CustomTabBarViewController.swift */; };
+		E0D7CE6D281E797E001B4738 /* CustomTabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D7CE6B281E797E001B4738 /* CustomTabBarViewController.xib */; };
+		E0D7CE75281E8C56001B4738 /* LabTestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D7CE6F281E8C56001B4738 /* LabTestCell.xib */; };
+		E0D7CE76281E8C56001B4738 /* BookLabTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE70281E8C56001B4738 /* BookLabTest.swift */; };
+		E0D7CE77281E8C56001B4738 /* BookLabTestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE71281E8C56001B4738 /* BookLabTestCell.swift */; };
+		E0D7CE78281E8C56001B4738 /* BookLabTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D7CE72281E8C56001B4738 /* BookLabTest.xib */; };
+		E0D7CE79281E8C56001B4738 /* BookLabTestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D7CE73281E8C56001B4738 /* BookLabTestCell.xib */; };
+		E0D7CE7A281E8C56001B4738 /* LabTestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE74281E8C56001B4738 /* LabTestCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -202,12 +215,6 @@
 		E072953127F84BDE0083357A /* OtpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpVC.swift; sourceTree = "<group>"; };
 		E072953327F850570083357A /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		E072953527F853610083357A /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		E07745C12817FB5B00C9738B /* BookLabTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookLabTest.swift; sourceTree = "<group>"; };
-		E07745C22817FB5B00C9738B /* BookLabTest.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookLabTest.xib; sourceTree = "<group>"; };
-		E07745C52817FC0100C9738B /* BookLabTestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookLabTestCell.swift; sourceTree = "<group>"; };
-		E07745C62817FC0100C9738B /* BookLabTestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookLabTestCell.xib; sourceTree = "<group>"; };
-		E07745C92817FE2000C9738B /* LabTestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabTestCell.swift; sourceTree = "<group>"; };
-		E07745CA2817FE2000C9738B /* LabTestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabTestCell.xib; sourceTree = "<group>"; };
 		E0B9BF012811BD22001A58E8 /* XIBed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XIBed.swift; sourceTree = "<group>"; };
 		E0B9BF032811BD22001A58E8 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		E0B9BF062811BD22001A58E8 /* raleway_extralightitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_extralightitalic.ttf; sourceTree = "<group>"; };
@@ -283,43 +290,6 @@
 		E0B9BF4E2811BD22001A58E8 /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		E0B9BF4F2811BD22001A58E8 /* UserDefault+Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefault+Constant.swift"; sourceTree = "<group>"; };
 		E0B9BF502811BD22001A58E8 /* UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
-		E0B9BF532811BD22001A58E8 /* CategoryCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewManager.swift; sourceTree = "<group>"; };
-		E0B9BF542811BD22001A58E8 /* DashboardCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCollectionViewManager.swift; sourceTree = "<group>"; };
-		E0B9BF552811BD22001A58E8 /* SliderCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderCollectionViewManager.swift; sourceTree = "<group>"; };
-		E0B9BF562811BD22001A58E8 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		E0B9BF572811BD22001A58E8 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		E0B9BF592811BD22001A58E8 /* DashboardCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardCollectionViewCell.xib; sourceTree = "<group>"; };
-		E0B9BF5A2811BD22001A58E8 /* BlogsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogsCollectionViewCell.swift; sourceTree = "<group>"; };
-		E0B9BF5B2811BD22001A58E8 /* LookForTestCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LookForTestCollectionViewCell.swift; sourceTree = "<group>"; };
-		E0B9BF5C2811BD22001A58E8 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
-		E0B9BF5D2811BD22001A58E8 /* SliderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderCollectionViewCell.swift; sourceTree = "<group>"; };
-		E0B9BF5E2811BD22001A58E8 /* LookForTestCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LookForTestCollectionViewCell.xib; sourceTree = "<group>"; };
-		E0B9BF5F2811BD22001A58E8 /* BlogsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlogsCollectionViewCell.xib; sourceTree = "<group>"; };
-		E0B9BF602811BD22001A58E8 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
-		E0B9BF612811BD22001A58E8 /* SliderCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SliderCollectionViewCell.xib; sourceTree = "<group>"; };
-		E0B9BF622811BD22001A58E8 /* DashboardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCollectionViewCell.swift; sourceTree = "<group>"; };
-		E0B9BF632811BD22001A58E8 /* BlogsCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogsCollectionViewManager.swift; sourceTree = "<group>"; };
-		E0B9BF652811BD22001A58E8 /* ConsultationMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultationMainViewController.swift; sourceTree = "<group>"; };
-		E0B9BF682811BD23001A58E8 /* ConsultSpecialityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultSpecialityTableViewCell.swift; sourceTree = "<group>"; };
-		E0B9BF692811BD23001A58E8 /* ConsultSpecialityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsultSpecialityTableViewCell.xib; sourceTree = "<group>"; };
-		E0B9BF6A2811BD23001A58E8 /* ConsultSpecialityTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultSpecialityTableViewManager.swift; sourceTree = "<group>"; };
-		E0B9BF6B2811BD23001A58E8 /* ConsultSpecialityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsultSpecialityViewController.xib; sourceTree = "<group>"; };
-		E0B9BF6C2811BD23001A58E8 /* ConsultSpecialityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultSpecialityViewController.swift; sourceTree = "<group>"; };
-		E0B9BF6D2811BD23001A58E8 /* ConsultationMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsultationMainViewController.xib; sourceTree = "<group>"; };
-		E0B9BF702811BD23001A58E8 /* SymptomsInsideTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SymptomsInsideTableViewCell.xib; sourceTree = "<group>"; };
-		E0B9BF712811BD23001A58E8 /* SymptomsInsideTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomsInsideTableViewCell.swift; sourceTree = "<group>"; };
-		E0B9BF722811BD23001A58E8 /* ConsultSymptomsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultSymptomsTableViewCell.swift; sourceTree = "<group>"; };
-		E0B9BF732811BD23001A58E8 /* ConsultSymptomsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsultSymptomsTableViewCell.xib; sourceTree = "<group>"; };
-		E0B9BF742811BD23001A58E8 /* ConsultSymptomsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsultSymptomsViewController.xib; sourceTree = "<group>"; };
-		E0B9BF752811BD23001A58E8 /* SymptomsInsideTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomsInsideTableViewManager.swift; sourceTree = "<group>"; };
-		E0B9BF762811BD23001A58E8 /* ConsultSymptomsTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultSymptomsTableViewManager.swift; sourceTree = "<group>"; };
-		E0B9BF772811BD23001A58E8 /* ConsultSymptomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultSymptomsViewController.swift; sourceTree = "<group>"; };
-		E0B9BF7A2811BD23001A58E8 /* SelectedIssueCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedIssueCollectionViewCell.swift; sourceTree = "<group>"; };
-		E0B9BF7B2811BD23001A58E8 /* SelectedIssueCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectedIssueCollectionViewCell.xib; sourceTree = "<group>"; };
-		E0B9BF7C2811BD23001A58E8 /* ConsultDetailsTavleViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultDetailsTavleViewManager.swift; sourceTree = "<group>"; };
-		E0B9BF7D2811BD23001A58E8 /* ConsultationDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsultationDetailsViewController.xib; sourceTree = "<group>"; };
-		E0B9BF7E2811BD23001A58E8 /* ConsultationDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultationDetailsViewController.swift; sourceTree = "<group>"; };
-		E0B9BF7F2811BD23001A58E8 /* SelectedIssueCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedIssueCollectionViewManager.swift; sourceTree = "<group>"; };
 		E0B9BF802811BD23001A58E8 /* Consultation.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Consultation.zip; sourceTree = "<group>"; };
 		E0B9BF822811BD23001A58E8 /* Home.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Home.xcassets; sourceTree = "<group>"; };
 		E0B9BF842811BD23001A58E8 /* APIV2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIV2.swift; sourceTree = "<group>"; };
@@ -334,8 +304,6 @@
 		E0B9BF8F2811BD23001A58E8 /* CustomAlertPopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlertPopupVC.swift; sourceTree = "<group>"; };
 		E0C447EF27F494E300BE6E2D /* SingInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInVC.swift; sourceTree = "<group>"; };
 		E0C447F127F4959E00BE6E2D /* SingUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpVC.swift; sourceTree = "<group>"; };
-		E0CC64632813DF350011A165 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
-		E0CC64642813DF350011A165 /* CustomTabBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTabBarViewController.xib; sourceTree = "<group>"; };
 		E0CC6468281438380011A165 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		E0CC6469281438380011A165 /* PersonalVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalVC.swift; sourceTree = "<group>"; };
 		E0CC646A281438380011A165 /* RelationshipTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationshipTableViewCell.swift; sourceTree = "<group>"; };
@@ -366,6 +334,64 @@
 		E0CC64A028156CD60011A165 /* CustomSideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		E0CC64A128156CD60011A165 /* CustomSideMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomSideMenuTableViewCell.xib; sourceTree = "<group>"; };
 		E0CC64A228156CD60011A165 /* CustomSideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomSideMenuViewController.xib; sourceTree = "<group>"; };
+		E0D7CDFB281E7811001B4738 /* CategoryCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewManager.swift; sourceTree = "<group>"; };
+		E0D7CDFC281E7811001B4738 /* DashboardCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCollectionViewManager.swift; sourceTree = "<group>"; };
+		E0D7CDFD281E7811001B4738 /* LookingForTestInCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LookingForTestInCollectionViewManager.swift; sourceTree = "<group>"; };
+		E0D7CDFE281E7811001B4738 /* SliderCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderCollectionViewManager.swift; sourceTree = "<group>"; };
+		E0D7CDFF281E7811001B4738 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		E0D7CE00281E7811001B4738 /* ConsultationCategoryCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultationCategoryCollectionViewManager.swift; sourceTree = "<group>"; };
+		E0D7CE01281E7811001B4738 /* MedicineYouAreLookingSlider1CvManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineYouAreLookingSlider1CvManager.swift; sourceTree = "<group>"; };
+		E0D7CE02281E7811001B4738 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E0D7CE03281E7811001B4738 /* LookingForConsultationInSlider2CollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LookingForConsultationInSlider2CollectionViewManager.swift; sourceTree = "<group>"; };
+		E0D7CE05281E7811001B4738 /* DashboardCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardCollectionViewCell.xib; sourceTree = "<group>"; };
+		E0D7CE06281E7811001B4738 /* BlogsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogsCollectionViewCell.swift; sourceTree = "<group>"; };
+		E0D7CE07281E7811001B4738 /* LookForTestCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LookForTestCollectionViewCell.swift; sourceTree = "<group>"; };
+		E0D7CE08281E7811001B4738 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		E0D7CE09281E7811001B4738 /* SliderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderCollectionViewCell.swift; sourceTree = "<group>"; };
+		E0D7CE0A281E7811001B4738 /* LookForTestCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LookForTestCollectionViewCell.xib; sourceTree = "<group>"; };
+		E0D7CE0B281E7811001B4738 /* BlogsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlogsCollectionViewCell.xib; sourceTree = "<group>"; };
+		E0D7CE0C281E7811001B4738 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		E0D7CE0D281E7811001B4738 /* SliderCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SliderCollectionViewCell.xib; sourceTree = "<group>"; };
+		E0D7CE0E281E7811001B4738 /* DashboardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCollectionViewCell.swift; sourceTree = "<group>"; };
+		E0D7CE0F281E7811001B4738 /* LookingForTestSliderCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LookingForTestSliderCollectionViewManager.swift; sourceTree = "<group>"; };
+		E0D7CE10281E7811001B4738 /* PatientExperienceWithUsSliderCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientExperienceWithUsSliderCollectionViewManager.swift; sourceTree = "<group>"; };
+		E0D7CE11281E7811001B4738 /* LookingForConsultationInSlider1CollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LookingForConsultationInSlider1CollectionViewManager.swift; sourceTree = "<group>"; };
+		E0D7CE12281E7811001B4738 /* MedicineYouAreLookingSlider2CollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineYouAreLookingSlider2CollectionViewManager.swift; sourceTree = "<group>"; };
+		E0D7CE13281E7811001B4738 /* BlogsCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogsCollectionViewManager.swift; sourceTree = "<group>"; };
+		E0D7CE2D281E788B001B4738 /* DoctorDetailsBySpecializeStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorDetailsBySpecializeStruct.swift; sourceTree = "<group>"; };
+		E0D7CE30281E78BA001B4738 /* ConsultationMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultationMainViewController.swift; sourceTree = "<group>"; };
+		E0D7CE31281E78BA001B4738 /* Symptoms.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Symptoms.zip; sourceTree = "<group>"; };
+		E0D7CE34281E78BA001B4738 /* ConsultSpecialityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultSpecialityTableViewCell.swift; sourceTree = "<group>"; };
+		E0D7CE35281E78BA001B4738 /* ConsultSpecialityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsultSpecialityTableViewCell.xib; sourceTree = "<group>"; };
+		E0D7CE36281E78BA001B4738 /* ConsultSpecialityTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultSpecialityTableViewManager.swift; sourceTree = "<group>"; };
+		E0D7CE37281E78BA001B4738 /* ConsultSpecialityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsultSpecialityViewController.xib; sourceTree = "<group>"; };
+		E0D7CE38281E78BA001B4738 /* ConsultSpecialityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultSpecialityViewController.swift; sourceTree = "<group>"; };
+		E0D7CE39281E78BA001B4738 /* Speciality.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Speciality.zip; sourceTree = "<group>"; };
+		E0D7CE3A281E78BA001B4738 /* ConsultationMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsultationMainViewController.xib; sourceTree = "<group>"; };
+		E0D7CE3D281E78BA001B4738 /* SymptomsInsideTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SymptomsInsideTableViewCell.xib; sourceTree = "<group>"; };
+		E0D7CE3E281E78BA001B4738 /* SymptomsInsideTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomsInsideTableViewCell.swift; sourceTree = "<group>"; };
+		E0D7CE3F281E78BA001B4738 /* ConsultSymptomsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultSymptomsTableViewCell.swift; sourceTree = "<group>"; };
+		E0D7CE40281E78BA001B4738 /* ConsultSymptomsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsultSymptomsTableViewCell.xib; sourceTree = "<group>"; };
+		E0D7CE41281E78BA001B4738 /* ConsultSymptomsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsultSymptomsViewController.xib; sourceTree = "<group>"; };
+		E0D7CE42281E78BA001B4738 /* SymptomsInsideTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomsInsideTableViewManager.swift; sourceTree = "<group>"; };
+		E0D7CE43281E78BA001B4738 /* ConsultSymptomsTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultSymptomsTableViewManager.swift; sourceTree = "<group>"; };
+		E0D7CE44281E78BA001B4738 /* ConsultSymptomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultSymptomsViewController.swift; sourceTree = "<group>"; };
+		E0D7CE46281E78BA001B4738 /* ConsultationProcessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultationProcessViewController.swift; sourceTree = "<group>"; };
+		E0D7CE47281E78BA001B4738 /* ConsultationProcessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsultationProcessViewController.xib; sourceTree = "<group>"; };
+		E0D7CE4A281E78BA001B4738 /* SelectedIssueCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedIssueCollectionViewCell.swift; sourceTree = "<group>"; };
+		E0D7CE4B281E78BA001B4738 /* SelectedIssueCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectedIssueCollectionViewCell.xib; sourceTree = "<group>"; };
+		E0D7CE4C281E78BA001B4738 /* ConsultDetailsTavleViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultDetailsTavleViewManager.swift; sourceTree = "<group>"; };
+		E0D7CE4D281E78BA001B4738 /* ConsultationDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsultationDetailsViewController.xib; sourceTree = "<group>"; };
+		E0D7CE4E281E78BA001B4738 /* ConsultationDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultationDetailsViewController.swift; sourceTree = "<group>"; };
+		E0D7CE4F281E78BA001B4738 /* SelectedIssueCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedIssueCollectionViewManager.swift; sourceTree = "<group>"; };
+		E0D7CE6A281E797E001B4738 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
+		E0D7CE6B281E797E001B4738 /* CustomTabBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTabBarViewController.xib; sourceTree = "<group>"; };
+		E0D7CE6F281E8C56001B4738 /* LabTestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabTestCell.xib; sourceTree = "<group>"; };
+		E0D7CE70281E8C56001B4738 /* BookLabTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookLabTest.swift; sourceTree = "<group>"; };
+		E0D7CE71281E8C56001B4738 /* BookLabTestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookLabTestCell.swift; sourceTree = "<group>"; };
+		E0D7CE72281E8C56001B4738 /* BookLabTest.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookLabTest.xib; sourceTree = "<group>"; };
+		E0D7CE73281E8C56001B4738 /* BookLabTestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookLabTestCell.xib; sourceTree = "<group>"; };
+		E0D7CE74281E8C56001B4738 /* LabTestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabTestCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -431,9 +457,10 @@
 		E066993127F47ADA009EE3F0 /* HealthCard */ = {
 			isa = PBXGroup;
 			children = (
+				E0D7CE6E281E8C1B001B4738 /* LabTest */,
+				E0D7CE69281E797E001B4738 /* CustomTabBar */,
 				E0CC649C28156CD60011A165 /* Side menu */,
 				E0CC6467281438380011A165 /* Profile */,
-				E0CC64622813DF350011A165 /* CustomTabBar */,
 				E0B9BF002811BD22001A58E8 /* Supportings */,
 				E0B9BF462811BD22001A58E8 /* Extensions */,
 				E0B9BF512811BD22001A58E8 /* Screens */,
@@ -442,6 +469,7 @@
 				E03DD66E27F9783900BFB975 /* LoginScreen */,
 				E0CC6488281439070011A165 /* Library */,
 				E072953727F8542F0083357A /* Home */,
+				E0D7CE2C281E788B001B4738 /* Models */,
 				E066993227F47ADA009EE3F0 /* AppDelegate.swift */,
 				E066993627F47ADA009EE3F0 /* ViewController.swift */,
 				E066993B27F47ADC009EE3F0 /* Assets.xcassets */,
@@ -587,124 +615,11 @@
 		E0B9BF512811BD22001A58E8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				E0B9BF522811BD22001A58E8 /* HomeVC */,
-				E0B9BF642811BD22001A58E8 /* Consultation */,
+				E0D7CE2F281E78BA001B4738 /* Consultation */,
+				E0D7CDFA281E7811001B4738 /* HomeVC */,
 				E0B9BF802811BD23001A58E8 /* Consultation.zip */,
 			);
 			path = Screens;
-			sourceTree = "<group>";
-		};
-		E0B9BF522811BD22001A58E8 /* HomeVC */ = {
-			isa = PBXGroup;
-			children = (
-				E0B9BF532811BD22001A58E8 /* CategoryCollectionViewManager.swift */,
-				E0B9BF542811BD22001A58E8 /* DashboardCollectionViewManager.swift */,
-				E0B9BF552811BD22001A58E8 /* SliderCollectionViewManager.swift */,
-				E0B9BF562811BD22001A58E8 /* HomeViewController.xib */,
-				E0B9BF572811BD22001A58E8 /* HomeViewController.swift */,
-				E07745C12817FB5B00C9738B /* BookLabTest.swift */,
-				E07745C22817FB5B00C9738B /* BookLabTest.xib */,
-				E07745C52817FC0100C9738B /* BookLabTestCell.swift */,
-				E07745C62817FC0100C9738B /* BookLabTestCell.xib */,
-				E07745C92817FE2000C9738B /* LabTestCell.swift */,
-				E07745CA2817FE2000C9738B /* LabTestCell.xib */,
-				E0B9BF582811BD22001A58E8 /* Cell */,
-				E0B9BF632811BD22001A58E8 /* BlogsCollectionViewManager.swift */,
-			);
-			path = HomeVC;
-			sourceTree = "<group>";
-		};
-		E0B9BF582811BD22001A58E8 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				E0B9BF592811BD22001A58E8 /* DashboardCollectionViewCell.xib */,
-				E0B9BF5A2811BD22001A58E8 /* BlogsCollectionViewCell.swift */,
-				E0B9BF5B2811BD22001A58E8 /* LookForTestCollectionViewCell.swift */,
-				E0B9BF5C2811BD22001A58E8 /* CategoryCollectionViewCell.swift */,
-				E0B9BF5D2811BD22001A58E8 /* SliderCollectionViewCell.swift */,
-				E0B9BF5E2811BD22001A58E8 /* LookForTestCollectionViewCell.xib */,
-				E0B9BF5F2811BD22001A58E8 /* BlogsCollectionViewCell.xib */,
-				E0B9BF602811BD22001A58E8 /* CategoryCollectionViewCell.xib */,
-				E0B9BF612811BD22001A58E8 /* SliderCollectionViewCell.xib */,
-				E0B9BF622811BD22001A58E8 /* DashboardCollectionViewCell.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		E0B9BF642811BD22001A58E8 /* Consultation */ = {
-			isa = PBXGroup;
-			children = (
-				E0B9BF652811BD22001A58E8 /* ConsultationMainViewController.swift */,
-				E0B9BF6D2811BD23001A58E8 /* ConsultationMainViewController.xib */,
-				E0B9BF662811BD22001A58E8 /* Speciality */,
-				E0B9BF6E2811BD23001A58E8 /* Symptoms */,
-				E0B9BF782811BD23001A58E8 /* Consultation Details */,
-			);
-			path = Consultation;
-			sourceTree = "<group>";
-		};
-		E0B9BF662811BD22001A58E8 /* Speciality */ = {
-			isa = PBXGroup;
-			children = (
-				E0B9BF672811BD23001A58E8 /* Cells */,
-				E0B9BF6A2811BD23001A58E8 /* ConsultSpecialityTableViewManager.swift */,
-				E0B9BF6B2811BD23001A58E8 /* ConsultSpecialityViewController.xib */,
-				E0B9BF6C2811BD23001A58E8 /* ConsultSpecialityViewController.swift */,
-			);
-			path = Speciality;
-			sourceTree = "<group>";
-		};
-		E0B9BF672811BD23001A58E8 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				E0B9BF682811BD23001A58E8 /* ConsultSpecialityTableViewCell.swift */,
-				E0B9BF692811BD23001A58E8 /* ConsultSpecialityTableViewCell.xib */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		E0B9BF6E2811BD23001A58E8 /* Symptoms */ = {
-			isa = PBXGroup;
-			children = (
-				E0B9BF6F2811BD23001A58E8 /* Cells */,
-				E0B9BF742811BD23001A58E8 /* ConsultSymptomsViewController.xib */,
-				E0B9BF752811BD23001A58E8 /* SymptomsInsideTableViewManager.swift */,
-				E0B9BF762811BD23001A58E8 /* ConsultSymptomsTableViewManager.swift */,
-				E0B9BF772811BD23001A58E8 /* ConsultSymptomsViewController.swift */,
-			);
-			path = Symptoms;
-			sourceTree = "<group>";
-		};
-		E0B9BF6F2811BD23001A58E8 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				E0B9BF702811BD23001A58E8 /* SymptomsInsideTableViewCell.xib */,
-				E0B9BF712811BD23001A58E8 /* SymptomsInsideTableViewCell.swift */,
-				E0B9BF722811BD23001A58E8 /* ConsultSymptomsTableViewCell.swift */,
-				E0B9BF732811BD23001A58E8 /* ConsultSymptomsTableViewCell.xib */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		E0B9BF782811BD23001A58E8 /* Consultation Details */ = {
-			isa = PBXGroup;
-			children = (
-				E0B9BF792811BD23001A58E8 /* Cells */,
-				E0B9BF7C2811BD23001A58E8 /* ConsultDetailsTavleViewManager.swift */,
-				E0B9BF7D2811BD23001A58E8 /* ConsultationDetailsViewController.xib */,
-				E0B9BF7E2811BD23001A58E8 /* ConsultationDetailsViewController.swift */,
-				E0B9BF7F2811BD23001A58E8 /* SelectedIssueCollectionViewManager.swift */,
-			);
-			path = "Consultation Details";
-			sourceTree = "<group>";
-		};
-		E0B9BF792811BD23001A58E8 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				E0B9BF7A2811BD23001A58E8 /* SelectedIssueCollectionViewCell.swift */,
-				E0B9BF7B2811BD23001A58E8 /* SelectedIssueCollectionViewCell.xib */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		E0B9BF812811BD23001A58E8 /* Assets */ = {
@@ -746,15 +661,6 @@
 				E0B9BF8F2811BD23001A58E8 /* CustomAlertPopupVC.swift */,
 			);
 			path = CustomAlertPopUp;
-			sourceTree = "<group>";
-		};
-		E0CC64622813DF350011A165 /* CustomTabBar */ = {
-			isa = PBXGroup;
-			children = (
-				E0CC64632813DF350011A165 /* CustomTabBarViewController.swift */,
-				E0CC64642813DF350011A165 /* CustomTabBarViewController.xib */,
-			);
-			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
 		E0CC6467281438380011A165 /* Profile */ = {
@@ -822,6 +728,163 @@
 			path = cell;
 			sourceTree = "<group>";
 		};
+		E0D7CDFA281E7811001B4738 /* HomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				E0D7CDFB281E7811001B4738 /* CategoryCollectionViewManager.swift */,
+				E0D7CDFC281E7811001B4738 /* DashboardCollectionViewManager.swift */,
+				E0D7CDFD281E7811001B4738 /* LookingForTestInCollectionViewManager.swift */,
+				E0D7CDFE281E7811001B4738 /* SliderCollectionViewManager.swift */,
+				E0D7CDFF281E7811001B4738 /* HomeViewController.xib */,
+				E0D7CE00281E7811001B4738 /* ConsultationCategoryCollectionViewManager.swift */,
+				E0D7CE01281E7811001B4738 /* MedicineYouAreLookingSlider1CvManager.swift */,
+				E0D7CE02281E7811001B4738 /* HomeViewController.swift */,
+				E0D7CE03281E7811001B4738 /* LookingForConsultationInSlider2CollectionViewManager.swift */,
+				E0D7CE04281E7811001B4738 /* Cell */,
+				E0D7CE0F281E7811001B4738 /* LookingForTestSliderCollectionViewManager.swift */,
+				E0D7CE10281E7811001B4738 /* PatientExperienceWithUsSliderCollectionViewManager.swift */,
+				E0D7CE11281E7811001B4738 /* LookingForConsultationInSlider1CollectionViewManager.swift */,
+				E0D7CE12281E7811001B4738 /* MedicineYouAreLookingSlider2CollectionViewManager.swift */,
+				E0D7CE13281E7811001B4738 /* BlogsCollectionViewManager.swift */,
+			);
+			path = HomeVC;
+			sourceTree = "<group>";
+		};
+		E0D7CE04281E7811001B4738 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E0D7CE05281E7811001B4738 /* DashboardCollectionViewCell.xib */,
+				E0D7CE06281E7811001B4738 /* BlogsCollectionViewCell.swift */,
+				E0D7CE07281E7811001B4738 /* LookForTestCollectionViewCell.swift */,
+				E0D7CE08281E7811001B4738 /* CategoryCollectionViewCell.swift */,
+				E0D7CE09281E7811001B4738 /* SliderCollectionViewCell.swift */,
+				E0D7CE0A281E7811001B4738 /* LookForTestCollectionViewCell.xib */,
+				E0D7CE0B281E7811001B4738 /* BlogsCollectionViewCell.xib */,
+				E0D7CE0C281E7811001B4738 /* CategoryCollectionViewCell.xib */,
+				E0D7CE0D281E7811001B4738 /* SliderCollectionViewCell.xib */,
+				E0D7CE0E281E7811001B4738 /* DashboardCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		E0D7CE2C281E788B001B4738 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E0D7CE2D281E788B001B4738 /* DoctorDetailsBySpecializeStruct.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E0D7CE2F281E78BA001B4738 /* Consultation */ = {
+			isa = PBXGroup;
+			children = (
+				E0D7CE30281E78BA001B4738 /* ConsultationMainViewController.swift */,
+				E0D7CE31281E78BA001B4738 /* Symptoms.zip */,
+				E0D7CE32281E78BA001B4738 /* Speciality */,
+				E0D7CE39281E78BA001B4738 /* Speciality.zip */,
+				E0D7CE3A281E78BA001B4738 /* ConsultationMainViewController.xib */,
+				E0D7CE3B281E78BA001B4738 /* Symptoms */,
+				E0D7CE45281E78BA001B4738 /* ConsultationProcess */,
+				E0D7CE48281E78BA001B4738 /* Consultation Details */,
+			);
+			path = Consultation;
+			sourceTree = "<group>";
+		};
+		E0D7CE32281E78BA001B4738 /* Speciality */ = {
+			isa = PBXGroup;
+			children = (
+				E0D7CE33281E78BA001B4738 /* Cells */,
+				E0D7CE36281E78BA001B4738 /* ConsultSpecialityTableViewManager.swift */,
+				E0D7CE37281E78BA001B4738 /* ConsultSpecialityViewController.xib */,
+				E0D7CE38281E78BA001B4738 /* ConsultSpecialityViewController.swift */,
+			);
+			path = Speciality;
+			sourceTree = "<group>";
+		};
+		E0D7CE33281E78BA001B4738 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E0D7CE34281E78BA001B4738 /* ConsultSpecialityTableViewCell.swift */,
+				E0D7CE35281E78BA001B4738 /* ConsultSpecialityTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E0D7CE3B281E78BA001B4738 /* Symptoms */ = {
+			isa = PBXGroup;
+			children = (
+				E0D7CE3C281E78BA001B4738 /* Cells */,
+				E0D7CE41281E78BA001B4738 /* ConsultSymptomsViewController.xib */,
+				E0D7CE42281E78BA001B4738 /* SymptomsInsideTableViewManager.swift */,
+				E0D7CE43281E78BA001B4738 /* ConsultSymptomsTableViewManager.swift */,
+				E0D7CE44281E78BA001B4738 /* ConsultSymptomsViewController.swift */,
+			);
+			path = Symptoms;
+			sourceTree = "<group>";
+		};
+		E0D7CE3C281E78BA001B4738 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E0D7CE3D281E78BA001B4738 /* SymptomsInsideTableViewCell.xib */,
+				E0D7CE3E281E78BA001B4738 /* SymptomsInsideTableViewCell.swift */,
+				E0D7CE3F281E78BA001B4738 /* ConsultSymptomsTableViewCell.swift */,
+				E0D7CE40281E78BA001B4738 /* ConsultSymptomsTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E0D7CE45281E78BA001B4738 /* ConsultationProcess */ = {
+			isa = PBXGroup;
+			children = (
+				E0D7CE46281E78BA001B4738 /* ConsultationProcessViewController.swift */,
+				E0D7CE47281E78BA001B4738 /* ConsultationProcessViewController.xib */,
+			);
+			path = ConsultationProcess;
+			sourceTree = "<group>";
+		};
+		E0D7CE48281E78BA001B4738 /* Consultation Details */ = {
+			isa = PBXGroup;
+			children = (
+				E0D7CE49281E78BA001B4738 /* Cells */,
+				E0D7CE4C281E78BA001B4738 /* ConsultDetailsTavleViewManager.swift */,
+				E0D7CE4D281E78BA001B4738 /* ConsultationDetailsViewController.xib */,
+				E0D7CE4E281E78BA001B4738 /* ConsultationDetailsViewController.swift */,
+				E0D7CE4F281E78BA001B4738 /* SelectedIssueCollectionViewManager.swift */,
+			);
+			path = "Consultation Details";
+			sourceTree = "<group>";
+		};
+		E0D7CE49281E78BA001B4738 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E0D7CE4A281E78BA001B4738 /* SelectedIssueCollectionViewCell.swift */,
+				E0D7CE4B281E78BA001B4738 /* SelectedIssueCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E0D7CE69281E797E001B4738 /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				E0D7CE6A281E797E001B4738 /* CustomTabBarViewController.swift */,
+				E0D7CE6B281E797E001B4738 /* CustomTabBarViewController.xib */,
+			);
+			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
+		E0D7CE6E281E8C1B001B4738 /* LabTest */ = {
+			isa = PBXGroup;
+			children = (
+				E0D7CE70281E8C56001B4738 /* BookLabTest.swift */,
+				E0D7CE72281E8C56001B4738 /* BookLabTest.xib */,
+				E0D7CE71281E8C56001B4738 /* BookLabTestCell.swift */,
+				E0D7CE73281E8C56001B4738 /* BookLabTestCell.xib */,
+				E0D7CE74281E8C56001B4738 /* LabTestCell.swift */,
+				E0D7CE6F281E8C56001B4738 /* LabTestCell.xib */,
+			);
+			path = LabTest;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -882,36 +945,37 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0D7CE58281E78BA001B4738 /* ConsultationMainViewController.xib in Resources */,
 				E0B9BFCD2811BD23001A58E8 /* Poppins-Black.ttf in Resources */,
 				E0CC6486281438380011A165 /* InsuranceVC.xib in Resources */,
 				E0B9BFAC2811BD23001A58E8 /* raleway_extralight.ttf in Resources */,
-				E0B9BFFE2811BD23001A58E8 /* ConsultationDetailsViewController.xib in Resources */,
-				E0CC64662813DF350011A165 /* CustomTabBarViewController.xib in Resources */,
+				E0D7CE55281E78BA001B4738 /* ConsultSpecialityViewController.xib in Resources */,
 				E0B9BFBB2811BD23001A58E8 /* lato_light.ttf in Resources */,
 				E0B9BF962811BD23001A58E8 /* lato_semibold_italic.ttf in Resources */,
 				E0B9BFBA2811BD23001A58E8 /* lato_medium.ttf in Resources */,
+				E0D7CE79281E8C56001B4738 /* BookLabTestCell.xib in Resources */,
 				E0B9BFA02811BD23001A58E8 /* raleway_thin.ttf in Resources */,
 				E0B9BFA82811BD23001A58E8 /* lato_hairline_italic.ttf in Resources */,
+				E0D7CE53281E78BA001B4738 /* ConsultSpecialityTableViewCell.xib in Resources */,
 				E0B9BFA12811BD23001A58E8 /* lato_heavy_italic.ttf in Resources */,
 				E0B9BFA42811BD23001A58E8 /* raleway_light.ttf in Resources */,
 				E0CC6482281438380011A165 /* ProfileTableviewCell.xib in Resources */,
+				E0D7CE5D281E78BA001B4738 /* ConsultSymptomsViewController.xib in Resources */,
 				E0B9BFC12811BD23001A58E8 /* Poppins-ExtraLightItalic.ttf in Resources */,
 				E0B9BFB42811BD23001A58E8 /* lato_hairline.ttf in Resources */,
 				E0B9BFAD2811BD23001A58E8 /* raleway_extrabolditalic.ttf in Resources */,
 				E0B9BFBF2811BD23001A58E8 /* Poppins-ExtraLight.ttf in Resources */,
+				E0D7CE75281E8C56001B4738 /* LabTestCell.xib in Resources */,
 				E0B9BFD02811BD23001A58E8 /* Poppins-Italic.ttf in Resources */,
-				E07745C82817FC0100C9738B /* BookLabTestCell.xib in Resources */,
 				E0B9BF9B2811BD23001A58E8 /* lato_thin_italic.ttf in Resources */,
 				E0B9BF952811BD23001A58E8 /* lato_italic.ttf in Resources */,
+				E0D7CE62281E78BA001B4738 /* ConsultationProcessViewController.xib in Resources */,
 				E0B9BFBE2811BD23001A58E8 /* raleway_semibold.ttf in Resources */,
-				E0B9BFF62811BD23001A58E8 /* ConsultSymptomsTableViewCell.xib in Resources */,
 				E0B9BFAE2811BD23001A58E8 /* lato_heavy.ttf in Resources */,
-				E07745C42817FB5B00C9738B /* BookLabTest.xib in Resources */,
-				E0B9BFE72811BD23001A58E8 /* BlogsCollectionViewCell.xib in Resources */,
+				E0D7CE25281E7811001B4738 /* SliderCollectionViewCell.xib in Resources */,
 				E0B9BFA32811BD23001A58E8 /* poppins_regular.ttf in Resources */,
 				E0B9BFC52811BD23001A58E8 /* Poppins-SemiBoldItalic.ttf in Resources */,
 				E0CC6485281438380011A165 /* ProfileVC.xib in Resources */,
-				E07745CC2817FE2000C9738B /* LabTestCell.xib in Resources */,
 				E0B9BFB82811BD23001A58E8 /* lato_bold.ttf in Resources */,
 				E0B9BF992811BD23001A58E8 /* raleway_semibolditalic.ttf in Resources */,
 				E0B9BF942811BD23001A58E8 /* lato_black.ttf in Resources */,
@@ -920,13 +984,13 @@
 				E0B9BFBC2811BD23001A58E8 /* raleway_italic.ttf in Resources */,
 				E0B9BFC42811BD23001A58E8 /* Poppins-Medium.ttf in Resources */,
 				E0B9BFC72811BD23001A58E8 /* Poppins-ExtraBold.ttf in Resources */,
-				E0B9BFE12811BD23001A58E8 /* DashboardCollectionViewCell.xib in Resources */,
 				E0B9BFCB2811BD23001A58E8 /* Poppins-LightItalic.ttf in Resources */,
+				E0D7CE1D281E7811001B4738 /* DashboardCollectionViewCell.xib in Resources */,
 				E0B9BFCE2811BD23001A58E8 /* Poppins-Thin.ttf in Resources */,
 				E0B9BF9C2811BD23001A58E8 /* poppins_medium.ttf in Resources */,
 				E0B9BF972811BD23001A58E8 /* nexa_bold.otf in Resources */,
-				E0B9BFF32811BD23001A58E8 /* SymptomsInsideTableViewCell.xib in Resources */,
 				E0B9BFB22811BD23001A58E8 /* raleway_thinitalic.ttf in Resources */,
+				E0D7CE22281E7811001B4738 /* LookForTestCollectionViewCell.xib in Resources */,
 				E0B9BFC92811BD23001A58E8 /* OFL.txt in Resources */,
 				E0B9BFA92811BD23001A58E8 /* raleway_extrabold.ttf in Resources */,
 				E066994727F47CC6009EE3F0 /* Login.storyboard in Resources */,
@@ -938,49 +1002,51 @@
 				E066993F27F47ADC009EE3F0 /* LaunchScreen.storyboard in Resources */,
 				E0CC647B281438380011A165 /* DocumentsVC.xib in Resources */,
 				E0B9BFCC2811BD23001A58E8 /* Poppins-Bold.ttf in Resources */,
-				E0B9BFE92811BD23001A58E8 /* SliderCollectionViewCell.xib in Resources */,
 				E0B9BFC22811BD23001A58E8 /* Poppins-BoldItalic.ttf in Resources */,
 				E066993C27F47ADC009EE3F0 /* Assets.xcassets in Resources */,
 				E0CC649B281442110011A165 /* OrderTrackVC.xib in Resources */,
+				E0D7CE18281E7811001B4738 /* HomeViewController.xib in Resources */,
 				E0B9BFB52811BD23001A58E8 /* lato_black_italic.ttf in Resources */,
 				E0B9BFB32811BD23001A58E8 /* raleway_bolditalic.ttf in Resources */,
 				E0B9BFD12811BD23001A58E8 /* Poppins-MediumItalic.ttf in Resources */,
 				E0B9BFB12811BD23001A58E8 /* nexa_light.otf in Resources */,
+				E0D7CE24281E7811001B4738 /* CategoryCollectionViewCell.xib in Resources */,
 				E0B9BFC32811BD23001A58E8 /* Poppins-Light.ttf in Resources */,
-				E0B9BFF22811BD23001A58E8 /* ConsultationMainViewController.xib in Resources */,
 				E0B9BFB72811BD23001A58E8 /* lato_regular.ttf in Resources */,
 				E0CC647D281438380011A165 /* PersonalVC.xib in Resources */,
 				E0B9BF9A2811BD23001A58E8 /* raleway_blackitalic.ttf in Resources */,
 				E0B9BFA22811BD23001A58E8 /* raleway_mediumitalic.ttf in Resources */,
-				E0B9BFEE2811BD23001A58E8 /* ConsultSpecialityTableViewCell.xib in Resources */,
+				E0D7CE23281E7811001B4738 /* BlogsCollectionViewCell.xib in Resources */,
+				E0D7CE64281E78BA001B4738 /* SelectedIssueCollectionViewCell.xib in Resources */,
 				E0B9BF982811BD23001A58E8 /* poppins_light.ttf in Resources */,
 				E0B9BFC02811BD23001A58E8 /* Poppins-ThinItalic.ttf in Resources */,
-				E0B9BFE62811BD23001A58E8 /* LookForTestCollectionViewCell.xib in Resources */,
+				E0D7CE5C281E78BA001B4738 /* ConsultSymptomsTableViewCell.xib in Resources */,
+				E0D7CE57281E78BA001B4738 /* Speciality.zip in Resources */,
 				E0B9BFB02811BD23001A58E8 /* raleway_regular.ttf in Resources */,
+				E0D7CE78281E8C56001B4738 /* BookLabTest.xib in Resources */,
 				E0B9BF9D2811BD23001A58E8 /* lato_light_italic.ttf in Resources */,
-				E0B9BFF72811BD23001A58E8 /* ConsultSymptomsViewController.xib in Resources */,
 				E0CC64A728156CD60011A165 /* CustomSideMenuViewController.xib in Resources */,
 				E0B9BFBD2811BD23001A58E8 /* lato_medium_italic.ttf in Resources */,
 				E0B9BFA62811BD23001A58E8 /* lato_bold_italic.ttf in Resources */,
+				E0D7CE66281E78BA001B4738 /* ConsultationDetailsViewController.xib in Resources */,
 				E0B9BF9F2811BD23001A58E8 /* raleway_lightitalic.ttf in Resources */,
 				E0B9BFCA2811BD23001A58E8 /* Poppins-Regular.ttf in Resources */,
-				E0B9BFE82811BD23001A58E8 /* CategoryCollectionViewCell.xib in Resources */,
-				E0B9BFFC2811BD23001A58E8 /* SelectedIssueCollectionViewCell.xib in Resources */,
 				E0B9C00B2811BD23001A58E8 /* CustomAlertPopupVC.xib in Resources */,
 				E0B9BFCF2811BD23001A58E8 /* Poppins-SemiBold.ttf in Resources */,
 				E0B9BFB62811BD23001A58E8 /* lato_semibold.ttf in Resources */,
 				E0B9BFC62811BD23001A58E8 /* Poppins-ExtraBoldItalic.ttf in Resources */,
 				E0B9C0022811BD23001A58E8 /* Home.xcassets in Resources */,
 				E0B9C0012811BD23001A58E8 /* Consultation.zip in Resources */,
-				E0B9BFDF2811BD23001A58E8 /* HomeViewController.xib in Resources */,
 				E0B9BF932811BD23001A58E8 /* raleway_extralightitalic.ttf in Resources */,
 				E072953627F853610083357A /* Home.storyboard in Resources */,
 				E0CC6480281438380011A165 /* EditProfileVC.xib in Resources */,
 				E0B9BFC82811BD23001A58E8 /* Poppins-BlackItalic.ttf in Resources */,
 				E0B9BFA72811BD23001A58E8 /* poppins_semi_bold.ttf in Resources */,
 				E0B9BFB92811BD23001A58E8 /* raleway_black.ttf in Resources */,
-				E0B9BFF02811BD23001A58E8 /* ConsultSpecialityViewController.xib in Resources */,
+				E0D7CE51281E78BA001B4738 /* Symptoms.zip in Resources */,
+				E0D7CE6D281E797E001B4738 /* CustomTabBarViewController.xib in Resources */,
 				E0B9BFAB2811BD23001A58E8 /* raleway_bold.ttf in Resources */,
+				E0D7CE59281E78BA001B4738 /* SymptomsInsideTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1033,82 +1099,92 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0B9BFED2811BD23001A58E8 /* ConsultSpecialityTableViewCell.swift in Sources */,
-				E0B9BFE02811BD23001A58E8 /* HomeViewController.swift in Sources */,
+				E0D7CE21281E7811001B4738 /* SliderCollectionViewCell.swift in Sources */,
 				E066993727F47ADA009EE3F0 /* ViewController.swift in Sources */,
-				E07745CB2817FE2000C9738B /* LabTestCell.swift in Sources */,
 				E0B9C0042811BD23001A58E8 /* BaseViewController.swift in Sources */,
+				E0D7CE15281E7811001B4738 /* DashboardCollectionViewManager.swift in Sources */,
+				E0D7CE52281E78BA001B4738 /* ConsultSpecialityTableViewCell.swift in Sources */,
+				E0D7CE5F281E78BA001B4738 /* ConsultSymptomsTableViewManager.swift in Sources */,
 				E072953227F84BDE0083357A /* OtpVC.swift in Sources */,
+				E0D7CE1B281E7811001B4738 /* HomeViewController.swift in Sources */,
 				E0CC6492281439070011A165 /* CAPSPageMenu+Options.swift in Sources */,
+				E0D7CE56281E78BA001B4738 /* ConsultSpecialityViewController.swift in Sources */,
+				E0D7CE76281E8C56001B4738 /* BookLabTest.swift in Sources */,
+				E0D7CE17281E7811001B4738 /* SliderCollectionViewManager.swift in Sources */,
 				E0CC647E281438380011A165 /* DocumentsVC.swift in Sources */,
+				E0D7CE7A281E8C56001B4738 /* LabTestCell.swift in Sources */,
 				E0CC649A281442110011A165 /* OrderTrackVC.swift in Sources */,
+				E0D7CE60281E78BA001B4738 /* ConsultSymptomsViewController.swift in Sources */,
 				E0B9C0032811BD23001A58E8 /* APIV2.swift in Sources */,
-				E0B9BFF92811BD23001A58E8 /* ConsultSymptomsTableViewManager.swift in Sources */,
+				E0D7CE27281E7811001B4738 /* LookingForTestSliderCollectionViewManager.swift in Sources */,
 				E0CC64A528156CD60011A165 /* CustomSideMenuTableViewCell.swift in Sources */,
 				E0B9C0052811BD23001A58E8 /* NetWorker.swift in Sources */,
-				E0B9BFF12811BD23001A58E8 /* ConsultSpecialityViewController.swift in Sources */,
-				E0B9BFFF2811BD23001A58E8 /* ConsultationDetailsViewController.swift in Sources */,
+				E0D7CE19281E7811001B4738 /* ConsultationCategoryCollectionViewManager.swift in Sources */,
 				E0B9C0092811BD23001A58E8 /* Router.swift in Sources */,
+				E0D7CE14281E7811001B4738 /* CategoryCollectionViewManager.swift in Sources */,
 				E0B9C00C2811BD23001A58E8 /* CustomAlertPopupVC.swift in Sources */,
 				E0B9BFD62811BD23001A58E8 /* Codable.swift in Sources */,
 				E066993327F47ADA009EE3F0 /* AppDelegate.swift in Sources */,
+				E0D7CE1A281E7811001B4738 /* MedicineYouAreLookingSlider1CvManager.swift in Sources */,
+				E0D7CE63281E78BA001B4738 /* SelectedIssueCollectionViewCell.swift in Sources */,
+				E0D7CE5A281E78BA001B4738 /* SymptomsInsideTableViewCell.swift in Sources */,
 				E03DD67227F994E100BFB975 /* MainTabbarVC.swift in Sources */,
-				E0B9BFEC2811BD23001A58E8 /* ConsultationMainViewController.swift in Sources */,
+				E0D7CE5E281E78BA001B4738 /* SymptomsInsideTableViewManager.swift in Sources */,
 				E0B9BFD52811BD23001A58E8 /* UIColor.swift in Sources */,
 				E0B9BFD22811BD23001A58E8 /* UIView.swift in Sources */,
+				E0D7CE28281E7811001B4738 /* PatientExperienceWithUsSliderCollectionViewManager.swift in Sources */,
 				E0B9BFD92811BD23001A58E8 /* UILabel.swift in Sources */,
+				E0D7CE61281E78BA001B4738 /* ConsultationProcessViewController.swift in Sources */,
 				E03DD67027F9787600BFB975 /* HomeVC.swift in Sources */,
 				E0CC6478281438380011A165 /* ProfileVC.swift in Sources */,
+				E0D7CE50281E78BA001B4738 /* ConsultationMainViewController.swift in Sources */,
+				E0D7CE2B281E7811001B4738 /* BlogsCollectionViewManager.swift in Sources */,
+				E0D7CE54281E78BA001B4738 /* ConsultSpecialityTableViewManager.swift in Sources */,
 				E0C447F227F4959E00BE6E2D /* SingUpVC.swift in Sources */,
+				E0D7CE16281E7811001B4738 /* LookingForTestInCollectionViewManager.swift in Sources */,
 				E0CC6483281438380011A165 /* InsuranceVC.swift in Sources */,
-				E0B9BFEF2811BD23001A58E8 /* ConsultSpecialityTableViewManager.swift in Sources */,
 				E0CC647C281438380011A165 /* ProfileTableviewCell.swift in Sources */,
 				E0B9BFDB2811BD23001A58E8 /* UIAlertController.swift in Sources */,
 				E0CC6479281438380011A165 /* PersonalVC.swift in Sources */,
 				E0B9C0072811BD23001A58E8 /* GenerateToken.swift in Sources */,
-				E0B9BFFD2811BD23001A58E8 /* ConsultDetailsTavleViewManager.swift in Sources */,
-				E0B9BFE42811BD23001A58E8 /* CategoryCollectionViewCell.swift in Sources */,
-				E0B9BFF42811BD23001A58E8 /* SymptomsInsideTableViewCell.swift in Sources */,
+				E0D7CE20281E7811001B4738 /* CategoryCollectionViewCell.swift in Sources */,
 				E0CC6491281439070011A165 /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */,
-				E0B9BFEA2811BD23001A58E8 /* DashboardCollectionViewCell.swift in Sources */,
-				E0B9BFEB2811BD23001A58E8 /* BlogsCollectionViewManager.swift in Sources */,
 				E0CC64A428156CD60011A165 /* CustomSideMenuViewController.swift in Sources */,
-				E0B9BFDE2811BD23001A58E8 /* SliderCollectionViewManager.swift in Sources */,
 				E0B9BFD42811BD23001A58E8 /* Data.swift in Sources */,
 				E0CC6495281439070011A165 /* CAPSPageMenu+UIConfiguration.swift in Sources */,
 				E0B9C0082811BD23001A58E8 /* PannableViewController.swift in Sources */,
-				E0B9BFDC2811BD23001A58E8 /* CategoryCollectionViewManager.swift in Sources */,
+				E0D7CE2E281E788B001B4738 /* DoctorDetailsBySpecializeStruct.swift in Sources */,
 				E0B9BF912811BD23001A58E8 /* XIBed.swift in Sources */,
-				E0B9C0002811BD23001A58E8 /* SelectedIssueCollectionViewManager.swift in Sources */,
+				E0D7CE67281E78BA001B4738 /* ConsultationDetailsViewController.swift in Sources */,
 				E0B9C00A2811BD23001A58E8 /* API.swift in Sources */,
-				E0B9BFE52811BD23001A58E8 /* SliderCollectionViewCell.swift in Sources */,
-				E0B9BFF82811BD23001A58E8 /* SymptomsInsideTableViewManager.swift in Sources */,
 				E0B9BF922811BD23001A58E8 /* Environment.swift in Sources */,
 				E0B9BFD32811BD23001A58E8 /* CACornerMask.swift in Sources */,
+				E0D7CE26281E7811001B4738 /* DashboardCollectionViewCell.swift in Sources */,
 				E0C447F027F494E300BE6E2D /* SingInVC.swift in Sources */,
-				E07745C32817FB5B00C9738B /* BookLabTest.swift in Sources */,
-				E0B9BFF52811BD23001A58E8 /* ConsultSymptomsTableViewCell.swift in Sources */,
+				E0D7CE65281E78BA001B4738 /* ConsultDetailsTavleViewManager.swift in Sources */,
 				E0CC647F281438380011A165 /* RelationVC.swift in Sources */,
-				E0B9BFDD2811BD23001A58E8 /* DashboardCollectionViewManager.swift in Sources */,
-				E0B9BFE22811BD23001A58E8 /* BlogsCollectionViewCell.swift in Sources */,
-				E0B9BFFA2811BD23001A58E8 /* ConsultSymptomsViewController.swift in Sources */,
+				E0D7CE1F281E7811001B4738 /* LookForTestCollectionViewCell.swift in Sources */,
+				E0D7CE1C281E7811001B4738 /* LookingForConsultationInSlider2CollectionViewManager.swift in Sources */,
 				E0B9C0062811BD23001A58E8 /* PushDelegate.swift in Sources */,
+				E0D7CE77281E8C56001B4738 /* BookLabTestCell.swift in Sources */,
 				E0CC6493281439070011A165 /* MenuItemView.swift in Sources */,
 				E072953027F820DC0083357A /* AppManager.swift in Sources */,
-				E07745C72817FC0100C9738B /* BookLabTestCell.swift in Sources */,
+				E0D7CE68281E78BA001B4738 /* SelectedIssueCollectionViewManager.swift in Sources */,
 				E0B9BFD72811BD23001A58E8 /* UITextField.swift in Sources */,
 				E072953427F850570083357A /* ForgotPasswordVC.swift in Sources */,
+				E0D7CE5B281E78BA001B4738 /* ConsultSymptomsTableViewCell.swift in Sources */,
 				E0CC64A328156CD60011A165 /* SideMenuTableViewManager.swift in Sources */,
+				E0D7CE1E281E7811001B4738 /* BlogsCollectionViewCell.swift in Sources */,
 				E0B9BFDA2811BD23001A58E8 /* UserDefault+Constant.swift in Sources */,
 				E0CC647A281438380011A165 /* RelationshipTableViewCell.swift in Sources */,
-				E0CC64652813DF350011A165 /* CustomTabBarViewController.swift in Sources */,
 				E0CC6497281439070011A165 /* CAPSPageMenu.swift in Sources */,
 				E0CC6494281439070011A165 /* CAPSPageMenu+UIScrollViewDelegate.swift in Sources */,
-				E0B9BFE32811BD23001A58E8 /* LookForTestCollectionViewCell.swift in Sources */,
 				E0B9BFD82811BD23001A58E8 /* UIButton.swift in Sources */,
 				E0CC6484281438380011A165 /* EditProfileVC.swift in Sources */,
-				E0B9BFFB2811BD23001A58E8 /* SelectedIssueCollectionViewCell.swift in Sources */,
 				E0CC6496281439070011A165 /* CAPSPageMenuConfiguration.swift in Sources */,
+				E0D7CE6C281E797E001B4738 /* CustomTabBarViewController.swift in Sources */,
+				E0D7CE29281E7811001B4738 /* LookingForConsultationInSlider1CollectionViewManager.swift in Sources */,
+				E0D7CE2A281E7811001B4738 /* MedicineYouAreLookingSlider2CollectionViewManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

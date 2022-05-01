@@ -13,7 +13,7 @@ class ConsultSpecialityTableViewManager : NSObject {
     weak var tableView: UITableView?
     weak var emptyView: UIView?
 
-    var storyData : [String] = []
+    var storyData : SpecilizationResponse = []
             
     var pushDelegate: PushViewControllerDelegate?
     var presentDelegate: presentViewControllersDelegate?
@@ -29,7 +29,7 @@ class ConsultSpecialityTableViewManager : NSObject {
         
     }
     
-    func start(data: [String]) {
+    func start(data: SpecilizationResponse) {
         self.storyData = data
         tableView?.reloadData()
         tableView?.layoutIfNeeded()
@@ -54,6 +54,8 @@ extension ConsultSpecialityTableViewManager: UITableViewDataSource {
         cell.viewRef.layer.cornerRadius = 10
         cell.viewRef.dropShadow()
         
+        let dataArr = storyData[indexPath.row]
+        cell.lblRef.text = dataArr.value
         
        
         return cell

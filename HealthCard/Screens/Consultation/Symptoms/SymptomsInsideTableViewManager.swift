@@ -10,16 +10,18 @@ import UIKit
 
 class SymptomsInsideTableViewManager : NSObject {
     
+    
     weak var tableView: UITableView?
     weak var emptyView: UIView?
 
-    var storyData : [String] = []
+    var storyData : [SymptomsDataResponseElement] = []
             
     var pushDelegate: PushViewControllerDelegate?
     var presentDelegate: presentViewControllersDelegate?
     
     weak var tvHeight: NSLayoutConstraint!
 
+    var tableViewHeight: CGFloat = 0
     
     init(tableVIew: UITableView, tableViewHeight: NSLayoutConstraint) {
         self.tableView = tableVIew
@@ -34,14 +36,15 @@ class SymptomsInsideTableViewManager : NSObject {
         
     }
     
-    func start(data: [String]) {
+    func start(data: [SymptomsDataResponseElement]) {
         self.storyData = data
-        tableView?.reloadData()
+        self.tableView?.reloadData()
         tableView?.layoutIfNeeded()
         emptyView?.isHidden = storyData.count > 0
         guard storyData.count > 0 else { return }
-        
+
     }
+    
 
 }
 
@@ -49,6 +52,8 @@ extension SymptomsInsideTableViewManager: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let count = storyData.count
+        //self.tvHeight.constant = tableView.contentSize.height + 50//CGFloat(count * 99)
+
             return count
     }
     
@@ -60,7 +65,8 @@ extension SymptomsInsideTableViewManager: UITableViewDataSource {
         cell.viewRef.dropShadow()
         cell.imgViewRef.layer.cornerRadius = cell.imgViewRef.bounds.height * 0.5
         
-       
+        cell.lblRef.text = storyData[indexPath.row].concern
+
         return cell
     }
 
@@ -70,8 +76,8 @@ extension SymptomsInsideTableViewManager: UITableViewDataSource {
 extension SymptomsInsideTableViewManager: UITableViewDelegate {
         
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = ConsultationDetailsViewController.instantiate()
-        self.pushDelegate?.pushViewController(vc: vc)
+
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -79,11 +85,13 @@ extension SymptomsInsideTableViewManager: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        tableView.layoutIfNeeded()
-        self.tvHeight.constant = tableView.contentSize.height + 50//CGFloat(count * 99)
+        //tableView.layoutIfNeeded()
+        cell.contentView.setNeedsLayout()
+        cell.contentView.layoutIfNeeded()
+        self.tvHeight.constant = tableView.contentSize.height
 
-        
     }
+    
 
 }
 

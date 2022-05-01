@@ -159,6 +159,9 @@ enum APIV2: API {
 
     case PatientPharmacyAdviceDetails(patientId: Int)
 
+    case FrequentLabTest
+    
+    case FrequentMedicine
 }
 
 
@@ -379,6 +382,11 @@ extension APIV2 {
         case .PatientPharmacyAdviceDetails:
             return URL(string: Router.deliveryBoyBaseUrl)!
 
+        case .FrequentLabTest:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .FrequentMedicine:
+            return URL(string: Router.deliveryBoyBaseUrl)!
         }
 
     }
@@ -566,7 +574,7 @@ extension APIV2 {
             return "Common?vType=Specialization"
             
         case .Symptoms:
-            return "Concern"
+            return "Concern?vConcernList="
 
         case .FrequentSpeciality:
             return "Common?vSpecType=Specialization"
@@ -598,6 +606,12 @@ extension APIV2 {
         case .PatientPharmacyAdviceDetails(patientId: let patientId):
             return "Pharmacy?vPatientId=\(patientId)"
 
+        case .FrequentLabTest:
+            return "Pathology"
+            
+        case .FrequentMedicine:
+            return "Pharmacy"
+            
         }
     }
 
@@ -815,6 +829,12 @@ extension APIV2 {
             return "GET"
 
         case .PatientPharmacyAdviceDetails:
+            return "GET"
+
+        case .FrequentLabTest:
+            return "GET"
+
+        case .FrequentMedicine:
             return "GET"
 
         }
@@ -1040,23 +1060,17 @@ extension APIV2 {
         case .PatientPharmacyAdviceDetails:
             break
             
+        case .FrequentLabTest:
+            break
+            
+        case .FrequentMedicine:
+            break
+            
         }
         return params
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 extension APIV2 {
     var headers: [String : String]? {

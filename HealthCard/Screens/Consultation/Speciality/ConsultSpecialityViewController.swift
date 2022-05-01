@@ -39,8 +39,6 @@ class ConsultSpecialityViewController: UIViewController, XIBed {
 extension ConsultSpecialityViewController {
     func setupUI() {
         
-        tableViewManager.start(data: ["","","","","",""])
-
         tableViewManager.presentDelegate = presentDelegate
         tableViewManager.pushDelegate = pushDelegate
         
@@ -75,8 +73,10 @@ extension ConsultSpecialityViewController {
     func apiCall() {
         struct demo: Codable { }
         
-        NetWorker.shared.callAPIService(type: APIV2.concernDetailsList) { [weak self](data: ConcernDetailsListResponse?, error) in
-            print(data?.soapEnvelope.soapBody.concernDtlsListResponse)
+        NetWorker.shared.callAPIService(type: APIV2.Specialization) { [weak self](data: SpecilizationResponse?, error) in
+         
+            self!.tableViewManager.start(data: data ?? [])
+
         }
     }
 }

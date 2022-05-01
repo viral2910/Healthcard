@@ -13,7 +13,7 @@ class ConsultSymptomsTableViewManager : NSObject {
     weak var tableView: UITableView?
     weak var emptyView: UIView?
 
-    var storyData : [String] = []
+    var storyData : SymptomsDataResponse = []
             
     var pushDelegate: PushViewControllerDelegate?
     var presentDelegate: presentViewControllersDelegate?
@@ -29,7 +29,7 @@ class ConsultSymptomsTableViewManager : NSObject {
         
     }
     
-    func start(data: [String]) {
+    func start(data: SymptomsDataResponse) {
         self.storyData = data
         tableView?.reloadData()
         tableView?.layoutIfNeeded()
@@ -54,10 +54,16 @@ extension ConsultSymptomsTableViewManager: UITableViewDataSource {
         cell.viewRef.layer.cornerRadius = 10
         cell.viewRef.dropShadow()
         
-        cell.tableViewManager.start(data: ["","","",""])
+        cell.tableViewManager.start(data: storyData[indexPath.row].concernDetailslist ?? [])
         cell.tableViewManager.pushDelegate = pushDelegate
         cell.tableViewManager.presentDelegate = presentDelegate
        
+        cell.lblRef.text = storyData[indexPath.row].concernCatagory
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped))
+        
+        cell.tvRef.addGestureRecognizer(tapGesture)
+        
         return cell
     }
 
@@ -66,8 +72,24 @@ extension ConsultSymptomsTableViewManager: UITableViewDataSource {
 
 extension ConsultSymptomsTableViewManager: UITableViewDelegate {
         
+    @objc func tableViewTapped(_ gesture:UITapGestureRecognizer){
+
+    guard let indexPath = tableView!.indexPathForRow(at: gesture.location(in: self.tableView)) else {
+        print("Error: indexPath)")
+        return
+    }
+
+    print("indexPath.row: \(indexPath.row)")
+        
+        let vc = ConsultationDetailsViewController.instantiate()
+        vc.concernList = storyData[indexPath.row].concernDetailslist ?? []
+        self.pushDelegate?.pushViewController(vc: vc)
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
- 
+        let vc = ConsultationDetailsViewController.instantiate()
+        vc.concernList = storyData[indexPath.row].concernDetailslist ?? []
+        self.pushDelegate?.pushViewController(vc: vc)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

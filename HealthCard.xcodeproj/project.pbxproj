@@ -196,6 +196,50 @@
 		E0D7CE78281E8C56001B4738 /* BookLabTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D7CE72281E8C56001B4738 /* BookLabTest.xib */; };
 		E0D7CE79281E8C56001B4738 /* BookLabTestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D7CE73281E8C56001B4738 /* BookLabTestCell.xib */; };
 		E0D7CE7A281E8C56001B4738 /* LabTestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CE74281E8C56001B4738 /* LabTestCell.swift */; };
+		E0E74BF0281F9FF6001564F9 /* MyConsultationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E74BBB281F9FF6001564F9 /* MyConsultationCell.xib */; };
+		E0E74BF1281F9FF6001564F9 /* MyConsultationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BBC281F9FF6001564F9 /* MyConsultationCell.swift */; };
+		E0E74BF2281F9FF6001564F9 /* MyConsultation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BBD281F9FF6001564F9 /* MyConsultation.swift */; };
+		E0E74BF3281F9FF6001564F9 /* MyConsultation.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E74BBE281F9FF6001564F9 /* MyConsultation.xib */; };
+		E0E74BF4281F9FF6001564F9 /* MyOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BC0281F9FF6001564F9 /* MyOrders.swift */; };
+		E0E74BF5281F9FF6001564F9 /* MyOrders.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E74BC1281F9FF6001564F9 /* MyOrders.xib */; };
+		E0E74BF6281F9FF6001564F9 /* prescriptionDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E74BC3281F9FF6001564F9 /* prescriptionDetailsCell.xib */; };
+		E0E74BF7281F9FF6001564F9 /* PrescriptionDetails.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E74BC4281F9FF6001564F9 /* PrescriptionDetails.xib */; };
+		E0E74BF8281F9FF6001564F9 /* prescriptionDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BC5281F9FF6001564F9 /* prescriptionDetailsCell.swift */; };
+		E0E74BF9281F9FF6001564F9 /* PrescriptionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BC6281F9FF6001564F9 /* PrescriptionDetails.swift */; };
+		E0E74BFA281F9FF6001564F9 /* CartDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BC8281F9FF6001564F9 /* CartDetailsCell.swift */; };
+		E0E74BFB281F9FF6001564F9 /* CartDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E74BC9281F9FF6001564F9 /* CartDetailsCell.xib */; };
+		E0E74BFC281F9FF6001564F9 /* CardDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BCA281F9FF6001564F9 /* CardDetailsVC.swift */; };
+		E0E74BFD281F9FF6001564F9 /* CartDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BCB281F9FF6001564F9 /* CartDetails.swift */; };
+		E0E74BFE281F9FF6001564F9 /* CartDetails.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E74BCC281F9FF6001564F9 /* CartDetails.xib */; };
+		E0E74BFF281F9FF6001564F9 /* LabTestReceiptVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BCF281F9FF6001564F9 /* LabTestReceiptVc.swift */; };
+		E0E74C00281F9FF6001564F9 /* FinanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BD0281F9FF6001564F9 /* FinanceCell.swift */; };
+		E0E74C01281F9FF6001564F9 /* ProcedurePaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BD2281F9FF6001564F9 /* ProcedurePaymentCell.swift */; };
+		E0E74C02281F9FF6001564F9 /* ProcedureBillingPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BD3281F9FF6001564F9 /* ProcedureBillingPaymentVC.swift */; };
+		E0E74C03281F9FF6001564F9 /* ProcedurePaymentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E74BD4281F9FF6001564F9 /* ProcedurePaymentCell.xib */; };
+		E0E74C04281F9FF6001564F9 /* ProcedureBillingPaymentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E74BD5281F9FF6001564F9 /* ProcedureBillingPaymentVC.xib */; };
+		E0E74C05281F9FF6001564F9 /* ProcedureBillingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BD6281F9FF6001564F9 /* ProcedureBillingVC.swift */; };
+		E0E74C06281F9FF6001564F9 /* AdvanceBillingPaymentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E74BD8281F9FF6001564F9 /* AdvanceBillingPaymentCell.xib */; };
+		E0E74C07281F9FF6001564F9 /* AdvanceBillingPaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BD9281F9FF6001564F9 /* AdvanceBillingPaymentCell.swift */; };
+		E0E74C08281F9FF6001564F9 /* AdvanceBillingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BDA281F9FF6001564F9 /* AdvanceBillingVC.swift */; };
+		E0E74C09281F9FF6001564F9 /* AdvanceBillingPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BDB281F9FF6001564F9 /* AdvanceBillingPaymentVC.swift */; };
+		E0E74C0A281F9FF6001564F9 /* AdvanceBillingPaymentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E74BDC281F9FF6001564F9 /* AdvanceBillingPaymentVC.xib */; };
+		E0E74C0B281F9FF6001564F9 /* OpdConsultationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E74BDE281F9FF6001564F9 /* OpdConsultationCell.xib */; };
+		E0E74C0C281F9FF6001564F9 /* OPDBillOPDBillingPaymentVCingPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BDF281F9FF6001564F9 /* OPDBillOPDBillingPaymentVCingPaymentVC.swift */; };
+		E0E74C0D281F9FF6001564F9 /* OpdConsultationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BE0281F9FF6001564F9 /* OpdConsultationCell.swift */; };
+		E0E74C0E281F9FF6001564F9 /* OPDconultationBilling.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BE1281F9FF6001564F9 /* OPDconultationBilling.swift */; };
+		E0E74C0F281F9FF6001564F9 /* OPDBillingPaymentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E74BE2281F9FF6001564F9 /* OPDBillingPaymentVC.xib */; };
+		E0E74C10281F9FF6001564F9 /* FinanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BE3281F9FF6001564F9 /* FinanceVC.swift */; };
+		E0E74C11281F9FF6001564F9 /* FinanceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E74BE4281F9FF6001564F9 /* FinanceVC.xib */; };
+		E0E74C12281F9FF6001564F9 /* FinanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E74BE5281F9FF6001564F9 /* FinanceCell.xib */; };
+		E0E74C13281F9FF6001564F9 /* PharmacyReceiptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BE7281F9FF6001564F9 /* PharmacyReceiptVC.swift */; };
+		E0E74C14281F9FF6001564F9 /* Finance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0E74BE8281F9FF6001564F9 /* Finance.storyboard */; };
+		E0E74C15281F9FF6001564F9 /* AddressDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BEA281F9FF6001564F9 /* AddressDetailsVC.swift */; };
+		E0E74C16281F9FF6001564F9 /* AddressDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E74BEB281F9FF6001564F9 /* AddressDetailsVC.xib */; };
+		E0E74C17281F9FF6001564F9 /* AddressDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E74BEC281F9FF6001564F9 /* AddressDetailsCell.xib */; };
+		E0E74C18281F9FF6001564F9 /* AddressDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BED281F9FF6001564F9 /* AddressDetailsCell.swift */; };
+		E0E74C19281F9FF6001564F9 /* AddNewAddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E74BEE281F9FF6001564F9 /* AddNewAddressCell.xib */; };
+		E0E74C1A281F9FF6001564F9 /* AddNewAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BEF281F9FF6001564F9 /* AddNewAddressCell.swift */; };
+		E0E74C1C281FA410001564F9 /* UIStoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74C1B281FA410001564F9 /* UIStoryBoard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -392,6 +436,50 @@
 		E0D7CE72281E8C56001B4738 /* BookLabTest.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookLabTest.xib; sourceTree = "<group>"; };
 		E0D7CE73281E8C56001B4738 /* BookLabTestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookLabTestCell.xib; sourceTree = "<group>"; };
 		E0D7CE74281E8C56001B4738 /* LabTestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabTestCell.swift; sourceTree = "<group>"; };
+		E0E74BBB281F9FF6001564F9 /* MyConsultationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyConsultationCell.xib; sourceTree = "<group>"; };
+		E0E74BBC281F9FF6001564F9 /* MyConsultationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyConsultationCell.swift; sourceTree = "<group>"; };
+		E0E74BBD281F9FF6001564F9 /* MyConsultation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyConsultation.swift; sourceTree = "<group>"; };
+		E0E74BBE281F9FF6001564F9 /* MyConsultation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyConsultation.xib; sourceTree = "<group>"; };
+		E0E74BC0281F9FF6001564F9 /* MyOrders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrders.swift; sourceTree = "<group>"; };
+		E0E74BC1281F9FF6001564F9 /* MyOrders.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrders.xib; sourceTree = "<group>"; };
+		E0E74BC3281F9FF6001564F9 /* prescriptionDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = prescriptionDetailsCell.xib; sourceTree = "<group>"; };
+		E0E74BC4281F9FF6001564F9 /* PrescriptionDetails.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrescriptionDetails.xib; sourceTree = "<group>"; };
+		E0E74BC5281F9FF6001564F9 /* prescriptionDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = prescriptionDetailsCell.swift; sourceTree = "<group>"; };
+		E0E74BC6281F9FF6001564F9 /* PrescriptionDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrescriptionDetails.swift; sourceTree = "<group>"; };
+		E0E74BC8281F9FF6001564F9 /* CartDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartDetailsCell.swift; sourceTree = "<group>"; };
+		E0E74BC9281F9FF6001564F9 /* CartDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartDetailsCell.xib; sourceTree = "<group>"; };
+		E0E74BCA281F9FF6001564F9 /* CardDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailsVC.swift; sourceTree = "<group>"; };
+		E0E74BCB281F9FF6001564F9 /* CartDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartDetails.swift; sourceTree = "<group>"; };
+		E0E74BCC281F9FF6001564F9 /* CartDetails.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartDetails.xib; sourceTree = "<group>"; };
+		E0E74BCF281F9FF6001564F9 /* LabTestReceiptVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabTestReceiptVc.swift; sourceTree = "<group>"; };
+		E0E74BD0281F9FF6001564F9 /* FinanceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinanceCell.swift; sourceTree = "<group>"; };
+		E0E74BD2281F9FF6001564F9 /* ProcedurePaymentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcedurePaymentCell.swift; sourceTree = "<group>"; };
+		E0E74BD3281F9FF6001564F9 /* ProcedureBillingPaymentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcedureBillingPaymentVC.swift; sourceTree = "<group>"; };
+		E0E74BD4281F9FF6001564F9 /* ProcedurePaymentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProcedurePaymentCell.xib; sourceTree = "<group>"; };
+		E0E74BD5281F9FF6001564F9 /* ProcedureBillingPaymentVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProcedureBillingPaymentVC.xib; sourceTree = "<group>"; };
+		E0E74BD6281F9FF6001564F9 /* ProcedureBillingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcedureBillingVC.swift; sourceTree = "<group>"; };
+		E0E74BD8281F9FF6001564F9 /* AdvanceBillingPaymentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvanceBillingPaymentCell.xib; sourceTree = "<group>"; };
+		E0E74BD9281F9FF6001564F9 /* AdvanceBillingPaymentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvanceBillingPaymentCell.swift; sourceTree = "<group>"; };
+		E0E74BDA281F9FF6001564F9 /* AdvanceBillingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvanceBillingVC.swift; sourceTree = "<group>"; };
+		E0E74BDB281F9FF6001564F9 /* AdvanceBillingPaymentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvanceBillingPaymentVC.swift; sourceTree = "<group>"; };
+		E0E74BDC281F9FF6001564F9 /* AdvanceBillingPaymentVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvanceBillingPaymentVC.xib; sourceTree = "<group>"; };
+		E0E74BDE281F9FF6001564F9 /* OpdConsultationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpdConsultationCell.xib; sourceTree = "<group>"; };
+		E0E74BDF281F9FF6001564F9 /* OPDBillOPDBillingPaymentVCingPaymentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OPDBillOPDBillingPaymentVCingPaymentVC.swift; sourceTree = "<group>"; };
+		E0E74BE0281F9FF6001564F9 /* OpdConsultationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpdConsultationCell.swift; sourceTree = "<group>"; };
+		E0E74BE1281F9FF6001564F9 /* OPDconultationBilling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OPDconultationBilling.swift; sourceTree = "<group>"; };
+		E0E74BE2281F9FF6001564F9 /* OPDBillingPaymentVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OPDBillingPaymentVC.xib; sourceTree = "<group>"; };
+		E0E74BE3281F9FF6001564F9 /* FinanceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinanceVC.swift; sourceTree = "<group>"; };
+		E0E74BE4281F9FF6001564F9 /* FinanceVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinanceVC.xib; sourceTree = "<group>"; };
+		E0E74BE5281F9FF6001564F9 /* FinanceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinanceCell.xib; sourceTree = "<group>"; };
+		E0E74BE7281F9FF6001564F9 /* PharmacyReceiptVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PharmacyReceiptVC.swift; sourceTree = "<group>"; };
+		E0E74BE8281F9FF6001564F9 /* Finance.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Finance.storyboard; sourceTree = "<group>"; };
+		E0E74BEA281F9FF6001564F9 /* AddressDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressDetailsVC.swift; sourceTree = "<group>"; };
+		E0E74BEB281F9FF6001564F9 /* AddressDetailsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressDetailsVC.xib; sourceTree = "<group>"; };
+		E0E74BEC281F9FF6001564F9 /* AddressDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressDetailsCell.xib; sourceTree = "<group>"; };
+		E0E74BED281F9FF6001564F9 /* AddressDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressDetailsCell.swift; sourceTree = "<group>"; };
+		E0E74BEE281F9FF6001564F9 /* AddNewAddressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNewAddressCell.xib; sourceTree = "<group>"; };
+		E0E74BEF281F9FF6001564F9 /* AddNewAddressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewAddressCell.swift; sourceTree = "<group>"; };
+		E0E74C1B281FA410001564F9 /* UIStoryBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryBoard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -598,6 +686,7 @@
 		E0B9BF462811BD22001A58E8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E0E74C1B281FA410001564F9 /* UIStoryBoard.swift */,
 				E0B9BF472811BD22001A58E8 /* UIView.swift */,
 				E0B9BF482811BD22001A58E8 /* CACornerMask.swift */,
 				E0B9BF492811BD22001A58E8 /* Data.swift */,
@@ -711,6 +800,12 @@
 		E0CC649C28156CD60011A165 /* Side menu */ = {
 			isa = PBXGroup;
 			children = (
+				E0E74BE9281F9FF6001564F9 /* Address */,
+				E0E74BC7281F9FF6001564F9 /* Cart Details */,
+				E0E74BCD281F9FF6001564F9 /* Finance */,
+				E0E74BBA281F9FF6001564F9 /* My Cosultations */,
+				E0E74BBF281F9FF6001564F9 /* My Orders */,
+				E0E74BC2281F9FF6001564F9 /* Prescription Details */,
 				E0CC649D28156CD60011A165 /* SideMenuTableViewManager.swift */,
 				E0CC649E28156CD60011A165 /* CustomSideMenuViewController.swift */,
 				E0CC64A228156CD60011A165 /* CustomSideMenuViewController.xib */,
@@ -885,6 +980,131 @@
 			path = LabTest;
 			sourceTree = "<group>";
 		};
+		E0E74BBA281F9FF6001564F9 /* My Cosultations */ = {
+			isa = PBXGroup;
+			children = (
+				E0E74BBB281F9FF6001564F9 /* MyConsultationCell.xib */,
+				E0E74BBC281F9FF6001564F9 /* MyConsultationCell.swift */,
+				E0E74BBD281F9FF6001564F9 /* MyConsultation.swift */,
+				E0E74BBE281F9FF6001564F9 /* MyConsultation.xib */,
+			);
+			path = "My Cosultations";
+			sourceTree = "<group>";
+		};
+		E0E74BBF281F9FF6001564F9 /* My Orders */ = {
+			isa = PBXGroup;
+			children = (
+				E0E74BC0281F9FF6001564F9 /* MyOrders.swift */,
+				E0E74BC1281F9FF6001564F9 /* MyOrders.xib */,
+			);
+			path = "My Orders";
+			sourceTree = "<group>";
+		};
+		E0E74BC2281F9FF6001564F9 /* Prescription Details */ = {
+			isa = PBXGroup;
+			children = (
+				E0E74BC3281F9FF6001564F9 /* prescriptionDetailsCell.xib */,
+				E0E74BC4281F9FF6001564F9 /* PrescriptionDetails.xib */,
+				E0E74BC5281F9FF6001564F9 /* prescriptionDetailsCell.swift */,
+				E0E74BC6281F9FF6001564F9 /* PrescriptionDetails.swift */,
+			);
+			path = "Prescription Details";
+			sourceTree = "<group>";
+		};
+		E0E74BC7281F9FF6001564F9 /* Cart Details */ = {
+			isa = PBXGroup;
+			children = (
+				E0E74BC8281F9FF6001564F9 /* CartDetailsCell.swift */,
+				E0E74BC9281F9FF6001564F9 /* CartDetailsCell.xib */,
+				E0E74BCA281F9FF6001564F9 /* CardDetailsVC.swift */,
+				E0E74BCB281F9FF6001564F9 /* CartDetails.swift */,
+				E0E74BCC281F9FF6001564F9 /* CartDetails.xib */,
+			);
+			path = "Cart Details";
+			sourceTree = "<group>";
+		};
+		E0E74BCD281F9FF6001564F9 /* Finance */ = {
+			isa = PBXGroup;
+			children = (
+				E0E74BCE281F9FF6001564F9 /* Upload Text Receipt */,
+				E0E74BD0281F9FF6001564F9 /* FinanceCell.swift */,
+				E0E74BD1281F9FF6001564F9 /* Procedure Billing */,
+				E0E74BD7281F9FF6001564F9 /* Estimate Advance Billing */,
+				E0E74BDD281F9FF6001564F9 /* OPD Consultation Billing */,
+				E0E74BE3281F9FF6001564F9 /* FinanceVC.swift */,
+				E0E74BE4281F9FF6001564F9 /* FinanceVC.xib */,
+				E0E74BE5281F9FF6001564F9 /* FinanceCell.xib */,
+				E0E74BE6281F9FF6001564F9 /* pharmacy Receipt */,
+				E0E74BE8281F9FF6001564F9 /* Finance.storyboard */,
+			);
+			path = Finance;
+			sourceTree = "<group>";
+		};
+		E0E74BCE281F9FF6001564F9 /* Upload Text Receipt */ = {
+			isa = PBXGroup;
+			children = (
+				E0E74BCF281F9FF6001564F9 /* LabTestReceiptVc.swift */,
+			);
+			path = "Upload Text Receipt";
+			sourceTree = "<group>";
+		};
+		E0E74BD1281F9FF6001564F9 /* Procedure Billing */ = {
+			isa = PBXGroup;
+			children = (
+				E0E74BD2281F9FF6001564F9 /* ProcedurePaymentCell.swift */,
+				E0E74BD3281F9FF6001564F9 /* ProcedureBillingPaymentVC.swift */,
+				E0E74BD4281F9FF6001564F9 /* ProcedurePaymentCell.xib */,
+				E0E74BD5281F9FF6001564F9 /* ProcedureBillingPaymentVC.xib */,
+				E0E74BD6281F9FF6001564F9 /* ProcedureBillingVC.swift */,
+			);
+			path = "Procedure Billing";
+			sourceTree = "<group>";
+		};
+		E0E74BD7281F9FF6001564F9 /* Estimate Advance Billing */ = {
+			isa = PBXGroup;
+			children = (
+				E0E74BD8281F9FF6001564F9 /* AdvanceBillingPaymentCell.xib */,
+				E0E74BD9281F9FF6001564F9 /* AdvanceBillingPaymentCell.swift */,
+				E0E74BDA281F9FF6001564F9 /* AdvanceBillingVC.swift */,
+				E0E74BDB281F9FF6001564F9 /* AdvanceBillingPaymentVC.swift */,
+				E0E74BDC281F9FF6001564F9 /* AdvanceBillingPaymentVC.xib */,
+			);
+			path = "Estimate Advance Billing";
+			sourceTree = "<group>";
+		};
+		E0E74BDD281F9FF6001564F9 /* OPD Consultation Billing */ = {
+			isa = PBXGroup;
+			children = (
+				E0E74BDE281F9FF6001564F9 /* OpdConsultationCell.xib */,
+				E0E74BDF281F9FF6001564F9 /* OPDBillOPDBillingPaymentVCingPaymentVC.swift */,
+				E0E74BE0281F9FF6001564F9 /* OpdConsultationCell.swift */,
+				E0E74BE1281F9FF6001564F9 /* OPDconultationBilling.swift */,
+				E0E74BE2281F9FF6001564F9 /* OPDBillingPaymentVC.xib */,
+			);
+			path = "OPD Consultation Billing";
+			sourceTree = "<group>";
+		};
+		E0E74BE6281F9FF6001564F9 /* pharmacy Receipt */ = {
+			isa = PBXGroup;
+			children = (
+				E0E74BE7281F9FF6001564F9 /* PharmacyReceiptVC.swift */,
+			);
+			path = "pharmacy Receipt";
+			sourceTree = "<group>";
+		};
+		E0E74BE9281F9FF6001564F9 /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				E0E74BEA281F9FF6001564F9 /* AddressDetailsVC.swift */,
+				E0E74BEB281F9FF6001564F9 /* AddressDetailsVC.xib */,
+				E0E74BEC281F9FF6001564F9 /* AddressDetailsCell.xib */,
+				E0E74BED281F9FF6001564F9 /* AddressDetailsCell.swift */,
+				E0E74BEE281F9FF6001564F9 /* AddNewAddressCell.xib */,
+				E0E74BEF281F9FF6001564F9 /* AddNewAddressCell.swift */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -951,18 +1171,27 @@
 				E0B9BFAC2811BD23001A58E8 /* raleway_extralight.ttf in Resources */,
 				E0D7CE55281E78BA001B4738 /* ConsultSpecialityViewController.xib in Resources */,
 				E0B9BFBB2811BD23001A58E8 /* lato_light.ttf in Resources */,
+				E0E74C0B281F9FF6001564F9 /* OpdConsultationCell.xib in Resources */,
 				E0B9BF962811BD23001A58E8 /* lato_semibold_italic.ttf in Resources */,
 				E0B9BFBA2811BD23001A58E8 /* lato_medium.ttf in Resources */,
 				E0D7CE79281E8C56001B4738 /* BookLabTestCell.xib in Resources */,
 				E0B9BFA02811BD23001A58E8 /* raleway_thin.ttf in Resources */,
+				E0E74C17281F9FF6001564F9 /* AddressDetailsCell.xib in Resources */,
 				E0B9BFA82811BD23001A58E8 /* lato_hairline_italic.ttf in Resources */,
 				E0D7CE53281E78BA001B4738 /* ConsultSpecialityTableViewCell.xib in Resources */,
 				E0B9BFA12811BD23001A58E8 /* lato_heavy_italic.ttf in Resources */,
 				E0B9BFA42811BD23001A58E8 /* raleway_light.ttf in Resources */,
 				E0CC6482281438380011A165 /* ProfileTableviewCell.xib in Resources */,
+				E0E74C12281F9FF6001564F9 /* FinanceCell.xib in Resources */,
 				E0D7CE5D281E78BA001B4738 /* ConsultSymptomsViewController.xib in Resources */,
+				E0E74C04281F9FF6001564F9 /* ProcedureBillingPaymentVC.xib in Resources */,
 				E0B9BFC12811BD23001A58E8 /* Poppins-ExtraLightItalic.ttf in Resources */,
+				E0E74C0A281F9FF6001564F9 /* AdvanceBillingPaymentVC.xib in Resources */,
+				E0E74C14281F9FF6001564F9 /* Finance.storyboard in Resources */,
+				E0E74BF5281F9FF6001564F9 /* MyOrders.xib in Resources */,
 				E0B9BFB42811BD23001A58E8 /* lato_hairline.ttf in Resources */,
+				E0E74BF7281F9FF6001564F9 /* PrescriptionDetails.xib in Resources */,
+				E0E74C16281F9FF6001564F9 /* AddressDetailsVC.xib in Resources */,
 				E0B9BFAD2811BD23001A58E8 /* raleway_extrabolditalic.ttf in Resources */,
 				E0B9BFBF2811BD23001A58E8 /* Poppins-ExtraLight.ttf in Resources */,
 				E0D7CE75281E8C56001B4738 /* LabTestCell.xib in Resources */,
@@ -970,6 +1199,7 @@
 				E0B9BF9B2811BD23001A58E8 /* lato_thin_italic.ttf in Resources */,
 				E0B9BF952811BD23001A58E8 /* lato_italic.ttf in Resources */,
 				E0D7CE62281E78BA001B4738 /* ConsultationProcessViewController.xib in Resources */,
+				E0E74BFE281F9FF6001564F9 /* CartDetails.xib in Resources */,
 				E0B9BFBE2811BD23001A58E8 /* raleway_semibold.ttf in Resources */,
 				E0B9BFAE2811BD23001A58E8 /* lato_heavy.ttf in Resources */,
 				E0D7CE25281E7811001B4738 /* SliderCollectionViewCell.xib in Resources */,
@@ -991,6 +1221,7 @@
 				E0B9BF972811BD23001A58E8 /* nexa_bold.otf in Resources */,
 				E0B9BFB22811BD23001A58E8 /* raleway_thinitalic.ttf in Resources */,
 				E0D7CE22281E7811001B4738 /* LookForTestCollectionViewCell.xib in Resources */,
+				E0E74BF0281F9FF6001564F9 /* MyConsultationCell.xib in Resources */,
 				E0B9BFC92811BD23001A58E8 /* OFL.txt in Resources */,
 				E0B9BFA92811BD23001A58E8 /* raleway_extrabold.ttf in Resources */,
 				E066994727F47CC6009EE3F0 /* Login.storyboard in Resources */,
@@ -1006,13 +1237,16 @@
 				E066993C27F47ADC009EE3F0 /* Assets.xcassets in Resources */,
 				E0CC649B281442110011A165 /* OrderTrackVC.xib in Resources */,
 				E0D7CE18281E7811001B4738 /* HomeViewController.xib in Resources */,
+				E0E74BFB281F9FF6001564F9 /* CartDetailsCell.xib in Resources */,
 				E0B9BFB52811BD23001A58E8 /* lato_black_italic.ttf in Resources */,
 				E0B9BFB32811BD23001A58E8 /* raleway_bolditalic.ttf in Resources */,
 				E0B9BFD12811BD23001A58E8 /* Poppins-MediumItalic.ttf in Resources */,
 				E0B9BFB12811BD23001A58E8 /* nexa_light.otf in Resources */,
+				E0E74C03281F9FF6001564F9 /* ProcedurePaymentCell.xib in Resources */,
 				E0D7CE24281E7811001B4738 /* CategoryCollectionViewCell.xib in Resources */,
 				E0B9BFC32811BD23001A58E8 /* Poppins-Light.ttf in Resources */,
 				E0B9BFB72811BD23001A58E8 /* lato_regular.ttf in Resources */,
+				E0E74C0F281F9FF6001564F9 /* OPDBillingPaymentVC.xib in Resources */,
 				E0CC647D281438380011A165 /* PersonalVC.xib in Resources */,
 				E0B9BF9A2811BD23001A58E8 /* raleway_blackitalic.ttf in Resources */,
 				E0B9BFA22811BD23001A58E8 /* raleway_mediumitalic.ttf in Resources */,
@@ -1028,6 +1262,8 @@
 				E0CC64A728156CD60011A165 /* CustomSideMenuViewController.xib in Resources */,
 				E0B9BFBD2811BD23001A58E8 /* lato_medium_italic.ttf in Resources */,
 				E0B9BFA62811BD23001A58E8 /* lato_bold_italic.ttf in Resources */,
+				E0E74BF3281F9FF6001564F9 /* MyConsultation.xib in Resources */,
+				E0E74BF6281F9FF6001564F9 /* prescriptionDetailsCell.xib in Resources */,
 				E0D7CE66281E78BA001B4738 /* ConsultationDetailsViewController.xib in Resources */,
 				E0B9BF9F2811BD23001A58E8 /* raleway_lightitalic.ttf in Resources */,
 				E0B9BFCA2811BD23001A58E8 /* Poppins-Regular.ttf in Resources */,
@@ -1036,17 +1272,20 @@
 				E0B9BFB62811BD23001A58E8 /* lato_semibold.ttf in Resources */,
 				E0B9BFC62811BD23001A58E8 /* Poppins-ExtraBoldItalic.ttf in Resources */,
 				E0B9C0022811BD23001A58E8 /* Home.xcassets in Resources */,
+				E0E74C11281F9FF6001564F9 /* FinanceVC.xib in Resources */,
 				E0B9C0012811BD23001A58E8 /* Consultation.zip in Resources */,
 				E0B9BF932811BD23001A58E8 /* raleway_extralightitalic.ttf in Resources */,
 				E072953627F853610083357A /* Home.storyboard in Resources */,
 				E0CC6480281438380011A165 /* EditProfileVC.xib in Resources */,
 				E0B9BFC82811BD23001A58E8 /* Poppins-BlackItalic.ttf in Resources */,
 				E0B9BFA72811BD23001A58E8 /* poppins_semi_bold.ttf in Resources */,
+				E0E74C19281F9FF6001564F9 /* AddNewAddressCell.xib in Resources */,
 				E0B9BFB92811BD23001A58E8 /* raleway_black.ttf in Resources */,
 				E0D7CE51281E78BA001B4738 /* Symptoms.zip in Resources */,
 				E0D7CE6D281E797E001B4738 /* CustomTabBarViewController.xib in Resources */,
 				E0B9BFAB2811BD23001A58E8 /* raleway_bold.ttf in Resources */,
 				E0D7CE59281E78BA001B4738 /* SymptomsInsideTableViewCell.xib in Resources */,
+				E0E74C06281F9FF6001564F9 /* AdvanceBillingPaymentCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1099,32 +1338,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0E74BF9281F9FF6001564F9 /* PrescriptionDetails.swift in Sources */,
 				E0D7CE21281E7811001B4738 /* SliderCollectionViewCell.swift in Sources */,
+				E0E74C0D281F9FF6001564F9 /* OpdConsultationCell.swift in Sources */,
 				E066993727F47ADA009EE3F0 /* ViewController.swift in Sources */,
 				E0B9C0042811BD23001A58E8 /* BaseViewController.swift in Sources */,
+				E0E74BFD281F9FF6001564F9 /* CartDetails.swift in Sources */,
 				E0D7CE15281E7811001B4738 /* DashboardCollectionViewManager.swift in Sources */,
 				E0D7CE52281E78BA001B4738 /* ConsultSpecialityTableViewCell.swift in Sources */,
 				E0D7CE5F281E78BA001B4738 /* ConsultSymptomsTableViewManager.swift in Sources */,
+				E0E74C13281F9FF6001564F9 /* PharmacyReceiptVC.swift in Sources */,
 				E072953227F84BDE0083357A /* OtpVC.swift in Sources */,
+				E0E74BFA281F9FF6001564F9 /* CartDetailsCell.swift in Sources */,
+				E0E74BFC281F9FF6001564F9 /* CardDetailsVC.swift in Sources */,
 				E0D7CE1B281E7811001B4738 /* HomeViewController.swift in Sources */,
 				E0CC6492281439070011A165 /* CAPSPageMenu+Options.swift in Sources */,
 				E0D7CE56281E78BA001B4738 /* ConsultSpecialityViewController.swift in Sources */,
 				E0D7CE76281E8C56001B4738 /* BookLabTest.swift in Sources */,
 				E0D7CE17281E7811001B4738 /* SliderCollectionViewManager.swift in Sources */,
 				E0CC647E281438380011A165 /* DocumentsVC.swift in Sources */,
+				E0E74BF1281F9FF6001564F9 /* MyConsultationCell.swift in Sources */,
+				E0E74BF8281F9FF6001564F9 /* prescriptionDetailsCell.swift in Sources */,
 				E0D7CE7A281E8C56001B4738 /* LabTestCell.swift in Sources */,
 				E0CC649A281442110011A165 /* OrderTrackVC.swift in Sources */,
 				E0D7CE60281E78BA001B4738 /* ConsultSymptomsViewController.swift in Sources */,
 				E0B9C0032811BD23001A58E8 /* APIV2.swift in Sources */,
 				E0D7CE27281E7811001B4738 /* LookingForTestSliderCollectionViewManager.swift in Sources */,
 				E0CC64A528156CD60011A165 /* CustomSideMenuTableViewCell.swift in Sources */,
+				E0E74C0E281F9FF6001564F9 /* OPDconultationBilling.swift in Sources */,
 				E0B9C0052811BD23001A58E8 /* NetWorker.swift in Sources */,
 				E0D7CE19281E7811001B4738 /* ConsultationCategoryCollectionViewManager.swift in Sources */,
 				E0B9C0092811BD23001A58E8 /* Router.swift in Sources */,
 				E0D7CE14281E7811001B4738 /* CategoryCollectionViewManager.swift in Sources */,
 				E0B9C00C2811BD23001A58E8 /* CustomAlertPopupVC.swift in Sources */,
+				E0E74C0C281F9FF6001564F9 /* OPDBillOPDBillingPaymentVCingPaymentVC.swift in Sources */,
 				E0B9BFD62811BD23001A58E8 /* Codable.swift in Sources */,
+				E0E74C07281F9FF6001564F9 /* AdvanceBillingPaymentCell.swift in Sources */,
 				E066993327F47ADA009EE3F0 /* AppDelegate.swift in Sources */,
+				E0E74C00281F9FF6001564F9 /* FinanceCell.swift in Sources */,
+				E0E74C10281F9FF6001564F9 /* FinanceVC.swift in Sources */,
 				E0D7CE1A281E7811001B4738 /* MedicineYouAreLookingSlider1CvManager.swift in Sources */,
 				E0D7CE63281E78BA001B4738 /* SelectedIssueCollectionViewCell.swift in Sources */,
 				E0D7CE5A281E78BA001B4738 /* SymptomsInsideTableViewCell.swift in Sources */,
@@ -1143,28 +1395,38 @@
 				E0C447F227F4959E00BE6E2D /* SingUpVC.swift in Sources */,
 				E0D7CE16281E7811001B4738 /* LookingForTestInCollectionViewManager.swift in Sources */,
 				E0CC6483281438380011A165 /* InsuranceVC.swift in Sources */,
+				E0E74C08281F9FF6001564F9 /* AdvanceBillingVC.swift in Sources */,
+				E0E74C02281F9FF6001564F9 /* ProcedureBillingPaymentVC.swift in Sources */,
 				E0CC647C281438380011A165 /* ProfileTableviewCell.swift in Sources */,
 				E0B9BFDB2811BD23001A58E8 /* UIAlertController.swift in Sources */,
 				E0CC6479281438380011A165 /* PersonalVC.swift in Sources */,
 				E0B9C0072811BD23001A58E8 /* GenerateToken.swift in Sources */,
+				E0E74C09281F9FF6001564F9 /* AdvanceBillingPaymentVC.swift in Sources */,
 				E0D7CE20281E7811001B4738 /* CategoryCollectionViewCell.swift in Sources */,
 				E0CC6491281439070011A165 /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */,
 				E0CC64A428156CD60011A165 /* CustomSideMenuViewController.swift in Sources */,
+				E0E74C05281F9FF6001564F9 /* ProcedureBillingVC.swift in Sources */,
 				E0B9BFD42811BD23001A58E8 /* Data.swift in Sources */,
 				E0CC6495281439070011A165 /* CAPSPageMenu+UIConfiguration.swift in Sources */,
 				E0B9C0082811BD23001A58E8 /* PannableViewController.swift in Sources */,
 				E0D7CE2E281E788B001B4738 /* DoctorDetailsBySpecializeStruct.swift in Sources */,
+				E0E74BFF281F9FF6001564F9 /* LabTestReceiptVc.swift in Sources */,
+				E0E74BF2281F9FF6001564F9 /* MyConsultation.swift in Sources */,
 				E0B9BF912811BD23001A58E8 /* XIBed.swift in Sources */,
 				E0D7CE67281E78BA001B4738 /* ConsultationDetailsViewController.swift in Sources */,
 				E0B9C00A2811BD23001A58E8 /* API.swift in Sources */,
 				E0B9BF922811BD23001A58E8 /* Environment.swift in Sources */,
+				E0E74C1C281FA410001564F9 /* UIStoryBoard.swift in Sources */,
 				E0B9BFD32811BD23001A58E8 /* CACornerMask.swift in Sources */,
+				E0E74C1A281F9FF6001564F9 /* AddNewAddressCell.swift in Sources */,
 				E0D7CE26281E7811001B4738 /* DashboardCollectionViewCell.swift in Sources */,
 				E0C447F027F494E300BE6E2D /* SingInVC.swift in Sources */,
 				E0D7CE65281E78BA001B4738 /* ConsultDetailsTavleViewManager.swift in Sources */,
 				E0CC647F281438380011A165 /* RelationVC.swift in Sources */,
+				E0E74C01281F9FF6001564F9 /* ProcedurePaymentCell.swift in Sources */,
 				E0D7CE1F281E7811001B4738 /* LookForTestCollectionViewCell.swift in Sources */,
 				E0D7CE1C281E7811001B4738 /* LookingForConsultationInSlider2CollectionViewManager.swift in Sources */,
+				E0E74C18281F9FF6001564F9 /* AddressDetailsCell.swift in Sources */,
 				E0B9C0062811BD23001A58E8 /* PushDelegate.swift in Sources */,
 				E0D7CE77281E8C56001B4738 /* BookLabTestCell.swift in Sources */,
 				E0CC6493281439070011A165 /* MenuItemView.swift in Sources */,
@@ -1173,9 +1435,11 @@
 				E0B9BFD72811BD23001A58E8 /* UITextField.swift in Sources */,
 				E072953427F850570083357A /* ForgotPasswordVC.swift in Sources */,
 				E0D7CE5B281E78BA001B4738 /* ConsultSymptomsTableViewCell.swift in Sources */,
+				E0E74BF4281F9FF6001564F9 /* MyOrders.swift in Sources */,
 				E0CC64A328156CD60011A165 /* SideMenuTableViewManager.swift in Sources */,
 				E0D7CE1E281E7811001B4738 /* BlogsCollectionViewCell.swift in Sources */,
 				E0B9BFDA2811BD23001A58E8 /* UserDefault+Constant.swift in Sources */,
+				E0E74C15281F9FF6001564F9 /* AddressDetailsVC.swift in Sources */,
 				E0CC647A281438380011A165 /* RelationshipTableViewCell.swift in Sources */,
 				E0CC6497281439070011A165 /* CAPSPageMenu.swift in Sources */,
 				E0CC6494281439070011A165 /* CAPSPageMenu+UIScrollViewDelegate.swift in Sources */,
@@ -1324,8 +1588,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HealthCard/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1342,6 +1607,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = viral.HealthCard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1354,8 +1620,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HealthCard/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1372,6 +1639,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = viral.HealthCard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

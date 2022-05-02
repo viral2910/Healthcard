@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Dconultation Billing-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="OPDconultationBilling" id="Y6W-OH-hqX" customClass="OPDconultationBilling" customModule="HealthCard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQQ-jd-cg9">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aQQ-jd-cg9" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="F93-iu-8hE"/>
+                            <constraint firstItem="aQQ-jd-cg9" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="IaU-ib-dM3"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="aQQ-jd-cg9" secondAttribute="bottom" id="qq1-oG-XYg"/>
+                            <constraint firstItem="aQQ-jd-cg9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="roc-MA-5PG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mainView" destination="aQQ-jd-cg9" id="Zxm-j2-Q4p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="31.884057971014496" y="63.616071428571423"/>
+        </scene>
+        <!--Advance BillingVC-->
+        <scene sceneID="rF6-uI-84C">
+            <objects>
+                <viewController storyboardIdentifier="AdvanceBillingVC" id="t4y-y6-Cgr" customClass="AdvanceBillingVC" customModule="HealthCard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aK8-p4-dk0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ik-Fx-qlY">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hYb-ng-clM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8ik-Fx-qlY" firstAttribute="top" secondItem="hYb-ng-clM" secondAttribute="top" id="AK8-7M-jSo"/>
+                            <constraint firstItem="hYb-ng-clM" firstAttribute="bottom" secondItem="8ik-Fx-qlY" secondAttribute="bottom" id="XID-Yy-dg5"/>
+                            <constraint firstItem="8ik-Fx-qlY" firstAttribute="leading" secondItem="hYb-ng-clM" secondAttribute="leading" id="eSK-Qg-bBm"/>
+                            <constraint firstItem="hYb-ng-clM" firstAttribute="trailing" secondItem="8ik-Fx-qlY" secondAttribute="trailing" id="pfz-Pu-dOX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mainView" destination="8ik-Fx-qlY" id="nNu-mI-bKl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pEQ-qV-6fK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="810.14492753623199" y="65.625"/>
+        </scene>
+        <!--Procedure BillingVC-->
+        <scene sceneID="0xi-cA-Ij0">
+            <objects>
+                <viewController storyboardIdentifier="ProcedureBillingVC" id="d6M-2n-Z26" customClass="ProcedureBillingVC" customModule="HealthCard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TgY-V3-0lO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wur-8A-2iu">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Wjr-AX-adH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Wjr-AX-adH" firstAttribute="trailing" secondItem="wur-8A-2iu" secondAttribute="trailing" id="5KS-Lo-Wl8"/>
+                            <constraint firstItem="Wjr-AX-adH" firstAttribute="bottom" secondItem="wur-8A-2iu" secondAttribute="bottom" id="pHm-SZ-BIS"/>
+                            <constraint firstItem="wur-8A-2iu" firstAttribute="leading" secondItem="Wjr-AX-adH" secondAttribute="leading" id="sac-FH-zRA"/>
+                            <constraint firstItem="wur-8A-2iu" firstAttribute="top" secondItem="Wjr-AX-adH" secondAttribute="top" id="ww6-Py-0pw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mainView" destination="wur-8A-2iu" id="e4K-6z-HJ4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kMf-jj-dCW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1596" y="64"/>
+        </scene>
+        <!--Lab Test Receipt Vc-->
+        <scene sceneID="eZS-UY-pjd">
+            <objects>
+                <viewController storyboardIdentifier="LabTestReceiptVc" id="qJB-dB-OJ6" customClass="LabTestReceiptVc" customModule="HealthCard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lfD-Uj-uWg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DbR-1y-zdN">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OT3-yH-pnu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OT3-yH-pnu" firstAttribute="trailing" secondItem="DbR-1y-zdN" secondAttribute="trailing" id="75Q-02-93q"/>
+                            <constraint firstItem="OT3-yH-pnu" firstAttribute="bottom" secondItem="DbR-1y-zdN" secondAttribute="bottom" id="9wb-nD-f2W"/>
+                            <constraint firstItem="DbR-1y-zdN" firstAttribute="leading" secondItem="OT3-yH-pnu" secondAttribute="leading" id="Ukf-dZ-RQB"/>
+                            <constraint firstItem="DbR-1y-zdN" firstAttribute="top" secondItem="OT3-yH-pnu" secondAttribute="top" id="dy9-Fk-D4S"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="DbR-1y-zdN" id="Ma0-Vr-Ws5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BEd-9o-e2J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2357" y="64"/>
+        </scene>
+        <!--Pharmacy ReceiptVC-->
+        <scene sceneID="zKm-RK-x5N">
+            <objects>
+                <viewController storyboardIdentifier="PharmacyReceiptVC" id="bVz-N4-CMk" customClass="PharmacyReceiptVC" customModule="HealthCard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e2f-6V-zuq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5Mb-TQ-8Ce">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Xy8-BN-rAI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Xy8-BN-rAI" firstAttribute="trailing" secondItem="5Mb-TQ-8Ce" secondAttribute="trailing" id="CZI-0d-aLB"/>
+                            <constraint firstItem="Xy8-BN-rAI" firstAttribute="bottom" secondItem="5Mb-TQ-8Ce" secondAttribute="bottom" id="TwP-qF-ixg"/>
+                            <constraint firstItem="5Mb-TQ-8Ce" firstAttribute="leading" secondItem="Xy8-BN-rAI" secondAttribute="leading" id="aeL-kc-4Aw"/>
+                            <constraint firstItem="5Mb-TQ-8Ce" firstAttribute="top" secondItem="Xy8-BN-rAI" secondAttribute="top" id="eMC-LE-8Lh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="5Mb-TQ-8Ce" id="a5L-TI-YpL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YmO-EA-hQn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3119" y="64"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

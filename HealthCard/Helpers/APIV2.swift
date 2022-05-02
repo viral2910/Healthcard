@@ -162,6 +162,12 @@ enum APIV2: API {
     case FrequentLabTest
     
     case FrequentMedicine
+    
+    case MyPrescription(patientId: Int)
+    
+    case LabTestReceipt(patientId: Int)
+    
+    case procedureBilling(patientID: Int)
 }
 
 
@@ -386,6 +392,15 @@ extension APIV2 {
             return URL(string: Router.deliveryBoyBaseUrl)!
             
         case .FrequentMedicine:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .MyPrescription:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .LabTestReceipt:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .procedureBilling:
             return URL(string: Router.deliveryBoyBaseUrl)!
         }
 
@@ -612,6 +627,15 @@ extension APIV2 {
         case .FrequentMedicine:
             return "Pharmacy"
             
+        case .MyPrescription(patientId: let patientId):
+            return "HealthHistory?vPrescriptionHistPatientId=\(patientId)"
+            
+        case .LabTestReceipt(patientId: let patientId):
+            return "Pathology?vLabPathologyPaidListPatientId=\(patientId)"
+            
+        case .procedureBilling(patientID: let patientId):
+            return "Finance?vEstimateBillingListPatientId=\(patientId)"
+            
         }
     }
 
@@ -835,6 +859,15 @@ extension APIV2 {
             return "GET"
 
         case .FrequentMedicine:
+            return "GET"
+            
+        case .MyPrescription:
+            return "GET"
+            
+        case .LabTestReceipt:
+            return "GET"
+            
+        case .procedureBilling:
             return "GET"
 
         }
@@ -1065,6 +1098,16 @@ extension APIV2 {
             
         case .FrequentMedicine:
             break
+            
+        case .MyPrescription:
+            break
+            
+        case .LabTestReceipt:
+            break
+            
+        case .procedureBilling:
+            break
+        
             
         }
         return params

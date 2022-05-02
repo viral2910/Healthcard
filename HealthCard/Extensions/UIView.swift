@@ -80,3 +80,16 @@ func dropInsideShadow(color: UIColor, opacity: Float = 0.2, offSet: CGSize, radi
     layer.rasterizationScale = scale ? UIScreen.main.scale : 1
   }
 }
+
+extension UIView{
+    func dropShadowTVC(){
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor(red: 0.153, green: 0.198, blue: 0.247, alpha: 0.15).cgColor
+        layer.shadowOpacity = 1
+        layer.shadowOffset =  CGSize(width: 0, height: 4)
+        layer.shadowRadius = 12
+        layer.shouldRasterize = true
+        layer.rasterizationScale = UIScreen.main.scale
+        
+    }
+}

@@ -1,19 +1,18 @@
 //
-//  CardDetailsVC.swift
+//  CustomWebViewVC.swift
 //  HealthCard
 //
-//  Created by Dhairya on 29/04/22.
+//  Created by Viral on 08/05/22.
 //
 
 import UIKit
 
-class CardDetailsVC: UIViewController {
+class CustomWebViewVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
 
 }

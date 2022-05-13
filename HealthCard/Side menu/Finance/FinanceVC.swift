@@ -12,9 +12,9 @@ class FinanceVC: UIViewController, XIBed {
 var array = ["OPD Consultation Building" , "Estimate Advance Billing" , "Procedure Billing" , "Upload Lab Test Receipt" , "Pharmacy Receipt"]
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var homeBtn: UIButton!
     @IBOutlet weak var pencilBtn: UIButton!
     
-    @IBOutlet weak var homeBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "FinanceCell", bundle: nil), forCellReuseIdentifier: "FinanceCell")
@@ -26,11 +26,10 @@ var array = ["OPD Consultation Building" , "Estimate Advance Billing" , "Procedu
 
     }
     
-    @IBAction func homeBtn(_ sender: UIButton) {
-        
+    @IBAction func homeAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
-    
-    @IBAction func backBtn(_ sender: Any) {
+    @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
 }

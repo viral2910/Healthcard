@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddressDetailsVC" customModule="HealthCard" customModuleProvider="target">
             <connections>
-                <outlet property="cartBtn" destination="Jcz-DF-p5Y" id="9F1-27-J71"/>
+                <outlet property="cartBtn" destination="C9n-QI-vSh" id="xq0-ht-8Go"/>
                 <outlet property="tableView" destination="GxE-lL-iis" id="gc4-HT-VHp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,75 +21,79 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4d-4V-Nfm">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i74-uo-maZ">
+                    <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9n-QI-vSh">
+                            <rect key="frame" x="374" y="0.0" width="30" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="J43-NG-ezc"/>
+                            </constraints>
+                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="cart" catalog="system"/>
+                            <connections>
+                                <action selector="cartBtn:" destination="-1" eventType="touchUpInside" id="9ql-vk-HHL"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cn7-cY-vQX">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="qe5-SS-QsF"/>
+                            </constraints>
+                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="arrow.backward" catalog="system" title=" "/>
+                            <connections>
+                                <action selector="backBtn:" destination="-1" eventType="touchUpInside" id="7BT-gH-eW7"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADDRESS DETAILS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJq-zn-Sa1">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="100" id="rqH-i8-kxR"/>
+                        <constraint firstAttribute="height" constant="50" id="1eL-IG-5L0"/>
+                        <constraint firstItem="cn7-cY-vQX" firstAttribute="leading" secondItem="i74-uo-maZ" secondAttribute="leading" id="2a2-aq-ouz"/>
+                        <constraint firstAttribute="bottom" secondItem="cn7-cY-vQX" secondAttribute="bottom" id="9pH-QQ-tz3"/>
+                        <constraint firstItem="JJq-zn-Sa1" firstAttribute="top" secondItem="i74-uo-maZ" secondAttribute="top" id="I50-qT-Eon"/>
+                        <constraint firstAttribute="trailing" secondItem="JJq-zn-Sa1" secondAttribute="trailing" id="V0V-BR-o4h"/>
+                        <constraint firstItem="cn7-cY-vQX" firstAttribute="top" secondItem="i74-uo-maZ" secondAttribute="top" id="XYC-WS-eAo"/>
+                        <constraint firstItem="JJq-zn-Sa1" firstAttribute="leading" secondItem="i74-uo-maZ" secondAttribute="leading" id="ZKU-jD-Sfb"/>
+                        <constraint firstAttribute="bottom" secondItem="C9n-QI-vSh" secondAttribute="bottom" id="kAB-sP-Voe"/>
+                        <constraint firstItem="C9n-QI-vSh" firstAttribute="top" secondItem="JJq-zn-Sa1" secondAttribute="top" id="m4J-HU-sD0"/>
+                        <constraint firstItem="C9n-QI-vSh" firstAttribute="top" secondItem="i74-uo-maZ" secondAttribute="top" id="mes-5A-eme"/>
+                        <constraint firstAttribute="trailing" secondItem="C9n-QI-vSh" secondAttribute="trailing" constant="10" id="oAu-Es-Rvc"/>
+                        <constraint firstAttribute="bottom" secondItem="JJq-zn-Sa1" secondAttribute="bottom" id="uxn-OW-hFW"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ba1-6k-4o6">
-                    <rect key="frame" x="20" y="40" width="50" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="50" id="0X4-xx-hwW"/>
-                        <constraint firstAttribute="height" constant="50" id="XA6-l8-G1J"/>
-                    </constraints>
-                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" image="arrow.left" catalog="system"/>
-                    <connections>
-                        <action selector="backBtn:" destination="-1" eventType="touchUpInside" id="hUT-zy-PsA"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADDRESS DETAILS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8n-uZ-2yH">
-                    <rect key="frame" x="86" y="54.5" width="146" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jcz-DF-p5Y">
-                    <rect key="frame" x="344" y="40" width="50" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="JqU-jg-dd8"/>
-                        <constraint firstAttribute="width" constant="50" id="PJN-5Y-cvX"/>
-                    </constraints>
-                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain">
-                        <imageReference key="image" image="cart.fill" catalog="system" symbolScale="large"/>
-                    </buttonConfiguration>
-                    <connections>
-                        <action selector="cartBtn:" destination="-1" eventType="touchUpInside" id="8e2-UH-cyQ"/>
-                    </connections>
-                </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GxE-lL-iis">
-                    <rect key="frame" x="0.0" y="116" width="414" height="746"/>
+                    <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" white="0.9480194627526316" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="Ba1-6k-4o6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="45Y-NY-DeD"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GxE-lL-iis" secondAttribute="trailing" id="ADu-6F-XVP"/>
-                <constraint firstItem="GxE-lL-iis" firstAttribute="top" secondItem="b4d-4V-Nfm" secondAttribute="bottom" constant="16" id="N1l-WS-NDq"/>
-                <constraint firstItem="b4d-4V-Nfm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Tjy-9y-Ax7"/>
-                <constraint firstItem="B8n-uZ-2yH" firstAttribute="leading" secondItem="Ba1-6k-4o6" secondAttribute="trailing" constant="16" id="deh-wH-xbE"/>
-                <constraint firstItem="B8n-uZ-2yH" firstAttribute="centerY" secondItem="Ba1-6k-4o6" secondAttribute="centerY" id="eLI-ig-QZP"/>
-                <constraint firstItem="Ba1-6k-4o6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="eZ1-mB-MfQ"/>
-                <constraint firstItem="Jcz-DF-p5Y" firstAttribute="centerY" secondItem="B8n-uZ-2yH" secondAttribute="centerY" id="g25-Wb-UJc"/>
+                <constraint firstItem="i74-uo-maZ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="E0s-Uv-JuF"/>
+                <constraint firstItem="i74-uo-maZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="GEb-l1-0Z5"/>
+                <constraint firstItem="GxE-lL-iis" firstAttribute="top" secondItem="i74-uo-maZ" secondAttribute="bottom" id="ZgC-LN-ubE"/>
                 <constraint firstItem="GxE-lL-iis" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="i9A-ly-rHM"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="b4d-4V-Nfm" secondAttribute="trailing" id="meM-dV-qxw"/>
-                <constraint firstItem="b4d-4V-Nfm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="slN-pH-mrX"/>
+                <constraint firstItem="i74-uo-maZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="xiy-7d-vJC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="GxE-lL-iis" secondAttribute="bottom" id="yx1-fB-K9c"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Jcz-DF-p5Y" secondAttribute="trailing" constant="20" id="zta-No-jzu"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="78.348214285714278"/>
         </view>
     </objects>
     <resources>
-        <image name="arrow.left" catalog="system" width="128" height="98"/>
-        <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="cart" catalog="system" width="128" height="102"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -143,17 +143,37 @@ extension HomeViewController {
 
         blogsCollectionViewManager.start(data: ["","","",""], collectionVIew: blogsFromExpertCvRef, totalItemToShow: 1.8)
         
-        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.checkAction))
+        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.LabAction))
         self.bookLabTestOuterViewRef.addGestureRecognizer(gesture)
+        let gesture1 = UITapGestureRecognizer(target: self, action:  #selector(self.MedicineAction))
+        self.medicinesAndEssentialsOuterViewRef.addGestureRecognizer(gesture1)
+        
+        
+        let gesture2 = UITapGestureRecognizer(target: self, action:  #selector(self.LabReportAction))
+        self.labReportsOuterViewRef.addGestureRecognizer(gesture2)
+        let gesture3 = UITapGestureRecognizer(target: self, action:  #selector(self.ProcedureReportsAction))
+        self.procedureReportsOuterViewRef.addGestureRecognizer(gesture3)
 
     }
     
-    @objc func checkAction(sender : UITapGestureRecognizer) {
-        
+    @objc func LabAction(sender : UITapGestureRecognizer) {
         let vc = BookLabTest(nibName: "BookLabTest", bundle: nil)
         self.pushDelegate?.pushViewController(vc: vc)
     }
     
+    @objc func MedicineAction(sender : UITapGestureRecognizer) {
+        let vc = MedicineVC(nibName: "MedicineVC", bundle: nil)
+        self.pushDelegate?.pushViewController(vc: vc)
+    }
+    @objc func LabReportAction(sender : UITapGestureRecognizer) {
+        let vc = UIStoryboard.Finance.controller(withClass: LabTestReceiptVc.self)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func ProcedureReportsAction(sender : UITapGestureRecognizer) {
+        let vc = UIStoryboard.Finance.controller(withClass: PharmacyReceiptVC.self)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     func setupCornerShadow() {
         
         sliderBanner1CvRef.layer.cornerRadius = 10
@@ -251,7 +271,8 @@ extension HomeViewController {
     }
     
     @IBAction func cartBtnTap(_ sender: UIButton) {
-        
+            let vc = CartDetails.instantiate()
+            self.pushDelegate?.pushViewController(vc: vc)
     }
 }
 

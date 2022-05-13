@@ -19,7 +19,7 @@ struct BaseUrls {
 enum APIV2: API {
     case doctorDetailsBySpecialize(id: Int)
     
-    case doctorOnlineConsultScheduleByDoctor(doctorId: Int)
+    case doctorOnlineConsultScheduleByDoctor(doctorId: Int, date: String)
     
     case doctorOnlineConsultPaymentDetailsSave(doctorId: Int, patientId: Int, bookDate: String, fromTime: String, toTime: String, paymentId: Int, paymentAmount: Int, paymentMethod: String)//PatientId=189&vDoctorId=1&vBookDate=10/Feb/2022&vFromTime=4:20PM&vToTime=4:40PM&vPaymentId=14561&vPaymentAmount=1000&vPaymentMethod=Debit Card
     
@@ -53,7 +53,7 @@ enum APIV2: API {
     
     case OTPAuthentication(mobileNo: String, subject: String, otpNo: Int, firebaseToken: String)
     
-    case PatientHistGetById(patientHistId: Int)
+    case PatientHistGetById(patientID: Int)
     
     case PatientLogin(mobileNo: String, password: String, firebaseToken: String)
     
@@ -152,6 +152,8 @@ enum APIV2: API {
     case PatientProcedureReports(patientId: Int)
     
     case PatientLabTestAdviceDetails(patientId: Int)
+    
+    case PatientMedicineDetails(patientId: Int)
 
     case labTestSearch(searchVal: String)
     
@@ -168,6 +170,21 @@ enum APIV2: API {
     case LabTestReceipt(patientId: Int)
     
     case procedureBilling(patientID: Int)
+    
+    case addressPatient(patientID: Int)
+    
+    case consultationList(patientID: Int)
+    
+    case myOrderList(patientID: Int)
+    
+    case myCartList(patientID: Int)
+    
+    case OPDBillingList(patientID: Int)
+    
+    case estimateAdvanceBillingList(patientID: Int)
+    
+    case pharmacyReceiptList(patientID: Int)
+    
 }
 
 
@@ -177,7 +194,7 @@ extension APIV2 {
         switch self {
         case .doctorDetailsBySpecialize:
             return URL(string: Router.doctorBaseUrl)!
-
+            
         case .doctorOnlineConsultScheduleByDoctor:
             return URL(string: Router.doctorBaseUrl)!
             
@@ -192,133 +209,133 @@ extension APIV2 {
             
         case .orderInvoice:
             return URL(string: Router.webServiceBaseUrl)!
-
+            
         case .PatientDocumentUpload:
             return URL(string: Router.webServiceBaseUrl)!
-
+            
         case .PatientPrescriptionHistoryGetById:
             return URL(string: Router.webServiceBaseUrl)!
-
+            
         case .SelfPrescriptionUpload:
             return URL(string: Router.webServiceBaseUrl)!
-
+            
         case .ProcedureReportUpload:
             return URL(string: Router.webServiceBaseUrl)!
-
+            
         case .ProcedureReportReUpload:
             return URL(string: Router.webServiceBaseUrl)!
-
+            
         case .LabTestReportUpload:
             return URL(string: Router.webServiceBaseUrl)!
-
+            
         case .LabTestReportReUpload:
             return URL(string: Router.webServiceBaseUrl)!
-
+            
         case .PatientDocumentReUpload:
             return URL(string: Router.webServiceBaseUrl)!
-
+            
         case .GetAllPharmacyAdvice:
             return URL(string: Router.webServiceBaseUrl)!
-
+            
         case .patientRegistration:
             return URL(string: Router.webServiceBaseUrl)!
-
+            
         case .OrderDtlsGetByOrderStatus:
             return URL(string: Router.webServiceBaseUrl)!
-
+            
         case .OTPAuthentication:
             return URL(string: Router.webServiceBaseUrl)!
-
+            
         case .PatientHistGetById:
-            return URL(string: Router.webServiceBaseUrl)!
-
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
         case .PatientLogin:
             return URL(string: Router.webServiceBaseUrl)!
-
+            
         case .CommonDataGetByType:
             return URL(string: Router.webServiceBaseUrl)!
-
+            
         case .TitleGetByTitleType:
             return URL(string: Router.webServiceBaseUrl)!
-
+            
         case .GetAllLabTestInvestigation:
             return URL(string: Router.webServiceBaseUrl)!
-
+            
         case .PatientProfileUpload:
             return URL(string: Router.webServiceBaseUrl)!
-
+            
         case .PatientGetById:
             return URL(string: Router.webServiceBaseUrl)!
-
+            
         case .SelfPrescriptionAdviceSave:
             return URL(string: Router.webServiceBaseUrl)!
-
+            
         case .ViewPharmacyChargesDtlsGetByMedicineId:
             return URL(string: Router.webServiceBaseUrl)!
-
+            
         case .RefreshCart:
             return URL(string: Router.webServiceBaseUrl)!
-
+            
         case .DeliveryBoyRegistration:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .Qualification:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .State:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .City:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .deliveryBoyProfileDetails:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .deliveryBoyOtpAuthentication:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .deliveryBoyProfileUpdate:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .deliveryBoyDocumentList:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .orderPickUpUpdate:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .patientDeliveryOtpGeneration:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .patientDeliveryOtpAuthentication:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .patientDeliveryOrderUpdate:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .deliverOrderList:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .orderAcceptUpdate:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .pendingOrderList:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .upcomingOrderList:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .patientOrderDetails:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .deliveryBoyOrderCount:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .patientLatAndLngUpdate:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .rejectOrderUpdate:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .orderCashCollectionUpdate:
             return URL(string: Router.deliveryBoyBaseUrl)!
             
@@ -351,43 +368,43 @@ extension APIV2 {
             
         case .patientMobileNoValidation:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .Specialization:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .Symptoms:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .FrequentSpeciality:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .SymptomsSearching:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .PatientConcernSave:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .PatientLabTestReports:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .PatientLabTestDetails:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .PatientProcedureReports:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .PatientLabTestAdviceDetails:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .labTestSearch:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .medicineAndEssential:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .PatientPharmacyAdviceDetails:
             return URL(string: Router.deliveryBoyBaseUrl)!
-
+            
         case .FrequentLabTest:
             return URL(string: Router.deliveryBoyBaseUrl)!
             
@@ -402,8 +419,32 @@ extension APIV2 {
             
         case .procedureBilling:
             return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .addressPatient:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .consultationList:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .myOrderList:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .myCartList:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .OPDBillingList:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .estimateAdvanceBillingList:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .pharmacyReceiptList:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .PatientMedicineDetails:
+            return URL(string: Router.deliveryBoyBaseUrl)!
         }
-
+        
     }
     
     var path: String {
@@ -411,8 +452,8 @@ extension APIV2 {
         case .doctorDetailsBySpecialize(let id):
             return "SpecializationId=\(id)"
             
-        case .doctorOnlineConsultScheduleByDoctor(let doctorId):
-            return "ConsultDoctorId=\(doctorId)"
+        case .doctorOnlineConsultScheduleByDoctor(let doctorId, let date):
+            return "ConsultDoctorId=\(doctorId)&vConsultDate=\(date)"
             
         case .doctorOnlineConsultPaymentDetailsSave(let doctorId, let patientId, let bookDate, let fromTime, let toTime, let paymentId, let paymentAmount, let paymentMethod):
             return "PatientId=\(patientId)&vDoctorId=\(doctorId)&vBookDate=\(bookDate)vFromTime=\(fromTime)&vToTime=\(toTime)&vPaymentId=\(paymentId)&vPaymentAmount=\(paymentAmount)&vPaymentMethod=\(paymentMethod)"
@@ -425,202 +466,202 @@ extension APIV2 {
             
         case .orderInvoice:
             return "=OrderInvoiceReport"
-
+            
         case .PatientDocumentUpload:
             return "=PatientDocumentUpload"
-
+            
         case .PatientPrescriptionHistoryGetById:
             return "=PatientPrescriptionHistoryGetById"
-
+            
         case .SelfPrescriptionUpload:
             return "=SelfPrescriptionUpload"
-
+            
         case .ProcedureReportUpload:
             return "=ProcedureReportUpload"
-
+            
         case .ProcedureReportReUpload:
             return "=ProcedureReportReUpload"
-
+            
         case .LabTestReportUpload:
             return "=LabTestReportUpload"
-
+            
         case .LabTestReportReUpload:
             return "=LabTestReportReUpload"
-
+            
         case .PatientDocumentReUpload:
             return "=PatientDocumentReUpload"
-
+            
         case .GetAllPharmacyAdvice:
             return "=GetAllPharmacyAdvice"
-
+            
         case .patientRegistration:
             return "=SavePatient"
-
+            
         case .OrderDtlsGetByOrderStatus:
             return "=OrderDtlsGetByOrderStatus"
-
+            
         case .OTPAuthentication:
             return "=OTPAuthentication"
-
-        case .PatientHistGetById:
-            return "=PatientHistGetById"
-
+            
+        case .PatientHistGetById(patientID: let patientId):
+            return "HealthHistory?vPatientHistId=\(patientId)"
+            
         case .PatientLogin:
             return "=PatientLogin"
-
+            
         case .CommonDataGetByType:
             return "=CommonDataGetByType"
-
+            
         case .TitleGetByTitleType:
             return "=TitleGetByTitleType"
-
+            
         case .GetAllLabTestInvestigation:
             return "=GetAllLabTestInvestigation"
-
+            
         case .PatientProfileUpload:
             return "=PatientProfileUpload"
-
+            
         case .PatientGetById:
             return "=PatientGetById"
-
+            
         case .SelfPrescriptionAdviceSave:
             return "=SelfPrescriptionAdviceSave"
-
+            
         case .ViewPharmacyChargesDtlsGetByMedicineId:
             return "=ViewPharmacyChargesDtlsGetByMedicineId"
-
+            
         case .RefreshCart:
             return "=RefreshCart"
-
+            
         case .DeliveryBoyRegistration(mobileNo: let mobileNo):
             return "Common?vMobileNo=\(mobileNo)&vSubject=DeliveryBoyRegistration"
-
+            
         case .Qualification:
             return "Common?vType=Qualification"
-
+            
         case .State(pld: let pld):
             return "Common?vType=State&vPId=\(pld)"
-
+            
         case .City(pld: let pld):
             return "Common?vType=City&vPId=\(pld)"
-
+            
         case .deliveryBoyProfileDetails(deliveryBoyId: let deliveryBoyId):
             return "DeliveryBoy?vDeliveryBoyId=\(deliveryBoyId)"
-
+            
         case .deliveryBoyOtpAuthentication(mobileNo: let mobileNo, otp: let otp):
             return "Common?vMobileNo=\(mobileNo)&vSubject=DeliveryBoyLogin&vOtpNo=\(otp)&vFireBaseToken="
-
+            
         case .deliveryBoyProfileUpdate(deliveryBoyId: let deliveryBoyId, firstName: let firstName, middleName: let middleName, lastName: let lastName, emailId: let emailId, dob: let dob, gender: let gender, bloodGrpId: let bloodGrpId, qualificationId: let qualificationId, martialStatus: let martialStatus, aadharNo: let aadharNo, address: let address, countryId: let countryId, stateId: let stateId, cityId: let cityId, mobileNo1: let mobileNo1, mobileNo2: let mobileNo2, doj: let doj, jobType: let jobType, panNo: let panNo, leaveEntitlement: let leaveEntitlement, bankName: let bankName, accountNo: let accountNo, ifscCode: let ifscCode, pfDate: let pfDate, pfNumber: let pfNumber, isActive: let isActive):
             return "DeliveryBoy?vDeliveryBoyId=\(deliveryBoyId)&vFirstName=\(firstName)&vMiddleName=\(middleName)&vLastName=\(lastName)&vEmailId=\(emailId)&vDOB=\(dob)&vGender=\(gender)&vBloodGroupId=\(bloodGrpId)&vQualificationId=\(qualificationId)&vMartialStatus=\(martialStatus)&vAadharNo=\(aadharNo)&vAddress=\(address)&vCountryId=\(countryId)&vStateId=\(stateId)&vCityId=\(cityId)&vMobileNo1=\(mobileNo1)&vMobileNo2=\(mobileNo2)&vDOJ=\(doj)&vJobType=\(jobType)&vPANNo=\(panNo)&vLeaveEntitlement=\(leaveEntitlement)&vBankName=\(bankName)&vAccountNo=\(accountNo)&vIFSCCode=\(ifscCode)&vPFDate=\(pfDate)&vPFNumber=\(pfNumber)&vIsActive=\(isActive)"
-
+            
         case .deliveryBoyDocumentList(deliveryBoyId: let deliveryBoyId):
             return "DeliveryBoy?DeliveryBoyId=\(deliveryBoyId)"
-
+            
         case .orderPickUpUpdate(orderId: let orderId, deliveryBoyId: let deliveryBoyId, deliveryBoyLatitude: let deliveryBoyLatitude, deliveryBoyLongitude: let deliveryBoyLongitude):
             return "DeliveryBoy?vOrderId=\(orderId)&vDeliveryBoyId=\(deliveryBoyId)&vDeliveryBoyLatitude=\(deliveryBoyLatitude)&vDeliveryBoyLongitude=\(deliveryBoyLongitude)"
-
+            
         case .patientDeliveryOtpGeneration(mobileNo: let mobileNo):
             return "Common?vSubject=PatientOrderDelivery&vMobileNo=\(mobileNo)"
-
+            
         case .patientDeliveryOtpAuthentication(mobileNo: let mobileNo, otp: let otp):
             return "Common?vSubject=PatientOrderDelivery&vMobileNo=\(mobileNo)&vOtpNo=\(otp)"
-
+            
         case .patientDeliveryOrderUpdate(deliverOrderId: let deliverOrderId, deliveryBoyId: let deliveryBoyId):
             return "DeliveryBoy?vDeliverOrderId=\(deliverOrderId)&vDeliveryBoyId=\(deliveryBoyId)"
             
         case .deliverOrderList(deliveryBoyId: let deliveryBoyId):
             return "DeliveryBoy?vDeliverOrderDeliveryBoyId=\(deliveryBoyId)"
-
+            
         case .orderAcceptUpdate(upcomingOrderId: let upcomingOrderId, deliveryBoyId: let deliveryBoyId):
             return "DeliveryBoy?vUpcomingOrderId=\(upcomingOrderId)&vDeliveryBoyId=\(deliveryBoyId)"
-
+            
         case .pendingOrderList(deliveryBoyId: let deliveryBoyId):
             return "DeliveryBoy?vOrderDeliveryBoyId=\(deliveryBoyId)"
-
+            
         case .upcomingOrderList(upcomingOrderDeliveryBoyId: let upcomingOrderDeliveryBoyId):
             return "DeliveryBoy?vUpcomingOrderDeliveryBoyId=\(upcomingOrderDeliveryBoyId)"
-
+            
         case .patientOrderDetails(orderByPatientId: let orderByPatientId):
             return "Patient?vOrderByPatientId=\(orderByPatientId)"
-
+            
         case .deliveryBoyOrderCount(deliveryBoyId: let deliveryBoyId):
             return "DeliveryBoy?vCountDeliveryBoyId=\(deliveryBoyId)"
-
+            
         case .patientLatAndLngUpdate(orderId: let orderId, lat: let lat, lng: let lng):
             return "DeliveryBoy?vOrderId=\(orderId)&vLatitude=\(lat)&vLongitude=\(lng)"
-
+            
         case .rejectOrderUpdate(orderId: let orderId, deliveryBoyId: let deliveryBoyId):
             return "DeliveryBoy?vRejectOrderId=\(orderId)&vDeliveryBoyId=\(deliveryBoyId)"
-
+            
         case .orderCashCollectionUpdate(cashCollectedOrderId: let cashCollectedOrderId, deliveryBoyId: let deliveryBoyId):
             return "DeliveryBoy?vCashCollectOrderId=\(cashCollectedOrderId)&vDeliveryBoyId=\(deliveryBoyId)"
-
+            
         case .rejectedOrderList(deliveryBoyId: let deliveryBoyId):
             return "vRejectOrderDeliveryBoyId=\(deliveryBoyId)"
-
+            
         case .orderMapCordinates(orderId: let orderId):
             return "DeliveryBoy?vCordOrderId=\(orderId)"
-
+            
         case .orderPayableAmount(orderId: let orderId):
             return "DeliveryBoy?vOrderId=\(orderId)"
-
+            
         case .deliveryBoyLatAndLngUpdate(orderId: let orderId, lat: let lat, lng: let lng):
             return "DeliveryBoy?vOrderId=\(orderId)&vDeliveryBoyLatitude=\(lat)&vDeliveryBoyLongitude=\(lng)"
-
+            
         case .selfPrescriptionList(patientId: let patientId):
             return "Pharmacy?vPatientId=\(patientId)"
-
+            
         case .talukaByPincode(pincode: let pincode):
             return "Pincode?vPincodeId=\(pincode)"
-
+            
         case .areaGetByPincodeAndTaluka(pincode: let pincode, taluka: let taluka):
             return "Pincode?vPincodeId=\(pincode)&vTaluka=\(taluka)"
-
+            
         case .pharmacyPaidReceipt(pharmPatientId: let pharmPatientId):
             return "vPharmPatientId=\(pharmPatientId)"
-
+            
         case .patientPasswordChange(patientId: let patientId, oldPassword: let oldPassword, newPassword: let newPassword):
             return "Patient?vPatientId=\(patientId)&vOldPwd=\(oldPassword)&vNewPwd=\(newPassword)"
-
+            
         case .patientMobileNoValidation(mobileNo1: let mobileNo1):
             return "Patient?vMob1=\(mobileNo1)"
-
+            
         case .Specialization:
             return "Common?vType=Specialization"
             
         case .Symptoms:
             return "Concern?vConcernList="
-
+            
         case .FrequentSpeciality:
             return "Common?vSpecType=Specialization"
-
+            
         case .SymptomsSearching(searchVal: let searchVal):
             return "Patient?vSrchVal=\(searchVal)"
-
+            
         case .PatientConcernSave(patientId: let patientId, concernId: let concernId, concernDesc: let concernDesc):
             return "Patient?vPatientId=\(patientId)&vConcernId=\(concernId)&vConcernDesc=\(concernDesc)"
-
+            
         case .PatientLabTestReports(patientId: let patientId):
             return "HealthHistory?vLabTestDocPatientId=\(patientId)"
-
+            
         case .PatientLabTestDetails(patientId: let patientId):
             return "HealthHistory?vLabTestDtlsPatientId=\(patientId)"
-
+            
         case .PatientProcedureReports(patientId: let patientId):
             return "HealthHistory?vProcedureDocPatientId=\(patientId)"
-
+            
         case .PatientLabTestAdviceDetails(patientId: let patientId):
             return "Pathology?vLabTestAdviseDtlsPatientId=\(patientId)"
-
+            
         case .labTestSearch(searchVal: let searchVal):
             return "Pathology?vSrchVal=\(searchVal)"
-
+            
         case .medicineAndEssential(searchVal: let searchVal):
             return "Pharmacy?vSrchVal=\(searchVal)"
-
+            
         case .PatientPharmacyAdviceDetails(patientId: let patientId):
             return "Pharmacy?vPatientId=\(patientId)"
-
+            
         case .FrequentLabTest:
             return "Pathology"
             
@@ -636,9 +677,33 @@ extension APIV2 {
         case .procedureBilling(patientID: let patientId):
             return "Finance?vEstimateBillingListPatientId=\(patientId)"
             
+        case .addressPatient(patientID: let patientId):
+            return "Patient?vPatientAddressPatientId=\(patientId)"
+            
+        case .consultationList(patientID: let patientId):
+            return "Doctor?vPatientId=\(patientId)"
+            
+        case .myOrderList(patientID: let patientId):
+            return "Order?vPatientId=\(patientId)&vOrderStatus=All"
+            
+        case .myCartList(patientID: let patientId):
+            return "Cart?vRefPatientId=\(patientId)"
+            
+        case .OPDBillingList(patientID: let patientId):
+            return "Finance?vOPDBillingListPatientId=\(patientId)"
+            
+            
+        case .estimateAdvanceBillingList(patientID: let patientId):
+            return "Finance?vEstimateAdvanceBillingListPatientId=\(patientId)"
+            
+        case .pharmacyReceiptList(patientID: let patientId):
+            return "Pharmacy?vPharmPatientId=\(patientId)"
+            
+        case .PatientMedicineDetails(patientId: let patientId):
+            return "Pharmacy?vPatientId=\(patientId)"
         }
     }
-
+    
     
     var method: String {
         switch self {
@@ -659,205 +724,205 @@ extension APIV2 {
             
         case .orderInvoice:
             return "POST"
-
+            
         case .PatientDocumentUpload:
             return "POST"
-
+            
         case .PatientPrescriptionHistoryGetById:
             return "POST"
-
+            
         case .SelfPrescriptionUpload:
             return "POST"
-
+            
         case .ProcedureReportUpload:
             return "POST"
-
+            
         case .ProcedureReportReUpload:
             return "POST"
-
+            
         case .LabTestReportUpload:
             return "POST"
-
+            
         case .LabTestReportReUpload:
             return "POST"
-
+            
         case .PatientDocumentReUpload:
             return "POST"
-
+            
         case .GetAllPharmacyAdvice:
             return "POST"
-
+            
         case .patientRegistration:
             return "POST"
-
+            
         case .OrderDtlsGetByOrderStatus:
             return "POST"
-
+            
         case .OTPAuthentication:
             return "POST"
-
+            
         case .PatientHistGetById:
-            return "POST"
-
+            return "GET"
+            
         case .PatientLogin:
             return "POST"
-
+            
         case .CommonDataGetByType:
             return "POST"
-
+            
         case .TitleGetByTitleType:
             return "POST"
-
+            
         case .GetAllLabTestInvestigation:
             return "POST"
-
+            
         case .PatientProfileUpload:
             return "POST"
-
+            
         case .PatientGetById:
             return "POST"
-
+            
         case .SelfPrescriptionAdviceSave:
             return "POST"
-
+            
         case .ViewPharmacyChargesDtlsGetByMedicineId:
             return "POST"
-
+            
         case .RefreshCart:
             return "POST"
-
+            
         case .DeliveryBoyRegistration:
             return "GET"
-
+            
         case .Qualification:
             return "GET"
-
+            
         case .State:
             return "GET"
-
+            
         case .City:
             return "GET"
-
+            
         case .deliveryBoyProfileDetails:
             return "GET"
-
+            
         case .deliveryBoyOtpAuthentication:
             return "GET"
-
+            
         case .deliveryBoyProfileUpdate:
             return "GET"
-
+            
         case .deliveryBoyDocumentList:
             return "GET"
-
+            
         case .orderPickUpUpdate:
             return "GET"
-
+            
         case .patientDeliveryOtpGeneration:
             return "GET"
-
+            
         case .patientDeliveryOtpAuthentication:
             return "GET"
-
+            
         case .patientDeliveryOrderUpdate:
             return "GET"
-
+            
         case .deliverOrderList:
             return "GET"
-
+            
         case .orderAcceptUpdate:
             return "GET"
-
+            
         case .pendingOrderList:
             return "GET"
-
+            
         case .upcomingOrderList:
             return "GET"
-
+            
         case .patientOrderDetails:
             return "GET"
-
+            
         case .deliveryBoyOrderCount:
             return "GET"
-
+            
         case .patientLatAndLngUpdate:
             return "GET"
-
+            
         case .rejectOrderUpdate:
             return "GET"
-
+            
         case .orderCashCollectionUpdate:
             return "GET"
-
+            
         case .rejectedOrderList:
             return "GET"
-
+            
         case .orderMapCordinates:
             return "GET"
-
+            
         case .orderPayableAmount:
             return "GET"
-
+            
         case .deliveryBoyLatAndLngUpdate:
             return "GET"
-
+            
         case .selfPrescriptionList:
             return "GET"
-
+            
         case .talukaByPincode:
             return "GET"
-
+            
         case .areaGetByPincodeAndTaluka:
             return "GET"
-
+            
         case .pharmacyPaidReceipt:
             return "GET"
-
+            
         case .patientPasswordChange:
             return "GET"
-
+            
         case .patientMobileNoValidation:
             return "GET"
-
+            
         case .Specialization:
             return "GET"
-
+            
         case .Symptoms:
             return "GET"
-
+            
         case .FrequentSpeciality:
             return "GET"
-
+            
         case .SymptomsSearching:
             return "GET"
-
+            
         case .PatientConcernSave:
             return "GET"
-
+            
         case .PatientLabTestReports:
             return "GET"
-
+            
         case .PatientLabTestDetails:
             return "GET"
-
+            
         case .PatientProcedureReports:
             return "GET"
-
+            
         case .PatientLabTestAdviceDetails:
             return "GET"
-
+            
         case .labTestSearch:
             return "GET"
-
+            
         case .medicineAndEssential:
             return "GET"
-
+            
         case .PatientPharmacyAdviceDetails:
             return "GET"
-
+            
         case .FrequentLabTest:
             return "GET"
-
+            
         case .FrequentMedicine:
             return "GET"
             
@@ -869,10 +934,34 @@ extension APIV2 {
             
         case .procedureBilling:
             return "GET"
-
+            
+        case .addressPatient:
+            return "GET"
+            
+        case .consultationList:
+            return "GET"
+            
+        case .myOrderList:
+            return "GET"
+            
+        case .myCartList:
+            return "GET"
+            
+        case .OPDBillingList:
+            return "GET"
+            
+        case .estimateAdvanceBillingList:
+            return "GET"
+            
+        case .pharmacyReceiptList:
+            return "GET"
+            
+        case .PatientMedicineDetails:
+            return "GET"
         }
+    }
 }
-}
+
 
 extension APIV2 {
     var params: String {
@@ -933,9 +1022,6 @@ extension APIV2 {
             
         case .OTPAuthentication(mobileNo: let mobileNo, subject: let subject, otpNo: let otpNo, firebaseToken: let firebaseToken):
             params = "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><OTPAuthentication xmlns=\"http://tempuri.org/\"><vMobileNo>\(mobileNo)</vMobileNo><vSubject>\(subject)</vSubject><vOtpNo>\(otpNo)</vOtpNo><vFireBaseToken>\(firebaseToken)</vFireBaseToken></OTPAuthentication></soap:Body></soap:Envelope>"
-            
-        case .PatientHistGetById(patientHistId: let patientHistId):
-            params = "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><PatientHistGetById xmlns=\"http://tempuri.org/\"><vPatientHistId>\(patientHistId)</vPatientHistId></PatientHistGetById></soap:Body></soap:Envelope>"
             
         case .PatientLogin(mobileNo: let mobileNo, password: let password, firebaseToken: let firebaseToken):
             params = "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><PatientLogin xmlns=\"http://tempuri.org/\"><vMob1>\(mobileNo)</vMob1><vPwd>\(password)</vPwd><vFireBaseToken>\(firebaseToken)</vFireBaseToken></PatientLogin></soap:Body></soap:Envelope>"
@@ -1107,8 +1193,33 @@ extension APIV2 {
             
         case .procedureBilling:
             break
-        
             
+        case .addressPatient:
+            break
+            
+        case .consultationList:
+            break
+            
+        case .PatientHistGetById:
+            break
+            
+        case .myOrderList:
+            break
+        
+        case .myCartList:
+            break
+            
+        case .OPDBillingList:
+            break
+            
+        case .estimateAdvanceBillingList:
+            break
+            
+        case .pharmacyReceiptList:
+            break
+            
+        case .PatientMedicineDetails:
+            break
         }
         return params
 

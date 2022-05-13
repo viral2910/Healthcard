@@ -7,6 +7,9 @@
 
 import UIKit
 
+protocol consultationDelegate {
+    func getInvoiceFunction(value : Int)
+}
 class MyConsultationCell: UITableViewCell {
 
     @IBOutlet weak var layerView: UIView!
@@ -17,16 +20,22 @@ class MyConsultationCell: UITableViewCell {
     @IBOutlet weak var paymentMethodLbl: UILabel!
     @IBOutlet weak var paymentAmtLbl: UILabel!
     @IBOutlet weak var getInvoiceBtn: UIButton!
+    
+    var delegate:consultationDelegate!
     override func awakeFromNib() {
         super.awakeFromNib()
-      
+        
+        getInvoiceBtn.layer.borderColor = UIColor.init(hexString: "007AB8").cgColor
+        getInvoiceBtn.layer.borderWidth = 2
+        getInvoiceBtn.layer.cornerRadius = 20
         layerView.dropShadowTVC()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        
     }
     
+    @IBAction func getInvoiceAction(_ sender: UIButton) {
+        delegate.getInvoiceFunction(value: sender.tag)
+    }
 }

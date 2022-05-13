@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EditProfileVC: UIViewController {
+class EditProfileVC: UIViewController,XIBed {
 
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -27,7 +27,62 @@ class EditProfileVC: UIViewController {
     @IBOutlet weak var referingUnitTextField: UITextField!
     @IBOutlet weak var insuranceCompanyTextField: UITextField!
     @IBOutlet weak var coveredAmountTextField: UITextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        apiCall()
+    }
+    @IBAction func BackAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+}
+
+extension EditProfileVC{
+
+    //MARK: - API CALL
+    func apiCall()  {
+        let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
+        NetWorker.shared.callAPIService(type: APIV2.PatientHistGetById(patientID: patientID)) { [weak self](data: patientDetails?, error) in
+//                self?.dataValue = data!
+//                self?.tableView.reloadData()
+               // print(patientIDval)
+            
+        }
+    }
+}
+
+// MARK: - Welcome
+struct patientDetails: Codable {
+    let id, patientID, weight, height: Int
+    let medicalHist: String
+    let medicalHistLst: [String]
+    let medicalOtherHist, medicalHistDetails, medication, recentExacrebation: String
+    let surgicalHist, anaesthesiaHist, allery, addictions: String
+    let familyHist, othSighist, isEdit: String
+    let currUser: JSONNull?
+    let createdBy, createdByText, createdOn: String
+
+    enum CodingKeys: String, CodingKey {
+        case id = "Id"
+        case patientID = "PatientId"
+        case weight = "Weight"
+        case height = "Height"
+        case medicalHist = "MedicalHist"
+        case medicalHistLst = "MedicalHistLst"
+        case medicalOtherHist = "MedicalOtherHist"
+        case medicalHistDetails = "MedicalHistDetails"
+        case medication = "Medication"
+        case recentExacrebation = "RecentExacrebation"
+        case surgicalHist = "SurgicalHist"
+        case anaesthesiaHist = "AnaesthesiaHist"
+        case allery = "Allery"
+        case addictions = "Addictions"
+        case familyHist = "FamilyHist"
+        case othSighist = "OthSighist"
+        case isEdit = "IsEdit"
+        case currUser = "CurrUser"
+        case createdBy = "CreatedBy"
+        case createdByText = "CreatedByText"
+        case createdOn = "CreatedOn"
     }
 }

@@ -82,29 +82,43 @@ extension SideMenuTableViewManager: UITableViewDataSource {
         
         switch indexPath.row {
         case 0:
-            print("Button Tap")
-//            let vc = HomeViewController.instantiate()
-//            self.pushDelegate?.pushViewController(vc: vc)
+            let vc = ProfileVC.instantiate()
+            self.pushDelegate?.pushViewController(vc: vc)
+            
             
         case 1:
+            let vc = EditProfileVC.instantiate()
+            self.pushDelegate?.pushViewController(vc: vc)
             print("Button Tap")
 
         case 2:
+            let vc = PrescriptionDetails.instantiate()
+            self.pushDelegate?.pushViewController(vc: vc)
             print("Button Tap")
 
         case 3:
+            let vc = FinanceVC.instantiate()
+            self.pushDelegate?.pushViewController(vc: vc)
             print("Button Tap")
             
         case 4:
+            let vc = MyOrders.instantiate()
+            self.pushDelegate?.pushViewController(vc: vc)
             print("Button Tap")
             
         case 5:
+            let vc = AddressDetailsVC.instantiate()
+            self.pushDelegate?.pushViewController(vc: vc)
             print("Button Tap")
             
         case 6:
+            let vc = MyConsultation.instantiate()
+            self.pushDelegate?.pushViewController(vc: vc)
             print("Button Tap")
             
         case 7:
+            let vc = CartDetails.instantiate()
+            self.pushDelegate?.pushViewController(vc: vc)
             print("Button Tap")
 
         default:

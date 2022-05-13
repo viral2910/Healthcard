@@ -12,6 +12,9 @@ class ProcedureBillingVC: UIViewController {
     @IBOutlet weak var mainView: UIView!
     var pageMenu : CAPSPageMenu?
     
+    @IBAction func backAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

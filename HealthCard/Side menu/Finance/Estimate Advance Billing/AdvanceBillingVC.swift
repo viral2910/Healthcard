@@ -12,6 +12,9 @@ class AdvanceBillingVC: UIViewController {
 
     @IBOutlet weak var mainView: UIView!
     
+    @IBAction func backAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

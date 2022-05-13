@@ -194,8 +194,8 @@ extension CustomTabBarViewController {
             navTitleLblRef.text = "My Profile"
             
             let firstVC = self.VCArr[3]
-            self.pageVC.setViewControllers([firstVC], direction: .forward, animated: true)
-            
+//            self.pageVC.setViewControllers([firstVC], direction: .forward, animated: true)
+            self.navigationController?.pushViewController(firstVC, animated: true)
             
         }
         

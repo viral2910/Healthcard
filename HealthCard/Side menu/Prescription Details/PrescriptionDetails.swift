@@ -166,6 +166,7 @@ class PrescriptionDetails: UIViewController, XIBed {
     }
     @IBAction func homeBtn(_ sender: UIButton) {
         
+            self.navigationController?.popViewController(animated: true)
     }
 }
 
@@ -177,7 +178,6 @@ extension PrescriptionDetails{
     func apiCall()  {
         let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
         NetWorker.shared.callAPIService(type: APIV2.MyPrescription(patientId: patientID)) { [weak self](data: [prescriptionData]?, error) in
-                
                 self?.dataValue = data!
                 self?.tableView.reloadData()
                // print(patientIDval)

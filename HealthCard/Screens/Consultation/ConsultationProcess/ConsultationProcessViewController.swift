@@ -21,6 +21,8 @@ class ConsultationProcessViewController: UIViewController, XIBed {
     var selectedIssueArr:[String] = []
     private lazy var collectionViewManager = { SelectedIssueCollectionViewManager() }()
 
+    var specializationId = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -76,11 +78,14 @@ extension ConsultationProcessViewController {
 //MARK: - Action
 extension ConsultationProcessViewController {
     @IBAction func consultNowBtnTap(_ sender: UIButton) {
-        
+        let vc = DoctorAvailableListViewController.instantiate()
+        vc.specializationId = specializationId
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func submitBtnTap(_ sender: UIButton) {
-        
+        let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
+        saveConcern(patientId: patientID, concernId: specializationId, concernDesc: textViewRef.text ?? "")
     }
     
     @IBAction func backBtnTap(_ sender: UIButton) {
@@ -93,6 +98,17 @@ extension ConsultationProcessViewController {
         let homeVC = CustomTabBarViewController.instantiate()        //Below's navigationController is useful if u want NavigationController
         let navigationController = UINavigationController(rootViewController: homeVC)
         appDelegate.window!.rootViewController = navigationController
+    }
+}
+
+//MARK: - Api Call
+extension ConsultationProcessViewController {
+    func saveConcern(patientId: Int, concernId: Int, concernDesc: String) {
+        struct demo: Codable { }
+        NetWorker.shared.callAPIService(type: APIV2.PatientConcernSave(patientId: patientId, concernId: concernId, concernDesc: concernDesc)) { [weak self](data: demo?, error) in
+            guard self == self else { return } 
+        }
+        
     }
 }
 

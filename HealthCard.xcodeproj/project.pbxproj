@@ -10,6 +10,14 @@
 		8EF153EFD6A1C00A3A16EA47 /* Pods_HealthCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EA0D1C2620A6272EBF75FF2 /* Pods_HealthCard.framework */; };
 		E03DD67027F9787600BFB975 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03DD66F27F9787600BFB975 /* HomeVC.swift */; };
 		E03DD67227F994E100BFB975 /* MainTabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03DD67127F994E100BFB975 /* MainTabbarVC.swift */; };
+		E04853832826319800B16DE2 /* MedicineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04853812826319800B16DE2 /* MedicineVC.swift */; };
+		E04853842826319800B16DE2 /* MedicineVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E04853822826319800B16DE2 /* MedicineVC.xib */; };
+		E0485387282631B200B16DE2 /* MedicineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0485385282631B200B16DE2 /* MedicineCell.swift */; };
+		E0485388282631B200B16DE2 /* MedicineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0485386282631B200B16DE2 /* MedicineCell.xib */; };
+		E049CA72282C350B0022FB63 /* BookMedicineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E049CA70282C350B0022FB63 /* BookMedicineCell.xib */; };
+		E049CA73282C350B0022FB63 /* BookMedicineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E049CA71282C350B0022FB63 /* BookMedicineCell.swift */; };
+		E04E6BC7282A0494000B4735 /* CartSubDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E6BC5282A0494000B4735 /* CartSubDetailsCell.swift */; };
+		E04E6BC8282A0494000B4735 /* CartSubDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E04E6BC6282A0494000B4735 /* CartSubDetailsCell.xib */; };
 		E066993327F47ADA009EE3F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E066993227F47ADA009EE3F0 /* AppDelegate.swift */; };
 		E066993727F47ADA009EE3F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E066993627F47ADA009EE3F0 /* ViewController.swift */; };
 		E066993C27F47ADC009EE3F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E066993B27F47ADC009EE3F0 /* Assets.xcassets */; };
@@ -19,6 +27,18 @@
 		E072953227F84BDE0083357A /* OtpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072953127F84BDE0083357A /* OtpVC.swift */; };
 		E072953427F850570083357A /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072953327F850570083357A /* ForgotPasswordVC.swift */; };
 		E072953627F853610083357A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E072953527F853610083357A /* Home.storyboard */; };
+		E0B1649B282E4472006E8287 /* DoctorsTimingCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B1648C282E4472006E8287 /* DoctorsTimingCollectionViewManager.swift */; };
+		E0B1649C282E4472006E8287 /* TimingsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B1648E282E4472006E8287 /* TimingsCollectionViewCell.swift */; };
+		E0B1649D282E4472006E8287 /* TimingsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B1648F282E4472006E8287 /* TimingsCollectionViewCell.xib */; };
+		E0B1649E282E4472006E8287 /* timingShiftHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B16490282E4472006E8287 /* timingShiftHeaderCell.xib */; };
+		E0B1649F282E4472006E8287 /* timingShiftHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16491282E4472006E8287 /* timingShiftHeaderCell.swift */; };
+		E0B164A0282E4472006E8287 /* ConsultDoctorDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16492282E4472006E8287 /* ConsultDoctorDetailsViewController.swift */; };
+		E0B164A1282E4472006E8287 /* ConsultDoctorDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B16493282E4472006E8287 /* ConsultDoctorDetailsViewController.xib */; };
+		E0B164A2282E4472006E8287 /* DoctorAvailableListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B16495282E4472006E8287 /* DoctorAvailableListViewController.xib */; };
+		E0B164A3282E4472006E8287 /* DoctorAvailableListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B16497282E4472006E8287 /* DoctorAvailableListTableViewCell.xib */; };
+		E0B164A4282E4472006E8287 /* DoctorAvailableListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16498282E4472006E8287 /* DoctorAvailableListTableViewCell.swift */; };
+		E0B164A5282E4472006E8287 /* DoctorAvailableListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16499282E4472006E8287 /* DoctorAvailableListViewController.swift */; };
+		E0B164A6282E4472006E8287 /* DoctorAvailableListTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B1649A282E4472006E8287 /* DoctorAvailableListTableViewManager.swift */; };
 		E0B9BF912811BD23001A58E8 /* XIBed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF012811BD22001A58E8 /* XIBed.swift */; };
 		E0B9BF922811BD23001A58E8 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF032811BD22001A58E8 /* Environment.swift */; };
 		E0B9BF932811BD23001A58E8 /* raleway_extralightitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF062811BD22001A58E8 /* raleway_extralightitalic.ttf */; };
@@ -138,6 +158,8 @@
 		E0CC64A528156CD60011A165 /* CustomSideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC64A028156CD60011A165 /* CustomSideMenuTableViewCell.swift */; };
 		E0CC64A628156CD60011A165 /* CustomSideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CC64A128156CD60011A165 /* CustomSideMenuTableViewCell.xib */; };
 		E0CC64A728156CD60011A165 /* CustomSideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CC64A228156CD60011A165 /* CustomSideMenuViewController.xib */; };
+		E0D5ED472827FD0000ECF500 /* CustomWebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D5ED452827FD0000ECF500 /* CustomWebViewVC.swift */; };
+		E0D5ED482827FD0000ECF500 /* CustomWebViewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D5ED462827FD0000ECF500 /* CustomWebViewVC.xib */; };
 		E0D7CE14281E7811001B4738 /* CategoryCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CDFB281E7811001B4738 /* CategoryCollectionViewManager.swift */; };
 		E0D7CE15281E7811001B4738 /* DashboardCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CDFC281E7811001B4738 /* DashboardCollectionViewManager.swift */; };
 		E0D7CE16281E7811001B4738 /* LookingForTestInCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CDFD281E7811001B4738 /* LookingForTestInCollectionViewManager.swift */; };
@@ -208,7 +230,6 @@
 		E0E74BF9281F9FF6001564F9 /* PrescriptionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BC6281F9FF6001564F9 /* PrescriptionDetails.swift */; };
 		E0E74BFA281F9FF6001564F9 /* CartDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BC8281F9FF6001564F9 /* CartDetailsCell.swift */; };
 		E0E74BFB281F9FF6001564F9 /* CartDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E74BC9281F9FF6001564F9 /* CartDetailsCell.xib */; };
-		E0E74BFC281F9FF6001564F9 /* CardDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BCA281F9FF6001564F9 /* CardDetailsVC.swift */; };
 		E0E74BFD281F9FF6001564F9 /* CartDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BCB281F9FF6001564F9 /* CartDetails.swift */; };
 		E0E74BFE281F9FF6001564F9 /* CartDetails.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E74BCC281F9FF6001564F9 /* CartDetails.xib */; };
 		E0E74BFF281F9FF6001564F9 /* LabTestReceiptVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BCF281F9FF6001564F9 /* LabTestReceiptVc.swift */; };
@@ -224,7 +245,7 @@
 		E0E74C09281F9FF6001564F9 /* AdvanceBillingPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BDB281F9FF6001564F9 /* AdvanceBillingPaymentVC.swift */; };
 		E0E74C0A281F9FF6001564F9 /* AdvanceBillingPaymentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E74BDC281F9FF6001564F9 /* AdvanceBillingPaymentVC.xib */; };
 		E0E74C0B281F9FF6001564F9 /* OpdConsultationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E74BDE281F9FF6001564F9 /* OpdConsultationCell.xib */; };
-		E0E74C0C281F9FF6001564F9 /* OPDBillOPDBillingPaymentVCingPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BDF281F9FF6001564F9 /* OPDBillOPDBillingPaymentVCingPaymentVC.swift */; };
+		E0E74C0C281F9FF6001564F9 /* OPDBillingPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BDF281F9FF6001564F9 /* OPDBillingPaymentVC.swift */; };
 		E0E74C0D281F9FF6001564F9 /* OpdConsultationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BE0281F9FF6001564F9 /* OpdConsultationCell.swift */; };
 		E0E74C0E281F9FF6001564F9 /* OPDconultationBilling.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BE1281F9FF6001564F9 /* OPDconultationBilling.swift */; };
 		E0E74C0F281F9FF6001564F9 /* OPDBillingPaymentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E74BE2281F9FF6001564F9 /* OPDBillingPaymentVC.xib */; };
@@ -248,6 +269,14 @@
 		9EA0D1C2620A6272EBF75FF2 /* Pods_HealthCard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthCard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E03DD66F27F9787600BFB975 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		E03DD67127F994E100BFB975 /* MainTabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarVC.swift; sourceTree = "<group>"; };
+		E04853812826319800B16DE2 /* MedicineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineVC.swift; sourceTree = "<group>"; };
+		E04853822826319800B16DE2 /* MedicineVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineVC.xib; sourceTree = "<group>"; };
+		E0485385282631B200B16DE2 /* MedicineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineCell.swift; sourceTree = "<group>"; };
+		E0485386282631B200B16DE2 /* MedicineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineCell.xib; sourceTree = "<group>"; };
+		E049CA70282C350B0022FB63 /* BookMedicineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookMedicineCell.xib; sourceTree = "<group>"; };
+		E049CA71282C350B0022FB63 /* BookMedicineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookMedicineCell.swift; sourceTree = "<group>"; };
+		E04E6BC5282A0494000B4735 /* CartSubDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartSubDetailsCell.swift; sourceTree = "<group>"; };
+		E04E6BC6282A0494000B4735 /* CartSubDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartSubDetailsCell.xib; sourceTree = "<group>"; };
 		E066992F27F47ADA009EE3F0 /* HealthCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E066993227F47ADA009EE3F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E066993627F47ADA009EE3F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -259,6 +288,18 @@
 		E072953127F84BDE0083357A /* OtpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpVC.swift; sourceTree = "<group>"; };
 		E072953327F850570083357A /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		E072953527F853610083357A /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		E0B1648C282E4472006E8287 /* DoctorsTimingCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorsTimingCollectionViewManager.swift; sourceTree = "<group>"; };
+		E0B1648E282E4472006E8287 /* TimingsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingsCollectionViewCell.swift; sourceTree = "<group>"; };
+		E0B1648F282E4472006E8287 /* TimingsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimingsCollectionViewCell.xib; sourceTree = "<group>"; };
+		E0B16490282E4472006E8287 /* timingShiftHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = timingShiftHeaderCell.xib; sourceTree = "<group>"; };
+		E0B16491282E4472006E8287 /* timingShiftHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = timingShiftHeaderCell.swift; sourceTree = "<group>"; };
+		E0B16492282E4472006E8287 /* ConsultDoctorDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultDoctorDetailsViewController.swift; sourceTree = "<group>"; };
+		E0B16493282E4472006E8287 /* ConsultDoctorDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsultDoctorDetailsViewController.xib; sourceTree = "<group>"; };
+		E0B16495282E4472006E8287 /* DoctorAvailableListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorAvailableListViewController.xib; sourceTree = "<group>"; };
+		E0B16497282E4472006E8287 /* DoctorAvailableListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorAvailableListTableViewCell.xib; sourceTree = "<group>"; };
+		E0B16498282E4472006E8287 /* DoctorAvailableListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorAvailableListTableViewCell.swift; sourceTree = "<group>"; };
+		E0B16499282E4472006E8287 /* DoctorAvailableListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorAvailableListViewController.swift; sourceTree = "<group>"; };
+		E0B1649A282E4472006E8287 /* DoctorAvailableListTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorAvailableListTableViewManager.swift; sourceTree = "<group>"; };
 		E0B9BF012811BD22001A58E8 /* XIBed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XIBed.swift; sourceTree = "<group>"; };
 		E0B9BF032811BD22001A58E8 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		E0B9BF062811BD22001A58E8 /* raleway_extralightitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_extralightitalic.ttf; sourceTree = "<group>"; };
@@ -378,6 +419,8 @@
 		E0CC64A028156CD60011A165 /* CustomSideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		E0CC64A128156CD60011A165 /* CustomSideMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomSideMenuTableViewCell.xib; sourceTree = "<group>"; };
 		E0CC64A228156CD60011A165 /* CustomSideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomSideMenuViewController.xib; sourceTree = "<group>"; };
+		E0D5ED452827FD0000ECF500 /* CustomWebViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWebViewVC.swift; sourceTree = "<group>"; };
+		E0D5ED462827FD0000ECF500 /* CustomWebViewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomWebViewVC.xib; sourceTree = "<group>"; };
 		E0D7CDFB281E7811001B4738 /* CategoryCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewManager.swift; sourceTree = "<group>"; };
 		E0D7CDFC281E7811001B4738 /* DashboardCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCollectionViewManager.swift; sourceTree = "<group>"; };
 		E0D7CDFD281E7811001B4738 /* LookingForTestInCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LookingForTestInCollectionViewManager.swift; sourceTree = "<group>"; };
@@ -448,7 +491,6 @@
 		E0E74BC6281F9FF6001564F9 /* PrescriptionDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrescriptionDetails.swift; sourceTree = "<group>"; };
 		E0E74BC8281F9FF6001564F9 /* CartDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartDetailsCell.swift; sourceTree = "<group>"; };
 		E0E74BC9281F9FF6001564F9 /* CartDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartDetailsCell.xib; sourceTree = "<group>"; };
-		E0E74BCA281F9FF6001564F9 /* CardDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailsVC.swift; sourceTree = "<group>"; };
 		E0E74BCB281F9FF6001564F9 /* CartDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartDetails.swift; sourceTree = "<group>"; };
 		E0E74BCC281F9FF6001564F9 /* CartDetails.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartDetails.xib; sourceTree = "<group>"; };
 		E0E74BCF281F9FF6001564F9 /* LabTestReceiptVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabTestReceiptVc.swift; sourceTree = "<group>"; };
@@ -464,7 +506,7 @@
 		E0E74BDB281F9FF6001564F9 /* AdvanceBillingPaymentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvanceBillingPaymentVC.swift; sourceTree = "<group>"; };
 		E0E74BDC281F9FF6001564F9 /* AdvanceBillingPaymentVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvanceBillingPaymentVC.xib; sourceTree = "<group>"; };
 		E0E74BDE281F9FF6001564F9 /* OpdConsultationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpdConsultationCell.xib; sourceTree = "<group>"; };
-		E0E74BDF281F9FF6001564F9 /* OPDBillOPDBillingPaymentVCingPaymentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OPDBillOPDBillingPaymentVCingPaymentVC.swift; sourceTree = "<group>"; };
+		E0E74BDF281F9FF6001564F9 /* OPDBillingPaymentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OPDBillingPaymentVC.swift; sourceTree = "<group>"; };
 		E0E74BE0281F9FF6001564F9 /* OpdConsultationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpdConsultationCell.swift; sourceTree = "<group>"; };
 		E0E74BE1281F9FF6001564F9 /* OPDconultationBilling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OPDconultationBilling.swift; sourceTree = "<group>"; };
 		E0E74BE2281F9FF6001564F9 /* OPDBillingPaymentVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OPDBillingPaymentVC.xib; sourceTree = "<group>"; };
@@ -524,6 +566,19 @@
 			path = LoginScreen;
 			sourceTree = "<group>";
 		};
+		E04853802826316700B16DE2 /* Medicines */ = {
+			isa = PBXGroup;
+			children = (
+				E04853812826319800B16DE2 /* MedicineVC.swift */,
+				E04853822826319800B16DE2 /* MedicineVC.xib */,
+				E049CA71282C350B0022FB63 /* BookMedicineCell.swift */,
+				E049CA70282C350B0022FB63 /* BookMedicineCell.xib */,
+				E0485385282631B200B16DE2 /* MedicineCell.swift */,
+				E0485386282631B200B16DE2 /* MedicineCell.xib */,
+			);
+			path = Medicines;
+			sourceTree = "<group>";
+		};
 		E066992627F47ADA009EE3F0 = {
 			isa = PBXGroup;
 			children = (
@@ -545,6 +600,7 @@
 		E066993127F47ADA009EE3F0 /* HealthCard */ = {
 			isa = PBXGroup;
 			children = (
+				E04853802826316700B16DE2 /* Medicines */,
 				E0D7CE6E281E8C1B001B4738 /* LabTest */,
 				E0D7CE69281E797E001B4738 /* CustomTabBar */,
 				E0CC649C28156CD60011A165 /* Side menu */,
@@ -565,6 +621,8 @@
 				E066994027F47ADC009EE3F0 /* Info.plist */,
 				E0CC6498281442110011A165 /* OrderTrackVC.swift */,
 				E0CC6499281442110011A165 /* OrderTrackVC.xib */,
+				E0D5ED452827FD0000ECF500 /* CustomWebViewVC.swift */,
+				E0D5ED462827FD0000ECF500 /* CustomWebViewVC.xib */,
 			);
 			path = HealthCard;
 			sourceTree = "<group>";
@@ -577,6 +635,48 @@
 				E03DD67127F994E100BFB975 /* MainTabbarVC.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		E0B1648B282E4472006E8287 /* Consult Doctor Details */ = {
+			isa = PBXGroup;
+			children = (
+				E0B1648C282E4472006E8287 /* DoctorsTimingCollectionViewManager.swift */,
+				E0B1648D282E4472006E8287 /* Cells */,
+				E0B16492282E4472006E8287 /* ConsultDoctorDetailsViewController.swift */,
+				E0B16493282E4472006E8287 /* ConsultDoctorDetailsViewController.xib */,
+			);
+			path = "Consult Doctor Details";
+			sourceTree = "<group>";
+		};
+		E0B1648D282E4472006E8287 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E0B1648E282E4472006E8287 /* TimingsCollectionViewCell.swift */,
+				E0B1648F282E4472006E8287 /* TimingsCollectionViewCell.xib */,
+				E0B16490282E4472006E8287 /* timingShiftHeaderCell.xib */,
+				E0B16491282E4472006E8287 /* timingShiftHeaderCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E0B16494282E4472006E8287 /* Doctor Available */ = {
+			isa = PBXGroup;
+			children = (
+				E0B16495282E4472006E8287 /* DoctorAvailableListViewController.xib */,
+				E0B16496282E4472006E8287 /* Cell */,
+				E0B16499282E4472006E8287 /* DoctorAvailableListViewController.swift */,
+				E0B1649A282E4472006E8287 /* DoctorAvailableListTableViewManager.swift */,
+			);
+			path = "Doctor Available";
+			sourceTree = "<group>";
+		};
+		E0B16496282E4472006E8287 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E0B16497282E4472006E8287 /* DoctorAvailableListTableViewCell.xib */,
+				E0B16498282E4472006E8287 /* DoctorAvailableListTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		E0B9BF002811BD22001A58E8 /* Supportings */ = {
@@ -704,6 +804,8 @@
 		E0B9BF512811BD22001A58E8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				E0B1648B282E4472006E8287 /* Consult Doctor Details */,
+				E0B16494282E4472006E8287 /* Doctor Available */,
 				E0D7CE2F281E78BA001B4738 /* Consultation */,
 				E0D7CDFA281E7811001B4738 /* HomeVC */,
 				E0B9BF802811BD23001A58E8 /* Consultation.zip */,
@@ -1016,9 +1118,10 @@
 			children = (
 				E0E74BC8281F9FF6001564F9 /* CartDetailsCell.swift */,
 				E0E74BC9281F9FF6001564F9 /* CartDetailsCell.xib */,
-				E0E74BCA281F9FF6001564F9 /* CardDetailsVC.swift */,
 				E0E74BCB281F9FF6001564F9 /* CartDetails.swift */,
 				E0E74BCC281F9FF6001564F9 /* CartDetails.xib */,
+				E04E6BC5282A0494000B4735 /* CartSubDetailsCell.swift */,
+				E04E6BC6282A0494000B4735 /* CartSubDetailsCell.xib */,
 			);
 			path = "Cart Details";
 			sourceTree = "<group>";
@@ -1076,7 +1179,7 @@
 			isa = PBXGroup;
 			children = (
 				E0E74BDE281F9FF6001564F9 /* OpdConsultationCell.xib */,
-				E0E74BDF281F9FF6001564F9 /* OPDBillOPDBillingPaymentVCingPaymentVC.swift */,
+				E0E74BDF281F9FF6001564F9 /* OPDBillingPaymentVC.swift */,
 				E0E74BE0281F9FF6001564F9 /* OpdConsultationCell.swift */,
 				E0E74BE1281F9FF6001564F9 /* OPDconultationBilling.swift */,
 				E0E74BE2281F9FF6001564F9 /* OPDBillingPaymentVC.xib */,
@@ -1178,6 +1281,7 @@
 				E0B9BFA02811BD23001A58E8 /* raleway_thin.ttf in Resources */,
 				E0E74C17281F9FF6001564F9 /* AddressDetailsCell.xib in Resources */,
 				E0B9BFA82811BD23001A58E8 /* lato_hairline_italic.ttf in Resources */,
+				E0B164A1282E4472006E8287 /* ConsultDoctorDetailsViewController.xib in Resources */,
 				E0D7CE53281E78BA001B4738 /* ConsultSpecialityTableViewCell.xib in Resources */,
 				E0B9BFA12811BD23001A58E8 /* lato_heavy_italic.ttf in Resources */,
 				E0B9BFA42811BD23001A58E8 /* raleway_light.ttf in Resources */,
@@ -1202,6 +1306,7 @@
 				E0E74BFE281F9FF6001564F9 /* CartDetails.xib in Resources */,
 				E0B9BFBE2811BD23001A58E8 /* raleway_semibold.ttf in Resources */,
 				E0B9BFAE2811BD23001A58E8 /* lato_heavy.ttf in Resources */,
+				E0485388282631B200B16DE2 /* MedicineCell.xib in Resources */,
 				E0D7CE25281E7811001B4738 /* SliderCollectionViewCell.xib in Resources */,
 				E0B9BFA32811BD23001A58E8 /* poppins_regular.ttf in Resources */,
 				E0B9BFC52811BD23001A58E8 /* Poppins-SemiBoldItalic.ttf in Resources */,
@@ -1209,10 +1314,13 @@
 				E0B9BFB82811BD23001A58E8 /* lato_bold.ttf in Resources */,
 				E0B9BF992811BD23001A58E8 /* raleway_semibolditalic.ttf in Resources */,
 				E0B9BF942811BD23001A58E8 /* lato_black.ttf in Resources */,
+				E04E6BC8282A0494000B4735 /* CartSubDetailsCell.xib in Resources */,
 				E0B9BF9E2811BD23001A58E8 /* raleway_medium.ttf in Resources */,
 				E0B9BFAF2811BD23001A58E8 /* lato_thin.ttf in Resources */,
 				E0B9BFBC2811BD23001A58E8 /* raleway_italic.ttf in Resources */,
+				E0B164A3282E4472006E8287 /* DoctorAvailableListTableViewCell.xib in Resources */,
 				E0B9BFC42811BD23001A58E8 /* Poppins-Medium.ttf in Resources */,
+				E04853842826319800B16DE2 /* MedicineVC.xib in Resources */,
 				E0B9BFC72811BD23001A58E8 /* Poppins-ExtraBold.ttf in Resources */,
 				E0B9BFCB2811BD23001A58E8 /* Poppins-LightItalic.ttf in Resources */,
 				E0D7CE1D281E7811001B4738 /* DashboardCollectionViewCell.xib in Resources */,
@@ -1240,17 +1348,21 @@
 				E0E74BFB281F9FF6001564F9 /* CartDetailsCell.xib in Resources */,
 				E0B9BFB52811BD23001A58E8 /* lato_black_italic.ttf in Resources */,
 				E0B9BFB32811BD23001A58E8 /* raleway_bolditalic.ttf in Resources */,
+				E0D5ED482827FD0000ECF500 /* CustomWebViewVC.xib in Resources */,
 				E0B9BFD12811BD23001A58E8 /* Poppins-MediumItalic.ttf in Resources */,
 				E0B9BFB12811BD23001A58E8 /* nexa_light.otf in Resources */,
 				E0E74C03281F9FF6001564F9 /* ProcedurePaymentCell.xib in Resources */,
 				E0D7CE24281E7811001B4738 /* CategoryCollectionViewCell.xib in Resources */,
 				E0B9BFC32811BD23001A58E8 /* Poppins-Light.ttf in Resources */,
 				E0B9BFB72811BD23001A58E8 /* lato_regular.ttf in Resources */,
+				E0B1649D282E4472006E8287 /* TimingsCollectionViewCell.xib in Resources */,
 				E0E74C0F281F9FF6001564F9 /* OPDBillingPaymentVC.xib in Resources */,
 				E0CC647D281438380011A165 /* PersonalVC.xib in Resources */,
 				E0B9BF9A2811BD23001A58E8 /* raleway_blackitalic.ttf in Resources */,
+				E0B1649E282E4472006E8287 /* timingShiftHeaderCell.xib in Resources */,
 				E0B9BFA22811BD23001A58E8 /* raleway_mediumitalic.ttf in Resources */,
 				E0D7CE23281E7811001B4738 /* BlogsCollectionViewCell.xib in Resources */,
+				E049CA72282C350B0022FB63 /* BookMedicineCell.xib in Resources */,
 				E0D7CE64281E78BA001B4738 /* SelectedIssueCollectionViewCell.xib in Resources */,
 				E0B9BF982811BD23001A58E8 /* poppins_light.ttf in Resources */,
 				E0B9BFC02811BD23001A58E8 /* Poppins-ThinItalic.ttf in Resources */,
@@ -1286,6 +1398,7 @@
 				E0B9BFAB2811BD23001A58E8 /* raleway_bold.ttf in Resources */,
 				E0D7CE59281E78BA001B4738 /* SymptomsInsideTableViewCell.xib in Resources */,
 				E0E74C06281F9FF6001564F9 /* AdvanceBillingPaymentCell.xib in Resources */,
+				E0B164A2282E4472006E8287 /* DoctorAvailableListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1340,17 +1453,18 @@
 			files = (
 				E0E74BF9281F9FF6001564F9 /* PrescriptionDetails.swift in Sources */,
 				E0D7CE21281E7811001B4738 /* SliderCollectionViewCell.swift in Sources */,
+				E04853832826319800B16DE2 /* MedicineVC.swift in Sources */,
 				E0E74C0D281F9FF6001564F9 /* OpdConsultationCell.swift in Sources */,
 				E066993727F47ADA009EE3F0 /* ViewController.swift in Sources */,
 				E0B9C0042811BD23001A58E8 /* BaseViewController.swift in Sources */,
 				E0E74BFD281F9FF6001564F9 /* CartDetails.swift in Sources */,
 				E0D7CE15281E7811001B4738 /* DashboardCollectionViewManager.swift in Sources */,
+				E0B164A0282E4472006E8287 /* ConsultDoctorDetailsViewController.swift in Sources */,
 				E0D7CE52281E78BA001B4738 /* ConsultSpecialityTableViewCell.swift in Sources */,
 				E0D7CE5F281E78BA001B4738 /* ConsultSymptomsTableViewManager.swift in Sources */,
 				E0E74C13281F9FF6001564F9 /* PharmacyReceiptVC.swift in Sources */,
 				E072953227F84BDE0083357A /* OtpVC.swift in Sources */,
 				E0E74BFA281F9FF6001564F9 /* CartDetailsCell.swift in Sources */,
-				E0E74BFC281F9FF6001564F9 /* CardDetailsVC.swift in Sources */,
 				E0D7CE1B281E7811001B4738 /* HomeViewController.swift in Sources */,
 				E0CC6492281439070011A165 /* CAPSPageMenu+Options.swift in Sources */,
 				E0D7CE56281E78BA001B4738 /* ConsultSpecialityViewController.swift in Sources */,
@@ -1361,6 +1475,7 @@
 				E0E74BF8281F9FF6001564F9 /* prescriptionDetailsCell.swift in Sources */,
 				E0D7CE7A281E8C56001B4738 /* LabTestCell.swift in Sources */,
 				E0CC649A281442110011A165 /* OrderTrackVC.swift in Sources */,
+				E04E6BC7282A0494000B4735 /* CartSubDetailsCell.swift in Sources */,
 				E0D7CE60281E78BA001B4738 /* ConsultSymptomsViewController.swift in Sources */,
 				E0B9C0032811BD23001A58E8 /* APIV2.swift in Sources */,
 				E0D7CE27281E7811001B4738 /* LookingForTestSliderCollectionViewManager.swift in Sources */,
@@ -1371,7 +1486,7 @@
 				E0B9C0092811BD23001A58E8 /* Router.swift in Sources */,
 				E0D7CE14281E7811001B4738 /* CategoryCollectionViewManager.swift in Sources */,
 				E0B9C00C2811BD23001A58E8 /* CustomAlertPopupVC.swift in Sources */,
-				E0E74C0C281F9FF6001564F9 /* OPDBillOPDBillingPaymentVCingPaymentVC.swift in Sources */,
+				E0E74C0C281F9FF6001564F9 /* OPDBillingPaymentVC.swift in Sources */,
 				E0B9BFD62811BD23001A58E8 /* Codable.swift in Sources */,
 				E0E74C07281F9FF6001564F9 /* AdvanceBillingPaymentCell.swift in Sources */,
 				E066993327F47ADA009EE3F0 /* AppDelegate.swift in Sources */,
@@ -1380,11 +1495,13 @@
 				E0D7CE1A281E7811001B4738 /* MedicineYouAreLookingSlider1CvManager.swift in Sources */,
 				E0D7CE63281E78BA001B4738 /* SelectedIssueCollectionViewCell.swift in Sources */,
 				E0D7CE5A281E78BA001B4738 /* SymptomsInsideTableViewCell.swift in Sources */,
+				E0B164A4282E4472006E8287 /* DoctorAvailableListTableViewCell.swift in Sources */,
 				E03DD67227F994E100BFB975 /* MainTabbarVC.swift in Sources */,
 				E0D7CE5E281E78BA001B4738 /* SymptomsInsideTableViewManager.swift in Sources */,
 				E0B9BFD52811BD23001A58E8 /* UIColor.swift in Sources */,
 				E0B9BFD22811BD23001A58E8 /* UIView.swift in Sources */,
 				E0D7CE28281E7811001B4738 /* PatientExperienceWithUsSliderCollectionViewManager.swift in Sources */,
+				E0B164A6282E4472006E8287 /* DoctorAvailableListTableViewManager.swift in Sources */,
 				E0B9BFD92811BD23001A58E8 /* UILabel.swift in Sources */,
 				E0D7CE61281E78BA001B4738 /* ConsultationProcessViewController.swift in Sources */,
 				E03DD67027F9787600BFB975 /* HomeVC.swift in Sources */,
@@ -1394,9 +1511,11 @@
 				E0D7CE54281E78BA001B4738 /* ConsultSpecialityTableViewManager.swift in Sources */,
 				E0C447F227F4959E00BE6E2D /* SingUpVC.swift in Sources */,
 				E0D7CE16281E7811001B4738 /* LookingForTestInCollectionViewManager.swift in Sources */,
+				E0B1649F282E4472006E8287 /* timingShiftHeaderCell.swift in Sources */,
 				E0CC6483281438380011A165 /* InsuranceVC.swift in Sources */,
 				E0E74C08281F9FF6001564F9 /* AdvanceBillingVC.swift in Sources */,
 				E0E74C02281F9FF6001564F9 /* ProcedureBillingPaymentVC.swift in Sources */,
+				E049CA73282C350B0022FB63 /* BookMedicineCell.swift in Sources */,
 				E0CC647C281438380011A165 /* ProfileTableviewCell.swift in Sources */,
 				E0B9BFDB2811BD23001A58E8 /* UIAlertController.swift in Sources */,
 				E0CC6479281438380011A165 /* PersonalVC.swift in Sources */,
@@ -1407,16 +1526,20 @@
 				E0CC64A428156CD60011A165 /* CustomSideMenuViewController.swift in Sources */,
 				E0E74C05281F9FF6001564F9 /* ProcedureBillingVC.swift in Sources */,
 				E0B9BFD42811BD23001A58E8 /* Data.swift in Sources */,
+				E0D5ED472827FD0000ECF500 /* CustomWebViewVC.swift in Sources */,
 				E0CC6495281439070011A165 /* CAPSPageMenu+UIConfiguration.swift in Sources */,
 				E0B9C0082811BD23001A58E8 /* PannableViewController.swift in Sources */,
 				E0D7CE2E281E788B001B4738 /* DoctorDetailsBySpecializeStruct.swift in Sources */,
 				E0E74BFF281F9FF6001564F9 /* LabTestReceiptVc.swift in Sources */,
 				E0E74BF2281F9FF6001564F9 /* MyConsultation.swift in Sources */,
+				E0B164A5282E4472006E8287 /* DoctorAvailableListViewController.swift in Sources */,
 				E0B9BF912811BD23001A58E8 /* XIBed.swift in Sources */,
 				E0D7CE67281E78BA001B4738 /* ConsultationDetailsViewController.swift in Sources */,
+				E0485387282631B200B16DE2 /* MedicineCell.swift in Sources */,
 				E0B9C00A2811BD23001A58E8 /* API.swift in Sources */,
 				E0B9BF922811BD23001A58E8 /* Environment.swift in Sources */,
 				E0E74C1C281FA410001564F9 /* UIStoryBoard.swift in Sources */,
+				E0B1649B282E4472006E8287 /* DoctorsTimingCollectionViewManager.swift in Sources */,
 				E0B9BFD32811BD23001A58E8 /* CACornerMask.swift in Sources */,
 				E0E74C1A281F9FF6001564F9 /* AddNewAddressCell.swift in Sources */,
 				E0D7CE26281E7811001B4738 /* DashboardCollectionViewCell.swift in Sources */,
@@ -1435,6 +1558,7 @@
 				E0B9BFD72811BD23001A58E8 /* UITextField.swift in Sources */,
 				E072953427F850570083357A /* ForgotPasswordVC.swift in Sources */,
 				E0D7CE5B281E78BA001B4738 /* ConsultSymptomsTableViewCell.swift in Sources */,
+				E0B1649C282E4472006E8287 /* TimingsCollectionViewCell.swift in Sources */,
 				E0E74BF4281F9FF6001564F9 /* MyOrders.swift in Sources */,
 				E0CC64A328156CD60011A165 /* SideMenuTableViewManager.swift in Sources */,
 				E0D7CE1E281E7811001B4738 /* BlogsCollectionViewCell.swift in Sources */,

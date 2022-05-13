@@ -7,28 +7,22 @@
 
 import UIKit
 
-//typealias labReceiptData = [[String: String?]]
+typealias labReceiptData = [[String: String?]]
 
-struct labReceiptData: Codable{
-    var DocID: String
-    var DocType: String
-    var PatientId: String
-    var DocGroup: String
-    var TranDate: String
-    var OrgDate: String
-    var SrNo: String
-    var ReportLink: String
-}
 
 class LabTestReceiptVc: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var dataValue = [labReceiptData]()
+    var dataValue : [[String: String?]] = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setup()
+        ApiCall()
+    }
+    @IBAction func backAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     private func setup(){
@@ -47,12 +41,28 @@ extension LabTestReceiptVc: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 50
+        return dataValue.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "prescriptionDetailsCell", for: indexPath)as! prescriptionDetailsCell
+        cell.planningLbl.text = dataValue[indexPath.row]["DocType"] as? String ?? ""
+        var reportname = dataValue[indexPath.row]["ReportLink"] as? String ?? ""
+        reportname = reportname.replacingOccurrences(of: "https://Healthcard.acssel.com/Uploads/Pathology/", with: "")
+        cell.pdfLbl.text = reportname
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let url = URL(string:  dataValue[indexPath.row]["ReportLink"] as? String ?? "") else {
+          return //be safe
+        }
+
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
     }
 }
 
@@ -61,10 +71,9 @@ extension LabTestReceiptVc{
     
     func ApiCall(){
         let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
-        NetWorker.shared.callAPIService(type: APIV2.LabTestReceipt(patientId: patientID)){ [weak self](data: [labReceiptData]?, error) in
+        NetWorker.shared.callAPIService(type: APIV2.LabTestReceipt(patientId: patientID)){ [weak self](data: labReceiptData?, error) in
             
             self?.dataValue = data!
-            print(self?.dataValue.first?.DocType)
             self?.tableView.reloadData()
         
     }

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="timingShiftHeaderCell" customModule="HealthCard" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.min" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5Bv-ZV-e1X">
+                    <rect key="frame" x="10" y="11.5" width="28" height="27"/>
+                    <color key="tintColor" systemColor="labelColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="5Bv-ZV-e1X" secondAttribute="height" id="R3Q-3N-EgS"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 Slots available in Afternoon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qsw-cT-yCB">
+                    <rect key="frame" x="48" y="11" width="262" height="28"/>
+                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kmS-as-AqJ">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="QSe-Yp-9AM"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A1u-IO-Zle">
+                    <rect key="frame" x="0.0" y="49" width="320" height="1"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="nvh-6A-uMY"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <constraints>
+                <constraint firstItem="A1u-IO-Zle" firstAttribute="top" secondItem="Qsw-cT-yCB" secondAttribute="bottom" constant="10" id="1Vk-tt-Xzp"/>
+                <constraint firstItem="kmS-as-AqJ" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="2uv-cx-L17"/>
+                <constraint firstItem="kmS-as-AqJ" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="7Fs-a3-HDK"/>
+                <constraint firstItem="A1u-IO-Zle" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="E3u-dn-PfR"/>
+                <constraint firstAttribute="bottom" secondItem="A1u-IO-Zle" secondAttribute="bottom" id="EbS-L5-Vmd"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="kmS-as-AqJ" secondAttribute="trailing" id="PFZ-rY-RvM"/>
+                <constraint firstItem="A1u-IO-Zle" firstAttribute="top" secondItem="5Bv-ZV-e1X" secondAttribute="bottom" constant="10" id="R2e-bw-0tZ"/>
+                <constraint firstItem="Qsw-cT-yCB" firstAttribute="top" secondItem="kmS-as-AqJ" secondAttribute="bottom" constant="10" id="ezs-20-YTl"/>
+                <constraint firstAttribute="trailing" secondItem="Qsw-cT-yCB" secondAttribute="trailing" constant="10" id="iV1-DN-2E0"/>
+                <constraint firstItem="Qsw-cT-yCB" firstAttribute="leading" secondItem="5Bv-ZV-e1X" secondAttribute="trailing" constant="10" id="kVv-Jp-lWp"/>
+                <constraint firstItem="5Bv-ZV-e1X" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="10" id="krF-8h-e99"/>
+                <constraint firstItem="5Bv-ZV-e1X" firstAttribute="top" secondItem="kmS-as-AqJ" secondAttribute="bottom" constant="10" id="rKO-c7-ryE"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="A1u-IO-Zle" secondAttribute="trailing" id="ukx-h9-Byx"/>
+            </constraints>
+            <connections>
+                <outlet property="imgViewRef" destination="5Bv-ZV-e1X" id="Jp1-vi-c3Z"/>
+                <outlet property="lblRef" destination="Qsw-cT-yCB" id="0lE-Qe-B7d"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="66.964285714285708"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="sun.min" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

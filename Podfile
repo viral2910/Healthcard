@@ -14,6 +14,7 @@ target 'HealthCard' do
   pod 'DropDown'
   pod 'XMLParsing'
   pod 'MarqueeLabel'
+  pod 'FSCalendar'
   # Pods for HealthCard
 
 end

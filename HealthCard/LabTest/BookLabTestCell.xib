@@ -48,6 +48,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zxf-wR-2LO">
                                 <rect key="frame" x="10" y="59" width="280" height="160"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="Kkv-gG-3IF"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
@@ -111,6 +114,7 @@
                 <outlet property="dateLabel" destination="BrZ-Ec-44r" id="k2U-ZP-LD0"/>
                 <outlet property="mainview" destination="vja-i0-FT2" id="ydt-iv-Od1"/>
                 <outlet property="tableview" destination="zxf-wR-2LO" id="CbT-JA-e0g"/>
+                <outlet property="tableviewHeight" destination="Kkv-gG-3IF" id="gbQ-Zf-yZ5"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="143.63839285714286"/>
         </tableViewCell>

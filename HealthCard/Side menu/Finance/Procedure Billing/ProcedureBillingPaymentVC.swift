@@ -11,23 +11,23 @@ import UIKit
 class procedureBillingData: Codable {
     let estimatePlanID, patientID, patientName, surgeonID: String
     let surgeonName: String
-    let planDate: String
+    let planDate: JSONNull?
     let procedureTypeID, procedureTypeValue, specialityID, specialityValue: String
     let procedureName, procedureCodeName: String
-    let opdprTimeSlot, otTimeSlot, rrTimeSlot, hospitalStay: String
-    let patientCat, wardType, wardNoOfDays, specialInstrument: String
-    let specialInstrumentName, isActive, isActiveText, currUserID: String
-    let currUserRole, hospitalID, isEdit, hiddProcedureBillingList: String
-    let hiddSpecialInst: String
+    let opdprTimeSlot, otTimeSlot, rrTimeSlot, hospitalStay: JSONNull?
+    let patientCat, wardType, wardNoOfDays, specialInstrument: JSONNull?
+    let specialInstrumentName, isActive, isActiveText, currUserID: JSONNull?
+    let currUserRole, hospitalID, isEdit, hiddProcedureBillingList: JSONNull?
+    let hiddSpecialInst: JSONNull?
     let estimatePlanRefNo: String
-    let isRelease, isAllRelease, releaseType: String
+    let isRelease, isAllRelease, releaseType: JSONNull?
     let releaseDate, releaseCode: String
-    let discountPer: String
+    let discountPer: JSONNull?
     let discountAmt: String
-    let totalAfterDisAmt, advRec, estimateCreationDate: String
+    let totalAfterDisAmt, advRec, estimateCreationDate: JSONNull?
     let totalDueAmount, finalBilledAmt, payAdvanceAmt, balance: String
     let receivedAmt, paidBilledAmt: String
-    let reportLink: String
+    let reportLink: JSONNull?
 
     enum CodingKeys: String, CodingKey {
         case estimatePlanID = "EstimatePlanId"
@@ -77,56 +77,6 @@ class procedureBillingData: Codable {
         case paidBilledAmt = "PaidBilledAmt"
         case reportLink = "ReportLink"
     }
-
-    init(estimatePlanID: String, patientID: String, patientName: String, surgeonID: String, surgeonName: String, planDate: String, procedureTypeID: String, procedureTypeValue: String, specialityID: String, specialityValue: String, procedureName: String, procedureCodeName: String, opdprTimeSlot: String, otTimeSlot: String, rrTimeSlot: String, hospitalStay: String, patientCat: String, wardType: String, wardNoOfDays: String, specialInstrument: String, specialInstrumentName: String, isActive: String, isActiveText: String, currUserID: String, currUserRole: String, hospitalID: String, isEdit: String, hiddProcedureBillingList: String, hiddSpecialInst: String, estimatePlanRefNo: String, isRelease: String, isAllRelease: String, releaseType: String, releaseDate: String, releaseCode: String, discountPer: String, discountAmt: String, totalAfterDisAmt: String, advRec: String, estimateCreationDate: String, totalDueAmount: String, finalBilledAmt: String, payAdvanceAmt: String, balance: String, receivedAmt: String, paidBilledAmt: String, reportLink: String) {
-        self.estimatePlanID = estimatePlanID
-        self.patientID = patientID
-        self.patientName = patientName
-        self.surgeonID = surgeonID
-        self.surgeonName = surgeonName
-        self.planDate = planDate
-        self.procedureTypeID = procedureTypeID
-        self.procedureTypeValue = procedureTypeValue
-        self.specialityID = specialityID
-        self.specialityValue = specialityValue
-        self.procedureName = procedureName
-        self.procedureCodeName = procedureCodeName
-        self.opdprTimeSlot = opdprTimeSlot
-        self.otTimeSlot = otTimeSlot
-        self.rrTimeSlot = rrTimeSlot
-        self.hospitalStay = hospitalStay
-        self.patientCat = patientCat
-        self.wardType = wardType
-        self.wardNoOfDays = wardNoOfDays
-        self.specialInstrument = specialInstrument
-        self.specialInstrumentName = specialInstrumentName
-        self.isActive = isActive
-        self.isActiveText = isActiveText
-        self.currUserID = currUserID
-        self.currUserRole = currUserRole
-        self.hospitalID = hospitalID
-        self.isEdit = isEdit
-        self.hiddProcedureBillingList = hiddProcedureBillingList
-        self.hiddSpecialInst = hiddSpecialInst
-        self.estimatePlanRefNo = estimatePlanRefNo
-        self.isRelease = isRelease
-        self.isAllRelease = isAllRelease
-        self.releaseType = releaseType
-        self.releaseDate = releaseDate
-        self.releaseCode = releaseCode
-        self.discountPer = discountPer
-        self.discountAmt = discountAmt
-        self.totalAfterDisAmt = totalAfterDisAmt
-        self.advRec = advRec
-        self.estimateCreationDate = estimateCreationDate
-        self.totalDueAmount = totalDueAmount
-        self.finalBilledAmt = finalBilledAmt
-        self.payAdvanceAmt = payAdvanceAmt
-        self.balance = balance
-        self.receivedAmt = receivedAmt
-        self.paidBilledAmt = paidBilledAmt
-        self.reportLink = reportLink
-    }
 }
 
 class ProcedureBillingPaymentVC: UIViewController {
@@ -157,7 +107,8 @@ extension ProcedureBillingPaymentVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProcedurePaymentCell", for: indexPath)as! ProcedurePaymentCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProcedurePaymentCell", for: indexPath) as! ProcedurePaymentCell
+//        cell.
         return cell
     }
 }
@@ -166,10 +117,9 @@ extension ProcedureBillingPaymentVC: UITableViewDelegate, UITableViewDataSource{
 extension ProcedureBillingPaymentVC{
     func ApiCall() {
         let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
-        NetWorker.shared.callAPIService(type: APIV2.MyPrescription(patientId: patientID)) { [weak self](data: [procedureBillingData]?, error) in
-           print(data?.first?.patientID)
+        NetWorker.shared.callAPIService(type: APIV2.procedureBilling(patientID: patientID)) { [weak self](data: [procedureBillingData]?, error) in
                 self?.dataValue = data!
-                self?.tableView.reloadData()
+            self!.tableView.reloadData()
               
         }
     }

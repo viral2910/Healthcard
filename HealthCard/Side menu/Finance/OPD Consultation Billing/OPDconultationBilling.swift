@@ -13,6 +13,9 @@ class OPDconultationBilling: UIViewController {
     
     var pageMenu : CAPSPageMenu?
     
+    @IBAction func backAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

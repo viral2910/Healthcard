@@ -11,6 +11,23 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditProfileVC" customModule="HealthCard" customModuleProvider="target">
             <connections>
+                <outlet property="aadharNoTextField" destination="cVP-sk-kbV" id="Ww8-bR-Xs0"/>
+                <outlet property="alternateEmailTextField" destination="0c1-yD-7wb" id="PTL-97-HrT"/>
+                <outlet property="bloodGroupTextField" destination="yF7-3h-f4n" id="HTh-nP-54K"/>
+                <outlet property="coveredAmountTextField" destination="hVD-KY-xWe" id="eI7-62-ank"/>
+                <outlet property="dobTextField" destination="q0U-zO-YQk" id="Acm-QX-PzD"/>
+                <outlet property="educationTextField" destination="9E6-F1-Lf2" id="qYX-Vu-U8v"/>
+                <outlet property="emailTextField" destination="BbT-8N-Yek" id="pWW-O3-OyP"/>
+                <outlet property="emergencyContactTextField" destination="A0z-24-vmp" id="aal-XT-OdB"/>
+                <outlet property="firstNameTextField" destination="Zvm-hj-Wlv" id="Wvd-R7-RSz"/>
+                <outlet property="genderTextField" destination="o2F-JF-Q9f" id="Owd-B2-Xc1"/>
+                <outlet property="insuranceCompanyTextField" destination="GG6-Df-bTP" id="qox-qM-LNz"/>
+                <outlet property="lastNameTextField" destination="vhu-Rk-4HI" id="hru-rN-9pG"/>
+                <outlet property="middleNameTextField" destination="YDz-Lf-dYB" id="con-MN-PLR"/>
+                <outlet property="mobileNoTextField" destination="nNS-kN-s4d" id="A0W-2z-KRi"/>
+                <outlet property="occuptionTextField" destination="1Ox-cm-aSc" id="pOC-Ez-W1F"/>
+                <outlet property="referingUnitTextField" destination="0Yw-ZL-Yww" id="Ujo-Gn-dmY"/>
+                <outlet property="religionTextField" destination="sWQ-e0-iSO" id="5UN-KR-JNX"/>
                 <outlet property="titleTextField" destination="Euf-L8-5F1" id="wvw-br-VTa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,7 +38,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MhB-6r-Txq">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k48-ue-Loo">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="917"/>
@@ -554,19 +571,58 @@
                         <constraint firstItem="k48-ue-Loo" firstAttribute="leading" secondItem="MhB-6r-Txq" secondAttribute="leading" id="weh-FT-g5V"/>
                     </constraints>
                 </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xCe-HM-nPL">
+                    <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMC-PC-lRH">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="t07-66-alU"/>
+                            </constraints>
+                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="arrow.backward" catalog="system" title=" "/>
+                            <connections>
+                                <action selector="BackAction:" destination="-1" eventType="touchUpInside" id="7R8-c0-p9A"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Patient Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pzx-dX-KVh">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="lMC-PC-lRH" firstAttribute="leading" secondItem="xCe-HM-nPL" secondAttribute="leading" id="0OJ-sk-Wza"/>
+                        <constraint firstAttribute="bottom" secondItem="lMC-PC-lRH" secondAttribute="bottom" id="2Sg-O7-If3"/>
+                        <constraint firstItem="Pzx-dX-KVh" firstAttribute="top" secondItem="xCe-HM-nPL" secondAttribute="top" id="3s7-dN-KVJ"/>
+                        <constraint firstItem="Pzx-dX-KVh" firstAttribute="leading" secondItem="xCe-HM-nPL" secondAttribute="leading" id="6PQ-LC-gIB"/>
+                        <constraint firstItem="lMC-PC-lRH" firstAttribute="top" secondItem="xCe-HM-nPL" secondAttribute="top" id="Rx3-37-um5"/>
+                        <constraint firstAttribute="height" constant="50" id="Sal-Wj-607"/>
+                        <constraint firstAttribute="bottom" secondItem="Pzx-dX-KVh" secondAttribute="bottom" id="XFZ-HZ-Rna"/>
+                        <constraint firstAttribute="trailing" secondItem="Pzx-dX-KVh" secondAttribute="trailing" id="Xen-ze-gPp"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="MhB-6r-Txq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="07A-HY-VfP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="MhB-6r-Txq" secondAttribute="bottom" id="0sg-36-leV"/>
-                <constraint firstItem="MhB-6r-Txq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="7Jj-6P-C57"/>
+                <constraint firstItem="MhB-6r-Txq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="7Jj-6P-C57"/>
+                <constraint firstAttribute="trailing" secondItem="xCe-HM-nPL" secondAttribute="trailing" id="9Fw-Xw-cjV"/>
+                <constraint firstItem="MhB-6r-Txq" firstAttribute="top" secondItem="xCe-HM-nPL" secondAttribute="bottom" id="EPs-yZ-fC9"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MhB-6r-Txq" secondAttribute="trailing" id="JfS-tr-Sor"/>
+                <constraint firstItem="xCe-HM-nPL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZZr-Au-33b"/>
             </constraints>
             <point key="canvasLocation" x="139" y="81"/>
         </view>
     </objects>
     <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

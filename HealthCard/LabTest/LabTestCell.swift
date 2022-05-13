@@ -13,6 +13,7 @@ class LabTestCell: UITableViewCell {
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var testImageView: UIImageView!
+    @IBOutlet weak var selectionImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         mainview.layer.cornerRadius = 10

@@ -28,6 +28,13 @@
                                     <constraint firstAttribute="height" constant="50" id="dL6-sf-djV"/>
                                 </constraints>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LfJ-P3-DLE">
+                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="I2p-2V-TvA"/>
+                                    <constraint firstAttribute="width" constant="20" id="QpA-79-U7K"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqb-L3-c9w">
                                 <rect key="frame" x="60" y="5" width="291" height="17"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -43,6 +50,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="LfJ-P3-DLE" firstAttribute="leading" secondItem="K0n-pA-EXr" secondAttribute="leading" id="4tg-fL-RTd"/>
                             <constraint firstItem="rit-QV-hQ0" firstAttribute="leading" secondItem="K0n-pA-EXr" secondAttribute="leading" id="5B8-PU-0T1"/>
                             <constraint firstItem="rit-QV-hQ0" firstAttribute="top" secondItem="K0n-pA-EXr" secondAttribute="top" id="9S4-qT-Wc0"/>
                             <constraint firstItem="sqb-L3-c9w" firstAttribute="leading" secondItem="rit-QV-hQ0" secondAttribute="trailing" constant="10" id="9a8-5S-G1v"/>
@@ -50,6 +58,7 @@
                             <constraint firstItem="hrl-3y-c7g" firstAttribute="leading" secondItem="rit-QV-hQ0" secondAttribute="trailing" constant="10" id="EO3-Y6-ls3"/>
                             <constraint firstItem="sqb-L3-c9w" firstAttribute="top" secondItem="K0n-pA-EXr" secondAttribute="top" constant="5" id="M1m-cv-fGZ"/>
                             <constraint firstAttribute="trailing" secondItem="hrl-3y-c7g" secondAttribute="trailing" constant="10" id="ajX-2V-t5o"/>
+                            <constraint firstItem="LfJ-P3-DLE" firstAttribute="top" secondItem="K0n-pA-EXr" secondAttribute="top" id="ggL-D5-kfP"/>
                             <constraint firstAttribute="trailing" secondItem="sqb-L3-c9w" secondAttribute="trailing" constant="10" id="pRW-MW-UXH"/>
                             <constraint firstAttribute="bottom" secondItem="rit-QV-hQ0" secondAttribute="bottom" id="pcl-zd-wL7"/>
                         </constraints>
@@ -77,6 +86,7 @@
             <inset key="separatorInset" minX="1515" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="mainview" destination="K0n-pA-EXr" id="io4-4c-37a"/>
+                <outlet property="selectionImageView" destination="LfJ-P3-DLE" id="ZcF-jb-gJS"/>
                 <outlet property="subtitleLabel" destination="hrl-3y-c7g" id="1iD-v8-suz"/>
                 <outlet property="testImageView" destination="rit-QV-hQ0" id="yiI-Td-OQO"/>
                 <outlet property="titleLabel" destination="sqb-L3-c9w" id="vKm-pT-HZ9"/>

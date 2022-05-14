@@ -57,9 +57,10 @@ extension CartDetails: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CartDetailsCell", for: indexPath) as! CartDetailsCell
         cell.ListData = dataValue[indexPath.row].cartDtlslist
-        cell.tableviewheight.constant = CGFloat(dataValue[indexPath.row].cartDtlslist.count * 140)
+        cell.tableviewheight.constant = CGFloat(dataValue[indexPath.row].cartDtlslist.count * 120)
         cell.sellerNameLbl.text = dataValue[indexPath.row].sellerName
         cell.tableview.reloadData()
+        cell.delegate = self
         cell.selectionStyle = .none
         return cell
     }
@@ -70,7 +71,15 @@ extension CartDetails: UITableViewDelegate, UITableViewDataSource{
         return UITableView.automaticDimension
     }
 }
-
+extension CartDetails : cartDetailsDelegate {
+    func getId(id: Int) {
+        NetWorker.shared.callAPIService(type: APIV2.cartRemove(cartID: id)) { [weak self](data: [removeCart]?, error) in
+            if data?[0].status == "1" {
+                self?.apiCall()
+            }
+        }
+    }
+}
 struct cartDetails: Codable {
     let sellerName: String
     let sellerType: JSONNull?
@@ -93,9 +102,8 @@ struct CartDtlslist: Codable {
     let productName: String
     let qty: Int
     let mrp: String
-    let discountPer, discountAmt: Double
-    let gstAmt, gstPer, pricePerUnit, totalAmount: Int
-    let deliveryPincode: Int
+    let discountPer, discountAmt, gstAmt: Double
+    let gstPer, pricePerUnit, totalAmount, deliveryPincode: Int
     let cartNoOfProducts: JSONNull?
     let imageURL: String
 
@@ -124,4 +132,34 @@ struct CartDtlslist: Codable {
     }
 }
 
-typealias Welcomecart = [cartDetails]
+struct removeCart: Codable {
+    let message, status: String
+    let patientID, gender, firstName, middleName: JSONNull?
+    let lastName, patientName, pincode, patientProfilePicURL: JSONNull?
+    let patientDocumentURL, deliveryBoyID, deliveryBoy, doctorID: JSONNull?
+    let doctor, doctorProfilePicURL, labMasterID, labConcernPerson: JSONNull?
+    let pharmacyID, pharmacyCoordinator: JSONNull?
+
+    enum CodingKeys: String, CodingKey {
+        case message = "Message"
+        case status = "Status"
+        case patientID = "PatientId"
+        case gender = "Gender"
+        case firstName = "FirstName"
+        case middleName = "MiddleName"
+        case lastName = "LastName"
+        case patientName = "PatientName"
+        case pincode = "Pincode"
+        case patientProfilePicURL = "PatientProfilePicURL"
+        case patientDocumentURL = "PatientDocumentURL"
+        case deliveryBoyID = "DeliveryBoyId"
+        case deliveryBoy = "DeliveryBoy"
+        case doctorID = "DoctorId"
+        case doctor = "Doctor"
+        case doctorProfilePicURL = "DoctorProfilePicURL"
+        case labMasterID = "LabMasterId"
+        case labConcernPerson = "LabConcernPerson"
+        case pharmacyID = "PharmacyId"
+        case pharmacyCoordinator = "PharmacyCoordinator"
+    }
+}

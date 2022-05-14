@@ -18,19 +18,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="prA-Uq-iyn">
-                        <rect key="frame" x="10" y="5" width="348" height="230"/>
+                        <rect key="frame" x="15" y="10" width="338" height="220"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="TZ3-RU-iNa">
-                                <rect key="frame" x="8" y="10" width="332" height="36"/>
+                                <rect key="frame" x="8" y="10" width="322" height="26"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seller Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXx-F3-AfU">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Seller Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXx-F3-AfU">
                                         <rect key="frame" x="0.0" y="0.0" width="82" height="18"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MYRA WELLNESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDN-XU-qDQ">
-                                        <rect key="frame" x="0.0" y="19" width="120" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="MYRA WELLNESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDN-XU-qDQ">
+                                        <rect key="frame" x="0.0" y="19" width="120" height="7"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -38,14 +38,14 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sUm-b8-8Xa">
-                                <rect key="frame" x="5" y="51" width="338" height="174"/>
+                                <rect key="frame" x="5" y="41" width="328" height="174"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="174" id="SHk-YQ-tfS"/>
                                 </constraints>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.045943708609271522" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="TZ3-RU-iNa" secondAttribute="trailing" constant="8" id="0uk-cB-whb"/>
                             <constraint firstAttribute="trailing" secondItem="sUm-b8-8Xa" secondAttribute="trailing" constant="5" id="8gl-Or-nlu"/>
@@ -62,15 +62,19 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="prA-Uq-iyn" secondAttribute="trailing" constant="10" id="1cI-hF-2CS"/>
-                    <constraint firstItem="prA-Uq-iyn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="aT8-KK-Fsn"/>
-                    <constraint firstAttribute="bottom" secondItem="prA-Uq-iyn" secondAttribute="bottom" constant="5" id="aYD-aq-heo"/>
-                    <constraint firstItem="prA-Uq-iyn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="cbR-j8-Dql"/>
+                    <constraint firstAttribute="trailing" secondItem="prA-Uq-iyn" secondAttribute="trailing" constant="15" id="1cI-hF-2CS"/>
+                    <constraint firstItem="prA-Uq-iyn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="aT8-KK-Fsn"/>
+                    <constraint firstAttribute="bottom" secondItem="prA-Uq-iyn" secondAttribute="bottom" constant="10" id="aYD-aq-heo"/>
+                    <constraint firstItem="prA-Uq-iyn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="cbR-j8-Dql"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <inset key="separatorInset" minX="1515" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
+                <outlet property="mainView" destination="prA-Uq-iyn" id="IOn-j8-69g"/>
                 <outlet property="sellerNameLbl" destination="RDN-XU-qDQ" id="fA8-Fb-wYb"/>
                 <outlet property="tableview" destination="sUm-b8-8Xa" id="XFd-Ia-XFb"/>
                 <outlet property="tableviewheight" destination="SHk-YQ-tfS" id="uFl-uT-dmd"/>

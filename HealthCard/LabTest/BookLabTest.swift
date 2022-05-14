@@ -57,32 +57,39 @@ extension BookLabTest {
         NetWorker.shared.callAPIService(type: APIV2.PatientLabTestAdviceDetails(patientId: patientID)) { [weak self](data: Welcomea?, error) in
             self?.storyData = data!
             self?.tableview.reloadData()
-            
         }
     }
     
     //MARK: - API CALL
-    func proceedApiCall()  {
+    func proceedApiCall() {
         let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
         NetWorker.shared.callAPIService(type: APIV2.myCartList(patientID: patientID)) { [weak self](data: [cartDetails]?, error) in
-            if data?[0].cartDtlslist.count ?? 0 > 0 {
-                let vc = LabDetailsVC.instantiate()
-                vc.pincode = "\(data?[0].cartDtlslist[0].deliveryPincode ?? 0)"
-                vc.docId = (self?.LabInvestigationID.map{String($0)})?.joined(separator: ",") ?? ""
-                vc.labInvestigation = (self?.selectedDocID.map{String($0)})?.joined(separator: ",") ?? ""
-                vc.docType = self?.docTypeList.joined(separator: ",") ?? ""
-                self?.navigationController?.pushViewController(vc, animated: true)
+            if data?.count ?? 0 > 0 {
+                if data?[0].cartDtlslist.count ?? 0 > 0 {
+                    let vc = LabDetailsVC.instantiate()
+                    vc.pincode = "\(data?[0].cartDtlslist[0].deliveryPincode ?? 0)"
+                    vc.docId = (self?.LabInvestigationID.map{String($0)})?.joined(separator: ",") ?? ""
+                    vc.labInvestigation = (self?.selectedDocID.map{String($0)})?.joined(separator: ",") ?? ""
+                    vc.docType = self?.docTypeList.joined(separator: ",") ?? ""
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                } else {
+                    let vc = AddressDetailsVC.instantiate()
+                    vc.addressSelection = true
+                    vc.docId = (self?.LabInvestigationID.map{String($0)})?.joined(separator: ",") ?? ""
+                    vc.labInvestigation = (self?.selectedDocID.map{String($0)})?.joined(separator: ",") ?? ""
+                    vc.docType = self?.docTypeList.joined(separator: ",") ?? ""
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                }
             } else {
-                let vc = AddressDetailsVC.instantiate()
-                vc.addressSelection = true
-                vc.docId = (self?.LabInvestigationID.map{String($0)})?.joined(separator: ",") ?? ""
-                vc.labInvestigation = (self?.selectedDocID.map{String($0)})?.joined(separator: ",") ?? ""
-                vc.docType = self?.docTypeList.joined(separator: ",") ?? ""
-                self?.navigationController?.pushViewController(vc, animated: true)
+                    let vc = AddressDetailsVC.instantiate()
+                    vc.addressSelection = true
+                    vc.docId = (self?.LabInvestigationID.map{String($0)})?.joined(separator: ",") ?? ""
+                    vc.labInvestigation = (self?.selectedDocID.map{String($0)})?.joined(separator: ",") ?? ""
+                    vc.docType = self?.docTypeList.joined(separator: ",") ?? ""
+                    self?.navigationController?.pushViewController(vc, animated: true)
             }
         }
     }
-    
 }
 
 extension BookLabTest : UITableViewDataSource ,UITableViewDelegate{

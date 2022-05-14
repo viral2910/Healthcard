@@ -191,6 +191,8 @@ enum APIV2: API {
     
     case addLabToCart(patientID: Int,addressID:Int,labMasterID:Int,pincode: String,labInvestigation:String,docId:String,docType:String,qty:Int)
     
+    case cartRemove(cartID:Int)
+    
 }
 
 
@@ -457,6 +459,9 @@ extension APIV2 {
             return URL(string: Router.deliveryBoyBaseUrl)!
             
         case .addLabToCart:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .cartRemove:
             return URL(string: Router.deliveryBoyBaseUrl)!
         }
         
@@ -725,6 +730,9 @@ extension APIV2 {
             
         case .addLabToCart(patientID: let patientID,addressID: let addressID,labMasterID: let labMasterID,pincode:  let pincode,labInvestigation: let labInvestigation,docId: let docId,docType: let docType,qty: let qty):
             return "Pathology?vPatientId=\(patientID)&vPatientAddressId=\(addressID)&vLabMasterId=\(labMasterID)&vDocId=\(docId)&vDocType=\(docType)&vLabInvestigation=\(labInvestigation)&vQty=\(qty)&vSellerType=Lab&vDeliveryPincode=\(pincode)"
+            
+        case .cartRemove(cartID: let cartId):
+            return "Cart?vCartId=\(cartId)"
         }
     }
     
@@ -990,6 +998,9 @@ extension APIV2 {
             return "GET"
             
         case .addLabToCart:
+            return "GET"
+            
+        case .cartRemove:
             return "GET"
         }
     }
@@ -1261,6 +1272,9 @@ extension APIV2 {
             break
             
         case .addLabToCart:
+            break
+            
+        case .cartRemove:
             break
         }
         return params

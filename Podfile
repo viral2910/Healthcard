@@ -15,6 +15,7 @@ target 'HealthCard' do
   pod 'XMLParsing'
   pod 'MarqueeLabel'
   pod 'FSCalendar'
+  pod 'razorpay-pod', '~> 1.1.1'
   # Pods for HealthCard
 
 end

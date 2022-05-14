@@ -7,6 +7,11 @@
 
 import Foundation
 import UIKit
+import Razorpay
+
+protocol SelectedConsultationDetailsPtotocol: AnyObject {
+    func getConsultationDetailsData(data: DoctorOnlineConsultTimeSClist)
+}
 
 class DoctorsTimingCollectionViewManager: NSObject {
 
@@ -15,6 +20,8 @@ class DoctorsTimingCollectionViewManager: NSObject {
         
     weak var pushDelegate: PushViewControllerDelegate?
     weak var presentDelegate: presentViewControllersDelegate?
+    
+    weak var delegate: SelectedConsultationDetailsPtotocol?
     
     var storyData : [TimePeriodSClist] = [] {
         didSet {
@@ -99,6 +106,9 @@ extension DoctorsTimingCollectionViewManager: UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Index: \(indexPath)")
+        if let data = storyData[indexPath.section].doctorOnlineConsultTimeSClist?[indexPath.row] {
+        delegate?.getConsultationDetailsData(data: data)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

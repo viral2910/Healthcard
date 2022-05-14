@@ -8,7 +8,7 @@
 import UIKit
 
 protocol BookLabDelegate {
-    func getTestId(value : [Int])
+    func getTestId(DocId: Int,LabInvest:Int,docType:String,indexPathRow:Int)
 }
 
 class BookLabTestCell: UITableViewCell {
@@ -21,6 +21,10 @@ class BookLabTestCell: UITableViewCell {
     var delegate:BookLabDelegate!
     var labListData : [LabTestDtlslist] = []
     var selectedID : [Int] = []
+    var LabID : [Int] = []
+    var LabDocType : [String] = []
+    var tableviewreload = false
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -45,27 +49,13 @@ extension BookLabTestCell : UITableViewDataSource ,UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: "LabTestCell") as! LabTestCell
         cell.titleLabel.text = labListData[indexPath.row].labTestText
-//        cell.subtitleLabel.text = labListData[indexPath.row].
         let url = URL(string: "\(labListData[indexPath.row].labTestImageURL)")!
-        if selectedID.contains(labListData[indexPath.row].id)
-        {
+        if selectedID.contains(labListData[indexPath.row].labTestID) && LabID.contains(Int(labListData[indexPath.row].docID) ?? 0){
             cell.selectionImageView.image = UIImage(named: "checkedcircle");
-        }
-        else
-        {
+        } else {
             cell.selectionImageView.image = UIImage(named: "circle");
         }
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { return }
-            DispatchQueue.main.async() { [weak self] in
-                cell.testImageView.image = image
-            }
-        }.resume()
+            cell.testImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "placeholder.png"))
         cell.selectionStyle = .none
         return cell
     }
@@ -73,34 +63,6 @@ extension BookLabTestCell : UITableViewDataSource ,UITableViewDelegate{
         return 60
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if selectedID.contains(labListData[indexPath.row].id) {
-            if let index = selectedID.firstIndex(of: labListData[indexPath.row].id) {
-                selectedID.remove(at: index)
-            }
-        } else {
-            selectedID.append(labListData[indexPath.row].id)
-        }
-        delegate.getTestId(value: selectedID)
-        tableview.reloadData()
-    }
-}
-extension UIImageView {
-    func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
-        contentMode = mode
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { return }
-            DispatchQueue.main.async() { [weak self] in
-                self?.image = image
-            }
-        }.resume()
-    }
-    func downloaded(from link: String, contentMode mode: ContentMode = .scaleAspectFit) {
-        guard let url = URL(string: link) else { return }
-        downloaded(from: url, contentMode: mode)
+        delegate.getTestId(DocId: labListData[indexPath.row].labTestID, LabInvest: Int(labListData[indexPath.row].docID) ?? 0, docType: labListData[indexPath.row].docType, indexPathRow: contentView.tag)
     }
 }

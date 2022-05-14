@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		8EF153EFD6A1C00A3A16EA47 /* Pods_HealthCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EA0D1C2620A6272EBF75FF2 /* Pods_HealthCard.framework */; };
+		E02910D6282F6C47003AB67D /* LabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02910D4282F6C47003AB67D /* LabCell.swift */; };
+		E02910D7282F6C47003AB67D /* LabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E02910D5282F6C47003AB67D /* LabCell.xib */; };
+		E02910E1282FD7C8003AB67D /* DoctorsTimingCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02910D9282FD7C8003AB67D /* DoctorsTimingCollectionViewManager.swift */; };
+		E02910E2282FD7C8003AB67D /* TimingsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02910DB282FD7C8003AB67D /* TimingsCollectionViewCell.swift */; };
+		E02910E3282FD7C8003AB67D /* TimingsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E02910DC282FD7C8003AB67D /* TimingsCollectionViewCell.xib */; };
+		E02910E4282FD7C8003AB67D /* timingShiftHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E02910DD282FD7C8003AB67D /* timingShiftHeaderCell.xib */; };
+		E02910E5282FD7C8003AB67D /* timingShiftHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02910DE282FD7C8003AB67D /* timingShiftHeaderCell.swift */; };
+		E02910E6282FD7C8003AB67D /* ConsultDoctorDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02910DF282FD7C8003AB67D /* ConsultDoctorDetailsViewController.swift */; };
+		E02910E7282FD7C8003AB67D /* ConsultDoctorDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E02910E0282FD7C8003AB67D /* ConsultDoctorDetailsViewController.xib */; };
 		E03DD67027F9787600BFB975 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03DD66F27F9787600BFB975 /* HomeVC.swift */; };
 		E03DD67227F994E100BFB975 /* MainTabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03DD67127F994E100BFB975 /* MainTabbarVC.swift */; };
 		E04853832826319800B16DE2 /* MedicineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04853812826319800B16DE2 /* MedicineVC.swift */; };
@@ -18,6 +27,10 @@
 		E049CA73282C350B0022FB63 /* BookMedicineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E049CA71282C350B0022FB63 /* BookMedicineCell.swift */; };
 		E04E6BC7282A0494000B4735 /* CartSubDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E6BC5282A0494000B4735 /* CartSubDetailsCell.swift */; };
 		E04E6BC8282A0494000B4735 /* CartSubDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E04E6BC6282A0494000B4735 /* CartSubDetailsCell.xib */; };
+		E056E316282EC8FF00F056DF /* LabDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E056E314282EC8FF00F056DF /* LabDetailsVC.swift */; };
+		E056E317282EC8FF00F056DF /* LabDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E056E315282EC8FF00F056DF /* LabDetailsVC.xib */; };
+		E056E31B282EC9A200F056DF /* LabDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E056E319282EC9A200F056DF /* LabDetailsCell.swift */; };
+		E056E31C282EC9A200F056DF /* LabDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E056E31A282EC9A200F056DF /* LabDetailsCell.xib */; };
 		E066993327F47ADA009EE3F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E066993227F47ADA009EE3F0 /* AppDelegate.swift */; };
 		E066993727F47ADA009EE3F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E066993627F47ADA009EE3F0 /* ViewController.swift */; };
 		E066993C27F47ADC009EE3F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E066993B27F47ADC009EE3F0 /* Assets.xcassets */; };
@@ -27,13 +40,6 @@
 		E072953227F84BDE0083357A /* OtpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072953127F84BDE0083357A /* OtpVC.swift */; };
 		E072953427F850570083357A /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072953327F850570083357A /* ForgotPasswordVC.swift */; };
 		E072953627F853610083357A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E072953527F853610083357A /* Home.storyboard */; };
-		E0B1649B282E4472006E8287 /* DoctorsTimingCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B1648C282E4472006E8287 /* DoctorsTimingCollectionViewManager.swift */; };
-		E0B1649C282E4472006E8287 /* TimingsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B1648E282E4472006E8287 /* TimingsCollectionViewCell.swift */; };
-		E0B1649D282E4472006E8287 /* TimingsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B1648F282E4472006E8287 /* TimingsCollectionViewCell.xib */; };
-		E0B1649E282E4472006E8287 /* timingShiftHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B16490282E4472006E8287 /* timingShiftHeaderCell.xib */; };
-		E0B1649F282E4472006E8287 /* timingShiftHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16491282E4472006E8287 /* timingShiftHeaderCell.swift */; };
-		E0B164A0282E4472006E8287 /* ConsultDoctorDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16492282E4472006E8287 /* ConsultDoctorDetailsViewController.swift */; };
-		E0B164A1282E4472006E8287 /* ConsultDoctorDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B16493282E4472006E8287 /* ConsultDoctorDetailsViewController.xib */; };
 		E0B164A2282E4472006E8287 /* DoctorAvailableListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B16495282E4472006E8287 /* DoctorAvailableListViewController.xib */; };
 		E0B164A3282E4472006E8287 /* DoctorAvailableListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B16497282E4472006E8287 /* DoctorAvailableListTableViewCell.xib */; };
 		E0B164A4282E4472006E8287 /* DoctorAvailableListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16498282E4472006E8287 /* DoctorAvailableListTableViewCell.swift */; };
@@ -267,6 +273,15 @@
 		0AB5BBCD0C22B3341BD4A481 /* Pods-HealthCard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthCard.debug.xcconfig"; path = "Target Support Files/Pods-HealthCard/Pods-HealthCard.debug.xcconfig"; sourceTree = "<group>"; };
 		97393149C65C312A721ABEE4 /* Pods-HealthCard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthCard.release.xcconfig"; path = "Target Support Files/Pods-HealthCard/Pods-HealthCard.release.xcconfig"; sourceTree = "<group>"; };
 		9EA0D1C2620A6272EBF75FF2 /* Pods_HealthCard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthCard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E02910D4282F6C47003AB67D /* LabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabCell.swift; sourceTree = "<group>"; };
+		E02910D5282F6C47003AB67D /* LabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabCell.xib; sourceTree = "<group>"; };
+		E02910D9282FD7C8003AB67D /* DoctorsTimingCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorsTimingCollectionViewManager.swift; sourceTree = "<group>"; };
+		E02910DB282FD7C8003AB67D /* TimingsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingsCollectionViewCell.swift; sourceTree = "<group>"; };
+		E02910DC282FD7C8003AB67D /* TimingsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimingsCollectionViewCell.xib; sourceTree = "<group>"; };
+		E02910DD282FD7C8003AB67D /* timingShiftHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = timingShiftHeaderCell.xib; sourceTree = "<group>"; };
+		E02910DE282FD7C8003AB67D /* timingShiftHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = timingShiftHeaderCell.swift; sourceTree = "<group>"; };
+		E02910DF282FD7C8003AB67D /* ConsultDoctorDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultDoctorDetailsViewController.swift; sourceTree = "<group>"; };
+		E02910E0282FD7C8003AB67D /* ConsultDoctorDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsultDoctorDetailsViewController.xib; sourceTree = "<group>"; };
 		E03DD66F27F9787600BFB975 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		E03DD67127F994E100BFB975 /* MainTabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarVC.swift; sourceTree = "<group>"; };
 		E04853812826319800B16DE2 /* MedicineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineVC.swift; sourceTree = "<group>"; };
@@ -277,6 +292,10 @@
 		E049CA71282C350B0022FB63 /* BookMedicineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookMedicineCell.swift; sourceTree = "<group>"; };
 		E04E6BC5282A0494000B4735 /* CartSubDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartSubDetailsCell.swift; sourceTree = "<group>"; };
 		E04E6BC6282A0494000B4735 /* CartSubDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartSubDetailsCell.xib; sourceTree = "<group>"; };
+		E056E314282EC8FF00F056DF /* LabDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabDetailsVC.swift; sourceTree = "<group>"; };
+		E056E315282EC8FF00F056DF /* LabDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabDetailsVC.xib; sourceTree = "<group>"; };
+		E056E319282EC9A200F056DF /* LabDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabDetailsCell.swift; sourceTree = "<group>"; };
+		E056E31A282EC9A200F056DF /* LabDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabDetailsCell.xib; sourceTree = "<group>"; };
 		E066992F27F47ADA009EE3F0 /* HealthCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E066993227F47ADA009EE3F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E066993627F47ADA009EE3F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -288,13 +307,6 @@
 		E072953127F84BDE0083357A /* OtpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpVC.swift; sourceTree = "<group>"; };
 		E072953327F850570083357A /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		E072953527F853610083357A /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		E0B1648C282E4472006E8287 /* DoctorsTimingCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorsTimingCollectionViewManager.swift; sourceTree = "<group>"; };
-		E0B1648E282E4472006E8287 /* TimingsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingsCollectionViewCell.swift; sourceTree = "<group>"; };
-		E0B1648F282E4472006E8287 /* TimingsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimingsCollectionViewCell.xib; sourceTree = "<group>"; };
-		E0B16490282E4472006E8287 /* timingShiftHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = timingShiftHeaderCell.xib; sourceTree = "<group>"; };
-		E0B16491282E4472006E8287 /* timingShiftHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = timingShiftHeaderCell.swift; sourceTree = "<group>"; };
-		E0B16492282E4472006E8287 /* ConsultDoctorDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultDoctorDetailsViewController.swift; sourceTree = "<group>"; };
-		E0B16493282E4472006E8287 /* ConsultDoctorDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsultDoctorDetailsViewController.xib; sourceTree = "<group>"; };
 		E0B16495282E4472006E8287 /* DoctorAvailableListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorAvailableListViewController.xib; sourceTree = "<group>"; };
 		E0B16497282E4472006E8287 /* DoctorAvailableListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorAvailableListTableViewCell.xib; sourceTree = "<group>"; };
 		E0B16498282E4472006E8287 /* DoctorAvailableListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorAvailableListTableViewCell.swift; sourceTree = "<group>"; };
@@ -553,6 +565,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E02910D8282FD7C8003AB67D /* Consult Doctor Details */ = {
+			isa = PBXGroup;
+			children = (
+				E02910D9282FD7C8003AB67D /* DoctorsTimingCollectionViewManager.swift */,
+				E02910DA282FD7C8003AB67D /* Cells */,
+				E02910DF282FD7C8003AB67D /* ConsultDoctorDetailsViewController.swift */,
+				E02910E0282FD7C8003AB67D /* ConsultDoctorDetailsViewController.xib */,
+			);
+			path = "Consult Doctor Details";
+			sourceTree = "<group>";
+		};
+		E02910DA282FD7C8003AB67D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E02910DB282FD7C8003AB67D /* TimingsCollectionViewCell.swift */,
+				E02910DC282FD7C8003AB67D /* TimingsCollectionViewCell.xib */,
+				E02910DD282FD7C8003AB67D /* timingShiftHeaderCell.xib */,
+				E02910DE282FD7C8003AB67D /* timingShiftHeaderCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		E03DD66E27F9783900BFB975 /* LoginScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -579,6 +613,19 @@
 			path = Medicines;
 			sourceTree = "<group>";
 		};
+		E056E318282EC90E00F056DF /* LabDetails */ = {
+			isa = PBXGroup;
+			children = (
+				E056E314282EC8FF00F056DF /* LabDetailsVC.swift */,
+				E056E315282EC8FF00F056DF /* LabDetailsVC.xib */,
+				E056E319282EC9A200F056DF /* LabDetailsCell.swift */,
+				E056E31A282EC9A200F056DF /* LabDetailsCell.xib */,
+				E02910D4282F6C47003AB67D /* LabCell.swift */,
+				E02910D5282F6C47003AB67D /* LabCell.xib */,
+			);
+			path = LabDetails;
+			sourceTree = "<group>";
+		};
 		E066992627F47ADA009EE3F0 = {
 			isa = PBXGroup;
 			children = (
@@ -600,6 +647,7 @@
 		E066993127F47ADA009EE3F0 /* HealthCard */ = {
 			isa = PBXGroup;
 			children = (
+				E056E318282EC90E00F056DF /* LabDetails */,
 				E04853802826316700B16DE2 /* Medicines */,
 				E0D7CE6E281E8C1B001B4738 /* LabTest */,
 				E0D7CE69281E797E001B4738 /* CustomTabBar */,
@@ -635,28 +683,6 @@
 				E03DD67127F994E100BFB975 /* MainTabbarVC.swift */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		E0B1648B282E4472006E8287 /* Consult Doctor Details */ = {
-			isa = PBXGroup;
-			children = (
-				E0B1648C282E4472006E8287 /* DoctorsTimingCollectionViewManager.swift */,
-				E0B1648D282E4472006E8287 /* Cells */,
-				E0B16492282E4472006E8287 /* ConsultDoctorDetailsViewController.swift */,
-				E0B16493282E4472006E8287 /* ConsultDoctorDetailsViewController.xib */,
-			);
-			path = "Consult Doctor Details";
-			sourceTree = "<group>";
-		};
-		E0B1648D282E4472006E8287 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				E0B1648E282E4472006E8287 /* TimingsCollectionViewCell.swift */,
-				E0B1648F282E4472006E8287 /* TimingsCollectionViewCell.xib */,
-				E0B16490282E4472006E8287 /* timingShiftHeaderCell.xib */,
-				E0B16491282E4472006E8287 /* timingShiftHeaderCell.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		E0B16494282E4472006E8287 /* Doctor Available */ = {
@@ -804,7 +830,7 @@
 		E0B9BF512811BD22001A58E8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				E0B1648B282E4472006E8287 /* Consult Doctor Details */,
+				E02910D8282FD7C8003AB67D /* Consult Doctor Details */,
 				E0B16494282E4472006E8287 /* Doctor Available */,
 				E0D7CE2F281E78BA001B4738 /* Consultation */,
 				E0D7CDFA281E7811001B4738 /* HomeVC */,
@@ -1219,7 +1245,7 @@
 				E066992B27F47ADA009EE3F0 /* Sources */,
 				E066992C27F47ADA009EE3F0 /* Frameworks */,
 				E066992D27F47ADA009EE3F0 /* Resources */,
-				5CD78C4AEDA19271770583CE /* [CP] Embed Pods Frameworks */,
+				C1AEEDDBEC1463A8EBCD5B9D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1281,16 +1307,17 @@
 				E0B9BFA02811BD23001A58E8 /* raleway_thin.ttf in Resources */,
 				E0E74C17281F9FF6001564F9 /* AddressDetailsCell.xib in Resources */,
 				E0B9BFA82811BD23001A58E8 /* lato_hairline_italic.ttf in Resources */,
-				E0B164A1282E4472006E8287 /* ConsultDoctorDetailsViewController.xib in Resources */,
 				E0D7CE53281E78BA001B4738 /* ConsultSpecialityTableViewCell.xib in Resources */,
 				E0B9BFA12811BD23001A58E8 /* lato_heavy_italic.ttf in Resources */,
 				E0B9BFA42811BD23001A58E8 /* raleway_light.ttf in Resources */,
+				E02910D7282F6C47003AB67D /* LabCell.xib in Resources */,
 				E0CC6482281438380011A165 /* ProfileTableviewCell.xib in Resources */,
 				E0E74C12281F9FF6001564F9 /* FinanceCell.xib in Resources */,
 				E0D7CE5D281E78BA001B4738 /* ConsultSymptomsViewController.xib in Resources */,
 				E0E74C04281F9FF6001564F9 /* ProcedureBillingPaymentVC.xib in Resources */,
 				E0B9BFC12811BD23001A58E8 /* Poppins-ExtraLightItalic.ttf in Resources */,
 				E0E74C0A281F9FF6001564F9 /* AdvanceBillingPaymentVC.xib in Resources */,
+				E056E31C282EC9A200F056DF /* LabDetailsCell.xib in Resources */,
 				E0E74C14281F9FF6001564F9 /* Finance.storyboard in Resources */,
 				E0E74BF5281F9FF6001564F9 /* MyOrders.xib in Resources */,
 				E0B9BFB42811BD23001A58E8 /* lato_hairline.ttf in Resources */,
@@ -1315,6 +1342,7 @@
 				E0B9BF992811BD23001A58E8 /* raleway_semibolditalic.ttf in Resources */,
 				E0B9BF942811BD23001A58E8 /* lato_black.ttf in Resources */,
 				E04E6BC8282A0494000B4735 /* CartSubDetailsCell.xib in Resources */,
+				E02910E3282FD7C8003AB67D /* TimingsCollectionViewCell.xib in Resources */,
 				E0B9BF9E2811BD23001A58E8 /* raleway_medium.ttf in Resources */,
 				E0B9BFAF2811BD23001A58E8 /* lato_thin.ttf in Resources */,
 				E0B9BFBC2811BD23001A58E8 /* raleway_italic.ttf in Resources */,
@@ -1332,6 +1360,7 @@
 				E0E74BF0281F9FF6001564F9 /* MyConsultationCell.xib in Resources */,
 				E0B9BFC92811BD23001A58E8 /* OFL.txt in Resources */,
 				E0B9BFA92811BD23001A58E8 /* raleway_extrabold.ttf in Resources */,
+				E02910E4282FD7C8003AB67D /* timingShiftHeaderCell.xib in Resources */,
 				E066994727F47CC6009EE3F0 /* Login.storyboard in Resources */,
 				E0CC64A628156CD60011A165 /* CustomSideMenuTableViewCell.xib in Resources */,
 				E0CC6481281438380011A165 /* RelationshipTableViewCell.xib in Resources */,
@@ -1347,6 +1376,7 @@
 				E0D7CE18281E7811001B4738 /* HomeViewController.xib in Resources */,
 				E0E74BFB281F9FF6001564F9 /* CartDetailsCell.xib in Resources */,
 				E0B9BFB52811BD23001A58E8 /* lato_black_italic.ttf in Resources */,
+				E056E317282EC8FF00F056DF /* LabDetailsVC.xib in Resources */,
 				E0B9BFB32811BD23001A58E8 /* raleway_bolditalic.ttf in Resources */,
 				E0D5ED482827FD0000ECF500 /* CustomWebViewVC.xib in Resources */,
 				E0B9BFD12811BD23001A58E8 /* Poppins-MediumItalic.ttf in Resources */,
@@ -1355,16 +1385,15 @@
 				E0D7CE24281E7811001B4738 /* CategoryCollectionViewCell.xib in Resources */,
 				E0B9BFC32811BD23001A58E8 /* Poppins-Light.ttf in Resources */,
 				E0B9BFB72811BD23001A58E8 /* lato_regular.ttf in Resources */,
-				E0B1649D282E4472006E8287 /* TimingsCollectionViewCell.xib in Resources */,
 				E0E74C0F281F9FF6001564F9 /* OPDBillingPaymentVC.xib in Resources */,
 				E0CC647D281438380011A165 /* PersonalVC.xib in Resources */,
 				E0B9BF9A2811BD23001A58E8 /* raleway_blackitalic.ttf in Resources */,
-				E0B1649E282E4472006E8287 /* timingShiftHeaderCell.xib in Resources */,
 				E0B9BFA22811BD23001A58E8 /* raleway_mediumitalic.ttf in Resources */,
 				E0D7CE23281E7811001B4738 /* BlogsCollectionViewCell.xib in Resources */,
 				E049CA72282C350B0022FB63 /* BookMedicineCell.xib in Resources */,
 				E0D7CE64281E78BA001B4738 /* SelectedIssueCollectionViewCell.xib in Resources */,
 				E0B9BF982811BD23001A58E8 /* poppins_light.ttf in Resources */,
+				E02910E7282FD7C8003AB67D /* ConsultDoctorDetailsViewController.xib in Resources */,
 				E0B9BFC02811BD23001A58E8 /* Poppins-ThinItalic.ttf in Resources */,
 				E0D7CE5C281E78BA001B4738 /* ConsultSymptomsTableViewCell.xib in Resources */,
 				E0D7CE57281E78BA001B4738 /* Speciality.zip in Resources */,
@@ -1427,7 +1456,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5CD78C4AEDA19271770583CE /* [CP] Embed Pods Frameworks */ = {
+		C1AEEDDBEC1463A8EBCD5B9D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1459,7 +1488,6 @@
 				E0B9C0042811BD23001A58E8 /* BaseViewController.swift in Sources */,
 				E0E74BFD281F9FF6001564F9 /* CartDetails.swift in Sources */,
 				E0D7CE15281E7811001B4738 /* DashboardCollectionViewManager.swift in Sources */,
-				E0B164A0282E4472006E8287 /* ConsultDoctorDetailsViewController.swift in Sources */,
 				E0D7CE52281E78BA001B4738 /* ConsultSpecialityTableViewCell.swift in Sources */,
 				E0D7CE5F281E78BA001B4738 /* ConsultSymptomsTableViewManager.swift in Sources */,
 				E0E74C13281F9FF6001564F9 /* PharmacyReceiptVC.swift in Sources */,
@@ -1482,6 +1510,7 @@
 				E0CC64A528156CD60011A165 /* CustomSideMenuTableViewCell.swift in Sources */,
 				E0E74C0E281F9FF6001564F9 /* OPDconultationBilling.swift in Sources */,
 				E0B9C0052811BD23001A58E8 /* NetWorker.swift in Sources */,
+				E02910D6282F6C47003AB67D /* LabCell.swift in Sources */,
 				E0D7CE19281E7811001B4738 /* ConsultationCategoryCollectionViewManager.swift in Sources */,
 				E0B9C0092811BD23001A58E8 /* Router.swift in Sources */,
 				E0D7CE14281E7811001B4738 /* CategoryCollectionViewManager.swift in Sources */,
@@ -1495,6 +1524,7 @@
 				E0D7CE1A281E7811001B4738 /* MedicineYouAreLookingSlider1CvManager.swift in Sources */,
 				E0D7CE63281E78BA001B4738 /* SelectedIssueCollectionViewCell.swift in Sources */,
 				E0D7CE5A281E78BA001B4738 /* SymptomsInsideTableViewCell.swift in Sources */,
+				E056E31B282EC9A200F056DF /* LabDetailsCell.swift in Sources */,
 				E0B164A4282E4472006E8287 /* DoctorAvailableListTableViewCell.swift in Sources */,
 				E03DD67227F994E100BFB975 /* MainTabbarVC.swift in Sources */,
 				E0D7CE5E281E78BA001B4738 /* SymptomsInsideTableViewManager.swift in Sources */,
@@ -1507,11 +1537,11 @@
 				E03DD67027F9787600BFB975 /* HomeVC.swift in Sources */,
 				E0CC6478281438380011A165 /* ProfileVC.swift in Sources */,
 				E0D7CE50281E78BA001B4738 /* ConsultationMainViewController.swift in Sources */,
+				E056E316282EC8FF00F056DF /* LabDetailsVC.swift in Sources */,
 				E0D7CE2B281E7811001B4738 /* BlogsCollectionViewManager.swift in Sources */,
 				E0D7CE54281E78BA001B4738 /* ConsultSpecialityTableViewManager.swift in Sources */,
 				E0C447F227F4959E00BE6E2D /* SingUpVC.swift in Sources */,
 				E0D7CE16281E7811001B4738 /* LookingForTestInCollectionViewManager.swift in Sources */,
-				E0B1649F282E4472006E8287 /* timingShiftHeaderCell.swift in Sources */,
 				E0CC6483281438380011A165 /* InsuranceVC.swift in Sources */,
 				E0E74C08281F9FF6001564F9 /* AdvanceBillingVC.swift in Sources */,
 				E0E74C02281F9FF6001564F9 /* ProcedureBillingPaymentVC.swift in Sources */,
@@ -1539,34 +1569,36 @@
 				E0B9C00A2811BD23001A58E8 /* API.swift in Sources */,
 				E0B9BF922811BD23001A58E8 /* Environment.swift in Sources */,
 				E0E74C1C281FA410001564F9 /* UIStoryBoard.swift in Sources */,
-				E0B1649B282E4472006E8287 /* DoctorsTimingCollectionViewManager.swift in Sources */,
 				E0B9BFD32811BD23001A58E8 /* CACornerMask.swift in Sources */,
 				E0E74C1A281F9FF6001564F9 /* AddNewAddressCell.swift in Sources */,
 				E0D7CE26281E7811001B4738 /* DashboardCollectionViewCell.swift in Sources */,
 				E0C447F027F494E300BE6E2D /* SingInVC.swift in Sources */,
 				E0D7CE65281E78BA001B4738 /* ConsultDetailsTavleViewManager.swift in Sources */,
 				E0CC647F281438380011A165 /* RelationVC.swift in Sources */,
+				E02910E1282FD7C8003AB67D /* DoctorsTimingCollectionViewManager.swift in Sources */,
 				E0E74C01281F9FF6001564F9 /* ProcedurePaymentCell.swift in Sources */,
 				E0D7CE1F281E7811001B4738 /* LookForTestCollectionViewCell.swift in Sources */,
 				E0D7CE1C281E7811001B4738 /* LookingForConsultationInSlider2CollectionViewManager.swift in Sources */,
 				E0E74C18281F9FF6001564F9 /* AddressDetailsCell.swift in Sources */,
 				E0B9C0062811BD23001A58E8 /* PushDelegate.swift in Sources */,
 				E0D7CE77281E8C56001B4738 /* BookLabTestCell.swift in Sources */,
+				E02910E6282FD7C8003AB67D /* ConsultDoctorDetailsViewController.swift in Sources */,
 				E0CC6493281439070011A165 /* MenuItemView.swift in Sources */,
 				E072953027F820DC0083357A /* AppManager.swift in Sources */,
 				E0D7CE68281E78BA001B4738 /* SelectedIssueCollectionViewManager.swift in Sources */,
 				E0B9BFD72811BD23001A58E8 /* UITextField.swift in Sources */,
 				E072953427F850570083357A /* ForgotPasswordVC.swift in Sources */,
 				E0D7CE5B281E78BA001B4738 /* ConsultSymptomsTableViewCell.swift in Sources */,
-				E0B1649C282E4472006E8287 /* TimingsCollectionViewCell.swift in Sources */,
 				E0E74BF4281F9FF6001564F9 /* MyOrders.swift in Sources */,
 				E0CC64A328156CD60011A165 /* SideMenuTableViewManager.swift in Sources */,
 				E0D7CE1E281E7811001B4738 /* BlogsCollectionViewCell.swift in Sources */,
 				E0B9BFDA2811BD23001A58E8 /* UserDefault+Constant.swift in Sources */,
 				E0E74C15281F9FF6001564F9 /* AddressDetailsVC.swift in Sources */,
 				E0CC647A281438380011A165 /* RelationshipTableViewCell.swift in Sources */,
+				E02910E2282FD7C8003AB67D /* TimingsCollectionViewCell.swift in Sources */,
 				E0CC6497281439070011A165 /* CAPSPageMenu.swift in Sources */,
 				E0CC6494281439070011A165 /* CAPSPageMenu+UIScrollViewDelegate.swift in Sources */,
+				E02910E5282FD7C8003AB67D /* timingShiftHeaderCell.swift in Sources */,
 				E0B9BFD82811BD23001A58E8 /* UIButton.swift in Sources */,
 				E0CC6484281438380011A165 /* EditProfileVC.swift in Sources */,
 				E0CC6496281439070011A165 /* CAPSPageMenuConfiguration.swift in Sources */,
@@ -1712,14 +1744,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ARE334SD9C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HealthCard/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Login;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1729,7 +1763,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = viral.HealthCard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.StockAxis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1744,14 +1778,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ARE334SD9C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HealthCard/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Login;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1761,7 +1797,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = viral.HealthCard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.StockAxis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

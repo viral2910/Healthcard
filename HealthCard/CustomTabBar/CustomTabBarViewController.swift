@@ -274,7 +274,9 @@ extension CustomTabBarViewController {
     }
     
     @IBAction func cartBtnTap(_ sender: UIButton) {
-
+        let vc = CartDetails.instantiate()
+        pushDelegate?.pushViewController(vc: vc)
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func homeBtnTap() {

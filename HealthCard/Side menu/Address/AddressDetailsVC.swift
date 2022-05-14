@@ -9,12 +9,20 @@ import UIKit
 
 class AddressDetailsVC: UIViewController, XIBed {
     
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var cartBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
     var dataValue : [[String: String?]] = []
+    var addressSelection = false
+    var selectedvalue = 0
+    var pincode = ""
+    var labInvestigation = ""
+    var docId = ""
+    var docType = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableCell()
+        bottomConstraint.constant = (addressSelection) ? 60 : 0
         cartBtn.setTitle("", for: .normal)
         apiCall()
     }
@@ -29,23 +37,32 @@ class AddressDetailsVC: UIViewController, XIBed {
     }
     
     @IBAction func cartBtn(_ sender: UIButton) {
-        
+        let vc = CartDetails.instantiate()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    @IBAction func proceedAction(_ sender: Any) {
+        let vc = LabDetailsVC.instantiate()
+        vc.labInvestigation = labInvestigation
+        vc.pincode = pincode
+        vc.docType = docType
+        vc.docId = docId
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
 }
 extension AddressDetailsVC{
-
+    
     //MARK: - API CALL
     func apiCall()  {
         let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
-        NetWorker.shared.callAPIService(type: APIV2.addressPatient(patientID: patientID)) { [weak self](data: AddressList?, error) in
-                self?.dataValue = data!
-                self?.tableView.reloadData()
-               // print(patientIDval)
+        NetWorker.shared.callAPIService(type: APIV2.addressPatient(patientID: 189)) { [weak self](data: AddressList?, error) in
+            self?.dataValue = data!
+            self?.tableView.reloadData()
+            // print(patientIDval)
         }
     }
 }
@@ -86,8 +103,26 @@ extension AddressDetailsVC: UITableViewDelegate, UITableViewDataSource{
             cell.districtLbl.text = dataValue[indexPath.row]["District"] as? String ?? ""
             cell.talukaLbl.text = dataValue[indexPath.row]["Taluka"] as? String ?? ""
             cell.pinCodeLbl.text = dataValue[indexPath.row]["Pincode"] as? String ?? ""
+            cell.deliveryTypeLbl.text = dataValue[indexPath.row]["AddressType"] as? String ?? ""
+            cell.delegate = self
+            cell.checkBoxBtn.tag = Int(dataValue[indexPath.row]["PatientAddressId"] as? String ?? "") ?? 0
+            if selectedvalue == Int(dataValue[indexPath.row]["PatientAddressId"] as? String ?? "") ?? 0 {
+                cell.selectionImage.image = UIImage(named: "checkedcircle");
+                pincode = dataValue[indexPath.row]["Pincode"] as? String ?? ""
+            } else {
+                cell.selectionImage.image = UIImage(named: "circle");
+            }
             return cell
         }
     }
     
+}
+extension AddressDetailsVC: SelectAddressDelegate {
+    func getId(value: Int) {
+        selectedvalue = value
+        if addressSelection {
+            tableView.reloadData()
+            bottomConstraint.constant = (addressSelection ) ? 60 : 0
+        }
+    }
 }

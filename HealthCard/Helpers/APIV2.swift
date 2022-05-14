@@ -184,6 +184,12 @@ enum APIV2: API {
     case estimateAdvanceBillingList(patientID: Int)
     
     case pharmacyReceiptList(patientID: Int)
+
+    case cartRefresh(patientID: Int)
+    
+    case pathologyLabList(pincode: String,labInvestigation:String,docId:String,docType:String)
+    
+    case addLabToCart(patientID: Int,addressID:Int,labMasterID:Int,pincode: String,labInvestigation:String,docId:String,docType:String,qty:Int)
     
 }
 
@@ -443,6 +449,15 @@ extension APIV2 {
             
         case .PatientMedicineDetails:
             return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .cartRefresh:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .pathologyLabList:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .addLabToCart:
+            return URL(string: Router.deliveryBoyBaseUrl)!
         }
         
     }
@@ -701,6 +716,15 @@ extension APIV2 {
             
         case .PatientMedicineDetails(patientId: let patientId):
             return "Pharmacy?vPatientId=\(patientId)"
+            
+        case .cartRefresh(patientID: let patientID):
+            return "Cart?vPatientId=\(patientID)"
+            
+        case .pathologyLabList(pincode: let pincode,labInvestigation: let labInvestigation,docId: let docId,docType:let docType):
+            return "Pathology?vPincode=\(pincode)&vLabInvestigation=\(labInvestigation)&vDocId=\(docId)&vDocType=\(docType)"
+            
+        case .addLabToCart(patientID: let patientID,addressID: let addressID,labMasterID: let labMasterID,pincode:  let pincode,labInvestigation: let labInvestigation,docId: let docId,docType: let docType,qty: let qty):
+            return "Pathology?vPatientId=\(patientID)&vPatientAddressId=\(addressID)&vLabMasterId=\(labMasterID)&vDocId=\(docId)&vDocType=\(docType)&vLabInvestigation=\(labInvestigation)&vQty=\(qty)&vSellerType=Lab&vDeliveryPincode=\(pincode)"
         }
     }
     
@@ -957,6 +981,15 @@ extension APIV2 {
             return "GET"
             
         case .PatientMedicineDetails:
+            return "GET"
+            
+        case .cartRefresh:
+            return "GET"
+            
+        case .pathologyLabList:
+            return "GET"
+            
+        case .addLabToCart:
             return "GET"
         }
     }
@@ -1219,6 +1252,15 @@ extension APIV2 {
             break
             
         case .PatientMedicineDetails:
+            break
+            
+        case .cartRefresh:
+            break
+            
+        case .pathologyLabList:
+            break
+            
+        case .addLabToCart:
             break
         }
         return params

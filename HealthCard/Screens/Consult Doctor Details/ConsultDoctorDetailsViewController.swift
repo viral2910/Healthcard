@@ -7,6 +7,7 @@
 
 import UIKit
 import FSCalendar
+import Razorpay
 
 class ConsultDoctorDetailsViewController: UIViewController, XIBed, PushViewControllerDelegate, presentViewControllersDelegate {
     func present(vc: UIViewController) {
@@ -37,6 +38,8 @@ class ConsultDoctorDetailsViewController: UIViewController, XIBed, PushViewContr
     
     @IBOutlet weak var emptyViewRef: UIView!
     
+    var doctorDetails: DoctorDetailsDataResponseElement?
+    
     fileprivate lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MMMM/YYYY"
@@ -57,6 +60,9 @@ class ConsultDoctorDetailsViewController: UIViewController, XIBed, PushViewContr
     
     var doctorId = 0
     
+    var razorpay: RazorpayCheckout!
+    var razorpayTestKey = "rzp_live_a06lrHIHAADxOP"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,8 +81,11 @@ class ConsultDoctorDetailsViewController: UIViewController, XIBed, PushViewContr
 extension ConsultDoctorDetailsViewController {
     func setupUI() {
         
+        razorpay = RazorpayCheckout.initWithKey(razorpayTestKey, andDelegate: self)
+        
         collectionViewManager.pushDelegate = self
         collectionViewManager.presentDelegate = self
+        collectionViewManager.delegate = self
         
         fsCalendarViewRef.delegate = self
         fsCalendarViewRef.dataSource = self
@@ -178,6 +187,7 @@ extension ConsultDoctorDetailsViewController {
                         
                         
                         if let data = json?[0] {
+                            self.doctorDetails = data
                             let name = "\(data.firstName) \(data.lastName)"
                             self.nameLblRef.text = name
                             
@@ -309,6 +319,43 @@ extension ConsultDoctorDetailsViewController: FSCalendarDelegate, FSCalendarData
             
         }
     }
+}
+
+extension ConsultDoctorDetailsViewController: RazorpayPaymentCompletionProtocol{
+    func onPaymentError(_ code: Int32, description str: String) {
+        print("Failed \(str)")
+    }
+    
+    func onPaymentSuccess(_ payment_id: String) {
+        print("Success \(payment_id)")
+        
+        
+    }
+    
+    internal func showPaymentForm(amount: Int,orderId: String, desc: String){
+        let options: [String:Any] = [
+            "amount": "\(amount * 100)", //This is in currency subunits. 100 = 100 paise= INR 1.
+            "currency": "INR",//We support more that 92 international currencies.
+            "description": "\(desc)",
+            //"order_id": orderId,
+            "name": "Health Card",
+            "theme": [
+                "color": "#F37254"
+            ]
+        ]
+        razorpay.open(options)
+    }
+    
+    
+}
+
+//MARK: - Delegate
+extension ConsultDoctorDetailsViewController: SelectedConsultationDetailsPtotocol {
+    func getConsultationDetailsData(data: DoctorOnlineConsultTimeSClist) {
+        self.showPaymentForm(amount: Int(doctorDetails?.onlineConsultationFees ?? "") ?? 0, orderId: "154546548", desc: "\(doctorDetails?.speciality ?? "")")
+    }
+    
+    
 }
 
 // MARK: - DoctorDetailsDataResponseElement

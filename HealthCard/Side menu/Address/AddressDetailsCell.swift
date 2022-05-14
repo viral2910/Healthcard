@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol SelectAddressDelegate {
+    func getId(value : Int)
+}
 class AddressDetailsCell: UITableViewCell {
 
+    @IBOutlet weak var selectionImage: UIImageView!
+    @IBOutlet weak var editStackView: UIStackView!
     @IBOutlet weak var buildingLbl: UILabel!
     @IBOutlet weak var nearByLbl: UILabel!
     @IBOutlet weak var pinCodeLbl: UILabel!
@@ -23,14 +28,17 @@ class AddressDetailsCell: UITableViewCell {
     @IBOutlet weak var countryLbl: UILabel!
     @IBOutlet weak var layerView: UIView!
     @IBOutlet weak var checkBoxBtn: UIButton!
+    @IBOutlet weak var deliveryTypeLbl: UILabel!
+    var delegate : SelectAddressDelegate!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        checkBoxBtn.setTitle("", for: .normal)
         layerView.dropShadowTVC()
         self.selectionStyle = .none
     }
-
+    @IBAction func selectAddressAction(_ sender: UIButton) {
+        delegate.getId(value: sender.tag)
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }

@@ -8,9 +8,15 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="lato_regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddressDetailsVC" customModule="HealthCard" customModuleProvider="target">
             <connections>
+                <outlet property="bottomConstraint" destination="yx1-fB-K9c" id="Zvt-nq-kGu"/>
                 <outlet property="cartBtn" destination="C9n-QI-vSh" id="xq0-ht-8Go"/>
                 <outlet property="tableView" destination="GxE-lL-iis" id="gc4-HT-VHp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -72,6 +78,26 @@
                         <constraint firstAttribute="bottom" secondItem="JJq-zn-Sa1" secondAttribute="bottom" id="uxn-OW-hFW"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0R2-yt-eF9">
+                    <rect key="frame" x="20" y="812" width="374" height="50"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="1Ig-1w-o2V"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="CHECK AVAILABLE LAB">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="proceedAction:" destination="-1" eventType="touchUpInside" id="Bvy-Lr-19i"/>
+                    </connections>
+                </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GxE-lL-iis">
                     <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -80,13 +106,16 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="0R2-yt-eF9" secondAttribute="bottom" id="A1D-OM-Wof"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GxE-lL-iis" secondAttribute="trailing" id="ADu-6F-XVP"/>
                 <constraint firstItem="i74-uo-maZ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="E0s-Uv-JuF"/>
                 <constraint firstItem="i74-uo-maZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="GEb-l1-0Z5"/>
                 <constraint firstItem="GxE-lL-iis" firstAttribute="top" secondItem="i74-uo-maZ" secondAttribute="bottom" id="ZgC-LN-ubE"/>
+                <constraint firstItem="0R2-yt-eF9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="bO4-ED-XZV"/>
                 <constraint firstItem="GxE-lL-iis" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="i9A-ly-rHM"/>
                 <constraint firstItem="i74-uo-maZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="xiy-7d-vJC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="GxE-lL-iis" secondAttribute="bottom" id="yx1-fB-K9c"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0R2-yt-eF9" secondAttribute="trailing" constant="20" id="zaT-YT-tua"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="78.348214285714278"/>
         </view>

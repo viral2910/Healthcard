@@ -80,6 +80,39 @@
                                     <constraint firstAttribute="width" secondItem="WrV-pd-nJV" secondAttribute="height" id="8l0-eK-ooc"/>
                                 </constraints>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6en-4K-odC">
+                                <rect key="frame" x="10" y="76" width="128.5" height="43"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsQ-4C-mnr">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="43"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bql-Bd-zNF">
+                                        <rect key="frame" x="25" y="0.0" width="48" height="43"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="plus.circle.fill" catalog="system" title=" "/>
+                                        <connections>
+                                            <action selector="plusAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="93Y-nZ-Au6"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bS1-ET-tGs">
+                                        <rect key="frame" x="73" y="0.0" width="7.5" height="43"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWz-cA-yVC">
+                                        <rect key="frame" x="80.5" y="0.0" width="48" height="43"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="minus.circle.fill" catalog="system" title=" "/>
+                                        <connections>
+                                            <action selector="minusAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ySR-jA-9XG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -92,7 +125,9 @@
                             <constraint firstAttribute="trailing" secondItem="lHS-Ud-cJw" secondAttribute="trailing" constant="10" id="Mtr-Je-ndp"/>
                             <constraint firstItem="WJa-Vh-K4t" firstAttribute="top" secondItem="Nu9-47-LC5" secondAttribute="top" constant="10" id="N8r-Po-0z2"/>
                             <constraint firstAttribute="trailing" secondItem="WJa-Vh-K4t" secondAttribute="trailing" constant="8" id="R1x-2S-a1k"/>
+                            <constraint firstAttribute="bottom" secondItem="6en-4K-odC" secondAttribute="bottom" constant="5" id="Sgh-qY-zqP"/>
                             <constraint firstItem="p0n-XF-nMr" firstAttribute="top" secondItem="XWA-oo-Qms" secondAttribute="top" id="UIh-fc-1sv"/>
+                            <constraint firstItem="6en-4K-odC" firstAttribute="leading" secondItem="Nu9-47-LC5" secondAttribute="leading" constant="10" id="VbD-eK-WRf"/>
                             <constraint firstItem="WJa-Vh-K4t" firstAttribute="leading" secondItem="qGw-i5-pvo" secondAttribute="trailing" constant="8" id="aDU-a5-ROY"/>
                             <constraint firstItem="XWA-oo-Qms" firstAttribute="top" secondItem="VoH-3e-wVq" secondAttribute="bottom" constant="5" id="dad-ou-GAD"/>
                             <constraint firstItem="p0n-XF-nMr" firstAttribute="leading" secondItem="XWA-oo-Qms" secondAttribute="trailing" constant="5" id="j5S-9x-NHO"/>
@@ -102,6 +137,7 @@
                             <constraint firstAttribute="bottom" secondItem="lHS-Ud-cJw" secondAttribute="bottom" constant="10" id="pgk-Us-O1n"/>
                             <constraint firstItem="XWA-oo-Qms" firstAttribute="leading" secondItem="qGw-i5-pvo" secondAttribute="trailing" constant="10" id="u5W-dx-Udm"/>
                             <constraint firstItem="VoH-3e-wVq" firstAttribute="leading" secondItem="qGw-i5-pvo" secondAttribute="trailing" constant="8" id="wFD-4p-TwP"/>
+                            <constraint firstItem="6en-4K-odC" firstAttribute="top" secondItem="XWA-oo-Qms" secondAttribute="bottom" constant="5" id="x3k-Pi-Jdx"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -125,6 +161,10 @@
                 <outlet property="ImageView" destination="qGw-i5-pvo" id="fQk-gk-Cih"/>
                 <outlet property="MRPLbl" destination="qyZ-LY-Ats" id="glR-Bu-saf"/>
                 <outlet property="mainView" destination="Nu9-47-LC5" id="sy3-5F-EAu"/>
+                <outlet property="minusBtn" destination="vWz-cA-yVC" id="Tev-39-aSg"/>
+                <outlet property="plusBtn" destination="bql-Bd-zNF" id="YWm-uW-d50"/>
+                <outlet property="qtyControlStack" destination="6en-4K-odC" id="zhC-pz-bDu"/>
+                <outlet property="qtyLabel" destination="bS1-ET-tGs" id="50d-7c-pWc"/>
                 <outlet property="removeClick" destination="lHS-Ud-cJw" id="1c3-1N-cnH"/>
                 <outlet property="titleLbl" destination="WJa-Vh-K4t" id="8V6-Nx-yFU"/>
                 <outlet property="totalcostLbl" destination="p0n-XF-nMr" id="BCe-Yl-nsY"/>
@@ -134,6 +174,8 @@
     </objects>
     <resources>
         <image name="GettyImages-482186651-450229ae311e422db9bf1bdd0169a163" width="2000" height="1500"/>
+        <image name="minus.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <image name="trash" catalog="system" width="121" height="128"/>
     </resources>
 </document>

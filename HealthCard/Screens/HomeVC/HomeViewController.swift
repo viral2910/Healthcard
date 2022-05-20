@@ -260,21 +260,17 @@ extension HomeViewController {
 
         }
     }
-
-    
 }
 
 //MARK: - Action
 extension HomeViewController {
     @IBAction func sideMenuBtnTap(_ sender: UIButton) {
-        
     }
     
     @IBAction func cartBtnTap(_ sender: UIButton) {
-            let vc = CartDetails.instantiate()
-            self.pushDelegate?.pushViewController(vc: vc)
     }
 }
+
 
 // MARK: - LookinForConsultationDataResponseElement
 struct LookinForConsultationDataResponseElement: Codable {

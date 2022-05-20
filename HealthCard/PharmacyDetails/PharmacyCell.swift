@@ -1,16 +1,18 @@
 //
-//  MedicineCell.swift
+//  PharmacyCell.swift
 //  HealthCard
 //
-//  Created by Viral on 07/05/22.
+//  Created by Viral on 20/05/22.
 //
 
 import UIKit
 
-class MedicineCell: UITableViewCell {
+class PharmacyCell: UITableViewCell {
     
+    @IBOutlet weak var discountPer: UILabel!
+    @IBOutlet weak var discountPrice: UILabel!
+    @IBOutlet weak var originalPrice: UILabel!
     @IBOutlet weak var testImageView: UIImageView!
-    @IBOutlet weak var selectionImageView: UIImageView!
     @IBOutlet weak var prescriptionLabel: UILabel!
     @IBOutlet weak var companyLabel: UILabel!
     @IBOutlet weak var packageLabel: UILabel!
@@ -20,7 +22,6 @@ class MedicineCell: UITableViewCell {
     @IBOutlet weak var mainview: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         mainview.layer.cornerRadius = 10
         mainview.dropShadow()
     }

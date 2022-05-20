@@ -9,11 +9,12 @@ import UIKit
 
 protocol cartDetailsDelegate {
     func getId(id : Int)
+    func updateQty(id : Int,qty:Int)
 }
 class CartDetailsCell: UITableViewCell, cartSubDetailsDelegate {
     
     
-
+    
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var tableviewheight: NSLayoutConstraint!
     @IBOutlet weak var tableview: UITableView!
@@ -37,7 +38,9 @@ class CartDetailsCell: UITableViewCell, cartSubDetailsDelegate {
     func getId(cartId: Int) {
         self.delegate.getId(id: cartId)
     }
-    
+    func updateQty(id: Int, qty: Int) {
+        self.delegate.updateQty(id: id, qty: qty)
+    }
 }
 extension CartDetailsCell : UITableViewDataSource ,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,10 +51,12 @@ extension CartDetailsCell : UITableViewDataSource ,UITableViewDelegate{
         let cell = tableview.dequeueReusableCell(withIdentifier: "CartSubDetailsCell") as! CartSubDetailsCell
         cell.titleLbl.text = ListData[indexPath.row].productName
         cell.MRPLbl.text = "₹\(ListData[indexPath.row].mrp)/unit"
-        cell.totalcostLbl.text = "₹\(ListData[indexPath.row].totalAmount).00 X \(ListData[indexPath.row].qty) = ₹\(ListData[indexPath.row].totalAmount).00"
+        cell.totalcostLbl.text = "₹\(ListData[indexPath.row].pricePerUnit) X \(ListData[indexPath.row].qty) = ₹\(ListData[indexPath.row].totalAmount)"
         cell.delegate = self
         cell.removeClick.tag = ListData[indexPath.row].cartID
+        cell.qtyControlStack.isHidden = ListData[indexPath.row].sellerType == "Pharmacy" ? true : false
 //        cell.subtitleLabel.text = labListData[indexPath.row].
+        cell.qtyLabel.text = "\(ListData[indexPath.row].qty)"
         let url = URL(string: "\(ListData[indexPath.row].imageURL)")!
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard

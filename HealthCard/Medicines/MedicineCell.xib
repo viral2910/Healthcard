@@ -196,6 +196,7 @@
                 <outlet property="companyLabel" destination="pPO-Nr-3qY" id="8XO-kE-7dV"/>
                 <outlet property="doseWithUnitLabel" destination="kpd-Jc-VPl" id="18z-QI-Yo4"/>
                 <outlet property="genericName" destination="6V9-vU-qC7" id="f67-rg-8jF"/>
+                <outlet property="mainview" destination="Urw-PR-A1O" id="qK3-AU-ame"/>
                 <outlet property="packageLabel" destination="A2s-fW-iLg" id="eI7-iM-ylB"/>
                 <outlet property="prescriptionLabel" destination="mCg-0c-k0P" id="XDo-yh-qjq"/>
                 <outlet property="selectionImageView" destination="L2A-q3-flb" id="3Yz-mu-F87"/>

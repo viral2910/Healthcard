@@ -46,7 +46,7 @@ extension CartDetails{
                 self?.tableView.reloadData()
             var sum = 0
             for item in self!.dataValue {
-                sum = item.cartDtlslist.compactMap { $0.totalAmount }.reduce(sum, +)
+                sum = item.cartDtlslist.compactMap { Int($0.totalAmount) }.reduce(sum, +)
             }
             self?.totalRsLbl.text = "Rs. \(sum)"
         }
@@ -72,6 +72,14 @@ extension CartDetails: UITableViewDelegate, UITableViewDataSource{
     }
 }
 extension CartDetails : cartDetailsDelegate {
+    func updateQty(id: Int, qty: Int) {
+        NetWorker.shared.callAPIService(type: APIV2.cartUpdate(cartID: id, qty: qty)) { [weak self](data: [removeCart]?, error) in
+            if data?[0].status == "1" {
+                self?.apiCall()
+            }
+        }
+    }
+    
     func getId(id: Int) {
         NetWorker.shared.callAPIService(type: APIV2.cartRemove(cartID: id)) { [weak self](data: [removeCart]?, error) in
             if data?[0].status == "1" {
@@ -100,10 +108,9 @@ struct CartDtlslist: Codable {
     let sellerName, sellerType: String
     let productID: Int
     let productName: String
-    let qty: Int
+    let qty,deliveryPincode: Int
     let mrp: String
-    let discountPer, discountAmt, gstAmt: Double
-    let gstPer, pricePerUnit, totalAmount, deliveryPincode: Int
+    let discountPer, discountAmt, gstAmt,totalAmount,pricePerUnit,gstPer: Double
     let cartNoOfProducts: JSONNull?
     let imageURL: String
 

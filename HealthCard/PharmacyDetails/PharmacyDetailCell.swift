@@ -1,36 +1,39 @@
 //
-//  BookMedicineCell.swift
+//  PharmacyDetailCell.swift
 //  HealthCard
 //
-//  Created by Viral on 07/05/22.
+//  Created by Viral on 20/05/22.
 //
 
 import UIKit
 
-protocol BookMedicineDelegate {
-    func getTestId(DocId: Int,LabInvest:Int,docType:String,prescriptionReq:String,indexPathRow:Int)
+protocol PharmacySelectionDelegate {
+    func getIdval(value : Int)
 }
+class PharmacyDetailCell: UITableViewCell {
 
-class BookMedicineCell: UITableViewCell {
     
     @IBOutlet weak var mainview: UIView!
-    @IBOutlet weak var consDrLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var tableviewHeight: NSLayoutConstraint!
-    var delegate:BookMedicineDelegate!
-    var labListData : [PharmacyDtlsSClist] = []
-    var selectedID : [Int] = []
-    var LabID : [Int] = []
-    var LabDocType : [String] = []
+    @IBOutlet weak var AddToCartBtn: UIButton!
+    @IBOutlet weak var selectionImageView: UIImageView!
+    @IBOutlet weak var labNameLabel: UILabel!
+    @IBOutlet weak var totalPriceLabel: UILabel!
+    var delegate:PharmacySelectionDelegate!
+    var labListData : [PharmacyDtlsSClistval] = []
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         mainview.layer.cornerRadius = 10
         mainview.dropShadow()
         tableview.dataSource = self
         tableview.delegate = self
-        tableview.register(UINib(nibName: "MedicineCell", bundle: nil), forCellReuseIdentifier: "MedicineCell")
- 
+        tableview.register(UINib(nibName: "PharmacyCell", bundle: nil), forCellReuseIdentifier: "PharmacyCell")
+        // Initialization code
+    }
+    @IBAction func AddToCartAction(_ sender: UIButton) {
+        delegate.getIdval(value: sender.tag)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -41,13 +44,17 @@ class BookMedicineCell: UITableViewCell {
     
 }
 
-extension BookMedicineCell : UITableViewDataSource ,UITableViewDelegate{
+extension PharmacyDetailCell : UITableViewDataSource ,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return labListData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableview.dequeueReusableCell(withIdentifier: "MedicineCell") as! MedicineCell
+        let cell = tableview.dequeueReusableCell(withIdentifier: "PharmacyCell") as! PharmacyCell
+        cell.originalPrice.text = Int(labListData[indexPath.row].discountPer) ?? 0 != 0 ? "₹ \(labListData[indexPath.row].mrp)" : ""
+        cell.discountPer.text = Int(labListData[indexPath.row].discountPer) ?? 0 != 0 ? " \(labListData[indexPath.row].discountPer)% Off " : ""
+        cell.discountPrice.text = Int(labListData[indexPath.row].discountPer) ?? 0 != 0 ? "\(labListData[indexPath.row].discountAmount)" : ""
+//        cell.mr.text = "MRP : ₹\(labListData[indexPath.row].mrp)"
         cell.brandName.text = labListData[indexPath.row].brandName
         cell.genericName.text = labListData[indexPath.row].genericName
         cell.doseWithUnitLabel.text = labListData[indexPath.row].dose
@@ -56,12 +63,6 @@ extension BookMedicineCell : UITableViewDataSource ,UITableViewDelegate{
         cell.prescriptionLabel.text = (labListData[indexPath.row].isPrescription == "True") ? "Yes" : "No"
 //        cell.subtitleLabel.text = labListData[indexPath.row].
         let url = URL(string: "\(labListData[indexPath.row].drugImageURL)")!
-        
-        if selectedID.contains(Int(labListData[indexPath.row].medicineID) ?? 0) && LabID.contains(Int(labListData[indexPath.row].docID) ?? 0){
-            cell.selectionImageView.image = UIImage(named: "checkedcircle");
-        } else {
-            cell.selectionImageView.image = UIImage(named: "circle");
-        }
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard
                 let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
@@ -73,13 +74,12 @@ extension BookMedicineCell : UITableViewDataSource ,UITableViewDelegate{
                 cell.testImageView.image = image
             }
         }.resume()
-        cell.selectionStyle = .none
+        
+        
+        
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 160
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate.getTestId(DocId: Int(labListData[indexPath.row].medicineID) ?? 0, LabInvest: Int(labListData[indexPath.row].docID) ?? 0, docType: labListData[indexPath.row].docType,prescriptionReq: labListData[indexPath.row].isPrescription , indexPathRow: contentView.tag)
+        return 170
     }
 }

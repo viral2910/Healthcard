@@ -21,7 +21,7 @@ enum APIV2: API {
     
     case doctorOnlineConsultScheduleByDoctor(doctorId: Int, date: String)
     
-    case doctorOnlineConsultPaymentDetailsSave(doctorId: Int, patientId: Int, bookDate: String, fromTime: String, toTime: String, paymentId: Int, paymentAmount: Int, paymentMethod: String)//PatientId=189&vDoctorId=1&vBookDate=10/Feb/2022&vFromTime=4:20PM&vToTime=4:40PM&vPaymentId=14561&vPaymentAmount=1000&vPaymentMethod=Debit Card
+    case doctorOnlineConsultPaymentDetailsSave(doctorId: Int, patientId: Int, bookDate: String, fromTime: String, toTime: String, paymentId: Int, paymentAmount: Int, paymentMethod: String)
     
     case patientOnlineConsultScheduleDetails(patientId: Int)
     
@@ -191,7 +191,15 @@ enum APIV2: API {
     
     case addLabToCart(patientID: Int,addressID:Int,labMasterID:Int,pincode: String,labInvestigation:String,docId:String,docType:String,qty:Int)
     
+    case addPharmacyToCart(patientID: Int,addressID:Int,labMasterID:Int,pincode: String,labInvestigation:String,docId:String,docType:String,qty:Int)
+    
     case cartRemove(cartID:Int)
+    
+    case prescriptionList(patientID: Int)
+    
+    case pharmacyList(pincode: String,labInvestigation:String,docId:String,docType:String)
+    
+    case cartUpdate(cartID:Int,qty:Int)
     
 }
 
@@ -461,7 +469,19 @@ extension APIV2 {
         case .addLabToCart:
             return URL(string: Router.deliveryBoyBaseUrl)!
             
+        case .addPharmacyToCart:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
         case .cartRemove:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .prescriptionList:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .pharmacyList:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .cartUpdate:
             return URL(string: Router.deliveryBoyBaseUrl)!
         }
         
@@ -731,8 +751,21 @@ extension APIV2 {
         case .addLabToCart(patientID: let patientID,addressID: let addressID,labMasterID: let labMasterID,pincode:  let pincode,labInvestigation: let labInvestigation,docId: let docId,docType: let docType,qty: let qty):
             return "Pathology?vPatientId=\(patientID)&vPatientAddressId=\(addressID)&vLabMasterId=\(labMasterID)&vDocId=\(docId)&vDocType=\(docType)&vLabInvestigation=\(labInvestigation)&vQty=\(qty)&vSellerType=Lab&vDeliveryPincode=\(pincode)"
             
+        case .addPharmacyToCart(patientID: let patientID,addressID: let addressID,labMasterID: let labMasterID,pincode:  let pincode,labInvestigation: let labInvestigation,docId: let docId,docType: let docType,qty: let qty):
+            return "Pharmacy?vPatientId=\(patientID)&vPatientAddressId=\(addressID)&vPharmacyMasterId=\(labMasterID)&vDocId=\(docId)&vDocType=\(docType)&vMedicineId=226&vQty=\(qty)&vSellerType=Pharmacy&vDeliveryPincode=\(pincode)"
+            
         case .cartRemove(cartID: let cartId):
             return "Cart?vCartId=\(cartId)"
+            
+        case .prescriptionList(patientID: let patientID):
+            return "Pharmacy?vSelfPrescPatientId=\(patientID)"
+            
+        case .pharmacyList(pincode: let pincode, labInvestigation: let labInvestigation, docId: let docId, docType: let docType):
+            return "Pharmacy?vPincode=\(pincode)&vMedicineId=\(labInvestigation)&vDocId=\(docId)&vDocType=\(docType)"
+            
+        case .cartUpdate(cartID: let cartId,qty: let qty):
+            return "Cart?vCartId=\(cartId)&vQty=\(qty)"
+            
         }
     }
     
@@ -1000,7 +1033,19 @@ extension APIV2 {
         case .addLabToCart:
             return "GET"
             
+        case .addPharmacyToCart:
+            return "GET"
+            
         case .cartRemove:
+            return "GET"
+            
+        case .prescriptionList:
+            return "GET"
+            
+        case .pharmacyList:
+            return "GET"
+            
+        case .cartUpdate:
             return "GET"
         }
     }
@@ -1025,8 +1070,8 @@ extension APIV2 {
             
         case .concernDetailsList:
             params = "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><ConcernDtlsList xmlns=\"http://tempuri.org/\" /></soap:Body></soap:Envelope>"
-        
-
+            
+            
         case .orderInvoice(orderId: let orderId, sellerMasterId: let sellerMasterId, sellerType: let sellerType):
             params = "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><OrderInvoiceReport xmlns=\"http://tempuri.org/\"><vOrderId>\(orderId)</vOrderId><vSellerMasterId>\(sellerMasterId)</vSellerMasterId><vSellerType>\(sellerType)</vSellerType></OrderInvoiceReport></soap:Body></soap:Envelope>"
             
@@ -1044,7 +1089,7 @@ extension APIV2 {
             
         case .ProcedureReportReUpload(patientId: let patientId, docId: let docId, file: let file, fileType: let fileType, fileExt: let fileExt, fileName: let fileName):
             params = "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><ProcedureReportReUpload xmlns=\"http://tempuri.org/\"><vProcDocId>\(docId)</vProcDocId><vPatientId>\(patientId)</vPatientId><vFileType>\(fileType)</vFileType><vFile>\(file)</vFile><vFileName>\(fileName)</vFileName><vFileExt>\(fileExt)</vFileExt></ProcedureReportReUpload></soap:Body></soap:Envelope>"
-
+            
             
         case .LabTestReportUpload(patientId: let patientId, fileType: let fileType, file: let file, fileName: let fileName, fileExt: let fileExt):
             params = "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><LabTestReportUpload xmlns=\"http://tempuri.org/\"><vPatientId>\(patientId)</vPatientId><vFileType>\(fileType)</vFileType><vFile>\(file)</vFile><vFileName>\(fileName)</vFileName><vFileExt>\(fileExt)</vFileExt></LabTestReportUpload></soap:Body></soap:Envelope>"
@@ -1054,7 +1099,7 @@ extension APIV2 {
             
         case .PatientDocumentReUpload(patientDocId: let patientDocId, patientId: let patientId, fileType: let fileType, file: let file, fileName: let fileName, fileExt: let fileExt):
             params = "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><PatientDocumentReUpload xmlns=\"http://tempuri.org/\"><vPatientDocId>\(patientDocId)</vPatientDocId><vPatientId>\(patientId)</vPatientId><vFileType>\(fileType)</vFileType><vFile>\(file)</vFile><vFileName>\(fileName)</vFileName><vFileExt>\(fileExt)</vFileExt></PatientDocumentReUpload></soap:Body></soap:Envelope>"
- 
+            
         case .GetAllPharmacyAdvice(searchValue: let searchValue):
             params = "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><GetAllPharmacyAdvice xmlns=\"http://tempuri.org/\"><vSrchVal>\(searchValue)</vSrchVal></GetAllPharmacyAdvice></soap:Body></soap:Envelope>"
             
@@ -1135,55 +1180,55 @@ extension APIV2 {
             
         case .orderAcceptUpdate:
             break
-
+            
         case .pendingOrderList:
             break
-
+            
         case .upcomingOrderList:
             break
-
+            
         case .patientOrderDetails:
             break
-
+            
         case .deliveryBoyOrderCount:
             break
-
+            
         case .patientLatAndLngUpdate:
             break
-
+            
         case .rejectOrderUpdate:
             break
-
+            
         case .orderCashCollectionUpdate:
             break
-
+            
         case .rejectedOrderList:
             break
-
+            
         case .orderMapCordinates:
             break
-
+            
         case .orderPayableAmount:
             break
-
+            
         case .deliveryBoyLatAndLngUpdate:
             break
-
+            
         case .selfPrescriptionList:
             break
-
+            
         case .talukaByPincode:
             break
-
+            
         case .areaGetByPincodeAndTaluka:
             break
-
+            
         case .pharmacyPaidReceipt:
             break
-
+            
         case .patientPasswordChange:
             break
-
+            
         case .patientMobileNoValidation:
             break
             
@@ -1249,7 +1294,7 @@ extension APIV2 {
             
         case .myOrderList:
             break
-        
+            
         case .myCartList:
             break
             
@@ -1273,8 +1318,20 @@ extension APIV2 {
             
         case .addLabToCart:
             break
+        
+        case .addPharmacyToCart:
+            break
             
         case .cartRemove:
+            break
+            
+        case .prescriptionList:
+            break
+            
+        case .pharmacyList:
+            break
+            
+        case .cartUpdate:
             break
         }
         return params

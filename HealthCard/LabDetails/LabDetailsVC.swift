@@ -15,18 +15,26 @@ class LabDetailsVC: UIViewController,XIBed {
     var labInvestigation = ""
     var docId = ""
     var docType = ""
+    var presciptionID = ""
+    var isMedicine = false
     //    var dataValue : [[String: String?]] = []
     
     var dataValue : [LabTestList] = []
+    var dataValuepharmacy : [pharmacyListdetails] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        if isMedicine {
+            apiCallPharmacy()
+        } else {
         apiCall()
+        }
         setupTableCell()
         // Do any additional setup after loading the view.
     }
     /// TableViewCell Setup
     private func setupTableCell(){
         tableview.register(UINib(nibName: "LabDetailsCell", bundle: nil), forCellReuseIdentifier: "LabDetailsCell")
+        tableview.register(UINib(nibName: "PharmacyDetailCell", bundle: nil), forCellReuseIdentifier: "PharmacyDetailCell")
         tableview.delegate = self
         tableview.dataSource = self
         tableview.separatorColor = .clear
@@ -35,7 +43,11 @@ class LabDetailsVC: UIViewController,XIBed {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func addToCartAction(_ sender: Any) {
+        if isMedicine {
+            addToCartPharmacyapiCall()
+        } else {
         addToCartapiCall()
+        }
     }
 }
 
@@ -56,12 +68,39 @@ extension LabDetailsVC{
         }
     }
     
+    //MARK: - API CALL
+    func apiCallPharmacy()  {
+        docType = docType.replacingOccurrences(of: " ", with: "%20")
+        let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
+        NetWorker.shared.callAPIService(type: APIV2.pharmacyList(pincode: pincode, labInvestigation: labInvestigation, docId: docId, docType: docType)) { [weak self](data: [pharmacyListdetails]?, error) in
+            
+            if data?.count == 0 || data == nil{
+                AppManager.shared.showAlert(title: "Error", msg: "No Pharmacy Available!", vc: self!)
+                return
+            }
+            self?.dataValuepharmacy = data!
+            self?.tableview.reloadData()
+            // print(patientIDval)
+        }
+    }
     
     //MARK: - API CALL
     func addToCartapiCall()  {
         docType = docType.replacingOccurrences(of: " ", with: "%20")
         let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
         NetWorker.shared.callAPIService(type: APIV2.addLabToCart(patientID: patientID, addressID: 0, labMasterID: selectedvalue, pincode: pincode, labInvestigation: labInvestigation, docId: docId, docType: docType, qty: 1)) { [weak self](data: [addToCart]?, error) in
+            
+            if data?[0].status == "1" {
+                let vc = CartDetails.instantiate()
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
+    //MARK: - API CALL
+    func addToCartPharmacyapiCall()  {
+        docType = docType.replacingOccurrences(of: " ", with: "%20")
+        let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
+        NetWorker.shared.callAPIService(type: APIV2.addPharmacyToCart(patientID: patientID, addressID: 0, labMasterID: selectedvalue, pincode: pincode, labInvestigation: labInvestigation, docId: docId, docType: docType, qty: 1)) { [weak self](data: [addToCart]?, error) in
             
             if data?[0].status == "1" {
                 let vc = CartDetails.instantiate()
@@ -76,26 +115,50 @@ extension LabDetailsVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataValue.count
+        if !isMedicine {
+            return dataValue.count
+        } else {
+            return dataValuepharmacy.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LabDetailsCell", for: indexPath)as! LabDetailsCell
-        cell.labNameLabel.text = dataValue[indexPath.row].labName
-        cell.totalPriceLabel.text = "Total: ₹ \(dataValue[indexPath.row].labTestDtlslist.compactMap{ $0.charges }.reduce(0, +))"
-        cell.tableviewHeight.constant = CGFloat(dataValue[indexPath.row].labTestDtlslist.count * 110)
-        cell.AddToCartBtn.tag = Int(dataValue[indexPath.row].labTestDtlslist[0].labMasterID) ?? 0
-        cell.selectionImageView.image = (selectedvalue == Int(dataValue[indexPath.row].labTestDtlslist[0].labMasterID) ?? 0) ? UIImage(named: "checkedcircle") : UIImage(named: "circle")
-        cell.delegate = self
-        cell.labListData = dataValue[indexPath.row].labTestDtlslist
-        cell.tableview.reloadData()
-        cell.selectionStyle = .none
-        return cell
+        if !isMedicine {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LabDetailsCell", for: indexPath)as! LabDetailsCell
+            cell.labNameLabel.text = dataValue[indexPath.row].labName
+            cell.totalPriceLabel.text = "Total: ₹ \(dataValue[indexPath.row].labTestDtlslist.compactMap{ $0.charges }.reduce(0, +))"
+            cell.tableviewHeight.constant = CGFloat(dataValue[indexPath.row].labTestDtlslist.count * 110)
+            cell.AddToCartBtn.tag = Int(dataValue[indexPath.row].labTestDtlslist[0].labMasterID) ?? 0
+            cell.selectionImageView.image = (selectedvalue == Int(dataValue[indexPath.row].labTestDtlslist[0].labMasterID) ?? 0) ? UIImage(named: "checkedcircle") : UIImage(named: "circle")
+            cell.delegate = self
+            cell.labListData = dataValue[indexPath.row].labTestDtlslist
+            cell.tableview.reloadData()
+            cell.selectionStyle = .none
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PharmacyDetailCell", for: indexPath)as! PharmacyDetailCell
+            cell.labNameLabel.text = dataValuepharmacy[indexPath.row].pharmacyName
+            cell.totalPriceLabel.text = "Total: ₹ \(dataValuepharmacy[indexPath.row].pharmacyDtlsSClist.compactMap{ Int($0.mrp) ?? 0 }.reduce(0, +))"
+            cell.tableviewHeight.constant = CGFloat(dataValuepharmacy[indexPath.row].pharmacyDtlsSClist.count * 170)
+            cell.AddToCartBtn.tag = Int(dataValuepharmacy[indexPath.row].pharmacyDtlsSClist[0].pharamcyMasterID) ?? 0
+            cell.selectionImageView.image = (selectedvalue == Int(dataValuepharmacy[indexPath.row].pharmacyDtlsSClist[0].pharamcyMasterID) ?? 0) ? UIImage(named: "checkedcircle") : UIImage(named: "circle")
+            cell.delegate = self
+            cell.labListData = dataValuepharmacy[indexPath.row].pharmacyDtlsSClist
+            cell.tableview.reloadData()
+            cell.selectionStyle = .none
+            return cell
+        }
     }
 }
 extension LabDetailsVC:LabSelectionDelegate
 {
     func getId(value: Int) {
+        selectedvalue = selectedvalue != value ? value : 0
+        tableview.reloadData()
+    }
+}
+extension LabDetailsVC : PharmacySelectionDelegate {
+    func getIdval(value: Int) {
         selectedvalue = selectedvalue != value ? value : 0
         tableview.reloadData()
     }
@@ -183,5 +246,130 @@ struct addToCart: Codable {
         case labConcernPerson = "LabConcernPerson"
         case pharmacyID = "PharmacyId"
         case pharmacyCoordinator = "PharmacyCoordinator"
+    }
+}
+struct pharmacyListdetails: Codable {
+    let patientName, uhid, docID, opdno: JSONNull?
+    let consultingDoctor, docType, brandName, genericName: JSONNull?
+    let dose, medType, type, unit: JSONNull?
+    let route, docDate, unitText, package: JSONNull?
+    let marketingComp, manufactComp, frequency, duration: JSONNull?
+    let remarks, noOfDays, orderNo, currUser: JSONNull?
+    let usgRemark, hospitalID, mrp, noOfStrip: JSONNull?
+    let finalAmount, stripCost, discountAmount, discountPer: JSONNull?
+    let gstAmount, gstPer, netCost, balance: JSONNull?
+    let pharmacyName: String
+    let pharmacyDtlsSClist: [PharmacyDtlsSClistval]
+
+    enum CodingKeys: String, CodingKey {
+        case patientName = "PatientName"
+        case uhid = "UHID"
+        case docID = "DocId"
+        case opdno = "OPDNO"
+        case consultingDoctor = "ConsultingDoctor"
+        case docType = "DocType"
+        case brandName = "BrandName"
+        case genericName = "GenericName"
+        case dose = "Dose"
+        case medType = "MedType"
+        case type = "Type"
+        case unit = "Unit"
+        case route = "Route"
+        case docDate = "DocDate"
+        case unitText = "UnitText"
+        case package = "Package"
+        case marketingComp = "MarketingComp"
+        case manufactComp = "ManufactComp"
+        case frequency = "Frequency"
+        case duration = "Duration"
+        case remarks = "Remarks"
+        case noOfDays = "NoOfDays"
+        case orderNo = "OrderNo"
+        case currUser = "CurrUser"
+        case usgRemark = "USGRemark"
+        case hospitalID = "HospitalId"
+        case mrp = "MRP"
+        case noOfStrip = "NoOfStrip"
+        case finalAmount = "FinalAmount"
+        case stripCost = "StripCost"
+        case discountAmount = "DiscountAmount"
+        case discountPer = "DiscountPer"
+        case gstAmount = "GSTAmount"
+        case gstPer = "GSTPer"
+        case netCost = "NetCost"
+        case balance = "Balance"
+        case pharmacyName = "PharmacyName"
+        case pharmacyDtlsSClist = "PharmacyDtlsSClist"
+    }
+}
+
+// MARK: - PharmacyDtlsSClist
+struct PharmacyDtlsSClistval: Codable {
+    let docID, docType: String
+    let docDate: JSONNull?
+    let medicineID, brandID, brandName, genericID: String
+    let genericName, doseID, dose, medType: String
+    let type: JSONNull?
+    let unitID, unit: String
+    let route, unitText: JSONNull?
+    let package: String
+    let marketingComp, manufactComp, frequency, duration: JSONNull?
+    let remarks, noOfDays, orderNo, currUser: JSONNull?
+    let usgRemark, hospitalID: JSONNull?
+    let mrp: String
+    let noOfStrip, finalAmount, stripCost: JSONNull?
+    let discountAmount, discountPer, gstAmount, gstPer: String
+    let netCost: String
+    let isPay, balance: JSONNull?
+    let pharamcyMasterID, pharmacyName, isPrescription, prescriptionStatus: String
+    let manufactureID, manufactureCompany: String
+    let drugImageURL: String
+
+    enum CodingKeys: String, CodingKey {
+        case docID = "DocId"
+        case docType = "DocType"
+        case docDate = "DocDate"
+        case medicineID = "MedicineId"
+        case brandID = "BrandId"
+        case brandName = "BrandName"
+        case genericID = "GenericId"
+        case genericName = "GenericName"
+        case doseID = "DoseId"
+        case dose = "Dose"
+        case medType = "MedType"
+        case type = "Type"
+        case unitID = "UnitId"
+        case unit = "Unit"
+        case route = "Route"
+        case unitText = "UnitText"
+        case package = "Package"
+        case marketingComp = "MarketingComp"
+        case manufactComp = "ManufactComp"
+        case frequency = "Frequency"
+        case duration = "Duration"
+        case remarks = "Remarks"
+        case noOfDays = "NoOfDays"
+        case orderNo = "OrderNo"
+        case currUser = "CurrUser"
+        case usgRemark = "USGRemark"
+        case hospitalID = "HospitalId"
+        case mrp = "MRP"
+        case noOfStrip = "NoOfStrip"
+        case finalAmount = "FinalAmount"
+        case stripCost = "StripCost"
+        case discountAmount = "DiscountAmount"
+        case discountPer = "DiscountPer"
+        case gstAmount = "GSTAmount"
+        case gstPer = "GSTPer"
+        case netCost = "NetCost"
+        case isPay = "IsPay"
+        case balance = "Balance"
+        case pharamcyMasterID = "PharamcyMasterId"
+        case pharmacyName = "PharmacyName"
+        case isPrescription = "IsPrescription"
+        case prescriptionStatus = "PrescriptionStatus"
+        case manufactureID = "ManufactureId"
+        case manufactureCompany = "ManufactureCompany"
+        case drugImageURL = "DrugImageURL"
     }
 }

@@ -19,6 +19,8 @@
 		E02910E7282FD7C8003AB67D /* ConsultDoctorDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E02910E0282FD7C8003AB67D /* ConsultDoctorDetailsViewController.xib */; };
 		E03DD67027F9787600BFB975 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03DD66F27F9787600BFB975 /* HomeVC.swift */; };
 		E03DD67227F994E100BFB975 /* MainTabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03DD67127F994E100BFB975 /* MainTabbarVC.swift */; };
+		E045B23828368CBB00EB77C6 /* PrescriptionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E045B23628368CBB00EB77C6 /* PrescriptionListVC.swift */; };
+		E045B23928368CBB00EB77C6 /* PrescriptionListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E045B23728368CBB00EB77C6 /* PrescriptionListVC.xib */; };
 		E04853832826319800B16DE2 /* MedicineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04853812826319800B16DE2 /* MedicineVC.swift */; };
 		E04853842826319800B16DE2 /* MedicineVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E04853822826319800B16DE2 /* MedicineVC.xib */; };
 		E0485387282631B200B16DE2 /* MedicineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0485385282631B200B16DE2 /* MedicineCell.swift */; };
@@ -45,6 +47,12 @@
 		E0B164A4282E4472006E8287 /* DoctorAvailableListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16498282E4472006E8287 /* DoctorAvailableListTableViewCell.swift */; };
 		E0B164A5282E4472006E8287 /* DoctorAvailableListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16499282E4472006E8287 /* DoctorAvailableListViewController.swift */; };
 		E0B164A6282E4472006E8287 /* DoctorAvailableListTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B1649A282E4472006E8287 /* DoctorAvailableListTableViewManager.swift */; };
+		E0B35A2D28375E94002A234D /* PharmacyDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B35A2B28375E94002A234D /* PharmacyDetailsVC.swift */; };
+		E0B35A2E28375E94002A234D /* PharmacyDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B35A2C28375E94002A234D /* PharmacyDetailsVC.xib */; };
+		E0B35A3228375EDA002A234D /* PharmacyDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B35A3028375EDA002A234D /* PharmacyDetailCell.swift */; };
+		E0B35A3328375EDA002A234D /* PharmacyDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B35A3128375EDA002A234D /* PharmacyDetailCell.xib */; };
+		E0B35A3628375EEA002A234D /* PharmacyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B35A3428375EEA002A234D /* PharmacyCell.swift */; };
+		E0B35A3728375EEA002A234D /* PharmacyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B35A3528375EEA002A234D /* PharmacyCell.xib */; };
 		E0B9BF912811BD23001A58E8 /* XIBed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF012811BD22001A58E8 /* XIBed.swift */; };
 		E0B9BF922811BD23001A58E8 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF032811BD22001A58E8 /* Environment.swift */; };
 		E0B9BF932811BD23001A58E8 /* raleway_extralightitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF062811BD22001A58E8 /* raleway_extralightitalic.ttf */; };
@@ -284,6 +292,8 @@
 		E02910E0282FD7C8003AB67D /* ConsultDoctorDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsultDoctorDetailsViewController.xib; sourceTree = "<group>"; };
 		E03DD66F27F9787600BFB975 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		E03DD67127F994E100BFB975 /* MainTabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarVC.swift; sourceTree = "<group>"; };
+		E045B23628368CBB00EB77C6 /* PrescriptionListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrescriptionListVC.swift; sourceTree = "<group>"; };
+		E045B23728368CBB00EB77C6 /* PrescriptionListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrescriptionListVC.xib; sourceTree = "<group>"; };
 		E04853812826319800B16DE2 /* MedicineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineVC.swift; sourceTree = "<group>"; };
 		E04853822826319800B16DE2 /* MedicineVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineVC.xib; sourceTree = "<group>"; };
 		E0485385282631B200B16DE2 /* MedicineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineCell.swift; sourceTree = "<group>"; };
@@ -312,6 +322,12 @@
 		E0B16498282E4472006E8287 /* DoctorAvailableListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorAvailableListTableViewCell.swift; sourceTree = "<group>"; };
 		E0B16499282E4472006E8287 /* DoctorAvailableListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorAvailableListViewController.swift; sourceTree = "<group>"; };
 		E0B1649A282E4472006E8287 /* DoctorAvailableListTableViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorAvailableListTableViewManager.swift; sourceTree = "<group>"; };
+		E0B35A2B28375E94002A234D /* PharmacyDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyDetailsVC.swift; sourceTree = "<group>"; };
+		E0B35A2C28375E94002A234D /* PharmacyDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PharmacyDetailsVC.xib; sourceTree = "<group>"; };
+		E0B35A3028375EDA002A234D /* PharmacyDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyDetailCell.swift; sourceTree = "<group>"; };
+		E0B35A3128375EDA002A234D /* PharmacyDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PharmacyDetailCell.xib; sourceTree = "<group>"; };
+		E0B35A3428375EEA002A234D /* PharmacyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyCell.swift; sourceTree = "<group>"; };
+		E0B35A3528375EEA002A234D /* PharmacyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PharmacyCell.xib; sourceTree = "<group>"; };
 		E0B9BF012811BD22001A58E8 /* XIBed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XIBed.swift; sourceTree = "<group>"; };
 		E0B9BF032811BD22001A58E8 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		E0B9BF062811BD22001A58E8 /* raleway_extralightitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_extralightitalic.ttf; sourceTree = "<group>"; };
@@ -609,6 +625,8 @@
 				E049CA70282C350B0022FB63 /* BookMedicineCell.xib */,
 				E0485385282631B200B16DE2 /* MedicineCell.swift */,
 				E0485386282631B200B16DE2 /* MedicineCell.xib */,
+				E045B23628368CBB00EB77C6 /* PrescriptionListVC.swift */,
+				E045B23728368CBB00EB77C6 /* PrescriptionListVC.xib */,
 			);
 			path = Medicines;
 			sourceTree = "<group>";
@@ -647,6 +665,7 @@
 		E066993127F47ADA009EE3F0 /* HealthCard */ = {
 			isa = PBXGroup;
 			children = (
+				E0B35A2F28375E9D002A234D /* PharmacyDetails */,
 				E056E318282EC90E00F056DF /* LabDetails */,
 				E04853802826316700B16DE2 /* Medicines */,
 				E0D7CE6E281E8C1B001B4738 /* LabTest */,
@@ -703,6 +722,19 @@
 				E0B16498282E4472006E8287 /* DoctorAvailableListTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		E0B35A2F28375E9D002A234D /* PharmacyDetails */ = {
+			isa = PBXGroup;
+			children = (
+				E0B35A2B28375E94002A234D /* PharmacyDetailsVC.swift */,
+				E0B35A2C28375E94002A234D /* PharmacyDetailsVC.xib */,
+				E0B35A3028375EDA002A234D /* PharmacyDetailCell.swift */,
+				E0B35A3128375EDA002A234D /* PharmacyDetailCell.xib */,
+				E0B35A3428375EEA002A234D /* PharmacyCell.swift */,
+				E0B35A3528375EEA002A234D /* PharmacyCell.xib */,
+			);
+			path = PharmacyDetails;
 			sourceTree = "<group>";
 		};
 		E0B9BF002811BD22001A58E8 /* Supportings */ = {
@@ -1294,6 +1326,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E045B23928368CBB00EB77C6 /* PrescriptionListVC.xib in Resources */,
 				E0D7CE58281E78BA001B4738 /* ConsultationMainViewController.xib in Resources */,
 				E0B9BFCD2811BD23001A58E8 /* Poppins-Black.ttf in Resources */,
 				E0CC6486281438380011A165 /* InsuranceVC.xib in Resources */,
@@ -1335,6 +1368,7 @@
 				E0B9BFAE2811BD23001A58E8 /* lato_heavy.ttf in Resources */,
 				E0485388282631B200B16DE2 /* MedicineCell.xib in Resources */,
 				E0D7CE25281E7811001B4738 /* SliderCollectionViewCell.xib in Resources */,
+				E0B35A2E28375E94002A234D /* PharmacyDetailsVC.xib in Resources */,
 				E0B9BFA32811BD23001A58E8 /* poppins_regular.ttf in Resources */,
 				E0B9BFC52811BD23001A58E8 /* Poppins-SemiBoldItalic.ttf in Resources */,
 				E0CC6485281438380011A165 /* ProfileVC.xib in Resources */,
@@ -1364,6 +1398,7 @@
 				E066994727F47CC6009EE3F0 /* Login.storyboard in Resources */,
 				E0CC64A628156CD60011A165 /* CustomSideMenuTableViewCell.xib in Resources */,
 				E0CC6481281438380011A165 /* RelationshipTableViewCell.xib in Resources */,
+				E0B35A3328375EDA002A234D /* PharmacyDetailCell.xib in Resources */,
 				E0CC6487281438380011A165 /* RelationVC.xib in Resources */,
 				E0B9BFA52811BD23001A58E8 /* times_new_roman.ttf in Resources */,
 				E0B9BFAA2811BD23001A58E8 /* poppins_thin.ttf in Resources */,
@@ -1419,6 +1454,7 @@
 				E072953627F853610083357A /* Home.storyboard in Resources */,
 				E0CC6480281438380011A165 /* EditProfileVC.xib in Resources */,
 				E0B9BFC82811BD23001A58E8 /* Poppins-BlackItalic.ttf in Resources */,
+				E0B35A3728375EEA002A234D /* PharmacyCell.xib in Resources */,
 				E0B9BFA72811BD23001A58E8 /* poppins_semi_bold.ttf in Resources */,
 				E0E74C19281F9FF6001564F9 /* AddNewAddressCell.xib in Resources */,
 				E0B9BFB92811BD23001A58E8 /* raleway_black.ttf in Resources */,
@@ -1500,6 +1536,7 @@
 				E0D7CE17281E7811001B4738 /* SliderCollectionViewManager.swift in Sources */,
 				E0CC647E281438380011A165 /* DocumentsVC.swift in Sources */,
 				E0E74BF1281F9FF6001564F9 /* MyConsultationCell.swift in Sources */,
+				E0B35A3628375EEA002A234D /* PharmacyCell.swift in Sources */,
 				E0E74BF8281F9FF6001564F9 /* prescriptionDetailsCell.swift in Sources */,
 				E0D7CE7A281E8C56001B4738 /* LabTestCell.swift in Sources */,
 				E0CC649A281442110011A165 /* OrderTrackVC.swift in Sources */,
@@ -1526,6 +1563,7 @@
 				E0D7CE5A281E78BA001B4738 /* SymptomsInsideTableViewCell.swift in Sources */,
 				E056E31B282EC9A200F056DF /* LabDetailsCell.swift in Sources */,
 				E0B164A4282E4472006E8287 /* DoctorAvailableListTableViewCell.swift in Sources */,
+				E0B35A2D28375E94002A234D /* PharmacyDetailsVC.swift in Sources */,
 				E03DD67227F994E100BFB975 /* MainTabbarVC.swift in Sources */,
 				E0D7CE5E281E78BA001B4738 /* SymptomsInsideTableViewManager.swift in Sources */,
 				E0B9BFD52811BD23001A58E8 /* UIColor.swift in Sources */,
@@ -1560,6 +1598,7 @@
 				E0CC6495281439070011A165 /* CAPSPageMenu+UIConfiguration.swift in Sources */,
 				E0B9C0082811BD23001A58E8 /* PannableViewController.swift in Sources */,
 				E0D7CE2E281E788B001B4738 /* DoctorDetailsBySpecializeStruct.swift in Sources */,
+				E045B23828368CBB00EB77C6 /* PrescriptionListVC.swift in Sources */,
 				E0E74BFF281F9FF6001564F9 /* LabTestReceiptVc.swift in Sources */,
 				E0E74BF2281F9FF6001564F9 /* MyConsultation.swift in Sources */,
 				E0B164A5282E4472006E8287 /* DoctorAvailableListViewController.swift in Sources */,
@@ -1601,6 +1640,7 @@
 				E02910E5282FD7C8003AB67D /* timingShiftHeaderCell.swift in Sources */,
 				E0B9BFD82811BD23001A58E8 /* UIButton.swift in Sources */,
 				E0CC6484281438380011A165 /* EditProfileVC.swift in Sources */,
+				E0B35A3228375EDA002A234D /* PharmacyDetailCell.swift in Sources */,
 				E0CC6496281439070011A165 /* CAPSPageMenuConfiguration.swift in Sources */,
 				E0D7CE6C281E797E001B4738 /* CustomTabBarViewController.swift in Sources */,
 				E0D7CE29281E7811001B4738 /* LookingForConsultationInSlider1CollectionViewManager.swift in Sources */,

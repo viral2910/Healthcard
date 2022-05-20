@@ -15,7 +15,10 @@ class MedicineVC: UIViewController {
     @IBOutlet weak var searchBtn: UIButton!
     @IBOutlet weak var BtnLineRef: UIView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-    var selectedID : [Int] = []
+    var selectedDocID : [Int] = []
+    var LabInvestigationID : [Int] = []
+    var docTypeList : [String] = []
+    var prescriptionList : [String] = []
     var storyData : [pharmacyList] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +29,6 @@ class MedicineVC: UIViewController {
         BtnLineRef.layer.borderWidth = 2
         tableview.register(UINib(nibName: "BookMedicineCell", bundle: nil), forCellReuseIdentifier: "BookMedicineCell")
         ApiCall()
-
         // Do any additional setup after loading the view.
     }
     @IBAction func backVC(_ sender: Any) {
@@ -36,7 +38,9 @@ class MedicineVC: UIViewController {
     @IBAction func searchBtnAction(_ sender: Any) {
     }
     @IBAction func proceedBtnAction(_ sender: Any) {
+        proceedApiCall()
     }
+    
 }
 
 
@@ -49,6 +53,71 @@ extension MedicineVC {
             self?.storyData = data!
             self?.tableview.reloadData()
             
+        }
+    }
+    
+    //MARK: - API CALL
+    func proceedApiCall() {
+        let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
+        NetWorker.shared.callAPIService(type: APIV2.myCartList(patientID: patientID)) { [weak self](data: [cartDetails]?, error) in
+            if data?.count ?? 0 > 0 {
+                if data?[0].cartDtlslist.count ?? 0 > 0 {
+                    if (self?.prescriptionList.contains("True") ?? false) {
+                        let vc = PrescriptionListVC.instantiate()
+                        vc.pincode = "\(data?[0].cartDtlslist[0].deliveryPincode ?? 0)"
+                        vc.docId = (self?.LabInvestigationID.map{String($0)})?.joined(separator: ",") ?? ""
+                        vc.labInvestigation = (self?.selectedDocID.map{String($0)})?.joined(separator: ",") ?? ""
+                        vc.docType = self?.docTypeList.joined(separator: ",") ?? ""
+                        vc.addressReq = false
+                        self?.navigationController?.pushViewController(vc, animated: true)
+                    } else {
+                        let vc = LabDetailsVC.instantiate()
+                        vc.pincode = "\(data?[0].cartDtlslist[0].deliveryPincode ?? 0)"
+                        vc.docId = (self?.LabInvestigationID.map{String($0)})?.joined(separator: ",") ?? ""
+                        vc.labInvestigation = (self?.selectedDocID.map{String($0)})?.joined(separator: ",") ?? ""
+                        vc.docType = self?.docTypeList.joined(separator: ",") ?? ""
+                        vc.presciptionID = ""
+                        vc.isMedicine = true
+                        self?.navigationController?.pushViewController(vc, animated: true)
+                    }
+                } else {
+                    if (self?.prescriptionList.contains("True") ?? false) {
+                        let vc = PrescriptionListVC.instantiate()
+                        vc.pincode = "\(data?[0].cartDtlslist[0].deliveryPincode ?? 0)"
+                        vc.docId = (self?.LabInvestigationID.map{String($0)})?.joined(separator: ",") ?? ""
+                        vc.labInvestigation = (self?.selectedDocID.map{String($0)})?.joined(separator: ",") ?? ""
+                        vc.docType = self?.docTypeList.joined(separator: ",") ?? ""
+                        vc.addressReq = true
+                        self?.navigationController?.pushViewController(vc, animated: true)
+                    } else {
+                        let vc = AddressDetailsVC.instantiate()
+                        vc.addressSelection = true
+                        vc.docId = (self?.LabInvestigationID.map{String($0)})?.joined(separator: ",") ?? ""
+                        vc.labInvestigation = (self?.selectedDocID.map{String($0)})?.joined(separator: ",") ?? ""
+                        vc.docType = self?.docTypeList.joined(separator: ",") ?? ""
+                        vc.isMedicine = true
+                        self?.navigationController?.pushViewController(vc, animated: true)
+                    }
+                }
+            } else {
+                if (self?.prescriptionList.contains("True") ?? false) {
+                    let vc = PrescriptionListVC.instantiate()
+                    vc.pincode = "\(data?[0].cartDtlslist[0].deliveryPincode ?? 0)"
+                    vc.docId = (self?.LabInvestigationID.map{String($0)})?.joined(separator: ",") ?? ""
+                    vc.labInvestigation = (self?.selectedDocID.map{String($0)})?.joined(separator: ",") ?? ""
+                    vc.docType = self?.docTypeList.joined(separator: ",") ?? ""
+                    vc.addressReq = true
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                } else {
+                    let vc = AddressDetailsVC.instantiate()
+                    vc.addressSelection = true
+                    vc.docId = (self?.LabInvestigationID.map{String($0)})?.joined(separator: ",") ?? ""
+                    vc.labInvestigation = (self?.selectedDocID.map{String($0)})?.joined(separator: ",") ?? ""
+                    vc.docType = self?.docTypeList.joined(separator: ",") ?? ""
+                    vc.isMedicine = true
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                }
+            }
         }
     }
     
@@ -67,6 +136,10 @@ extension MedicineVC : UITableViewDataSource ,UITableViewDelegate{
             cell.labListData = storyData[indexPath.row].pharmacyDtlsSClist
             cell.delegate = self
             cell.tableview.reloadData()
+            cell.selectedID = selectedDocID
+            cell.LabID = LabInvestigationID
+            cell.LabDocType = docTypeList
+            cell.contentView.tag = indexPath.row
             return cell
         }
     
@@ -75,13 +148,27 @@ extension MedicineVC : UITableViewDataSource ,UITableViewDelegate{
     }
 }
 extension MedicineVC : BookMedicineDelegate {
-    func getTestId(value: [Int]) {
-        selectedID = value
-        if value.count > 0 {
+    func getTestId(DocId: Int,LabInvest:Int,docType:String,prescriptionReq:String,indexPathRow:Int) {
+        
+        if selectedDocID.contains(DocId) && LabInvestigationID.contains(LabInvest) {
+            if let index = LabInvestigationID.firstIndex(of: LabInvest) {
+                selectedDocID.remove(at: index)
+                LabInvestigationID.remove(at: index)
+                docTypeList.remove(at: index)
+                prescriptionList.remove(at: index)
+            }
+        } else {
+            selectedDocID.append(DocId)
+            LabInvestigationID.append(LabInvest)
+            docTypeList.append(docType)
+            prescriptionList.append(prescriptionReq)
+        }
+        if selectedDocID.count > 0 {
             bottomConstraint.constant = 60
         } else {
-            bottomConstraint.constant = 0
+            bottomConstraint.constant = -5
         }
+        tableview.reloadRows(at: [IndexPath(row: indexPathRow, section: 0)], with: .none)
     }
 }
 

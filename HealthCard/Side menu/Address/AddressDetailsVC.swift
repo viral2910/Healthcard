@@ -19,6 +19,8 @@ class AddressDetailsVC: UIViewController, XIBed {
     var labInvestigation = ""
     var docId = ""
     var docType = ""
+    var presciptionID = ""
+    var isMedicine = false
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableCell()
@@ -50,6 +52,8 @@ class AddressDetailsVC: UIViewController, XIBed {
         vc.pincode = pincode
         vc.docType = docType
         vc.docId = docId
+        vc.presciptionID = presciptionID
+        vc.isMedicine = isMedicine
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

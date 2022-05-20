@@ -67,8 +67,8 @@ extension SideMenuTableViewManager: UITableViewDataSource {
             cell.lblRef.text = title
         
 
-//        let image = iconData[indexPath.row]
-//        cell.imgViewRef.image = UIImage(named: image)
+        let image = iconData[indexPath.row]
+        cell.imgViewRef.image = UIImage(named: image)
 //        
         
 //        cell.sendRequestBtnRef.addTarget(self, action: #selector(sendRequestBtnTap(sender:)), for: .touchUpInside)

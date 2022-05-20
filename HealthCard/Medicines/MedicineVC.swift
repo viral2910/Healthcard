@@ -22,13 +22,13 @@ class MedicineVC: UIViewController {
     var storyData : [pharmacyList] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        ApiCall()
         self.navigationController?.navigationBar.isHidden = false
         tableview.dataSource = self
         tableview.delegate = self
         BtnLineRef.layer.borderColor = UIColor.init(hexString: "007AB8").cgColor
         BtnLineRef.layer.borderWidth = 2
         tableview.register(UINib(nibName: "BookMedicineCell", bundle: nil), forCellReuseIdentifier: "BookMedicineCell")
-        ApiCall()
         // Do any additional setup after loading the view.
     }
     @IBAction func backVC(_ sender: Any) {
@@ -39,6 +39,10 @@ class MedicineVC: UIViewController {
     }
     @IBAction func proceedBtnAction(_ sender: Any) {
         proceedApiCall()
+    }
+    @IBAction func cartAction(_ sender: Any) {
+        let vc = CartDetails.instantiate()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

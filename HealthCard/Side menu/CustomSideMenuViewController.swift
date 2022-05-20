@@ -18,7 +18,7 @@ class CustomSideMenuViewController: UIViewController, XIBed , PushViewController
     private lazy var sideMenuTableViewManager = { SideMenuTableViewManager(tableVIew: tvRef, tableViewheight: tvHeightRef) }()
     
     var titleArray = ["My Profile","Basic History","My Prescription","Finance","My Orders","My Addresses","My Consultations","My Cart"]
-    var imageArray = ["Icon yellowInfo","Icon yellowHigh-five","Icon yellowLoupe","Icon yellowCalendar","Icon yellowCalendar","Icon yellowLoupe","",""]
+    var imageArray = ["My Profile","Basic History","My Prescription","Finance","My Orders","My Address","My Consultation","My Cart"]
 
     weak var pushDelegate: PushViewControllerDelegate?
     
@@ -37,12 +37,9 @@ class CustomSideMenuViewController: UIViewController, XIBed , PushViewController
     //MARK:- Setup
     extension CustomSideMenuViewController {
         func setupUI() {
-            
             self.navigationController?.isNavigationBarHidden = true
-            
             sideMenuTableViewManager.start(data: titleArray, iconData: imageArray)
             sideMenuTableViewManager.pushDelegate = self
-                 
             nameLblRef.type = .continuous
             nameLblRef.speed = .duration(4)
             nameLblRef.animationCurve = .easeInOut

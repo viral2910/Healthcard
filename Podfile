@@ -16,6 +16,7 @@ target 'HealthCard' do
   pod 'MarqueeLabel'
   pod 'FSCalendar'
   pod 'razorpay-pod', '~> 1.1.1'
+  pod 'GoogleMaps'
   # Pods for HealthCard
 
 end

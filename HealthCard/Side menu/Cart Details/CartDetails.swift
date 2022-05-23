@@ -32,7 +32,8 @@ class CartDetails: UIViewController,XIBed {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func payBtn(_ sender: UIButton) {
-        
+        let vc = SelectLocationVC.instantiate()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

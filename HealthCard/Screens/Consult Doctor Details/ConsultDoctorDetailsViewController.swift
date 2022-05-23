@@ -345,8 +345,6 @@ extension ConsultDoctorDetailsViewController: RazorpayPaymentCompletionProtocol{
         ]
         razorpay.open(options)
     }
-    
-    
 }
 
 //MARK: - Delegate

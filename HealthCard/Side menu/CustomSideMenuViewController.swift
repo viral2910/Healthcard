@@ -18,7 +18,7 @@ class CustomSideMenuViewController: UIViewController, XIBed , PushViewController
     private lazy var sideMenuTableViewManager = { SideMenuTableViewManager(tableVIew: tvRef, tableViewheight: tvHeightRef) }()
     
     var titleArray = ["My Profile","Basic History","My Prescription","Finance","My Orders","My Addresses","My Consultations","My Cart"]
-    var imageArray = ["My Profile","Basic History","My Prescription","Finance","My Orders","My Address","My Consultation","My Cart"]
+    var imageArray = ["My Profile","Basic history","My Prescription","Finance","My Orders","My Address","Myconsultation","My Cart"]
 
     weak var pushDelegate: PushViewControllerDelegate?
     

@@ -7,6 +7,12 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>HI</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>HI</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>HI</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

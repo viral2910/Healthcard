@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class HomeViewController: UIViewController , XIBed, PushViewControllerDelegate {
+class HomeViewController: UIViewController , XIBed, PushViewControllerDelegate ,CLLocationManagerDelegate{
 
     ///Nav Bar
     @IBOutlet weak var sideMenuBtnRef: UIButton!
@@ -15,6 +16,7 @@ class HomeViewController: UIViewController , XIBed, PushViewControllerDelegate {
     @IBOutlet weak var navTitleLblRef: UILabel!
     @IBOutlet weak var cartBtnRef: UIButton!
 
+    @IBOutlet weak var currentlocationValue: UILabel!
     @IBOutlet weak var sliderBanner1CvRef: UICollectionView!
     @IBOutlet weak var userNameLblRef: UILabel!
     @IBOutlet weak var currentLocationBtnRef: UIButton!
@@ -86,7 +88,7 @@ class HomeViewController: UIViewController , XIBed, PushViewControllerDelegate {
     private lazy var consultationCategoryCollectionViewManager = { ConsultationCategoryCollectionViewManager() }()
 
     weak var pushDelegate: PushViewControllerDelegate?
-    
+    let locationManager = CLLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -98,10 +100,61 @@ class HomeViewController: UIViewController , XIBed, PushViewControllerDelegate {
         super.viewWillAppear(animated)
         GetDetailsApiCall()
         self.navigationController?.isNavigationBarHidden = true
+        self.locationManager.requestAlwaysAuthorization()
+
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
         
     }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+//        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        getAddressFromLatLon(pdblLatitude: "\(locValue.latitude)", withLongitude: "\(locValue.longitude)")
+    }
 
-    
+    func getAddressFromLatLon(pdblLatitude: String, withLongitude pdblLongitude: String) {
+            var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
+            let lat: Double = Double("\(pdblLatitude)")!
+            //21.228124
+            let lon: Double = Double("\(pdblLongitude)")!
+            //72.833770
+            let ceo: CLGeocoder = CLGeocoder()
+            center.latitude = lat
+            center.longitude = lon
+
+            let loc: CLLocation = CLLocation(latitude:center.latitude, longitude: center.longitude)
+
+
+            ceo.reverseGeocodeLocation(loc, completionHandler:
+                {(placemarks, error) in
+                    if (error != nil)
+                    {
+                        print("reverse geodcode fail: \(error!.localizedDescription)")
+                    }
+                    let pm = placemarks! as [CLPlacemark]
+
+                    if pm.count > 0 {
+                        let pm = placemarks![0]
+                        print(pm.country)
+                        print(pm.locality)
+                        print(pm.subLocality)
+                        print(pm.thoroughfare)
+                        print(pm.postalCode)
+                        print(pm.subThoroughfare)
+                        var addressString : String = ""
+                        if pm.thoroughfare != nil {
+                            addressString = addressString + pm.thoroughfare!
+                        }
+                        self.currentlocationValue.text = addressString
+                  }
+            })
+        }
     func GetDetailsApiCall(){
         let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "")
         NetWorker.shared.callAPIService(type: APIV2.PatientGetById(patientId: patientID ?? 0)) { (data:WelcomePatientDetails?, error) in

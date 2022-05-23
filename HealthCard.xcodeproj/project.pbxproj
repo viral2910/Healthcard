@@ -53,6 +53,8 @@
 		E0B35A3328375EDA002A234D /* PharmacyDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B35A3128375EDA002A234D /* PharmacyDetailCell.xib */; };
 		E0B35A3628375EEA002A234D /* PharmacyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B35A3428375EEA002A234D /* PharmacyCell.swift */; };
 		E0B35A3728375EEA002A234D /* PharmacyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B35A3528375EEA002A234D /* PharmacyCell.xib */; };
+		E0B7186B283BFB31001D96DD /* SelectLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B71869283BFB31001D96DD /* SelectLocationVC.swift */; };
+		E0B7186C283BFB31001D96DD /* SelectLocationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B7186A283BFB31001D96DD /* SelectLocationVC.xib */; };
 		E0B9BF912811BD23001A58E8 /* XIBed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF012811BD22001A58E8 /* XIBed.swift */; };
 		E0B9BF922811BD23001A58E8 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF032811BD22001A58E8 /* Environment.swift */; };
 		E0B9BF932811BD23001A58E8 /* raleway_extralightitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF062811BD22001A58E8 /* raleway_extralightitalic.ttf */; };
@@ -328,6 +330,8 @@
 		E0B35A3128375EDA002A234D /* PharmacyDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PharmacyDetailCell.xib; sourceTree = "<group>"; };
 		E0B35A3428375EEA002A234D /* PharmacyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyCell.swift; sourceTree = "<group>"; };
 		E0B35A3528375EEA002A234D /* PharmacyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PharmacyCell.xib; sourceTree = "<group>"; };
+		E0B71869283BFB31001D96DD /* SelectLocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocationVC.swift; sourceTree = "<group>"; };
+		E0B7186A283BFB31001D96DD /* SelectLocationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectLocationVC.xib; sourceTree = "<group>"; };
 		E0B9BF012811BD22001A58E8 /* XIBed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XIBed.swift; sourceTree = "<group>"; };
 		E0B9BF032811BD22001A58E8 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		E0B9BF062811BD22001A58E8 /* raleway_extralightitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_extralightitalic.ttf; sourceTree = "<group>"; };
@@ -665,6 +669,7 @@
 		E066993127F47ADA009EE3F0 /* HealthCard */ = {
 			isa = PBXGroup;
 			children = (
+				E0B71868283BFB0C001D96DD /* LocationSelection */,
 				E0B35A2F28375E9D002A234D /* PharmacyDetails */,
 				E056E318282EC90E00F056DF /* LabDetails */,
 				E04853802826316700B16DE2 /* Medicines */,
@@ -735,6 +740,15 @@
 				E0B35A3528375EEA002A234D /* PharmacyCell.xib */,
 			);
 			path = PharmacyDetails;
+			sourceTree = "<group>";
+		};
+		E0B71868283BFB0C001D96DD /* LocationSelection */ = {
+			isa = PBXGroup;
+			children = (
+				E0B71869283BFB31001D96DD /* SelectLocationVC.swift */,
+				E0B7186A283BFB31001D96DD /* SelectLocationVC.xib */,
+			);
+			path = LocationSelection;
 			sourceTree = "<group>";
 		};
 		E0B9BF002811BD22001A58E8 /* Supportings */ = {
@@ -1278,6 +1292,7 @@
 				E066992C27F47ADA009EE3F0 /* Frameworks */,
 				E066992D27F47ADA009EE3F0 /* Resources */,
 				454103374640BCFAC18D2F91 /* [CP] Embed Pods Frameworks */,
+				C54681F0C104F7B62CCEA15B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1358,6 +1373,7 @@
 				E0E74C16281F9FF6001564F9 /* AddressDetailsVC.xib in Resources */,
 				E0B9BFAD2811BD23001A58E8 /* raleway_extrabolditalic.ttf in Resources */,
 				E0B9BFBF2811BD23001A58E8 /* Poppins-ExtraLight.ttf in Resources */,
+				E0B7186C283BFB31001D96DD /* SelectLocationVC.xib in Resources */,
 				E0D7CE75281E8C56001B4738 /* LabTestCell.xib in Resources */,
 				E0B9BFD02811BD23001A58E8 /* Poppins-Italic.ttf in Resources */,
 				E0B9BF9B2811BD23001A58E8 /* lato_thin_italic.ttf in Resources */,
@@ -1509,6 +1525,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HealthCard/Pods-HealthCard-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C54681F0C104F7B62CCEA15B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HealthCard/Pods-HealthCard-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HealthCard/Pods-HealthCard-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HealthCard/Pods-HealthCard-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1591,6 +1624,7 @@
 				E0E74C09281F9FF6001564F9 /* AdvanceBillingPaymentVC.swift in Sources */,
 				E0D7CE20281E7811001B4738 /* CategoryCollectionViewCell.swift in Sources */,
 				E0CC6491281439070011A165 /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */,
+				E0B7186B283BFB31001D96DD /* SelectLocationVC.swift in Sources */,
 				E0CC64A428156CD60011A165 /* CustomSideMenuViewController.swift in Sources */,
 				E0E74C05281F9FF6001564F9 /* ProcedureBillingVC.swift in Sources */,
 				E0B9BFD42811BD23001A58E8 /* Data.swift in Sources */,

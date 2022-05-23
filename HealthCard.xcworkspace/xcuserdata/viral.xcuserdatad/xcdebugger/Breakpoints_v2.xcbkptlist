@@ -30,8 +30,8 @@
             filePath = "HealthCard/Side menu/Cart Details/CartDetails.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "apiCall()"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "HealthCard/Side menu/Cart Details/CartDetails.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "updateQty(id:qty:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -71,16 +71,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "63B8A089-28E7-461A-AB86-E37BC3EE376F"
+            uuid = "A9523BF0-9935-4636-A9E4-36641E7F6353"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HealthCard/Side menu/Cart Details/CartDetailsCell.swift"
+            filePath = "HealthCard/Screens/HomeVC/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "getAddressFromLatLon(pdblLatitude:withLongitude:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

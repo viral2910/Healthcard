@@ -142,6 +142,11 @@
 		E0B9C00A2811BD23001A58E8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF8B2811BD23001A58E8 /* API.swift */; };
 		E0B9C00B2811BD23001A58E8 /* CustomAlertPopupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF8E2811BD23001A58E8 /* CustomAlertPopupVC.xib */; };
 		E0B9C00C2811BD23001A58E8 /* CustomAlertPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF8F2811BD23001A58E8 /* CustomAlertPopupVC.swift */; };
+		E0BB4CFB283CCD9100F30A7B /* PrescriptionListCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BB4CF5283CCD9100F30A7B /* PrescriptionListCollectionViewManager.swift */; };
+		E0BB4CFC283CCD9100F30A7B /* CustomPrescriptionListPopupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0BB4CF6283CCD9100F30A7B /* CustomPrescriptionListPopupVC.xib */; };
+		E0BB4CFD283CCD9100F30A7B /* CustomPrescriptionListPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BB4CF7283CCD9100F30A7B /* CustomPrescriptionListPopupVC.swift */; };
+		E0BB4CFE283CCD9100F30A7B /* CustomSelectPickImagePopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BB4CF9283CCD9100F30A7B /* CustomSelectPickImagePopUpVC.swift */; };
+		E0BB4CFF283CCD9100F30A7B /* CustomSelectPickImagePopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0BB4CFA283CCD9100F30A7B /* CustomSelectPickImagePopUpVC.xib */; };
 		E0C447F027F494E300BE6E2D /* SingInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C447EF27F494E300BE6E2D /* SingInVC.swift */; };
 		E0C447F227F4959E00BE6E2D /* SingUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C447F127F4959E00BE6E2D /* SingUpVC.swift */; };
 		E0CC6478281438380011A165 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC6468281438380011A165 /* ProfileVC.swift */; };
@@ -419,6 +424,11 @@
 		E0B9BF8B2811BD23001A58E8 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		E0B9BF8E2811BD23001A58E8 /* CustomAlertPopupVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomAlertPopupVC.xib; sourceTree = "<group>"; };
 		E0B9BF8F2811BD23001A58E8 /* CustomAlertPopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlertPopupVC.swift; sourceTree = "<group>"; };
+		E0BB4CF5283CCD9100F30A7B /* PrescriptionListCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrescriptionListCollectionViewManager.swift; sourceTree = "<group>"; };
+		E0BB4CF6283CCD9100F30A7B /* CustomPrescriptionListPopupVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPrescriptionListPopupVC.xib; sourceTree = "<group>"; };
+		E0BB4CF7283CCD9100F30A7B /* CustomPrescriptionListPopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPrescriptionListPopupVC.swift; sourceTree = "<group>"; };
+		E0BB4CF9283CCD9100F30A7B /* CustomSelectPickImagePopUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSelectPickImagePopUpVC.swift; sourceTree = "<group>"; };
+		E0BB4CFA283CCD9100F30A7B /* CustomSelectPickImagePopUpVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomSelectPickImagePopUpVC.xib; sourceTree = "<group>"; };
 		E0C447EF27F494E300BE6E2D /* SingInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInVC.swift; sourceTree = "<group>"; };
 		E0C447F127F4959E00BE6E2D /* SingUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpVC.swift; sourceTree = "<group>"; };
 		E0CC6468281438380011A165 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
@@ -629,8 +639,6 @@
 				E049CA70282C350B0022FB63 /* BookMedicineCell.xib */,
 				E0485385282631B200B16DE2 /* MedicineCell.swift */,
 				E0485386282631B200B16DE2 /* MedicineCell.xib */,
-				E045B23628368CBB00EB77C6 /* PrescriptionListVC.swift */,
-				E045B23728368CBB00EB77C6 /* PrescriptionListVC.xib */,
 			);
 			path = Medicines;
 			sourceTree = "<group>";
@@ -669,6 +677,7 @@
 		E066993127F47ADA009EE3F0 /* HealthCard */ = {
 			isa = PBXGroup;
 			children = (
+				E0BB4CF3283CCD5600F30A7B /* Prescription */,
 				E0B71868283BFB0C001D96DD /* LocationSelection */,
 				E0B35A2F28375E9D002A234D /* PharmacyDetails */,
 				E056E318282EC90E00F056DF /* LabDetails */,
@@ -754,6 +763,8 @@
 		E0B9BF002811BD22001A58E8 /* Supportings */ = {
 			isa = PBXGroup;
 			children = (
+				E0BB4CF4283CCD9100F30A7B /* CustomPrescriptionListPopup */,
+				E0BB4CF8283CCD9100F30A7B /* CustomSelectPickImagePopup */,
 				E0B9BF012811BD22001A58E8 /* XIBed.swift */,
 				E0B9BF022811BD22001A58E8 /* Environment */,
 				E0B9BF042811BD22001A58E8 /* Font */,
@@ -924,6 +935,34 @@
 				E0B9BF8F2811BD23001A58E8 /* CustomAlertPopupVC.swift */,
 			);
 			path = CustomAlertPopUp;
+			sourceTree = "<group>";
+		};
+		E0BB4CF3283CCD5600F30A7B /* Prescription */ = {
+			isa = PBXGroup;
+			children = (
+				E045B23628368CBB00EB77C6 /* PrescriptionListVC.swift */,
+				E045B23728368CBB00EB77C6 /* PrescriptionListVC.xib */,
+			);
+			path = Prescription;
+			sourceTree = "<group>";
+		};
+		E0BB4CF4283CCD9100F30A7B /* CustomPrescriptionListPopup */ = {
+			isa = PBXGroup;
+			children = (
+				E0BB4CF5283CCD9100F30A7B /* PrescriptionListCollectionViewManager.swift */,
+				E0BB4CF6283CCD9100F30A7B /* CustomPrescriptionListPopupVC.xib */,
+				E0BB4CF7283CCD9100F30A7B /* CustomPrescriptionListPopupVC.swift */,
+			);
+			path = CustomPrescriptionListPopup;
+			sourceTree = "<group>";
+		};
+		E0BB4CF8283CCD9100F30A7B /* CustomSelectPickImagePopup */ = {
+			isa = PBXGroup;
+			children = (
+				E0BB4CF9283CCD9100F30A7B /* CustomSelectPickImagePopUpVC.swift */,
+				E0BB4CFA283CCD9100F30A7B /* CustomSelectPickImagePopUpVC.xib */,
+			);
+			path = CustomSelectPickImagePopup;
 			sourceTree = "<group>";
 		};
 		E0CC6467281438380011A165 /* Profile */ = {
@@ -1420,6 +1459,7 @@
 				E0B9BFAA2811BD23001A58E8 /* poppins_thin.ttf in Resources */,
 				E066993F27F47ADC009EE3F0 /* LaunchScreen.storyboard in Resources */,
 				E0CC647B281438380011A165 /* DocumentsVC.xib in Resources */,
+				E0BB4CFF283CCD9100F30A7B /* CustomSelectPickImagePopUpVC.xib in Resources */,
 				E0B9BFCC2811BD23001A58E8 /* Poppins-Bold.ttf in Resources */,
 				E0B9BFC22811BD23001A58E8 /* Poppins-BoldItalic.ttf in Resources */,
 				E066993C27F47ADC009EE3F0 /* Assets.xcassets in Resources */,
@@ -1465,6 +1505,7 @@
 				E0B9BFC62811BD23001A58E8 /* Poppins-ExtraBoldItalic.ttf in Resources */,
 				E0B9C0022811BD23001A58E8 /* Home.xcassets in Resources */,
 				E0E74C11281F9FF6001564F9 /* FinanceVC.xib in Resources */,
+				E0BB4CFC283CCD9100F30A7B /* CustomPrescriptionListPopupVC.xib in Resources */,
 				E0B9C0012811BD23001A58E8 /* Consultation.zip in Resources */,
 				E0B9BF932811BD23001A58E8 /* raleway_extralightitalic.ttf in Resources */,
 				E072953627F853610083357A /* Home.storyboard in Resources */,
@@ -1590,6 +1631,7 @@
 				E0E74C07281F9FF6001564F9 /* AdvanceBillingPaymentCell.swift in Sources */,
 				E066993327F47ADA009EE3F0 /* AppDelegate.swift in Sources */,
 				E0E74C00281F9FF6001564F9 /* FinanceCell.swift in Sources */,
+				E0BB4CFE283CCD9100F30A7B /* CustomSelectPickImagePopUpVC.swift in Sources */,
 				E0E74C10281F9FF6001564F9 /* FinanceVC.swift in Sources */,
 				E0D7CE1A281E7811001B4738 /* MedicineYouAreLookingSlider1CvManager.swift in Sources */,
 				E0D7CE63281E78BA001B4738 /* SelectedIssueCollectionViewCell.swift in Sources */,
@@ -1677,7 +1719,9 @@
 				E0B35A3228375EDA002A234D /* PharmacyDetailCell.swift in Sources */,
 				E0CC6496281439070011A165 /* CAPSPageMenuConfiguration.swift in Sources */,
 				E0D7CE6C281E797E001B4738 /* CustomTabBarViewController.swift in Sources */,
+				E0BB4CFD283CCD9100F30A7B /* CustomPrescriptionListPopupVC.swift in Sources */,
 				E0D7CE29281E7811001B4738 /* LookingForConsultationInSlider1CollectionViewManager.swift in Sources */,
+				E0BB4CFB283CCD9100F30A7B /* PrescriptionListCollectionViewManager.swift in Sources */,
 				E0D7CE2A281E7811001B4738 /* MedicineYouAreLookingSlider2CollectionViewManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

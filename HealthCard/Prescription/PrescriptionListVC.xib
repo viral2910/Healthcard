@@ -70,6 +70,9 @@
                             <integer key="value" value="5"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="cameraAction:" destination="-1" eventType="touchUpInside" id="MzR-Vm-rzy"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngF-eE-Pqs">
                     <rect key="frame" x="25" y="637" width="364" height="50"/>
@@ -87,6 +90,9 @@
                             <integer key="value" value="5"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="prescriptionAction:" destination="-1" eventType="touchUpInside" id="Izv-qb-chO"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have to upload document of prescription for given phrmacy" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZ3-is-MhF">
                     <rect key="frame" x="30" y="144" width="354" height="53"/>

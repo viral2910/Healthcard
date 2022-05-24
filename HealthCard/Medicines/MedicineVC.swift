@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DropDown
 
 class MedicineVC: UIViewController {
     
@@ -20,6 +21,7 @@ class MedicineVC: UIViewController {
     var docTypeList : [String] = []
     var prescriptionList : [String] = []
     var storyData : [pharmacyList] = []
+    let searchDropDown = DropDown()
     override func viewDidLoad() {
         super.viewDidLoad()
         ApiCall()
@@ -30,6 +32,16 @@ class MedicineVC: UIViewController {
         BtnLineRef.layer.borderWidth = 2
         tableview.register(UINib(nibName: "BookMedicineCell", bundle: nil), forCellReuseIdentifier: "BookMedicineCell")
         // Do any additional setup after loading the view.
+        searchTF.addTarget(self, action: #selector(self.textFieldValueChanged(_:)), for: UIControl.Event.editingChanged)
+        self.searchDropDown.anchorView = self.BtnLineRef
+        self.searchDropDown.width = BtnLineRef.bounds.width
+        self.searchDropDown.bottomOffset = CGPoint(x: 0, y:(self.searchDropDown.anchorView?.plainView.bounds.height)!)
+        self.tableview.keyboardDismissMode = .onDrag
+        // Do any additional setup after loading the view.
+    }
+    @objc func textFieldValueChanged(_ textField: UITextField)
+    {
+        medicineSeachApi(searchVal: textField.text ?? "")
     }
     @IBAction func backVC(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -124,7 +136,24 @@ extension MedicineVC {
             }
         }
     }
-    
+    func medicineSeachApi(searchVal: String) {
+            
+            NetWorker.shared.callAPIService(type: APIV2.medicineAndEssential(searchVal: searchVal)) { [weak self](data: MedicineSearchDataResponse?, error) in
+                guard self == self else { return }
+                
+                var medicineNameArr: [String] = []
+                guard let dataArr = data else { return }
+                for medicineName in dataArr {
+                    medicineNameArr.append(medicineName.brandName)
+                }
+                self!.searchDropDown.dataSource = medicineNameArr
+                self!.searchDropDown.show()
+                self!.searchDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+                    print("Selected item: \(item) at index: \(index)")
+                    self!.searchTF.text = item
+                }
+            }
+        }
 }
 
 extension MedicineVC : UITableViewDataSource ,UITableViewDelegate{
@@ -301,3 +330,73 @@ struct PharmacyDtlsSClist: Codable {
         case drugImageURL = "DrugImageURL"
     }
 }
+// MARK: - MedicineSearchDataResponseElement
+struct MedicineSearchDataResponseElement: Codable {
+    let docID, docType, docDate: JSONNull?
+    let medicineID, brandID, brandName, genericID: String
+    let genericName, doseID, dose, medType: String
+    let type: JSONNull?
+    let unitID, unit: String
+    let route, unitText: JSONNull?
+    let package: String
+    let marketingComp, manufactComp, frequency, duration: JSONNull?
+    let remarks, noOfDays, orderNo, currUser: JSONNull?
+    let usgRemark, hospitalID, mrp, noOfStrip: JSONNull?
+    let finalAmount, stripCost, discountAmount, discountPer: JSONNull?
+    let gstAmount, gstPer, netCost, isPay: JSONNull?
+    let balance, pharamcyMasterID, pharmacyName: JSONNull?
+    let isPrescription: String
+    let prescriptionStatus: String
+    let manufactureID, manufactureCompany: String
+    let drugImageURL: String
+
+    enum CodingKeys: String, CodingKey {
+        case docID = "DocId"
+        case docType = "DocType"
+        case docDate = "DocDate"
+        case medicineID = "MedicineId"
+        case brandID = "BrandId"
+        case brandName = "BrandName"
+        case genericID = "GenericId"
+        case genericName = "GenericName"
+        case doseID = "DoseId"
+        case dose = "Dose"
+        case medType = "MedType"
+        case type = "Type"
+        case unitID = "UnitId"
+        case unit = "Unit"
+        case route = "Route"
+        case unitText = "UnitText"
+        case package = "Package"
+        case marketingComp = "MarketingComp"
+        case manufactComp = "ManufactComp"
+        case frequency = "Frequency"
+        case duration = "Duration"
+        case remarks = "Remarks"
+        case noOfDays = "NoOfDays"
+        case orderNo = "OrderNo"
+        case currUser = "CurrUser"
+        case usgRemark = "USGRemark"
+        case hospitalID = "HospitalId"
+        case mrp = "MRP"
+        case noOfStrip = "NoOfStrip"
+        case finalAmount = "FinalAmount"
+        case stripCost = "StripCost"
+        case discountAmount = "DiscountAmount"
+        case discountPer = "DiscountPer"
+        case gstAmount = "GSTAmount"
+        case gstPer = "GSTPer"
+        case netCost = "NetCost"
+        case isPay = "IsPay"
+        case balance = "Balance"
+        case pharamcyMasterID = "PharamcyMasterId"
+        case pharmacyName = "PharmacyName"
+        case isPrescription = "IsPrescription"
+        case prescriptionStatus = "PrescriptionStatus"
+        case manufactureID = "ManufactureId"
+        case manufactureCompany = "ManufactureCompany"
+        case drugImageURL = "DrugImageURL"
+    }
+}
+
+typealias MedicineSearchDataResponse = [MedicineSearchDataResponseElement]

@@ -94,13 +94,7 @@ class HomeViewController: UIViewController , XIBed, PushViewControllerDelegate ,
 
             setupUI()
             setupCornerShadow()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        GetDetailsApiCall()
-        self.navigationController?.isNavigationBarHidden = true
-        self.locationManager.requestAlwaysAuthorization()
+        
 
         // For use in foreground
         self.locationManager.requestWhenInUseAuthorization()
@@ -111,6 +105,12 @@ class HomeViewController: UIViewController , XIBed, PushViewControllerDelegate ,
             locationManager.startUpdatingLocation()
         }
         
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        GetDetailsApiCall()
+        self.navigationController?.isNavigationBarHidden = true
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }

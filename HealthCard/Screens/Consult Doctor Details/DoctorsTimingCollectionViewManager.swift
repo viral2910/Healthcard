@@ -74,7 +74,7 @@ extension DoctorsTimingCollectionViewManager: UICollectionViewDataSource {
         
         let data = storyData[indexPath.section]
         
-        cell.lblRef.text = "\(data.doctorOnlineConsultTimeSClist?[indexPath.section].fromTime ?? "")" + "\n" + "\(data.doctorOnlineConsultTimeSClist?[indexPath.section].toTime ?? "")"
+        cell.lblRef.text = "\(data.doctorOnlineConsultTimeSClist?[indexPath.row].fromTime ?? "")" + "\n" + "\(data.doctorOnlineConsultTimeSClist?[indexPath.row].toTime ?? "")"
 //        if let title = storyData[indexPath.section].courseList?[indexPath.row].courseName {
 //            cell.titleLblRef.text = title
 //        }

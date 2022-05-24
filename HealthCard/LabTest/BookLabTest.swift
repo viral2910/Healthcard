@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DropDown
 
 class BookLabTest: UIViewController{
     
@@ -20,6 +21,7 @@ class BookLabTest: UIViewController{
     var LabInvestigationID : [Int] = []
     var docTypeList : [String] = []
     var storyData : [LabTest] = []
+    let searchDropDown = DropDown()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = false
@@ -28,7 +30,16 @@ class BookLabTest: UIViewController{
         BtnLineRef.layer.borderColor = UIColor.init(hexString: "007AB8").cgColor
         BtnLineRef.layer.borderWidth = 2
         tableview.register(UINib(nibName: "BookLabTestCell", bundle: nil), forCellReuseIdentifier: "BookLabTestCell")
+        searchTF.addTarget(self, action: #selector(self.textFieldValueChanged(_:)), for: UIControl.Event.editingChanged)
+        self.searchDropDown.anchorView = self.BtnLineRef
+        self.searchDropDown.width = BtnLineRef.bounds.width
+        self.searchDropDown.bottomOffset = CGPoint(x: 0, y:(self.searchDropDown.anchorView?.plainView.bounds.height)!)
+        self.tableview.keyboardDismissMode = .onDrag
         // Do any additional setup after loading the view.
+    }
+    @objc func textFieldValueChanged(_ textField: UITextField)
+    {
+        labTestSeachApi(searchVal: textField.text ?? "")
     }
     override func viewWillAppear(_ animated: Bool) {
         ApiCall()
@@ -59,7 +70,23 @@ extension BookLabTest {
             self?.tableview.reloadData()
         }
     }
-    
+    func labTestSeachApi(searchVal: String) {
+        
+        NetWorker.shared.callAPIService(type: APIV2.labTestSearch(searchVal: searchVal)) { [weak self](data: LabTestSearchDataResponse?, error) in
+            guard self == self else { return }
+            var medicineNameArr: [String] = []
+            guard let dataArr = data else { return }
+            for medicineName in dataArr {
+                medicineNameArr.append(medicineName.labTestText)
+            }
+            self!.searchDropDown.dataSource = medicineNameArr
+            self!.searchDropDown.show()
+            self!.searchDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+                print("Selected item: \(item) at index: \(index)")
+                self!.searchTF.text = item
+            }
+        }
+    }
     //MARK: - API CALL
     func proceedApiCall() {
         let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
@@ -231,3 +258,37 @@ struct CartCount: Codable {
         case imageURL = "ImageUrl"
     }
 }
+// MARK: - LabTestSearchDataResponseElement
+struct LabTestSearchDataResponseElement: Codable {
+    let docID, docType, docDate: JSONNull?
+    let id: Int
+    let testCode: JSONNull?
+    let labTestID: Int
+    let labTestText: String
+    let mrp, discountPer, discountAmt, charges: Int
+    let labMasterID, labName: JSONNull?
+    let collectionIn, sampleDetails, method: String
+    let labTestImageURL: String
+
+    enum CodingKeys: String, CodingKey {
+        case docID = "DocId"
+        case docType = "DocType"
+        case docDate = "DocDate"
+        case id = "Id"
+        case testCode = "TestCode"
+        case labTestID = "LabTestId"
+        case labTestText = "LabTestText"
+        case mrp = "MRP"
+        case discountPer = "DiscountPer"
+        case discountAmt = "DiscountAmt"
+        case charges = "Charges"
+        case labMasterID = "LabMasterId"
+        case labName = "LabName"
+        case collectionIn = "CollectionIn"
+        case sampleDetails = "SampleDetails"
+        case method = "Method"
+        case labTestImageURL = "LabTestImageURL"
+    }
+}
+
+typealias LabTestSearchDataResponse = [LabTestSearchDataResponseElement]

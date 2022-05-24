@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        GMSServices.provideAPIKey("viral")
+        GMSServices.provideAPIKey("AIzaSyCOkXvGWFAfSccRS-azPprnqKEn9vf2LLI")
         let islogin = UserDefaults.standard.bool(forKey: "isLogin")
         if islogin {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate

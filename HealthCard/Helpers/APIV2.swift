@@ -201,6 +201,8 @@ enum APIV2: API {
     
     case cartUpdate(cartID:Int,qty:Int)
     
+    case saveOrder(patientID: Int,patientAddressID: Int,cartID: String,sellerMasterID: String,docID: String,DocType: String,ProductId: String,qty: String,MRP: String,DiscountAmt: String,DiscountPer: String,GSTAmt: String,GSTPer: String,PricePerUnit:  String,TotalAmount:  String,SellerType: String,Pincode: String,PaymentId: String,PaymentMethod: String,Latitude:  String,Longitude:  String)
+    
 }
 
 
@@ -482,6 +484,9 @@ extension APIV2 {
             return URL(string: Router.deliveryBoyBaseUrl)!
             
         case .cartUpdate:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .saveOrder:
             return URL(string: Router.deliveryBoyBaseUrl)!
         }
         
@@ -766,6 +771,8 @@ extension APIV2 {
         case .cartUpdate(cartID: let cartId,qty: let qty):
             return "Cart?vCartId=\(cartId)&vQty=\(qty)"
             
+        case .saveOrder(patientID: let patientID,patientAddressID: let patientAddressID,cartID: let cartId,sellerMasterID: let sellerMasterID,docID: let docID,DocType: let DocType,ProductId: let ProductId,qty: let qty,MRP: let MRP,DiscountAmt: let DiscountAmt,DiscountPer: let DiscountPer,GSTAmt: let GSTAmt,GSTPer: let GSTPer,PricePerUnit: let PricePerUnit,TotalAmount: let TotalAmount,SellerType: let SellerType,Pincode: let Pincode,PaymentId: let PaymentId,PaymentMethod: let PaymentMethod,Latitude: let Latitude,Longitude: let Longitude):
+            return "Order?vPatientId=\(patientID)&vPatientAddressId=\(patientAddressID)&vCartId=\(cartId)&vSellerMasterId=\(sellerMasterID)&vDocId=\(docID)&vDocType=\(DocType)&vProductId=\(ProductId)&vQty=\(qty)&vMRP=\(MRP)&vDiscountAmt=\(DiscountAmt)&vDiscountPer=\(DiscountPer)&vGSTAmt=\(GSTAmt)&vGSTPer=\(GSTPer)&vPricePerUnit=\(PricePerUnit)&vTotalAmount=\(TotalAmount)&vSellerType=\(SellerType)&vDeliveryPincode=\(Pincode)vPaymentId=&vPaymentMode=\(PaymentMethod)&vPatientLatitude=\(Latitude)&vPatientLongitude=\(Longitude)"
         }
     }
     
@@ -1046,6 +1053,10 @@ extension APIV2 {
             return "GET"
             
         case .cartUpdate:
+            return "GET"
+            
+            
+        case .saveOrder:
             return "GET"
         }
     }
@@ -1332,6 +1343,9 @@ extension APIV2 {
             break
             
         case .cartUpdate:
+            break
+            
+        case .saveOrder:
             break
         }
         return params

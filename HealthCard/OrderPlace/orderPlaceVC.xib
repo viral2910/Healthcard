@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="lato_bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="orderPlaceVC" customModule="HealthCard" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vrj-V7-Hp8">
+                    <rect key="frame" x="10" y="331" width="394" height="244"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RNQ-W8-CSc">
+                            <rect key="frame" x="18" y="40" width="358" height="24"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Payment Method" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBZ-Ze-48b">
+                                    <rect key="frame" x="0.0" y="0.0" width="358" height="24"/>
+                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="20"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="sq5-eX-5bA">
+                            <rect key="frame" x="40" y="92" width="314" height="115"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDj-Hb-hj3">
+                                    <rect key="frame" x="0.0" y="0.0" width="314" height="50"/>
+                                    <color key="backgroundColor" red="0.0" green="0.3411764706" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="ud9-en-OhK"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
+                                    <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Cash On Delivery">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="payOnDeliveryAction:" destination="-1" eventType="touchUpInside" id="Ljo-B2-YXD"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wob-HH-Lx6">
+                                    <rect key="frame" x="0.0" y="65" width="314" height="50"/>
+                                    <color key="backgroundColor" red="0.0" green="0.3411764706" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Pay Online">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="payOnlineAction:" destination="-1" eventType="touchUpInside" id="Pg1-LF-CMI"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="RNQ-W8-CSc" firstAttribute="top" secondItem="Vrj-V7-Hp8" secondAttribute="top" constant="40" id="35k-j9-7FT"/>
+                        <constraint firstItem="sq5-eX-5bA" firstAttribute="leading" secondItem="Vrj-V7-Hp8" secondAttribute="leading" constant="40" id="3it-vG-fJL"/>
+                        <constraint firstItem="RNQ-W8-CSc" firstAttribute="leading" secondItem="Vrj-V7-Hp8" secondAttribute="leading" constant="18" id="GXJ-GG-1oU"/>
+                        <constraint firstAttribute="trailing" secondItem="sq5-eX-5bA" secondAttribute="trailing" constant="40" id="KCk-nV-jm7"/>
+                        <constraint firstAttribute="trailing" secondItem="RNQ-W8-CSc" secondAttribute="trailing" constant="18" id="bBU-n2-i6p"/>
+                        <constraint firstAttribute="bottom" secondItem="sq5-eX-5bA" secondAttribute="bottom" constant="37" id="jl6-eV-SX9"/>
+                        <constraint firstItem="sq5-eX-5bA" firstAttribute="top" secondItem="RNQ-W8-CSc" secondAttribute="bottom" constant="28" id="p6Q-3G-Zr5"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0nb-tK-LpJ">
+                    <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oo0-BU-K23">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="y0D-F3-ax3"/>
+                            </constraints>
+                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="arrow.backward" catalog="system" title=" "/>
+                            <connections>
+                                <action selector="backAction:" destination="-1" eventType="touchUpInside" id="bqz-ea-AS0"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="oo0-BU-K23" secondAttribute="bottom" id="Hhp-Uy-Ely"/>
+                        <constraint firstAttribute="height" constant="50" id="hbE-0X-jWc"/>
+                        <constraint firstItem="oo0-BU-K23" firstAttribute="top" secondItem="0nb-tK-LpJ" secondAttribute="top" id="ihd-j5-6cd"/>
+                        <constraint firstItem="oo0-BU-K23" firstAttribute="leading" secondItem="0nb-tK-LpJ" secondAttribute="leading" id="liK-9I-ERF"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="0nb-tK-LpJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="EGS-p6-wW2"/>
+                <constraint firstItem="0nb-tK-LpJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KsX-8c-NsX"/>
+                <constraint firstItem="Vrj-V7-Hp8" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="Ktn-rY-H77"/>
+                <constraint firstItem="0nb-tK-LpJ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="OUZ-65-gWM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Vrj-V7-Hp8" secondAttribute="trailing" constant="10" id="rR8-Ri-17C"/>
+                <constraint firstItem="Vrj-V7-Hp8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="xPV-cr-3JW"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="79"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -282,6 +282,8 @@
 		E0E74C19281F9FF6001564F9 /* AddNewAddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E74BEE281F9FF6001564F9 /* AddNewAddressCell.xib */; };
 		E0E74C1A281F9FF6001564F9 /* AddNewAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74BEF281F9FF6001564F9 /* AddNewAddressCell.swift */; };
 		E0E74C1C281FA410001564F9 /* UIStoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E74C1B281FA410001564F9 /* UIStoryBoard.swift */; };
+		E0E88CD2283CEDCC00918595 /* orderPlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E88CD0283CEDCB00918595 /* orderPlaceVC.swift */; };
+		E0E88CD3283CEDCC00918595 /* orderPlaceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E88CD1283CEDCB00918595 /* orderPlaceVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -564,6 +566,8 @@
 		E0E74BEE281F9FF6001564F9 /* AddNewAddressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNewAddressCell.xib; sourceTree = "<group>"; };
 		E0E74BEF281F9FF6001564F9 /* AddNewAddressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewAddressCell.swift; sourceTree = "<group>"; };
 		E0E74C1B281FA410001564F9 /* UIStoryBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryBoard.swift; sourceTree = "<group>"; };
+		E0E88CD0283CEDCB00918595 /* orderPlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orderPlaceVC.swift; sourceTree = "<group>"; };
+		E0E88CD1283CEDCB00918595 /* orderPlaceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = orderPlaceVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -677,6 +681,7 @@
 		E066993127F47ADA009EE3F0 /* HealthCard */ = {
 			isa = PBXGroup;
 			children = (
+				E0E88CCF283CEDB200918595 /* OrderPlace */,
 				E0BB4CF3283CCD5600F30A7B /* Prescription */,
 				E0B71868283BFB0C001D96DD /* LocationSelection */,
 				E0B35A2F28375E9D002A234D /* PharmacyDetails */,
@@ -1319,6 +1324,15 @@
 			path = Address;
 			sourceTree = "<group>";
 		};
+		E0E88CCF283CEDB200918595 /* OrderPlace */ = {
+			isa = PBXGroup;
+			children = (
+				E0E88CD0283CEDCB00918595 /* orderPlaceVC.swift */,
+				E0E88CD1283CEDCB00918595 /* orderPlaceVC.xib */,
+			);
+			path = OrderPlace;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1509,6 +1523,7 @@
 				E0B9C0012811BD23001A58E8 /* Consultation.zip in Resources */,
 				E0B9BF932811BD23001A58E8 /* raleway_extralightitalic.ttf in Resources */,
 				E072953627F853610083357A /* Home.storyboard in Resources */,
+				E0E88CD3283CEDCC00918595 /* orderPlaceVC.xib in Resources */,
 				E0CC6480281438380011A165 /* EditProfileVC.xib in Resources */,
 				E0B9BFC82811BD23001A58E8 /* Poppins-BlackItalic.ttf in Resources */,
 				E0B35A3728375EEA002A234D /* PharmacyCell.xib in Resources */,
@@ -1597,6 +1612,7 @@
 				E066993727F47ADA009EE3F0 /* ViewController.swift in Sources */,
 				E0B9C0042811BD23001A58E8 /* BaseViewController.swift in Sources */,
 				E0E74BFD281F9FF6001564F9 /* CartDetails.swift in Sources */,
+				E0E88CD2283CEDCC00918595 /* orderPlaceVC.swift in Sources */,
 				E0D7CE15281E7811001B4738 /* DashboardCollectionViewManager.swift in Sources */,
 				E0D7CE52281E78BA001B4738 /* ConsultSpecialityTableViewCell.swift in Sources */,
 				E0D7CE5F281E78BA001B4738 /* ConsultSymptomsTableViewManager.swift in Sources */,

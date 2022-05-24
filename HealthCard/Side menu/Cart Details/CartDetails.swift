@@ -33,6 +33,28 @@ class CartDetails: UIViewController,XIBed {
     }
     @IBAction func payBtn(_ sender: UIButton) {
         let vc = SelectLocationVC.instantiate()
+        let amount = (totalRsLbl.text ?? "").components(separatedBy: " ")
+        vc.amount = amount[1]
+        vc.patientAddressID = patientAddressID
+        vc.cartID = cartID
+        vc.sellerMasterID = sellerMasterID
+        vc.docID = docID
+        vc.DocType = DocType
+        vc.ProductId = ProductId
+        vc.qty = qty
+        vc.MRP = MRP
+        vc.DiscountAmt = DiscountAmt
+        vc.DiscountPer = DiscountPer
+        vc.GSTAmt = GSTAmt
+        vc.GSTPer = GSTPer
+        vc.PricePerUnit = PricePerUnit
+        vc.TotalAmount = TotalAmount
+        vc.SellerType = SellerType
+        vc.Pincode = Pincode
+        vc.PaymentId = PaymentId
+        vc.PaymentMethod = PaymentMethod
+        vc.Latitude = Latitude
+        vc.Longitude = Longitude
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -74,9 +96,13 @@ extension CartDetails: UITableViewDelegate, UITableViewDataSource{
 }
 extension CartDetails : cartDetailsDelegate {
     func updateQty(id: Int, qty: Int) {
-        NetWorker.shared.callAPIService(type: APIV2.cartUpdate(cartID: id, qty: qty)) { [weak self](data: [removeCart]?, error) in
-            if data?[0].status == "1" {
-                self?.apiCall()
+        if qty == 0 {
+            AppManager.shared.showAlert(title: "Opps", msg: "Quantity can not be 0", vc: self)
+        } else {
+            NetWorker.shared.callAPIService(type: APIV2.cartUpdate(cartID: id, qty: qty)) { [weak self](data: [removeCart]?, error) in
+                if data?[0].status == "1" {
+                    self?.apiCall()
+                }
             }
         }
     }

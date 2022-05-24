@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="lato_regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectLocationVC" customModule="HealthCard" customModuleProvider="target">
             <connections>
@@ -21,22 +26,85 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zz9-0a-dXX" customClass="GMSMapView">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="94" width="414" height="708"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WPy-FT-8XJ">
+                    <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqg-0w-9Ai">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="ZCh-Jq-gfE"/>
+                            </constraints>
+                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="arrow.backward" catalog="system" title=" "/>
+                            <connections>
+                                <action selector="backAction:" destination="-1" eventType="touchUpInside" id="2xT-Nq-QC9"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTg-ow-fEO">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="JTg-ow-fEO" secondAttribute="trailing" id="4KW-5g-W9t"/>
+                        <constraint firstAttribute="height" constant="50" id="Gnk-E8-B5K"/>
+                        <constraint firstItem="JTg-ow-fEO" firstAttribute="top" secondItem="WPy-FT-8XJ" secondAttribute="top" id="Vdw-7E-VM0"/>
+                        <constraint firstItem="cqg-0w-9Ai" firstAttribute="top" secondItem="WPy-FT-8XJ" secondAttribute="top" id="XKj-so-8R9"/>
+                        <constraint firstItem="JTg-ow-fEO" firstAttribute="leading" secondItem="WPy-FT-8XJ" secondAttribute="leading" id="iVr-7c-uEM"/>
+                        <constraint firstAttribute="bottom" secondItem="cqg-0w-9Ai" secondAttribute="bottom" id="lSf-ez-ZpX"/>
+                        <constraint firstItem="cqg-0w-9Ai" firstAttribute="leading" secondItem="WPy-FT-8XJ" secondAttribute="leading" id="oqk-ZN-3Ti"/>
+                        <constraint firstAttribute="bottom" secondItem="JTg-ow-fEO" secondAttribute="bottom" id="vYN-h1-bVt"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fze-tM-4EP">
+                    <rect key="frame" x="20" y="807" width="374" height="50"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="BIU-Xc-s7v"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="PROCEED">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="ProcedAction:" destination="-1" eventType="touchUpInside" id="HkK-qc-AS8"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Zz9-0a-dXX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="7Bx-mn-39D"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Zz9-0a-dXX" secondAttribute="bottom" id="8Yj-Bv-X0v"/>
+                <constraint firstItem="Fze-tM-4EP" firstAttribute="top" secondItem="Zz9-0a-dXX" secondAttribute="bottom" constant="5" id="0ko-D6-bWi"/>
+                <constraint firstItem="Zz9-0a-dXX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="7Bx-mn-39D"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Zz9-0a-dXX" secondAttribute="bottom" constant="60" id="8Yj-Bv-X0v"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Fze-tM-4EP" secondAttribute="bottom" constant="5" id="Opr-bC-tEV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WPy-FT-8XJ" secondAttribute="trailing" id="R6t-MQ-isP"/>
                 <constraint firstItem="Zz9-0a-dXX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ukd-uf-KVt"/>
+                <constraint firstItem="Fze-tM-4EP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="dX1-gX-aL4"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Zz9-0a-dXX" secondAttribute="trailing" id="h98-54-hyQ"/>
+                <constraint firstItem="WPy-FT-8XJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="tdA-M6-07L"/>
+                <constraint firstItem="WPy-FT-8XJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vYt-dQ-zu7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Fze-tM-4EP" secondAttribute="trailing" constant="20" id="wFb-uO-7Ff"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="72"/>
+            <point key="canvasLocation" x="137.68115942028987" y="71.651785714285708"/>
         </view>
     </objects>
     <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

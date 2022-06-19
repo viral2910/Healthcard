@@ -127,8 +127,8 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Owv-SX-N1a">
                                     <rect key="frame" x="98.5" y="0.0" width="98.5" height="50"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="My Consultation" translatesAutoresizingMaskIntoConstraints="NO" id="CX9-xw-LQB">
-                                            <rect key="frame" x="0.0" y="0.0" width="98.5" height="29.5"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill.questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="CX9-xw-LQB">
+                                            <rect key="frame" x="0.0" y="0.5" width="98.5" height="27.5"/>
                                             <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="29.5" id="cxb-Uj-VB7"/>
@@ -145,8 +145,8 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Yrq-SP-9UQ">
                                     <rect key="frame" x="197" y="0.0" width="98.5" height="50"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Order Tracker" translatesAutoresizingMaskIntoConstraints="NO" id="4G7-wg-0GW">
-                                            <rect key="frame" x="0.0" y="0.0" width="98.5" height="29.5"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4G7-wg-0GW">
+                                            <rect key="frame" x="0.0" y="0.5" width="98.5" height="28.5"/>
                                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="29.5" id="jL7-OL-fdB"/>
@@ -163,8 +163,8 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Kap-53-03p">
                                     <rect key="frame" x="295.5" y="0.0" width="98.5" height="50"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="My Profile" translatesAutoresizingMaskIntoConstraints="NO" id="B5j-K9-nRZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="98.5" height="29.5"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="B5j-K9-nRZ">
+                                            <rect key="frame" x="0.0" y="0.5" width="98.5" height="28.5"/>
                                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="29.5" id="3eU-wz-Haq"/>
@@ -217,12 +217,12 @@
         </view>
     </objects>
     <resources>
-        <image name="My Consultation" width="512" height="512"/>
-        <image name="My Profile" width="512" height="512"/>
-        <image name="Order Tracker" width="512" height="512"/>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="circle.grid.3x3.fill" catalog="system" width="128" height="112"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
+        <image name="location.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="person.fill.questionmark" catalog="system" width="128" height="104"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

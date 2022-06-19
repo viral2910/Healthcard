@@ -35,26 +35,26 @@ class CartDetails: UIViewController,XIBed {
         let vc = SelectLocationVC.instantiate()
         let amount = (totalRsLbl.text ?? "").components(separatedBy: " ")
         vc.amount = amount[1]
-        vc.patientAddressID = patientAddressID
-        vc.cartID = cartID
-        vc.sellerMasterID = sellerMasterID
-        vc.docID = docID
-        vc.DocType = DocType
-        vc.ProductId = ProductId
-        vc.qty = qty
-        vc.MRP = MRP
-        vc.DiscountAmt = DiscountAmt
-        vc.DiscountPer = DiscountPer
-        vc.GSTAmt = GSTAmt
-        vc.GSTPer = GSTPer
-        vc.PricePerUnit = PricePerUnit
-        vc.TotalAmount = TotalAmount
-        vc.SellerType = SellerType
-        vc.Pincode = Pincode
-        vc.PaymentId = PaymentId
-        vc.PaymentMethod = PaymentMethod
-        vc.Latitude = Latitude
-        vc.Longitude = Longitude
+//        vc.patientAddressID = patientAddressID
+//        vc.cartID = cartID
+//        vc.sellerMasterID = sellerMasterID
+//        vc.docID = docID
+//        vc.DocType = DocType
+//        vc.ProductId = ProductId
+//        vc.qty = qty
+//        vc.MRP = MRP
+//        vc.DiscountAmt = DiscountAmt
+//        vc.DiscountPer = DiscountPer
+//        vc.GSTAmt = GSTAmt
+//        vc.GSTPer = GSTPer
+//        vc.PricePerUnit = PricePerUnit
+//        vc.TotalAmount = TotalAmount
+//        vc.SellerType = SellerType
+//        vc.Pincode = Pincode
+//        vc.PaymentId = PaymentId
+//        vc.PaymentMethod = PaymentMethod
+//        vc.Latitude = Latitude
+//        vc.Longitude = Longitude
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

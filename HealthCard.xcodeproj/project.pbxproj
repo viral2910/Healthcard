@@ -42,6 +42,9 @@
 		E072953227F84BDE0083357A /* OtpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072953127F84BDE0083357A /* OtpVC.swift */; };
 		E072953427F850570083357A /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072953327F850570083357A /* ForgotPasswordVC.swift */; };
 		E072953627F853610083357A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E072953527F853610083357A /* Home.storyboard */; };
+		E093772F285C4B740095E064 /* OrderTrackerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E093772D285C4B740095E064 /* OrderTrackerCell.swift */; };
+		E0937730285C4B740095E064 /* OrderTrackerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E093772E285C4B740095E064 /* OrderTrackerCell.xib */; };
+		E0937732285C91B10095E064 /* HC-Icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E0937731285C91B10095E064 /* HC-Icon.jpg */; };
 		E0B164A2282E4472006E8287 /* DoctorAvailableListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B16495282E4472006E8287 /* DoctorAvailableListViewController.xib */; };
 		E0B164A3282E4472006E8287 /* DoctorAvailableListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B16497282E4472006E8287 /* DoctorAvailableListTableViewCell.xib */; };
 		E0B164A4282E4472006E8287 /* DoctorAvailableListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16498282E4472006E8287 /* DoctorAvailableListTableViewCell.swift */; };
@@ -326,6 +329,9 @@
 		E072953127F84BDE0083357A /* OtpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpVC.swift; sourceTree = "<group>"; };
 		E072953327F850570083357A /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		E072953527F853610083357A /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		E093772D285C4B740095E064 /* OrderTrackerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTrackerCell.swift; sourceTree = "<group>"; };
+		E093772E285C4B740095E064 /* OrderTrackerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTrackerCell.xib; sourceTree = "<group>"; };
+		E0937731285C91B10095E064 /* HC-Icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "HC-Icon.jpg"; sourceTree = "<group>"; };
 		E0B16495282E4472006E8287 /* DoctorAvailableListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorAvailableListViewController.xib; sourceTree = "<group>"; };
 		E0B16497282E4472006E8287 /* DoctorAvailableListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorAvailableListTableViewCell.xib; sourceTree = "<group>"; };
 		E0B16498282E4472006E8287 /* DoctorAvailableListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorAvailableListTableViewCell.swift; sourceTree = "<group>"; };
@@ -681,6 +687,7 @@
 		E066993127F47ADA009EE3F0 /* HealthCard */ = {
 			isa = PBXGroup;
 			children = (
+				E093772C285C4B440095E064 /* Order Tracker */,
 				E0E88CCF283CEDB200918595 /* OrderPlace */,
 				E0BB4CF3283CCD5600F30A7B /* Prescription */,
 				E0B71868283BFB0C001D96DD /* LocationSelection */,
@@ -704,9 +711,8 @@
 				E066993627F47ADA009EE3F0 /* ViewController.swift */,
 				E066993B27F47ADC009EE3F0 /* Assets.xcassets */,
 				E066993D27F47ADC009EE3F0 /* LaunchScreen.storyboard */,
+				E0937731285C91B10095E064 /* HC-Icon.jpg */,
 				E066994027F47ADC009EE3F0 /* Info.plist */,
-				E0CC6498281442110011A165 /* OrderTrackVC.swift */,
-				E0CC6499281442110011A165 /* OrderTrackVC.xib */,
 				E0D5ED452827FD0000ECF500 /* CustomWebViewVC.swift */,
 				E0D5ED462827FD0000ECF500 /* CustomWebViewVC.xib */,
 			);
@@ -721,6 +727,17 @@
 				E03DD67127F994E100BFB975 /* MainTabbarVC.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		E093772C285C4B440095E064 /* Order Tracker */ = {
+			isa = PBXGroup;
+			children = (
+				E0CC6498281442110011A165 /* OrderTrackVC.swift */,
+				E0CC6499281442110011A165 /* OrderTrackVC.xib */,
+				E093772D285C4B740095E064 /* OrderTrackerCell.swift */,
+				E093772E285C4B740095E064 /* OrderTrackerCell.xib */,
+			);
+			path = "Order Tracker";
 			sourceTree = "<group>";
 		};
 		E0B16494282E4472006E8287 /* Doctor Available */ = {
@@ -1438,6 +1455,7 @@
 				E0485388282631B200B16DE2 /* MedicineCell.xib in Resources */,
 				E0D7CE25281E7811001B4738 /* SliderCollectionViewCell.xib in Resources */,
 				E0B35A2E28375E94002A234D /* PharmacyDetailsVC.xib in Resources */,
+				E0937730285C4B740095E064 /* OrderTrackerCell.xib in Resources */,
 				E0B9BFA32811BD23001A58E8 /* poppins_regular.ttf in Resources */,
 				E0B9BFC52811BD23001A58E8 /* Poppins-SemiBoldItalic.ttf in Resources */,
 				E0CC6485281438380011A165 /* ProfileVC.xib in Resources */,
@@ -1452,6 +1470,7 @@
 				E0B164A3282E4472006E8287 /* DoctorAvailableListTableViewCell.xib in Resources */,
 				E0B9BFC42811BD23001A58E8 /* Poppins-Medium.ttf in Resources */,
 				E04853842826319800B16DE2 /* MedicineVC.xib in Resources */,
+				E0937732285C91B10095E064 /* HC-Icon.jpg in Resources */,
 				E0B9BFC72811BD23001A58E8 /* Poppins-ExtraBold.ttf in Resources */,
 				E0B9BFCB2811BD23001A58E8 /* Poppins-LightItalic.ttf in Resources */,
 				E0D7CE1D281E7811001B4738 /* DashboardCollectionViewCell.xib in Resources */,
@@ -1620,6 +1639,7 @@
 				E072953227F84BDE0083357A /* OtpVC.swift in Sources */,
 				E0E74BFA281F9FF6001564F9 /* CartDetailsCell.swift in Sources */,
 				E0D7CE1B281E7811001B4738 /* HomeViewController.swift in Sources */,
+				E093772F285C4B740095E064 /* OrderTrackerCell.swift in Sources */,
 				E0CC6492281439070011A165 /* CAPSPageMenu+Options.swift in Sources */,
 				E0D7CE56281E78BA001B4738 /* ConsultSpecialityViewController.swift in Sources */,
 				E0D7CE76281E8C56001B4738 /* BookLabTest.swift in Sources */,
@@ -1884,6 +1904,10 @@
 				DEVELOPMENT_TEAM = ARE334SD9C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HealthCard/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = Hi;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = HI;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = HI;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = HI;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Login;
@@ -1891,13 +1915,14 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.StockAxis;
+				PRODUCT_BUNDLE_IDENTIFIER = com.healthcard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1918,6 +1943,10 @@
 				DEVELOPMENT_TEAM = ARE334SD9C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HealthCard/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = Hi;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = HI;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = HI;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = HI;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Login;
@@ -1925,13 +1954,14 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.StockAxis;
+				PRODUCT_BUNDLE_IDENTIFIER = com.healthcard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

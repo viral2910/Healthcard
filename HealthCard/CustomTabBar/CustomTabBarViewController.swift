@@ -66,7 +66,7 @@ class CustomTabBarViewController: UIViewController , XIBed, PushViewControllerDe
                 return UINavigationController(rootViewController: vc)
             }(),
             {
-                let vc = ConsultationMainViewController.instantiate()
+                let vc = OrderTrackVC.instantiate()
                 vc.pushDelegate = self
                 //vc.user = user
                 //vc.gDrive = gDrive

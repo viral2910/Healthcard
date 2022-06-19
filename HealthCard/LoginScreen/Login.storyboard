@@ -33,10 +33,19 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HC-Icon.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="JYc-qW-Cde">
+                                                        <rect key="frame" x="436" y="402.5" width="128" height="128"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="128" id="c3L-tk-PjZ"/>
+                                                            <constraint firstAttribute="height" constant="128" id="dyv-01-3ho"/>
+                                                        </constraints>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" name="AppColor"/>
                                                 <constraints>
+                                                    <constraint firstItem="eeY-rV-wGg" firstAttribute="top" secondItem="JYc-qW-Cde" secondAttribute="bottom" constant="20" id="VkH-1i-SMw"/>
                                                     <constraint firstItem="eeY-rV-wGg" firstAttribute="centerX" secondItem="j3D-FV-f48" secondAttribute="centerX" id="fIo-JO-GNF"/>
+                                                    <constraint firstItem="JYc-qW-Cde" firstAttribute="centerX" secondItem="j3D-FV-f48" secondAttribute="centerX" id="h1z-af-CwR"/>
                                                     <constraint firstAttribute="width" constant="1000" id="mJu-mP-Aji"/>
                                                     <constraint firstAttribute="bottom" secondItem="eeY-rV-wGg" secondAttribute="bottom" constant="50" id="y2u-Ri-wsr"/>
                                                 </constraints>
@@ -188,6 +197,13 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thm-bO-zZ6">
                                                 <rect key="frame" x="-293" y="-350" width="1000" height="627"/>
                                                 <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HC-Icon.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bWm-NG-zqI">
+                                                        <rect key="frame" x="436" y="402.5" width="128" height="128"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="128" id="97K-GC-bwY"/>
+                                                            <constraint firstAttribute="height" constant="128" id="Mt7-aD-EKw"/>
+                                                        </constraints>
+                                                    </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sing Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7Q-cs-Q1z">
                                                         <rect key="frame" x="460" y="550.5" width="80" height="26.5"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
@@ -197,6 +213,8 @@
                                                 </subviews>
                                                 <color key="backgroundColor" name="AppColor"/>
                                                 <constraints>
+                                                    <constraint firstItem="p7Q-cs-Q1z" firstAttribute="top" secondItem="bWm-NG-zqI" secondAttribute="bottom" constant="20" id="0Ms-wX-bvh"/>
+                                                    <constraint firstItem="bWm-NG-zqI" firstAttribute="centerX" secondItem="thm-bO-zZ6" secondAttribute="centerX" id="OCV-Js-xba"/>
                                                     <constraint firstAttribute="bottom" secondItem="p7Q-cs-Q1z" secondAttribute="bottom" constant="50" id="X53-cS-Itt"/>
                                                     <constraint firstItem="p7Q-cs-Q1z" firstAttribute="centerX" secondItem="thm-bO-zZ6" secondAttribute="centerX" id="frG-3c-1aQ"/>
                                                     <constraint firstAttribute="width" constant="1000" id="ppm-Xn-10C"/>
@@ -236,7 +254,7 @@
                                                             <segment title="Male"/>
                                                             <segment title="Female"/>
                                                         </segments>
-                                                        <color key="selectedSegmentTintColor" red="0.0" green="0.0" blue="0.57300001382827759" alpha="0.52030732615894038" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="selectedSegmentTintColor" red="0.17299999296665192" green="0.40400001406669617" blue="0.65100002288818359" alpha="0.50400972682119205" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </segmentedControl>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SlZ-L8-hp9">
                                                         <rect key="frame" x="0.0" y="267" width="394" height="34"/>
@@ -296,6 +314,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="XO8-rc-2QM" secondAttribute="bottom" constant="50" id="AeP-G1-plh"/>
+                                            <constraint firstItem="thm-bO-zZ6" firstAttribute="centerX" secondItem="vQZ-xh-vzO" secondAttribute="centerX" id="Hig-aI-L9I"/>
                                             <constraint firstItem="Rit-BL-PCN" firstAttribute="leading" secondItem="vQZ-xh-vzO" secondAttribute="leading" constant="10" id="J3p-IF-YiI"/>
                                             <constraint firstItem="XO8-rc-2QM" firstAttribute="centerX" secondItem="vQZ-xh-vzO" secondAttribute="centerX" constant="-45" id="KHo-gA-8tZ"/>
                                             <constraint firstAttribute="trailing" secondItem="Rit-BL-PCN" secondAttribute="trailing" constant="10" id="QJW-zY-hmm"/>
@@ -383,10 +402,19 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HC-Icon.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="zBz-sc-dOV">
+                                                        <rect key="frame" x="436" y="402" width="128" height="128"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="128" id="Gqh-z8-uWL"/>
+                                                            <constraint firstAttribute="width" constant="128" id="zQn-Ma-Ngp"/>
+                                                        </constraints>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" name="AppColor"/>
                                                 <constraints>
                                                     <constraint firstItem="CNa-6o-jKG" firstAttribute="centerX" secondItem="UtI-Ln-5pP" secondAttribute="centerX" id="FdS-Mq-yen"/>
+                                                    <constraint firstItem="CNa-6o-jKG" firstAttribute="top" secondItem="zBz-sc-dOV" secondAttribute="bottom" constant="20" id="dvI-wh-foe"/>
+                                                    <constraint firstItem="zBz-sc-dOV" firstAttribute="centerX" secondItem="UtI-Ln-5pP" secondAttribute="centerX" id="fDu-TU-Ic4"/>
                                                     <constraint firstAttribute="bottom" secondItem="CNa-6o-jKG" secondAttribute="bottom" constant="50" id="njp-Y7-LR7"/>
                                                     <constraint firstAttribute="width" constant="1000" id="pJS-hw-hPI"/>
                                                 </constraints>
@@ -397,10 +425,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFg-1l-aHv">
-                                                <rect key="frame" x="0.0" y="55" width="43.5" height="31"/>
+                                                <rect key="frame" x="0.0" y="55" width="47.5" height="31"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="arrow.backward" catalog="system"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="arrow.backward" catalog="system" title=" "/>
                                                 <connections>
                                                     <action selector="backAction:" destination="YJw-lQ-lSa" eventType="touchUpInside" id="dlc-c6-Q7w"/>
                                                 </connections>
@@ -519,9 +547,18 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HC-Icon.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="VVY-qL-Kop">
+                                                        <rect key="frame" x="436" y="402" width="128" height="128"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="128" id="Nrj-bd-Bpd"/>
+                                                            <constraint firstAttribute="height" constant="128" id="u6p-ab-QXN"/>
+                                                        </constraints>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" name="AppColor"/>
                                                 <constraints>
+                                                    <constraint firstItem="Bmx-kQ-xNM" firstAttribute="top" secondItem="VVY-qL-Kop" secondAttribute="bottom" constant="20" id="2F6-KD-zs5"/>
+                                                    <constraint firstItem="VVY-qL-Kop" firstAttribute="centerX" secondItem="y9H-I4-AaN" secondAttribute="centerX" id="3Se-c2-cQa"/>
                                                     <constraint firstAttribute="width" constant="1000" id="opa-hG-gKr"/>
                                                     <constraint firstItem="Bmx-kQ-xNM" firstAttribute="centerX" secondItem="y9H-I4-AaN" secondAttribute="centerX" id="y81-NK-Bqh"/>
                                                     <constraint firstAttribute="bottom" secondItem="Bmx-kQ-xNM" secondAttribute="bottom" constant="50" id="yUU-AV-snB"/>
@@ -533,10 +570,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MkT-Vz-884">
-                                                <rect key="frame" x="0.0" y="55" width="43.5" height="31"/>
+                                                <rect key="frame" x="0.0" y="55" width="47.5" height="31"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="arrow.backward" catalog="system"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="arrow.backward" catalog="system" title=" "/>
                                                 <connections>
                                                     <action selector="backAction:" destination="Z42-hR-uag" eventType="touchUpInside" id="eXy-ku-XBF"/>
                                                 </connections>
@@ -644,9 +681,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="HC-Icon.jpg" width="250" height="250"/>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <namedColor name="AppColor">
-            <color red="0.0" green="0.0" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.17299999296665192" green="0.40400001406669617" blue="0.65100002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

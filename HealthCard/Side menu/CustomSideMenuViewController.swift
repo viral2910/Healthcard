@@ -61,10 +61,15 @@ class CustomSideMenuViewController: UIViewController, XIBed , PushViewController
         }
     
         @IBAction func termsAndConditionBtnTap(_ sender: UIButton) {
-
+            let vc = CustomWebViewVC(nibName: "CustomWebViewVC", bundle: nil)
+            vc.screen = 0
+            self.navigationController?.pushViewController(vc, animated: true)
         }
 
         @IBAction func privacyPolicyBtnTap(_ sender: UIButton) {
+            let vc = CustomWebViewVC(nibName: "CustomWebViewVC", bundle: nil)
+            vc.screen = 1
+            self.navigationController?.pushViewController(vc, animated: true)
 
         }
 
@@ -73,7 +78,10 @@ class CustomSideMenuViewController: UIViewController, XIBed , PushViewController
         }
 
         @IBAction func aboutAppBtnTap(_ sender: UIButton) {
-
+            
+                let vc = CustomWebViewVC(nibName: "CustomWebViewVC", bundle: nil)
+                vc.screen = 2
+                self.navigationController?.pushViewController(vc, animated: true)
         }
 
         @IBAction func settingsBtnTap(_ sender: UIButton) {
@@ -81,7 +89,12 @@ class CustomSideMenuViewController: UIViewController, XIBed , PushViewController
         }
 
         @IBAction func logoutBtnTap(_ sender: UIButton) {
-
+            let domain = Bundle.main.bundleIdentifier!
+            UserDefaults.standard.removePersistentDomain(forName: domain)
+            UserDefaults.standard.synchronize()
+            
+                let singin = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "SingInVC") as! SingInVC
+                self.navigationController?.pushViewController(singin, animated: true)
         }
 
     }

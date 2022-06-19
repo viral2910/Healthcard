@@ -5,12 +5,14 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyOrders" customModule="HealthCard" customModuleProvider="target">
             <connections>
                 <outlet property="filterBtn" destination="Q3c-4Y-hg4" id="gZD-q0-3bO"/>
+                <outlet property="tableview" destination="gDh-s2-ylK" id="eSo-Fo-ndm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -83,15 +85,23 @@
                         <constraint firstAttribute="bottom" secondItem="g2X-uz-v1D" secondAttribute="bottom" id="zTe-Y8-ite"/>
                     </constraints>
                 </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gDh-s2-ylK">
+                    <rect key="frame" x="0.0" y="144" width="414" height="718"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="gnU-z1-qnr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Acb-uM-8Uh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gDh-s2-ylK" secondAttribute="trailing" id="SeZ-Q8-NNg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Q3c-4Y-hg4" secondAttribute="trailing" id="SpU-SX-MoY"/>
                 <constraint firstAttribute="trailing" secondItem="gnU-z1-qnr" secondAttribute="trailing" id="Zr8-33-vhr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="gDh-s2-ylK" secondAttribute="bottom" id="dtP-1D-eIh"/>
                 <constraint firstItem="Q3c-4Y-hg4" firstAttribute="top" secondItem="gnU-z1-qnr" secondAttribute="bottom" id="eu7-2l-hlC"/>
+                <constraint firstItem="gDh-s2-ylK" firstAttribute="top" secondItem="Q3c-4Y-hg4" secondAttribute="bottom" id="kj4-5U-7rc"/>
                 <constraint firstItem="gnU-z1-qnr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="sXm-U7-Rsv"/>
+                <constraint firstItem="gDh-s2-ylK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yXt-DF-PRn"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
         </view>
@@ -100,5 +110,8 @@
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="flip.horizontal.fill" catalog="system" width="128" height="112"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

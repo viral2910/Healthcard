@@ -9,12 +9,16 @@ import Foundation
 import UIKit
 import SDWebImage
 
+protocol GetSelectedPrescriptionId: AnyObject {
+    func selectedPrescriptionIds(id: [Int])
+}
+
 class PrescriptionListCollectionViewManager: NSObject {
 
     weak var collectionView: UICollectionView?
     weak var emptyView: UIView?
         
-    var storyData : [String] = []
+    var storyData : PatientPrescriptionResponseData = []
     
     weak var pushDelegate: PushViewControllerDelegate?
     weak var presentDelegate: presentViewControllersDelegate?
@@ -22,13 +26,17 @@ class PrescriptionListCollectionViewManager: NSObject {
 //    var moreButtonDropDown = DropDown_()
 //    var view = UIView()
     
+    var buttonCounter = [Int]()
+
+    var selectedPrescriptionId: [Int] = []
     
+    var selectedPresDelegate: GetSelectedPrescriptionId?
     
-    func start(data: [String], collectionVIew: UICollectionView) {
+    func start(data: PatientPrescriptionResponseData, collectionVIew: UICollectionView) {
         self.collectionView = collectionVIew
         self.storyData = data
-        let cellNib = UINib(nibName: "SliderCollectionViewCell", bundle: nil)
-        collectionView?.register(cellNib, forCellWithReuseIdentifier: "SliderCollectionViewCell")
+        let cellNib = UINib(nibName: "PrescriptionListCollectionViewCell", bundle: nil)
+        collectionView?.register(cellNib, forCellWithReuseIdentifier: "PrescriptionListCollectionViewCell")
         self.collectionView?.dataSource = self
         self.collectionView?.delegate = self
 
@@ -56,16 +64,31 @@ extension PrescriptionListCollectionViewManager: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SliderCollectionViewCell", for:indexPath) as! SliderCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PrescriptionListCollectionViewCell", for:indexPath) as! PrescriptionListCollectionViewCell
         //cell.borderView.layer.borderColor = UIColor(hexString: borderColor).cgColor
 
        // cell.imgViewRef.image = UIImage(named: storyData[indexPath.row])
-//        if let imgUrl = storyData[indexPath.row].banner {
-//            cell.imgViewRef.sd_setImage(with: URL(string: imgUrl), placeholderImage: UIImage(named: "placeholder.png"))
-//        }
+        cell.viewRef.dropShadow()
+        cell.viewRef.layer.cornerRadius = 10
+        let imgUrl = storyData[indexPath.row].reportLink
+            cell.imgViewRef.sd_setImage(with: URL(string: imgUrl), placeholderImage: UIImage(named: "placeholder.png"))
+        
         
         cell.imgViewRef.layer.cornerRadius = 10
 
+        var BoxOn = UIImage(named: "checkedcircle")
+        var BoxOff = UIImage(named: "circle")
+        
+        cell.checkBoxImgViewRef.image = BoxOff
+        if buttonCounter.contains(indexPath.row){
+            cell.checkBoxImgViewRef.image = BoxOn
+
+        }
+        else{
+            cell.checkBoxImgViewRef.image = BoxOff
+
+        }
+        
         return cell
     }
     
@@ -83,6 +106,30 @@ extension PrescriptionListCollectionViewManager: UICollectionViewDelegate, UICol
 //        vc.eventId = storyData[indexPath.row].eventID ?? 0
 //        pushDelegate?.pushViewController(vc: vc)
             
+        if buttonCounter.contains(indexPath.row){
+            let index = buttonCounter.firstIndex(of: indexPath.row)
+            
+            buttonCounter.remove(at: index!)
+            collectionView.reloadItems(at: [indexPath])
+        }
+        else{
+            buttonCounter.append(indexPath.row)
+            collectionView.reloadItems(at: [indexPath])
+        }
+
+        if selectedPrescriptionId.contains(storyData[indexPath.row].pharmacyOutID){
+            let index = selectedPrescriptionId.firstIndex(of: storyData[indexPath.row].pharmacyOutID)
+            
+            selectedPrescriptionId.remove(at: index!)
+        }
+        else{
+            selectedPrescriptionId.append(storyData[indexPath.row].pharmacyOutID)
+        }
+        print(buttonCounter)
+
+        print("Selected Prescription: \(selectedPrescriptionId)")
+        
+        selectedPresDelegate?.selectedPrescriptionIds(id: selectedPrescriptionId)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -107,7 +107,7 @@ extension MedicineYouAreLookingSlider2CollectionViewManager: UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.bounds.width-25, height: collectionView.bounds.height)
+        CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
     }
     
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

@@ -118,7 +118,7 @@ extension MedicineVC {
             } else {
                 if (self?.prescriptionList.contains("True") ?? false) {
                     let vc = PrescriptionListVC.instantiate()
-                    vc.pincode = "\(data?[0].cartDtlslist[0].deliveryPincode ?? 0)"
+                    vc.pincode = ""
                     vc.docId = (self?.LabInvestigationID.map{String($0)})?.joined(separator: ",") ?? ""
                     vc.labInvestigation = (self?.selectedDocID.map{String($0)})?.joined(separator: ",") ?? ""
                     vc.docType = self?.docTypeList.joined(separator: ",") ?? ""

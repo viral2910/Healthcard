@@ -4,7 +4,6 @@
 //
 //  Created by Viral on 19/05/22.
 //
-
 import UIKit
 
 class PrescriptionListVC: UIViewController,XIBed,PushViewControllerDelegate {
@@ -15,6 +14,8 @@ class PrescriptionListVC: UIViewController,XIBed,PushViewControllerDelegate {
     var docId = ""
     var docType = ""
     var addressReq = false
+    var selectedPrescriptionId: [Int] = []
+
     weak var pushDelegate: PushViewControllerDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,19 +27,39 @@ class PrescriptionListVC: UIViewController,XIBed,PushViewControllerDelegate {
     
     @IBAction func prescriptionAction(_ sender: Any) {
 //        self.navigationController?.popViewController(animated: true)
-        showPrescriptionList()
+        ApiCall()
     }
 
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
 }
+
+extension PrescriptionListVC {
+    
+    func ApiCall() {
+        struct demo: Codable { }
+        let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
+        NetWorker.shared.callAPIService(type: APIV2.prescriptionList(patientID: patientID)) { [weak self](data: PatientPrescriptionResponseData?, error) in
+            self!.showPrescriptionList(data: data ?? [])
+        }
+    }
+}
+extension PrescriptionListVC: GetSelectedPrescriptionId {
+    func selectedPrescriptionIds(id: [Int]) {
+        print("DelegatePresId: \(id)")
+        selectedPrescriptionId = id
+    }
+    
+    
+}
+
 extension PrescriptionListVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    func showPrescriptionList() {
-        let vc = CustomPrescriptionListPopupVC.instantiate(arrData: ["","","","",""])
+    func showPrescriptionList(data: PatientPrescriptionResponseData) {
+        let vc = CustomPrescriptionListPopupVC.instantiate(arrData: data)
         vc.pushDelegate = self
-        
+        vc.selectedPresIdDelegate = self
         self.present(vc, animated: true)
         vc.completion = { result in
             switch result {
@@ -140,3 +161,81 @@ extension PrescriptionListVC: UIImagePickerControllerDelegate, UINavigationContr
         }
 }
 }
+
+// MARK: - PatientPrescriptionResponseDatum
+struct PatientPrescriptionResponseDatum: Codable {
+    let id: Int
+    let procDocID, labTestDocID, labTestID, insuranceID: JSONNull?
+    let insuranceDocID, insuranceName: JSONNull?
+    let patientID: String
+    let patientDocID, patientName, refUnitID, refUnitDocID: JSONNull?
+    let refUnitName, userID, userDocID, userName: JSONNull?
+    let doctorID, doctorDocID, doctorName, bankID: JSONNull?
+    let bankDocID, bankName, pharmacyID, pharmacyDocID: JSONNull?
+    let pharmacyName, laboratoryID, laboratoryDocID, laboratoryName: JSONNull?
+    let deliveryBoyID, deliveryBoyDocID, deliveryBoyName, pharmacyOutDocID: JSONNull?
+    let pharmacyOutID: Int
+    let type: String
+    let date, filename: String
+    let displayFilename: JSONNull?
+    let filePath: String
+    let fileEXT: String
+    let uploadFileName: String
+    let createdBy, createdOn, updatedBy, updatedOn: JSONNull?
+    let orgFile, currUser, investigationAdviseID, isEdit: JSONNull?
+    let reportLink: String
+
+    enum CodingKeys: String, CodingKey {
+        case id = "Id"
+        case procDocID = "ProcDocId"
+        case labTestDocID = "LabTestDocId"
+        case labTestID = "LabTestId"
+        case insuranceID = "InsuranceId"
+        case insuranceDocID = "InsuranceDocId"
+        case insuranceName = "InsuranceName"
+        case patientID = "PatientId"
+        case patientDocID = "PatientDocId"
+        case patientName = "PatientName"
+        case refUnitID = "RefUnitId"
+        case refUnitDocID = "RefUnitDocId"
+        case refUnitName = "RefUnitName"
+        case userID = "UserId"
+        case userDocID = "UserDocId"
+        case userName = "UserName"
+        case doctorID = "DoctorId"
+        case doctorDocID = "DoctorDocId"
+        case doctorName = "DoctorName"
+        case bankID = "BankId"
+        case bankDocID = "BankDocId"
+        case bankName = "BankName"
+        case pharmacyID = "PharmacyId"
+        case pharmacyDocID = "PharmacyDocId"
+        case pharmacyName = "PharmacyName"
+        case laboratoryID = "LaboratoryId"
+        case laboratoryDocID = "LaboratoryDocId"
+        case laboratoryName = "LaboratoryName"
+        case deliveryBoyID = "DeliveryBoyId"
+        case deliveryBoyDocID = "DeliveryBoyDocId"
+        case deliveryBoyName = "DeliveryBoyName"
+        case pharmacyOutDocID = "PharmacyOutDocId"
+        case pharmacyOutID = "PharmacyOutId"
+        case type = "Type"
+        case date = "Date"
+        case filename = "Filename"
+        case displayFilename = "DisplayFilename"
+        case filePath = "FilePath"
+        case fileEXT = "FileExt"
+        case uploadFileName = "UploadFileName"
+        case createdBy = "CreatedBy"
+        case createdOn = "CreatedOn"
+        case updatedBy = "UpdatedBy"
+        case updatedOn = "UpdatedOn"
+        case orgFile = "OrgFile"
+        case currUser = "CurrUser"
+        case investigationAdviseID = "InvestigationAdviseId"
+        case isEdit = "IsEdit"
+        case reportLink = "ReportLink"
+    }
+}
+
+typealias PatientPrescriptionResponseData = [PatientPrescriptionResponseDatum]

@@ -17,7 +17,8 @@ protocol API {
 }
 extension API {
     var fullURL: URL {
-        let url = URL(string: self.baseURL.absoluteString + path)!
+        let valuepath = path.replacingOccurrences(of: " ", with: "%20")
+        let url = URL(string: self.baseURL.absoluteString + valuepath)!
         return url
                 
     }

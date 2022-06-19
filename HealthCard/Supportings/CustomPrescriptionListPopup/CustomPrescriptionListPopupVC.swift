@@ -12,7 +12,7 @@ public enum CustomPrescriptionListAlertResult {
 }
 class CustomPrescriptionListPopupVC: PannableViewController, XIBed {
     
-    static func instantiate(arrData: [String]) -> Self {
+    static func instantiate(arrData: PatientPrescriptionResponseData) -> Self {
         let vc = Self.instantiate()
         vc.arrData = arrData
         
@@ -26,12 +26,16 @@ class CustomPrescriptionListPopupVC: PannableViewController, XIBed {
     @IBOutlet var cancelBtnRef: UIButton!
     public var completion: (CustomPrescriptionListAlertResult) -> () = { _ in }
     
-    var arrData: [String] = []
+    var arrData: PatientPrescriptionResponseData = []
     
     weak var pushDelegate: PushViewControllerDelegate?
     weak var presentDelegate: presentViewControllersDelegate?
     
     private lazy var collectionViewManager = { PrescriptionListCollectionViewManager() }()
+    
+    var selectedId: [Int] = []
+    
+    var selectedPresIdDelegate: GetSelectedPrescriptionId?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,7 +91,7 @@ class CustomPrescriptionListPopupVC: PannableViewController, XIBed {
         cancelBtnRef.layer.cornerRadius = 10
         
         collectionViewManager.start(data: arrData, collectionVIew: cvRef)
-        
+        collectionViewManager.selectedPresDelegate = self
         cardView.dropShadow()
         cardView.layer.borderColor = UIColor.init(hexString: "FAFAFA").cgColor
         cardView.layer.borderWidth = 3.0
@@ -112,4 +116,14 @@ class CustomPrescriptionListPopupVC: PannableViewController, XIBed {
         
     }
 
+}
+
+extension CustomPrescriptionListPopupVC: GetSelectedPrescriptionId {
+    func selectedPrescriptionIds(id: [Int]) {
+        print("DelegateId: \(id)")
+        selectedId = id
+        selectedPresIdDelegate?.selectedPrescriptionIds(id: id)
+    }
+    
+    
 }

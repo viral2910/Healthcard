@@ -70,8 +70,7 @@ extension orderPlaceVC: RazorpayPaymentCompletionProtocol{
     
     func onPaymentSuccess(_ payment_id: String) {
         print("Success \(payment_id)")
-        
-        
+        OrderapiCall()
     }
     
     internal func showPaymentForm(amount: Int,orderId: String, desc: String){

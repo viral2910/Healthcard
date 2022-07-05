@@ -7,6 +7,7 @@ PODS:
   - GoogleMaps/Base (6.2.1)
   - GoogleMaps/Maps (6.2.1):
     - GoogleMaps/Base
+  - GooglePlaces (6.2.1)
   - MarqueeLabel (4.3.0)
   - MBProgressHUD (1.2.0)
   - razorpay-pod (1.1.18)
@@ -26,6 +27,7 @@ DEPENDENCIES:
   - DropDown
   - FSCalendar
   - GoogleMaps
+  - GooglePlaces
   - MarqueeLabel
   - MBProgressHUD
   - razorpay-pod (~> 1.1.1)
@@ -42,6 +44,7 @@ SPEC REPOS:
     - DropDown
     - FSCalendar
     - GoogleMaps
+    - GooglePlaces
     - MarqueeLabel
     - MBProgressHUD
     - razorpay-pod
@@ -65,6 +68,7 @@ SPEC CHECKSUMS:
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
   GoogleMaps: 20d7b12be49a14287f797e88e0e31bc4156aaeb4
+  GooglePlaces: 94974aa119573d5acc2a35a699948dac838abd73
   MarqueeLabel: 02f5ac8fd6877c94564556cb93fa86c70c08baeb
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   razorpay-pod: 9aca3a303ef2f9281232c2f742fc6de937679500
@@ -75,6 +79,6 @@ SPEC CHECKSUMS:
   XMLParsing: b6cc40a1de8e321a72b7f0d89080473f9d53cff8
   youtube-ios-player-helper: e9b97535e816db3152179d84d999bc1807ecd689
 
-PODFILE CHECKSUM: 609f84d37734834f8c91aeb2b5bc8b9957c2ca9d
+PODFILE CHECKSUM: 853451116fb3d0c19220513ffd42a9666770e447
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

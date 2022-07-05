@@ -225,7 +225,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="viewonmapAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Po2-Le-8bf"/>
+                                    <action selector="viewonmapAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="RiM-fb-Wil"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K41-vx-Y72">
@@ -357,6 +357,7 @@
                 <outlet property="productNameLabel" destination="5mq-AH-gLL" id="cLC-cR-hQy"/>
                 <outlet property="qtyLabel" destination="6nq-T5-c3m" id="Y5p-ko-suy"/>
                 <outlet property="sellerNameLabel" destination="rk0-o0-9Fi" id="htS-73-UA6"/>
+                <outlet property="viewonmapBtn" destination="i0F-WO-zjC" id="alM-bx-fA4"/>
             </connections>
             <point key="canvasLocation" x="96.376811594202906" y="189.84375"/>
         </tableViewCell>

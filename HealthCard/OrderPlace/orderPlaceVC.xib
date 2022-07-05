@@ -53,6 +53,11 @@
                                     <state key="normal" title="Cash On Delivery">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="25"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
                                     <connections>
                                         <action selector="payOnDeliveryAction:" destination="-1" eventType="touchUpInside" id="Ljo-B2-YXD"/>
                                     </connections>
@@ -65,6 +70,11 @@
                                     <state key="normal" title="Pay Online">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="25"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
                                     <connections>
                                         <action selector="payOnlineAction:" destination="-1" eventType="touchUpInside" id="Pg1-LF-CMI"/>
                                     </connections>

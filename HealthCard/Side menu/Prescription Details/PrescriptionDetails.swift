@@ -12,27 +12,27 @@ struct prescriptionData: Codable {
     let patientID: Int
     let prescriptionID, bookAppID, complaints, diagnosis: String
     let pulse: String
-    let bp: Bp
-    let temp: Temp
+    let bp: String
+    let temp: String
     let rr: String
-    let uterusRemarks, fornixRemarks, cervixRemarks: CervixRemarks
-    let otherGenExam: OtherGenExam
-    let externalGenitalia: CervixRemarks
-    let perVag: PerVag
-    let spectrumExam: CervixRemarks
+    let uterusRemarks, fornixRemarks, cervixRemarks: String
+    let otherGenExam: String
+    let externalGenitalia: String
+    let perVag: String
+    let spectrumExam: String
     let uterus, ovariesRight, ovariesLeft, ovariesComm: String
     let endometrial, adnexal, investigationAdvise, medicationAdvice: String
     let procedureAdvice: String
-    let procedureAdviseRemarks: ProcedureAdviseRemarks
-    let remarks: Remarks
-    let prescriptionType: PrescriptionType
+    let procedureAdviseRemarks: String
+    let remarks: String
+    let prescriptionType: String
     let nfuDay: String
-    let nfuDate: NFUDate
-    let nfuCreatedDate: NFUCreatedDate
+    let nfuDate: String
+    let nfuCreatedDate: String
     let bookedFor: String
     let reportLink: String
     let ivfID, planningTreatment: String
-    let planningTreatmentName: PlanningTreatmentName
+    let planningTreatmentName: String
     let planningDate: JSONNull?
     let planningNo, lmpDate, ocpldDate: String
 
@@ -80,62 +80,6 @@ struct prescriptionData: Codable {
     }
 }
 
-enum Bp: String, Codable {
-    case the12080 = "120/80"
-}
-
-enum CervixRemarks: String, Codable {
-    case demo = "demo"
-    case empty = ""
-    case normal = "NORMAL"
-}
-
-enum NFUCreatedDate: String, Codable {
-    case empty = ""
-    case the04Mar20210425PM = "04-Mar-2021 04:25 PM"
-    case the12Sep20200506PM = "12-Sep-2020 05:06 PM"
-}
-
-enum NFUDate: String, Codable {
-    case empty = ""
-    case the01Jan2021 = "01/Jan/2021"
-    case the12Sep2020 = "12/Sep/2020"
-}
-
-enum OtherGenExam: String, Codable {
-    case normal = "Normal"
-}
-
-enum PerVag: String, Codable {
-    case empty = ""
-    case the8081 = "80,81"
-}
-
-enum PlanningTreatmentName: String, Codable {
-    case empty = ""
-    case iuiSelfSemen = "IUI SELF SEMEN"
-    case plannedRelations = "PLANNED RELATIONS"
-}
-
-enum PrescriptionType: String, Codable {
-    case opd = "OPD"
-    case planning = "PLANNING"
-    case planningDay2 = "PLANNING/DAY2"
-}
-
-enum ProcedureAdviseRemarks: String, Codable {
-    case empty = ""
-    case takeMedicines = "TAKE MEDICINES "
-}
-
-enum Remarks: String, Codable {
-    case empty = ""
-    case foloowUpOnMonday = "FOLOOW UP ON MONDAY "
-}
-
-enum Temp: String, Codable {
-    case afebrile = "Afebrile"
-}
 
 //typealias Welcome = [prescriptionData]
 

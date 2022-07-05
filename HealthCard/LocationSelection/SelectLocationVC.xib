@@ -17,7 +17,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectLocationVC" customModule="HealthCard" customModuleProvider="target">
             <connections>
                 <outlet property="mapviewRef" destination="Zz9-0a-dXX" id="Fmb-Ng-hjr"/>
+                <outlet property="searchBar" destination="1D6-n2-kZz" id="lUN-Bp-NVz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="yourpinLabel" destination="15A-j6-3KA" id="6NF-26-51F"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -25,8 +27,14 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15A-j6-3KA">
+                    <rect key="frame" x="0.0" y="94" width="414" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zz9-0a-dXX" customClass="GMSMapView">
-                    <rect key="frame" x="0.0" y="94" width="414" height="708"/>
+                    <rect key="frame" x="0.0" y="165.5" width="414" height="641.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WPy-FT-8XJ">
@@ -84,18 +92,27 @@
                         <action selector="ProcedAction:" destination="-1" eventType="touchUpInside" id="HkK-qc-AS8"/>
                     </connections>
                 </button>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="1D6-n2-kZz">
+                    <rect key="frame" x="0.0" y="114.5" width="414" height="51"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Fze-tM-4EP" firstAttribute="top" secondItem="Zz9-0a-dXX" secondAttribute="bottom" constant="5" id="0ko-D6-bWi"/>
-                <constraint firstItem="Zz9-0a-dXX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="7Bx-mn-39D"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Zz9-0a-dXX" secondAttribute="bottom" constant="60" id="8Yj-Bv-X0v"/>
+                <constraint firstItem="1D6-n2-kZz" firstAttribute="top" secondItem="15A-j6-3KA" secondAttribute="bottom" id="8ui-iz-b2s"/>
+                <constraint firstAttribute="trailing" secondItem="Zz9-0a-dXX" secondAttribute="trailing" id="GcE-cU-Qfa"/>
+                <constraint firstItem="15A-j6-3KA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Hcv-aa-JZZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Fze-tM-4EP" secondAttribute="bottom" constant="5" id="Opr-bC-tEV"/>
+                <constraint firstItem="15A-j6-3KA" firstAttribute="top" secondItem="WPy-FT-8XJ" secondAttribute="bottom" id="P7a-WO-jjE"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WPy-FT-8XJ" secondAttribute="trailing" id="R6t-MQ-isP"/>
-                <constraint firstItem="Zz9-0a-dXX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ukd-uf-KVt"/>
+                <constraint firstItem="Fze-tM-4EP" firstAttribute="top" secondItem="Zz9-0a-dXX" secondAttribute="bottom" id="WbZ-mE-yAR"/>
+                <constraint firstItem="Zz9-0a-dXX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dTe-4P-zXR"/>
                 <constraint firstItem="Fze-tM-4EP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="dX1-gX-aL4"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Zz9-0a-dXX" secondAttribute="trailing" id="h98-54-hyQ"/>
+                <constraint firstItem="Zz9-0a-dXX" firstAttribute="top" secondItem="1D6-n2-kZz" secondAttribute="bottom" id="fkq-bb-gMA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="15A-j6-3KA" secondAttribute="trailing" id="h6H-XH-VBu"/>
+                <constraint firstItem="1D6-n2-kZz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nNX-uq-wqN"/>
+                <constraint firstItem="1D6-n2-kZz" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="pXo-Xv-Ftk"/>
                 <constraint firstItem="WPy-FT-8XJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="tdA-M6-07L"/>
                 <constraint firstItem="WPy-FT-8XJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vYt-dQ-zu7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Fze-tM-4EP" secondAttribute="trailing" constant="20" id="wFb-uO-7Ff"/>

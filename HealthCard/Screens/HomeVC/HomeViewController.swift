@@ -88,23 +88,21 @@ class HomeViewController: UIViewController , XIBed, PushViewControllerDelegate ,
     private lazy var consultationCategoryCollectionViewManager = { ConsultationCategoryCollectionViewManager() }()
 
     weak var pushDelegate: PushViewControllerDelegate?
+    var isLocationSelected = false
     let locationManager = CLLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-            setupUI()
-            setupCornerShadow()
         
-
+        setupUI()
+        setupCornerShadow()
         // For use in foreground
         self.locationManager.requestWhenInUseAuthorization()
-
+        
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -114,9 +112,12 @@ class HomeViewController: UIViewController , XIBed, PushViewControllerDelegate ,
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-//        print("locations = \(locValue.latitude) \(locValue.longitude)")
-        if currentlocationValue.text == " " || currentlocationValue.text == "" {
-        getAddressFromLatLon(pdblLatitude: "\(locValue.latitude)", withLongitude: "\(locValue.longitude)")
+        if !isLocationSelected {
+            isLocationSelected = true
+            getAddressFromLatLon(pdblLatitude: "\(locValue.latitude)", withLongitude: "\(locValue.longitude)")
+            self.locationManager.stopUpdatingLocation()
+        }else {
+            self.locationManager.stopUpdatingLocation()
         }
     }
 

@@ -55,7 +55,6 @@ extension CartDetailsCell : UITableViewDataSource ,UITableViewDelegate{
         cell.delegate = self
         cell.removeClick.tag = ListData[indexPath.row].cartID
         cell.qtyControlStack.isHidden = ListData[indexPath.row].sellerType == "Pharmacy" ? true : false
-//        cell.subtitleLabel.text = labListData[indexPath.row].
         cell.qtyLabel.text = "\(ListData[indexPath.row].qty)"
         let url = URL(string: "\(ListData[indexPath.row].imageURL)")!
         URLSession.shared.dataTask(with: url) { data, response, error in

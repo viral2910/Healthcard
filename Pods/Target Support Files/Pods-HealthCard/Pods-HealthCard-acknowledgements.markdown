@@ -75,6 +75,10 @@ THE SOFTWARE.
 
 Copyright 2022 Google
 
+## GooglePlaces
+
+Copyright 2022 Google
+
 ## MBProgressHUD
 
 Copyright © 2009-2020 Matej Bukovinski

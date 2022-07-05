@@ -69,6 +69,8 @@ extension OrderTrackVC: UITableViewDelegate, UITableViewDataSource{
                 cell.productImage.image = image
             }
         }.resume()
+        cell.delegate = self
+        cell.viewonmapBtn.tag = indexPath.row
         return cell
         
     }
@@ -79,6 +81,17 @@ extension OrderTrackVC: UITableViewDelegate, UITableViewDataSource{
         return UITableView.automaticDimension
     }
 }
+extension OrderTrackVC:TrackOnMap {
+    func getId(value: Int) {
+            let vc = driverRouteViewController.instantiate()
+        vc.lati = Double(dataValue[value].patientLatitude) ?? 0.0
+        vc.longi = Double(dataValue[value].patientLongitude) ?? 0.0
+        vc.latdriver = Double(dataValue[value].sellerLatitude) ?? 0.0
+        vc.longdriver = Double(dataValue[value].sellerLongitude) ?? 0.0
+            self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
 
 // MARK: - WelcomeElement
 struct orderList: Codable {

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="driverRouteViewController" customModule="HealthCard" customModuleProvider="target">
+            <connections>
+                <outlet property="mapviewRef" destination="gID-By-c3l" id="YwO-9R-iaN"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSg-Ob-5zd">
+                    <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Fd-X7-NEU">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="Xh4-FN-SCP"/>
+                            </constraints>
+                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="arrow.backward" catalog="system" title=" "/>
+                            <connections>
+                                <action selector="backAction:" destination="-1" eventType="touchUpInside" id="RsT-IV-B4k"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Driver location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0e-FP-1TA">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="02j-ZM-m3C"/>
+                        <constraint firstItem="6Fd-X7-NEU" firstAttribute="top" secondItem="SSg-Ob-5zd" secondAttribute="top" id="Bb1-RB-9SH"/>
+                        <constraint firstAttribute="bottom" secondItem="s0e-FP-1TA" secondAttribute="bottom" id="PPh-BM-N7r"/>
+                        <constraint firstAttribute="bottom" secondItem="6Fd-X7-NEU" secondAttribute="bottom" id="Twk-G7-9EH"/>
+                        <constraint firstItem="s0e-FP-1TA" firstAttribute="top" secondItem="SSg-Ob-5zd" secondAttribute="top" id="WmG-CZ-z63"/>
+                        <constraint firstItem="6Fd-X7-NEU" firstAttribute="leading" secondItem="SSg-Ob-5zd" secondAttribute="leading" id="Wp9-s1-KWc"/>
+                        <constraint firstItem="s0e-FP-1TA" firstAttribute="leading" secondItem="SSg-Ob-5zd" secondAttribute="leading" id="eeU-KN-rKE"/>
+                        <constraint firstAttribute="trailing" secondItem="s0e-FP-1TA" secondAttribute="trailing" id="sX4-Ny-EhB"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gID-By-c3l" customClass="GMSMapView">
+                    <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="gID-By-c3l" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="BdW-zO-D36"/>
+                <constraint firstItem="gID-By-c3l" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="D7G-im-TFF"/>
+                <constraint firstItem="SSg-Ob-5zd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="DAF-p4-XjE"/>
+                <constraint firstItem="gID-By-c3l" firstAttribute="top" secondItem="SSg-Ob-5zd" secondAttribute="bottom" id="doc-CO-EL3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="gID-By-c3l" secondAttribute="bottom" id="gtR-Pk-X9a"/>
+                <constraint firstAttribute="trailing" secondItem="SSg-Ob-5zd" secondAttribute="trailing" id="sYQ-ob-bYe"/>
+                <constraint firstItem="SSg-Ob-5zd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="z12-RL-8xB"/>
+            </constraints>
+            <point key="canvasLocation" x="-97.101449275362327" y="93.75"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

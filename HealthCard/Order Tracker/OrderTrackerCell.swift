@@ -7,8 +7,12 @@
 
 import UIKit
 
+protocol TrackOnMap {
+    func getId(value : Int)
+}
 class OrderTrackerCell: UITableViewCell {
 
+    @IBOutlet weak var viewonmapBtn: UIButton!
     @IBOutlet weak var mainview: UIView!
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var orderStatusLabel: UILabel!
@@ -25,6 +29,7 @@ class OrderTrackerCell: UITableViewCell {
     @IBOutlet weak var getSummaryBtn: UIButton!
     var invoiceurl = ""
     var summaryurl = ""
+    var delegate : TrackOnMap!
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -45,7 +50,8 @@ class OrderTrackerCell: UITableViewCell {
         mainview.dropShadow()
         // Initialization code
     }
-    @IBAction func viewonmapAction(_ sender: Any) {
+    @IBAction func viewonmapAction(_ sender: UIButton) {
+        delegate.getId(value: sender.tag)
     }
     
     @IBAction func getOrderSummaryAction(_ sender: UIButton) {

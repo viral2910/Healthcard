@@ -15,6 +15,7 @@ class PatientExperienceWithUsSliderCollectionViewManager: NSObject {
     weak var emptyView: UIView?
         
     var storyData : [String] = []
+    var nameData : [String] = []
     
     weak var pushDelegate: PushViewControllerDelegate?
     weak var presentDelegate: presentViewControllersDelegate?
@@ -24,11 +25,12 @@ class PatientExperienceWithUsSliderCollectionViewManager: NSObject {
     
     
     
-    func start(data: [String], collectionVIew: UICollectionView) {
+    func start(data: [String], nameData: [String], collectionVIew: UICollectionView) {
         self.collectionView = collectionVIew
         self.storyData = data
-        let cellNib = UINib(nibName: "SliderCollectionViewCell", bundle: nil)
-        collectionView?.register(cellNib, forCellWithReuseIdentifier: "SliderCollectionViewCell")
+        self.nameData = nameData
+        let cellNib = UINib(nibName: "PatientExperienceCollectionViewCell", bundle: nil)
+        collectionView?.register(cellNib, forCellWithReuseIdentifier: "PatientExperienceCollectionViewCell")
         self.collectionView?.dataSource = self
         self.collectionView?.delegate = self
 
@@ -77,15 +79,16 @@ extension PatientExperienceWithUsSliderCollectionViewManager: UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SliderCollectionViewCell", for:indexPath) as! SliderCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PatientExperienceCollectionViewCell", for:indexPath) as! PatientExperienceCollectionViewCell
         //cell.borderView.layer.borderColor = UIColor(hexString: borderColor).cgColor
 
-        cell.imgViewRef.image = UIImage(named: storyData[indexPath.row])
+        cell.lblRef.text = storyData[indexPath.row]
+        cell.nameLblRef.text = nameData[indexPath.row]
 //        if let imgUrl = storyData[indexPath.row].banner {
 //            cell.imgViewRef.sd_setImage(with: URL(string: imgUrl), placeholderImage: UIImage(named: "placeholder.png"))
 //        }
         
-        cell.imgViewRef.layer.cornerRadius = 10
+        cell.viewRef.layer.cornerRadius = 10
 
         return cell
     }
@@ -107,16 +110,20 @@ extension PatientExperienceWithUsSliderCollectionViewManager: UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
+        CGSize(width: collectionView.bounds.width - 20, height: collectionView.bounds.height)
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 0
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return 0
-//    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
 }
 
 //extension CoursesCollectionViewManager: PushViewControllerDelegate {

@@ -88,21 +88,23 @@ class HomeViewController: UIViewController , XIBed, PushViewControllerDelegate ,
     private lazy var consultationCategoryCollectionViewManager = { ConsultationCategoryCollectionViewManager() }()
 
     weak var pushDelegate: PushViewControllerDelegate?
-    var isLocationSelected = false
     let locationManager = CLLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
+
+            setupUI()
+            setupCornerShadow()
         
-        setupUI()
-        setupCornerShadow()
+
         // For use in foreground
         self.locationManager.requestWhenInUseAuthorization()
-        
+
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -112,12 +114,9 @@ class HomeViewController: UIViewController , XIBed, PushViewControllerDelegate ,
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        if !isLocationSelected {
-            isLocationSelected = true
-            getAddressFromLatLon(pdblLatitude: "\(locValue.latitude)", withLongitude: "\(locValue.longitude)")
-            self.locationManager.stopUpdatingLocation()
-        }else {
-            self.locationManager.stopUpdatingLocation()
+//        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        if currentlocationValue.text == " " || currentlocationValue.text == "" {
+        getAddressFromLatLon(pdblLatitude: "\(locValue.latitude)", withLongitude: "\(locValue.longitude)")
         }
     }
 
@@ -194,8 +193,18 @@ extension HomeViewController {
         medicineYouAreLookingSlider2CollectionViewManager.start(data: ["upto_25_off"], collectionVIew: medicineYouAreLookingSliderBanner2CvRef)
         lookingForConsultationInSlider1CollectionViewManager.start(data: ["10_40_off", "online_consult_from_certified_doc"], collectionVIew: lookingForConsultationsInSliderBanner1CvRef)
         lookingForConsultationInSlider2CollectionViewManager.start(data: ["online_consultation_2"], collectionVIew: lookingForConsultationsInSliderBanner2CvRef)
-        patientExperienceWithUsSliderCollectionViewManager.start(data: ["",""], collectionVIew: patientsExperienceSliderBanner1CvRef)
+        patientExperienceWithUsSliderCollectionViewManager.start(data: ["This app is really flawless. Good for elderly people. Best part of the app is home delivery of medicine at a discounted price.","I got lab tests done for my parents on HealthCard since we couldn’t travel. Sample was collected at home & I got both reports on the app. Very convenient.","I booked an appointment for an CBC (COMPLETE BLOOD COUNT) via HealthCard. Got my CBC (COMPLETE BLOOD COUNT) done immediately at my home. Didn’t have to wait or stand in a queue.","My mother  was unwell late at night and I had to speak to a doctor immediately. i chose a doctor  and got to consult in 10 minutes.It was very helpful for us."], nameData: ["Abhay thakur","Rohit Dixit","Praksah budhe","Saurabh KONKAR"], collectionVIew: patientsExperienceSliderBanner1CvRef)
 
+        /*
+         1.This app is really flawless. Good for elderly people. Best part of the app is home delivery of medicine at a discounted price.
+         Abhay thakur
+         2.I got lab tests done for my parents on HealthCard since we couldn’t travel. Sample was collected at home & I got both reports on the app. Very convenient.
+         -Rohit Dixit
+         3.I booked an appointment for an CBC (COMPLETE BLOOD COUNT) via HealthCard. Got my CBC (COMPLETE BLOOD COUNT) done immediately at my home. Didn’t have to wait or stand in a queue.
+         -Praksah budhe
+         4. My mother  was unwell late at night and I had to speak to a doctor immediately. i chose a doctor  and got to consult in 10 minutes.It was very helpful for us
+         -Saurabh KONKAR
+         */
 
         blogsCollectionViewManager.start(data: ["","","",""], collectionVIew: blogsFromExpertCvRef, totalItemToShow: 1.8)
         

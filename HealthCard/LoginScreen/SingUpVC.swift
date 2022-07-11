@@ -124,7 +124,7 @@ class SingUpVC: UIViewController, UITextFieldDelegate,UIPickerViewDataSource, UI
             } else {
                 UserDefaults.standard.set(false, forKey: "isLogin")
                 UserDefaults.standard.set(0, forKey: "patientID")
-                AppManager.shared.showAlert(title: "Error", msg: message, vc: self)
+                AppManager.shared.showAlert(title: "Error", msg: "Mobile Number already exists", vc: self)
             }
         }
         

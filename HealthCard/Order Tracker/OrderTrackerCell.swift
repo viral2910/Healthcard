@@ -51,7 +51,8 @@ class OrderTrackerCell: UITableViewCell {
         // Initialization code
     }
     @IBAction func viewonmapAction(_ sender: UIButton) {
-        delegate.getId(value: sender.tag)
+        print(sender.tag)
+        delegate?.getId(value: sender.tag)
     }
     
     @IBAction func getOrderSummaryAction(_ sender: UIButton) {

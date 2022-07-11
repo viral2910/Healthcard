@@ -205,6 +205,14 @@ enum APIV2: API {
     
     case orderTrackList(patientID: Int)
     
+    case saveAddress(patientAddressID: String,patientID: Int,vAddressType: String,vFlatNo: String,vBldg: String,vRoad: String,vNearby: String,vArea: String,vTalukaId: String,vDistrictId: String,vStateId: String,vCountryId: String,vPincode: String,iSEdit:String)
+    
+    case patientRelation(patientID: Int)
+    
+    case savePharmacyMedicine(patientID: Int, medicineId: String, brandId: String, genericId: String, doseId: String)
+    
+    case saveLabTestsTest(patientID: Int, GenInvest: String)
+    
 }
 
 
@@ -493,6 +501,18 @@ extension APIV2 {
             
         case .orderTrackList:
             return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .saveAddress:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .patientRelation:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .savePharmacyMedicine:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .saveLabTestsTest:
+            return URL(string: Router.deliveryBoyBaseUrl)!
         }
         
     }
@@ -777,13 +797,24 @@ extension APIV2 {
             return "Cart?vCartId=\(cartId)&vQty=\(qty)"
             
         case .saveOrder(patientID: let patientID,patientAddressID: let patientAddressID,cartID: let cartId,sellerMasterID: let sellerMasterID,docID: let docID,DocType: let DocType,ProductId: let ProductId,qty: let qty,MRP: let MRP,DiscountAmt: let DiscountAmt,DiscountPer: let DiscountPer,GSTAmt: let GSTAmt,GSTPer: let GSTPer,PricePerUnit: let PricePerUnit,TotalAmount: let TotalAmount,SellerType: let SellerType,Pincode: let Pincode,PaymentId: let PaymentId,PaymentMethod: let PaymentMethod,Latitude: let Latitude,Longitude: let Longitude):
-            return "Order?vPatientId=\(patientID)&vPatientAddressId=\(patientAddressID)&vCartId=\(cartId)&vSellerMasterId=\(sellerMasterID)&vDocId=\(docID)&vDocType=\(DocType)&vProductId=\(ProductId)&vQty=\(qty)&vMRP=\(MRP)&vDiscountAmt=\(DiscountAmt)&vDiscountPer=\(DiscountPer)&vGSTAmt=\(GSTAmt)&vGSTPer=\(GSTPer)&vPricePerUnit=\(PricePerUnit)&vTotalAmount=\(TotalAmount)&vSellerType=\(SellerType)&vDeliveryPincode=\(Pincode)vPaymentId=&vPaymentMode=\(PaymentMethod)&vPatientLatitude=\(Latitude)&vPatientLongitude=\(Longitude)"
+            return "Order?vPatientId=\(patientID)&vPatientAddressId=\(patientAddressID)&vCartId=\(cartId)&vSellerMasterId=\(sellerMasterID)&vDocId=\(docID)&vDocType=\(DocType)&vProductId=\(ProductId)&vQty=\(qty)&vMRP=\(MRP)&vDiscountAmt=\(DiscountAmt)&vDiscountPer=\(DiscountPer)&vGSTAmt=\(GSTAmt)&vGSTPer=\(GSTPer)&vPricePerUnit=\(PricePerUnit)&vTotalAmount=\(TotalAmount)&vSellerType=\(SellerType)&vDeliveryPincode=\(Pincode)&vPaymentId=\(PaymentId)&vPaymentMode=\(PaymentMethod)&vPatientLatitude=\(Latitude)&vPatientLongitude=\(Longitude)"
             
         case .orderTrackList(patientID: let patientId):
             return "Order?vPatientId=\(patientId)&vOrderStatus=Out%20For%20Delivery"
+            
+        case .saveAddress(patientAddressID:let patientAddressId,patientID: let patientId,vAddressType: let vAddressType, vFlatNo: let vFlatNo, vBldg: let vBldg, vRoad: let vRoad, vNearby: let vNearby, vArea: let vArea, vTalukaId: let vTalukaId, vDistrictId: let vDistrictId, vStateId: let vStateId, vCountryId: let vCountryId, vPincode: let vPincode,iSEdit: let isEdit):
+            return "Patient?vPatientAddressId=\(patientAddressId)&vPatientId=\(patientId)&vAddressType=\(vAddressType)&vFlatNo=\(vFlatNo)&vBldg=\(vBldg)&vRoad=\(vRoad)&vNearby=\(vNearby)&vArea=\(vArea)&vTalukaId=\(vTalukaId)&vDistrictId=\(vDistrictId)&vStateId=\(vStateId)&vCountryId=\(vCountryId)&vPincode=\(vPincode)&vIsEdit=\(isEdit)&vIsActive=1"
+            
+        case .patientRelation(patientID: let patientId):
+            return "Patient?vPatientRelationPatientId=\(patientId)"
+            
+        case .savePharmacyMedicine(patientID: let patientID, medicineId: let medicineId, brandId: let brandId, genericId: let genericId, doseId: let doseId):
+            return "Pharmacy?vPatientId=\(patientID)&vMedicineId=\(medicineId)&vBrandId=\(brandId)&vGenericId=\(genericId)&vDoseId=\(doseId)"
+        
+        case .saveLabTestsTest(patientID: let patientID, GenInvest: let GenInvest):
+            return "Pathology?vPatientId=\(patientID)&vGenInvest=\(GenInvest)"
         }
     }
-    
     
     var method: String {
         switch self {
@@ -1067,6 +1098,18 @@ extension APIV2 {
             return "GET"
             
         case .orderTrackList:
+            return "GET"
+        
+        case .saveAddress:
+            return "GET"
+        
+        case .patientRelation:
+            return "GET"
+            
+        case .savePharmacyMedicine:
+            return "GET"
+
+        case .saveLabTestsTest:
             return "GET"
         }
     }
@@ -1360,6 +1403,19 @@ extension APIV2 {
             
         case .orderTrackList:
             break
+            
+        case .saveAddress:
+            break
+            
+        case .patientRelation:
+            break
+            
+        case .savePharmacyMedicine:
+            break
+            
+        case .saveLabTestsTest:
+            break
+
         }
         return params
 

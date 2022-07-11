@@ -8,6 +8,7 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
+import IQKeyboardManagerSwift
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         GMSServices.provideAPIKey("AIzaSyD0K-aSwEPSJvauDS6WATK-_4iyt1eJ8h4")
-//        GMSPlacesClient.provideAPIKey("AIzaSyD0K-aSwEPSJvauDS6WATK-_4iyt1eJ8h4")
         let islogin = UserDefaults.standard.bool(forKey: "isLogin")
         if islogin {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let navigationController = UINavigationController(rootViewController: redViewController)
             
         }
+        IQKeyboardManager.shared.enable = true
         return true
     }
 

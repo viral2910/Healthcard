@@ -206,7 +206,7 @@ extension HomeViewController {
          -Saurabh KONKAR
          */
 
-        blogsCollectionViewManager.start(data: ["","","",""], collectionVIew: blogsFromExpertCvRef, totalItemToShow: 1.8)
+        blogsCollectionViewManager.start(data: ["YOmC5Tyk-nU.jpeg","UKM2SVBhtNs.jpeg","Ax4fAvR-C_c.jpeg","xDJ8FE43aP0.jpeg","SuNc0QRTvGA.jpeg","9VtxCxtsMAI.jpeg"], collectionVIew: blogsFromExpertCvRef, totalItemToShow: 1.8)
         
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.LabAction))
         self.bookLabTestOuterViewRef.addGestureRecognizer(gesture)

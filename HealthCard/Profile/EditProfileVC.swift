@@ -54,8 +54,8 @@ extension EditProfileVC{
 // MARK: - Welcome
 struct patientDetails: Codable {
     let id, patientID, weight, height: Int
-    let medicalHist: String
-    let medicalHistLst: [String]
+    let medicalHistID, medicalHist: String
+    let medicalHistLst: JSONNull?
     let medicalOtherHist, medicalHistDetails, medication, recentExacrebation: String
     let surgicalHist, anaesthesiaHist, allery, addictions: String
     let familyHist, othSighist, isEdit: String
@@ -67,6 +67,7 @@ struct patientDetails: Codable {
         case patientID = "PatientId"
         case weight = "Weight"
         case height = "Height"
+        case medicalHistID = "MedicalHistId"
         case medicalHist = "MedicalHist"
         case medicalHistLst = "MedicalHistLst"
         case medicalOtherHist = "MedicalOtherHist"

@@ -11,7 +11,7 @@ class OrderTrackVC: UIViewController, XIBed, PushViewControllerDelegate {
     
     weak var pushDelegate: PushViewControllerDelegate?
     @IBOutlet weak var tableView: UITableView!
-    var dataValue = [OrderDetailslist]()
+    var dataValue = [orderList]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,7 +33,7 @@ extension OrderTrackVC{
         let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
         NetWorker.shared.callAPIService(type: APIV2.orderTrackList(patientID: patientID)) { [weak self](data: [orderList]?, error) in
             if data!.count > 0 {
-                self?.dataValue = data![0].orderDetailslist
+                self?.dataValue = data!
                 self?.tableView.reloadData()
             } else {
                 self?.dataValue = []
@@ -45,19 +45,19 @@ extension OrderTrackVC{
 extension OrderTrackVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OrderTrackerCell", for: indexPath)as! OrderTrackerCell
-        cell.orderStatusLabel.text = dataValue[indexPath.row].orderStatus
-        cell.orderNoLabel.text = dataValue[indexPath.row].orderNo
-        cell.orderDateLabel.text = dataValue[indexPath.row].orderDate
-        cell.productNameLabel.text = dataValue[indexPath.row].productName
-        cell.sellerNameLabel.text = dataValue[indexPath.row].sellerName
-        cell.orderAmtLabel.text = dataValue[indexPath.row].orderAmount
-        cell.paymentModeLabel.text = dataValue[indexPath.row].paymentMethod
-        cell.qtyLabel.text = "\(dataValue[indexPath.row].qty)"
-        cell.pricePerUnitLabel.text = "\(dataValue[indexPath.row].pricePerUnit)"
-        cell.deliveryPinCodeLabel.text = dataValue[indexPath.row].deliveryPincode
-        cell.summaryurl = dataValue[indexPath.row].orderSummaryReportLink
-        cell.invoiceurl = dataValue[indexPath.row].orderInvoiceReportLink
-        let url = URL(string: "\(dataValue[indexPath.row].imageURL)")!
+        cell.orderStatusLabel.text = dataValue[indexPath.row].orderDetailslist[0].orderStatus
+        cell.orderNoLabel.text = dataValue[indexPath.row].orderDetailslist[0].orderNo
+        cell.orderDateLabel.text = dataValue[indexPath.row].orderDetailslist[0].orderDate
+        cell.productNameLabel.text = dataValue[indexPath.row].orderDetailslist[0].productName
+        cell.sellerNameLabel.text = dataValue[indexPath.row].orderDetailslist[0].sellerName
+        cell.orderAmtLabel.text = dataValue[indexPath.row].orderDetailslist[0].orderAmount
+        cell.paymentModeLabel.text = dataValue[indexPath.row].orderDetailslist[0].paymentMethod
+        cell.qtyLabel.text = "\(dataValue[indexPath.row].orderDetailslist[0].qty)"
+        cell.pricePerUnitLabel.text = "\(dataValue[indexPath.row].orderDetailslist[0].pricePerUnit)"
+        cell.deliveryPinCodeLabel.text = dataValue[indexPath.row].orderDetailslist[0].deliveryPincode
+        cell.summaryurl = dataValue[indexPath.row].orderDetailslist[0].orderSummaryReportLink
+        cell.invoiceurl = dataValue[indexPath.row].orderDetailslist[0].orderInvoiceReportLink
+        let url = URL(string: "\(dataValue[indexPath.row].orderDetailslist[0].imageURL)")!
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard
                 let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
@@ -84,10 +84,10 @@ extension OrderTrackVC: UITableViewDelegate, UITableViewDataSource{
 extension OrderTrackVC:TrackOnMap {
     func getId(value: Int) {
             let vc = driverRouteViewController.instantiate()
-        vc.lati = Double(dataValue[value].patientLatitude) ?? 0.0
-        vc.longi = Double(dataValue[value].patientLongitude) ?? 0.0
-        vc.latdriver = Double(dataValue[value].sellerLatitude) ?? 0.0
-        vc.longdriver = Double(dataValue[value].sellerLongitude) ?? 0.0
+        vc.lati = Double(dataValue[value].orderDetailslist[0].patientLatitude) ?? 0.0
+        vc.longi = Double(dataValue[value].orderDetailslist[0].patientLongitude) ?? 0.0
+        vc.latdriver = Double(dataValue[value].orderDetailslist[0].sellerLatitude) ?? 0.0
+        vc.longdriver = Double(dataValue[value].orderDetailslist[0].sellerLongitude) ?? 0.0
             self.navigationController?.pushViewController(vc, animated: true)
     }
 }

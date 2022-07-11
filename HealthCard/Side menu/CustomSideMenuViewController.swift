@@ -24,7 +24,7 @@ class CustomSideMenuViewController: UIViewController, XIBed , PushViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        nameLblRef.text = UserDefaults.standard.string(forKey: "patientName")
             setupUI()
             setupCorner()
             
@@ -44,8 +44,8 @@ class CustomSideMenuViewController: UIViewController, XIBed , PushViewController
             nameLblRef.speed = .duration(4)
             nameLblRef.animationCurve = .easeInOut
             nameLblRef.fadeLength = 10.0
-            nameLblRef.leadingBuffer = 30.0
-            nameLblRef.trailingBuffer = 20.0
+//            nameLblRef.leadingBuffer = 30.0
+//            nameLblRef.trailingBuffer = 20.0
             
         }
         
@@ -57,7 +57,10 @@ class CustomSideMenuViewController: UIViewController, XIBed , PushViewController
     //MARK:- Button Action
     extension CustomSideMenuViewController {
         @IBAction func viewAndEditProfileBtnTap(_ sender: UIButton) {
-
+            
+                let vc = EditProfileVC.instantiate()
+                self.pushDelegate?.pushViewController(vc: vc)
+                print("Button Tap")
         }
     
         @IBAction func termsAndConditionBtnTap(_ sender: UIButton) {

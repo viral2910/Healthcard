@@ -23,6 +23,9 @@ class AddressDetailsVC: UIViewController, XIBed {
     var isMedicine = false
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        
         setupTableCell()
         bottomConstraint.constant = (addressSelection) ? 60 : 0
         cartBtn.setTitle("", for: .normal)
@@ -63,7 +66,7 @@ extension AddressDetailsVC{
     //MARK: - API CALL
     func apiCall()  {
         let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
-        NetWorker.shared.callAPIService(type: APIV2.addressPatient(patientID: 189)) { [weak self](data: AddressList?, error) in
+        NetWorker.shared.callAPIService(type: APIV2.addressPatient(patientID: patientID)) { [weak self](data: AddressList?, error) in
             self?.dataValue = data!
             self?.tableView.reloadData()
             // print(patientIDval)
@@ -109,6 +112,13 @@ extension AddressDetailsVC: UITableViewDelegate, UITableViewDataSource{
             cell.pinCodeLbl.text = dataValue[indexPath.row]["Pincode"] as? String ?? ""
             cell.deliveryTypeLbl.text = dataValue[indexPath.row]["AddressType"] as? String ?? ""
             cell.delegate = self
+            if (dataValue[indexPath.row]["AddressType"] as? String ?? "") == "Default" {
+                cell.deleteBtn.isHidden = true
+            } else {
+                cell.deleteBtn.isHidden = false
+            }
+            cell.editBtn.tag = Int(dataValue[indexPath.row]["PatientAddressId"] as? String ?? "") ?? 0
+            cell.deleteBtn.tag = indexPath.row
             cell.checkBoxBtn.tag = Int(dataValue[indexPath.row]["PatientAddressId"] as? String ?? "") ?? 0
             if selectedvalue == Int(dataValue[indexPath.row]["PatientAddressId"] as? String ?? "") ?? 0 {
                 cell.selectionImage.image = UIImage(named: "checkedcircle");
@@ -117,6 +127,12 @@ extension AddressDetailsVC: UITableViewDelegate, UITableViewDataSource{
                 cell.selectionImage.image = UIImage(named: "circle");
             }
             return cell
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            let vc = AddAddressViewController.instantiate()
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
@@ -128,5 +144,45 @@ extension AddressDetailsVC: SelectAddressDelegate {
             tableView.reloadData()
             bottomConstraint.constant = (addressSelection ) ? 60 : 0
         }
+    }
+    func deleteAction(value: Int) {
+        
+        let PatientAddressId = dataValue[value]["PatientAddressId"] as? String ?? ""
+        let AddressType = dataValue[value]["AddressType"] as? String ?? ""
+        let FlatNo = dataValue[value]["Flatno"] as? String ?? ""
+        let Bldg = dataValue[value]["Bldg"] as? String ?? ""
+        let Road = dataValue[value]["Road"] as? String ?? ""
+        let Nearby = dataValue[value]["Nearby"] as? String ?? ""
+        let Area = dataValue[value]["Nearby"] as? String ?? ""
+        let TalukaId = dataValue[value]["Taluka"] as? String ?? ""
+        let District = dataValue[value]["District"] as? String ?? ""
+        let StateId = dataValue[value]["State"] as? String ?? ""
+        let CountryId = dataValue[value]["Country"] as? String ?? ""
+        let Pincode = dataValue[value]["Pincode"] as? String ?? ""
+        let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
+        NetWorker.shared.callAPIService(type: APIV2.saveAddress(patientAddressID: PatientAddressId, patientID: patientID, vAddressType: AddressType, vFlatNo: FlatNo, vBldg:Bldg, vRoad: Road, vNearby: Nearby, vArea:Area, vTalukaId: TalukaId, vDistrictId: District, vStateId: StateId, vCountryId: CountryId, vPincode: Pincode,iSEdit: "D")) { [weak self] (data: [AddressStore]?, error) in
+            
+            self?.navigationController?.popViewController(animated: true)
+        }
+        
+    }
+    
+    func editAction(value: Int) {
+        
+        let vc = AddAddressViewController.instantiate()
+        vc.PatientAddressId = dataValue[value]["PatientAddressId"] as? String ?? ""
+        vc.AddressType = dataValue[value]["AddressType"] as? String ?? ""
+        vc.FlatNo = dataValue[value]["Flatno"] as? String ?? ""
+        vc.Bldg = dataValue[value]["Bldg"] as? String ?? ""
+        vc.Road = dataValue[value]["Road"] as? String ?? ""
+        vc.Nearby = dataValue[value]["Nearby"] as? String ?? ""
+        vc.Area = dataValue[value]["Nearby"] as? String ?? ""
+        vc.TalukaId = dataValue[value]["Taluka"] as? String ?? ""
+        vc.District = dataValue[value]["District"] as? String ?? ""
+        vc.StateId = dataValue[value]["State"] as? String ?? ""
+        vc.CountryId = dataValue[value]["Country"] as? String ?? ""
+        vc.Pincode = dataValue[value]["Pincode"] as? String ?? ""
+        vc.selected = "\(value)"
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -16,6 +16,7 @@ class PrescriptionListVC: UIViewController,XIBed,PushViewControllerDelegate {
     var addressReq = false
     var selectedPrescriptionId: [Int] = []
 
+    @IBOutlet weak var selectedID: UILabel!
     weak var pushDelegate: PushViewControllerDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +49,7 @@ extension PrescriptionListVC {
 extension PrescriptionListVC: GetSelectedPrescriptionId {
     func selectedPrescriptionIds(id: [Int]) {
         print("DelegatePresId: \(id)")
+        selectedID.text = "Selected ID : \(id)"
         selectedPrescriptionId = id
     }
     
@@ -64,11 +66,18 @@ extension PrescriptionListVC: UIImagePickerControllerDelegate, UINavigationContr
         vc.completion = { result in
             switch result {
             case .add:
+                let vc = LabDetailsVC.instantiate()
+                vc.pincode = self.pincode
+                vc.docId = self.docId
+                vc.labInvestigation = self.labInvestigation
+                vc.docType = self.docType
+                vc.presciptionID = "\(self.selectedPrescriptionId[0])"
+                vc.isMedicine = true
+                self.navigationController?.pushViewController(vc, animated: true)
+                //            print("Add button tap\(data)")
                 
-            print("Add button tap")
-         
             }
-                
+            
         }
     }
     
@@ -79,13 +88,9 @@ extension PrescriptionListVC: UIImagePickerControllerDelegate, UINavigationContr
         vc.completion = { result in
             switch result {
             case .selectFromGallery:
-                
                 self.openGallery()
-                    
             case .clickAPictureNow:
-                
                 self.openCamera()
-
             }
                 
         }

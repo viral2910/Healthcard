@@ -139,7 +139,7 @@ extension PrescriptionDetails: UITableViewDataSource , UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "prescriptionDetailsCell", for: indexPath)as! prescriptionDetailsCell
         cell.pdfLbl.text = "\(dataValue[indexPath.row].prescriptionID).pdf"
-        if dataValue[indexPath.row].lmpDate == ""{
+        if dataValue[indexPath.row].lmpDate == "" {
             cell.planningLbl.text = "\(dataValue[indexPath.row].prescriptionType)"
         }else{
             cell.planningLbl.text = dataValue[indexPath.row].lmpDate
@@ -149,5 +149,16 @@ extension PrescriptionDetails: UITableViewDataSource , UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataValue.count
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let url = URL(string:  dataValue[indexPath.row].reportLink ?? "") else {
+          return //be safe
+        }
+
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
     }
 }

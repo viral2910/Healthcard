@@ -71,6 +71,8 @@ class SelectLocationVC: UIViewController,XIBed,CLLocationManagerDelegate, UISear
             self.mapviewRef?.animate(to: camera)
             let marker = GMSMarker(position: locationval.coordinate)
             marker.map = self.mapviewRef
+            self.Latitude = "\(locationval.coordinate.latitude)"
+            self.Longitude = "\(locationval.coordinate.longitude)"
             self.getAddressFromLatLon(pdblLatitude: "\(locationval.coordinate.latitude)", pdblLongitude: "\(locationval.coordinate.longitude)")
         }
     }
@@ -128,8 +130,8 @@ class SelectLocationVC: UIViewController,XIBed,CLLocationManagerDelegate, UISear
             vc.TotalAmount = TotalAmount
             vc.SellerType = SellerType
             vc.Pincode = Pincode
-            vc.PaymentId = PaymentId
-            vc.PaymentMethod = PaymentMethod
+//            vc.PaymentId = PaymentId
+//            vc.PaymentMethod = PaymentMethod
             vc.Latitude = Latitude
             vc.Longitude = Longitude
             self.navigationController?.pushViewController(vc, animated: true)

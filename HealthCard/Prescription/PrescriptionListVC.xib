@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PrescriptionListVC" customModule="HealthCard" customModuleProvider="target">
             <connections>
+                <outlet property="selectedID" destination="Tan-D5-UIr" id="JMO-CK-bvd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -100,19 +101,28 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tan-D5-UIr">
+                    <rect key="frame" x="10" y="247" width="394" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="p2v-bs-C5b" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3et-fJ-Kjy"/>
                 <constraint firstItem="rfJ-8v-I5u" firstAttribute="top" secondItem="ngF-eE-Pqs" secondAttribute="bottom" constant="50" id="52S-q6-hG5"/>
+                <constraint firstItem="Tan-D5-UIr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="7tr-es-DGX"/>
                 <constraint firstItem="ngF-eE-Pqs" firstAttribute="leading" secondItem="rfJ-8v-I5u" secondAttribute="leading" id="BaE-Q8-fzE"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rfJ-8v-I5u" secondAttribute="trailing" constant="25" id="Dzv-Ia-W0E"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="p2v-bs-C5b" secondAttribute="trailing" id="EPG-cF-8XR"/>
                 <constraint firstItem="OZ3-is-MhF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="QkQ-aT-Z1s"/>
                 <constraint firstItem="ngF-eE-Pqs" firstAttribute="trailing" secondItem="rfJ-8v-I5u" secondAttribute="trailing" id="UDo-tC-87W"/>
                 <constraint firstItem="p2v-bs-C5b" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="XOl-Qm-aaX"/>
+                <constraint firstItem="Tan-D5-UIr" firstAttribute="top" secondItem="OZ3-is-MhF" secondAttribute="bottom" constant="50" id="bK5-ph-VVa"/>
                 <constraint firstItem="rfJ-8v-I5u" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="daU-Ma-ErF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Tan-D5-UIr" secondAttribute="trailing" constant="10" id="jOi-s1-s59"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OZ3-is-MhF" secondAttribute="trailing" constant="30" id="lUN-t3-nde"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="rfJ-8v-I5u" secondAttribute="bottom" constant="75" id="xwS-B7-AeL"/>
                 <constraint firstItem="OZ3-is-MhF" firstAttribute="top" secondItem="p2v-bs-C5b" secondAttribute="bottom" constant="50" id="zXc-vs-Yel"/>

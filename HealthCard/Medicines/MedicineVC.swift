@@ -63,7 +63,12 @@ class MedicineVC: UIViewController {
     @IBAction func searchBtnAction(_ sender: Any) {
     }
     @IBAction func proceedBtnAction(_ sender: Any) {
-        proceedApiCall()
+        if selectedDocID.count > 0 {
+            proceedApiCall()
+        } else {
+            AppManager.shared.showAlert(title: "Error", msg: "Please Select atleast one medicine", vc: self)
+        }
+            
     }
     @IBAction func cartAction(_ sender: Any) {
         let vc = CartDetails.instantiate()
@@ -112,13 +117,14 @@ extension MedicineVC {
                 
                 self!.searchTableViewManager.start(data: [])
                 self!.searchTableViewOuterView.isHidden = true
-                
+                self!.ApiCall()
             }
         }
     
     
     //MARK: - API CALL
     func proceedApiCall() {
+        
         let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
         NetWorker.shared.callAPIService(type: APIV2.myCartList(patientID: patientID)) { [weak self](data: [cartDetails]?, error) in
             if data?.count ?? 0 > 0 {

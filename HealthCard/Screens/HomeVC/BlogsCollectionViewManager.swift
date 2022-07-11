@@ -61,7 +61,7 @@ extension BlogsCollectionViewManager: UICollectionViewDataSource {
 
         cell.viewRef.layer.cornerRadius = 10
         cell.viewRef.dropShadow()
-        
+        cell.imgViewRef.image = UIImage(named: storyData[indexPath.row])
         //cell.titleLblRef.text = storyData[indexPath.row]
         
         return cell

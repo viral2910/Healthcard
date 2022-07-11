@@ -9,23 +9,48 @@ import UIKit
 
 class ProfileVC: UIViewController , XIBed, PushViewControllerDelegate {
 
+    @IBOutlet weak var mainview: UIView!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
     weak var pushDelegate: PushViewControllerDelegate?
     
     var pageMenu : CAPSPageMenu?
+    var isTopConstraint = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController?.tabBar.isHidden = true
+//        self.tabBarController?.tabBar.isHidden = true
         // Do any additional setup after loading the view.
         setup()
+    }
+    
+    @IBAction func backAction(_ sender: UIButton) {
+        let controllers = self.navigationController?.viewControllers
+        for vc in controllers! {
+            if vc is CustomTabBarViewController {
+                _ = self.navigationController?.popToViewController(vc as! CustomTabBarViewController, animated: true)
+            }
+        }
     }
     @IBAction func editProfileAction(_ sender: UIButton) {
         let otpvc = EditProfileVC(nibName: "EditProfileVC", bundle: nil)
         self.navigationController?.pushViewController(otpvc, animated: true)
     }
     override func viewWillAppear(_ animated: Bool) {
+        if isTopConstraint == true {
+            
+            let window = UIApplication.shared.windows.first
+            let topPadding = window?.safeAreaInsets.top
+            topConstraint.constant = (topPadding ?? 0) + 50
+            mainview.isHidden = false
+            
+            view.layoutIfNeeded()
+        } else
+        {
+                topConstraint.constant = 0
+                mainview.isHidden = true
+        }
             self.nameLabel.text = UserDefaults.standard.string(forKey: "patientFullName") ?? ""
     }
     func setup()

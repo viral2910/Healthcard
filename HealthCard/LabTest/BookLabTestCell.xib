@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="249" id="KGk-i7-Jjw" customClass="BookLabTestCell" customModule="HealthCard" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="249"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="249"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vja-i0-FT2">
+                        <rect key="frame" x="10" y="10" width="300" height="229"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xZ-Mn-Waa">
+                                <rect key="frame" x="10" y="10" width="32.5" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrZ-Ec-44r">
+                                <rect key="frame" x="52.5" y="10" width="237.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cons Dr." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmM-wq-BKD">
+                                <rect key="frame" x="10" y="32" width="59" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUd-KN-6Jk">
+                                <rect key="frame" x="79" y="32" width="211" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zxf-wR-2LO">
+                                <rect key="frame" x="10" y="59" width="280" height="160"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="Kkv-gG-3IF"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="KGk-i7-Jjw" id="gHL-b7-Vur"/>
+                                    <outlet property="delegate" destination="KGk-i7-Jjw" id="Tp9-jZ-NBO"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="zxf-wR-2LO" secondAttribute="trailing" constant="10" id="510-Nv-2WD"/>
+                            <constraint firstItem="BrZ-Ec-44r" firstAttribute="top" secondItem="0xZ-Mn-Waa" secondAttribute="top" id="8lF-3R-4RO"/>
+                            <constraint firstItem="0xZ-Mn-Waa" firstAttribute="top" secondItem="vja-i0-FT2" secondAttribute="top" constant="10" id="Adn-ff-WQh"/>
+                            <constraint firstItem="BrZ-Ec-44r" firstAttribute="bottom" secondItem="0xZ-Mn-Waa" secondAttribute="bottom" id="FLH-rt-bij"/>
+                            <constraint firstItem="HUd-KN-6Jk" firstAttribute="leading" secondItem="EmM-wq-BKD" secondAttribute="trailing" constant="10" id="Ft7-SI-P8p"/>
+                            <constraint firstAttribute="trailing" secondItem="BrZ-Ec-44r" secondAttribute="trailing" constant="10" id="GTq-md-g2W"/>
+                            <constraint firstAttribute="bottom" secondItem="zxf-wR-2LO" secondAttribute="bottom" constant="10" id="HQP-xR-DvP"/>
+                            <constraint firstItem="0xZ-Mn-Waa" firstAttribute="leading" secondItem="vja-i0-FT2" secondAttribute="leading" constant="10" id="Ij7-Cx-TSL"/>
+                            <constraint firstItem="zxf-wR-2LO" firstAttribute="top" secondItem="EmM-wq-BKD" secondAttribute="bottom" constant="10" id="Km3-x2-Wre"/>
+                            <constraint firstItem="zxf-wR-2LO" firstAttribute="leading" secondItem="vja-i0-FT2" secondAttribute="leading" constant="10" id="Ne8-Tb-fAs"/>
+                            <constraint firstItem="EmM-wq-BKD" firstAttribute="top" secondItem="0xZ-Mn-Waa" secondAttribute="bottom" constant="5" id="OPC-id-lV8"/>
+                            <constraint firstItem="HUd-KN-6Jk" firstAttribute="bottom" secondItem="EmM-wq-BKD" secondAttribute="bottom" id="RAy-R6-ivx"/>
+                            <constraint firstItem="HUd-KN-6Jk" firstAttribute="top" secondItem="EmM-wq-BKD" secondAttribute="top" id="bsk-4G-yZt"/>
+                            <constraint firstAttribute="trailing" secondItem="HUd-KN-6Jk" secondAttribute="trailing" constant="10" id="jsl-Ej-Qes"/>
+                            <constraint firstItem="EmM-wq-BKD" firstAttribute="leading" secondItem="vja-i0-FT2" secondAttribute="leading" constant="10" id="mMg-AH-sNN"/>
+                            <constraint firstItem="BrZ-Ec-44r" firstAttribute="leading" secondItem="0xZ-Mn-Waa" secondAttribute="trailing" constant="10" id="wSs-uA-YLd"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="vja-i0-FT2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="0wE-r3-xk0"/>
+                    <constraint firstItem="vja-i0-FT2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="NE9-aM-lNu"/>
+                    <constraint firstAttribute="bottom" secondItem="vja-i0-FT2" secondAttribute="bottom" constant="10" id="lkS-JT-RX3"/>
+                    <constraint firstAttribute="trailing" secondItem="vja-i0-FT2" secondAttribute="trailing" constant="10" id="z87-mS-sY6"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <inset key="separatorInset" minX="1515" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="consDrLabel" destination="HUd-KN-6Jk" id="dri-2j-Bum"/>
+                <outlet property="dateLabel" destination="BrZ-Ec-44r" id="k2U-ZP-LD0"/>
+                <outlet property="mainview" destination="vja-i0-FT2" id="ydt-iv-Od1"/>
+                <outlet property="tableview" destination="zxf-wR-2LO" id="CbT-JA-e0g"/>
+                <outlet property="tableviewHeight" destination="Kkv-gG-3IF" id="gbQ-Zf-yZ5"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="143.63839285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

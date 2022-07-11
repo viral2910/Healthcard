@@ -9,6 +9,8 @@ import UIKit
 
 protocol SelectAddressDelegate {
     func getId(value : Int)
+    func deleteAction(value : Int)
+    func editAction(value : Int)
 }
 class AddressDetailsCell: UITableViewCell {
 
@@ -42,5 +44,10 @@ class AddressDetailsCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
+    @IBAction func editAction(_ sender: UIButton) {
+        delegate.editAction(value: sender.tag)
+    }
+    @IBAction func deleteAction(_ sender: UIButton) {
+        delegate.deleteAction(value: sender.tag)
+    }
 }

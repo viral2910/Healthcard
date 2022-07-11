@@ -18,6 +18,7 @@ target 'HealthCard' do
   pod 'razorpay-pod', '~> 1.1.1'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'IQKeyboardManagerSwift'
   # Pods for HealthCard
 
 end

@@ -8,7 +8,7 @@
 import UIKit
 
 class CartDetails: UIViewController,XIBed {
-
+    
     @IBOutlet weak var payBtn: UIButton!
     @IBOutlet weak var totalRsLbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -29,81 +29,103 @@ class CartDetails: UIViewController,XIBed {
     }
     
     @IBAction func backBtn(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    @IBAction func payBtn(_ sender: UIButton) {
-        var isPharmacyContains = false
-        print(self.dataValue )
-        for item in self.dataValue {
-            let value = item.cartDtlslist.filter { $0.sellerType == "Pharmacy" }
-            if value.count > 0 {
-                isPharmacyContains = true
-                break
+        let controllers = self.navigationController?.viewControllers
+        for vc in controllers! {
+            if vc is CustomTabBarViewController {
+                _ = self.navigationController?.popToViewController(vc as! CustomTabBarViewController, animated: true)
             }
         }
-        print(isPharmacyContains)
-        if !isPharmacyContains {
-        let vc = SelectLocationVC.instantiate()
-        let amount = (totalRsLbl.text ?? "").components(separatedBy: " ")
-        vc.amount = amount[1]
-//        vc.patientAddressID = patientAddressID
-//        vc.cartID = cartID
-//        vc.sellerMasterID = sellerMasterID
-//        vc.docID = docID
-//        vc.DocType = DocType
-//        vc.ProductId = ProductId
-//        vc.qty = qty
-//        vc.MRP = MRP
-//        vc.DiscountAmt = DiscountAmt
-//        vc.DiscountPer = DiscountPer
-//        vc.GSTAmt = GSTAmt
-//        vc.GSTPer = GSTPer
-//        vc.PricePerUnit = PricePerUnit
-//        vc.TotalAmount = TotalAmount
-//        vc.SellerType = SellerType
-//        vc.Pincode = Pincode
-//        vc.PaymentId = PaymentId
-//        vc.PaymentMethod = PaymentMethod
-//        vc.Latitude = Latitude
-//        vc.Longitude = Longitude
-        self.navigationController?.pushViewController(vc, animated: true)
-        } else {
+    }
+    @IBAction func payBtn(_ sender: UIButton) {
+        if dataValue.count > 0 {
+            var cartID = ""
+            var sellerMasterID = ""
+            var docID = ""
+            var DocType = ""
+            var ProductId = ""
+            var qty = ""
+            var MRP = ""
+            var DiscountAmt = ""
+            var DiscountPer = ""
+            var GSTAmt = ""
+            var GSTPer = ""
+            var PricePerUnit = ""
+            var SellerType = ""
+            var count = 0
+            for item in self.dataValue {
+                if count == 0 {
+                    cartID =  item.cartDtlslist.compactMap { String($0.cartID) }.joined(separator: ",")
+                    sellerMasterID = item.cartDtlslist.compactMap {String($0.sellerMasterID) }.joined(separator: ",")
+                    docID = item.cartDtlslist.compactMap {String($0.docID) }.joined(separator: ",")
+                    DocType =  item.cartDtlslist.compactMap {String($0.docType) }.joined(separator: ",")
+                    ProductId = item.cartDtlslist.compactMap {String($0.productID) }.joined(separator: ",")
+                    qty = item.cartDtlslist.compactMap {String($0.qty) }.joined(separator: ",")
+                    MRP = item.cartDtlslist.compactMap {String($0.mrp) }.joined(separator: ",")
+                    DiscountAmt = item.cartDtlslist.compactMap {String($0.discountAmt) }.joined(separator: ",")
+                    DiscountPer = item.cartDtlslist.compactMap {String($0.discountPer) }.joined(separator: ",")
+                    GSTAmt = item.cartDtlslist.compactMap {String($0.gstAmt) }.joined(separator: ",")
+                    GSTPer = item.cartDtlslist.compactMap {String($0.gstPer) }.joined(separator: ",")
+                    PricePerUnit = item.cartDtlslist.compactMap {String($0.pricePerUnit) }.joined(separator: ",")
+                    SellerType = item.cartDtlslist.compactMap {String($0.sellerType) }.joined(separator: ",")
+                    count = count + 1
+                } else {
+                    cartID = cartID + "," + item.cartDtlslist.compactMap { String($0.cartID) }.joined(separator: ",")
+                    sellerMasterID = sellerMasterID + "," + item.cartDtlslist.compactMap {String($0.sellerMasterID) }.joined(separator: ",")
+                    docID = docID + "," + item.cartDtlslist.compactMap {String($0.docID) }.joined(separator: ",")
+                    DocType = DocType + "," + item.cartDtlslist.compactMap {String($0.docType) }.joined(separator: ",")
+                    ProductId = ProductId + "," + item.cartDtlslist.compactMap {String($0.productID) }.joined(separator: ",")
+                    qty = qty + "," + item.cartDtlslist.compactMap {String($0.qty) }.joined(separator: ",")
+                    MRP = MRP + "," + item.cartDtlslist.compactMap {String($0.mrp) }.joined(separator: ",")
+                    DiscountAmt = DiscountAmt + "," + item.cartDtlslist.compactMap {String($0.discountAmt) }.joined(separator: ",")
+                    DiscountPer = DiscountPer + "," + item.cartDtlslist.compactMap {String($0.discountPer) }.joined(separator: ",")
+                    GSTAmt = GSTAmt + "," + item.cartDtlslist.compactMap {String($0.gstAmt) }.joined(separator: ",")
+                    GSTPer = GSTPer + "," + item.cartDtlslist.compactMap {String($0.gstPer) }.joined(separator: ",")
+                    PricePerUnit = PricePerUnit + "," + item.cartDtlslist.compactMap {String($0.pricePerUnit) }.joined(separator: ",")
+                    SellerType = SellerType + "," + item.cartDtlslist.compactMap {String($0.sellerType) }.joined(separator: ",")
+                    count = count + 1
+                }
+            }
             
-                let vc = orderPlaceVC.instantiate()
-//                vc.amount = amount
-//                vc.patientAddressID = patientAddressID
-//                vc.cartID = cartID
-//                vc.sellerMasterID = sellerMasterID
-//                vc.docID = docID
-//                vc.DocType = DocType
-//                vc.ProductId = ProductId
-//                vc.qty = qty
-//                vc.MRP = MRP
-//                vc.DiscountAmt = DiscountAmt
-//                vc.DiscountPer = DiscountPer
-//                vc.GSTAmt = GSTAmt
-//                vc.GSTPer = GSTPer
-//                vc.PricePerUnit = PricePerUnit
-//                vc.TotalAmount = TotalAmount
-//                vc.SellerType = SellerType
-//                vc.Pincode = Pincode
-//                vc.PaymentId = PaymentId
-//                vc.PaymentMethod = PaymentMethod
-//                vc.Latitude = Latitude
-//                vc.Longitude = Longitude
-                self.navigationController?.pushViewController(vc, animated: true)
+            
+            let vc = SelectLocationVC.instantiate()
+            let amount = (totalRsLbl.text ?? "").components(separatedBy: " ")
+            vc.amount = amount[1]
+            vc.patientAddressID = dataValue[0].cartDtlslist[0].patientAddressID
+            vc.cartID = cartID
+            vc.sellerMasterID = sellerMasterID
+            vc.docID = docID
+            vc.DocType = DocType
+            vc.ProductId = ProductId
+            vc.qty = qty
+            vc.MRP = MRP
+            vc.DiscountAmt = DiscountAmt
+            vc.DiscountPer = DiscountPer
+            vc.GSTAmt = GSTAmt
+            vc.GSTPer = GSTPer
+            vc.PricePerUnit = PricePerUnit
+            vc.TotalAmount = amount[1]
+            vc.SellerType = SellerType
+            vc.Pincode = "\(dataValue[0].cartDtlslist[0].deliveryPincode)"
+            vc.PaymentId = ""
+            vc.PaymentMethod = ""
+            vc.Latitude = ""
+            vc.Longitude = ""
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        else {
+            AppManager.shared.showAlert(title: "Error", msg: "Please add some items in cart", vc: self)
         }
     }
 }
 
 extension CartDetails{
-
+    
     //MARK: - API CALL
     func apiCall()  {
         let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
         NetWorker.shared.callAPIService(type: APIV2.myCartList(patientID: patientID)) { [weak self](data: [cartDetails]?, error) in
-                self?.dataValue = data!
-                self?.tableView.reloadData()
+            self?.dataValue = data!
+            self?.tableView.reloadData()
             var sum = 0
             for item in self!.dataValue {
                 sum = item.cartDtlslist.compactMap { Int($0.totalAmount) }.reduce(sum, +)
@@ -156,7 +178,7 @@ struct cartDetails: Codable {
     let sellerName: String
     let sellerType: JSONNull?
     let cartDtlslist: [CartDtlslist]
-
+    
     enum CodingKeys: String, CodingKey {
         case sellerName = "SellerName"
         case sellerType = "SellerType"
@@ -177,7 +199,7 @@ struct CartDtlslist: Codable {
     let discountPer, discountAmt, gstAmt,totalAmount,pricePerUnit,gstPer: Double
     let cartNoOfProducts: JSONNull?
     let imageURL: String
-
+    
     enum CodingKeys: String, CodingKey {
         case cartID = "CartId"
         case patientID = "PatientId"
@@ -210,7 +232,7 @@ struct removeCart: Codable {
     let patientDocumentURL, deliveryBoyID, deliveryBoy, doctorID: JSONNull?
     let doctor, doctorProfilePicURL, labMasterID, labConcernPerson: JSONNull?
     let pharmacyID, pharmacyCoordinator: JSONNull?
-
+    
     enum CodingKeys: String, CodingKey {
         case message = "Message"
         case status = "Status"

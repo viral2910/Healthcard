@@ -75,6 +75,7 @@ class CustomTabBarViewController: UIViewController , XIBed, PushViewControllerDe
             {
                 let vc = ProfileVC.instantiate()
                 vc.pushDelegate = self
+                vc.isTopConstraint = false
                 //vc.user = user
                 //vc.gDrive = gDrive
                 return UINavigationController(rootViewController: vc)

@@ -150,7 +150,6 @@ struct PatientGetByIDResult: Codable {
     }
 }
 
-// MARK: - PatientSC
 struct PatientSC: Codable {
     let patientID, titleID, titleName, firstName: String
     let middleName: AadhaarNo
@@ -160,12 +159,12 @@ struct PatientSC: Codable {
     let bloodGroupID: String
     let bloodGroup, aadhaarNo: AadhaarNo
     let mobileNo1, mobileNo2: String
-    let occuption, emailId1, emailId2: AadhaarNo
-    let flatno, bldg, road, nearby: String
-    let area, talukaID, taluka, districtID: String
-    let district, stateID, state, countryID: String
-    let country, countryCodeID, pincode, isActive: String
-    let isActiveText: String
+    let occuption, emailId1, emailId2, flatno: AadhaarNo
+    let bldg, road, nearby, area: AadhaarNo
+    let talukaID, taluka: AadhaarNo
+    let districtID, district, stateID, state: String
+    let countryID, country, countryCodeID, pincode: String
+    let isActive, isActiveText: String
     let companyID, company, plan, amountCovered: AadhaarNo
     let dateOfPremium: String
     let dateOfPremiumText: AadhaarNo

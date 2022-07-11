@@ -83,8 +83,8 @@ extension SideMenuTableViewManager: UITableViewDataSource {
         switch indexPath.row {
         case 0:
             let vc = ProfileVC.instantiate()
+            vc.isTopConstraint = true
             self.pushDelegate?.pushViewController(vc: vc)
-            
             
         case 1:
             let vc = EditProfileVC.instantiate()

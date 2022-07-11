@@ -29,8 +29,6 @@ class orderPlaceVC: UIViewController,XIBed, RazorpayProtocol {
     var TotalAmount = ""
     var SellerType = ""
     var Pincode = ""
-    var PaymentId = ""
-    var PaymentMethod = ""
     var Latitude = ""
     var Longitude = ""
     
@@ -40,7 +38,7 @@ class orderPlaceVC: UIViewController,XIBed, RazorpayProtocol {
         // Do any additional setup after loading the view.
     }
     @IBAction func payOnDeliveryAction(_ sender: Any) {
-        OrderapiCall()
+        OrderapiCall(PaymentId: "")
     }
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -51,14 +49,28 @@ class orderPlaceVC: UIViewController,XIBed, RazorpayProtocol {
     
 
     //MARK: - API CALL
-    func OrderapiCall()  {
+    func OrderapiCall(PaymentId:String)  {
         let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
-        NetWorker.shared.callAPIService(type: APIV2.saveOrder(patientID: patientID, patientAddressID: patientAddressID, cartID: cartID, sellerMasterID: sellerMasterID, docID: docID, DocType: DocType, ProductId: ProductId, qty: qty, MRP: MRP, DiscountAmt: DiscountAmt, DiscountPer: DiscountPer, GSTAmt: GSTAmt, GSTPer: GSTPer, PricePerUnit: PricePerUnit, TotalAmount: TotalAmount, SellerType: SellerType, Pincode: Pincode, PaymentId: PaymentId, PaymentMethod: PaymentMethod, Latitude: Latitude, Longitude: Longitude)) { [weak self] (data: [cartDetails]?, error) in
+        var method = ""
+        if PaymentId == "" {
+            method = "COD"
+        } else {
+            method = "Online"
+        }
+        NetWorker.shared.callAPIService(type: APIV2.saveOrder(patientID: patientID, patientAddressID: patientAddressID, cartID: cartID, sellerMasterID: sellerMasterID, docID: docID, DocType: DocType, ProductId: ProductId, qty: qty, MRP: MRP, DiscountAmt: DiscountAmt, DiscountPer: DiscountPer, GSTAmt: GSTAmt, GSTPer: GSTPer, PricePerUnit: PricePerUnit, TotalAmount: TotalAmount, SellerType: SellerType, Pincode: Pincode, PaymentId: PaymentId, PaymentMethod: method, Latitude: Latitude, Longitude: Longitude)) { [weak self] (data: [orderplace]?, error) in
             
-//            if data?[0].status == "1" {
-//                let vc = HomeViewController.instantiate()
-//                self?.navigationController?.pushViewController(vc, animated: true)
-//            }
+            if data?[0].status == "1" {
+                
+                let controllers = self?.navigationController?.viewControllers
+                for vc in controllers! {
+                    if vc is CustomTabBarViewController {
+                        _ = self?.navigationController?.popToViewController(vc as! CustomTabBarViewController, animated: true)
+                        
+                        AppManager.shared.showAlert(title: "Success", msg: data?[0].message ?? "", vc: self!)
+                    }
+                }
+                
+            }
         }
     }
 }
@@ -70,7 +82,7 @@ extension orderPlaceVC: RazorpayPaymentCompletionProtocol{
     
     func onPaymentSuccess(_ payment_id: String) {
         print("Success \(payment_id)")
-        OrderapiCall()
+        OrderapiCall(PaymentId: payment_id)
     }
     
     internal func showPaymentForm(amount: Int,orderId: String, desc: String){
@@ -85,5 +97,36 @@ extension orderPlaceVC: RazorpayPaymentCompletionProtocol{
             ]
         ]
         razorpay.open(options)
+    }
+}
+struct orderplace: Codable {
+    let message, status: String
+    let patientID, gender, firstName, middleName: JSONNull?
+    let lastName, patientName, pincode, patientProfilePicURL: JSONNull?
+    let patientDocumentURL, deliveryBoyID, deliveryBoy, doctorID: JSONNull?
+    let doctor, doctorProfilePicURL, labMasterID, labConcernPerson: JSONNull?
+    let pharmacyID, pharmacyCoordinator: JSONNull?
+
+    enum CodingKeys: String, CodingKey {
+        case message = "Message"
+        case status = "Status"
+        case patientID = "PatientId"
+        case gender = "Gender"
+        case firstName = "FirstName"
+        case middleName = "MiddleName"
+        case lastName = "LastName"
+        case patientName = "PatientName"
+        case pincode = "Pincode"
+        case patientProfilePicURL = "PatientProfilePicURL"
+        case patientDocumentURL = "PatientDocumentURL"
+        case deliveryBoyID = "DeliveryBoyId"
+        case deliveryBoy = "DeliveryBoy"
+        case doctorID = "DoctorId"
+        case doctor = "Doctor"
+        case doctorProfilePicURL = "DoctorProfilePicURL"
+        case labMasterID = "LabMasterId"
+        case labConcernPerson = "LabConcernPerson"
+        case pharmacyID = "PharmacyId"
+        case pharmacyCoordinator = "PharmacyCoordinator"
     }
 }

@@ -13,7 +13,7 @@ class CategoryCollectionViewManager: NSObject {
     weak var collectionView: UICollectionView?
     weak var emptyView: UIView?
         
-    var storyData : LookinForConsultationDataResponse = []
+    var storyData : LookinForConcernDataResponse = []
     
 //    //var moreOptionDropDown = DropDown_()
 //    var moreButtonDropDown = DropDown_()
@@ -23,7 +23,7 @@ class CategoryCollectionViewManager: NSObject {
     weak var presentDelegate: presentViewControllersDelegate?
     
     
-    func start(data: LookinForConsultationDataResponse, collectionVIew: UICollectionView) {
+    func start(data: LookinForConcernDataResponse, collectionVIew: UICollectionView) {
         self.collectionView = collectionVIew
         self.storyData = data
         let cellNib = UINib(nibName: "CategoryCollectionViewCell", bundle: nil)
@@ -60,7 +60,7 @@ extension CategoryCollectionViewManager: UICollectionViewDataSource {
         cell.viewRef.layer.cornerRadius = 10
         cell.viewRef.dropShadow()
         
-        cell.lblRef.text = storyData[indexPath.row].value
+        cell.lblRef.text = storyData[indexPath.row].concern
         
         return cell
     }
@@ -78,7 +78,7 @@ extension CategoryCollectionViewManager: UICollectionViewDelegate, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let text = self.storyData[indexPath.row].value
+        let text = self.storyData[indexPath.row].concern
         let cellWidth = text.width(withConstrainedHeight: 50, font: UIFont.systemFont(ofSize: 16)) + 40.0//.size(withAttributes:[.font: UIFont.init(name: "Lato-Regular", size: 12.0)!]).width + 10.0
         print("Text: \(text.size(withAttributes:[.font: UIFont.systemFont(ofSize: 16)]).width) : cellWidth: \(cellWidth)")
         

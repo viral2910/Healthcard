@@ -181,6 +181,8 @@
 		E0CC64A528156CD60011A165 /* CustomSideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC64A028156CD60011A165 /* CustomSideMenuTableViewCell.swift */; };
 		E0CC64A628156CD60011A165 /* CustomSideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CC64A128156CD60011A165 /* CustomSideMenuTableViewCell.xib */; };
 		E0CC64A728156CD60011A165 /* CustomSideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CC64A228156CD60011A165 /* CustomSideMenuViewController.xib */; };
+		E0CC8ADC287D8A91001911BC /* lab.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E0CC8ADA287D8A91001911BC /* lab.jpeg */; };
+		E0CC8ADD287D8A91001911BC /* medicine.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E0CC8ADB287D8A91001911BC /* medicine.jpeg */; };
 		E0D5ED472827FD0000ECF500 /* CustomWebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D5ED452827FD0000ECF500 /* CustomWebViewVC.swift */; };
 		E0D5ED482827FD0000ECF500 /* CustomWebViewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D5ED462827FD0000ECF500 /* CustomWebViewVC.xib */; };
 		E0D7CE14281E7811001B4738 /* CategoryCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7CDFB281E7811001B4738 /* CategoryCollectionViewManager.swift */; };
@@ -484,6 +486,8 @@
 		E0CC64A028156CD60011A165 /* CustomSideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		E0CC64A128156CD60011A165 /* CustomSideMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomSideMenuTableViewCell.xib; sourceTree = "<group>"; };
 		E0CC64A228156CD60011A165 /* CustomSideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomSideMenuViewController.xib; sourceTree = "<group>"; };
+		E0CC8ADA287D8A91001911BC /* lab.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lab.jpeg; sourceTree = "<group>"; };
+		E0CC8ADB287D8A91001911BC /* medicine.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = medicine.jpeg; sourceTree = "<group>"; };
 		E0D5ED452827FD0000ECF500 /* CustomWebViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWebViewVC.swift; sourceTree = "<group>"; };
 		E0D5ED462827FD0000ECF500 /* CustomWebViewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomWebViewVC.xib; sourceTree = "<group>"; };
 		E0D7CDFB281E7811001B4738 /* CategoryCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewManager.swift; sourceTree = "<group>"; };
@@ -733,6 +737,8 @@
 				E0F5C66A287B209200889538 /* UKM2SVBhtNs.jpeg */,
 				E0F5C668287B209200889538 /* xDJ8FE43aP0.jpeg */,
 				E0F5C669287B209200889538 /* YOmC5Tyk-nU.jpeg */,
+				E0CC8ADA287D8A91001911BC /* lab.jpeg */,
+				E0CC8ADB287D8A91001911BC /* medicine.jpeg */,
 				E066993227F47ADA009EE3F0 /* AppDelegate.swift */,
 				E066993627F47ADA009EE3F0 /* ViewController.swift */,
 				E03D7A9C287417D40089C860 /* LabTest */,
@@ -1518,6 +1524,7 @@
 				E0B9BFAD2811BD23001A58E8 /* raleway_extrabolditalic.ttf in Resources */,
 				E0F5C65C287B091300889538 /* LabDetailsVC.xib in Resources */,
 				E0B9BFBF2811BD23001A58E8 /* Poppins-ExtraLight.ttf in Resources */,
+				E0CC8ADC287D8A91001911BC /* lab.jpeg in Resources */,
 				E0B7186C283BFB31001D96DD /* SelectLocationVC.xib in Resources */,
 				E0F5C646287B087300889538 /* CategoryCollectionViewCell.xib in Resources */,
 				E0B9BFD02811BD23001A58E8 /* Poppins-Italic.ttf in Resources */,
@@ -1621,6 +1628,7 @@
 				E0E74C11281F9FF6001564F9 /* FinanceVC.xib in Resources */,
 				E0B9C0012811BD23001A58E8 /* Consultation.zip in Resources */,
 				E0B9BF932811BD23001A58E8 /* raleway_extralightitalic.ttf in Resources */,
+				E0CC8ADD287D8A91001911BC /* medicine.jpeg in Resources */,
 				E072953627F853610083357A /* Home.storyboard in Resources */,
 				E0E88CD3283CEDCC00918595 /* orderPlaceVC.xib in Resources */,
 				E0CC6480281438380011A165 /* EditProfileVC.xib in Resources */,

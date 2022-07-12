@@ -47,7 +47,7 @@ class orderPlaceVC: UIViewController,XIBed, RazorpayProtocol {
         self.showPaymentForm(amount: Int(amount) ?? 0, orderId: "154546548", desc: "Order Booking")
     }
     
-
+    
     //MARK: - API CALL
     func OrderapiCall(PaymentId:String)  {
         let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
@@ -61,14 +61,11 @@ class orderPlaceVC: UIViewController,XIBed, RazorpayProtocol {
             
             if data?[0].status == "1" {
                 
-                let controllers = self?.navigationController?.viewControllers
-                for vc in controllers! {
-                    if vc is CustomTabBarViewController {
-                        _ = self?.navigationController?.popToViewController(vc as! CustomTabBarViewController, animated: true)
-                        
-                        AppManager.shared.showAlert(title: "Success", msg: data?[0].message ?? "", vc: self!)
-                    }
-                }
+                AppManager.shared.showAlert(title: "Success", msg: data?[0].message ?? "", vc: self!)
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let homeVC = CustomTabBarViewController.instantiate()
+                let navigationController = UINavigationController(rootViewController: homeVC)
+                appDelegate.window!.rootViewController = navigationController
                 
             }
         }

@@ -141,6 +141,8 @@ enum APIV2: API {
     
     case FrequentSpeciality
     
+    case FrequentConcernList
+    
     case SymptomsSearching(searchVal: String)
     
     case PatientConcernSave(patientId: Int, concernId: Int, concernDesc: String)
@@ -404,6 +406,9 @@ extension APIV2 {
             return URL(string: Router.deliveryBoyBaseUrl)!
             
         case .FrequentSpeciality:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .FrequentConcernList:
             return URL(string: Router.deliveryBoyBaseUrl)!
             
         case .SymptomsSearching:
@@ -705,6 +710,9 @@ extension APIV2 {
         case .FrequentSpeciality:
             return "Common?vSpecType=Specialization"
             
+        case .FrequentConcernList:
+            return "Concern?vFreqConcernList"
+            
         case .SymptomsSearching(searchVal: let searchVal):
             return "Patient?vSrchVal=\(searchVal)"
             
@@ -1002,6 +1010,9 @@ extension APIV2 {
             return "GET"
             
         case .FrequentSpeciality:
+            return "GET"
+            
+        case .FrequentConcernList:
             return "GET"
             
         case .SymptomsSearching:
@@ -1303,6 +1314,9 @@ extension APIV2 {
             break
             
         case .FrequentSpeciality:
+            break
+            
+        case .FrequentConcernList:
             break
             
         case .SymptomsSearching:

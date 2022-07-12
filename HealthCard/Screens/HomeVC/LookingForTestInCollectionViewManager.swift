@@ -69,7 +69,7 @@ extension LookingForTestInCollectionViewManager: UICollectionViewDataSource {
         cell.lblRef.text = storyData[indexPath.row].labTestText
         
         let imgUrl = storyData[indexPath.row].labTestImageURL.replacingOccurrences(of: " ", with: "%20")
-        cell.imgViewRef.sd_setImage(with: URL(string: imgUrl), placeholderImage: UIImage(named: "placeholder.png"))
+        cell.imgViewRef.sd_setImage(with: URL(string: imgUrl), placeholderImage: UIImage(named: "lab.jpeg"))
         
         //cell.lblRef.text = storyData[indexPath.row]
         //cell.imgViewRef.image = UIImage(named: imgData[indexPath.row])

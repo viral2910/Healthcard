@@ -195,16 +195,6 @@ extension HomeViewController {
         lookingForConsultationInSlider2CollectionViewManager.start(data: ["online_consultation_2"], collectionVIew: lookingForConsultationsInSliderBanner2CvRef)
         patientExperienceWithUsSliderCollectionViewManager.start(data: ["This app is really flawless. Good for elderly people. Best part of the app is home delivery of medicine at a discounted price.","I got lab tests done for my parents on HealthCard since we couldn’t travel. Sample was collected at home & I got both reports on the app. Very convenient.","I booked an appointment for an CBC (COMPLETE BLOOD COUNT) via HealthCard. Got my CBC (COMPLETE BLOOD COUNT) done immediately at my home. Didn’t have to wait or stand in a queue.","My mother  was unwell late at night and I had to speak to a doctor immediately. i chose a doctor  and got to consult in 10 minutes.It was very helpful for us."], nameData: ["Abhay thakur","Rohit Dixit","Praksah budhe","Saurabh KONKAR"], collectionVIew: patientsExperienceSliderBanner1CvRef)
 
-        /*
-         1.This app is really flawless. Good for elderly people. Best part of the app is home delivery of medicine at a discounted price.
-         Abhay thakur
-         2.I got lab tests done for my parents on HealthCard since we couldn’t travel. Sample was collected at home & I got both reports on the app. Very convenient.
-         -Rohit Dixit
-         3.I booked an appointment for an CBC (COMPLETE BLOOD COUNT) via HealthCard. Got my CBC (COMPLETE BLOOD COUNT) done immediately at my home. Didn’t have to wait or stand in a queue.
-         -Praksah budhe
-         4. My mother  was unwell late at night and I had to speak to a doctor immediately. i chose a doctor  and got to consult in 10 minutes.It was very helpful for us
-         -Saurabh KONKAR
-         */
 
         blogsCollectionViewManager.start(data: ["YOmC5Tyk-nU.jpeg","UKM2SVBhtNs.jpeg","Ax4fAvR-C_c.jpeg","xDJ8FE43aP0.jpeg","SuNc0QRTvGA.jpeg","9VtxCxtsMAI.jpeg"], collectionVIew: blogsFromExpertCvRef, totalItemToShow: 1.8)
         
@@ -298,7 +288,7 @@ extension HomeViewController {
     
     func issueConsultationApi() {
         struct demo: Codable { }
-        NetWorker.shared.callAPIService(type: APIV2.FrequentSpeciality) { [weak self](data: LookinForConsultationDataResponse?, error) in
+        NetWorker.shared.callAPIService(type: APIV2.FrequentConcernList) { [weak self](data: LookinForConcernDataResponse?, error) in
             guard self == self else { return }
 
             self!.categoryCollectionViewManager.start(data: data ?? [], collectionVIew: self!.consultCvRef)
@@ -318,7 +308,7 @@ extension HomeViewController {
 
     func lookingForMedicineInApi() {
         struct demo: Codable { }
-        NetWorker.shared.callAPIService(type: APIV2.FrequentLabTest) { [weak self](data: LookingForTestInDataResponse?, error) in
+        NetWorker.shared.callAPIService(type: APIV2.FrequentMedicine) { [weak self](data: LookingForMedicineInData?, error) in
             guard self == self else { return }
 
             self!.collectionViewManager.start(data: data ?? [], collectionVIew: self!.medicineYouAreLookingCvRef, totalItemToShow: 2.5)
@@ -364,6 +354,22 @@ struct LookinForConsultationDataResponseElement: Codable {
 
 typealias LookinForConsultationDataResponse = [LookinForConsultationDataResponseElement]
 
+struct LookinForConcernData: Codable {
+    let concernID: Int
+    let concern, concernCatagoryID, concernCatagory: String
+    let concernDetailslist: JSONNull?
+
+    enum CodingKeys: String, CodingKey {
+        case concernID = "ConcernId"
+        case concern = "Concern"
+        case concernCatagoryID = "ConcernCatagoryId"
+        case concernCatagory = "ConcernCatagory"
+        case concernDetailslist = "ConcernDetailslist"
+    }
+}
+
+typealias LookinForConcernDataResponse = [LookinForConcernData]
+
 // MARK: - LookingForTestInDataResponseElement
 struct LookingForTestInDataResponseElement: Codable {
     let docID, docType, docDate: JSONNull?
@@ -398,3 +404,101 @@ struct LookingForTestInDataResponseElement: Codable {
 }
 
 typealias LookingForTestInDataResponse = [LookingForTestInDataResponseElement]
+
+// MARK: - WelcomeElement
+struct LookingForMedicineInDataResponse: Codable {
+    let docID, docType, docDate: JSONNull?
+    let medicineID, brandID, brandName, genericID: String
+    let genericName, doseID, dose: String
+    let medType: MedType
+    let type: JSONNull?
+    let unitID: String
+    let unit: Unit
+    let route, unitText: JSONNull?
+    let package: String
+    let marketingComp, manufactComp, frequency, duration: JSONNull?
+    let remarks, noOfDays, orderNo, currUser: JSONNull?
+    let usgRemark, hospitalID, mrp, noOfStrip: JSONNull?
+    let finalAmount, stripCost, discountAmount, discountPer: JSONNull?
+    let gstAmount, gstPer, netCost, isPay: JSONNull?
+    let balance, pharamcyMasterID, pharmacyName: JSONNull?
+    let isPrescription: IsPrescription
+    let prescriptionStatus: PrescriptionStatus
+    let manufactureID, manufactureCompany: String
+    let drugImageURL: String
+
+    enum CodingKeys: String, CodingKey {
+        case docID = "DocId"
+        case docType = "DocType"
+        case docDate = "DocDate"
+        case medicineID = "MedicineId"
+        case brandID = "BrandId"
+        case brandName = "BrandName"
+        case genericID = "GenericId"
+        case genericName = "GenericName"
+        case doseID = "DoseId"
+        case dose = "Dose"
+        case medType = "MedType"
+        case type = "Type"
+        case unitID = "UnitId"
+        case unit = "Unit"
+        case route = "Route"
+        case unitText = "UnitText"
+        case package = "Package"
+        case marketingComp = "MarketingComp"
+        case manufactComp = "ManufactComp"
+        case frequency = "Frequency"
+        case duration = "Duration"
+        case remarks = "Remarks"
+        case noOfDays = "NoOfDays"
+        case orderNo = "OrderNo"
+        case currUser = "CurrUser"
+        case usgRemark = "USGRemark"
+        case hospitalID = "HospitalId"
+        case mrp = "MRP"
+        case noOfStrip = "NoOfStrip"
+        case finalAmount = "FinalAmount"
+        case stripCost = "StripCost"
+        case discountAmount = "DiscountAmount"
+        case discountPer = "DiscountPer"
+        case gstAmount = "GSTAmount"
+        case gstPer = "GSTPer"
+        case netCost = "NetCost"
+        case isPay = "IsPay"
+        case balance = "Balance"
+        case pharamcyMasterID = "PharamcyMasterId"
+        case pharmacyName = "PharmacyName"
+        case isPrescription = "IsPrescription"
+        case prescriptionStatus = "PrescriptionStatus"
+        case manufactureID = "ManufactureId"
+        case manufactureCompany = "ManufactureCompany"
+        case drugImageURL = "DrugImageURL"
+    }
+}
+
+enum IsPrescription: String, Codable {
+    case isPrescriptionTrue = "True"
+}
+
+enum MedType: String, Codable {
+    case capsule = "CAPSULE"
+    case cream = "CREAM"
+    case injection = "INJECTION"
+    case powder = "POWDER"
+    case tablet = "TABLET"
+}
+
+enum PrescriptionStatus: String, Codable {
+    case prescriptionRequired = "Prescription Required"
+}
+
+enum Unit: String, Codable {
+    case iu = "IU"
+    case mg = "MG"
+    case mgMg = "MG+MG"
+    case na = "NA"
+}
+
+typealias LookingForMedicineInData = [LookingForMedicineInDataResponse]
+
+

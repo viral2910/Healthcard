@@ -14,7 +14,7 @@ class DashboardCollectionViewManager: NSObject {
     weak var collectionView: UICollectionView?
     weak var emptyView: UIView?
         
-    var storyData : LookingForTestInDataResponse = []
+    var storyData : LookingForMedicineInData = []
     
     var totalItemToShow = CGFloat()
 //    //var moreOptionDropDown = DropDown_()
@@ -25,7 +25,7 @@ class DashboardCollectionViewManager: NSObject {
     weak var presentDelegate: presentViewControllersDelegate?
     
     
-    func start(data: LookingForTestInDataResponse, collectionVIew: UICollectionView, totalItemToShow: CGFloat) {
+    func start(data: LookingForMedicineInData, collectionVIew: UICollectionView, totalItemToShow: CGFloat) {
         self.collectionView = collectionVIew
         self.totalItemToShow = totalItemToShow
         self.storyData = data
@@ -58,85 +58,21 @@ extension DashboardCollectionViewManager: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LookForTestCollectionViewCell", for:indexPath) as! LookForTestCollectionViewCell
-        //cell.borderView.layer.borderColor = UIColor(hexString: borderColor).cgColor
-
         cell.viewRef.layer.cornerRadius = 10
         cell.viewRef.clipsToBounds = false
-        
         cell.viewRef.layer.masksToBounds = true
         cell.viewRef.dropShadow()
-        
-        cell.lblRef.text = storyData[indexPath.row].sampleDetails
-        
-        let imgUrl = storyData[indexPath.row].labTestImageURL.replacingOccurrences(of: " ", with: "%20")
-        cell.imgViewRef.sd_setImage(with: URL(string: imgUrl), placeholderImage: UIImage(named: "placeholder.png"))
-
-        //cell.lblRef.text = storyData[indexPath.row]
-        //cell.imgViewRef.image = UIImage(named: imgData[indexPath.row])
-        
+        cell.lblRef.text = storyData[indexPath.row].brandName
+        let imgUrl = storyData[indexPath.row].drugImageURL.replacingOccurrences(of: " ", with: "%20")
+        cell.imgViewRef.sd_setImage(with: URL(string: imgUrl), placeholderImage: UIImage(named: "medicine.jpeg"))
         return cell
     }
-    
-    
-
-    
-    
 }
 
 extension DashboardCollectionViewManager: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //self.viewCourse?(AppDelegate.shared.getStubCourse())
-        
-//        switch indexPath.row {
-//        case 0:
-//            let vc = SearchMemberViewController.instantiate()
-//            
-//            self.delegate?.pushViewController(vc: vc)
-//            
-//        case 1:
-//            let vc = UpcomingEventsViewController.instantiate()
-//            
-//            self.delegate?.pushViewController(vc: vc)
-//            
-//        case 2:
-//            let vc = BirthdayViewController.instantiate()
-//            
-//            self.delegate?.pushViewController(vc: vc)
-//            
-//        case 3:
-//            let vc = PublicationsViewController.instantiate()
-//            
-//            self.delegate?.pushViewController(vc: vc)
-//            
-//        case 4:
-//            let vc = PhotosViewController.instantiate()
-//            
-//            self.delegate?.pushViewController(vc: vc)
-//            
-//        case 5:
-//            let vc = VideosViewController.instantiate()
-//            
-//            self.delegate?.pushViewController(vc: vc)
-//            
-//        case 6:
-//            let vc = AlphaDirectoryViewController.instantiate()
-//            
-//            self.delegate?.pushViewController(vc: vc)
-//            
-//        case 7:
-//            let vc = EventResourcesViewController.instantiate()
-//            
-//            self.delegate?.pushViewController(vc: vc)
-//            
-//        case 8:
-//            let vc = CommunicationViewController.instantiate()
-//            
-//            self.delegate?.pushViewController(vc: vc)
-//            
-//        default:
-//            break
-//        }
+
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

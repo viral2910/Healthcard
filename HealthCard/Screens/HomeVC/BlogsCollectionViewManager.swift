@@ -78,55 +78,13 @@ extension BlogsCollectionViewManager: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //self.viewCourse?(AppDelegate.shared.getStubCourse())
         
-//        switch indexPath.row {
-//        case 0:
-//            let vc = SearchMemberViewController.instantiate()
-//
-//            self.delegate?.pushViewController(vc: vc)
-//
-//        case 1:
-//            let vc = UpcomingEventsViewController.instantiate()
-//
-//            self.delegate?.pushViewController(vc: vc)
-//
-//        case 2:
-//            let vc = BirthdayViewController.instantiate()
-//
-//            self.delegate?.pushViewController(vc: vc)
-//
-//        case 3:
-//            let vc = PublicationsViewController.instantiate()
-//
-//            self.delegate?.pushViewController(vc: vc)
-//
-//        case 4:
-//            let vc = PhotosViewController.instantiate()
-//
-//            self.delegate?.pushViewController(vc: vc)
-//
-//        case 5:
-//            let vc = VideosViewController.instantiate()
-//
-//            self.delegate?.pushViewController(vc: vc)
-//
-//        case 6:
-//            let vc = AlphaDirectoryViewController.instantiate()
-//
-//            self.delegate?.pushViewController(vc: vc)
-//
-//        case 7:
-//            let vc = EventResourcesViewController.instantiate()
-//
-//            self.delegate?.pushViewController(vc: vc)
-//
-//        case 8:
-//            let vc = CommunicationViewController.instantiate()
-//
-//            self.delegate?.pushViewController(vc: vc)
-//
-//        default:
-//            break
-//        }
+        var youtubeUrl = NSURL(string:"youtube://\(storyData[indexPath.row])")!
+        if UIApplication.shared.canOpenURL(youtubeUrl as URL){
+            UIApplication.shared.openURL(youtubeUrl as URL)
+            } else{
+                    youtubeUrl = NSURL(string:"https://www.youtube.com/watch?v=\(storyData[indexPath.row])")!
+                UIApplication.shared.openURL(youtubeUrl as URL)
+            }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

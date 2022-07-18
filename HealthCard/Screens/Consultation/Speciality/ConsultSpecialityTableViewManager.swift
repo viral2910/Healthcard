@@ -69,6 +69,9 @@ extension ConsultSpecialityTableViewManager: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = ConsultationDetailsViewController.instantiate()
         vc.specializationId = storyData[indexPath.row].id
+        //vc.concernList = [
+        vc.selectedIssueArr = [storyData[indexPath.row].value]
+        vc.selectedSp = storyData[indexPath.row].value
         self.pushDelegate?.pushViewController(vc: vc)
     }
     

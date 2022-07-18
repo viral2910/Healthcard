@@ -46,6 +46,12 @@ class BookLabTest: UIViewController{
         self.searchDropDown.bottomOffset = CGPoint(x: 0, y:(self.searchDropDown.anchorView?.plainView.bounds.height)!)
         searchTableViewManager.removeDelegate = self
 
+        if self.searchDataArr.count != 0 {
+            self.searchTableViewOuterView.isHidden = false
+        }
+        
+        self.searchTableViewManager.start(data: self.searchDataArr)
+        
     }
     @objc func textFieldValueChanged(_ textField: UITextField)
     {
@@ -72,10 +78,7 @@ class BookLabTest: UIViewController{
     @IBAction func savePharmacyAction(_ sender: UIButton) {
 //        self.searchTableViewManager.start(data: [])
 //        self.searchTableViewOuterView.isHidden = true
-        var medicineId = ""
-        for item in searchDataArr {
-            medicineId = "\(item.labTestID ?? 0)" + ","
-        }
+        let medicineId = searchDataArr.compactMap {String($0.labTestID ?? 0) }.joined(separator: ",")
         saveLabApiCall(LabId: medicineId)
     }
 }
@@ -99,6 +102,7 @@ extension BookLabTest {
         func saveLabApiCall(LabId: String) {
             struct demo: Codable { }
             let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
+            print(LabId)
             NetWorker.shared.callAPIService(type: APIV2.saveLabTestsTest(patientID: patientID, GenInvest: LabId)) { [weak self](data: demo?, error) in
                 
                     self!.searchTableViewManager.start(data: [])

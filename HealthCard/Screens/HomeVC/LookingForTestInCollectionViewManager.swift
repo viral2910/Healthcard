@@ -68,7 +68,7 @@ extension LookingForTestInCollectionViewManager: UICollectionViewDataSource {
         
         cell.lblRef.text = storyData[indexPath.row].labTestText
         
-        let imgUrl = storyData[indexPath.row].labTestImageURL.replacingOccurrences(of: " ", with: "%20")
+        let imgUrl = storyData[indexPath.row].labTestImageURL?.replacingOccurrences(of: " ", with: "%20") ?? ""
         cell.imgViewRef.sd_setImage(with: URL(string: imgUrl), placeholderImage: UIImage(named: "lab.jpeg"))
         
         //cell.lblRef.text = storyData[indexPath.row]
@@ -86,57 +86,9 @@ extension LookingForTestInCollectionViewManager: UICollectionViewDataSource {
 extension LookingForTestInCollectionViewManager: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //self.viewCourse?(AppDelegate.shared.getStubCourse())
-        
-        //        switch indexPath.row {
-        //        case 0:
-        //            let vc = SearchMemberViewController.instantiate()
-        //
-        //            self.delegate?.pushViewController(vc: vc)
-        //
-        //        case 1:
-        //            let vc = UpcomingEventsViewController.instantiate()
-        //
-        //            self.delegate?.pushViewController(vc: vc)
-        //
-        //        case 2:
-        //            let vc = BirthdayViewController.instantiate()
-        //
-        //            self.delegate?.pushViewController(vc: vc)
-        //
-        //        case 3:
-        //            let vc = PublicationsViewController.instantiate()
-        //
-        //            self.delegate?.pushViewController(vc: vc)
-        //
-        //        case 4:
-        //            let vc = PhotosViewController.instantiate()
-        //
-        //            self.delegate?.pushViewController(vc: vc)
-        //
-        //        case 5:
-        //            let vc = VideosViewController.instantiate()
-        //
-        //            self.delegate?.pushViewController(vc: vc)
-        //
-        //        case 6:
-        //            let vc = AlphaDirectoryViewController.instantiate()
-        //
-        //            self.delegate?.pushViewController(vc: vc)
-        //
-        //        case 7:
-        //            let vc = EventResourcesViewController.instantiate()
-        //
-        //            self.delegate?.pushViewController(vc: vc)
-        //
-        //        case 8:
-        //            let vc = CommunicationViewController.instantiate()
-        //
-        //            self.delegate?.pushViewController(vc: vc)
-        //
-        //        default:
-        //            break
-        //        }
+        let vc = BookLabTest(nibName: "BookLabTest", bundle: nil)
+        vc.searchDataArr.append(storyData[indexPath.row])
+        self.delegate?.pushViewController(vc: vc)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

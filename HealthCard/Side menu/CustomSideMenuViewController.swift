@@ -24,7 +24,9 @@ class CustomSideMenuViewController: UIViewController, XIBed , PushViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLblRef.text = UserDefaults.standard.string(forKey: "patientName")
+        self.nameLblRef.text = UserDefaults.standard.string(forKey: "patientFullName") ?? ""
+
+//        nameLblRef.text = UserDefaults.standard.string(forKey: "patientName")
             setupUI()
             setupCorner()
             
@@ -59,8 +61,9 @@ class CustomSideMenuViewController: UIViewController, XIBed , PushViewController
         @IBAction func viewAndEditProfileBtnTap(_ sender: UIButton) {
             
                 let vc = EditProfileVC.instantiate()
-                self.pushDelegate?.pushViewController(vc: vc)
-                print("Button Tap")
+//                self.pushDelegate?.pushViewController(vc: vc)
+            self.navigationController?.pushViewController(vc, animated: true)
+//                print("Button Tap")
         }
     
         @IBAction func termsAndConditionBtnTap(_ sender: UIButton) {

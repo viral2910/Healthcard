@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class SingUpVC: UIViewController, UITextFieldDelegate,UIPickerViewDataSource, UIPickerViewDelegate {
 
@@ -18,9 +19,14 @@ class SingUpVC: UIViewController, UITextFieldDelegate,UIPickerViewDataSource, UI
     @IBOutlet weak var pincodeTextField: UITextField!
     @IBOutlet weak var genderSegment: UISegmentedControl!
     
+    @IBOutlet weak var passwordVisible: UIButton!
+    var isPassword = true
+    
+    @IBOutlet weak var confirmpasswordVisible: UIButton!
+    var isConfirmPassword = true
     var titlelist = [CommonSC]()
     var selectedtitle = ""
-    
+    var gendervalue = ""
     var titlePicker: UIPickerView?
     
     override func viewDidLoad() {
@@ -33,6 +39,10 @@ class SingUpVC: UIViewController, UITextFieldDelegate,UIPickerViewDataSource, UI
         passwordTextField.delegate = self
         confirmpasswordTextField.delegate = self
         pincodeTextField.delegate = self
+    }
+    
+    @IBAction func valuechangeGender(_ sender: UISegmentedControl) {
+        gendervalue = genderSegment.titleForSegment(at: genderSegment.selectedSegmentIndex) ?? "Male"
     }
     override func viewWillAppear(_ animated: Bool) {
         GettitleApiCall()
@@ -62,13 +72,43 @@ class SingUpVC: UIViewController, UITextFieldDelegate,UIPickerViewDataSource, UI
             AppManager.shared.showAlert(title: "Error", msg: "Please Enter Pincode", vc: self)
             return;
         }
+        if gendervalue == "" {
+            AppManager.shared.showAlert(title: "Error", msg: "Please Select Proper Gender", vc: self)
+            return;
+        }
         let index = titlelist.filter{ $0.value == selectedtitle }
         let valueindex = index.first?.id ?? ""
-        signUpApiCall(titleId: Int(valueindex) ?? 0 , firstName: fname, lastName: lname, mobileNo: mobile, password: password, gender: genderSegment.titleForSegment(at: genderSegment.selectedSegmentIndex) ?? "Male", pincode: pincode)
+        SVProgressHUD.show()
+        signUpApiCall(titleId: Int(valueindex) ?? 0 , firstName: fname, lastName: lname, mobileNo: mobile, password: password, gender: gendervalue, pincode: pincode)
     }
     @IBAction func signinAction(_ sender: Any) {
         let singin = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "SingInVC") as! SingInVC
         self.navigationController?.pushViewController(singin, animated: true)
+    }
+    @available(iOS 13.0, *)
+    @IBAction func passwordVisibleAction(_ sender: UIButton) {
+        if isPassword {
+            isPassword = !isPassword
+            passwordTextField.isSecureTextEntry = false
+            passwordVisible.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+        } else {
+            isPassword = !isPassword
+            passwordTextField.isSecureTextEntry = true
+            passwordVisible.setImage(UIImage(systemName: "eye.fill"), for: .normal)
+        }
+    }
+    
+    @available(iOS 13.0, *)
+    @IBAction func ConfirmpasswordVisibleAction(_ sender: UIButton) {
+        if isConfirmPassword {
+            isConfirmPassword = !isConfirmPassword
+            confirmpasswordTextField.isSecureTextEntry = false
+            confirmpasswordVisible.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+        } else {
+            isConfirmPassword = !isConfirmPassword
+            confirmpasswordTextField.isSecureTextEntry = true
+            confirmpasswordVisible.setImage(UIImage(systemName: "eye.fill"), for: .normal)
+        }
     }
     
     // MARK: Picker
@@ -112,6 +152,8 @@ class SingUpVC: UIViewController, UITextFieldDelegate,UIPickerViewDataSource, UI
         }
         NetWorker.shared.callAPIService(type: APIV2.patientRegistration(titleId: titleId, firstName: firstName, lastName: lastName, mobileNo: mobileNo, password: password, gender: gender, pincode: pincode)) { (data:Welcomevalue?, error) in
             let message = data?.soapEnvelope.soapBody.savePatientResponse.savePatientResult.patientRegSC.message ?? ""
+            
+            SVProgressHUD.dismiss()
             if message.lowercased().contains("sucess") {
                 let patientid = data?.soapEnvelope.soapBody.savePatientResponse.savePatientResult.patientRegSC.patientID
                 UserDefaults.standard.set(true, forKey: "isLogin")

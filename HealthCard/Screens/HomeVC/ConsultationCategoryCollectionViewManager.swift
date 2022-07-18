@@ -74,7 +74,13 @@ extension ConsultationCategoryCollectionViewManager: UICollectionViewDataSource 
 extension ConsultationCategoryCollectionViewManager: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let vc = ConsultationDetailsViewController.instantiate()
+        //vc.concernList = storyData[indexPath.row].concernDetailslist ?? []
+        vc.selectedIssueArr = [storyData[indexPath.row].value]
+        vc.specializationId = storyData[indexPath.row].id
+        vc.concernList.append(SymptomsDataResponseElement(concernID: storyData[indexPath.row].id, concern: storyData[indexPath.row].value, concernCatagoryID: "", concernCatagory: "", concernDetailslist: []))
+        vc.selectedSp = storyData[indexPath.row].value
+        self.delegate?.pushViewController(vc: vc)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

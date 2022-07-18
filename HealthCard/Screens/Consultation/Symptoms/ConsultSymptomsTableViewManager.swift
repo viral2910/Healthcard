@@ -84,6 +84,7 @@ extension ConsultSymptomsTableViewManager: UITableViewDelegate {
         let vc = ConsultationDetailsViewController.instantiate()
         vc.concernList = storyData[indexPath.row].concernDetailslist ?? []
         vc.specializationId = storyData[indexPath.row].concernID ?? 0
+        vc.selectedSp = storyData[indexPath.row].concern ?? ""
         self.pushDelegate?.pushViewController(vc: vc)
     }
     

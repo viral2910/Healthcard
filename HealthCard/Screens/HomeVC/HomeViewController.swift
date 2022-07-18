@@ -187,11 +187,11 @@ extension HomeViewController {
         collectionViewManager.delegate = self
         sliderCollectionViewManager.pushDelegate = self
         
-        sliderCollectionViewManager.start(data: ["Track-Your-Order","500_hassle_free_consult","24x7-Health-Support_long"], collectionVIew: sliderBanner1CvRef)
-        lookingForTestSliderCollectionViewManager.start(data: ["lab_test_hc_banner","40_off_home_checkup",], collectionVIew: lookingForTestSliderBannerCvRef)
-        medicineYouAreLookingSlider1CvManager.start(data: ["top_doc_online"], collectionVIew: medicineYouAreLookingSliderBanner1CvRef)
-        medicineYouAreLookingSlider2CollectionViewManager.start(data: ["upto_25_off"], collectionVIew: medicineYouAreLookingSliderBanner2CvRef)
-        lookingForConsultationInSlider1CollectionViewManager.start(data: ["10_40_off", "online_consult_from_certified_doc"], collectionVIew: lookingForConsultationsInSliderBanner1CvRef)
+        sliderCollectionViewManager.start(data: ["upto_25_off","Track-Your-Order","24x7-Health-Support_long"], collectionVIew: sliderBanner1CvRef)
+        lookingForTestSliderCollectionViewManager.start(data: ["lab_test_hc_banner","40_off_home_checkup","lab_test_hc_banner"], collectionVIew: lookingForTestSliderBannerCvRef)
+        medicineYouAreLookingSlider1CvManager.start(data: ["40_off_home_checkup","All-Payment","top_doc_online"], collectionVIew: medicineYouAreLookingSliderBanner1CvRef)
+        medicineYouAreLookingSlider2CollectionViewManager.start(data: ["finance-1"], collectionVIew: medicineYouAreLookingSliderBanner2CvRef)
+        lookingForConsultationInSlider1CollectionViewManager.start(data: ["online_consult_from_certified_doc","home11","10_40_off" ], collectionVIew: lookingForConsultationsInSliderBanner1CvRef)
         lookingForConsultationInSlider2CollectionViewManager.start(data: ["online_consultation_2"], collectionVIew: lookingForConsultationsInSliderBanner2CvRef)
         patientExperienceWithUsSliderCollectionViewManager.start(data: ["This app is really flawless. Good for elderly people. Best part of the app is home delivery of medicine at a discounted price.","I got lab tests done for my parents on HealthCard since we couldn’t travel. Sample was collected at home & I got both reports on the app. Very convenient.","I booked an appointment for an CBC (COMPLETE BLOOD COUNT) via HealthCard. Got my CBC (COMPLETE BLOOD COUNT) done immediately at my home. Didn’t have to wait or stand in a queue.","My mother  was unwell late at night and I had to speak to a doctor immediately. i chose a doctor  and got to consult in 10 minutes.It was very helpful for us."], nameData: ["Abhay thakur","Rohit Dixit","Praksah budhe","Saurabh KONKAR"], collectionVIew: patientsExperienceSliderBanner1CvRef)
 
@@ -282,6 +282,7 @@ extension HomeViewController {
             guard self == self else { return }
 
             self!.consultationCategoryCollectionViewManager.start(data: data ?? [], collectionVIew: self!.lookingForConsultationsInCvRef)
+            self!.consultationCategoryCollectionViewManager.delegate = self!.pushDelegate
 
         }
     }
@@ -292,6 +293,7 @@ extension HomeViewController {
             guard self == self else { return }
 
             self!.categoryCollectionViewManager.start(data: data ?? [], collectionVIew: self!.consultCvRef)
+            self!.categoryCollectionViewManager.delegate = self!.pushDelegate
 
         }
     }
@@ -302,7 +304,7 @@ extension HomeViewController {
             guard self == self else { return }
 
             self!.lookingForTestInCollectionViewManager.start(data: data ?? [], collectionVIew: self!.lookingForTestCvRef, totalItemToShow: 3.2)
-
+            self!.lookingForTestInCollectionViewManager.delegate = self!.pushDelegate
         }
     }
 
@@ -312,6 +314,7 @@ extension HomeViewController {
             guard self == self else { return }
 
             self!.collectionViewManager.start(data: data ?? [], collectionVIew: self!.medicineYouAreLookingCvRef, totalItemToShow: 2.5)
+            self!.collectionViewManager.delegate = self!.pushDelegate
 
         }
     }
@@ -403,7 +406,7 @@ struct LookingForTestInDataResponseElement: Codable {
     }
 }
 
-typealias LookingForTestInDataResponse = [LookingForTestInDataResponseElement]
+typealias LookingForTestInDataResponse = [LabTestDtlslist]
 
 // MARK: - WelcomeElement
 struct LookingForMedicineInDataResponse: Codable {
@@ -499,6 +502,6 @@ enum Unit: String, Codable {
     case na = "NA"
 }
 
-typealias LookingForMedicineInData = [LookingForMedicineInDataResponse]
+typealias LookingForMedicineInData = [PharmacyDtlsSClist]
 
 

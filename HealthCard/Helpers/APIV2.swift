@@ -167,6 +167,8 @@ enum APIV2: API {
     
     case FrequentMedicine
     
+    case ProcedureReport(patientId: Int)
+    
     case MyPrescription(patientId: Int)
     
     case LabTestReceipt(patientId: Int)
@@ -442,6 +444,9 @@ extension APIV2 {
             return URL(string: Router.deliveryBoyBaseUrl)!
             
         case .FrequentMedicine:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .ProcedureReport:
             return URL(string: Router.deliveryBoyBaseUrl)!
             
         case .MyPrescription:
@@ -746,6 +751,9 @@ extension APIV2 {
         case .FrequentMedicine:
             return "Pharmacy"
             
+        case .ProcedureReport(patientId: let patientId):
+            return "HealthHistory?vProcedureDocPatientId=\(patientId)"
+            
         case .MyPrescription(patientId: let patientId):
             return "HealthHistory?vPrescriptionHistPatientId=\(patientId)"
             
@@ -1046,6 +1054,9 @@ extension APIV2 {
             return "GET"
             
         case .FrequentMedicine:
+            return "GET"
+            
+        case .ProcedureReport:
             return "GET"
             
         case .MyPrescription:
@@ -1350,6 +1361,9 @@ extension APIV2 {
             break
             
         case .FrequentMedicine:
+            break
+            
+        case .ProcedureReport:
             break
             
         case .MyPrescription:

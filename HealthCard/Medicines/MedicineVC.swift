@@ -51,6 +51,12 @@ class MedicineVC: UIViewController {
         
         searchTableViewManager.removeDelegate = self
         
+        if self.searchDataArr.count != 0 {
+            self.searchTableViewOuterView.isHidden = false
+        }
+        
+        self.searchTableViewManager.start(data: self.searchDataArr)
+        
     }
     @objc func textFieldValueChanged(_ textField: UITextField)
     {

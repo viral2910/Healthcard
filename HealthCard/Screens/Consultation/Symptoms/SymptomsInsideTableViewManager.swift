@@ -14,7 +14,7 @@ class SymptomsInsideTableViewManager : NSObject {
     weak var tableView: UITableView?
     weak var emptyView: UIView?
 
-    var storyData : [SymptomsDataResponseElement] = []
+    var storyData : SymptomsDataResponse = []
             
     var pushDelegate: PushViewControllerDelegate?
     var presentDelegate: presentViewControllersDelegate?
@@ -36,7 +36,7 @@ class SymptomsInsideTableViewManager : NSObject {
         
     }
     
-    func start(data: [SymptomsDataResponseElement]) {
+    func start(data: SymptomsDataResponse) {
         self.storyData = data
         self.tableView?.reloadData()
         tableView?.layoutIfNeeded()
@@ -80,6 +80,7 @@ extension SymptomsInsideTableViewManager: UITableViewDelegate {
         vc.concernList = storyData
         vc.specializationId = Int(storyData[indexPath.row].concernCatagoryID ?? "") ?? 0
         vc.selectedIssueArr = [storyData[indexPath.row].concern ?? ""]
+        vc.selectedSp = storyData[indexPath.row].concern ?? ""
         self.pushDelegate?.pushViewController(vc: vc)
 
         

@@ -69,7 +69,7 @@ extension ConsultationDetailsViewController {
         let roundedValue = ceil(counts)
 
         cvHeightRef.constant = roundedValue * 60
-    
+        titleRef.text = selectedSp
         
         collectionViewManager.start(collectionView: cvRef, storyData: selectedIssueArr, divideElementBy: 2.0)
         

@@ -63,7 +63,7 @@ extension DashboardCollectionViewManager: UICollectionViewDataSource {
         cell.viewRef.layer.masksToBounds = true
         cell.viewRef.dropShadow()
         cell.lblRef.text = storyData[indexPath.row].brandName
-        let imgUrl = storyData[indexPath.row].drugImageURL.replacingOccurrences(of: " ", with: "%20")
+        let imgUrl = storyData[indexPath.row].drugImageURL?.replacingOccurrences(of: " ", with: "%20") ?? ""
         cell.imgViewRef.sd_setImage(with: URL(string: imgUrl), placeholderImage: UIImage(named: "medicine.jpeg"))
         return cell
     }
@@ -72,6 +72,9 @@ extension DashboardCollectionViewManager: UICollectionViewDataSource {
 extension DashboardCollectionViewManager: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = MedicineVC(nibName: "MedicineVC", bundle: nil)
+        vc.searchDataArr.append(storyData[indexPath.row])
+        self.delegate?.pushViewController(vc: vc)
 
     }
     

@@ -74,7 +74,11 @@ extension CategoryCollectionViewManager: UICollectionViewDataSource {
 extension CategoryCollectionViewManager: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let vc = ConsultationProcessViewController.instantiate()
+        vc.selectedIssueArr = [storyData[indexPath.row].concern]
+        vc.specializationId = Int(storyData[indexPath.row].concernCatagoryID) ?? 0
+            self.delegate?.pushViewController(vc: vc)
+
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

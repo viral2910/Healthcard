@@ -10,7 +10,9 @@ import UIKit
 class SingInVC: UIViewController ,UITextFieldDelegate{// , XIBed, PushViewControllerDelegate {
     
     @IBOutlet weak var mobileTextField: UITextField!
+    @IBOutlet weak var passwordVisible: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
+    var isPassword = true
     override func viewDidLoad() {
         super.viewDidLoad()
         mobileTextField.delegate = self
@@ -82,7 +84,18 @@ class SingInVC: UIViewController ,UITextFieldDelegate{// , XIBed, PushViewContro
         }
         
     }
-    
+    @available(iOS 13.0, *)
+    @IBAction func passwordVisibleAction(_ sender: UIButton) {
+        if isPassword {
+            isPassword = !isPassword
+            passwordTextField.isSecureTextEntry = false
+            passwordVisible.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+        } else {
+            isPassword = !isPassword
+            passwordTextField.isSecureTextEntry = true
+            passwordVisible.setImage(UIImage(systemName: "eye.fill"), for: .normal)
+        }
+    }
 }
 // MARK: - Welcome
 struct Welcome: Codable {

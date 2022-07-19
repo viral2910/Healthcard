@@ -217,6 +217,14 @@ enum APIV2: API {
     
     case saveLabTestsTest(patientID: Int, GenInvest: String)
     
+    case patientForgotPasswordOTPGenerate(mobileNo: String, subject: String)
+
+    case patientForgotPasswordOTPAuthenticate(mobileNo: String, subject: String, otpNo: String, firebaseToken: String)
+    
+    case changepassword(patientID: Int, oldPassword: String,newPassword: String)
+    
+    case updatepassword(mobileNumber: Int, Password: String)
+    
 }
 
 
@@ -523,6 +531,19 @@ extension APIV2 {
             
         case .saveLabTestsTest:
             return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .patientForgotPasswordOTPGenerate:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+
+        case .patientForgotPasswordOTPAuthenticate:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .changepassword:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+
+        case .updatepassword:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+
         }
         
     }
@@ -829,6 +850,18 @@ extension APIV2 {
         
         case .saveLabTestsTest(patientID: let patientID, GenInvest: let GenInvest):
             return "Pathology?vPatientId=\(patientID)&vGenInvest=\(GenInvest)"
+            
+        case .patientForgotPasswordOTPGenerate(mobileNo: let mobileNo, subject: let subject):
+            return "Common?vMobileNo=\(mobileNo)&vSubject=\(subject)"
+            
+        case .patientForgotPasswordOTPAuthenticate(mobileNo: let mobileNo, subject: let subject, otpNo: let otpNo, firebaseToken: let firebaseToken):
+            return "Common?vMobileNo=\(mobileNo)&vSubject=\(subject)&vOtpNo=\(otpNo)&vFireBaseToken=\(firebaseToken)"
+            
+        case .changepassword(patientID: let patientID, oldPassword: let oldPassword, newPassword: let newPassword):
+            return "Patient?vPatientId=\(patientID)&vOldPwd=\(oldPassword)&vNewPwd=\(newPassword)"
+            
+        case .updatepassword(mobileNumber: let mobileNumber, Password: let Password):
+            return "Patient?vMobNo1=\(mobileNumber)&vPwd=\(Password)"
         }
     }
     
@@ -1133,6 +1166,19 @@ extension APIV2 {
 
         case .saveLabTestsTest:
             return "GET"
+            
+        case .patientForgotPasswordOTPGenerate:
+            return "GET"
+
+        case .patientForgotPasswordOTPAuthenticate:
+            return "GET"
+            
+        case .changepassword:
+            return "GET"
+            
+        case .updatepassword:
+            return "GET"
+            
         }
     }
 }
@@ -1443,7 +1489,18 @@ extension APIV2 {
             
         case .saveLabTestsTest:
             break
+            
+        case .patientForgotPasswordOTPGenerate:
+            break
+            
+        case .patientForgotPasswordOTPAuthenticate:
+            break
 
+        case .changepassword:
+            break
+            
+        case .updatepassword:
+            break
         }
         return params
 

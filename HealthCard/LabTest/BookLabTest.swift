@@ -76,8 +76,6 @@ class BookLabTest: UIViewController{
     }
     
     @IBAction func savePharmacyAction(_ sender: UIButton) {
-//        self.searchTableViewManager.start(data: [])
-//        self.searchTableViewOuterView.isHidden = true
         let medicineId = searchDataArr.compactMap {String($0.labTestID ?? 0) }.joined(separator: ",")
         saveLabApiCall(LabId: medicineId)
     }

@@ -19,17 +19,23 @@ class OtpVC: UIViewController {
         mobilenumberTextfield.text = mobilenumber
     }
     @IBAction func sendAction(_ sender: Any) {
-    }
-    @IBAction func loginAction(_ sender: Any) {
-        guard let mobile =  mobilenumberTextfield.text,mobile != "" else {
+        guard let mobile =  mobilenumberTextfield.text,mobile.count == 10 else {
             AppManager.shared.showAlert(title: "Error", msg: "please Enter Mobile Number", vc: self)
             return;
         }
-        guard let otp =  mobilenumberTextfield.text,otp != "" else {
+        loginOtpGenerate(mobileNo: mobile, subject: "Login")
+    }
+    @IBAction func loginAction(_ sender: Any) {
+        guard let mobile =  mobilenumberTextfield.text,mobile.count == 10 else {
+            AppManager.shared.showAlert(title: "Error", msg: "please Enter Mobile Number", vc: self)
+            return;
+        }
+        guard let otp =  otpTextfield.text,otp != "" else {
             AppManager.shared.showAlert(title: "Error", msg: "please Enter OTP", vc: self)
             return;
         }
-        OTPAuthenticationApiCall(mobile: mobile, otp: Int(otp) ?? 0000)
+        //OTPAuthenticationApiCall(mobile: mobile, otp: Int(otp) ?? 0000)
+        loginOtpAuthenticate(mobileNo: mobile, subject: "Login", otpNo: otpTextfield.text ?? "", firebaseToken: "")
     }
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -59,6 +65,50 @@ class OtpVC: UIViewController {
         
     }
 }
+
+extension OtpVC {
+    
+    func loginOtpGenerate(mobileNo: String, subject: String) {
+        
+        NetWorker.shared.callAPIService(type: APIV2.patientForgotPasswordOTPGenerate(mobileNo: mobileNo, subject: subject)) { (data: ForgotPasswordOtpGenerateDataResponse?, error) in
+            guard self == self else { return }
+            
+            let status = data?[0].status ?? ""
+            if status == "1" {
+                UIAlertController.showAlert(titleString: "OTP Resend Successfully")
+            }
+        }
+        
+    }
+    
+    func loginOtpAuthenticate(mobileNo: String, subject: String, otpNo: String, firebaseToken: String) {
+        
+        NetWorker.shared.callAPIService(type: APIV2.patientForgotPasswordOTPAuthenticate(mobileNo: mobileNo, subject: subject, otpNo: otpNo, firebaseToken: firebaseToken)) { (data: LoginOtpAuthenticatwDataResponse?, error) in
+            guard self == self else { return }
+            
+            let status = data?[0].status ?? ""
+            if status == "1" {
+                let patientid = data?[0].patientID
+                UserDefaults.standard.set(true, forKey: "isLogin")
+                UserDefaults.standard.set(patientid, forKey: "patientID")
+                UIApplication.shared.keyWindow?.rootViewController = self.navigationController
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let homeVC = CustomTabBarViewController.instantiate()
+                let navigationController = UINavigationController(rootViewController: homeVC)
+                appDelegate.window!.rootViewController = navigationController
+            } else {
+                UserDefaults.standard.set(false, forKey: "isLogin")
+                UserDefaults.standard.set(0, forKey: "patientID")
+                AppManager.shared.showAlert(title: "Error", msg: data?[0].message ?? "", vc: self)
+            }
+        }
+        
+    }
+
+    
+}
+
+
 
 struct WelcomeOtp: Codable {
     let soapEnvelope: SoapEnvelopeOtp
@@ -144,3 +194,40 @@ struct DeliveryBoy: Codable {
         case selfClosing = "-self-closing"
     }
 }
+
+// MARK: - LoginOtpAuthenticatwDataResponseElement
+struct LoginOtpAuthenticatwDataResponseElement: Codable {
+    let message, status, patientID, gender: String?
+    let firstName, middleName, lastName: String?
+    let patientName, pincode: JSONNull?
+    let patientProfilePicURL: String?
+    let patientDocumentURL: JSONNull?
+    let deliveryBoyID, deliveryBoy, doctorID, doctor: String?
+    let doctorProfilePicURL: String?
+    let labMasterID, labConcernPerson, pharmacyID, pharmacyCoordinator: String?
+
+    enum CodingKeys: String, CodingKey {
+        case message = "Message"
+        case status = "Status"
+        case patientID = "PatientId"
+        case gender = "Gender"
+        case firstName = "FirstName"
+        case middleName = "MiddleName"
+        case lastName = "LastName"
+        case patientName = "PatientName"
+        case pincode = "Pincode"
+        case patientProfilePicURL = "PatientProfilePicURL"
+        case patientDocumentURL = "PatientDocumentURL"
+        case deliveryBoyID = "DeliveryBoyId"
+        case deliveryBoy = "DeliveryBoy"
+        case doctorID = "DoctorId"
+        case doctor = "Doctor"
+        case doctorProfilePicURL = "DoctorProfilePicURL"
+        case labMasterID = "LabMasterId"
+        case labConcernPerson = "LabConcernPerson"
+        case pharmacyID = "PharmacyId"
+        case pharmacyCoordinator = "PharmacyCoordinator"
+    }
+}
+
+typealias LoginOtpAuthenticatwDataResponse = [LoginOtpAuthenticatwDataResponseElement]

@@ -19,7 +19,7 @@ class SingInVC: UIViewController ,UITextFieldDelegate{// , XIBed, PushViewContro
         passwordTextField.delegate = self
     }
     @IBAction func loginAction(_ sender: Any) {
-        guard let mobile =  mobileTextField.text,mobile != "" else {
+        guard let mobile =  mobileTextField.text,mobile.count == 10 else {
             AppManager.shared.showAlert(title: "Error", msg: "please Enter Mobile Number", vc: self)
             return;
         }
@@ -30,24 +30,22 @@ class SingInVC: UIViewController ,UITextFieldDelegate{// , XIBed, PushViewContro
         loginApiCall(mobile: mobile, password: password)
     }
     @IBAction func forgotpassswordAction(_ sender: Any) {
-        guard let mobile =  mobileTextField.text,mobile != "" else {
+        guard let mobile =  mobileTextField.text,mobile.count == 10 else {
             AppManager.shared.showAlert(title: "Error", msg: "please Enter Mobile Number", vc: self)
             return;
         }
         
-        let forgotpasswordvc =  UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "ForgotPasswordVC") as! ForgotPasswordVC
-        forgotpasswordvc.mobilenumber = mobile
-        self.navigationController?.pushViewController(forgotpasswordvc, animated: true)
+        forgotPasswordOtpGenerate(mobileNo: mobileTextField.text ?? "", subject: "Forgot Password".replacingOccurrences(of: " ", with: "%20"))
+
     }
     @IBAction func loginOTPAction(_ sender: Any) {
-        guard let mobile =  mobileTextField.text,mobile != "" else {
+        guard let mobile =  mobileTextField.text,mobile.count == 10 else {
             AppManager.shared.showAlert(title: "Error", msg: "please Enter Mobile Number", vc: self)
             return;
         }
         
-        let otpvc =  UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "OtpVC") as! OtpVC
-        otpvc.mobilenumber = mobile
-        self.navigationController?.pushViewController(otpvc, animated: true)
+        LoginOtpGenerate(mobileNo: mobileTextField.text ?? "", subject: "Login".replacingOccurrences(of: " ", with: "%20"))
+
     }
     
     @IBAction func singupAction(_ sender: Any) {
@@ -96,8 +94,38 @@ class SingInVC: UIViewController ,UITextFieldDelegate{// , XIBed, PushViewContro
             passwordVisible.setImage(UIImage(systemName: "eye.fill"), for: .normal)
         }
     }
+    
+    
+    func forgotPasswordOtpGenerate(mobileNo: String, subject: String) {
+        
+        NetWorker.shared.callAPIService(type: APIV2.patientForgotPasswordOTPGenerate(mobileNo: mobileNo, subject: subject)) { (data: ForgotPasswordOtpGenerateDataResponse?, error) in
+            guard self == self else { return }
+            let status = data?[0].status ?? ""
+            if status == "1" {
+            let forgotpasswordvc =  UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "ForgotPasswordVC") as! ForgotPasswordVC
+                forgotpasswordvc.mobilenumber = self.mobileTextField.text ?? ""
+            self.navigationController?.pushViewController(forgotpasswordvc, animated: true)
+            }
+        }
+        
+    }
+    
+    func LoginOtpGenerate(mobileNo: String, subject: String) {
+        
+        NetWorker.shared.callAPIService(type: APIV2.patientForgotPasswordOTPGenerate(mobileNo: mobileNo, subject: subject)) { (data: ForgotPasswordOtpGenerateDataResponse?, error) in
+            guard self == self else { return }
+            let status = data?[0].status ?? ""
+            if status == "1" {
+                let otpvc =  UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "OtpVC") as! OtpVC
+                otpvc.mobilenumber = self.mobileTextField.text ?? ""
+                self.navigationController?.pushViewController(otpvc, animated: true)
+
+            }
+        }
+        
+    }
 }
-// MARK: - Welcome
+//lcome
 struct Welcome: Codable {
     let soapEnvelope: SoapEnvelopeval
 
@@ -159,3 +187,16 @@ struct User: Codable {
     }
 }
 
+// MARK: - ForgotPasswordOtpGenerateDataResponseElement
+struct ForgotPasswordOtpGenerateDataResponseElement: Codable {
+    let message, status: String?
+
+
+    enum CodingKeys: String, CodingKey {
+        case message = "Message"
+        case status = "Status"
+        
+    }
+}
+
+typealias ForgotPasswordOtpGenerateDataResponse = [ForgotPasswordOtpGenerateDataResponseElement]

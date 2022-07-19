@@ -91,7 +91,8 @@ class CustomSideMenuViewController: UIViewController, XIBed , PushViewController
         }
 
         @IBAction func settingsBtnTap(_ sender: UIButton) {
-
+            let singup = ChangePasswordVC(nibName: "ChangePasswordVC", bundle: nil)
+            self.navigationController?.pushViewController(singup, animated: true)
         }
 
         @IBAction func logoutBtnTap(_ sender: UIButton) {

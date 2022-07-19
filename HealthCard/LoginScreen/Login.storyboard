@@ -407,6 +407,7 @@
                         <outlet property="passwordTextField" destination="SlZ-L8-hp9" id="HFm-8B-cC2"/>
                         <outlet property="passwordVisible" destination="wPI-fq-A8V" id="6nH-kr-wug"/>
                         <outlet property="pincodeTextField" destination="fsQ-Rx-uKD" id="F9A-0F-xrJ"/>
+                        <outlet property="registerBtnRef" destination="uQh-Lc-3Y7" id="6Hp-38-zZO"/>
                         <outlet property="titleTextField" destination="txh-XL-vCg" id="HXA-jV-PQf"/>
                     </connections>
                 </viewController>

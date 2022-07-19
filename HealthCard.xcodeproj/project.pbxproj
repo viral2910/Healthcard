@@ -18,10 +18,6 @@
 		E066993727F47ADA009EE3F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E066993627F47ADA009EE3F0 /* ViewController.swift */; };
 		E066993C27F47ADC009EE3F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E066993B27F47ADC009EE3F0 /* Assets.xcassets */; };
 		E066993F27F47ADC009EE3F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E066993D27F47ADC009EE3F0 /* LaunchScreen.storyboard */; };
-		E066994727F47CC6009EE3F0 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E066994627F47CC6009EE3F0 /* Login.storyboard */; };
-		E072953027F820DC0083357A /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072952F27F820DC0083357A /* AppManager.swift */; };
-		E072953227F84BDE0083357A /* OtpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072953127F84BDE0083357A /* OtpVC.swift */; };
-		E072953427F850570083357A /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E072953327F850570083357A /* ForgotPasswordVC.swift */; };
 		E072953627F853610083357A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E072953527F853610083357A /* Home.storyboard */; };
 		E0912CD2285F5949002078D9 /* PrescriptionListCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0912CCC285F5948002078D9 /* PrescriptionListCollectionViewManager.swift */; };
 		E0912CD3285F5949002078D9 /* PrescriptionListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0912CCE285F5948002078D9 /* PrescriptionListCollectionViewCell.xib */; };
@@ -31,6 +27,14 @@
 		E093772F285C4B740095E064 /* OrderTrackerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E093772D285C4B740095E064 /* OrderTrackerCell.swift */; };
 		E0937730285C4B740095E064 /* OrderTrackerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E093772E285C4B740095E064 /* OrderTrackerCell.xib */; };
 		E0937732285C91B10095E064 /* HC-Icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E0937731285C91B10095E064 /* HC-Icon.jpg */; };
+		E0942FBE288715B60049BE2B /* OtpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0942FB8288715B60049BE2B /* OtpVC.swift */; };
+		E0942FBF288715B60049BE2B /* SingInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0942FB9288715B60049BE2B /* SingInVC.swift */; };
+		E0942FC0288715B60049BE2B /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0942FBA288715B60049BE2B /* ForgotPasswordVC.swift */; };
+		E0942FC1288715B60049BE2B /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0942FBB288715B60049BE2B /* AppManager.swift */; };
+		E0942FC2288715B60049BE2B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0942FBC288715B60049BE2B /* Login.storyboard */; };
+		E0942FC3288715B60049BE2B /* SingUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0942FBD288715B60049BE2B /* SingUpVC.swift */; };
+		E0942FC6288718190049BE2B /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0942FC4288718190049BE2B /* ChangePasswordVC.swift */; };
+		E0942FC7288718190049BE2B /* ChangePasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0942FC5288718190049BE2B /* ChangePasswordVC.xib */; };
 		E0B1740E28832C15002A3478 /* Home.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0B173BE28832C15002A3478 /* Home.xcassets */; };
 		E0B1740F28832C15002A3478 /* CategoryCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B173C128832C15002A3478 /* CategoryCollectionViewManager.swift */; };
 		E0B1741028832C15002A3478 /* DashboardCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B173C228832C15002A3478 /* DashboardCollectionViewManager.swift */; };
@@ -205,8 +209,6 @@
 		E0B9C00C2811BD23001A58E8 /* CustomAlertPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF8F2811BD23001A58E8 /* CustomAlertPopupVC.swift */; };
 		E0BB4CFE283CCD9100F30A7B /* CustomSelectPickImagePopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BB4CF9283CCD9100F30A7B /* CustomSelectPickImagePopUpVC.swift */; };
 		E0BB4CFF283CCD9100F30A7B /* CustomSelectPickImagePopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0BB4CFA283CCD9100F30A7B /* CustomSelectPickImagePopUpVC.xib */; };
-		E0C447F027F494E300BE6E2D /* SingInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C447EF27F494E300BE6E2D /* SingInVC.swift */; };
-		E0C447F227F4959E00BE6E2D /* SingUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C447F127F4959E00BE6E2D /* SingUpVC.swift */; };
 		E0C884062874273B00D093AC /* AddAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C884042874273B00D093AC /* AddAddressViewController.swift */; };
 		E0C884072874273B00D093AC /* AddAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0C884052874273B00D093AC /* AddAddressViewController.xib */; };
 		E0CC6478281438380011A165 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC6468281438380011A165 /* ProfileVC.swift */; };
@@ -331,10 +333,6 @@
 		E066993B27F47ADC009EE3F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E066993E27F47ADC009EE3F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E066994027F47ADC009EE3F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E066994627F47CC6009EE3F0 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		E072952F27F820DC0083357A /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
-		E072953127F84BDE0083357A /* OtpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpVC.swift; sourceTree = "<group>"; };
-		E072953327F850570083357A /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		E072953527F853610083357A /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		E0912CCC285F5948002078D9 /* PrescriptionListCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrescriptionListCollectionViewManager.swift; sourceTree = "<group>"; };
 		E0912CCE285F5948002078D9 /* PrescriptionListCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrescriptionListCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -344,6 +342,14 @@
 		E093772D285C4B740095E064 /* OrderTrackerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTrackerCell.swift; sourceTree = "<group>"; };
 		E093772E285C4B740095E064 /* OrderTrackerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTrackerCell.xib; sourceTree = "<group>"; };
 		E0937731285C91B10095E064 /* HC-Icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "HC-Icon.jpg"; sourceTree = "<group>"; };
+		E0942FB8288715B60049BE2B /* OtpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtpVC.swift; sourceTree = "<group>"; };
+		E0942FB9288715B60049BE2B /* SingInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingInVC.swift; sourceTree = "<group>"; };
+		E0942FBA288715B60049BE2B /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		E0942FBB288715B60049BE2B /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		E0942FBC288715B60049BE2B /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		E0942FBD288715B60049BE2B /* SingUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingUpVC.swift; sourceTree = "<group>"; };
+		E0942FC4288718190049BE2B /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
+		E0942FC5288718190049BE2B /* ChangePasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordVC.xib; sourceTree = "<group>"; };
 		E0B173BE28832C15002A3478 /* Home.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Home.xcassets; sourceTree = "<group>"; };
 		E0B173C128832C15002A3478 /* CategoryCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewManager.swift; sourceTree = "<group>"; };
 		E0B173C228832C15002A3478 /* DashboardCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCollectionViewManager.swift; sourceTree = "<group>"; };
@@ -518,8 +524,6 @@
 		E0B9BF8F2811BD23001A58E8 /* CustomAlertPopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlertPopupVC.swift; sourceTree = "<group>"; };
 		E0BB4CF9283CCD9100F30A7B /* CustomSelectPickImagePopUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSelectPickImagePopUpVC.swift; sourceTree = "<group>"; };
 		E0BB4CFA283CCD9100F30A7B /* CustomSelectPickImagePopUpVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomSelectPickImagePopUpVC.xib; sourceTree = "<group>"; };
-		E0C447EF27F494E300BE6E2D /* SingInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInVC.swift; sourceTree = "<group>"; };
-		E0C447F127F4959E00BE6E2D /* SingUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpVC.swift; sourceTree = "<group>"; };
 		E0C884042874273B00D093AC /* AddAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressViewController.swift; sourceTree = "<group>"; };
 		E0C884052874273B00D093AC /* AddAddressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAddressViewController.xib; sourceTree = "<group>"; };
 		E0CC6468281438380011A165 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
@@ -657,19 +661,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E03DD66E27F9783900BFB975 /* LoginScreen */ = {
-			isa = PBXGroup;
-			children = (
-				E066994627F47CC6009EE3F0 /* Login.storyboard */,
-				E0C447EF27F494E300BE6E2D /* SingInVC.swift */,
-				E0C447F127F4959E00BE6E2D /* SingUpVC.swift */,
-				E072952F27F820DC0083357A /* AppManager.swift */,
-				E072953127F84BDE0083357A /* OtpVC.swift */,
-				E072953327F850570083357A /* ForgotPasswordVC.swift */,
-			);
-			path = LoginScreen;
-			sourceTree = "<group>";
-		};
 		E066992627F47ADA009EE3F0 = {
 			isa = PBXGroup;
 			children = (
@@ -708,8 +699,8 @@
 				E0B9BF002811BD22001A58E8 /* Supportings */,
 				E0B9BF462811BD22001A58E8 /* Extensions */,
 				E0B9BF832811BD23001A58E8 /* Helpers */,
-				E03DD66E27F9783900BFB975 /* LoginScreen */,
 				E0CC6488281439070011A165 /* Library */,
+				E0942FB7288715B60049BE2B /* LoginScreen */,
 				E0B173BD28832C15002A3478 /* Assets */,
 				E0B173BF28832C15002A3478 /* Screens */,
 				E072953727F8542F0083357A /* Home */,
@@ -773,6 +764,21 @@
 				E093772E285C4B740095E064 /* OrderTrackerCell.xib */,
 			);
 			path = "Order Tracker";
+			sourceTree = "<group>";
+		};
+		E0942FB7288715B60049BE2B /* LoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E0942FB8288715B60049BE2B /* OtpVC.swift */,
+				E0942FB9288715B60049BE2B /* SingInVC.swift */,
+				E0942FBA288715B60049BE2B /* ForgotPasswordVC.swift */,
+				E0942FBB288715B60049BE2B /* AppManager.swift */,
+				E0942FBC288715B60049BE2B /* Login.storyboard */,
+				E0942FBD288715B60049BE2B /* SingUpVC.swift */,
+				E0942FC4288718190049BE2B /* ChangePasswordVC.swift */,
+				E0942FC5288718190049BE2B /* ChangePasswordVC.xib */,
+			);
+			path = LoginScreen;
 			sourceTree = "<group>";
 		};
 		E0B173BD28832C15002A3478 /* Assets */ = {
@@ -1619,12 +1625,12 @@
 				E0B9BFC92811BD23001A58E8 /* OFL.txt in Resources */,
 				E0B9BFA92811BD23001A58E8 /* raleway_extrabold.ttf in Resources */,
 				E0F5C65E287B091300889538 /* LabDetailsCell.xib in Resources */,
-				E066994727F47CC6009EE3F0 /* Login.storyboard in Resources */,
 				E0F5C670287B209300889538 /* UKM2SVBhtNs.jpeg in Resources */,
 				E0CC64A628156CD60011A165 /* CustomSideMenuTableViewCell.xib in Resources */,
 				E0CC6481281438380011A165 /* RelationshipTableViewCell.xib in Resources */,
 				E0B35A3328375EDA002A234D /* PharmacyDetailCell.xib in Resources */,
 				E0CC6487281438380011A165 /* RelationVC.xib in Resources */,
+				E0942FC7288718190049BE2B /* ChangePasswordVC.xib in Resources */,
 				E0B9BFA52811BD23001A58E8 /* times_new_roman.ttf in Resources */,
 				E0B1743D28832C15002A3478 /* SelectedIssueCollectionViewCell.xib in Resources */,
 				E0B9BFAA2811BD23001A58E8 /* poppins_thin.ttf in Resources */,
@@ -1658,6 +1664,7 @@
 				E0B1744B28832C15002A3478 /* DoctorAvailableListTableViewCell.xib in Resources */,
 				E0CC64A728156CD60011A165 /* CustomSideMenuViewController.xib in Resources */,
 				E0B9BFBD2811BD23001A58E8 /* lato_medium_italic.ttf in Resources */,
+				E0942FC2288715B60049BE2B /* Login.storyboard in Resources */,
 				E0B9BFA62811BD23001A58E8 /* lato_bold_italic.ttf in Resources */,
 				E0F2C7A9287DFDA000B731F9 /* LabReportsCell.xib in Resources */,
 				E0E74BF3281F9FF6001564F9 /* MyConsultation.xib in Resources */,
@@ -1768,7 +1775,6 @@
 				E0E74BFD281F9FF6001564F9 /* CartDetails.swift in Sources */,
 				E0E88CD2283CEDCC00918595 /* orderPlaceVC.swift in Sources */,
 				E0E74C13281F9FF6001564F9 /* PharmacyReceiptVC.swift in Sources */,
-				E072953227F84BDE0083357A /* OtpVC.swift in Sources */,
 				E0E74BFA281F9FF6001564F9 /* CartDetailsCell.swift in Sources */,
 				E0F2C7A4287DFCF900B731F9 /* LabReportsVC.swift in Sources */,
 				E0B1741028832C15002A3478 /* DashboardCollectionViewManager.swift in Sources */,
@@ -1783,6 +1789,7 @@
 				E04E6BC7282A0494000B4735 /* CartSubDetailsCell.swift in Sources */,
 				E0B1743E28832C15002A3478 /* ConsultDetailsTavleViewManager.swift in Sources */,
 				E0B9C0032811BD23001A58E8 /* APIV2.swift in Sources */,
+				E0942FBE288715B60049BE2B /* OtpVC.swift in Sources */,
 				E0CC64A528156CD60011A165 /* CustomSideMenuTableViewCell.swift in Sources */,
 				E0B1742528832C15002A3478 /* PatientExperienceWithUsSliderCollectionViewManager.swift in Sources */,
 				E0E74C0E281F9FF6001564F9 /* OPDconultationBilling.swift in Sources */,
@@ -1805,7 +1812,10 @@
 				E0E74C10281F9FF6001564F9 /* FinanceVC.swift in Sources */,
 				E0B35A2D28375E94002A234D /* PharmacyDetailsVC.swift in Sources */,
 				E03DD67227F994E100BFB975 /* MainTabbarVC.swift in Sources */,
+				E0942FC3288715B60049BE2B /* SingUpVC.swift in Sources */,
+				E0942FC0288715B60049BE2B /* ForgotPasswordVC.swift in Sources */,
 				E0B1743928832C15002A3478 /* ConsultSymptomsViewController.swift in Sources */,
+				E0942FBF288715B60049BE2B /* SingInVC.swift in Sources */,
 				E0B1742B28832C15002A3478 /* ConsultSpecialityTableViewCell.swift in Sources */,
 				E0F5C65B287B091300889538 /* LabDetailsCell.swift in Sources */,
 				E0B1743728832C15002A3478 /* SymptomsInsideTableViewManager.swift in Sources */,
@@ -1821,7 +1831,6 @@
 				E0F2C79F287DFCD600B731F9 /* ProcedureReportsVC.swift in Sources */,
 				E0B1741528832C15002A3478 /* MedicineYouAreLookingSlider1CvManager.swift in Sources */,
 				E0B1742D28832C15002A3478 /* ConsultSpecialityTableViewManager.swift in Sources */,
-				E0C447F227F4959E00BE6E2D /* SingUpVC.swift in Sources */,
 				E0CC6483281438380011A165 /* InsuranceVC.swift in Sources */,
 				E0E74C08281F9FF6001564F9 /* AdvanceBillingVC.swift in Sources */,
 				E0E74C02281F9FF6001564F9 /* ProcedureBillingPaymentVC.swift in Sources */,
@@ -1844,6 +1853,8 @@
 				E0B9BFD42811BD23001A58E8 /* Data.swift in Sources */,
 				E0B1742728832C15002A3478 /* MedicineYouAreLookingSlider2CollectionViewManager.swift in Sources */,
 				E0B1742828832C15002A3478 /* BlogsCollectionViewManager.swift in Sources */,
+				E0942FC1288715B60049BE2B /* AppManager.swift in Sources */,
+				E0942FC6288718190049BE2B /* ChangePasswordVC.swift in Sources */,
 				E0D5ED472827FD0000ECF500 /* CustomWebViewVC.swift in Sources */,
 				E0B1743828832C15002A3478 /* ConsultSymptomsTableViewManager.swift in Sources */,
 				E0B1742928832C15002A3478 /* ConsultationMainViewController.swift in Sources */,
@@ -1864,7 +1875,6 @@
 				E0B9BFD32811BD23001A58E8 /* CACornerMask.swift in Sources */,
 				E0E74C1A281F9FF6001564F9 /* AddNewAddressCell.swift in Sources */,
 				E0B1742428832C15002A3478 /* LookingForTestSliderCollectionViewManager.swift in Sources */,
-				E0C447F027F494E300BE6E2D /* SingInVC.swift in Sources */,
 				E0CC647F281438380011A165 /* RelationVC.swift in Sources */,
 				E0E74C01281F9FF6001564F9 /* ProcedurePaymentCell.swift in Sources */,
 				E0F5C65F287B091300889538 /* LabDetailsVC.swift in Sources */,
@@ -1876,11 +1886,9 @@
 				E0E74C18281F9FF6001564F9 /* AddressDetailsCell.swift in Sources */,
 				E0B9C0062811BD23001A58E8 /* PushDelegate.swift in Sources */,
 				E0CC6493281439070011A165 /* MenuItemView.swift in Sources */,
-				E072953027F820DC0083357A /* AppManager.swift in Sources */,
 				E0B1741228832C15002A3478 /* SliderCollectionViewManager.swift in Sources */,
 				E0B1746C28832F6F002A3478 /* BookMedicineCell.swift in Sources */,
 				E0B9BFD72811BD23001A58E8 /* UITextField.swift in Sources */,
-				E072953427F850570083357A /* ForgotPasswordVC.swift in Sources */,
 				E0E74BF4281F9FF6001564F9 /* MyOrders.swift in Sources */,
 				E0B1744E28832C15002A3478 /* DoctorAvailableListTableViewManager.swift in Sources */,
 				E0B1743428832C15002A3478 /* ConsultSymptomsTableViewCell.swift in Sources */,
@@ -2044,7 +2052,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = V74QNWCB9M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HealthCard/Info.plist;
@@ -2084,7 +2092,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = V74QNWCB9M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HealthCard/Info.plist;

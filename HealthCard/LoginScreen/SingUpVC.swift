@@ -19,6 +19,7 @@ class SingUpVC: UIViewController, UITextFieldDelegate,UIPickerViewDataSource, UI
     @IBOutlet weak var pincodeTextField: UITextField!
     @IBOutlet weak var genderSegment: UISegmentedControl!
     
+    @IBOutlet weak var registerBtnRef: UIButton!
     @IBOutlet weak var passwordVisible: UIButton!
     var isPassword = true
     
@@ -56,7 +57,7 @@ class SingUpVC: UIViewController, UITextFieldDelegate,UIPickerViewDataSource, UI
             AppManager.shared.showAlert(title: "Error", msg: "Please Enter Last Name", vc: self)
             return;
         }
-        guard let mobile =  mobilenumberTextField.text,mobile != "" else {
+        guard let mobile =  mobilenumberTextField.text,mobile.count == 10 else {
             AppManager.shared.showAlert(title: "Error", msg: "Please Enter Mobile Number", vc: self)
             return;
         }
@@ -147,23 +148,31 @@ class SingUpVC: UIViewController, UITextFieldDelegate,UIPickerViewDataSource, UI
     }
     
     func signUpApiCall(titleId:Int,firstName:String , lastName: String,mobileNo:String , password: String,gender:String , pincode: String){
+        self.registerBtnRef.isEnabled = false
         struct demo : Codable{
             
         }
         NetWorker.shared.callAPIService(type: APIV2.patientRegistration(titleId: titleId, firstName: firstName, lastName: lastName, mobileNo: mobileNo, password: password, gender: gender, pincode: pincode)) { (data:Welcomevalue?, error) in
             let message = data?.soapEnvelope.soapBody.savePatientResponse.savePatientResult.patientRegSC.message ?? ""
-            
-            SVProgressHUD.dismiss()
             if message.lowercased().contains("sucess") {
-                let patientid = data?.soapEnvelope.soapBody.savePatientResponse.savePatientResult.patientRegSC.patientID
-                UserDefaults.standard.set(true, forKey: "isLogin")
-                UserDefaults.standard.set(patientid, forKey: "patientID")
-                UIApplication.shared.keyWindow?.rootViewController = self.navigationController
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                let homeVC = CustomTabBarViewController.instantiate()
-                let navigationController = UINavigationController(rootViewController: homeVC)
-                appDelegate.window!.rootViewController = navigationController
+                let alertController = UIAlertController(title: "Your Registeration Is Successfully", message: message, preferredStyle:UIAlertController.Style.alert)
+
+                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+                   { action -> Void in
+                     // Put your code here
+                       let patientid = data?.soapEnvelope.soapBody.savePatientResponse.savePatientResult.patientRegSC.patientID
+                       UserDefaults.standard.set(true, forKey: "isLogin")
+                       UserDefaults.standard.set(patientid, forKey: "patientID")
+                       UIApplication.shared.keyWindow?.rootViewController = self.navigationController
+                       let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                       let homeVC = CustomTabBarViewController.instantiate()
+                       let navigationController = UINavigationController(rootViewController: homeVC)
+                       appDelegate.window!.rootViewController = navigationController
+                   })
+                   self.present(alertController, animated: true, completion: nil)
+                
             } else {
+                self.registerBtnRef.isEnabled = true
                 UserDefaults.standard.set(false, forKey: "isLogin")
                 UserDefaults.standard.set(0, forKey: "patientID")
                 AppManager.shared.showAlert(title: "Error", msg: "Mobile Number already exists", vc: self)

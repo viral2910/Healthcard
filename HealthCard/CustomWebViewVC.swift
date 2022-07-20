@@ -17,13 +17,11 @@ class CustomWebViewVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.navigationController?.navigationBar.tintColor = .white
-//        self.navigationController?.navigationBar.backgroundColor = UIColor(named: "AppColor")
         if screen == 0 {
             webview.load(URLRequest(url: URL(string: "https://acssel.com/Terms-and-conditions-Healthcard-200821.pdf")!))
             self.title = "Terms and Condition"
         } else if screen == 1 {
-            webview.load(URLRequest(url: URL(string: "https://acssel.com/Policy-Healthcard-200821.pdfn")!))
+            webview.load(URLRequest(url: URL(string: "https://acssel.com/Policy-Healthcard-200821.pdf")!))
             self.title = "Privacy Policy"
         } else if screen == 2 {
             webview.load(URLRequest(url: URL(string: "https://acssel.com/about-healthcard-hcp.php")!))

@@ -27,7 +27,7 @@ class SingUpVC: UIViewController, UITextFieldDelegate,UIPickerViewDataSource, UI
     var isConfirmPassword = true
     var titlelist = [CommonSC]()
     var selectedtitle = ""
-    var gendervalue = ""
+    var gendervalue = "Male"
     var titlePicker: UIPickerView?
     
     override func viewDidLoad() {
@@ -41,7 +41,6 @@ class SingUpVC: UIViewController, UITextFieldDelegate,UIPickerViewDataSource, UI
         confirmpasswordTextField.delegate = self
         pincodeTextField.delegate = self
     }
-    
     @IBAction func valuechangeGender(_ sender: UISegmentedControl) {
         gendervalue = genderSegment.titleForSegment(at: genderSegment.selectedSegmentIndex) ?? "Male"
     }
@@ -69,7 +68,7 @@ class SingUpVC: UIViewController, UITextFieldDelegate,UIPickerViewDataSource, UI
             AppManager.shared.showAlert(title: "Error", msg: "Password does not match", vc: self)
             return;
         }
-        guard let pincode =  pincodeTextField.text,pincode != "" else {
+        guard let pincode =  pincodeTextField.text,pincode.count == 7 else {
             AppManager.shared.showAlert(title: "Error", msg: "Please Enter Pincode", vc: self)
             return;
         }
@@ -160,14 +159,18 @@ class SingUpVC: UIViewController, UITextFieldDelegate,UIPickerViewDataSource, UI
                 alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
                    { action -> Void in
                      // Put your code here
-                       let patientid = data?.soapEnvelope.soapBody.savePatientResponse.savePatientResult.patientRegSC.patientID
-                       UserDefaults.standard.set(true, forKey: "isLogin")
-                       UserDefaults.standard.set(patientid, forKey: "patientID")
-                       UIApplication.shared.keyWindow?.rootViewController = self.navigationController
-                       let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                       let homeVC = CustomTabBarViewController.instantiate()
-                       let navigationController = UINavigationController(rootViewController: homeVC)
-                       appDelegate.window!.rootViewController = navigationController
+//                       let patientid = data?.soapEnvelope.soapBody.savePatientResponse.savePatientResult.patientRegSC.patientID
+//                       UserDefaults.standard.set(true, forKey: "isLogin")
+//                       UserDefaults.standard.set(patientid, forKey: "patientID")
+//                       UIApplication.shared.keyWindow?.rootViewController = self.navigationController
+//                       let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//                       let homeVC = CustomTabBarViewController.instantiate()
+//                       let navigationController = UINavigationController(rootViewController: homeVC)
+//                       appDelegate.window!.rootViewController = navigationController
+                    
+                        let otpvc =  UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "OtpVC") as! OtpVC
+                        otpvc.mobilenumber = self.mobilenumberTextField.text ?? ""
+                        self.navigationController?.pushViewController(otpvc, animated: true)
                    })
                    self.present(alertController, animated: true, completion: nil)
                 

@@ -17,6 +17,7 @@ class OtpVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mobilenumberTextfield.text = mobilenumber
+        loginOtpGenerate(mobileNo: mobilenumber, subject: "Login")
     }
     @IBAction func sendAction(_ sender: Any) {
         guard let mobile =  mobilenumberTextfield.text,mobile.count == 10 else {
@@ -96,6 +97,7 @@ extension OtpVC {
                 let homeVC = CustomTabBarViewController.instantiate()
                 let navigationController = UINavigationController(rootViewController: homeVC)
                 appDelegate.window!.rootViewController = navigationController
+                
             } else {
                 UserDefaults.standard.set(false, forKey: "isLogin")
                 UserDefaults.standard.set(0, forKey: "patientID")

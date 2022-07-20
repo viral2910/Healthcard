@@ -9,7 +9,7 @@ import UIKit
 import SVProgressHUD
 
 class SingUpVC: UIViewController, UITextFieldDelegate,UIPickerViewDataSource, UIPickerViewDelegate {
-
+    
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var firstnameTextField: UITextField!
     @IBOutlet weak var lastnameTextField: UITextField!
@@ -78,7 +78,6 @@ class SingUpVC: UIViewController, UITextFieldDelegate,UIPickerViewDataSource, UI
         }
         let index = titlelist.filter{ $0.value == selectedtitle }
         let valueindex = index.first?.id ?? ""
-        SVProgressHUD.show()
         signUpApiCall(titleId: Int(valueindex) ?? 0 , firstName: fname, lastName: lname, mobileNo: mobile, password: password, gender: gendervalue, pincode: pincode)
     }
     @IBAction func signinAction(_ sender: Any) {
@@ -142,7 +141,7 @@ class SingUpVC: UIViewController, UITextFieldDelegate,UIPickerViewDataSource, UI
         if selectedtitle == "" {
             titleTextField.text = titlelist[0].value
         } else {
-        titleTextField.text = selectedtitle
+            titleTextField.text = selectedtitle
         }
     }
     
@@ -151,28 +150,32 @@ class SingUpVC: UIViewController, UITextFieldDelegate,UIPickerViewDataSource, UI
         struct demo : Codable{
             
         }
+        
+        SVProgressHUD.show()
         NetWorker.shared.callAPIService(type: APIV2.patientRegistration(titleId: titleId, firstName: firstName, lastName: lastName, mobileNo: mobileNo, password: password, gender: gender, pincode: pincode)) { (data:Welcomevalue?, error) in
             let message = data?.soapEnvelope.soapBody.savePatientResponse.savePatientResult.patientRegSC.message ?? ""
+            
+            SVProgressHUD.dismiss()
             if message.lowercased().contains("sucess") {
                 let alertController = UIAlertController(title: "Your Registeration Is Successfully", message: message, preferredStyle:UIAlertController.Style.alert)
-
+                
                 alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
-                   { action -> Void in
-                     // Put your code here
-//                       let patientid = data?.soapEnvelope.soapBody.savePatientResponse.savePatientResult.patientRegSC.patientID
-//                       UserDefaults.standard.set(true, forKey: "isLogin")
-//                       UserDefaults.standard.set(patientid, forKey: "patientID")
-//                       UIApplication.shared.keyWindow?.rootViewController = self.navigationController
-//                       let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//                       let homeVC = CustomTabBarViewController.instantiate()
-//                       let navigationController = UINavigationController(rootViewController: homeVC)
-//                       appDelegate.window!.rootViewController = navigationController
+                                          { action -> Void in
+                    // Put your code here
+                    //                       let patientid = data?.soapEnvelope.soapBody.savePatientResponse.savePatientResult.patientRegSC.patientID
+                    //                       UserDefaults.standard.set(true, forKey: "isLogin")
+                    //                       UserDefaults.standard.set(patientid, forKey: "patientID")
+                    //                       UIApplication.shared.keyWindow?.rootViewController = self.navigationController
+                    //                       let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    //                       let homeVC = CustomTabBarViewController.instantiate()
+                    //                       let navigationController = UINavigationController(rootViewController: homeVC)
+                    //                       appDelegate.window!.rootViewController = navigationController
                     
-                        let otpvc =  UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "OtpVC") as! OtpVC
-                        otpvc.mobilenumber = self.mobilenumberTextField.text ?? ""
-                        self.navigationController?.pushViewController(otpvc, animated: true)
-                   })
-                   self.present(alertController, animated: true, completion: nil)
+                    let otpvc =  UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "OtpVC") as! OtpVC
+                    otpvc.mobilenumber = self.mobilenumberTextField.text ?? ""
+                    self.navigationController?.pushViewController(otpvc, animated: true)
+                })
+                self.present(alertController, animated: true, completion: nil)
                 
             } else {
                 self.registerBtnRef.isEnabled = true
@@ -187,15 +190,15 @@ class SingUpVC: UIViewController, UITextFieldDelegate,UIPickerViewDataSource, UI
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{
         return 1
     }
-
+    
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
         return titlelist.count
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return titlelist[row].value
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedtitle = titlelist[row].value
     }
@@ -223,7 +226,7 @@ class SingUpVC: UIViewController, UITextFieldDelegate,UIPickerViewDataSource, UI
 }
 struct Welcomevalue: Codable {
     let soapEnvelope: SoapEnvelopevalue
-
+    
     enum CodingKeys: String, CodingKey {
         case soapEnvelope = "soap:Envelope"
     }
@@ -233,7 +236,7 @@ struct Welcomevalue: Codable {
 struct SoapEnvelopevalue: Codable {
     let xmlnsXsi, xmlnsXSD, xmlnsSoap: String
     let soapBody: SoapBodyvalue
-
+    
     enum CodingKeys: String, CodingKey {
         case xmlnsXsi = "_xmlns:xsi"
         case xmlnsXSD = "_xmlns:xsd"
@@ -245,7 +248,7 @@ struct SoapEnvelopevalue: Codable {
 // MARK: - SoapBody
 struct SoapBodyvalue: Codable {
     let savePatientResponse: SavePatientResponse
-
+    
     enum CodingKeys: String, CodingKey {
         case savePatientResponse = "SavePatientResponse"
     }
@@ -255,7 +258,7 @@ struct SoapBodyvalue: Codable {
 struct SavePatientResponse: Codable {
     let xmlns: String
     let savePatientResult: SavePatientResult
-
+    
     enum CodingKeys: String, CodingKey {
         case xmlns = "_xmlns"
         case savePatientResult = "SavePatientResult"
@@ -265,7 +268,7 @@ struct SavePatientResponse: Codable {
 // MARK: - SavePatientResult
 struct SavePatientResult: Codable {
     let patientRegSC: PatientRegSC
-
+    
     enum CodingKeys: String, CodingKey {
         case patientRegSC = "PatientRegSC"
     }
@@ -275,7 +278,7 @@ struct SavePatientResult: Codable {
 // MARK: - PatientRegSC
 struct PatientRegSC: Codable {
     let patientID, status, message: String
-
+    
     enum CodingKeys: String, CodingKey {
         case patientID = "PatientId"
         case status = "Status"
@@ -284,7 +287,7 @@ struct PatientRegSC: Codable {
 }
 struct WelcomeTitle: Codable {
     let soapEnvelope: SoapEnvelopeTitle
-
+    
     enum CodingKeys: String, CodingKey {
         case soapEnvelope = "soap:Envelope"
     }
@@ -294,7 +297,7 @@ struct WelcomeTitle: Codable {
 struct SoapEnvelopeTitle: Codable {
     let xmlnsXSD, xmlnsXsi, xmlnsSoap: String
     let soapBody: SoapBodyTitle
-
+    
     enum CodingKeys: String, CodingKey {
         case xmlnsXSD = "_xmlns:xsd"
         case xmlnsXsi = "_xmlns:xsi"
@@ -306,7 +309,7 @@ struct SoapEnvelopeTitle: Codable {
 // MARK: - SoapBody
 struct SoapBodyTitle: Codable {
     let titleGetByTitleTypeResponse: TitleGetByTitleTypeResponse
-
+    
     enum CodingKeys: String, CodingKey {
         case titleGetByTitleTypeResponse = "TitleGetByTitleTypeResponse"
     }
@@ -316,7 +319,7 @@ struct SoapBodyTitle: Codable {
 struct TitleGetByTitleTypeResponse: Codable {
     let xmlns: String
     let titleGetByTitleTypeResult: TitleGetByTitleTypeResult
-
+    
     enum CodingKeys: String, CodingKey {
         case xmlns = "_xmlns"
         case titleGetByTitleTypeResult = "TitleGetByTitleTypeResult"
@@ -326,7 +329,7 @@ struct TitleGetByTitleTypeResponse: Codable {
 // MARK: - TitleGetByTitleTypeResult
 struct TitleGetByTitleTypeResult: Codable {
     let commonSC: [CommonSC]
-
+    
     enum CodingKeys: String, CodingKey {
         case commonSC = "CommonSC"
     }
@@ -335,7 +338,7 @@ struct TitleGetByTitleTypeResult: Codable {
 // MARK: - CommonSC
 struct CommonSC: Codable {
     let id, value: String
-
+    
     enum CodingKeys: String, CodingKey {
         case id = "Id"
         case value = "Value"

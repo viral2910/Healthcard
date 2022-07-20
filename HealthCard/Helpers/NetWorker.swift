@@ -94,7 +94,7 @@ class NetWorker {
                     } catch {
                         completion(nil, error)
                         print(error.localizedDescription)
-                        UIAlertController.showAlert(titleString: error.localizedDescription)
+//                        UIAlertController.showAlert(titleString: error.localizedDescription)
                     }
                     } else {
                         do {
@@ -103,7 +103,7 @@ class NetWorker {
                         } catch {
                             completion(nil, error)
                             print(error.localizedDescription)
-                            UIAlertController.showAlert(titleString: error.localizedDescription)
+//                            UIAlertController.showAlert(titleString: error.localizedDescription)
                         }
                     }
                 }

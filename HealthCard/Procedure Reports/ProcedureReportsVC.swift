@@ -10,6 +10,8 @@ import UIKit
 class ProcedureReportsVC: UIViewController {
     
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var uploadDocumentBtnRef: UIButton!
+
     var dataValue : [ProcedureReport] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,11 +20,17 @@ class ProcedureReportsVC: UIViewController {
         tableview.delegate = self
         tableview.dataSource = self
         tableview.separatorColor = .clear
+        
+        uploadDocumentBtnRef.layer.cornerRadius = uploadDocumentBtnRef.bounds.height * 0.5
         // Do any additional setup after loading the view.
     }
     
     @IBAction func backAction(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func uploadDocumentBtnTapped(_ sender: UIButton) {
+        showImagePicker()
     }
     
     func ApiCall() {
@@ -35,6 +43,32 @@ class ProcedureReportsVC: UIViewController {
             
         }
     }
+    
+    func uploadDocumentApiCall(file:String , fileType: String,fileExt:String , fileName: String){
+        struct demo : Codable{
+            
+        }
+        
+        let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
+        
+        NetWorker.shared.callAPIService(type: APIV2.ProcedureReportUpload(patientId: patientID, file: file, fileType: fileType, fileExt: fileExt, fileName: fileName)) { (data:PrescriptionUploadDataResponse?, error) in
+
+            let status = data?.soapEnvelope?.soapBody?.selfPrescriptionUploadResponse?.selfPrescriptionUploadResult?.user?.status ?? ""
+            let message = data?.soapEnvelope?.soapBody?.selfPrescriptionUploadResponse?.selfPrescriptionUploadResult?.user?.message ?? ""
+
+            if status == "1" {
+                UIAlertController.showAlert(titleString: message)
+            }
+            
+        }
+        
+    }
+
+    func randomString(length: Int) -> String {
+      let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+      return String((0..<length).map{ _ in letters.randomElement()! })
+    }
+    
 }
 
 extension ProcedureReportsVC: UITableViewDelegate, UITableViewDataSource{
@@ -68,6 +102,102 @@ extension ProcedureReportsVC: UITableViewDelegate, UITableViewDataSource{
         }
         
     }
+}
+
+extension ProcedureReportsVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    
+    func showImagePicker() {
+        let vc = CustomSelectPickImagePopUpVC.instantiate(title: "Upload Document", yesButtonTitle: "Select from Gallery", noButtonTitle: "Take a picture now")
+        
+        self.present(vc, animated: true)
+        vc.completion = { result in
+            switch result {
+            case .selectFromGallery:
+                self.openGallery()
+            case .clickAPictureNow:
+                self.openCamera()
+            }
+                
+        }
+    }
+    
+    @objc func selectImgTap()
+    {
+        
+        let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
+                alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+                    self.openCamera()
+                }))
+
+                alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
+                    self.openGallery()
+                }))
+
+                alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+
+                self.present(alert, animated: true, completion: nil)
+    }
+
+
+    func openCamera()
+        {
+            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+                let imagePicker = UIImagePickerController()
+                imagePicker.delegate = self
+                imagePicker.sourceType = UIImagePickerController.SourceType.camera
+                imagePicker.allowsEditing = true
+                self.present(imagePicker, animated: true, completion: nil)
+            }
+            else
+            {
+                let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }        }
+
+    func openGallery()
+    {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        else
+        {
+            let alert  = UIAlertController(title: "Warning", message: "You don't have permission to access gallery.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if picker.sourceType == .camera {
+            if let pickedImage = info[.originalImage] as? UIImage {
+//            imgViewRef.contentMode = .scaleAspectFill
+                
+                let imageData = pickedImage.pngData()!
+                let base64 = imageData.base64EncodedString()
+                uploadDocumentApiCall(file: base64, fileType: "USG", fileExt: "png", fileName: randomString(length: 8))
+                
+            }
+        picker.dismiss(animated: true, completion: nil)
+
+        } else {
+        if let pickedImage = info[.editedImage] as? UIImage {
+        //imgViewRef.contentMode = .scaleAspectFill
+       
+            let imageData = pickedImage.pngData()!
+            let base64 = imageData.base64EncodedString()
+            uploadDocumentApiCall(file: base64, fileType: "USG", fileExt: "png", fileName: randomString(length: 8))
+
+    }
+    picker.dismiss(animated: true, completion: nil)
+        }
+}
+    
 }
 
 struct ProcedureReport: Codable {

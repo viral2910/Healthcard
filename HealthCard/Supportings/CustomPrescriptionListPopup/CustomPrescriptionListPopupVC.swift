@@ -119,10 +119,10 @@ class CustomPrescriptionListPopupVC: PannableViewController, XIBed {
 }
 
 extension CustomPrescriptionListPopupVC: GetSelectedPrescriptionId {
-    func selectedPrescriptionIds(id: [Int]) {
+    func selectedPrescriptionIds(id: [Int], imageUrl: String) {
         print("DelegateId: \(id)")
         selectedId = id
-        selectedPresIdDelegate?.selectedPrescriptionIds(id: id)
+        selectedPresIdDelegate?.selectedPrescriptionIds(id: id, imageUrl: imageUrl)
     }
     
     

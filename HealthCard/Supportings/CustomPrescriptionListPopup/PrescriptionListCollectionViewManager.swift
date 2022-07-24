@@ -10,7 +10,7 @@ import UIKit
 import SDWebImage
 
 protocol GetSelectedPrescriptionId: AnyObject {
-    func selectedPrescriptionIds(id: [Int])
+    func selectedPrescriptionIds(id: [Int], imageUrl: String)
 }
 
 class PrescriptionListCollectionViewManager: NSObject {
@@ -105,17 +105,19 @@ extension PrescriptionListCollectionViewManager: UICollectionViewDelegate, UICol
 //        let vc = EventDetailsViewController.instantiate()
 //        vc.eventId = storyData[indexPath.row].eventID ?? 0
 //        pushDelegate?.pushViewController(vc: vc)
-            
-        if buttonCounter.contains(indexPath.row){
-            let index = buttonCounter.firstIndex(of: indexPath.row)
-            
-            buttonCounter.remove(at: index!)
-            collectionView.reloadItems(at: [indexPath])
-        }
-        else{
+        selectedPrescriptionId.removeAll()
+        buttonCounter.removeAll()
+//        if buttonCounter.contains(indexPath.row){
+//            let index = buttonCounter.firstIndex(of: indexPath.row)
+//
+//            buttonCounter.remove(at: index!)
+//            collectionView.reloadItems(at: [indexPath])
+//        }
+//        else{
             buttonCounter.append(indexPath.row)
-            collectionView.reloadItems(at: [indexPath])
-        }
+            //collectionView.reloadItems(at: [indexPath])
+        collectionView.reloadData()
+       // }
 
         if selectedPrescriptionId.contains(storyData[indexPath.row].pharmacyOutID){
             let index = selectedPrescriptionId.firstIndex(of: storyData[indexPath.row].pharmacyOutID)
@@ -129,7 +131,7 @@ extension PrescriptionListCollectionViewManager: UICollectionViewDelegate, UICol
 
         print("Selected Prescription: \(selectedPrescriptionId)")
         
-        selectedPresDelegate?.selectedPrescriptionIds(id: selectedPrescriptionId)
+        selectedPresDelegate?.selectedPrescriptionIds(id: selectedPrescriptionId, imageUrl: storyData[indexPath.row].reportLink)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

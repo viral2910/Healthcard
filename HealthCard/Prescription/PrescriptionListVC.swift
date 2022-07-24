@@ -17,6 +17,8 @@ class PrescriptionListVC: UIViewController,XIBed,PushViewControllerDelegate {
     var selectedPrescriptionId: [Int] = []
 
     @IBOutlet weak var selectedID: UILabel!
+    @IBOutlet weak var selectedPrescriptiomImageViewRef: UIImageView!
+    
     weak var pushDelegate: PushViewControllerDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,12 +47,39 @@ extension PrescriptionListVC {
             self!.showPrescriptionList(data: data ?? [])
         }
     }
+    
+    func uploadPrescriptionApiCall(docId: String,file:String , docType: String,fileExt:String , fileName: String){
+        struct demo : Codable{
+            
+        }
+        
+        let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
+        
+        NetWorker.shared.callAPIService(type: APIV2.SelfPrescriptionUpload(patientId: patientID, docId: docId, file: file, docType: docType, fileExt: fileExt, fileName: fileName)) { (data:PrescriptionUploadDataResponse?, error) in
+
+            let status = data?.soapEnvelope?.soapBody?.selfPrescriptionUploadResponse?.selfPrescriptionUploadResult?.user?.status ?? ""
+
+            if status == "1" {
+                self.ApiCall()
+            }
+            
+        }
+        
+    }
+    
+    func randomString(length: Int) -> String {
+      let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+      return String((0..<length).map{ _ in letters.randomElement()! })
+    }
+    
 }
 extension PrescriptionListVC: GetSelectedPrescriptionId {
-    func selectedPrescriptionIds(id: [Int]) {
+    func selectedPrescriptionIds(id: [Int], imageUrl: String) {
         print("DelegatePresId: \(id)")
         selectedID.text = "Selected ID : \(id)"
         selectedPrescriptionId = id
+        self.selectedPrescriptiomImageViewRef.sd_setImage(with: URL(string: imageUrl), placeholderImage: UIImage(named: "placeholder.png"))
+
     }
     
     
@@ -151,7 +180,11 @@ extension PrescriptionListVC: UIImagePickerControllerDelegate, UINavigationContr
         if picker.sourceType == .camera {
             if let pickedImage = info[.originalImage] as? UIImage {
 //            imgViewRef.contentMode = .scaleAspectFill
-//            imgViewRef.image = pickedImage
+                self.selectedPrescriptiomImageViewRef.image = pickedImage
+                
+                let imageData = pickedImage.pngData()!
+                let base64 = imageData.base64EncodedString()
+                uploadPrescriptionApiCall(docId: docId, file: base64, docType: "Self Prescription", fileExt: "png", fileName: randomString(length: 8))
             
             }
         picker.dismiss(animated: true, completion: nil)
@@ -159,12 +192,17 @@ extension PrescriptionListVC: UIImagePickerControllerDelegate, UINavigationContr
         } else {
         if let pickedImage = info[.editedImage] as? UIImage {
         //imgViewRef.contentMode = .scaleAspectFill
-        //imgViewRef.image = pickedImage
+            self.selectedPrescriptiomImageViewRef.image = pickedImage
        
+            let imageData = pickedImage.pngData()!
+            let base64 = imageData.base64EncodedString()
+            uploadPrescriptionApiCall(docId: docId, file: base64, docType: "Self Prescription", fileExt: "png", fileName: randomString(length: 8))
+
     }
     picker.dismiss(animated: true, completion: nil)
         }
 }
+    
 }
 
 // MARK: - PatientPrescriptionResponseDatum
@@ -244,3 +282,64 @@ struct PatientPrescriptionResponseDatum: Codable {
 }
 
 typealias PatientPrescriptionResponseData = [PatientPrescriptionResponseDatum]
+
+// MARK: - PrescriptionUploadDataResponse
+struct PrescriptionUploadDataResponse: Codable {
+    let soapEnvelope: PrescriptionUploadSoapEnvelope?
+
+    enum CodingKeys: String, CodingKey {
+        case soapEnvelope = "soap:Envelope"
+    }
+}
+
+// MARK: - SoapEnvelope
+struct PrescriptionUploadSoapEnvelope: Codable {
+    let xmlnsXSD, xmlnsSoap, xmlnsXsi: String?
+    let soapBody: PrescriptionUploadSoapBody?
+
+    enum CodingKeys: String, CodingKey {
+        case xmlnsXSD = "_xmlns:xsd"
+        case xmlnsSoap = "_xmlns:soap"
+        case xmlnsXsi = "_xmlns:xsi"
+        case soapBody = "soap:Body"
+    }
+}
+
+// MARK: - SoapBody
+struct PrescriptionUploadSoapBody: Codable {
+    let selfPrescriptionUploadResponse: SelfPrescriptionUploadResponse?
+
+    enum CodingKeys: String, CodingKey {
+        case selfPrescriptionUploadResponse = "SelfPrescriptionUploadResponse"
+    }
+}
+
+// MARK: - SelfPrescriptionUploadResponse
+struct SelfPrescriptionUploadResponse: Codable {
+    let xmlns: String?
+    let selfPrescriptionUploadResult: SelfPrescriptionUploadResult?
+
+    enum CodingKeys: String, CodingKey {
+        case xmlns = "_xmlns"
+        case selfPrescriptionUploadResult = "SelfPrescriptionUploadResult"
+    }
+}
+
+// MARK: - SelfPrescriptionUploadResult
+struct SelfPrescriptionUploadResult: Codable {
+    let user: PrescriptionUploadUser?
+
+    enum CodingKeys: String, CodingKey {
+        case user = "User"
+    }
+}
+
+// MARK: - User
+struct PrescriptionUploadUser: Codable {
+    let message, status: String?
+
+    enum CodingKeys: String, CodingKey {
+        case message = "Message"
+        case status = "Status"
+    }
+}

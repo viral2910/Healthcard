@@ -57,22 +57,12 @@ extension BookMedicineCell : UITableViewDataSource ,UITableViewDelegate{
 //        cell.subtitleLabel.text = labListData[indexPath.row].
         let url = URL(string: "\(labListData[indexPath.row].drugImageURL ?? "")")!
         
+        cell.testImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "medicine.jpeg"))
         if selectedID.contains(Int(labListData[indexPath.row].medicineID ?? "") ?? 0) && LabID.contains(Int(labListData[indexPath.row].docID ?? "") ?? 0){
             cell.selectionImageView.image = UIImage(named: "checkedcircle");
         } else {
             cell.selectionImageView.image = UIImage(named: "circle");
         }
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { return }
-            DispatchQueue.main.async() { [weak self] in
-                cell.testImageView.image = image
-            }
-        }.resume()
         cell.selectionStyle = .none
         return cell
     }

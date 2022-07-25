@@ -118,7 +118,9 @@ class ChangePasswordVC: UIViewController {
             guard self == self else { return }
             let status = data?[0].status ?? ""
             if status == "1" {
-                self.navigationController?.popViewController(animated: true)
+                
+                    let singin = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "SingInVC") as! SingInVC
+                    self.navigationController?.pushViewController(singin, animated: true)
                 AppManager.shared.showAlert(title: "Success", msg: "Password Update Successfully", vc: self)
             }
         }

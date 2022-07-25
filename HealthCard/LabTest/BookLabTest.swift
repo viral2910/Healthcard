@@ -102,7 +102,7 @@ extension BookLabTest {
             let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
             print(LabId)
             NetWorker.shared.callAPIService(type: APIV2.saveLabTestsTest(patientID: patientID, GenInvest: LabId)) { [weak self](data: demo?, error) in
-                
+                self?.searchDataArr = []
                     self!.searchTableViewManager.start(data: [])
                     self!.searchTableViewOuterView.isHidden = true
                 self!.ApiCall()

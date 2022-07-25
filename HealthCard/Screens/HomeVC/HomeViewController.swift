@@ -143,15 +143,19 @@ class HomeViewController: UIViewController , XIBed, PushViewControllerDelegate ,
 
                     if pm.count > 0 {
                         let pm = placemarks![0]
-                        print(pm.country)
-                        print(pm.locality)
-                        print(pm.subLocality)
-                        print(pm.thoroughfare)
-                        print(pm.postalCode)
-                        print(pm.subThoroughfare)
                         var addressString : String = ""
                         if pm.thoroughfare != nil {
-                            addressString = addressString + pm.thoroughfare!
+                            addressString = addressString + pm.thoroughfare! + ", "
+                        }
+                        
+                        if pm.subLocality != nil {
+                            addressString = addressString + pm.subLocality! + ", "
+                        }
+//                        if pm.thoroughfare != nil {
+//                            addressString = addressString + pm.thoroughfare! + ", "
+//                        }
+                        if pm.locality != nil {
+                            addressString = addressString + pm.locality!
                         }
                         self.currentlocationValue.text = addressString
                   }
@@ -221,13 +225,17 @@ extension HomeViewController {
         self.pushDelegate?.pushViewController(vc: vc)
     }
     @objc func LabReportAction(sender : UITapGestureRecognizer) {
-        let vc = UIStoryboard.Finance.controller(withClass: LabTestReceiptVc.self)
-        self.navigationController?.pushViewController(vc, animated: true)
+        let controller3 = ProcedureReportsVC(nibName: "ProcedureReportsVC", bundle: nil)
+        self.pushDelegate?.pushViewController(vc: controller3)
     }
     
     @objc func ProcedureReportsAction(sender : UITapGestureRecognizer) {
-        let vc = UIStoryboard.Finance.controller(withClass: PharmacyReceiptVC.self)
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = UIStoryboard.Finance.controller(withClass: PharmacyReceiptVC.self)
+//        self.navigationController?.pushViewController(vc, animated: true)
+        
+        
+        let controller3 = ProcedureReportsVC(nibName: "ProcedureReportsVC", bundle: nil)
+        self.pushDelegate?.pushViewController(vc: controller3)
     }
     func setupCornerShadow() {
         

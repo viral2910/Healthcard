@@ -46,83 +46,10 @@ extension AdvanceBillingPaymentVC: UITableViewDelegate, UITableViewDataSource{
         cell.surgeonName.text = dataValue[indexPath.row].surgeonName
         cell.procedureNameLbl.text = dataValue[indexPath.row].procedureName
         cell.creationDateLbl.text = dataValue[indexPath.row].estimateCreationDate
-        cell.initialAmtLbl.text = dataValue[indexPath.row].finalBilledAmt
-        cell.discountAmtLbl.text = dataValue[indexPath.row].discountAmt
-        cell.AdvancePaideLbl.text = dataValue[indexPath.row].payAdvanceAmt
-        cell.balanceAmtLbl.text = dataValue[indexPath.row].balance
+        cell.initialAmtLbl.text = "₹" + dataValue[indexPath.row].balance
+        cell.discountAmtLbl.text = "₹" + dataValue[indexPath.row].discountAmt
+        cell.AdvancePaideLbl.text = "₹" + dataValue[indexPath.row].payAdvanceAmt
+        cell.balanceAmtLbl.text = "₹" + dataValue[indexPath.row].balance
         return cell
     }
 }
-
-struct advanceBilling: Codable {
-    let estimatePlanID, patientID, patientName, surgeonID: String
-    let surgeonName: String
-    let planDate: JSONNull?
-    let procedureTypeID, procedureTypeValue, specialityID, specialityValue: String
-    let procedureName, procedureCodeName: String
-    let opdprTimeSlot, otTimeSlot, rrTimeSlot, hospitalStay: JSONNull?
-    let patientCat, wardType, wardNoOfDays, specialInstrument: JSONNull?
-    let specialInstrumentName, isActive, isActiveText, currUserID: JSONNull?
-    let currUserRole, hospitalID, isEdit, hiddProcedureBillingList: JSONNull?
-    let hiddSpecialInst: JSONNull?
-    let estimatePlanRefNo: String
-    let isRelease, isAllRelease, releaseType: JSONNull?
-    let releaseDate, releaseCode: String
-    let discountPer: JSONNull?
-    let discountAmt: String
-    let totalAfterDisAmt, advRec: JSONNull?
-    let estimateCreationDate, totalDueAmount, finalBilledAmt, payAdvanceAmt: String
-    let balance, receivedAmt, paidBilledAmt: String
-    let reportLink: String
-
-    enum CodingKeys: String, CodingKey {
-        case estimatePlanID = "EstimatePlanId"
-        case patientID = "PatientId"
-        case patientName = "PatientName"
-        case surgeonID = "SurgeonId"
-        case surgeonName = "SurgeonName"
-        case planDate = "PlanDate"
-        case procedureTypeID = "ProcedureTypeId"
-        case procedureTypeValue = "ProcedureTypeValue"
-        case specialityID = "SpecialityId"
-        case specialityValue = "SpecialityValue"
-        case procedureName = "ProcedureName"
-        case procedureCodeName = "ProcedureCodeName"
-        case opdprTimeSlot = "OPDPRTimeSlot"
-        case otTimeSlot = "OtTimeSlot"
-        case rrTimeSlot = "RrTimeSlot"
-        case hospitalStay = "HospitalStay"
-        case patientCat = "PatientCat"
-        case wardType = "WardType"
-        case wardNoOfDays = "WardNoOfDays"
-        case specialInstrument = "SpecialInstrument"
-        case specialInstrumentName = "SpecialInstrumentName"
-        case isActive = "IsActive"
-        case isActiveText = "IsActiveText"
-        case currUserID = "CurrUserId"
-        case currUserRole = "CurrUserRole"
-        case hospitalID = "HospitalId"
-        case isEdit = "IsEdit"
-        case hiddProcedureBillingList, hiddSpecialInst
-        case estimatePlanRefNo = "EstimatePlanRefNo"
-        case isRelease = "IsRelease"
-        case isAllRelease = "IsAllRelease"
-        case releaseType = "ReleaseType"
-        case releaseDate = "ReleaseDate"
-        case releaseCode = "ReleaseCode"
-        case discountPer = "DiscountPer"
-        case discountAmt = "DiscountAmt"
-        case totalAfterDisAmt = "TotalAfterDisAmt"
-        case advRec = "AdvRec"
-        case estimateCreationDate = "EstimateCreationDate"
-        case totalDueAmount = "TotalDueAmount"
-        case finalBilledAmt = "FinalBilledAmt"
-        case payAdvanceAmt = "PayAdvanceAmt"
-        case balance = "Balance"
-        case receivedAmt = "ReceivedAmt"
-        case paidBilledAmt = "PaidBilledAmt"
-        case reportLink = "ReportLink"
-    }
-}
-
-

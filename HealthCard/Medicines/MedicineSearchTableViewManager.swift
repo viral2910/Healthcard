@@ -82,17 +82,8 @@ extension MedicineSearchTableViewManager: UITableViewDataSource {
 //        } else {
 //            cell.selectionImageView.image = UIImage(named: "circle");
 //        }
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { return }
-            DispatchQueue.main.async() { [weak self] in
-                cell.testImageView.image = image
-            }
-        }.resume()
+        cell.testImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "medicine.jpeg"))
+        
         cell.selectionStyle = .none
         
         cell.crossBtnRef.tag = indexPath.row

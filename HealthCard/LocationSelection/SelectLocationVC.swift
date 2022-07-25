@@ -60,6 +60,7 @@ class SelectLocationVC: UIViewController,XIBed,CLLocationManagerDelegate, UISear
     }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         view.endEditing(true)
+        self.mapviewRef.clear()
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(searchBar.text ?? "") { (placemarks, error) in
             guard

@@ -12,6 +12,8 @@ class ProcedureReportsVC: UIViewController {
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var uploadDocumentBtnRef: UIButton!
 
+    @IBOutlet weak var headerViewHeight: NSLayoutConstraint!
+    var isHeaderVisible = false
     var dataValue : [ProcedureReport] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +22,7 @@ class ProcedureReportsVC: UIViewController {
         tableview.delegate = self
         tableview.dataSource = self
         tableview.separatorColor = .clear
-        
+        headerViewHeight.constant = isHeaderVisible ? 0 : 50
         uploadDocumentBtnRef.layer.cornerRadius = uploadDocumentBtnRef.bounds.height * 0.5
         // Do any additional setup after loading the view.
     }

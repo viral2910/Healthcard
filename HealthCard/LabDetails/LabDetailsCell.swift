@@ -55,17 +55,8 @@ extension LabDetailsCell : UITableViewDataSource ,UITableViewDelegate{
         cell.discountAmountLabel.text = labListData[indexPath.row].discountPer != 0 ? " \(labListData[indexPath.row].discountPer)% Off " : ""
         cell.MRPLabel.text = "MRP : ₹\(labListData[indexPath.row].mrp)"
         let url = URL(string: "\(labListData[indexPath.row].labTestImageURL)")!
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { return }
-            DispatchQueue.main.async() { [weak self] in
-                cell.labImageView.image = image
-            }
-        }.resume()
+        cell.labImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "lab.jpeg"))
+
         cell.selectionStyle = .none
         return cell
     }

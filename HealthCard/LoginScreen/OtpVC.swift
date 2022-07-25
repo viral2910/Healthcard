@@ -8,7 +8,8 @@
 import UIKit
 
 class OtpVC: UIViewController {
-
+    @IBOutlet weak var otpsendmessage: UILabel!
+    
     @IBOutlet weak var otpTextfield: UITextField!
     @IBOutlet weak var mobilenumberTextfield: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
@@ -76,7 +77,7 @@ extension OtpVC {
             
             let status = data?[0].status ?? ""
             if status == "1" {
-                UIAlertController.showAlert(titleString: "OTP Resend Successfully")
+                self.otpsendmessage.text = "OTP send Successfully"
             }
         }
         
@@ -101,12 +102,13 @@ extension OtpVC {
             } else {
                 UserDefaults.standard.set(false, forKey: "isLogin")
                 UserDefaults.standard.set(0, forKey: "patientID")
-                AppManager.shared.showAlert(title: "Error", msg: data?[0].message ?? "", vc: self)
+                
+                self.otpsendmessage.text = data?[0].message ?? ""
             }
         }
         
     }
-
+    
     
 }
 
@@ -114,7 +116,7 @@ extension OtpVC {
 
 struct WelcomeOtp: Codable {
     let soapEnvelope: SoapEnvelopeOtp
-
+    
     enum CodingKeys: String, CodingKey {
         case soapEnvelope = "soap:Envelope"
     }
@@ -124,7 +126,7 @@ struct WelcomeOtp: Codable {
 struct SoapEnvelopeOtp: Codable {
     let xmlnsSoap, xmlnsXsi, xmlnsXSD: String
     let soapBody: SoapBodyOtp
-
+    
     enum CodingKeys: String, CodingKey {
         case xmlnsSoap = "-xmlns:soap"
         case xmlnsXsi = "-xmlns:xsi"
@@ -136,7 +138,7 @@ struct SoapEnvelopeOtp: Codable {
 // MARK: - SoapBody
 struct SoapBodyOtp: Codable {
     let otpAuthenticationResponse: OTPAuthenticationResponse
-
+    
     enum CodingKeys: String, CodingKey {
         case otpAuthenticationResponse = "OTPAuthenticationResponse"
     }
@@ -146,7 +148,7 @@ struct SoapBodyOtp: Codable {
 struct OTPAuthenticationResponse: Codable {
     let xmlns: String
     let otpAuthenticationResult: OTPAuthenticationResult
-
+    
     enum CodingKeys: String, CodingKey {
         case xmlns = "-xmlns"
         case otpAuthenticationResult = "OTPAuthenticationResult"
@@ -156,7 +158,7 @@ struct OTPAuthenticationResponse: Codable {
 // MARK: - OTPAuthenticationResult
 struct OTPAuthenticationResult: Codable {
     let user: UserOtp
-
+    
     enum CodingKeys: String, CodingKey {
         case user = "User"
     }
@@ -170,7 +172,7 @@ struct UserOtp: Codable {
     let lastName: String
     let deliveryBoyID, deliveryBoy, labMasterID, labConcernPerson: DeliveryBoy
     let pharmacyID, pharmacyCoordinator: DeliveryBoy
-
+    
     enum CodingKeys: String, CodingKey {
         case message = "Message"
         case status = "Status"
@@ -191,7 +193,7 @@ struct UserOtp: Codable {
 // MARK: - DeliveryBoy
 struct DeliveryBoy: Codable {
     let selfClosing: String
-
+    
     enum CodingKeys: String, CodingKey {
         case selfClosing = "-self-closing"
     }
@@ -207,7 +209,7 @@ struct LoginOtpAuthenticatwDataResponseElement: Codable {
     let deliveryBoyID, deliveryBoy, doctorID, doctor: String?
     let doctorProfilePicURL: String?
     let labMasterID, labConcernPerson, pharmacyID, pharmacyCoordinator: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case message = "Message"
         case status = "Status"

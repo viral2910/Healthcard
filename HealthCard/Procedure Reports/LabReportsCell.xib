@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -38,6 +39,7 @@
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc.text.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="WaV-0q-zOs">
                                 <rect key="frame" x="5" y="10" width="50" height="50"/>
+                                <color key="tintColor" name="AppColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="A5H-VL-cAw"/>
                                     <constraint firstAttribute="width" constant="50" id="fE4-8v-Ma2"/>
@@ -90,6 +92,9 @@
     <resources>
         <image name="arrow.down.circle" catalog="system" width="128" height="121"/>
         <image name="doc.text.fill" catalog="system" width="115" height="128"/>
+        <namedColor name="AppColor">
+            <color red="0.17299999296665192" green="0.40400001406669617" blue="0.65100002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

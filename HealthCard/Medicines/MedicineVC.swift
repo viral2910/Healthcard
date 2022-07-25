@@ -120,7 +120,7 @@ extension MedicineVC {
             struct demo: Codable { }
             let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
             NetWorker.shared.callAPIService(type: APIV2.savePharmacyMedicine(patientID: patientID, medicineId: medicineId, brandId: brandId, genericId: genericId, doseId: doseId)) { [weak self](data: demo?, error) in
-                
+                self?.searchDataArr = []
                 self!.searchTableViewManager.start(data: [])
                 self!.searchTableViewOuterView.isHidden = true
                 self!.ApiCall()

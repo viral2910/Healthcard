@@ -35,7 +35,10 @@ class SingInVC: UIViewController ,UITextFieldDelegate{// , XIBed, PushViewContro
             return;
         }
         
-        forgotPasswordOtpGenerate(mobileNo: mobileTextField.text ?? "", subject: "Forgot Password".replacingOccurrences(of: " ", with: "%20"))
+        let forgotpasswordvc =  UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "ForgotPasswordVC") as! ForgotPasswordVC
+            forgotpasswordvc.mobilenumber = self.mobileTextField.text ?? ""
+        self.navigationController?.pushViewController(forgotpasswordvc, animated: true)
+//        forgotPasswordOtpGenerate(mobileNo: mobileTextField.text ?? "", subject: "Forgot Password".replacingOccurrences(of: " ", with: "%20"))
 
     }
     @IBAction func loginOTPAction(_ sender: Any) {
@@ -44,7 +47,10 @@ class SingInVC: UIViewController ,UITextFieldDelegate{// , XIBed, PushViewContro
             return;
         }
         
-        LoginOtpGenerate(mobileNo: mobileTextField.text ?? "", subject: "Login".replacingOccurrences(of: " ", with: "%20"))
+            let otpvc =  UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "OtpVC") as! OtpVC
+            otpvc.mobilenumber = self.mobileTextField.text ?? ""
+            self.navigationController?.pushViewController(otpvc, animated: true)
+//        LoginOtpGenerate(mobileNo: mobileTextField.text ?? "", subject: "Login".replacingOccurrences(of: " ", with: "%20"))
 
     }
     

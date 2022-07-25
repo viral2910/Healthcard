@@ -58,7 +58,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UfX-Kv-vY7">
                                                 <rect key="frame" x="10" y="327" width="394" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c3X-hu-HPZ">
                                                 <rect key="frame" x="10" y="386" width="394" height="34"/>
@@ -263,7 +263,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mobile Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="768-x3-6Ji">
                                                         <rect key="frame" x="0.0" y="162" width="394" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                                     </textField>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ONh-kS-fDh">
                                                         <rect key="frame" x="0.0" y="216" width="394" height="32"/>
@@ -444,7 +444,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="utk-pA-Fp6">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="524"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="584"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UtI-Ln-5pP">
                                                 <rect key="frame" x="-293" y="-375" width="1000" height="627"/>
@@ -524,11 +524,19 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9Y-RF-CFL">
+                                                <rect key="frame" x="0.0" y="484" width="414" height="100"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="jxn-6z-ujU" firstAttribute="trailing" secondItem="Z0L-Vu-9RZ" secondAttribute="trailing" id="4ju-Kh-Ltv"/>
+                                            <constraint firstItem="n9Y-RF-CFL" firstAttribute="leading" secondItem="utk-pA-Fp6" secondAttribute="leading" id="5IC-CJ-l3R"/>
                                             <constraint firstItem="Smk-Dx-hiX" firstAttribute="leading" secondItem="jxn-6z-ujU" secondAttribute="leading" id="Fic-1n-3vn"/>
+                                            <constraint firstAttribute="trailing" secondItem="n9Y-RF-CFL" secondAttribute="trailing" id="IYo-1t-aTq"/>
                                             <constraint firstItem="Z0L-Vu-9RZ" firstAttribute="leading" secondItem="utk-pA-Fp6" secondAttribute="leading" constant="10" id="JYI-jl-CS6"/>
                                             <constraint firstItem="UtI-Ln-5pP" firstAttribute="centerX" secondItem="utk-pA-Fp6" secondAttribute="centerX" id="Jf8-oE-nEc"/>
                                             <constraint firstItem="UtI-Ln-5pP" firstAttribute="top" secondItem="utk-pA-Fp6" secondAttribute="top" constant="-375" id="NVg-Pj-SVS"/>
@@ -540,10 +548,12 @@
                                             <constraint firstAttribute="trailing" secondItem="UwF-PJ-ynm" secondAttribute="trailing" constant="10" id="cmO-Gr-4m1"/>
                                             <constraint firstItem="jxn-6z-ujU" firstAttribute="top" secondItem="Z0L-Vu-9RZ" secondAttribute="bottom" constant="20" id="dIF-uG-W6a"/>
                                             <constraint firstItem="Z0L-Vu-9RZ" firstAttribute="top" secondItem="UtI-Ln-5pP" secondAttribute="bottom" constant="50" id="djO-Vq-jIz"/>
-                                            <constraint firstAttribute="bottom" secondItem="Smk-Dx-hiX" secondAttribute="bottom" constant="40" id="nsn-5h-AiM"/>
+                                            <constraint firstAttribute="bottom" secondItem="Smk-Dx-hiX" secondAttribute="bottom" constant="100" id="nsn-5h-AiM"/>
+                                            <constraint firstAttribute="bottom" secondItem="n9Y-RF-CFL" secondAttribute="bottom" id="pWo-iZ-sxQ"/>
                                             <constraint firstItem="MFg-1l-aHv" firstAttribute="top" secondItem="utk-pA-Fp6" secondAttribute="top" constant="55" id="tTe-TY-Ma0"/>
                                             <constraint firstItem="MFg-1l-aHv" firstAttribute="leading" secondItem="utk-pA-Fp6" secondAttribute="leading" id="v1L-rh-gV6"/>
                                             <constraint firstItem="Smk-Dx-hiX" firstAttribute="top" secondItem="jxn-6z-ujU" secondAttribute="bottom" constant="50" id="xvq-Dd-y7x"/>
+                                            <constraint firstItem="n9Y-RF-CFL" firstAttribute="top" secondItem="Smk-Dx-hiX" secondAttribute="bottom" id="yAP-jE-1ps"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -570,6 +580,7 @@
                         <outlet property="loginBtn" destination="Smk-Dx-hiX" id="0X7-dE-MOe"/>
                         <outlet property="mobilenumberTextfield" destination="Z0L-Vu-9RZ" id="Te2-6M-NWg"/>
                         <outlet property="otpTextfield" destination="jxn-6z-ujU" id="nQM-lM-DLs"/>
+                        <outlet property="otpsendmessage" destination="n9Y-RF-CFL" id="CGf-Nr-N8S"/>
                         <outlet property="sendBtn" destination="UwF-PJ-ynm" id="3H7-uZ-rsT"/>
                     </connections>
                 </viewController>
@@ -644,7 +655,7 @@
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="SUMIT">
+                                                <buttonConfiguration key="configuration" style="plain" title="SUBMIT">
                                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                                 </buttonConfiguration>
                                                 <userDefinedRuntimeAttributes>

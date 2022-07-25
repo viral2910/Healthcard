@@ -74,7 +74,7 @@
                                 <action selector="searchBtnAction:" destination="-1" eventType="touchUpInside" id="MRW-1H-tFi"/>
                             </connections>
                         </button>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search Speciality" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n4t-l5-Asb">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Medicine and Essentials" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n4t-l5-Asb">
                             <rect key="frame" x="20" y="10" width="274" height="30"/>
                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>

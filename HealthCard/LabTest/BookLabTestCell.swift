@@ -55,7 +55,8 @@ extension BookLabTestCell : UITableViewDataSource ,UITableViewDelegate{
         } else {
             cell.selectionImageView.image = UIImage(named: "circle");
         }
-            cell.testImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "lab.jpeg"))
+        cell.subtitleLabel.text = "\(labListData[indexPath.row].collectionIn ?? "")"
+        cell.testImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "lab.jpeg"))
         cell.selectionStyle = .none
         return cell
     }

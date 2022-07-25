@@ -15,9 +15,9 @@ class LookForTestCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        lblRef.adjustsFontSizeToFitWidth = true
-        lblRef.minimumScaleFactor = 0.2
-        lblRef.numberOfLines = 0 // or 1
+//        lblRef.adjustsFontSizeToFitWidth = true
+//        lblRef.minimumScaleFactor = 0.2
+//        lblRef.numberOfLines = 2 // or 1
 
     }
 

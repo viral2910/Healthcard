@@ -46,12 +46,11 @@ class ProfileVC: UIViewController , XIBed, PushViewControllerDelegate {
             mainview.isHidden = false
             
             view.layoutIfNeeded()
-        } else
-        {
+        } else {
                 topConstraint.constant = 0
                 mainview.isHidden = true
         }
-            self.nameLabel.text = UserDefaults.standard.string(forKey: "patientFullName") ?? ""
+        self.nameLabel.text = UserDefaults.standard.string(forKey: "patientFullName") ?? ""
     }
     func setup()
     {
@@ -64,8 +63,9 @@ class ProfileVC: UIViewController , XIBed, PushViewControllerDelegate {
         controller2.title = "INSURANCE"
         controllerArray.append(controller2)
         
-        let controller3 = DocumentsVC(nibName: "DocumentsVC", bundle: nil)
+        let controller3 = ProcedureReportsVC(nibName: "ProcedureReportsVC", bundle: nil)
         controller3.title = "DOCUMENTS"
+        controller3.isHeaderVisible = true
         controllerArray.append(controller3)
         
         let controller4 = RelationVC(nibName: "RelationVC", bundle: nil)

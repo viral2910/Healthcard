@@ -175,6 +175,8 @@ enum APIV2: API {
     
     case procedureBilling(patientID: Int)
     
+    case completeprocedureBilling(patientID: Int)
+    
     case addressPatient(patientID: Int)
     
     case consultationList(patientID: Int)
@@ -184,6 +186,8 @@ enum APIV2: API {
     case myCartList(patientID: Int)
     
     case OPDBillingList(patientID: Int)
+    
+    case OPDCompletedBillingList(patientID: Int)
     
     case estimateAdvanceBillingList(patientID: Int)
     
@@ -466,6 +470,10 @@ extension APIV2 {
         case .procedureBilling:
             return URL(string: Router.deliveryBoyBaseUrl)!
             
+        case .completeprocedureBilling:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
+            
         case .addressPatient:
             return URL(string: Router.deliveryBoyBaseUrl)!
             
@@ -479,6 +487,9 @@ extension APIV2 {
             return URL(string: Router.deliveryBoyBaseUrl)!
             
         case .OPDBillingList:
+            return URL(string: Router.deliveryBoyBaseUrl)!
+            
+        case .OPDCompletedBillingList:
             return URL(string: Router.deliveryBoyBaseUrl)!
             
         case .estimateAdvanceBillingList:
@@ -784,6 +795,10 @@ extension APIV2 {
         case .procedureBilling(patientID: let patientId):
             return "Finance?vEstimateBillingListPatientId=\(patientId)"
             
+        case .completeprocedureBilling(patientID: let patientId):
+            return "Finance?vEstimateBillingCompletedListPatientId=\(patientId)"
+            
+            
         case .addressPatient(patientID: let patientId):
             return "Patient?vPatientAddressPatientId=\(patientId)"
             
@@ -798,6 +813,9 @@ extension APIV2 {
             
         case .OPDBillingList(patientID: let patientId):
             return "Finance?vOPDBillingListPatientId=\(patientId)"
+            
+        case .OPDCompletedBillingList(patientID: let patientId):
+            return "Finance?vOPDBillingCompletedListPatientId=\(patientId)"
             
             
         case .estimateAdvanceBillingList(patientID: let patientId):
@@ -1101,6 +1119,9 @@ extension APIV2 {
         case .procedureBilling:
             return "GET"
             
+        case .completeprocedureBilling:
+            return "GET"
+            
         case .addressPatient:
             return "GET"
             
@@ -1114,6 +1135,9 @@ extension APIV2 {
             return "GET"
             
         case .OPDBillingList:
+            return "GET"
+        
+        case .OPDCompletedBillingList:
             return "GET"
             
         case .estimateAdvanceBillingList:
@@ -1421,6 +1445,9 @@ extension APIV2 {
         case .procedureBilling:
             break
             
+        case .completeprocedureBilling:
+            break
+            
         case .addressPatient:
             break
             
@@ -1437,6 +1464,9 @@ extension APIV2 {
             break
             
         case .OPDBillingList:
+            break
+            
+        case .OPDCompletedBillingList:
             break
             
         case .estimateAdvanceBillingList:

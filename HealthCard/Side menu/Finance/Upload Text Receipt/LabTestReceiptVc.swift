@@ -46,7 +46,7 @@ extension LabTestReceiptVc: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "prescriptionDetailsCell", for: indexPath)as! prescriptionDetailsCell
-        cell.planningLbl.text = dataValue[indexPath.row]["DocType"] as? String ?? ""
+        cell.planningLbl.text = "\(dataValue[indexPath.row]["TranDate"] as? String ?? "") \(dataValue[indexPath.row]["DocType"] as? String ?? "")"
         var reportname = dataValue[indexPath.row]["ReportLink"] as? String ?? ""
         reportname = reportname.replacingOccurrences(of: "https://Healthcard.acssel.com/Uploads/Pathology/", with: "")
         cell.pdfLbl.text = reportname

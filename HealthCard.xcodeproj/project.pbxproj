@@ -8,22 +8,103 @@
 
 /* Begin PBXBuildFile section */
 		8EF153EFD6A1C00A3A16EA47 /* Pods_HealthCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EA0D1C2620A6272EBF75FF2 /* Pods_HealthCard.framework */; };
+		E0177973288D94CB00060529 /* XIBed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0177924288D94CB00060529 /* XIBed.swift */; };
+		E0177974288D94CB00060529 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0177926288D94CB00060529 /* Environment.swift */; };
+		E0177975288D94CB00060529 /* raleway_extralightitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177929288D94CB00060529 /* raleway_extralightitalic.ttf */; };
+		E0177976288D94CB00060529 /* lato_black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E017792A288D94CB00060529 /* lato_black.ttf */; };
+		E0177977288D94CB00060529 /* lato_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E017792B288D94CB00060529 /* lato_italic.ttf */; };
+		E0177978288D94CB00060529 /* lato_semibold_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E017792C288D94CB00060529 /* lato_semibold_italic.ttf */; };
+		E0177979288D94CB00060529 /* nexa_bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E017792D288D94CB00060529 /* nexa_bold.otf */; };
+		E017797A288D94CB00060529 /* poppins_light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E017792E288D94CB00060529 /* poppins_light.ttf */; };
+		E017797B288D94CB00060529 /* raleway_semibolditalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E017792F288D94CB00060529 /* raleway_semibolditalic.ttf */; };
+		E017797C288D94CB00060529 /* raleway_blackitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177930288D94CB00060529 /* raleway_blackitalic.ttf */; };
+		E017797D288D94CB00060529 /* lato_thin_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177931288D94CB00060529 /* lato_thin_italic.ttf */; };
+		E017797E288D94CB00060529 /* poppins_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177932288D94CB00060529 /* poppins_medium.ttf */; };
+		E017797F288D94CB00060529 /* lato_light_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177933288D94CB00060529 /* lato_light_italic.ttf */; };
+		E0177980288D94CB00060529 /* raleway_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177934288D94CB00060529 /* raleway_medium.ttf */; };
+		E0177981288D94CB00060529 /* raleway_lightitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177935288D94CB00060529 /* raleway_lightitalic.ttf */; };
+		E0177982288D94CB00060529 /* raleway_thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177936288D94CB00060529 /* raleway_thin.ttf */; };
+		E0177983288D94CB00060529 /* lato_heavy_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177937288D94CB00060529 /* lato_heavy_italic.ttf */; };
+		E0177984288D94CB00060529 /* raleway_mediumitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177938288D94CB00060529 /* raleway_mediumitalic.ttf */; };
+		E0177985288D94CB00060529 /* poppins_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177939288D94CB00060529 /* poppins_regular.ttf */; };
+		E0177986288D94CB00060529 /* raleway_light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E017793A288D94CB00060529 /* raleway_light.ttf */; };
+		E0177987288D94CB00060529 /* times_new_roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E017793B288D94CB00060529 /* times_new_roman.ttf */; };
+		E0177988288D94CB00060529 /* lato_bold_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E017793C288D94CB00060529 /* lato_bold_italic.ttf */; };
+		E0177989288D94CB00060529 /* poppins_semi_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E017793D288D94CB00060529 /* poppins_semi_bold.ttf */; };
+		E017798A288D94CB00060529 /* lato_hairline_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E017793E288D94CB00060529 /* lato_hairline_italic.ttf */; };
+		E017798B288D94CB00060529 /* raleway_extrabold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E017793F288D94CB00060529 /* raleway_extrabold.ttf */; };
+		E017798C288D94CB00060529 /* poppins_thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177940288D94CB00060529 /* poppins_thin.ttf */; };
+		E017798D288D94CB00060529 /* raleway_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177941288D94CB00060529 /* raleway_bold.ttf */; };
+		E017798E288D94CB00060529 /* raleway_extralight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177942288D94CB00060529 /* raleway_extralight.ttf */; };
+		E017798F288D94CB00060529 /* raleway_extrabolditalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177943288D94CB00060529 /* raleway_extrabolditalic.ttf */; };
+		E0177990288D94CB00060529 /* lato_heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177944288D94CB00060529 /* lato_heavy.ttf */; };
+		E0177991288D94CB00060529 /* lato_thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177945288D94CB00060529 /* lato_thin.ttf */; };
+		E0177992288D94CB00060529 /* raleway_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177946288D94CB00060529 /* raleway_regular.ttf */; };
+		E0177993288D94CB00060529 /* nexa_light.otf in Resources */ = {isa = PBXBuildFile; fileRef = E0177947288D94CB00060529 /* nexa_light.otf */; };
+		E0177994288D94CB00060529 /* raleway_thinitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177948288D94CB00060529 /* raleway_thinitalic.ttf */; };
+		E0177995288D94CB00060529 /* raleway_bolditalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177949288D94CB00060529 /* raleway_bolditalic.ttf */; };
+		E0177996288D94CB00060529 /* lato_hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E017794A288D94CB00060529 /* lato_hairline.ttf */; };
+		E0177997288D94CB00060529 /* lato_black_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E017794B288D94CB00060529 /* lato_black_italic.ttf */; };
+		E0177998288D94CB00060529 /* lato_semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E017794C288D94CB00060529 /* lato_semibold.ttf */; };
+		E0177999288D94CB00060529 /* lato_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E017794D288D94CB00060529 /* lato_regular.ttf */; };
+		E017799A288D94CB00060529 /* lato_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E017794E288D94CB00060529 /* lato_bold.ttf */; };
+		E017799B288D94CB00060529 /* raleway_black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E017794F288D94CB00060529 /* raleway_black.ttf */; };
+		E017799C288D94CB00060529 /* lato_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177950288D94CB00060529 /* lato_medium.ttf */; };
+		E017799D288D94CB00060529 /* lato_light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177951288D94CB00060529 /* lato_light.ttf */; };
+		E017799E288D94CB00060529 /* raleway_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177952288D94CB00060529 /* raleway_italic.ttf */; };
+		E017799F288D94CB00060529 /* lato_medium_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177953288D94CB00060529 /* lato_medium_italic.ttf */; };
+		E01779A0288D94CB00060529 /* raleway_semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177954288D94CB00060529 /* raleway_semibold.ttf */; };
+		E01779A1288D94CB00060529 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177956288D94CB00060529 /* Poppins-ExtraLight.ttf */; };
+		E01779A2288D94CB00060529 /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177957288D94CB00060529 /* Poppins-ThinItalic.ttf */; };
+		E01779A3288D94CB00060529 /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177958288D94CB00060529 /* Poppins-ExtraLightItalic.ttf */; };
+		E01779A4288D94CB00060529 /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177959288D94CB00060529 /* Poppins-BoldItalic.ttf */; };
+		E01779A5288D94CB00060529 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E017795A288D94CB00060529 /* Poppins-Light.ttf */; };
+		E01779A6288D94CB00060529 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E017795B288D94CB00060529 /* Poppins-Medium.ttf */; };
+		E01779A7288D94CB00060529 /* Poppins-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E017795C288D94CB00060529 /* Poppins-SemiBoldItalic.ttf */; };
+		E01779A8288D94CB00060529 /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E017795D288D94CB00060529 /* Poppins-ExtraBoldItalic.ttf */; };
+		E01779A9288D94CB00060529 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E017795E288D94CB00060529 /* Poppins-ExtraBold.ttf */; };
+		E01779AA288D94CB00060529 /* Poppins-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E017795F288D94CB00060529 /* Poppins-BlackItalic.ttf */; };
+		E01779AB288D94CB00060529 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = E0177960288D94CB00060529 /* OFL.txt */; };
+		E01779AC288D94CB00060529 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177961288D94CB00060529 /* Poppins-Regular.ttf */; };
+		E01779AD288D94CB00060529 /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177962288D94CB00060529 /* Poppins-LightItalic.ttf */; };
+		E01779AE288D94CB00060529 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177963288D94CB00060529 /* Poppins-Bold.ttf */; };
+		E01779AF288D94CB00060529 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177964288D94CB00060529 /* Poppins-Black.ttf */; };
+		E01779B0288D94CB00060529 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177965288D94CB00060529 /* Poppins-Thin.ttf */; };
+		E01779B1288D94CB00060529 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177966288D94CB00060529 /* Poppins-SemiBold.ttf */; };
+		E01779B2288D94CB00060529 /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177967288D94CB00060529 /* Poppins-Italic.ttf */; };
+		E01779B3288D94CB00060529 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0177968288D94CB00060529 /* Poppins-MediumItalic.ttf */; };
+		E01779B4288D94CB00060529 /* PrescriptionListCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E017796A288D94CB00060529 /* PrescriptionListCollectionViewManager.swift */; };
+		E01779B5288D94CB00060529 /* PrescriptionListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E017796C288D94CB00060529 /* PrescriptionListCollectionViewCell.xib */; };
+		E01779B6288D94CB00060529 /* PrescriptionListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E017796D288D94CB00060529 /* PrescriptionListCollectionViewCell.swift */; };
+		E01779B7288D94CB00060529 /* CustomPrescriptionListPopupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E017796E288D94CB00060529 /* CustomPrescriptionListPopupVC.xib */; };
+		E01779B8288D94CB00060529 /* CustomPrescriptionListPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E017796F288D94CB00060529 /* CustomPrescriptionListPopupVC.swift */; };
+		E01779B9288D94CB00060529 /* CustomSelectPickImagePopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0177971288D94CB00060529 /* CustomSelectPickImagePopUpVC.swift */; };
+		E01779BA288D94CB00060529 /* CustomSelectPickImagePopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0177972288D94CB00060529 /* CustomSelectPickImagePopUpVC.xib */; };
+		E01779BE288D94EF00060529 /* PrescriptionListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E01779BC288D94EF00060529 /* PrescriptionListVC.xib */; };
+		E01779BF288D94EF00060529 /* PrescriptionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01779BD288D94EF00060529 /* PrescriptionListVC.swift */; };
+		E01779C5288D952D00060529 /* ProcedureReportsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E01779C1288D952D00060529 /* ProcedureReportsVC.xib */; };
+		E01779C6288D952D00060529 /* LabReportsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E01779C2288D952D00060529 /* LabReportsCell.xib */; };
+		E01779C7288D952D00060529 /* ProcedureReportsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01779C3288D952D00060529 /* ProcedureReportsVC.swift */; };
+		E01779C8288D952D00060529 /* LabReportsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01779C4288D952D00060529 /* LabReportsCell.swift */; };
+		E01779CC288EB86E00060529 /* OPDBillingInvoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01779CA288EB86E00060529 /* OPDBillingInvoiceCell.swift */; };
+		E01779CD288EB86E00060529 /* OPDBillingInvoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E01779CB288EB86E00060529 /* OPDBillingInvoiceCell.xib */; };
+		E01779D0288EC54100060529 /* OPDBillingInvoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01779CE288EC54100060529 /* OPDBillingInvoiceVC.swift */; };
+		E01779D1288EC54100060529 /* OPDBillingInvoiceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E01779CF288EC54100060529 /* OPDBillingInvoiceVC.xib */; };
 		E03DD67027F9787600BFB975 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03DD66F27F9787600BFB975 /* HomeVC.swift */; };
 		E03DD67227F994E100BFB975 /* MainTabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03DD67127F994E100BFB975 /* MainTabbarVC.swift */; };
-		E045B23828368CBB00EB77C6 /* PrescriptionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E045B23628368CBB00EB77C6 /* PrescriptionListVC.swift */; };
-		E045B23928368CBB00EB77C6 /* PrescriptionListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E045B23728368CBB00EB77C6 /* PrescriptionListVC.xib */; };
 		E04E6BC7282A0494000B4735 /* CartSubDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E6BC5282A0494000B4735 /* CartSubDetailsCell.swift */; };
 		E04E6BC8282A0494000B4735 /* CartSubDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E04E6BC6282A0494000B4735 /* CartSubDetailsCell.xib */; };
 		E066993327F47ADA009EE3F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E066993227F47ADA009EE3F0 /* AppDelegate.swift */; };
 		E066993727F47ADA009EE3F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E066993627F47ADA009EE3F0 /* ViewController.swift */; };
 		E066993C27F47ADC009EE3F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E066993B27F47ADC009EE3F0 /* Assets.xcassets */; };
 		E066993F27F47ADC009EE3F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E066993D27F47ADC009EE3F0 /* LaunchScreen.storyboard */; };
+		E06A3382288EC7780009BDFD /* AdvanceBillingReceiptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06A3380288EC7780009BDFD /* AdvanceBillingReceiptVC.swift */; };
+		E06A3383288EC7780009BDFD /* AdvanceBillingReceiptVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E06A3381288EC7780009BDFD /* AdvanceBillingReceiptVC.xib */; };
+		E06A3386288ECC690009BDFD /* EstimateBillingInvoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06A3384288ECC690009BDFD /* EstimateBillingInvoiceVC.swift */; };
+		E06A3387288ECC690009BDFD /* EstimateBillingInvoiceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E06A3385288ECC690009BDFD /* EstimateBillingInvoiceVC.xib */; };
+		E06A338A288ECD140009BDFD /* EstimateBillingInvoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06A3388288ECD140009BDFD /* EstimateBillingInvoiceCell.swift */; };
+		E06A338B288ECD140009BDFD /* EstimateBillingInvoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E06A3389288ECD140009BDFD /* EstimateBillingInvoiceCell.xib */; };
 		E072953627F853610083357A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E072953527F853610083357A /* Home.storyboard */; };
-		E0912CD2285F5949002078D9 /* PrescriptionListCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0912CCC285F5948002078D9 /* PrescriptionListCollectionViewManager.swift */; };
-		E0912CD3285F5949002078D9 /* PrescriptionListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0912CCE285F5948002078D9 /* PrescriptionListCollectionViewCell.xib */; };
-		E0912CD4285F5949002078D9 /* PrescriptionListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0912CCF285F5948002078D9 /* PrescriptionListCollectionViewCell.swift */; };
-		E0912CD5285F5949002078D9 /* CustomPrescriptionListPopupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0912CD0285F5948002078D9 /* CustomPrescriptionListPopupVC.xib */; };
-		E0912CD6285F5949002078D9 /* CustomPrescriptionListPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0912CD1285F5948002078D9 /* CustomPrescriptionListPopupVC.swift */; };
 		E093772F285C4B740095E064 /* OrderTrackerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E093772D285C4B740095E064 /* OrderTrackerCell.swift */; };
 		E0937730285C4B740095E064 /* OrderTrackerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E093772E285C4B740095E064 /* OrderTrackerCell.xib */; };
 		E0937732285C91B10095E064 /* HC-Icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E0937731285C91B10095E064 /* HC-Icon.jpg */; };
@@ -122,71 +203,6 @@
 		E0B35A3728375EEA002A234D /* PharmacyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B35A3528375EEA002A234D /* PharmacyCell.xib */; };
 		E0B7186B283BFB31001D96DD /* SelectLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B71869283BFB31001D96DD /* SelectLocationVC.swift */; };
 		E0B7186C283BFB31001D96DD /* SelectLocationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B7186A283BFB31001D96DD /* SelectLocationVC.xib */; };
-		E0B9BF912811BD23001A58E8 /* XIBed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF012811BD22001A58E8 /* XIBed.swift */; };
-		E0B9BF922811BD23001A58E8 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF032811BD22001A58E8 /* Environment.swift */; };
-		E0B9BF932811BD23001A58E8 /* raleway_extralightitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF062811BD22001A58E8 /* raleway_extralightitalic.ttf */; };
-		E0B9BF942811BD23001A58E8 /* lato_black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF072811BD22001A58E8 /* lato_black.ttf */; };
-		E0B9BF952811BD23001A58E8 /* lato_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF082811BD22001A58E8 /* lato_italic.ttf */; };
-		E0B9BF962811BD23001A58E8 /* lato_semibold_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF092811BD22001A58E8 /* lato_semibold_italic.ttf */; };
-		E0B9BF972811BD23001A58E8 /* nexa_bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF0A2811BD22001A58E8 /* nexa_bold.otf */; };
-		E0B9BF982811BD23001A58E8 /* poppins_light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF0B2811BD22001A58E8 /* poppins_light.ttf */; };
-		E0B9BF992811BD23001A58E8 /* raleway_semibolditalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF0C2811BD22001A58E8 /* raleway_semibolditalic.ttf */; };
-		E0B9BF9A2811BD23001A58E8 /* raleway_blackitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF0D2811BD22001A58E8 /* raleway_blackitalic.ttf */; };
-		E0B9BF9B2811BD23001A58E8 /* lato_thin_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF0E2811BD22001A58E8 /* lato_thin_italic.ttf */; };
-		E0B9BF9C2811BD23001A58E8 /* poppins_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF0F2811BD22001A58E8 /* poppins_medium.ttf */; };
-		E0B9BF9D2811BD23001A58E8 /* lato_light_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF102811BD22001A58E8 /* lato_light_italic.ttf */; };
-		E0B9BF9E2811BD23001A58E8 /* raleway_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF112811BD22001A58E8 /* raleway_medium.ttf */; };
-		E0B9BF9F2811BD23001A58E8 /* raleway_lightitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF122811BD22001A58E8 /* raleway_lightitalic.ttf */; };
-		E0B9BFA02811BD23001A58E8 /* raleway_thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF132811BD22001A58E8 /* raleway_thin.ttf */; };
-		E0B9BFA12811BD23001A58E8 /* lato_heavy_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF142811BD22001A58E8 /* lato_heavy_italic.ttf */; };
-		E0B9BFA22811BD23001A58E8 /* raleway_mediumitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF152811BD22001A58E8 /* raleway_mediumitalic.ttf */; };
-		E0B9BFA32811BD23001A58E8 /* poppins_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF162811BD22001A58E8 /* poppins_regular.ttf */; };
-		E0B9BFA42811BD23001A58E8 /* raleway_light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF172811BD22001A58E8 /* raleway_light.ttf */; };
-		E0B9BFA52811BD23001A58E8 /* times_new_roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF182811BD22001A58E8 /* times_new_roman.ttf */; };
-		E0B9BFA62811BD23001A58E8 /* lato_bold_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF192811BD22001A58E8 /* lato_bold_italic.ttf */; };
-		E0B9BFA72811BD23001A58E8 /* poppins_semi_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF1A2811BD22001A58E8 /* poppins_semi_bold.ttf */; };
-		E0B9BFA82811BD23001A58E8 /* lato_hairline_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF1B2811BD22001A58E8 /* lato_hairline_italic.ttf */; };
-		E0B9BFA92811BD23001A58E8 /* raleway_extrabold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF1C2811BD22001A58E8 /* raleway_extrabold.ttf */; };
-		E0B9BFAA2811BD23001A58E8 /* poppins_thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF1D2811BD22001A58E8 /* poppins_thin.ttf */; };
-		E0B9BFAB2811BD23001A58E8 /* raleway_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF1E2811BD22001A58E8 /* raleway_bold.ttf */; };
-		E0B9BFAC2811BD23001A58E8 /* raleway_extralight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF1F2811BD22001A58E8 /* raleway_extralight.ttf */; };
-		E0B9BFAD2811BD23001A58E8 /* raleway_extrabolditalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF202811BD22001A58E8 /* raleway_extrabolditalic.ttf */; };
-		E0B9BFAE2811BD23001A58E8 /* lato_heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF212811BD22001A58E8 /* lato_heavy.ttf */; };
-		E0B9BFAF2811BD23001A58E8 /* lato_thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF222811BD22001A58E8 /* lato_thin.ttf */; };
-		E0B9BFB02811BD23001A58E8 /* raleway_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF232811BD22001A58E8 /* raleway_regular.ttf */; };
-		E0B9BFB12811BD23001A58E8 /* nexa_light.otf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF242811BD22001A58E8 /* nexa_light.otf */; };
-		E0B9BFB22811BD23001A58E8 /* raleway_thinitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF252811BD22001A58E8 /* raleway_thinitalic.ttf */; };
-		E0B9BFB32811BD23001A58E8 /* raleway_bolditalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF262811BD22001A58E8 /* raleway_bolditalic.ttf */; };
-		E0B9BFB42811BD23001A58E8 /* lato_hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF272811BD22001A58E8 /* lato_hairline.ttf */; };
-		E0B9BFB52811BD23001A58E8 /* lato_black_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF282811BD22001A58E8 /* lato_black_italic.ttf */; };
-		E0B9BFB62811BD23001A58E8 /* lato_semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF292811BD22001A58E8 /* lato_semibold.ttf */; };
-		E0B9BFB72811BD23001A58E8 /* lato_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF2A2811BD22001A58E8 /* lato_regular.ttf */; };
-		E0B9BFB82811BD23001A58E8 /* lato_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF2B2811BD22001A58E8 /* lato_bold.ttf */; };
-		E0B9BFB92811BD23001A58E8 /* raleway_black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF2C2811BD22001A58E8 /* raleway_black.ttf */; };
-		E0B9BFBA2811BD23001A58E8 /* lato_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF2D2811BD22001A58E8 /* lato_medium.ttf */; };
-		E0B9BFBB2811BD23001A58E8 /* lato_light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF2E2811BD22001A58E8 /* lato_light.ttf */; };
-		E0B9BFBC2811BD23001A58E8 /* raleway_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF2F2811BD22001A58E8 /* raleway_italic.ttf */; };
-		E0B9BFBD2811BD23001A58E8 /* lato_medium_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF302811BD22001A58E8 /* lato_medium_italic.ttf */; };
-		E0B9BFBE2811BD23001A58E8 /* raleway_semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF312811BD22001A58E8 /* raleway_semibold.ttf */; };
-		E0B9BFBF2811BD23001A58E8 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF332811BD22001A58E8 /* Poppins-ExtraLight.ttf */; };
-		E0B9BFC02811BD23001A58E8 /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF342811BD22001A58E8 /* Poppins-ThinItalic.ttf */; };
-		E0B9BFC12811BD23001A58E8 /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF352811BD22001A58E8 /* Poppins-ExtraLightItalic.ttf */; };
-		E0B9BFC22811BD23001A58E8 /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF362811BD22001A58E8 /* Poppins-BoldItalic.ttf */; };
-		E0B9BFC32811BD23001A58E8 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF372811BD22001A58E8 /* Poppins-Light.ttf */; };
-		E0B9BFC42811BD23001A58E8 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF382811BD22001A58E8 /* Poppins-Medium.ttf */; };
-		E0B9BFC52811BD23001A58E8 /* Poppins-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF392811BD22001A58E8 /* Poppins-SemiBoldItalic.ttf */; };
-		E0B9BFC62811BD23001A58E8 /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF3A2811BD22001A58E8 /* Poppins-ExtraBoldItalic.ttf */; };
-		E0B9BFC72811BD23001A58E8 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF3B2811BD22001A58E8 /* Poppins-ExtraBold.ttf */; };
-		E0B9BFC82811BD23001A58E8 /* Poppins-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF3C2811BD22001A58E8 /* Poppins-BlackItalic.ttf */; };
-		E0B9BFC92811BD23001A58E8 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF3D2811BD22001A58E8 /* OFL.txt */; };
-		E0B9BFCA2811BD23001A58E8 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF3E2811BD22001A58E8 /* Poppins-Regular.ttf */; };
-		E0B9BFCB2811BD23001A58E8 /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF3F2811BD22001A58E8 /* Poppins-LightItalic.ttf */; };
-		E0B9BFCC2811BD23001A58E8 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF402811BD22001A58E8 /* Poppins-Bold.ttf */; };
-		E0B9BFCD2811BD23001A58E8 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF412811BD22001A58E8 /* Poppins-Black.ttf */; };
-		E0B9BFCE2811BD23001A58E8 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF422811BD22001A58E8 /* Poppins-Thin.ttf */; };
-		E0B9BFCF2811BD23001A58E8 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF432811BD22001A58E8 /* Poppins-SemiBold.ttf */; };
-		E0B9BFD02811BD23001A58E8 /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF442811BD22001A58E8 /* Poppins-Italic.ttf */; };
-		E0B9BFD12811BD23001A58E8 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF452811BD22001A58E8 /* Poppins-MediumItalic.ttf */; };
 		E0B9BFD22811BD23001A58E8 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF472811BD22001A58E8 /* UIView.swift */; };
 		E0B9BFD32811BD23001A58E8 /* CACornerMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF482811BD22001A58E8 /* CACornerMask.swift */; };
 		E0B9BFD42811BD23001A58E8 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF492811BD22001A58E8 /* Data.swift */; };
@@ -207,8 +223,6 @@
 		E0B9C00A2811BD23001A58E8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF8B2811BD23001A58E8 /* API.swift */; };
 		E0B9C00B2811BD23001A58E8 /* CustomAlertPopupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B9BF8E2811BD23001A58E8 /* CustomAlertPopupVC.xib */; };
 		E0B9C00C2811BD23001A58E8 /* CustomAlertPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B9BF8F2811BD23001A58E8 /* CustomAlertPopupVC.swift */; };
-		E0BB4CFE283CCD9100F30A7B /* CustomSelectPickImagePopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BB4CF9283CCD9100F30A7B /* CustomSelectPickImagePopUpVC.swift */; };
-		E0BB4CFF283CCD9100F30A7B /* CustomSelectPickImagePopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0BB4CFA283CCD9100F30A7B /* CustomSelectPickImagePopUpVC.xib */; };
 		E0C884062874273B00D093AC /* AddAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C884042874273B00D093AC /* AddAddressViewController.swift */; };
 		E0C884072874273B00D093AC /* AddAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0C884052874273B00D093AC /* AddAddressViewController.xib */; };
 		E0CC6478281438380011A165 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC6468281438380011A165 /* ProfileVC.swift */; };
@@ -295,12 +309,8 @@
 		E0E88CD3283CEDCC00918595 /* orderPlaceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E88CD1283CEDCB00918595 /* orderPlaceVC.xib */; };
 		E0ECA1832865D56F00A1D969 /* driverRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0ECA1812865D56F00A1D969 /* driverRouteViewController.swift */; };
 		E0ECA1842865D56F00A1D969 /* driverRouteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0ECA1822865D56F00A1D969 /* driverRouteViewController.xib */; };
-		E0F2C79F287DFCD600B731F9 /* ProcedureReportsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F2C79D287DFCD600B731F9 /* ProcedureReportsVC.swift */; };
-		E0F2C7A0287DFCD600B731F9 /* ProcedureReportsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F2C79E287DFCD600B731F9 /* ProcedureReportsVC.xib */; };
 		E0F2C7A4287DFCF900B731F9 /* LabReportsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F2C7A2287DFCF900B731F9 /* LabReportsVC.swift */; };
 		E0F2C7A5287DFCF900B731F9 /* LabReportsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F2C7A3287DFCF900B731F9 /* LabReportsVC.xib */; };
-		E0F2C7A8287DFDA000B731F9 /* LabReportsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F2C7A6287DFDA000B731F9 /* LabReportsCell.swift */; };
-		E0F2C7A9287DFDA000B731F9 /* LabReportsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F2C7A7287DFDA000B731F9 /* LabReportsCell.xib */; };
 		E0F2C7AC287E08B100B731F9 /* UploadLabTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F2C7AA287E08B100B731F9 /* UploadLabTestVC.swift */; };
 		E0F2C7AD287E08B100B731F9 /* UploadLabTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F2C7AB287E08B100B731F9 /* UploadLabTestVC.xib */; };
 		E0F5C65A287B091300889538 /* LabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F5C64C287B091300889538 /* LabCell.xib */; };
@@ -321,10 +331,90 @@
 		0AB5BBCD0C22B3341BD4A481 /* Pods-HealthCard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthCard.debug.xcconfig"; path = "Target Support Files/Pods-HealthCard/Pods-HealthCard.debug.xcconfig"; sourceTree = "<group>"; };
 		97393149C65C312A721ABEE4 /* Pods-HealthCard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthCard.release.xcconfig"; path = "Target Support Files/Pods-HealthCard/Pods-HealthCard.release.xcconfig"; sourceTree = "<group>"; };
 		9EA0D1C2620A6272EBF75FF2 /* Pods_HealthCard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthCard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0177924288D94CB00060529 /* XIBed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XIBed.swift; sourceTree = "<group>"; };
+		E0177926288D94CB00060529 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		E0177929288D94CB00060529 /* raleway_extralightitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_extralightitalic.ttf; sourceTree = "<group>"; };
+		E017792A288D94CB00060529 /* lato_black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_black.ttf; sourceTree = "<group>"; };
+		E017792B288D94CB00060529 /* lato_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_italic.ttf; sourceTree = "<group>"; };
+		E017792C288D94CB00060529 /* lato_semibold_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_semibold_italic.ttf; sourceTree = "<group>"; };
+		E017792D288D94CB00060529 /* nexa_bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nexa_bold.otf; sourceTree = "<group>"; };
+		E017792E288D94CB00060529 /* poppins_light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = poppins_light.ttf; sourceTree = "<group>"; };
+		E017792F288D94CB00060529 /* raleway_semibolditalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_semibolditalic.ttf; sourceTree = "<group>"; };
+		E0177930288D94CB00060529 /* raleway_blackitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_blackitalic.ttf; sourceTree = "<group>"; };
+		E0177931288D94CB00060529 /* lato_thin_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_thin_italic.ttf; sourceTree = "<group>"; };
+		E0177932288D94CB00060529 /* poppins_medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = poppins_medium.ttf; sourceTree = "<group>"; };
+		E0177933288D94CB00060529 /* lato_light_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_light_italic.ttf; sourceTree = "<group>"; };
+		E0177934288D94CB00060529 /* raleway_medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_medium.ttf; sourceTree = "<group>"; };
+		E0177935288D94CB00060529 /* raleway_lightitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_lightitalic.ttf; sourceTree = "<group>"; };
+		E0177936288D94CB00060529 /* raleway_thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_thin.ttf; sourceTree = "<group>"; };
+		E0177937288D94CB00060529 /* lato_heavy_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_heavy_italic.ttf; sourceTree = "<group>"; };
+		E0177938288D94CB00060529 /* raleway_mediumitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_mediumitalic.ttf; sourceTree = "<group>"; };
+		E0177939288D94CB00060529 /* poppins_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = poppins_regular.ttf; sourceTree = "<group>"; };
+		E017793A288D94CB00060529 /* raleway_light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_light.ttf; sourceTree = "<group>"; };
+		E017793B288D94CB00060529 /* times_new_roman.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = times_new_roman.ttf; sourceTree = "<group>"; };
+		E017793C288D94CB00060529 /* lato_bold_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_bold_italic.ttf; sourceTree = "<group>"; };
+		E017793D288D94CB00060529 /* poppins_semi_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = poppins_semi_bold.ttf; sourceTree = "<group>"; };
+		E017793E288D94CB00060529 /* lato_hairline_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_hairline_italic.ttf; sourceTree = "<group>"; };
+		E017793F288D94CB00060529 /* raleway_extrabold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_extrabold.ttf; sourceTree = "<group>"; };
+		E0177940288D94CB00060529 /* poppins_thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = poppins_thin.ttf; sourceTree = "<group>"; };
+		E0177941288D94CB00060529 /* raleway_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_bold.ttf; sourceTree = "<group>"; };
+		E0177942288D94CB00060529 /* raleway_extralight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_extralight.ttf; sourceTree = "<group>"; };
+		E0177943288D94CB00060529 /* raleway_extrabolditalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_extrabolditalic.ttf; sourceTree = "<group>"; };
+		E0177944288D94CB00060529 /* lato_heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_heavy.ttf; sourceTree = "<group>"; };
+		E0177945288D94CB00060529 /* lato_thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_thin.ttf; sourceTree = "<group>"; };
+		E0177946288D94CB00060529 /* raleway_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_regular.ttf; sourceTree = "<group>"; };
+		E0177947288D94CB00060529 /* nexa_light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nexa_light.otf; sourceTree = "<group>"; };
+		E0177948288D94CB00060529 /* raleway_thinitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_thinitalic.ttf; sourceTree = "<group>"; };
+		E0177949288D94CB00060529 /* raleway_bolditalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_bolditalic.ttf; sourceTree = "<group>"; };
+		E017794A288D94CB00060529 /* lato_hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_hairline.ttf; sourceTree = "<group>"; };
+		E017794B288D94CB00060529 /* lato_black_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_black_italic.ttf; sourceTree = "<group>"; };
+		E017794C288D94CB00060529 /* lato_semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_semibold.ttf; sourceTree = "<group>"; };
+		E017794D288D94CB00060529 /* lato_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_regular.ttf; sourceTree = "<group>"; };
+		E017794E288D94CB00060529 /* lato_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_bold.ttf; sourceTree = "<group>"; };
+		E017794F288D94CB00060529 /* raleway_black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_black.ttf; sourceTree = "<group>"; };
+		E0177950288D94CB00060529 /* lato_medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_medium.ttf; sourceTree = "<group>"; };
+		E0177951288D94CB00060529 /* lato_light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_light.ttf; sourceTree = "<group>"; };
+		E0177952288D94CB00060529 /* raleway_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_italic.ttf; sourceTree = "<group>"; };
+		E0177953288D94CB00060529 /* lato_medium_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_medium_italic.ttf; sourceTree = "<group>"; };
+		E0177954288D94CB00060529 /* raleway_semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_semibold.ttf; sourceTree = "<group>"; };
+		E0177956288D94CB00060529 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
+		E0177957288D94CB00060529 /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
+		E0177958288D94CB00060529 /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		E0177959288D94CB00060529 /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
+		E017795A288D94CB00060529 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		E017795B288D94CB00060529 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		E017795C288D94CB00060529 /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		E017795D288D94CB00060529 /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		E017795E288D94CB00060529 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		E017795F288D94CB00060529 /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
+		E0177960288D94CB00060529 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		E0177961288D94CB00060529 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		E0177962288D94CB00060529 /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
+		E0177963288D94CB00060529 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		E0177964288D94CB00060529 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
+		E0177965288D94CB00060529 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
+		E0177966288D94CB00060529 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		E0177967288D94CB00060529 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
+		E0177968288D94CB00060529 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
+		E017796A288D94CB00060529 /* PrescriptionListCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrescriptionListCollectionViewManager.swift; sourceTree = "<group>"; };
+		E017796C288D94CB00060529 /* PrescriptionListCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrescriptionListCollectionViewCell.xib; sourceTree = "<group>"; };
+		E017796D288D94CB00060529 /* PrescriptionListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrescriptionListCollectionViewCell.swift; sourceTree = "<group>"; };
+		E017796E288D94CB00060529 /* CustomPrescriptionListPopupVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPrescriptionListPopupVC.xib; sourceTree = "<group>"; };
+		E017796F288D94CB00060529 /* CustomPrescriptionListPopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPrescriptionListPopupVC.swift; sourceTree = "<group>"; };
+		E0177971288D94CB00060529 /* CustomSelectPickImagePopUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSelectPickImagePopUpVC.swift; sourceTree = "<group>"; };
+		E0177972288D94CB00060529 /* CustomSelectPickImagePopUpVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomSelectPickImagePopUpVC.xib; sourceTree = "<group>"; };
+		E01779BC288D94EF00060529 /* PrescriptionListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrescriptionListVC.xib; sourceTree = "<group>"; };
+		E01779BD288D94EF00060529 /* PrescriptionListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrescriptionListVC.swift; sourceTree = "<group>"; };
+		E01779C1288D952D00060529 /* ProcedureReportsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProcedureReportsVC.xib; sourceTree = "<group>"; };
+		E01779C2288D952D00060529 /* LabReportsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabReportsCell.xib; sourceTree = "<group>"; };
+		E01779C3288D952D00060529 /* ProcedureReportsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcedureReportsVC.swift; sourceTree = "<group>"; };
+		E01779C4288D952D00060529 /* LabReportsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabReportsCell.swift; sourceTree = "<group>"; };
+		E01779CA288EB86E00060529 /* OPDBillingInvoiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPDBillingInvoiceCell.swift; sourceTree = "<group>"; };
+		E01779CB288EB86E00060529 /* OPDBillingInvoiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OPDBillingInvoiceCell.xib; sourceTree = "<group>"; };
+		E01779CE288EC54100060529 /* OPDBillingInvoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPDBillingInvoiceVC.swift; sourceTree = "<group>"; };
+		E01779CF288EC54100060529 /* OPDBillingInvoiceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OPDBillingInvoiceVC.xib; sourceTree = "<group>"; };
 		E03DD66F27F9787600BFB975 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		E03DD67127F994E100BFB975 /* MainTabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarVC.swift; sourceTree = "<group>"; };
-		E045B23628368CBB00EB77C6 /* PrescriptionListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrescriptionListVC.swift; sourceTree = "<group>"; };
-		E045B23728368CBB00EB77C6 /* PrescriptionListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrescriptionListVC.xib; sourceTree = "<group>"; };
 		E04E6BC5282A0494000B4735 /* CartSubDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartSubDetailsCell.swift; sourceTree = "<group>"; };
 		E04E6BC6282A0494000B4735 /* CartSubDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartSubDetailsCell.xib; sourceTree = "<group>"; };
 		E066992F27F47ADA009EE3F0 /* HealthCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -333,12 +423,13 @@
 		E066993B27F47ADC009EE3F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E066993E27F47ADC009EE3F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E066994027F47ADC009EE3F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E06A3380288EC7780009BDFD /* AdvanceBillingReceiptVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvanceBillingReceiptVC.swift; sourceTree = "<group>"; };
+		E06A3381288EC7780009BDFD /* AdvanceBillingReceiptVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdvanceBillingReceiptVC.xib; sourceTree = "<group>"; };
+		E06A3384288ECC690009BDFD /* EstimateBillingInvoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstimateBillingInvoiceVC.swift; sourceTree = "<group>"; };
+		E06A3385288ECC690009BDFD /* EstimateBillingInvoiceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EstimateBillingInvoiceVC.xib; sourceTree = "<group>"; };
+		E06A3388288ECD140009BDFD /* EstimateBillingInvoiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstimateBillingInvoiceCell.swift; sourceTree = "<group>"; };
+		E06A3389288ECD140009BDFD /* EstimateBillingInvoiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EstimateBillingInvoiceCell.xib; sourceTree = "<group>"; };
 		E072953527F853610083357A /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		E0912CCC285F5948002078D9 /* PrescriptionListCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrescriptionListCollectionViewManager.swift; sourceTree = "<group>"; };
-		E0912CCE285F5948002078D9 /* PrescriptionListCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrescriptionListCollectionViewCell.xib; sourceTree = "<group>"; };
-		E0912CCF285F5948002078D9 /* PrescriptionListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrescriptionListCollectionViewCell.swift; sourceTree = "<group>"; };
-		E0912CD0285F5948002078D9 /* CustomPrescriptionListPopupVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPrescriptionListPopupVC.xib; sourceTree = "<group>"; };
-		E0912CD1285F5948002078D9 /* CustomPrescriptionListPopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPrescriptionListPopupVC.swift; sourceTree = "<group>"; };
 		E093772D285C4B740095E064 /* OrderTrackerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTrackerCell.swift; sourceTree = "<group>"; };
 		E093772E285C4B740095E064 /* OrderTrackerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTrackerCell.xib; sourceTree = "<group>"; };
 		E0937731285C91B10095E064 /* HC-Icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "HC-Icon.jpg"; sourceTree = "<group>"; };
@@ -437,71 +528,6 @@
 		E0B35A3528375EEA002A234D /* PharmacyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PharmacyCell.xib; sourceTree = "<group>"; };
 		E0B71869283BFB31001D96DD /* SelectLocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocationVC.swift; sourceTree = "<group>"; };
 		E0B7186A283BFB31001D96DD /* SelectLocationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectLocationVC.xib; sourceTree = "<group>"; };
-		E0B9BF012811BD22001A58E8 /* XIBed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XIBed.swift; sourceTree = "<group>"; };
-		E0B9BF032811BD22001A58E8 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		E0B9BF062811BD22001A58E8 /* raleway_extralightitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_extralightitalic.ttf; sourceTree = "<group>"; };
-		E0B9BF072811BD22001A58E8 /* lato_black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_black.ttf; sourceTree = "<group>"; };
-		E0B9BF082811BD22001A58E8 /* lato_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_italic.ttf; sourceTree = "<group>"; };
-		E0B9BF092811BD22001A58E8 /* lato_semibold_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_semibold_italic.ttf; sourceTree = "<group>"; };
-		E0B9BF0A2811BD22001A58E8 /* nexa_bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nexa_bold.otf; sourceTree = "<group>"; };
-		E0B9BF0B2811BD22001A58E8 /* poppins_light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = poppins_light.ttf; sourceTree = "<group>"; };
-		E0B9BF0C2811BD22001A58E8 /* raleway_semibolditalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_semibolditalic.ttf; sourceTree = "<group>"; };
-		E0B9BF0D2811BD22001A58E8 /* raleway_blackitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_blackitalic.ttf; sourceTree = "<group>"; };
-		E0B9BF0E2811BD22001A58E8 /* lato_thin_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_thin_italic.ttf; sourceTree = "<group>"; };
-		E0B9BF0F2811BD22001A58E8 /* poppins_medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = poppins_medium.ttf; sourceTree = "<group>"; };
-		E0B9BF102811BD22001A58E8 /* lato_light_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_light_italic.ttf; sourceTree = "<group>"; };
-		E0B9BF112811BD22001A58E8 /* raleway_medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_medium.ttf; sourceTree = "<group>"; };
-		E0B9BF122811BD22001A58E8 /* raleway_lightitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_lightitalic.ttf; sourceTree = "<group>"; };
-		E0B9BF132811BD22001A58E8 /* raleway_thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_thin.ttf; sourceTree = "<group>"; };
-		E0B9BF142811BD22001A58E8 /* lato_heavy_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_heavy_italic.ttf; sourceTree = "<group>"; };
-		E0B9BF152811BD22001A58E8 /* raleway_mediumitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_mediumitalic.ttf; sourceTree = "<group>"; };
-		E0B9BF162811BD22001A58E8 /* poppins_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = poppins_regular.ttf; sourceTree = "<group>"; };
-		E0B9BF172811BD22001A58E8 /* raleway_light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_light.ttf; sourceTree = "<group>"; };
-		E0B9BF182811BD22001A58E8 /* times_new_roman.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = times_new_roman.ttf; sourceTree = "<group>"; };
-		E0B9BF192811BD22001A58E8 /* lato_bold_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_bold_italic.ttf; sourceTree = "<group>"; };
-		E0B9BF1A2811BD22001A58E8 /* poppins_semi_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = poppins_semi_bold.ttf; sourceTree = "<group>"; };
-		E0B9BF1B2811BD22001A58E8 /* lato_hairline_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_hairline_italic.ttf; sourceTree = "<group>"; };
-		E0B9BF1C2811BD22001A58E8 /* raleway_extrabold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_extrabold.ttf; sourceTree = "<group>"; };
-		E0B9BF1D2811BD22001A58E8 /* poppins_thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = poppins_thin.ttf; sourceTree = "<group>"; };
-		E0B9BF1E2811BD22001A58E8 /* raleway_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_bold.ttf; sourceTree = "<group>"; };
-		E0B9BF1F2811BD22001A58E8 /* raleway_extralight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_extralight.ttf; sourceTree = "<group>"; };
-		E0B9BF202811BD22001A58E8 /* raleway_extrabolditalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_extrabolditalic.ttf; sourceTree = "<group>"; };
-		E0B9BF212811BD22001A58E8 /* lato_heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_heavy.ttf; sourceTree = "<group>"; };
-		E0B9BF222811BD22001A58E8 /* lato_thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_thin.ttf; sourceTree = "<group>"; };
-		E0B9BF232811BD22001A58E8 /* raleway_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_regular.ttf; sourceTree = "<group>"; };
-		E0B9BF242811BD22001A58E8 /* nexa_light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nexa_light.otf; sourceTree = "<group>"; };
-		E0B9BF252811BD22001A58E8 /* raleway_thinitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_thinitalic.ttf; sourceTree = "<group>"; };
-		E0B9BF262811BD22001A58E8 /* raleway_bolditalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_bolditalic.ttf; sourceTree = "<group>"; };
-		E0B9BF272811BD22001A58E8 /* lato_hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_hairline.ttf; sourceTree = "<group>"; };
-		E0B9BF282811BD22001A58E8 /* lato_black_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_black_italic.ttf; sourceTree = "<group>"; };
-		E0B9BF292811BD22001A58E8 /* lato_semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_semibold.ttf; sourceTree = "<group>"; };
-		E0B9BF2A2811BD22001A58E8 /* lato_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_regular.ttf; sourceTree = "<group>"; };
-		E0B9BF2B2811BD22001A58E8 /* lato_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_bold.ttf; sourceTree = "<group>"; };
-		E0B9BF2C2811BD22001A58E8 /* raleway_black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_black.ttf; sourceTree = "<group>"; };
-		E0B9BF2D2811BD22001A58E8 /* lato_medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_medium.ttf; sourceTree = "<group>"; };
-		E0B9BF2E2811BD22001A58E8 /* lato_light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_light.ttf; sourceTree = "<group>"; };
-		E0B9BF2F2811BD22001A58E8 /* raleway_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_italic.ttf; sourceTree = "<group>"; };
-		E0B9BF302811BD22001A58E8 /* lato_medium_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lato_medium_italic.ttf; sourceTree = "<group>"; };
-		E0B9BF312811BD22001A58E8 /* raleway_semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = raleway_semibold.ttf; sourceTree = "<group>"; };
-		E0B9BF332811BD22001A58E8 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
-		E0B9BF342811BD22001A58E8 /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
-		E0B9BF352811BD22001A58E8 /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
-		E0B9BF362811BD22001A58E8 /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
-		E0B9BF372811BD22001A58E8 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
-		E0B9BF382811BD22001A58E8 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
-		E0B9BF392811BD22001A58E8 /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
-		E0B9BF3A2811BD22001A58E8 /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
-		E0B9BF3B2811BD22001A58E8 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
-		E0B9BF3C2811BD22001A58E8 /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
-		E0B9BF3D2811BD22001A58E8 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
-		E0B9BF3E2811BD22001A58E8 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
-		E0B9BF3F2811BD22001A58E8 /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
-		E0B9BF402811BD22001A58E8 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
-		E0B9BF412811BD22001A58E8 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
-		E0B9BF422811BD22001A58E8 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
-		E0B9BF432811BD22001A58E8 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
-		E0B9BF442811BD22001A58E8 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
-		E0B9BF452811BD22001A58E8 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
 		E0B9BF472811BD22001A58E8 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		E0B9BF482811BD22001A58E8 /* CACornerMask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CACornerMask.swift; sourceTree = "<group>"; };
 		E0B9BF492811BD22001A58E8 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -522,8 +548,6 @@
 		E0B9BF8B2811BD23001A58E8 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		E0B9BF8E2811BD23001A58E8 /* CustomAlertPopupVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomAlertPopupVC.xib; sourceTree = "<group>"; };
 		E0B9BF8F2811BD23001A58E8 /* CustomAlertPopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlertPopupVC.swift; sourceTree = "<group>"; };
-		E0BB4CF9283CCD9100F30A7B /* CustomSelectPickImagePopUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSelectPickImagePopUpVC.swift; sourceTree = "<group>"; };
-		E0BB4CFA283CCD9100F30A7B /* CustomSelectPickImagePopUpVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomSelectPickImagePopUpVC.xib; sourceTree = "<group>"; };
 		E0C884042874273B00D093AC /* AddAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressViewController.swift; sourceTree = "<group>"; };
 		E0C884052874273B00D093AC /* AddAddressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAddressViewController.xib; sourceTree = "<group>"; };
 		E0CC6468281438380011A165 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
@@ -610,12 +634,8 @@
 		E0E88CD1283CEDCB00918595 /* orderPlaceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = orderPlaceVC.xib; sourceTree = "<group>"; };
 		E0ECA1812865D56F00A1D969 /* driverRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = driverRouteViewController.swift; sourceTree = "<group>"; };
 		E0ECA1822865D56F00A1D969 /* driverRouteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = driverRouteViewController.xib; sourceTree = "<group>"; };
-		E0F2C79D287DFCD600B731F9 /* ProcedureReportsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureReportsVC.swift; sourceTree = "<group>"; };
-		E0F2C79E287DFCD600B731F9 /* ProcedureReportsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProcedureReportsVC.xib; sourceTree = "<group>"; };
 		E0F2C7A2287DFCF900B731F9 /* LabReportsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabReportsVC.swift; sourceTree = "<group>"; };
 		E0F2C7A3287DFCF900B731F9 /* LabReportsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabReportsVC.xib; sourceTree = "<group>"; };
-		E0F2C7A6287DFDA000B731F9 /* LabReportsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabReportsCell.swift; sourceTree = "<group>"; };
-		E0F2C7A7287DFDA000B731F9 /* LabReportsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabReportsCell.xib; sourceTree = "<group>"; };
 		E0F2C7AA287E08B100B731F9 /* UploadLabTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadLabTestVC.swift; sourceTree = "<group>"; };
 		E0F2C7AB287E08B100B731F9 /* UploadLabTestVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UploadLabTestVC.xib; sourceTree = "<group>"; };
 		E0F5C64C287B091300889538 /* LabCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabCell.xib; sourceTree = "<group>"; };
@@ -661,6 +681,161 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E0177923288D94CB00060529 /* Supportings */ = {
+			isa = PBXGroup;
+			children = (
+				E0177924288D94CB00060529 /* XIBed.swift */,
+				E0177925288D94CB00060529 /* Environment */,
+				E0177927288D94CB00060529 /* Font */,
+				E0177969288D94CB00060529 /* CustomPrescriptionListPopup */,
+				E0177970288D94CB00060529 /* CustomSelectPickImagePopup */,
+			);
+			path = Supportings;
+			sourceTree = "<group>";
+		};
+		E0177925288D94CB00060529 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				E0177926288D94CB00060529 /* Environment.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		E0177927288D94CB00060529 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				E0177928288D94CB00060529 /* Lato */,
+				E0177955288D94CB00060529 /* Poppins-2 */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		E0177928288D94CB00060529 /* Lato */ = {
+			isa = PBXGroup;
+			children = (
+				E0177929288D94CB00060529 /* raleway_extralightitalic.ttf */,
+				E017792A288D94CB00060529 /* lato_black.ttf */,
+				E017792B288D94CB00060529 /* lato_italic.ttf */,
+				E017792C288D94CB00060529 /* lato_semibold_italic.ttf */,
+				E017792D288D94CB00060529 /* nexa_bold.otf */,
+				E017792E288D94CB00060529 /* poppins_light.ttf */,
+				E017792F288D94CB00060529 /* raleway_semibolditalic.ttf */,
+				E0177930288D94CB00060529 /* raleway_blackitalic.ttf */,
+				E0177931288D94CB00060529 /* lato_thin_italic.ttf */,
+				E0177932288D94CB00060529 /* poppins_medium.ttf */,
+				E0177933288D94CB00060529 /* lato_light_italic.ttf */,
+				E0177934288D94CB00060529 /* raleway_medium.ttf */,
+				E0177935288D94CB00060529 /* raleway_lightitalic.ttf */,
+				E0177936288D94CB00060529 /* raleway_thin.ttf */,
+				E0177937288D94CB00060529 /* lato_heavy_italic.ttf */,
+				E0177938288D94CB00060529 /* raleway_mediumitalic.ttf */,
+				E0177939288D94CB00060529 /* poppins_regular.ttf */,
+				E017793A288D94CB00060529 /* raleway_light.ttf */,
+				E017793B288D94CB00060529 /* times_new_roman.ttf */,
+				E017793C288D94CB00060529 /* lato_bold_italic.ttf */,
+				E017793D288D94CB00060529 /* poppins_semi_bold.ttf */,
+				E017793E288D94CB00060529 /* lato_hairline_italic.ttf */,
+				E017793F288D94CB00060529 /* raleway_extrabold.ttf */,
+				E0177940288D94CB00060529 /* poppins_thin.ttf */,
+				E0177941288D94CB00060529 /* raleway_bold.ttf */,
+				E0177942288D94CB00060529 /* raleway_extralight.ttf */,
+				E0177943288D94CB00060529 /* raleway_extrabolditalic.ttf */,
+				E0177944288D94CB00060529 /* lato_heavy.ttf */,
+				E0177945288D94CB00060529 /* lato_thin.ttf */,
+				E0177946288D94CB00060529 /* raleway_regular.ttf */,
+				E0177947288D94CB00060529 /* nexa_light.otf */,
+				E0177948288D94CB00060529 /* raleway_thinitalic.ttf */,
+				E0177949288D94CB00060529 /* raleway_bolditalic.ttf */,
+				E017794A288D94CB00060529 /* lato_hairline.ttf */,
+				E017794B288D94CB00060529 /* lato_black_italic.ttf */,
+				E017794C288D94CB00060529 /* lato_semibold.ttf */,
+				E017794D288D94CB00060529 /* lato_regular.ttf */,
+				E017794E288D94CB00060529 /* lato_bold.ttf */,
+				E017794F288D94CB00060529 /* raleway_black.ttf */,
+				E0177950288D94CB00060529 /* lato_medium.ttf */,
+				E0177951288D94CB00060529 /* lato_light.ttf */,
+				E0177952288D94CB00060529 /* raleway_italic.ttf */,
+				E0177953288D94CB00060529 /* lato_medium_italic.ttf */,
+				E0177954288D94CB00060529 /* raleway_semibold.ttf */,
+			);
+			path = Lato;
+			sourceTree = "<group>";
+		};
+		E0177955288D94CB00060529 /* Poppins-2 */ = {
+			isa = PBXGroup;
+			children = (
+				E0177956288D94CB00060529 /* Poppins-ExtraLight.ttf */,
+				E0177957288D94CB00060529 /* Poppins-ThinItalic.ttf */,
+				E0177958288D94CB00060529 /* Poppins-ExtraLightItalic.ttf */,
+				E0177959288D94CB00060529 /* Poppins-BoldItalic.ttf */,
+				E017795A288D94CB00060529 /* Poppins-Light.ttf */,
+				E017795B288D94CB00060529 /* Poppins-Medium.ttf */,
+				E017795C288D94CB00060529 /* Poppins-SemiBoldItalic.ttf */,
+				E017795D288D94CB00060529 /* Poppins-ExtraBoldItalic.ttf */,
+				E017795E288D94CB00060529 /* Poppins-ExtraBold.ttf */,
+				E017795F288D94CB00060529 /* Poppins-BlackItalic.ttf */,
+				E0177960288D94CB00060529 /* OFL.txt */,
+				E0177961288D94CB00060529 /* Poppins-Regular.ttf */,
+				E0177962288D94CB00060529 /* Poppins-LightItalic.ttf */,
+				E0177963288D94CB00060529 /* Poppins-Bold.ttf */,
+				E0177964288D94CB00060529 /* Poppins-Black.ttf */,
+				E0177965288D94CB00060529 /* Poppins-Thin.ttf */,
+				E0177966288D94CB00060529 /* Poppins-SemiBold.ttf */,
+				E0177967288D94CB00060529 /* Poppins-Italic.ttf */,
+				E0177968288D94CB00060529 /* Poppins-MediumItalic.ttf */,
+			);
+			path = "Poppins-2";
+			sourceTree = "<group>";
+		};
+		E0177969288D94CB00060529 /* CustomPrescriptionListPopup */ = {
+			isa = PBXGroup;
+			children = (
+				E017796A288D94CB00060529 /* PrescriptionListCollectionViewManager.swift */,
+				E017796B288D94CB00060529 /* Cell */,
+				E017796E288D94CB00060529 /* CustomPrescriptionListPopupVC.xib */,
+				E017796F288D94CB00060529 /* CustomPrescriptionListPopupVC.swift */,
+			);
+			path = CustomPrescriptionListPopup;
+			sourceTree = "<group>";
+		};
+		E017796B288D94CB00060529 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E017796C288D94CB00060529 /* PrescriptionListCollectionViewCell.xib */,
+				E017796D288D94CB00060529 /* PrescriptionListCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		E0177970288D94CB00060529 /* CustomSelectPickImagePopup */ = {
+			isa = PBXGroup;
+			children = (
+				E0177971288D94CB00060529 /* CustomSelectPickImagePopUpVC.swift */,
+				E0177972288D94CB00060529 /* CustomSelectPickImagePopUpVC.xib */,
+			);
+			path = CustomSelectPickImagePopup;
+			sourceTree = "<group>";
+		};
+		E01779BB288D94EF00060529 /* Prescription */ = {
+			isa = PBXGroup;
+			children = (
+				E01779BC288D94EF00060529 /* PrescriptionListVC.xib */,
+				E01779BD288D94EF00060529 /* PrescriptionListVC.swift */,
+			);
+			path = Prescription;
+			sourceTree = "<group>";
+		};
+		E01779C0288D952D00060529 /* Procedure Reports */ = {
+			isa = PBXGroup;
+			children = (
+				E01779C1288D952D00060529 /* ProcedureReportsVC.xib */,
+				E01779C2288D952D00060529 /* LabReportsCell.xib */,
+				E01779C3288D952D00060529 /* ProcedureReportsVC.swift */,
+				E01779C4288D952D00060529 /* LabReportsCell.swift */,
+			);
+			path = "Procedure Reports";
+			sourceTree = "<group>";
+		};
 		E066992627F47ADA009EE3F0 = {
 			isa = PBXGroup;
 			children = (
@@ -682,13 +857,13 @@
 		E066993127F47ADA009EE3F0 /* HealthCard */ = {
 			isa = PBXGroup;
 			children = (
+				E01779C0288D952D00060529 /* Procedure Reports */,
 				E0F2C7A1287DFCDF00B731F9 /* Lab Reports */,
-				E0F2C79C287DFCB300B731F9 /* Procedure Reports */,
 				E0F5C64B287B091300889538 /* LabDetails */,
 				E0ECA1802865D3E100A1D969 /* Driver Route */,
 				E093772C285C4B440095E064 /* Order Tracker */,
 				E0E88CCF283CEDB200918595 /* OrderPlace */,
-				E0BB4CF3283CCD5600F30A7B /* Prescription */,
+				E01779BB288D94EF00060529 /* Prescription */,
 				E0B71868283BFB0C001D96DD /* LocationSelection */,
 				E0B1744F28832F6F002A3478 /* LabTest */,
 				E0B1745728832F6F002A3478 /* Medicines */,
@@ -696,7 +871,6 @@
 				E0D7CE69281E797E001B4738 /* CustomTabBar */,
 				E0CC649C28156CD60011A165 /* Side menu */,
 				E0CC6467281438380011A165 /* Profile */,
-				E0B9BF002811BD22001A58E8 /* Supportings */,
 				E0B9BF462811BD22001A58E8 /* Extensions */,
 				E0B9BF832811BD23001A58E8 /* Helpers */,
 				E0CC6488281439070011A165 /* Library */,
@@ -705,6 +879,7 @@
 				E0B173BF28832C15002A3478 /* Screens */,
 				E072953727F8542F0083357A /* Home */,
 				E0D7CE2C281E788B001B4738 /* Models */,
+				E0177923288D94CB00060529 /* Supportings */,
 				E0F5C66B287B209300889538 /* 9VtxCxtsMAI.jpeg */,
 				E0F5C667287B209200889538 /* Ax4fAvR-C_c.jpeg */,
 				E0F5C66C287B209300889538 /* SuNc0QRTvGA.jpeg */,
@@ -733,26 +908,6 @@
 				E03DD67127F994E100BFB975 /* MainTabbarVC.swift */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		E0912CCB285F5948002078D9 /* CustomPrescriptionListPopup */ = {
-			isa = PBXGroup;
-			children = (
-				E0912CCC285F5948002078D9 /* PrescriptionListCollectionViewManager.swift */,
-				E0912CCD285F5948002078D9 /* Cell */,
-				E0912CD0285F5948002078D9 /* CustomPrescriptionListPopupVC.xib */,
-				E0912CD1285F5948002078D9 /* CustomPrescriptionListPopupVC.swift */,
-			);
-			path = CustomPrescriptionListPopup;
-			sourceTree = "<group>";
-		};
-		E0912CCD285F5948002078D9 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				E0912CCE285F5948002078D9 /* PrescriptionListCollectionViewCell.xib */,
-				E0912CCF285F5948002078D9 /* PrescriptionListCollectionViewCell.swift */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		E093772C285C4B440095E064 /* Order Tracker */ = {
@@ -1022,112 +1177,6 @@
 			path = LocationSelection;
 			sourceTree = "<group>";
 		};
-		E0B9BF002811BD22001A58E8 /* Supportings */ = {
-			isa = PBXGroup;
-			children = (
-				E0912CCB285F5948002078D9 /* CustomPrescriptionListPopup */,
-				E0BB4CF8283CCD9100F30A7B /* CustomSelectPickImagePopup */,
-				E0B9BF012811BD22001A58E8 /* XIBed.swift */,
-				E0B9BF022811BD22001A58E8 /* Environment */,
-				E0B9BF042811BD22001A58E8 /* Font */,
-			);
-			path = Supportings;
-			sourceTree = "<group>";
-		};
-		E0B9BF022811BD22001A58E8 /* Environment */ = {
-			isa = PBXGroup;
-			children = (
-				E0B9BF032811BD22001A58E8 /* Environment.swift */,
-			);
-			path = Environment;
-			sourceTree = "<group>";
-		};
-		E0B9BF042811BD22001A58E8 /* Font */ = {
-			isa = PBXGroup;
-			children = (
-				E0B9BF052811BD22001A58E8 /* Lato */,
-				E0B9BF322811BD22001A58E8 /* Poppins-2 */,
-			);
-			path = Font;
-			sourceTree = "<group>";
-		};
-		E0B9BF052811BD22001A58E8 /* Lato */ = {
-			isa = PBXGroup;
-			children = (
-				E0B9BF062811BD22001A58E8 /* raleway_extralightitalic.ttf */,
-				E0B9BF072811BD22001A58E8 /* lato_black.ttf */,
-				E0B9BF082811BD22001A58E8 /* lato_italic.ttf */,
-				E0B9BF092811BD22001A58E8 /* lato_semibold_italic.ttf */,
-				E0B9BF0A2811BD22001A58E8 /* nexa_bold.otf */,
-				E0B9BF0B2811BD22001A58E8 /* poppins_light.ttf */,
-				E0B9BF0C2811BD22001A58E8 /* raleway_semibolditalic.ttf */,
-				E0B9BF0D2811BD22001A58E8 /* raleway_blackitalic.ttf */,
-				E0B9BF0E2811BD22001A58E8 /* lato_thin_italic.ttf */,
-				E0B9BF0F2811BD22001A58E8 /* poppins_medium.ttf */,
-				E0B9BF102811BD22001A58E8 /* lato_light_italic.ttf */,
-				E0B9BF112811BD22001A58E8 /* raleway_medium.ttf */,
-				E0B9BF122811BD22001A58E8 /* raleway_lightitalic.ttf */,
-				E0B9BF132811BD22001A58E8 /* raleway_thin.ttf */,
-				E0B9BF142811BD22001A58E8 /* lato_heavy_italic.ttf */,
-				E0B9BF152811BD22001A58E8 /* raleway_mediumitalic.ttf */,
-				E0B9BF162811BD22001A58E8 /* poppins_regular.ttf */,
-				E0B9BF172811BD22001A58E8 /* raleway_light.ttf */,
-				E0B9BF182811BD22001A58E8 /* times_new_roman.ttf */,
-				E0B9BF192811BD22001A58E8 /* lato_bold_italic.ttf */,
-				E0B9BF1A2811BD22001A58E8 /* poppins_semi_bold.ttf */,
-				E0B9BF1B2811BD22001A58E8 /* lato_hairline_italic.ttf */,
-				E0B9BF1C2811BD22001A58E8 /* raleway_extrabold.ttf */,
-				E0B9BF1D2811BD22001A58E8 /* poppins_thin.ttf */,
-				E0B9BF1E2811BD22001A58E8 /* raleway_bold.ttf */,
-				E0B9BF1F2811BD22001A58E8 /* raleway_extralight.ttf */,
-				E0B9BF202811BD22001A58E8 /* raleway_extrabolditalic.ttf */,
-				E0B9BF212811BD22001A58E8 /* lato_heavy.ttf */,
-				E0B9BF222811BD22001A58E8 /* lato_thin.ttf */,
-				E0B9BF232811BD22001A58E8 /* raleway_regular.ttf */,
-				E0B9BF242811BD22001A58E8 /* nexa_light.otf */,
-				E0B9BF252811BD22001A58E8 /* raleway_thinitalic.ttf */,
-				E0B9BF262811BD22001A58E8 /* raleway_bolditalic.ttf */,
-				E0B9BF272811BD22001A58E8 /* lato_hairline.ttf */,
-				E0B9BF282811BD22001A58E8 /* lato_black_italic.ttf */,
-				E0B9BF292811BD22001A58E8 /* lato_semibold.ttf */,
-				E0B9BF2A2811BD22001A58E8 /* lato_regular.ttf */,
-				E0B9BF2B2811BD22001A58E8 /* lato_bold.ttf */,
-				E0B9BF2C2811BD22001A58E8 /* raleway_black.ttf */,
-				E0B9BF2D2811BD22001A58E8 /* lato_medium.ttf */,
-				E0B9BF2E2811BD22001A58E8 /* lato_light.ttf */,
-				E0B9BF2F2811BD22001A58E8 /* raleway_italic.ttf */,
-				E0B9BF302811BD22001A58E8 /* lato_medium_italic.ttf */,
-				E0B9BF312811BD22001A58E8 /* raleway_semibold.ttf */,
-			);
-			path = Lato;
-			sourceTree = "<group>";
-		};
-		E0B9BF322811BD22001A58E8 /* Poppins-2 */ = {
-			isa = PBXGroup;
-			children = (
-				E0B9BF332811BD22001A58E8 /* Poppins-ExtraLight.ttf */,
-				E0B9BF342811BD22001A58E8 /* Poppins-ThinItalic.ttf */,
-				E0B9BF352811BD22001A58E8 /* Poppins-ExtraLightItalic.ttf */,
-				E0B9BF362811BD22001A58E8 /* Poppins-BoldItalic.ttf */,
-				E0B9BF372811BD22001A58E8 /* Poppins-Light.ttf */,
-				E0B9BF382811BD22001A58E8 /* Poppins-Medium.ttf */,
-				E0B9BF392811BD22001A58E8 /* Poppins-SemiBoldItalic.ttf */,
-				E0B9BF3A2811BD22001A58E8 /* Poppins-ExtraBoldItalic.ttf */,
-				E0B9BF3B2811BD22001A58E8 /* Poppins-ExtraBold.ttf */,
-				E0B9BF3C2811BD22001A58E8 /* Poppins-BlackItalic.ttf */,
-				E0B9BF3D2811BD22001A58E8 /* OFL.txt */,
-				E0B9BF3E2811BD22001A58E8 /* Poppins-Regular.ttf */,
-				E0B9BF3F2811BD22001A58E8 /* Poppins-LightItalic.ttf */,
-				E0B9BF402811BD22001A58E8 /* Poppins-Bold.ttf */,
-				E0B9BF412811BD22001A58E8 /* Poppins-Black.ttf */,
-				E0B9BF422811BD22001A58E8 /* Poppins-Thin.ttf */,
-				E0B9BF432811BD22001A58E8 /* Poppins-SemiBold.ttf */,
-				E0B9BF442811BD22001A58E8 /* Poppins-Italic.ttf */,
-				E0B9BF452811BD22001A58E8 /* Poppins-MediumItalic.ttf */,
-			);
-			path = "Poppins-2";
-			sourceTree = "<group>";
-		};
 		E0B9BF462811BD22001A58E8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -1177,24 +1226,6 @@
 				E0B9BF8F2811BD23001A58E8 /* CustomAlertPopupVC.swift */,
 			);
 			path = CustomAlertPopUp;
-			sourceTree = "<group>";
-		};
-		E0BB4CF3283CCD5600F30A7B /* Prescription */ = {
-			isa = PBXGroup;
-			children = (
-				E045B23628368CBB00EB77C6 /* PrescriptionListVC.swift */,
-				E045B23728368CBB00EB77C6 /* PrescriptionListVC.xib */,
-			);
-			path = Prescription;
-			sourceTree = "<group>";
-		};
-		E0BB4CF8283CCD9100F30A7B /* CustomSelectPickImagePopup */ = {
-			isa = PBXGroup;
-			children = (
-				E0BB4CF9283CCD9100F30A7B /* CustomSelectPickImagePopUpVC.swift */,
-				E0BB4CFA283CCD9100F30A7B /* CustomSelectPickImagePopUpVC.xib */,
-			);
-			path = CustomSelectPickImagePopup;
 			sourceTree = "<group>";
 		};
 		E0C884082874274600D093AC /* Add Address */ = {
@@ -1372,6 +1403,10 @@
 				E0E74BD4281F9FF6001564F9 /* ProcedurePaymentCell.xib */,
 				E0E74BD5281F9FF6001564F9 /* ProcedureBillingPaymentVC.xib */,
 				E0E74BD6281F9FF6001564F9 /* ProcedureBillingVC.swift */,
+				E06A3384288ECC690009BDFD /* EstimateBillingInvoiceVC.swift */,
+				E06A3385288ECC690009BDFD /* EstimateBillingInvoiceVC.xib */,
+				E06A3388288ECD140009BDFD /* EstimateBillingInvoiceCell.swift */,
+				E06A3389288ECD140009BDFD /* EstimateBillingInvoiceCell.xib */,
 			);
 			path = "Procedure Billing";
 			sourceTree = "<group>";
@@ -1384,6 +1419,8 @@
 				E0E74BDA281F9FF6001564F9 /* AdvanceBillingVC.swift */,
 				E0E74BDB281F9FF6001564F9 /* AdvanceBillingPaymentVC.swift */,
 				E0E74BDC281F9FF6001564F9 /* AdvanceBillingPaymentVC.xib */,
+				E06A3380288EC7780009BDFD /* AdvanceBillingReceiptVC.swift */,
+				E06A3381288EC7780009BDFD /* AdvanceBillingReceiptVC.xib */,
 			);
 			path = "Estimate Advance Billing";
 			sourceTree = "<group>";
@@ -1396,6 +1433,10 @@
 				E0E74BE0281F9FF6001564F9 /* OpdConsultationCell.swift */,
 				E0E74BE1281F9FF6001564F9 /* OPDconultationBilling.swift */,
 				E0E74BE2281F9FF6001564F9 /* OPDBillingPaymentVC.xib */,
+				E01779CA288EB86E00060529 /* OPDBillingInvoiceCell.swift */,
+				E01779CB288EB86E00060529 /* OPDBillingInvoiceCell.xib */,
+				E01779CE288EC54100060529 /* OPDBillingInvoiceVC.swift */,
+				E01779CF288EC54100060529 /* OPDBillingInvoiceVC.xib */,
 			);
 			path = "OPD Consultation Billing";
 			sourceTree = "<group>";
@@ -1437,17 +1478,6 @@
 				E0ECA1822865D56F00A1D969 /* driverRouteViewController.xib */,
 			);
 			path = "Driver Route";
-			sourceTree = "<group>";
-		};
-		E0F2C79C287DFCB300B731F9 /* Procedure Reports */ = {
-			isa = PBXGroup;
-			children = (
-				E0F2C79D287DFCD600B731F9 /* ProcedureReportsVC.swift */,
-				E0F2C79E287DFCD600B731F9 /* ProcedureReportsVC.xib */,
-				E0F2C7A6287DFDA000B731F9 /* LabReportsCell.swift */,
-				E0F2C7A7287DFDA000B731F9 /* LabReportsCell.xib */,
-			);
-			path = "Procedure Reports";
 			sourceTree = "<group>";
 		};
 		E0F2C7A1287DFCDF00B731F9 /* Lab Reports */ = {
@@ -1535,166 +1565,171 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E045B23928368CBB00EB77C6 /* PrescriptionListVC.xib in Resources */,
-				E0B9BFCD2811BD23001A58E8 /* Poppins-Black.ttf in Resources */,
 				E0CC6486281438380011A165 /* InsuranceVC.xib in Resources */,
-				E0B9BFAC2811BD23001A58E8 /* raleway_extralight.ttf in Resources */,
 				E0B1743628832C15002A3478 /* ConsultSymptomsViewController.xib in Resources */,
-				E0B9BFBB2811BD23001A58E8 /* lato_light.ttf in Resources */,
+				E0177986288D94CB00060529 /* raleway_light.ttf in Resources */,
 				E0E74C0B281F9FF6001564F9 /* OpdConsultationCell.xib in Resources */,
-				E0B9BF962811BD23001A58E8 /* lato_semibold_italic.ttf in Resources */,
+				E0177979288D94CB00060529 /* nexa_bold.otf in Resources */,
+				E017798B288D94CB00060529 /* raleway_extrabold.ttf in Resources */,
 				E0B1743028832C15002A3478 /* Speciality.zip in Resources */,
-				E0B9BFBA2811BD23001A58E8 /* lato_medium.ttf in Resources */,
 				E0B1742A28832C15002A3478 /* Symptoms.zip in Resources */,
-				E0B9BFA02811BD23001A58E8 /* raleway_thin.ttf in Resources */,
 				E0B1744528832C15002A3478 /* timingShiftHeaderCell.xib in Resources */,
 				E0E74C17281F9FF6001564F9 /* AddressDetailsCell.xib in Resources */,
-				E0B9BFA82811BD23001A58E8 /* lato_hairline_italic.ttf in Resources */,
 				E0F5C66E287B209300889538 /* xDJ8FE43aP0.jpeg in Resources */,
-				E0B9BFA12811BD23001A58E8 /* lato_heavy_italic.ttf in Resources */,
 				E0B1742128832C15002A3478 /* CategoryCollectionViewCell.xib in Resources */,
-				E0B9BFA42811BD23001A58E8 /* raleway_light.ttf in Resources */,
 				E0CC6482281438380011A165 /* ProfileTableviewCell.xib in Resources */,
 				E0B1741928832C15002A3478 /* PatientExperienceCollectionViewCell.xib in Resources */,
 				E0E74C12281F9FF6001564F9 /* FinanceCell.xib in Resources */,
+				E01779C6288D952D00060529 /* LabReportsCell.xib in Resources */,
+				E06A3387288ECC690009BDFD /* EstimateBillingInvoiceVC.xib in Resources */,
+				E0177997288D94CB00060529 /* lato_black_italic.ttf in Resources */,
 				E0B1746B28832F6F002A3478 /* MedicineVC.xib in Resources */,
+				E01779AC288D94CB00060529 /* Poppins-Regular.ttf in Resources */,
+				E0177977288D94CB00060529 /* lato_italic.ttf in Resources */,
+				E017797A288D94CB00060529 /* poppins_light.ttf in Resources */,
+				E01779A9288D94CB00060529 /* Poppins-ExtraBold.ttf in Resources */,
+				E01779A1288D94CB00060529 /* Poppins-ExtraLight.ttf in Resources */,
 				E0B1743B28832C15002A3478 /* ConsultationProcessViewController.xib in Resources */,
 				E0E74C04281F9FF6001564F9 /* ProcedureBillingPaymentVC.xib in Resources */,
-				E0B9BFC12811BD23001A58E8 /* Poppins-ExtraLightItalic.ttf in Resources */,
+				E01779C5288D952D00060529 /* ProcedureReportsVC.xib in Resources */,
+				E0177987288D94CB00060529 /* times_new_roman.ttf in Resources */,
 				E0B1742028832C15002A3478 /* BlogsCollectionViewCell.xib in Resources */,
+				E06A338B288ECD140009BDFD /* EstimateBillingInvoiceCell.xib in Resources */,
+				E06A3383288EC7780009BDFD /* AdvanceBillingReceiptVC.xib in Resources */,
 				E0E74C0A281F9FF6001564F9 /* AdvanceBillingPaymentVC.xib in Resources */,
 				E0E74C14281F9FF6001564F9 /* Finance.storyboard in Resources */,
+				E01779A7288D94CB00060529 /* Poppins-SemiBoldItalic.ttf in Resources */,
+				E017798C288D94CB00060529 /* poppins_thin.ttf in Resources */,
 				E0B1744828832C15002A3478 /* ConsultDoctorDetailsViewController.xib in Resources */,
 				E0E74BF5281F9FF6001564F9 /* MyOrders.xib in Resources */,
-				E0B9BFB42811BD23001A58E8 /* lato_hairline.ttf in Resources */,
 				E0E74BF7281F9FF6001564F9 /* PrescriptionDetails.xib in Resources */,
 				E0E74C16281F9FF6001564F9 /* AddressDetailsVC.xib in Resources */,
-				E0B9BFAD2811BD23001A58E8 /* raleway_extrabolditalic.ttf in Resources */,
+				E0177996288D94CB00060529 /* lato_hairline.ttf in Resources */,
 				E0F5C65C287B091300889538 /* LabDetailsVC.xib in Resources */,
-				E0B9BFBF2811BD23001A58E8 /* Poppins-ExtraLight.ttf in Resources */,
 				E0CC8ADC287D8A91001911BC /* lab.jpeg in Resources */,
+				E017799B288D94CB00060529 /* raleway_black.ttf in Resources */,
+				E0177992288D94CB00060529 /* raleway_regular.ttf in Resources */,
 				E0B7186C283BFB31001D96DD /* SelectLocationVC.xib in Resources */,
-				E0B9BFD02811BD23001A58E8 /* Poppins-Italic.ttf in Resources */,
-				E0B9BF9B2811BD23001A58E8 /* lato_thin_italic.ttf in Resources */,
 				E0F5C65A287B091300889538 /* LabCell.xib in Resources */,
-				E0B9BF952811BD23001A58E8 /* lato_italic.ttf in Resources */,
+				E017799E288D94CB00060529 /* raleway_italic.ttf in Resources */,
+				E017799F288D94CB00060529 /* lato_medium_italic.ttf in Resources */,
+				E01779BA288D94CB00060529 /* CustomSelectPickImagePopUpVC.xib in Resources */,
+				E01779B5288D94CB00060529 /* PrescriptionListCollectionViewCell.xib in Resources */,
+				E01779A4288D94CB00060529 /* Poppins-BoldItalic.ttf in Resources */,
 				E0B1741828832C15002A3478 /* DashboardCollectionViewCell.xib in Resources */,
+				E01779AE288D94CB00060529 /* Poppins-Bold.ttf in Resources */,
 				E0E74BFE281F9FF6001564F9 /* CartDetails.xib in Resources */,
-				E0B9BFBE2811BD23001A58E8 /* raleway_semibold.ttf in Resources */,
+				E0177983288D94CB00060529 /* lato_heavy_italic.ttf in Resources */,
 				E0B1741328832C15002A3478 /* HomeViewController.xib in Resources */,
-				E0B9BFAE2811BD23001A58E8 /* lato_heavy.ttf in Resources */,
 				E0F5C66F287B209300889538 /* YOmC5Tyk-nU.jpeg in Resources */,
 				E0B1746828832F6F002A3478 /* BookMedicineCell.xib in Resources */,
+				E01779AF288D94CB00060529 /* Poppins-Black.ttf in Resources */,
+				E017797C288D94CB00060529 /* raleway_blackitalic.ttf in Resources */,
+				E0177993288D94CB00060529 /* nexa_light.otf in Resources */,
+				E0177989288D94CB00060529 /* poppins_semi_bold.ttf in Resources */,
+				E017799C288D94CB00060529 /* lato_medium.ttf in Resources */,
+				E017797E288D94CB00060529 /* poppins_medium.ttf in Resources */,
+				E01779A3288D94CB00060529 /* Poppins-ExtraLightItalic.ttf in Resources */,
 				E0B1743F28832C15002A3478 /* ConsultationDetailsViewController.xib in Resources */,
 				E0B35A2E28375E94002A234D /* PharmacyDetailsVC.xib in Resources */,
+				E017798E288D94CB00060529 /* raleway_extralight.ttf in Resources */,
 				E0F2C7AD287E08B100B731F9 /* UploadLabTestVC.xib in Resources */,
+				E017797D288D94CB00060529 /* lato_thin_italic.ttf in Resources */,
 				E0B1743228832C15002A3478 /* SymptomsInsideTableViewCell.xib in Resources */,
-				E0912CD3285F5949002078D9 /* PrescriptionListCollectionViewCell.xib in Resources */,
 				E0B1740E28832C15002A3478 /* Home.xcassets in Resources */,
 				E0937730285C4B740095E064 /* OrderTrackerCell.xib in Resources */,
-				E0B9BFA32811BD23001A58E8 /* poppins_regular.ttf in Resources */,
-				E0B9BFC52811BD23001A58E8 /* Poppins-SemiBoldItalic.ttf in Resources */,
 				E0B1744428832C15002A3478 /* TimingsCollectionViewCell.xib in Resources */,
 				E0B1742E28832C15002A3478 /* ConsultSpecialityViewController.xib in Resources */,
+				E01779B1288D94CB00060529 /* Poppins-SemiBold.ttf in Resources */,
 				E0CC6485281438380011A165 /* ProfileVC.xib in Resources */,
+				E01779A8288D94CB00060529 /* Poppins-ExtraBoldItalic.ttf in Resources */,
 				E0B1746528832F6F002A3478 /* BookLabTestCell.xib in Resources */,
-				E0B9BFB82811BD23001A58E8 /* lato_bold.ttf in Resources */,
-				E0B9BF992811BD23001A58E8 /* raleway_semibolditalic.ttf in Resources */,
-				E0B9BF942811BD23001A58E8 /* lato_black.ttf in Resources */,
+				E017797B288D94CB00060529 /* raleway_semibolditalic.ttf in Resources */,
+				E01779A0288D94CB00060529 /* raleway_semibold.ttf in Resources */,
 				E04E6BC8282A0494000B4735 /* CartSubDetailsCell.xib in Resources */,
+				E017799A288D94CB00060529 /* lato_bold.ttf in Resources */,
 				E0C884072874273B00D093AC /* AddAddressViewController.xib in Resources */,
-				E0B9BF9E2811BD23001A58E8 /* raleway_medium.ttf in Resources */,
+				E01779B2288D94CB00060529 /* Poppins-Italic.ttf in Resources */,
+				E017799D288D94CB00060529 /* lato_light.ttf in Resources */,
 				E0F2C7A5287DFCF900B731F9 /* LabReportsVC.xib in Resources */,
-				E0B9BFAF2811BD23001A58E8 /* lato_thin.ttf in Resources */,
-				E0B9BFBC2811BD23001A58E8 /* raleway_italic.ttf in Resources */,
+				E0177998288D94CB00060529 /* lato_semibold.ttf in Resources */,
+				E01779A6288D94CB00060529 /* Poppins-Medium.ttf in Resources */,
+				E017798A288D94CB00060529 /* lato_hairline_italic.ttf in Resources */,
 				E0F5C671287B209300889538 /* 9VtxCxtsMAI.jpeg in Resources */,
+				E0177984288D94CB00060529 /* raleway_mediumitalic.ttf in Resources */,
 				E0B1742C28832C15002A3478 /* ConsultSpecialityTableViewCell.xib in Resources */,
-				E0B9BFC42811BD23001A58E8 /* Poppins-Medium.ttf in Resources */,
 				E0937732285C91B10095E064 /* HC-Icon.jpg in Resources */,
-				E0B9BFC72811BD23001A58E8 /* Poppins-ExtraBold.ttf in Resources */,
-				E0B9BFCB2811BD23001A58E8 /* Poppins-LightItalic.ttf in Resources */,
-				E0B9BFCE2811BD23001A58E8 /* Poppins-Thin.ttf in Resources */,
-				E0B9BF9C2811BD23001A58E8 /* poppins_medium.ttf in Resources */,
 				E0B1741F28832C15002A3478 /* LookForTestCollectionViewCell.xib in Resources */,
-				E0B9BF972811BD23001A58E8 /* nexa_bold.otf in Resources */,
-				E0B9BFB22811BD23001A58E8 /* raleway_thinitalic.ttf in Resources */,
+				E01779A2288D94CB00060529 /* Poppins-ThinItalic.ttf in Resources */,
 				E0ECA1842865D56F00A1D969 /* driverRouteViewController.xib in Resources */,
 				E0B1743128832C15002A3478 /* ConsultationMainViewController.xib in Resources */,
-				E0912CD5285F5949002078D9 /* CustomPrescriptionListPopupVC.xib in Resources */,
 				E0E74BF0281F9FF6001564F9 /* MyConsultationCell.xib in Resources */,
-				E0B9BFC92811BD23001A58E8 /* OFL.txt in Resources */,
-				E0B9BFA92811BD23001A58E8 /* raleway_extrabold.ttf in Resources */,
 				E0F5C65E287B091300889538 /* LabDetailsCell.xib in Resources */,
 				E0F5C670287B209300889538 /* UKM2SVBhtNs.jpeg in Resources */,
+				E01779AB288D94CB00060529 /* OFL.txt in Resources */,
+				E017798F288D94CB00060529 /* raleway_extrabolditalic.ttf in Resources */,
 				E0CC64A628156CD60011A165 /* CustomSideMenuTableViewCell.xib in Resources */,
 				E0CC6481281438380011A165 /* RelationshipTableViewCell.xib in Resources */,
 				E0B35A3328375EDA002A234D /* PharmacyDetailCell.xib in Resources */,
 				E0CC6487281438380011A165 /* RelationVC.xib in Resources */,
+				E01779AA288D94CB00060529 /* Poppins-BlackItalic.ttf in Resources */,
+				E01779A5288D94CB00060529 /* Poppins-Light.ttf in Resources */,
+				E01779B7288D94CB00060529 /* CustomPrescriptionListPopupVC.xib in Resources */,
+				E01779CD288EB86E00060529 /* OPDBillingInvoiceCell.xib in Resources */,
+				E0177990288D94CB00060529 /* lato_heavy.ttf in Resources */,
 				E0942FC7288718190049BE2B /* ChangePasswordVC.xib in Resources */,
-				E0B9BFA52811BD23001A58E8 /* times_new_roman.ttf in Resources */,
 				E0B1743D28832C15002A3478 /* SelectedIssueCollectionViewCell.xib in Resources */,
-				E0B9BFAA2811BD23001A58E8 /* poppins_thin.ttf in Resources */,
 				E066993F27F47ADC009EE3F0 /* LaunchScreen.storyboard in Resources */,
+				E0177991288D94CB00060529 /* lato_thin.ttf in Resources */,
 				E0CC647B281438380011A165 /* DocumentsVC.xib in Resources */,
-				E0BB4CFF283CCD9100F30A7B /* CustomSelectPickImagePopUpVC.xib in Resources */,
-				E0B9BFCC2811BD23001A58E8 /* Poppins-Bold.ttf in Resources */,
-				E0B9BFC22811BD23001A58E8 /* Poppins-BoldItalic.ttf in Resources */,
+				E0177981288D94CB00060529 /* raleway_lightitalic.ttf in Resources */,
 				E066993C27F47ADC009EE3F0 /* Assets.xcassets in Resources */,
+				E01779B0288D94CB00060529 /* Poppins-Thin.ttf in Resources */,
 				E0CC649B281442110011A165 /* OrderTrackVC.xib in Resources */,
 				E0E74BFB281F9FF6001564F9 /* CartDetailsCell.xib in Resources */,
-				E0B9BFB52811BD23001A58E8 /* lato_black_italic.ttf in Resources */,
-				E0B9BFB32811BD23001A58E8 /* raleway_bolditalic.ttf in Resources */,
 				E0B1744A28832C15002A3478 /* DoctorAvailableListViewController.xib in Resources */,
 				E0D5ED482827FD0000ECF500 /* CustomWebViewVC.xib in Resources */,
-				E0B9BFD12811BD23001A58E8 /* Poppins-MediumItalic.ttf in Resources */,
-				E0B9BFB12811BD23001A58E8 /* nexa_light.otf in Resources */,
 				E0E74C03281F9FF6001564F9 /* ProcedurePaymentCell.xib in Resources */,
-				E0B9BFC32811BD23001A58E8 /* Poppins-Light.ttf in Resources */,
-				E0B9BFB72811BD23001A58E8 /* lato_regular.ttf in Resources */,
 				E0E74C0F281F9FF6001564F9 /* OPDBillingPaymentVC.xib in Resources */,
 				E0CC647D281438380011A165 /* PersonalVC.xib in Resources */,
-				E0B9BF9A2811BD23001A58E8 /* raleway_blackitalic.ttf in Resources */,
-				E0B9BFA22811BD23001A58E8 /* raleway_mediumitalic.ttf in Resources */,
-				E0B9BF982811BD23001A58E8 /* poppins_light.ttf in Resources */,
-				E0B9BFC02811BD23001A58E8 /* Poppins-ThinItalic.ttf in Resources */,
 				E0B1746328832F6F002A3478 /* LabTestCell.xib in Resources */,
-				E0B9BFB02811BD23001A58E8 /* raleway_regular.ttf in Resources */,
-				E0B9BF9D2811BD23001A58E8 /* lato_light_italic.ttf in Resources */,
-				E0F2C7A0287DFCD600B731F9 /* ProcedureReportsVC.xib in Resources */,
+				E0177978288D94CB00060529 /* lato_semibold_italic.ttf in Resources */,
+				E017798D288D94CB00060529 /* raleway_bold.ttf in Resources */,
 				E0B1744B28832C15002A3478 /* DoctorAvailableListTableViewCell.xib in Resources */,
+				E01779AD288D94CB00060529 /* Poppins-LightItalic.ttf in Resources */,
+				E0177982288D94CB00060529 /* raleway_thin.ttf in Resources */,
+				E0177999288D94CB00060529 /* lato_regular.ttf in Resources */,
+				E01779D1288EC54100060529 /* OPDBillingInvoiceVC.xib in Resources */,
+				E017797F288D94CB00060529 /* lato_light_italic.ttf in Resources */,
 				E0CC64A728156CD60011A165 /* CustomSideMenuViewController.xib in Resources */,
-				E0B9BFBD2811BD23001A58E8 /* lato_medium_italic.ttf in Resources */,
 				E0942FC2288715B60049BE2B /* Login.storyboard in Resources */,
-				E0B9BFA62811BD23001A58E8 /* lato_bold_italic.ttf in Resources */,
-				E0F2C7A9287DFDA000B731F9 /* LabReportsCell.xib in Resources */,
+				E0177985288D94CB00060529 /* poppins_regular.ttf in Resources */,
 				E0E74BF3281F9FF6001564F9 /* MyConsultation.xib in Resources */,
 				E0E74BF6281F9FF6001564F9 /* prescriptionDetailsCell.xib in Resources */,
-				E0B9BF9F2811BD23001A58E8 /* raleway_lightitalic.ttf in Resources */,
-				E0B9BFCA2811BD23001A58E8 /* Poppins-Regular.ttf in Resources */,
 				E0B9C00B2811BD23001A58E8 /* CustomAlertPopupVC.xib in Resources */,
-				E0B9BFCF2811BD23001A58E8 /* Poppins-SemiBold.ttf in Resources */,
-				E0B9BFB62811BD23001A58E8 /* lato_semibold.ttf in Resources */,
+				E0177976288D94CB00060529 /* lato_black.ttf in Resources */,
 				E0B1744928832C15002A3478 /* Consultation.zip in Resources */,
-				E0B9BFC62811BD23001A58E8 /* Poppins-ExtraBoldItalic.ttf in Resources */,
 				E0E74C11281F9FF6001564F9 /* FinanceVC.xib in Resources */,
-				E0B9BF932811BD23001A58E8 /* raleway_extralightitalic.ttf in Resources */,
 				E0CC8ADD287D8A91001911BC /* medicine.jpeg in Resources */,
 				E072953627F853610083357A /* Home.storyboard in Resources */,
 				E0E88CD3283CEDCC00918595 /* orderPlaceVC.xib in Resources */,
+				E0177988288D94CB00060529 /* lato_bold_italic.ttf in Resources */,
 				E0B1742228832C15002A3478 /* SliderCollectionViewCell.xib in Resources */,
 				E0CC6480281438380011A165 /* EditProfileVC.xib in Resources */,
+				E01779BE288D94EF00060529 /* PrescriptionListVC.xib in Resources */,
 				E0F5C66D287B209300889538 /* Ax4fAvR-C_c.jpeg in Resources */,
-				E0B9BFC82811BD23001A58E8 /* Poppins-BlackItalic.ttf in Resources */,
+				E01779B3288D94CB00060529 /* Poppins-MediumItalic.ttf in Resources */,
 				E0B35A3728375EEA002A234D /* PharmacyCell.xib in Resources */,
 				E0F5C672287B209300889538 /* SuNc0QRTvGA.jpeg in Resources */,
+				E0177994288D94CB00060529 /* raleway_thinitalic.ttf in Resources */,
 				E0B1746728832F6F002A3478 /* MedicineCell.xib in Resources */,
 				E0B1745F28832F6F002A3478 /* BookLabTest.xib in Resources */,
-				E0B9BFA72811BD23001A58E8 /* poppins_semi_bold.ttf in Resources */,
 				E0E74C19281F9FF6001564F9 /* AddNewAddressCell.xib in Resources */,
-				E0B9BFB92811BD23001A58E8 /* raleway_black.ttf in Resources */,
 				E0B1743528832C15002A3478 /* ConsultSymptomsTableViewCell.xib in Resources */,
 				E0D7CE6D281E797E001B4738 /* CustomTabBarViewController.xib in Resources */,
-				E0B9BFAB2811BD23001A58E8 /* raleway_bold.ttf in Resources */,
+				E0177975288D94CB00060529 /* raleway_extralightitalic.ttf in Resources */,
+				E0177995288D94CB00060529 /* raleway_bolditalic.ttf in Resources */,
+				E0177980288D94CB00060529 /* raleway_medium.ttf in Resources */,
 				E0E74C06281F9FF6001564F9 /* AdvanceBillingPaymentCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1773,6 +1808,7 @@
 				E0B9C0042811BD23001A58E8 /* BaseViewController.swift in Sources */,
 				E0B1741728832C15002A3478 /* LookingForConsultationInSlider2CollectionViewManager.swift in Sources */,
 				E0E74BFD281F9FF6001564F9 /* CartDetails.swift in Sources */,
+				E01779B4288D94CB00060529 /* PrescriptionListCollectionViewManager.swift in Sources */,
 				E0E88CD2283CEDCC00918595 /* orderPlaceVC.swift in Sources */,
 				E0E74C13281F9FF6001564F9 /* PharmacyReceiptVC.swift in Sources */,
 				E0E74BFA281F9FF6001564F9 /* CartDetailsCell.swift in Sources */,
@@ -1784,6 +1820,7 @@
 				E0E74BF1281F9FF6001564F9 /* MyConsultationCell.swift in Sources */,
 				E0B35A3628375EEA002A234D /* PharmacyCell.swift in Sources */,
 				E0E74BF8281F9FF6001564F9 /* prescriptionDetailsCell.swift in Sources */,
+				E0177974288D94CB00060529 /* Environment.swift in Sources */,
 				E0CC649A281442110011A165 /* OrderTrackVC.swift in Sources */,
 				E0B1744228832C15002A3478 /* DoctorsTimingCollectionViewManager.swift in Sources */,
 				E04E6BC7282A0494000B4735 /* CartSubDetailsCell.swift in Sources */,
@@ -1799,18 +1836,18 @@
 				E0B1743328832C15002A3478 /* SymptomsInsideTableViewCell.swift in Sources */,
 				E0ECA1832865D56F00A1D969 /* driverRouteViewController.swift in Sources */,
 				E0B9C00C2811BD23001A58E8 /* CustomAlertPopupVC.swift in Sources */,
-				E0912CD2285F5949002078D9 /* PrescriptionListCollectionViewManager.swift in Sources */,
 				E0E74C0C281F9FF6001564F9 /* OPDBillingPaymentVC.swift in Sources */,
 				E0B9BFD62811BD23001A58E8 /* Codable.swift in Sources */,
 				E0E74C07281F9FF6001564F9 /* AdvanceBillingPaymentCell.swift in Sources */,
 				E066993327F47ADA009EE3F0 /* AppDelegate.swift in Sources */,
 				E0E74C00281F9FF6001564F9 /* FinanceCell.swift in Sources */,
-				E0912CD6285F5949002078D9 /* CustomPrescriptionListPopupVC.swift in Sources */,
 				E0B1744028832C15002A3478 /* ConsultationDetailsViewController.swift in Sources */,
-				E0BB4CFE283CCD9100F30A7B /* CustomSelectPickImagePopUpVC.swift in Sources */,
+				E06A3386288ECC690009BDFD /* EstimateBillingInvoiceVC.swift in Sources */,
 				E0B1744628832C15002A3478 /* timingShiftHeaderCell.swift in Sources */,
 				E0E74C10281F9FF6001564F9 /* FinanceVC.swift in Sources */,
+				E06A3382288EC7780009BDFD /* AdvanceBillingReceiptVC.swift in Sources */,
 				E0B35A2D28375E94002A234D /* PharmacyDetailsVC.swift in Sources */,
+				E01779C8288D952D00060529 /* LabReportsCell.swift in Sources */,
 				E03DD67227F994E100BFB975 /* MainTabbarVC.swift in Sources */,
 				E0942FC3288715B60049BE2B /* SingUpVC.swift in Sources */,
 				E0942FC0288715B60049BE2B /* ForgotPasswordVC.swift in Sources */,
@@ -1828,10 +1865,11 @@
 				E03DD67027F9787600BFB975 /* HomeVC.swift in Sources */,
 				E0CC6478281438380011A165 /* ProfileVC.swift in Sources */,
 				E0B1746A28832F6F002A3478 /* MedicineCell.swift in Sources */,
-				E0F2C79F287DFCD600B731F9 /* ProcedureReportsVC.swift in Sources */,
 				E0B1741528832C15002A3478 /* MedicineYouAreLookingSlider1CvManager.swift in Sources */,
 				E0B1742D28832C15002A3478 /* ConsultSpecialityTableViewManager.swift in Sources */,
+				E06A338A288ECD140009BDFD /* EstimateBillingInvoiceCell.swift in Sources */,
 				E0CC6483281438380011A165 /* InsuranceVC.swift in Sources */,
+				E01779D0288EC54100060529 /* OPDBillingInvoiceVC.swift in Sources */,
 				E0E74C08281F9FF6001564F9 /* AdvanceBillingVC.swift in Sources */,
 				E0E74C02281F9FF6001564F9 /* ProcedureBillingPaymentVC.swift in Sources */,
 				E0B1742328832C15002A3478 /* DashboardCollectionViewCell.swift in Sources */,
@@ -1846,6 +1884,7 @@
 				E0B7186B283BFB31001D96DD /* SelectLocationVC.swift in Sources */,
 				E0CC64A428156CD60011A165 /* CustomSideMenuViewController.swift in Sources */,
 				E0B1741428832C15002A3478 /* ConsultationCategoryCollectionViewManager.swift in Sources */,
+				E01779BF288D94EF00060529 /* PrescriptionListVC.swift in Sources */,
 				E0B1746428832F6F002A3478 /* BookLabTest.swift in Sources */,
 				E0B1741D28832C15002A3478 /* SliderCollectionViewCell.swift in Sources */,
 				E0B1746128832F6F002A3478 /* LabTestCell.swift in Sources */,
@@ -1859,20 +1898,20 @@
 				E0B1743828832C15002A3478 /* ConsultSymptomsTableViewManager.swift in Sources */,
 				E0B1742928832C15002A3478 /* ConsultationMainViewController.swift in Sources */,
 				E0CC6495281439070011A165 /* CAPSPageMenu+UIConfiguration.swift in Sources */,
-				E0F2C7A8287DFDA000B731F9 /* LabReportsCell.swift in Sources */,
 				E0B9C0082811BD23001A58E8 /* PannableViewController.swift in Sources */,
 				E0D7CE2E281E788B001B4738 /* DoctorDetailsBySpecializeStruct.swift in Sources */,
-				E045B23828368CBB00EB77C6 /* PrescriptionListVC.swift in Sources */,
 				E0B1741B28832C15002A3478 /* LookForTestCollectionViewCell.swift in Sources */,
+				E0177973288D94CB00060529 /* XIBed.swift in Sources */,
 				E0B1741628832C15002A3478 /* HomeViewController.swift in Sources */,
 				E0B1744728832C15002A3478 /* ConsultDoctorDetailsViewController.swift in Sources */,
 				E0E74BFF281F9FF6001564F9 /* LabTestReceiptVc.swift in Sources */,
 				E0E74BF2281F9FF6001564F9 /* MyConsultation.swift in Sources */,
-				E0B9BF912811BD23001A58E8 /* XIBed.swift in Sources */,
 				E0B9C00A2811BD23001A58E8 /* API.swift in Sources */,
-				E0B9BF922811BD23001A58E8 /* Environment.swift in Sources */,
+				E01779C7288D952D00060529 /* ProcedureReportsVC.swift in Sources */,
 				E0E74C1C281FA410001564F9 /* UIStoryBoard.swift in Sources */,
+				E01779B8288D94CB00060529 /* CustomPrescriptionListPopupVC.swift in Sources */,
 				E0B9BFD32811BD23001A58E8 /* CACornerMask.swift in Sources */,
+				E01779B9288D94CB00060529 /* CustomSelectPickImagePopUpVC.swift in Sources */,
 				E0E74C1A281F9FF6001564F9 /* AddNewAddressCell.swift in Sources */,
 				E0B1742428832C15002A3478 /* LookingForTestSliderCollectionViewManager.swift in Sources */,
 				E0CC647F281438380011A165 /* RelationVC.swift in Sources */,
@@ -1903,7 +1942,7 @@
 				E0B1741E28832C15002A3478 /* PatientExperienceCollectionViewCell.swift in Sources */,
 				E0CC6494281439070011A165 /* CAPSPageMenu+UIScrollViewDelegate.swift in Sources */,
 				E0B1744328832C15002A3478 /* TimingsCollectionViewCell.swift in Sources */,
-				E0912CD4285F5949002078D9 /* PrescriptionListCollectionViewCell.swift in Sources */,
+				E01779B6288D94CB00060529 /* PrescriptionListCollectionViewCell.swift in Sources */,
 				E0B9BFD82811BD23001A58E8 /* UIButton.swift in Sources */,
 				E0CC6484281438380011A165 /* EditProfileVC.swift in Sources */,
 				E0B1744C28832C15002A3478 /* DoctorAvailableListTableViewCell.swift in Sources */,
@@ -1911,6 +1950,7 @@
 				E0CC6496281439070011A165 /* CAPSPageMenuConfiguration.swift in Sources */,
 				E0B1742F28832C15002A3478 /* ConsultSpecialityViewController.swift in Sources */,
 				E0D7CE6C281E797E001B4738 /* CustomTabBarViewController.swift in Sources */,
+				E01779CC288EB86E00060529 /* OPDBillingInvoiceCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

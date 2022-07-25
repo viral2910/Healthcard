@@ -73,7 +73,8 @@ extension LabTestTableViewManager: UITableViewDataSource {
 //        } else {
 //            cell.selectionImageView.image = UIImage(named: "circle");
 //        }
-            cell.testImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "lab.jpeg"))
+        cell.subtitleLabel.text = "Collection:- \(labListData[indexPath.row].collectionIn ?? "")"
+        cell.testImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "lab.jpeg"))
         cell.selectionStyle = .none
         cell.crossBtnRef.isHidden = false
         cell.crossBtnRef.tag = indexPath.row
@@ -92,8 +93,6 @@ extension LabTestTableViewManager: UITableViewDataSource {
 extension LabTestTableViewManager: UITableViewDelegate {
         
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -102,7 +101,6 @@ extension LabTestTableViewManager: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         tableView.layoutIfNeeded()
-        
         self.tvHeight.constant = tableView.contentSize.height
 
     }

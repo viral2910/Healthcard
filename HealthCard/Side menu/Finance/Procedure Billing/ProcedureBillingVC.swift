@@ -28,7 +28,7 @@ class ProcedureBillingVC: UIViewController {
         controller1.title = "ESTIMATE BILLING PAYMENT"
         controllerArray.append(controller1)
 
-        let controller2 = ProcedureBillingPaymentVC(nibName: "ProcedureBillingPaymentVC", bundle: nil)
+        let controller2 = EstimateBillingInvoiceVC(nibName: "EstimateBillingInvoiceVC", bundle: nil)
         controller2.title = "ESTIMATE BILLING INVOICE"
         controllerArray.append(controller2)
 

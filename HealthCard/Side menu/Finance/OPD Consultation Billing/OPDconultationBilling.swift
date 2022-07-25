@@ -28,7 +28,7 @@ class OPDconultationBilling: UIViewController {
         controller1.title = "OPD BILLING PAYMENT"
         controllerArray.append(controller1)
         
-        let controller2 = InsuranceVC(nibName: "InsuranceVC", bundle: nil)
+        let controller2 = OPDBillingInvoiceVC(nibName: "OPDBillingInvoiceVC", bundle: nil)
         controller2.title = "OPD BILLING INVOICE"
         controllerArray.append(controller2)
         

@@ -68,7 +68,7 @@ class SingUpVC: UIViewController, UITextFieldDelegate,UIPickerViewDataSource, UI
             AppManager.shared.showAlert(title: "Error", msg: "Password does not match", vc: self)
             return;
         }
-        guard let pincode =  pincodeTextField.text,pincode.count == 7 else {
+        guard let pincode =  pincodeTextField.text,pincode.count == 6 else {
             AppManager.shared.showAlert(title: "Error", msg: "Please Enter Pincode", vc: self)
             return;
         }

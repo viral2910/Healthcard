@@ -57,17 +57,7 @@ extension CartDetailsCell : UITableViewDataSource ,UITableViewDelegate{
         cell.qtyControlStack.isHidden = ListData[indexPath.row].sellerType == "Pharmacy" ? true : false
         cell.qtyLabel.text = "\(ListData[indexPath.row].qty)"
         let url = URL(string: "\(ListData[indexPath.row].imageURL)")!
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { return }
-            DispatchQueue.main.async() { [weak self] in
-                cell.ImageView.image = image
-            }
-        }.resume()
+        cell.ImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "medicine.jpeg"))
         cell.selectionStyle = .none
         return cell
     }

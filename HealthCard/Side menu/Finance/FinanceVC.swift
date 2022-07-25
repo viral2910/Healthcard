@@ -9,7 +9,7 @@ import UIKit
 
 class FinanceVC: UIViewController, XIBed {
     
-var array = ["OPD Consultation Building" , "Estimate Advance Billing" , "Procedure Billing" , "Upload Lab Test Receipt" , "Pharmacy Receipt"]
+var array = ["OPD Consultation Building" , "Estimate Advance Billing" , "Procedure Billing" , "Lab Receipt" , "Pharmacy Receipt"]
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var homeBtn: UIButton!

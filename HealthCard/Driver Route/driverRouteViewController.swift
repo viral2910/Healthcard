@@ -36,6 +36,7 @@ class driverRouteViewController:UIViewController, XIBed {
         let session = URLSession(configuration: config)
         let url = URL(string: "https://maps.googleapis.com/maps/api/directions/json?origin=\(src.latitude),\(src.longitude)&destination=\(dst.latitude),\(dst.longitude)&sensor=false&mode=driving&key=AIzaSyCOkXvGWFAfSccRS-azPprnqKEn9vf2LLI")!
 
+        print(url)
         let task = session.dataTask(with: url, completionHandler: {
             (data, response, error) in
             if error != nil {

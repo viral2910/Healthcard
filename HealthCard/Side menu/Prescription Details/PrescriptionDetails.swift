@@ -142,7 +142,7 @@ extension PrescriptionDetails: UITableViewDataSource , UITableViewDelegate{
         if dataValue[indexPath.row].lmpDate == "" {
             cell.planningLbl.text = "\(dataValue[indexPath.row].prescriptionType)"
         }else{
-            cell.planningLbl.text = dataValue[indexPath.row].lmpDate
+            cell.planningLbl.text = "\(dataValue[indexPath.row].lmpDate) \(dataValue[indexPath.row].prescriptionType)"
         }
         return cell
     }

@@ -118,7 +118,7 @@ extension SideMenuTableViewManager: UITableViewDataSource {
             
         case 7:
             let vc = CartDetails.instantiate()
-            self.pushDelegate?.pushViewController(vc: vc)
+            pushDelegate?.pushViewController(vc: vc)
             print("Button Tap")
 
         default:

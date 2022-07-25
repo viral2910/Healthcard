@@ -28,7 +28,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Joa-GR-42N">
-                            <rect key="frame" x="15" y="40.5" width="384" height="21"/>
+                            <rect key="frame" x="15" y="55" width="384" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="llG-gc-bVb"/>
                             </constraints>
@@ -37,8 +37,8 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VIRAL VINCHHI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="df8-fn-XAw">
-                            <rect key="frame" x="15" y="61.5" width="384" height="44.5"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
+                            <rect key="frame" x="15" y="76" width="384" height="30"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>

@@ -1,14 +1,77 @@
 //
-//  ProcedureBillingPaymentVC.swift
+//  EstimateBillingInvoiceVC.swift
 //  HealthCard
 //
-//  Created by Dhairya on 30/04/22.
+//  Created by Viral on 25/07/22.
 //
 
 import UIKit
 
-// MARK: - WelcomeElement
-class procedureBillingData: Codable {
+class EstimateBillingInvoiceVC: UIViewController {
+
+    @IBOutlet weak var tableView: UITableView!
+    
+    var dataValue = [EstimatedBillingInvoice]()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setup()
+        ApiCall()
+    }
+    
+    private func setup(){
+        tableView.register(UINib(nibName: "EstimateBillingInvoiceCell", bundle: nil), forCellReuseIdentifier: "EstimateBillingInvoiceCell")
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorColor = .clear
+    }
+
+}
+
+//MARK: -Extension of TableView
+extension EstimateBillingInvoiceVC: UITableViewDelegate, UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataValue.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EstimateBillingInvoiceCell", for: indexPath) as! EstimateBillingInvoiceCell
+        cell.procedureName.text = dataValue[indexPath.row].procedureName
+        cell.date.text = dataValue[indexPath.row].releaseDate
+        cell.paidAmt.text = "₹" + dataValue[indexPath.row].paidBilledAmt
+        cell.procTypeid.text = dataValue[indexPath.row].procedureTypeID
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let value = dataValue[indexPath.row].reportLink.replacingOccurrences(of: " ", with: "%20")
+        guard let url = URL(string: value) else {
+            print(value)
+            return //be safe
+        }
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
+}
+
+//MARK: - API Calling
+extension EstimateBillingInvoiceVC{
+    func ApiCall() {
+        let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
+        NetWorker.shared.callAPIService(type: APIV2.completeprocedureBilling(patientID: patientID)) { [weak self](data: [EstimatedBillingInvoice]?, error) in
+                self?.dataValue = data!
+            self!.tableView.reloadData()
+              
+        }
+    }
+}
+
+struct EstimatedBillingInvoice: Codable {
     let estimatePlanID, patientID, patientName, surgeonID: String
     let surgeonName: String
     let planDate: JSONNull?
@@ -27,7 +90,7 @@ class procedureBillingData: Codable {
     let totalAfterDisAmt, advRec, estimateCreationDate: JSONNull?
     let totalDueAmount, finalBilledAmt, payAdvanceAmt, balance: String
     let receivedAmt, paidBilledAmt: String
-    let reportLink: JSONNull?
+    let reportLink: String
 
     enum CodingKeys: String, CodingKey {
         case estimatePlanID = "EstimatePlanId"
@@ -76,60 +139,5 @@ class procedureBillingData: Codable {
         case receivedAmt = "ReceivedAmt"
         case paidBilledAmt = "PaidBilledAmt"
         case reportLink = "ReportLink"
-    }
-}
-
-class ProcedureBillingPaymentVC: UIViewController {
-
-    @IBOutlet weak var tableView: UITableView!
-    
-    var dataValue = [procedureBillingData]()
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setup()
-        ApiCall()
-    }
-    
-    private func setup(){
-        tableView.register(UINib(nibName: "ProcedurePaymentCell", bundle: nil), forCellReuseIdentifier: "ProcedurePaymentCell")
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.separatorColor = .clear
-    }
-
-}
-
-//MARK: -Extension of TableView
-extension ProcedureBillingPaymentVC: UITableViewDelegate, UITableViewDataSource{
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataValue.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProcedurePaymentCell", for: indexPath) as! ProcedurePaymentCell
-        cell.filledBillingAmtLbl.text = "₹" + dataValue[indexPath.row].finalBilledAmt
-        cell.totalAmtLbl.text = "₹" + dataValue[indexPath.row].paidBilledAmt
-        cell.receivedAmtLbl.text = "₹" + dataValue[indexPath.row].receivedAmt
-        cell.advPaidLbl.text = "₹" + dataValue[indexPath.row].paidBilledAmt
-        cell.discountsLbl.text = "₹" + dataValue[indexPath.row].discountAmt
-        cell.procedureNameLbl.text = dataValue[indexPath.row].procedureName
-        cell.balanceAmtLbl.text = "₹" + dataValue[indexPath.row].balance
-        cell.initialAmtLbl.text = "₹" + dataValue[indexPath.row].totalDueAmount
-        cell.invoiceNoLbl.text = dataValue[indexPath.row].estimatePlanRefNo
-        cell.invoiceReleaseDate.text = dataValue[indexPath.row].releaseDate
-        return cell
-    }
-}
-
-//MARK: - API Calling
-extension ProcedureBillingPaymentVC{
-    func ApiCall() {
-        let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
-        NetWorker.shared.callAPIService(type: APIV2.procedureBilling(patientID: patientID)) { [weak self](data: [procedureBillingData]?, error) in
-                self?.dataValue = data!
-            self!.tableView.reloadData()
-              
-        }
     }
 }

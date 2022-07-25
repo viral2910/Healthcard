@@ -15,6 +15,7 @@ class ForgotPasswordVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mobilenumberTextfield.text = mobilenumber
+        forgotPasswordOtpGenerate(mobileNo: mobilenumberTextfield.text ?? "", subject: "Forgot Password".replacingOccurrences(of: " ", with: "%20"))
         // Do any additional setup after loading the view.
     }
     @IBAction func sumbitAction(_ sender: Any) {

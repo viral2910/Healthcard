@@ -63,17 +63,8 @@ extension PharmacyDetailCell : UITableViewDataSource ,UITableViewDelegate{
         cell.prescriptionLabel.text = (labListData[indexPath.row].isPrescription == "True") ? "Yes" : "No"
 //        cell.subtitleLabel.text = labListData[indexPath.row].
         let url = URL(string: "\(labListData[indexPath.row].drugImageURL)")!
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { return }
-            DispatchQueue.main.async() { [weak self] in
-                cell.testImageView.image = image
-            }
-        }.resume()
+        cell.testImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "medicine.jpeg"))
+        
         
         
         

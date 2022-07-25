@@ -181,7 +181,7 @@ enum APIV2: API {
     
     case consultationList(patientID: Int)
     
-    case myOrderList(patientID: Int)
+    case myOrderList(patientID: Int,orderstatus:String)
     
     case myCartList(patientID: Int)
     
@@ -805,7 +805,7 @@ extension APIV2 {
         case .consultationList(patientID: let patientId):
             return "Doctor?vPatientId=\(patientId)"
             
-        case .myOrderList(patientID: let patientId):
+        case .myOrderList(patientID: let patientId,orderstatus: let orderStatus):
             return "Order?vPatientId=\(patientId)&vOrderStatus=All%20Orders"
             
         case .myCartList(patientID: let patientId):

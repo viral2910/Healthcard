@@ -229,7 +229,7 @@ extension MedicineVC : UITableViewDataSource ,UITableViewDelegate{
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableview.dequeueReusableCell(withIdentifier: "BookMedicineCell") as! BookMedicineCell
-            cell.tableviewHeight.constant = CGFloat(170 * storyData[indexPath.row].pharmacyDtlsSClist.count)
+            cell.tableviewHeight.constant = CGFloat(200 * storyData[indexPath.row].pharmacyDtlsSClist.count)
             cell.consDrLabel.text = storyData[indexPath.row].consultingDoctor
             cell.dateLabel.text = storyData[indexPath.row].docDate
             cell.labListData = storyData[indexPath.row].pharmacyDtlsSClist
@@ -271,7 +271,7 @@ extension MedicineVC : BookMedicineDelegate {
             prescriptionList.append(prescriptionReq)
         }
         if selectedDocID.count > 0 {
-            bottomConstraint.constant = 60
+            bottomConstraint.constant = 0
         } else {
             bottomConstraint.constant = -5
         }

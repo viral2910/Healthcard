@@ -136,9 +136,10 @@ extension LabDetailsVC: UITableViewDelegate, UITableViewDataSource{
             cell.selectionStyle = .none
             return cell
         } else {
+            print(dataValuepharmacy[indexPath.row])
             let cell = tableView.dequeueReusableCell(withIdentifier: "PharmacyDetailCell", for: indexPath)as! PharmacyDetailCell
             cell.labNameLabel.text = dataValuepharmacy[indexPath.row].pharmacyName
-            cell.totalPriceLabel.text = "Total: ₹ \(dataValuepharmacy[indexPath.row].pharmacyDtlsSClist.compactMap{ Int($0.mrp) ?? 0 }.reduce(0, +))"
+            cell.totalPriceLabel.text = "Total: ₹ \(dataValuepharmacy[indexPath.row].pharmacyDtlsSClist.compactMap{ Double($0.mrp) ?? 0.0 }.reduce(0.0, +))"
             cell.tableviewHeight.constant = CGFloat(dataValuepharmacy[indexPath.row].pharmacyDtlsSClist.count * 170)
             cell.AddToCartBtn.tag = Int(dataValuepharmacy[indexPath.row].pharmacyDtlsSClist[0].pharamcyMasterID) ?? 0
             cell.selectionImageView.image = (selectedvalue == Int(dataValuepharmacy[indexPath.row].pharmacyDtlsSClist[0].pharamcyMasterID) ?? 0) ? UIImage(named: "checkedcircle") : UIImage(named: "circle")

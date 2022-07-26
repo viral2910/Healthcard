@@ -837,7 +837,7 @@ extension APIV2 {
             return "Pathology?vPatientId=\(patientID)&vPatientAddressId=\(addressID)&vLabMasterId=\(labMasterID)&vDocId=\(docId)&vDocType=\(docType)&vLabInvestigation=\(labInvestigation)&vQty=\(qty)&vSellerType=Lab&vDeliveryPincode=\(pincode)"
             
         case .addPharmacyToCart(patientID: let patientID,addressID: let addressID,labMasterID: let labMasterID,pincode:  let pincode,labInvestigation: let labInvestigation,docId: let docId,docType: let docType,qty: let qty):
-            return "Pharmacy?vPatientId=\(patientID)&vPatientAddressId=\(addressID)&vPharmacyMasterId=\(labMasterID)&vDocId=\(docId)&vDocType=\(docType)&vMedicineId=226&vQty=\(qty)&vSellerType=Pharmacy&vDeliveryPincode=\(pincode)"
+            return "Pharmacy?vPatientId=\(patientID)&vPatientAddressId=\(addressID)&vPharmacyMasterId=\(labMasterID)&vDocId=\(docId)&vDocType=\(docType)&vMedicineId=\(labInvestigation)&vQty=\(qty)&vSellerType=Pharmacy&vDeliveryPincode=\(pincode)"
             
         case .cartRemove(cartID: let cartId):
             return "Cart?vCartId=\(cartId)"

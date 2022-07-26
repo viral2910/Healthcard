@@ -123,7 +123,7 @@ extension CartDetails{
     //MARK: - API CALL
     func apiCall()  {
         let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
-        NetWorker.shared.callAPIService(type: APIV2.myCartList(patientID: 180)) { [weak self](data: [cartDetails]?, error) in
+        NetWorker.shared.callAPIService(type: APIV2.myCartList(patientID: patientID)) { [weak self](data: [cartDetails]?, error) in
             self?.dataValue = data!
             self?.tableView.reloadData()
             var sum = 0

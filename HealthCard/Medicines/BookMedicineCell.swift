@@ -50,13 +50,17 @@ extension BookMedicineCell : UITableViewDataSource ,UITableViewDelegate{
         let cell = tableview.dequeueReusableCell(withIdentifier: "MedicineCell") as! MedicineCell
         cell.brandName.text = labListData[indexPath.row].brandName
         cell.genericName.text = labListData[indexPath.row].genericName
-        cell.doseWithUnitLabel.text = labListData[indexPath.row].dose
+        if Int(labListData[indexPath.row].dose ?? "") == 0 {
+            cell.doseWithUnitLabel.text = "\(labListData[indexPath.row].dose ?? "") NA"
+        } else {
+            cell.doseWithUnitLabel.text = "\(labListData[indexPath.row].dose ?? "") MG"
+        }
         cell.packageLabel.text = labListData[indexPath.row].package
         cell.companyLabel.text = labListData[indexPath.row].manufactureCompany
         cell.prescriptionLabel.text = (labListData[indexPath.row].isPrescription == "True") ? "Yes" : "No"
 //        cell.subtitleLabel.text = labListData[indexPath.row].
         let url = URL(string: "\(labListData[indexPath.row].drugImageURL ?? "")")!
-        
+        cell.MedicineTyoe.text = labListData[indexPath.row].medType
         cell.testImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "medicine.jpeg"))
         if selectedID.contains(Int(labListData[indexPath.row].medicineID ?? "") ?? 0) && LabID.contains(Int(labListData[indexPath.row].docID ?? "") ?? 0){
             cell.selectionImageView.image = UIImage(named: "checkedcircle");
@@ -67,7 +71,7 @@ extension BookMedicineCell : UITableViewDataSource ,UITableViewDelegate{
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 170
+        return 200
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         delegate.getTestId(DocId: Int(labListData[indexPath.row].medicineID ?? "") ?? 0, LabInvest: Int(labListData[indexPath.row].docID ?? "") ?? 0, docType: labListData[indexPath.row].docType ?? "",prescriptionReq: labListData[indexPath.row].isPrescription ?? "" , indexPathRow: contentView.tag)

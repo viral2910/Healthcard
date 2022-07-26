@@ -54,7 +54,7 @@ extension CartDetailsCell : UITableViewDataSource ,UITableViewDelegate{
         cell.totalcostLbl.text = "₹\(ListData[indexPath.row].pricePerUnit) X \(ListData[indexPath.row].qty) = ₹\(ListData[indexPath.row].totalAmount)"
         cell.delegate = self
         cell.removeClick.tag = ListData[indexPath.row].cartID
-        cell.qtyControlStack.isHidden = ListData[indexPath.row].sellerType == "Pharmacy" ? true : false
+        cell.qtyControlStack.isHidden = ListData[indexPath.row].sellerType == "Pharmacy" ? false : true
         cell.qtyLabel.text = "\(ListData[indexPath.row].qty)"
         let url = URL(string: "\(ListData[indexPath.row].imageURL)")!
         cell.ImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "medicine.jpeg"))

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class OtpVC: UIViewController {
     @IBOutlet weak var otpsendmessage: UILabel!
@@ -14,7 +15,15 @@ class OtpVC: UIViewController {
     @IBOutlet weak var mobilenumberTextfield: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var sendBtn: UIButton!
+    var titleval = 0
     var mobilenumber = ""
+    var fname = ""
+    var lname = ""
+    var password = ""
+    var confirmpassword = ""
+    var pincode = ""
+    var gendervalue = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mobilenumberTextfield.text = mobilenumber
@@ -90,15 +99,20 @@ extension OtpVC {
             
             let status = data?[0].status ?? ""
             if status == "1" {
-                let patientid = data?[0].patientID
-                UserDefaults.standard.set(true, forKey: "isLogin")
-                UserDefaults.standard.set(patientid, forKey: "patientID")
-                UIApplication.shared.keyWindow?.rootViewController = self.navigationController
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                let homeVC = CustomTabBarViewController.instantiate()
-                let navigationController = UINavigationController(rootViewController: homeVC)
-                appDelegate.window!.rootViewController = navigationController
                 
+                if self.gendervalue != "" {
+                    self.signUpApiCall()
+                } else {
+                    
+                    let patientid = data?[0].patientID
+                    UserDefaults.standard.set(true, forKey: "isLogin")
+                    UserDefaults.standard.set(patientid, forKey: "patientID")
+                    UIApplication.shared.keyWindow?.rootViewController = self.navigationController
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    let homeVC = CustomTabBarViewController.instantiate()
+                    let navigationController = UINavigationController(rootViewController: homeVC)
+                    appDelegate.window!.rootViewController = navigationController
+                }
             } else {
                 UserDefaults.standard.set(false, forKey: "isLogin")
                 UserDefaults.standard.set(0, forKey: "patientID")
@@ -109,6 +123,37 @@ extension OtpVC {
         
     }
     
+    func signUpApiCall(){
+        struct demo : Codable{
+            
+        }
+        
+        SVProgressHUD.show()
+        NetWorker.shared.callAPIService(type: APIV2.patientRegistration(titleId: titleval, firstName: fname, lastName: lname, mobileNo: mobilenumber, password: password, gender: gendervalue, pincode: pincode)) { (data:Welcomevalue?, error) in
+            let message = data?.soapEnvelope.soapBody.savePatientResponse.savePatientResult.patientRegSC.message ?? ""
+            
+            SVProgressHUD.dismiss()
+            if message.lowercased().contains("sucess") {
+                
+                                       let patientid = data?.soapEnvelope.soapBody.savePatientResponse.savePatientResult.patientRegSC.patientID
+//                let patientid = data?.soapEnvelope.soapBody.otpAuthenticationResponse..user.patientID
+                UserDefaults.standard.set(true, forKey: "isLogin")
+                UserDefaults.standard.set(patientid, forKey: "patientID")
+                UIApplication.shared.keyWindow?.rootViewController = self.navigationController
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let homeVC = CustomTabBarViewController.instantiate()
+                let navigationController = UINavigationController(rootViewController: homeVC)
+                appDelegate.window!.rootViewController = navigationController
+                
+            } else {
+//                self.registerBtnRef.isEnabled = true
+                UserDefaults.standard.set(false, forKey: "isLogin")
+                UserDefaults.standard.set(0, forKey: "patientID")
+                AppManager.shared.showAlert(title: "Error", msg: "Mobile Number already exists", vc: self)
+            }
+        }
+        
+    }
     
 }
 
@@ -235,3 +280,125 @@ struct LoginOtpAuthenticatwDataResponseElement: Codable {
 }
 
 typealias LoginOtpAuthenticatwDataResponse = [LoginOtpAuthenticatwDataResponseElement]
+
+struct Welcomevalue: Codable {
+    let soapEnvelope: SoapEnvelopevalue
+    
+    enum CodingKeys: String, CodingKey {
+        case soapEnvelope = "soap:Envelope"
+    }
+}
+
+// MARK: - SoapEnvelope
+struct SoapEnvelopevalue: Codable {
+    let xmlnsXsi, xmlnsXSD, xmlnsSoap: String
+    let soapBody: SoapBodyvalue
+    
+    enum CodingKeys: String, CodingKey {
+        case xmlnsXsi = "_xmlns:xsi"
+        case xmlnsXSD = "_xmlns:xsd"
+        case xmlnsSoap = "_xmlns:soap"
+        case soapBody = "soap:Body"
+    }
+}
+
+// MARK: - SoapBody
+struct SoapBodyvalue: Codable {
+    let savePatientResponse: SavePatientResponse
+    
+    enum CodingKeys: String, CodingKey {
+        case savePatientResponse = "SavePatientResponse"
+    }
+}
+
+// MARK: - SavePatientResponse
+struct SavePatientResponse: Codable {
+    let xmlns: String
+    let savePatientResult: SavePatientResult
+    
+    enum CodingKeys: String, CodingKey {
+        case xmlns = "_xmlns"
+        case savePatientResult = "SavePatientResult"
+    }
+}
+
+// MARK: - SavePatientResult
+struct SavePatientResult: Codable {
+    let patientRegSC: PatientRegSC
+    
+    enum CodingKeys: String, CodingKey {
+        case patientRegSC = "PatientRegSC"
+    }
+}
+
+
+// MARK: - PatientRegSC
+struct PatientRegSC: Codable {
+    let patientID, status, message: String
+    
+    enum CodingKeys: String, CodingKey {
+        case patientID = "PatientId"
+        case status = "Status"
+        case message = "Message"
+    }
+}
+struct WelcomeTitle: Codable {
+    let soapEnvelope: SoapEnvelopeTitle
+    
+    enum CodingKeys: String, CodingKey {
+        case soapEnvelope = "soap:Envelope"
+    }
+}
+
+// MARK: - SoapEnvelope
+struct SoapEnvelopeTitle: Codable {
+    let xmlnsXSD, xmlnsXsi, xmlnsSoap: String
+    let soapBody: SoapBodyTitle
+    
+    enum CodingKeys: String, CodingKey {
+        case xmlnsXSD = "_xmlns:xsd"
+        case xmlnsXsi = "_xmlns:xsi"
+        case xmlnsSoap = "_xmlns:soap"
+        case soapBody = "soap:Body"
+    }
+}
+
+// MARK: - SoapBody
+struct SoapBodyTitle: Codable {
+    let titleGetByTitleTypeResponse: TitleGetByTitleTypeResponse
+    
+    enum CodingKeys: String, CodingKey {
+        case titleGetByTitleTypeResponse = "TitleGetByTitleTypeResponse"
+    }
+}
+
+// MARK: - TitleGetByTitleTypeResponse
+struct TitleGetByTitleTypeResponse: Codable {
+    let xmlns: String
+    let titleGetByTitleTypeResult: TitleGetByTitleTypeResult
+    
+    enum CodingKeys: String, CodingKey {
+        case xmlns = "_xmlns"
+        case titleGetByTitleTypeResult = "TitleGetByTitleTypeResult"
+    }
+}
+
+// MARK: - TitleGetByTitleTypeResult
+struct TitleGetByTitleTypeResult: Codable {
+    let commonSC: [CommonSC]
+    
+    enum CodingKeys: String, CodingKey {
+        case commonSC = "CommonSC"
+    }
+}
+
+// MARK: - CommonSC
+struct CommonSC: Codable {
+    let id, value: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "Id"
+        case value = "Value"
+    }
+}
+

@@ -226,7 +226,7 @@ extension BookLabTest : BookLabDelegate {
             docTypeList.append(docType)
         }
         if selectedDocID.count > 0 {
-            bottomConstraint.constant = 60
+            bottomConstraint.constant = 0
         } else {
             bottomConstraint.constant = -5
         }

@@ -51,7 +51,9 @@ extension PharmacyDetailCell : UITableViewDataSource ,UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: "PharmacyCell") as! PharmacyCell
-        cell.originalPrice.text = Int(labListData[indexPath.row].discountPer) ?? 0 != 0 ? "₹ \(labListData[indexPath.row].mrp)" : ""
+        print(Int(labListData[indexPath.row].discountPer) ?? 0)
+        print("₹ \(labListData[indexPath.row].mrp)")
+        cell.originalPrice.text = "₹ \(labListData[indexPath.row].mrp)"
         cell.discountPer.text = Int(labListData[indexPath.row].discountPer) ?? 0 != 0 ? " \(labListData[indexPath.row].discountPer)% Off " : ""
         cell.discountPrice.text = Int(labListData[indexPath.row].discountPer) ?? 0 != 0 ? "\(labListData[indexPath.row].discountAmount)" : ""
 //        cell.mr.text = "MRP : ₹\(labListData[indexPath.row].mrp)"

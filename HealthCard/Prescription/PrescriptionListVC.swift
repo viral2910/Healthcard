@@ -15,7 +15,7 @@ class PrescriptionListVC: UIViewController,XIBed,PushViewControllerDelegate {
     var docType = ""
     var addressReq = false
     var selectedPrescriptionId: [Int] = []
-
+    
     @IBOutlet weak var selectedID: UILabel!
     @IBOutlet weak var selectedPrescriptiomImageViewRef: UIImageView!
     
@@ -24,15 +24,15 @@ class PrescriptionListVC: UIViewController,XIBed,PushViewControllerDelegate {
         super.viewDidLoad()
     }
     @IBAction func cameraAction(_ sender: Any) {
-//        self.navigationController?.popViewController(animated: true)
+        //        self.navigationController?.popViewController(animated: true)
         showImagePicker()
     }
     
     @IBAction func prescriptionAction(_ sender: Any) {
-//        self.navigationController?.popViewController(animated: true)
+        //        self.navigationController?.popViewController(animated: true)
         ApiCall()
     }
-
+    
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -56,9 +56,9 @@ extension PrescriptionListVC {
         let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
         
         NetWorker.shared.callAPIService(type: APIV2.SelfPrescriptionUpload(patientId: patientID, docId: docId, file: file, docType: docType, fileExt: fileExt, fileName: fileName)) { (data:PrescriptionUploadDataResponse?, error) in
-
+            
             let status = data?.soapEnvelope?.soapBody?.selfPrescriptionUploadResponse?.selfPrescriptionUploadResult?.user?.status ?? ""
-
+            
             if status == "1" {
                 self.ApiCall()
             }
@@ -68,8 +68,8 @@ extension PrescriptionListVC {
     }
     
     func randomString(length: Int) -> String {
-      let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-      return String((0..<length).map{ _ in letters.randomElement()! })
+        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        return String((0..<length).map{ _ in letters.randomElement()! })
     }
     
 }
@@ -79,7 +79,7 @@ extension PrescriptionListVC: GetSelectedPrescriptionId {
         selectedID.text = "Selected ID : \(id)"
         selectedPrescriptionId = id
         self.selectedPrescriptiomImageViewRef.sd_setImage(with: URL(string: imageUrl), placeholderImage: UIImage(named: "placeholder.png"))
-
+        
     }
     
     
@@ -95,19 +95,50 @@ extension PrescriptionListVC: UIImagePickerControllerDelegate, UINavigationContr
         vc.completion = { result in
             switch result {
             case .add:
-                let vc = LabDetailsVC.instantiate()
-                vc.pincode = self.pincode
-                vc.docId = self.docId
-                vc.labInvestigation = self.labInvestigation
-                vc.docType = self.docType
-                vc.presciptionID = "\(self.selectedPrescriptionId[0])"
-                vc.isMedicine = true
-                self.navigationController?.pushViewController(vc, animated: true)
+                self.proceedApiCall()
                 //            print("Add button tap\(data)")
                 
             }
             
         }
+    }
+    
+    
+    //MARK: - API CALL
+    func proceedApiCall() {
+        
+//        let patientID = Int(UserDefaults.standard.string(forKey: "patientID") ?? "") ?? 0
+//        NetWorker.shared.callAPIService(type: APIV2.myCartList(patientID: patientID)) { [weak self](data: [cartDetails]?, error) in
+//            if data?.count ?? 0 > 0 {
+                if !addressReq {
+                    
+                    let vc = LabDetailsVC.instantiate()
+                    vc.pincode = self.pincode
+                    vc.docId = self.docId
+                    vc.labInvestigation = self.labInvestigation
+                    vc.docType = self.docType
+                    vc.presciptionID = "\(self.selectedPrescriptionId[0])"
+                    vc.isMedicine = true
+                    self.navigationController?.pushViewController(vc, animated: true)
+                } else {
+                    let vc = AddressDetailsVC.instantiate()
+                    vc.addressSelection = true
+                    vc.docId = self.docId
+                    vc.labInvestigation = self.labInvestigation
+                    vc.docType = self.docType
+                    vc.isMedicine = true
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+//            } else {
+//                let vc = AddressDetailsVC.instantiate()
+//                vc.addressSelection = true
+//                vc.docId = self?.docId ?? ""
+//                vc.labInvestigation = self?.labInvestigation ?? ""
+//                vc.docType = self?.docType ?? ""
+//                vc.isMedicine = true
+//                self?.navigationController?.pushViewController(vc, animated: true)
+//            }
+//        }
     }
     
     func showImagePicker() {
@@ -121,7 +152,7 @@ extension PrescriptionListVC: UIImagePickerControllerDelegate, UINavigationContr
             case .clickAPictureNow:
                 self.openCamera()
             }
-                
+            
         }
     }
     
@@ -129,36 +160,36 @@ extension PrescriptionListVC: UIImagePickerControllerDelegate, UINavigationContr
     {
         
         let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
-                alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
-                    self.openCamera()
-                }))
-
-                alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
-                    self.openGallery()
-                }))
-
-                alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
-
-                self.present(alert, animated: true, completion: nil)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+            self.openCamera()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
+            self.openGallery()
+        }))
+        
+        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
     }
-
-
+    
+    
     func openCamera()
+    {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        else
         {
-            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
-                let imagePicker = UIImagePickerController()
-                imagePicker.delegate = self
-                imagePicker.sourceType = UIImagePickerController.SourceType.camera
-                imagePicker.allowsEditing = true
-                self.present(imagePicker, animated: true, completion: nil)
-            }
-            else
-            {
-                let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-            }        }
-
+            let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }        }
+    
     func openGallery()
     {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
@@ -175,33 +206,33 @@ extension PrescriptionListVC: UIImagePickerControllerDelegate, UINavigationContr
             self.present(alert, animated: true, completion: nil)
         }
     }
-
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if picker.sourceType == .camera {
             if let pickedImage = info[.originalImage] as? UIImage {
-//            imgViewRef.contentMode = .scaleAspectFill
+                //            imgViewRef.contentMode = .scaleAspectFill
                 self.selectedPrescriptiomImageViewRef.image = pickedImage
                 
                 let imageData = pickedImage.pngData()!
                 let base64 = imageData.base64EncodedString()
                 uploadPrescriptionApiCall(docId: docId, file: base64, docType: "Self Prescription", fileExt: "png", fileName: randomString(length: 8))
-            
+                
             }
-        picker.dismiss(animated: true, completion: nil)
-
+            picker.dismiss(animated: true, completion: nil)
+            
         } else {
-        if let pickedImage = info[.editedImage] as? UIImage {
-        //imgViewRef.contentMode = .scaleAspectFill
-            self.selectedPrescriptiomImageViewRef.image = pickedImage
-       
-            let imageData = pickedImage.pngData()!
-            let base64 = imageData.base64EncodedString()
-            uploadPrescriptionApiCall(docId: docId, file: base64, docType: "Self Prescription", fileExt: "png", fileName: randomString(length: 8))
-
-    }
-    picker.dismiss(animated: true, completion: nil)
+            if let pickedImage = info[.editedImage] as? UIImage {
+                //imgViewRef.contentMode = .scaleAspectFill
+                self.selectedPrescriptiomImageViewRef.image = pickedImage
+                
+                let imageData = pickedImage.pngData()!
+                let base64 = imageData.base64EncodedString()
+                uploadPrescriptionApiCall(docId: docId, file: base64, docType: "Self Prescription", fileExt: "png", fileName: randomString(length: 8))
+                
+            }
+            picker.dismiss(animated: true, completion: nil)
         }
-}
+    }
     
 }
 
@@ -227,7 +258,7 @@ struct PatientPrescriptionResponseDatum: Codable {
     let createdBy, createdOn, updatedBy, updatedOn: JSONNull?
     let orgFile, currUser, investigationAdviseID, isEdit: JSONNull?
     let reportLink: String
-
+    
     enum CodingKeys: String, CodingKey {
         case id = "Id"
         case procDocID = "ProcDocId"
@@ -286,7 +317,7 @@ typealias PatientPrescriptionResponseData = [PatientPrescriptionResponseDatum]
 // MARK: - PrescriptionUploadDataResponse
 struct PrescriptionUploadDataResponse: Codable {
     let soapEnvelope: PrescriptionUploadSoapEnvelope?
-
+    
     enum CodingKeys: String, CodingKey {
         case soapEnvelope = "soap:Envelope"
     }
@@ -296,7 +327,7 @@ struct PrescriptionUploadDataResponse: Codable {
 struct PrescriptionUploadSoapEnvelope: Codable {
     let xmlnsXSD, xmlnsSoap, xmlnsXsi: String?
     let soapBody: PrescriptionUploadSoapBody?
-
+    
     enum CodingKeys: String, CodingKey {
         case xmlnsXSD = "_xmlns:xsd"
         case xmlnsSoap = "_xmlns:soap"
@@ -308,7 +339,7 @@ struct PrescriptionUploadSoapEnvelope: Codable {
 // MARK: - SoapBody
 struct PrescriptionUploadSoapBody: Codable {
     let selfPrescriptionUploadResponse: SelfPrescriptionUploadResponse?
-
+    
     enum CodingKeys: String, CodingKey {
         case selfPrescriptionUploadResponse = "SelfPrescriptionUploadResponse"
     }
@@ -318,7 +349,7 @@ struct PrescriptionUploadSoapBody: Codable {
 struct SelfPrescriptionUploadResponse: Codable {
     let xmlns: String?
     let selfPrescriptionUploadResult: SelfPrescriptionUploadResult?
-
+    
     enum CodingKeys: String, CodingKey {
         case xmlns = "_xmlns"
         case selfPrescriptionUploadResult = "SelfPrescriptionUploadResult"
@@ -328,7 +359,7 @@ struct SelfPrescriptionUploadResponse: Codable {
 // MARK: - SelfPrescriptionUploadResult
 struct SelfPrescriptionUploadResult: Codable {
     let user: PrescriptionUploadUser?
-
+    
     enum CodingKeys: String, CodingKey {
         case user = "User"
     }
@@ -337,7 +368,7 @@ struct SelfPrescriptionUploadResult: Codable {
 // MARK: - User
 struct PrescriptionUploadUser: Codable {
     let message, status: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case message = "Message"
         case status = "Status"

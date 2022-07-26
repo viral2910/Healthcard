@@ -21,6 +21,7 @@ class MedicineCell: UITableViewCell {
     
     @IBOutlet weak var crossBtnRef: UIButton!
     
+    @IBOutlet weak var MedicineTyoe: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
